@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "conditional_cardinality": 85,
+  "coverage": [
+    "Z0",
+    "Z1",
+    "Z2",
+    "Z3-A0",
+    "Z3-A1",
+    "Z4-retention-cards",
+    "Z4-ownerless",
+    "Z5-A0-all13-retained-P",
+    "Z5-A0-empty-P-H/C5",
+    "Z5-A0-empty-P-alpha",
+    "Z5-A1",
+    "Z5-B"
+  ],
+  "standalone_checks": [
+    {
+      "path": "check_zero85.py",
+      "status": "PASS"
+    },
+    {
+      "path": "../common/check_z3a1_side_union.py",
+      "status": "PASS"
+    },
+    {
+      "path": "../scalar/check_z4_ownerless_certificate.py",
+      "status": "PASS"
+    },
+    {
+      "path": "../foundations/zero_audit85.py",
+      "status": "PASS"
+    },
+    {
+      "path": "../foundations/z5_alpha_final85.py",
+      "status": "PASS"
+    },
+    {
+      "path": "check_zero85_z5_a1_b.py",
+      "status": "PASS"
+    },
+    {
+      "path": "../scalar/check_z5_c5t_cutoff_audit.py",
+      "status": "PASS"
+    }
+  ],
+  "Z4_scalar_finishes": {
+    "B two beta holes: HIGH opposite impossible": {
+      "lower": "1192",
+      "upper": "1063",
+      "strict_margin": "129"
+    },
+    "F light": {
+      "lower": "658",
+      "upper": "332",
+      "strict_margin": "326"
+    },
+    "F heavy weight1": {
+      "lower": "835",
+      "upper": "638",
+      "strict_margin": "197"
+    },
+    "F heavy weight2": {
+      "lower": "1005",
+      "upper": "944",
+      "strict_margin": "61"
+    },
+    "O heavy source s": {
+      "lower": "4141/3",
+      "upper": "2183/2",
+      "strict_margin": "1733/6"
+    },
+    "O heavy source t": {
+      "lower": "3937/3",
+      "upper": "1142",
+      "strict_margin": "511/3"
+    },
+    "O all light A<=73": {
+      "lower": "4141/3",
+      "upper": "1137",
+      "strict_margin": "730/3"
+    },
+    "O all light A>=73": {
+      "lower": "4141/3",
+      "upper": "1207",
+      "strict_margin": "520/3"
+    },
+    "S light": {
+      "lower": "-253/4",
+      "upper": "-577/4",
+      "strict_margin": "81"
+    },
+    "S heavy": {
+      "lower": "331/4",
+      "upper": "43/4",
+      "strict_margin": "72"
+    },
+    "E-H no heavy lower": {
+      "lower": "24",
+      "upper": "-469/2",
+      "strict_margin": "517/2"
+    },
+    "E-H heavy lower": {
+      "lower": "97",
+      "upper": "-159/2",
+      "strict_margin": "353/2"
+    },
+    "E-alpha owner light": {
+      "lower": "24",
+      "upper": "-9/2",
+      "strict_margin": "57/2"
+    },
+    "E-alpha owner heavy source t": {
+      "lower": "24",
+      "upper": "-1/2",
+      "strict_margin": "49/2"
+    },
+    "E-alpha owner heavy source s": {
+      "lower": "178",
+      "upper": "12",
+      "strict_margin": "166"
+    },
+    "E-alpha opposite weight1": {
+      "lower": "28",
+      "upper": "-83/4",
+      "strict_margin": "195/4"
+    },
+    "E-alpha opposite weight2": {
+      "lower": "32",
+      "upper": "-83/4",
+      "strict_margin": "211/4"
+    },
+    "E-C5 light": {
+      "lower": "24",
+      "upper": "0",
+      "strict_margin": "24"
+    },
+    "E-C5 heavy": {
+      "lower": "97",
+      "upper": "-111/4",
+      "strict_margin": "499/4"
+    }
+  },
+  "Z5_empty_P_H_C5": {
+    "native_group": "alpha_s, alpha_t/C5_t, H_t",
+    "lower": 24,
+    "upper": 23,
+    "strict_margin": 1
+  },
+  "scope": "Exact finite consequences and fixed-label incidence. Structural theorem and written activity/owner/forest prerequisites are not machine certified."
+}

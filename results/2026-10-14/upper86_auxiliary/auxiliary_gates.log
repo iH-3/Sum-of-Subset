@@ -1,0 +1,11 @@
+Exhaustive balanced fast mode/variant audit j 0 : 4 passed
+Exhaustive balanced fast mode/variant audit j 1 : 70 passed
+Exhaustive balanced fast mode/variant audit j 2 : 578 passed
+Exhaustive balanced fast mode/variant audit j 3 : 2992 passed
+Exhaustive balanced fast mode/variant audit j 4 : 10880 passed
+Exhaustive balanced fast mode/variant audit j 5 : 29512 passed
+Parameter/orientation slices: 859 fast/full representative models: 5940
+Exact maximum residual caps: {'Z0': 426, 'Z1': 347, 'Z2': 268, 'Z3': 189, 'Z4': 110, 'Z5': 31, 'P0': 394, 'P1': 315, 'P2': 236, 'P3': 157, 'P4': 78, 'H0': 344, 'H1': 275, 'H2': 196, 'H3': 117, 'H4': 38}
+Quantile and boundary checks: {'core': 1080, 'global': 4004, 'normal': 856} {'157': 8, '149': 16}
+PASS: factorized row constants/gates; all2992 W*C=I8 certificates linked to model centers; frozen sources unchanged.
+FRESH AUXILIARY PASS: gates ; unchanged sources before/after; mathematical checks executed

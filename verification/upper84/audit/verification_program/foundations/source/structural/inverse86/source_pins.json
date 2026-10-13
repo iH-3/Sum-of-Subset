@@ -1,0 +1,18 @@
+[
+  {
+    "path": "../foundations/nonap_defect.md",
+    "sha256": "fbde07b6ed9331444f191f34ef4dce8c5098b60256f8936f92b328b527d4f199"
+  },
+  {
+    "path": "../foundations/general_lemmas_source.tex",
+    "sha256": "848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b"
+  },
+  {
+    "path": "../foundations/budget_and_sharp_defect_source.tex",
+    "sha256": "25b65826d9b81d3c600e1e2ec712360dd908b6cba5413846a3b98f952c486d56"
+  },
+  {
+    "path": "../foundations/lattice_lemmas.md",
+    "sha256": "7495138ef80c8b88fe60c42130da6dbe0744263ea83cc7963f80c4bbe8bc4b96"
+  }
+]

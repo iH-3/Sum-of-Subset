@@ -1,0 +1,147 @@
+{
+  "original_name": "subset_sums_upper86_complete_verification_20261005.zip",
+  "bytes": 116323869,
+  "sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "parts": [
+    {
+      "name": "upper86.zip.part01",
+      "bytes": 4194304,
+      "sha256": "1476ac95394d1aa31a387d374b4175de5bbb2b7271beda3ed85536a8f8dac890"
+    },
+    {
+      "name": "upper86.zip.part02",
+      "bytes": 4194304,
+      "sha256": "a1510a817964ab3af79d28c842e09b4d506073c927f9a3e76d2930c21f921fe2"
+    },
+    {
+      "name": "upper86.zip.part03",
+      "bytes": 4194304,
+      "sha256": "5672d2cb3ed46629a4b3d6aee5195dc78ef88f61566413320a9f4c9c04c71c22"
+    },
+    {
+      "name": "upper86.zip.part04",
+      "bytes": 4194304,
+      "sha256": "fd5b6820a346cab8f76ac160142c6cdc21033d1d215c24cb1522e2c4cadc26f8"
+    },
+    {
+      "name": "upper86.zip.part05",
+      "bytes": 4194304,
+      "sha256": "aeae3e44cb39ecc578b8eb1c2519285e0b9dc93beef285862e8530fcb3080383"
+    },
+    {
+      "name": "upper86.zip.part06",
+      "bytes": 4194304,
+      "sha256": "3074dabab921a12ff9f2eecf5836caa55435d08c50ace9939d939d44ee5140da"
+    },
+    {
+      "name": "upper86.zip.part07",
+      "bytes": 4194304,
+      "sha256": "340ce1bee7f78709eb7a8417212fa4a73346de04861b70aa48abbc95d1616400"
+    },
+    {
+      "name": "upper86.zip.part08",
+      "bytes": 4194304,
+      "sha256": "ebe7038f72e72ceb12afcdd5619720826e5d6b40480f692e159b94c5a10c74b6"
+    },
+    {
+      "name": "upper86.zip.part09",
+      "bytes": 4194304,
+      "sha256": "ddfb70923847059bc467bd8e82134071ea2e59178561b0f655d08d6bc7de8cad"
+    },
+    {
+      "name": "upper86.zip.part10",
+      "bytes": 4194304,
+      "sha256": "9778e11db9eb18458e0cc40ba301d039f8745ab24a5a49fe52a5ef6e69a5ce31"
+    },
+    {
+      "name": "upper86.zip.part11",
+      "bytes": 4194304,
+      "sha256": "0c7b24f39343cf0e42c1074259f8cd17b42369c1100eba5525cb795aa9fc70ef"
+    },
+    {
+      "name": "upper86.zip.part12",
+      "bytes": 4194304,
+      "sha256": "af61869d01f5a788ec376398677b98521439a8d4245199d0ea57a368fb9ff26a"
+    },
+    {
+      "name": "upper86.zip.part13",
+      "bytes": 4194304,
+      "sha256": "256a1f57b784a670fe1a005ec2e1dfdd94cf4ab86db70b97d18a07f5de6e56a5"
+    },
+    {
+      "name": "upper86.zip.part14",
+      "bytes": 4194304,
+      "sha256": "3fe2ca13564baba54c6006e027dff4c2acfb45793db386312279c46f65387078"
+    },
+    {
+      "name": "upper86.zip.part15",
+      "bytes": 4194304,
+      "sha256": "5e4025ab80a312554b8fe404abc4ffa1658cd5acbb4fcda03dc1a693c2a4e0af"
+    },
+    {
+      "name": "upper86.zip.part16",
+      "bytes": 4194304,
+      "sha256": "28c430e508f78a681d61f0b81dc9979740ecf1b6a900d089e4db158d9e567174"
+    },
+    {
+      "name": "upper86.zip.part17",
+      "bytes": 4194304,
+      "sha256": "29c7e09d072284866845c679f78f7871761ccb49e6a25c886874f17045261042"
+    },
+    {
+      "name": "upper86.zip.part18",
+      "bytes": 4194304,
+      "sha256": "d04fe98cac375a5799e9a9be78f5b3a75755febc3c969aa6ea06ccf03b57f5be"
+    },
+    {
+      "name": "upper86.zip.part19",
+      "bytes": 4194304,
+      "sha256": "0c8858b0a396083615a3eef3feeacc6946804334125bd5146e3904d7c2cd0882"
+    },
+    {
+      "name": "upper86.zip.part20",
+      "bytes": 4194304,
+      "sha256": "fb7789d62ad18cfdade2eb024fd724c8d45daf671d63e10d9e39452ec8bab979"
+    },
+    {
+      "name": "upper86.zip.part21",
+      "bytes": 4194304,
+      "sha256": "f5d755b98a90ab7e2113a9f58273233c1620b2611ccb9493d38c59f508b7e529"
+    },
+    {
+      "name": "upper86.zip.part22",
+      "bytes": 4194304,
+      "sha256": "2cace12245f81f93b3da022b43813ae10ae6097300278c7fc901bd0b97983eb0"
+    },
+    {
+      "name": "upper86.zip.part23",
+      "bytes": 4194304,
+      "sha256": "ca0b381dc8f0d917189bf26a830c545ef409c72541567afe63e1df3da4bc3b7f"
+    },
+    {
+      "name": "upper86.zip.part24",
+      "bytes": 4194304,
+      "sha256": "b099fffbcd1ee0d6d9833693f999a569a1398460e94bdcec7cf86ebe2bc68eed"
+    },
+    {
+      "name": "upper86.zip.part25",
+      "bytes": 4194304,
+      "sha256": "db79619f2d6702cf673131f6743b05497b1912a611a63ce39c5156945e668e5f"
+    },
+    {
+      "name": "upper86.zip.part26",
+      "bytes": 4194304,
+      "sha256": "0481d5e8648fc952bf96ef975b62e84eaedb1c9d7b1e0ca0619f8020c5883a9c"
+    },
+    {
+      "name": "upper86.zip.part27",
+      "bytes": 4194304,
+      "sha256": "c2e44fab776cd0541a36c30b9ed506ea20ca0a6708b2a5344901140fe44a2414"
+    },
+    {
+      "name": "upper86.zip.part28",
+      "bytes": 3077661,
+      "sha256": "615490d02df1102cc0d960b57541ee96dbbcb6cdca32a70e1e01e5b86a144e27"
+    }
+  ]
+}

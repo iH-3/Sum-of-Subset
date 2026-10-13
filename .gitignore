@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.aux
+/reports/*.log
+*.out
+*.toc
+*.synctex.gz
+.work/
+verification/upper84/verification_results/
+verification/upper84/audit/verification_program/verification_results/
+search

@@ -1,0 +1,49 @@
+{
+  "status": "PASS: independent printed-mathematics obligations only",
+  "mode_counts": {
+    "0": 4,
+    "1": 70,
+    "2": 578,
+    "3": 2992,
+    "4": 10880,
+    "5": 29512
+  },
+  "three_missing_integer_witnesses": 2992,
+  "constructed_witness_max_abs": 84,
+  "zero_roots": [
+    164,
+    2590,
+    19074,
+    80784,
+    228480,
+    324632
+  ],
+  "positive_low_roots": [
+    164,
+    2590,
+    17918,
+    74800,
+    184960,
+    0
+  ],
+  "caps": {
+    "zero_j0": 426,
+    "positive_j0": 394,
+    "zero_j1": 347,
+    "positive_j1": 315,
+    "zero_j2": 268,
+    "positive_j2": 236,
+    "zero_j3": 189,
+    "positive_j3": 157,
+    "zero_j4": 110,
+    "positive_j4": 78,
+    "zero_j5": 31,
+    "positive_j5": null
+  },
+  "five_point_profiles": 35,
+  "limitations": [
+    "This standalone test intentionally checks only printed-mathematics obligations; check_selected_forests.py checks the recovered actual forests.",
+    "Printed component count identities do not prove parent-ID ownership, exact complement, END, or both-child traversal.",
+    "check_canonical_coverage.py reconstructs all high states and ownership; ordinary current-matrix Farkas replay remains a separate obligation."
+  ]
+}

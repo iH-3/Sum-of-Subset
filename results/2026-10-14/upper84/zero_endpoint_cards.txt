@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "conditional_cardinality": 85,
+  "standalone_checks": 7,
+  "Z4_scalar_rows": 19,
+  "coverage": [
+    "Z0",
+    "Z1",
+    "Z2",
+    "Z3-A0",
+    "Z3-A1",
+    "Z4-retention-cards",
+    "Z4-ownerless",
+    "Z5-A0-all13-retained-P",
+    "Z5-A0-empty-P-H/C5",
+    "Z5-A0-empty-P-alpha",
+    "Z5-A1",
+    "Z5-B"
+  ]
+}

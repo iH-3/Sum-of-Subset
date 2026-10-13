@@ -1,0 +1,25 @@
+boundaries
+11 59 -2 6 -1373
+12 58 45 53 -1185
+13 57 90 98 -1005
+14 56 133 133 -849
+AP min dominant/mass, max D1, min final 549 943 -891 0
+large-hole overlap minimum 1
+endpoint repair k6 passed
+dense 7 28 42 73 4 88 79 8 [477, 11, 468, 422]
+dense 8 27 43 88 5 108 96 10 [536, 85, 525, 391]
+dense 9 26 44 100 6 132 115 12 [598, 164, 585, 361]
+dense 10 25 45 109 6 133 117 12 [663, 248, 650, 334]
+dense 11 24 46 115 6 137 120 12 [731, 337, 718, 308]
+dense 12 23 47 118 6 143 127 12 [802, 431, 789, 283]
+dense 13 22 48 118 6 149 132 12 [876, 530, 863, 259]
+dense 14 21 49 115 5 132 120 10 [953, 634, 942, 238]
+dense 15 20 50 118 5 136 123 10 [1024, 725, 1013, 216]
+dense 16 19 51 109 5 139 127 10 [1107, 839, 1096, 195]
+dense 17 18 52 97 4 118 111 8 [1193, 958, 1184, 177]
+dense 18 17 53 82 3 95 93 6 [1282, 1082, 1275, 160]
+dense 19 16 54 64 2 66 72 4 [1374, 1211, 1369, 144]
+PASS 32 conditional systems; four integer vectors; minimum contradiction 314
+This does not establish the preceding size87 structural hypotheses.
+PASS: candidate87 arithmetic and conditional AP exception; mathematical assembly awaits independent audit
+FRESH AUXILIARY PASS: lattice ; unchanged sources before/after; mathematical checks executed

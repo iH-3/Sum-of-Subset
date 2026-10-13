@@ -1,0 +1,2044 @@
+{
+  "schema": "upper85-exact-arithmetic-v1",
+  "scope": "Finite checks and conditional arithmetic, not a formal verification of all analytical and published inputs.",
+  "strata": [
+    {
+      "id": "Z0",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 0
+    },
+    {
+      "id": "Z1",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 1
+    },
+    {
+      "id": "Z2",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 2
+    },
+    {
+      "id": "Z3",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 3
+    },
+    {
+      "id": "Z4",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 4
+    },
+    {
+      "id": "Z5",
+      "z_min": 0,
+      "z_max": 0,
+      "j": 5
+    },
+    {
+      "id": "P0",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 0
+    },
+    {
+      "id": "P1",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 1
+    },
+    {
+      "id": "P2",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 2
+    },
+    {
+      "id": "P3",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 3
+    },
+    {
+      "id": "P4",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 4
+    },
+    {
+      "id": "P5",
+      "z_min": 1,
+      "z_max": 14,
+      "j": 5
+    },
+    {
+      "id": "H",
+      "z_min": 15,
+      "z_max": null,
+      "j": null
+    }
+  ],
+  "polynomials": [
+    {
+      "id": "Q-I",
+      "expression": "I(r)",
+      "factorization": "(r-34)*(r-35)",
+      "coefficients": [
+        "1190",
+        "-69",
+        "1"
+      ],
+      "global_integer_minimum": "0",
+      "minimizers": [
+        34,
+        35
+      ],
+      "strata": [
+        "Z0",
+        "P0"
+      ],
+      "physical_domain": [
+        15,
+        54
+      ]
+    },
+    {
+      "id": "Q-Z2-3r",
+      "expression": "I(r)+3*r",
+      "factorization": "(r-33)**2+101",
+      "coefficients": [
+        "1190",
+        "-66",
+        "1"
+      ],
+      "global_integer_minimum": "101",
+      "minimizers": [
+        33
+      ],
+      "strata": [
+        "Z2"
+      ],
+      "physical_domain": [
+        18,
+        51
+      ]
+    },
+    {
+      "id": "Q-Z2-4r",
+      "expression": "I(r)+4*r",
+      "factorization": "(r-32)*(r-33)+134",
+      "coefficients": [
+        "1190",
+        "-65",
+        "1"
+      ],
+      "global_integer_minimum": "134",
+      "minimizers": [
+        32,
+        33
+      ],
+      "strata": [
+        "Z2"
+      ],
+      "physical_domain": [
+        18,
+        51
+      ]
+    },
+    {
+      "id": "Q-Z3-A0",
+      "expression": "T(r)+(4)*r+(3)*I(r)",
+      "factorization": "641+(r-29)*(7*(r-29)+1)/2",
+      "coefficients": [
+        "3570",
+        "-405/2",
+        "7/2"
+      ],
+      "global_integer_minimum": "641",
+      "minimizers": [
+        29
+      ],
+      "strata": [
+        "Z3",
+        "Z5"
+      ],
+      "physical_domain": [
+        21,
+        48
+      ]
+    },
+    {
+      "id": "Q-Z3-A1",
+      "expression": "T(r)+(4)*r+(4)*I(r)",
+      "factorization": "665+(r-30)*(9*r-273)/2",
+      "coefficients": [
+        "4760",
+        "-543/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "665",
+      "minimizers": [
+        30
+      ],
+      "strata": [
+        "Z3"
+      ],
+      "physical_domain": [
+        21,
+        48
+      ]
+    },
+    {
+      "id": "Q-P3-3I",
+      "expression": "T(r)+(5)*r+(3)*I(r)",
+      "factorization": "670+(r-29)*(7*(r-29)+3)/2",
+      "coefficients": [
+        "3570",
+        "-403/2",
+        "7/2"
+      ],
+      "global_integer_minimum": "670",
+      "minimizers": [
+        29
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-4I",
+      "expression": "T(r)+(5)*r+(4)*I(r)",
+      "factorization": "695+(r-30)*(9*(r-30)-1)/2",
+      "coefficients": [
+        "4760",
+        "-541/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "695",
+      "minimizers": [
+        30
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-5I",
+      "expression": "T(r)+(5)*r+(5)*I(r)",
+      "factorization": "711+(r-31)*(11*(r-31)+3)/2",
+      "coefficients": [
+        "5950",
+        "-679/2",
+        "11/2"
+      ],
+      "global_integer_minimum": "711",
+      "minimizers": [
+        31
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-A1-m2-owner",
+      "expression": "T(r)+4*r+I(r)+3*(r-35)**2",
+      "factorization": "680+9*(r-30)*(r-31)/2",
+      "coefficients": [
+        "4865",
+        "-549/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "680",
+      "minimizers": [
+        30,
+        31
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-A1-m2-opposite",
+      "expression": "T(r)+7*r+I(r)+3*(r-34)**2",
+      "factorization": "743+9*(r-29)*(r-30)/2",
+      "coefficients": [
+        "4658",
+        "-531/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "743",
+      "minimizers": [
+        29,
+        30
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-A1-heavy-owner",
+      "expression": "T(r)+5*r+4*(r-35)**2",
+      "factorization": "715+9*(r-30)*(r-31)/2",
+      "coefficients": [
+        "4900",
+        "-549/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "715",
+      "minimizers": [
+        30,
+        31
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-A1-heavy-opposite",
+      "expression": "T(r)+6*r+4*(r-34)**2",
+      "factorization": "709+9*(r-29)*(r-30)/2",
+      "coefficients": [
+        "4624",
+        "-531/2",
+        "9/2"
+      ],
+      "global_integer_minimum": "709",
+      "minimizers": [
+        29,
+        30
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P3-A0-m3",
+      "expression": "T(r)+(6)*r+(9/4)*I(r)",
+      "factorization": "666+(11*(r-27)**2-(r-27))/4",
+      "coefficients": [
+        "5355/2",
+        "-595/4",
+        "11/4"
+      ],
+      "global_integer_minimum": "666",
+      "minimizers": [
+        27
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-P4-A0-m1",
+      "expression": "T(r)+(5)*r+(9/2)*I(r)",
+      "factorization": "705+5*(r-30)*(r-31)",
+      "coefficients": [
+        "5355",
+        "-305",
+        "5"
+      ],
+      "global_integer_minimum": "705",
+      "minimizers": [
+        30,
+        31
+      ],
+      "strata": [
+        "P4"
+      ],
+      "physical_domain": [
+        27,
+        42
+      ]
+    },
+    {
+      "id": "Q-P4-A0-m2-before-minus1",
+      "expression": "T(r)+(5)*r+(8)*I(r)",
+      "factorization": "736+(17*(r-32)**2-5*(r-32))/2",
+      "coefficients": [
+        "9520",
+        "-1093/2",
+        "17/2"
+      ],
+      "global_integer_minimum": "736",
+      "minimizers": [
+        32
+      ],
+      "strata": [
+        "P4"
+      ],
+      "physical_domain": [
+        27,
+        42
+      ]
+    },
+    {
+      "id": "Q-P4-same-owner",
+      "expression": "T(r)+(5)*r+(25/8)*I(r)",
+      "factorization": "(5390+(r-29)*(29*(r-29)+1))/8",
+      "coefficients": [
+        "14875/4",
+        "-1681/8",
+        "29/8"
+      ],
+      "global_integer_minimum": "5390/8",
+      "minimizers": [
+        29
+      ],
+      "strata": [
+        "P4"
+      ],
+      "physical_domain": [
+        27,
+        42
+      ]
+    },
+    {
+      "id": "Q-P3-boundary143",
+      "expression": "T(r)+5*r-482+2*I(r)",
+      "factorization": "143+5*(r-26)*(r-27)/2",
+      "coefficients": [
+        "1898",
+        "-265/2",
+        "5/2"
+      ],
+      "global_integer_minimum": "143",
+      "minimizers": [
+        26,
+        27
+      ],
+      "strata": [
+        "P3"
+      ],
+      "physical_domain": [
+        22,
+        47
+      ]
+    },
+    {
+      "id": "Q-Z4-5I",
+      "expression": "T(r)+(4)*r+(5)*I(r)",
+      "factorization": "680+(11*(r-31)**2+(r-31))/2",
+      "coefficients": [
+        "5950",
+        "-681/2",
+        "11/2"
+      ],
+      "global_integer_minimum": "680",
+      "minimizers": [
+        31
+      ],
+      "strata": [
+        "Z4"
+      ],
+      "physical_domain": [
+        24,
+        45
+      ]
+    },
+    {
+      "id": "Q-Z4-ninequarters",
+      "expression": "T(r)+(4)*r+(9/4)*I(r)",
+      "factorization": "612+(11*(r-27)**2-9*(r-27))/4",
+      "coefficients": [
+        "5355/2",
+        "-603/4",
+        "11/4"
+      ],
+      "global_integer_minimum": "612",
+      "minimizers": [
+        27
+      ],
+      "strata": [
+        "Z4"
+      ],
+      "physical_domain": [
+        24,
+        45
+      ]
+    },
+    {
+      "id": "Q-Z4-fivehalves",
+      "expression": "T(r)+(4)*r+(5/2)*I(r)",
+      "factorization": "623+3*(r-28)**2",
+      "coefficients": [
+        "2975",
+        "-168",
+        "3"
+      ],
+      "global_integer_minimum": "623",
+      "minimizers": [
+        28
+      ],
+      "strata": [
+        "Z4"
+      ],
+      "physical_domain": [
+        24,
+        45
+      ]
+    },
+    {
+      "id": "Q-Z4-HIGH-beta",
+      "expression": "r*(r+1)+9*r+4*I(r)",
+      "factorization": "1223+(r-27)*(5*(r-27)+4)",
+      "coefficients": [
+        "4760",
+        "-266",
+        "5"
+      ],
+      "global_integer_minimum": "1223",
+      "minimizers": [
+        27
+      ],
+      "strata": [
+        "Z4"
+      ],
+      "physical_domain": [
+        24,
+        45
+      ]
+    },
+    {
+      "id": "Q-Z2-6r",
+      "expression": "I(r)+6*r",
+      "factorization": "(r-31)*(r-32)+198",
+      "coefficients": [
+        "1190",
+        "-63",
+        "1"
+      ],
+      "global_integer_minimum": "198",
+      "minimizers": [
+        31,
+        32
+      ],
+      "strata": [
+        "Z2"
+      ],
+      "physical_domain": [
+        18,
+        51
+      ]
+    }
+  ],
+  "terminals": [
+    {
+      "id": "Z0P0-pair1-owner-beta",
+      "strata": [
+        "Z0",
+        "P0"
+      ],
+      "expression": "82-113/2",
+      "parameters": {},
+      "expected_minimum": "51/2",
+      "source": "R-Z0P0, Section 4",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z0P0-pair1-owner-opposite",
+      "strata": [
+        "Z0",
+        "P0"
+      ],
+      "expression": "164-112",
+      "parameters": {},
+      "expected_minimum": "52",
+      "source": "R-Z0P0, Section 4",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z1-pair1-missing",
+      "strata": [
+        "Z1"
+      ],
+      "expression": "82-56",
+      "parameters": {},
+      "expected_minimum": "26",
+      "source": "R-Z1, Section 4",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z1-final",
+      "strata": [
+        "Z1"
+      ],
+      "expression": "72+imbalance-57",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "15",
+      "source": "R-Z1, equation (14)",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z2-double-cap-one-hole",
+      "strata": [
+        "Z2"
+      ],
+      "expression": "I(r)+3*r-61-57/2",
+      "parameters": {
+        "r": [
+          18,
+          51
+        ]
+      },
+      "expected_minimum": "23/2",
+      "source": "R-Z2, Section 5.2",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z2-double-cap-own-C7",
+      "strata": [
+        "Z2"
+      ],
+      "expression": "1+I(r)+3*r-57/2",
+      "parameters": {
+        "r": [
+          18,
+          51
+        ]
+      },
+      "expected_minimum": "147/2",
+      "source": "R-Z2, Section 5.3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z2-double-cap-other-C7",
+      "strata": [
+        "Z2"
+      ],
+      "expression": "21+I(r)+4*r-57/2",
+      "parameters": {
+        "r": [
+          18,
+          51
+        ]
+      },
+      "expected_minimum": "253/2",
+      "source": "R-Z2, Section 5.4",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z2-double-cap-generic",
+      "strata": [
+        "Z2"
+      ],
+      "expression": "I(r)+6*r-158-57/2",
+      "parameters": {
+        "r": [
+          18,
+          51
+        ]
+      },
+      "expected_minimum": "23/2",
+      "source": "Consolidated Z2 generic six-edge case",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z2-final",
+      "strata": [
+        "Z2"
+      ],
+      "expression": "13+imbalance+xi",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "xi": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "13",
+      "source": "R-Z2, Section 7",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-light0",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*8-567",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "90",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-light1",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*81+73-725",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "151",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-light2",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*154+146-891",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "204",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-alpha-heavy0",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*81-739",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "64",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-alpha-heavy-other",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*154+73-811",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "211",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A0-alpha-heavy-same",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*154+73-894",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "128",
+      "source": "Z3 empty-beta full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-heavy-s",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808+69-1415",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "127",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-heavy-t",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808-1467",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "6",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-heavy-ss",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808+69-1119",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "423",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-heavy-st",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808-1208",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "265",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-light-low-A",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808+69-1458",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "84",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z3-A1-light-high-A",
+      "strata": [
+        "Z3"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+808+69-1530",
+      "parameters": {
+        "r": [
+          21,
+          48
+        ]
+      },
+      "expected_minimum": "12",
+      "source": "Z3 opposite-H full proof, Sections 7-8",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-final-both-core-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "4*18-24",
+      "parameters": {},
+      "expected_minimum": "48",
+      "source": "R-Z4, Section 3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-final-both-core-heavy",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "2*18-22",
+      "parameters": {},
+      "expected_minimum": "14",
+      "source": "R-Z4, Section 3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-final-one-no-core",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "4*18-50",
+      "parameters": {},
+      "expected_minimum": "22",
+      "source": "R-Z4, Section 3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-final-both-no-core",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "148-125",
+      "parameters": {},
+      "expected_minimum": "23",
+      "source": "R-Z4, Section 3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z5-pair-empty-C5",
+      "strata": [
+        "Z5"
+      ],
+      "expression": "3*17+18*17-343",
+      "parameters": {},
+      "expected_minimum": "14",
+      "source": "R-Z5, mandatory C5 correction; coefficient 18",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z5-pair-empty-alpha",
+      "strata": [
+        "Z5"
+      ],
+      "expression": "11*38+40*38-1927",
+      "parameters": {},
+      "expected_minimum": "11",
+      "source": "R-Z5, Section 3",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z5-B-alpha-retained",
+      "strata": [
+        "Z5"
+      ],
+      "expression": "T(r)+4*r+3*I(r)-448",
+      "parameters": {
+        "r": [
+          28,
+          41
+        ]
+      },
+      "expected_minimum": "193",
+      "source": "R-Z5, Section 5",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z5-E-star",
+      "strata": [
+        "Z5"
+      ],
+      "expression": "15355-13987",
+      "parameters": {},
+      "expected_minimum": "1368",
+      "source": "R-Z5, E* and branch B alpha-empty",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P1-both-caps",
+      "strata": [
+        "P1"
+      ],
+      "expression": "194-139",
+      "parameters": {},
+      "expected_minimum": "55",
+      "source": "R-P1, Section 7",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P1-final",
+      "strata": [
+        "P1"
+      ],
+      "expression": "74-3*w/2",
+      "parameters": {
+        "w": [
+          0,
+          14
+        ]
+      },
+      "expected_minimum": "53",
+      "source": "R-P1, Section 9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P2-final",
+      "strata": [
+        "P2"
+      ],
+      "expression": "70+imbalance+xi-3*w/2",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "xi": [
+          0,
+          null
+        ],
+        "w": [
+          0,
+          14
+        ]
+      },
+      "expected_minimum": "49",
+      "source": "R-P2, Section 6",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m1-light",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+3*I(r)+32-434",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "268",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m1-heavy1",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+4*I(r)+5*8+2*74-742",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "141",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m1-heavy2",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+5*I(r)+6*8+4*74-1050",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "5",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m2-light",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+3*I(r)-3*12+4*8-354",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "312",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m2-heavy1",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+4*I(r)-4*12+5*8+2*74-629",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "206",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m2-heavy2",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+5*I(r)-5*12+6*8+4*74-904",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "91",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A0-m3",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+6*r+9*I(r)/4+24-2429/4",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "331/4",
+      "source": "P3 empty-beta small-gap/m3 proofs",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-m4-both-schemas",
+      "strata": [
+        "P3"
+      ],
+      "expression": "8-3",
+      "parameters": {},
+      "expected_minimum": "5",
+      "source": "R-P3 composition, m4",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m1-light",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+4*I(r)+71/4-2795/4",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "14",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m1-heavy",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+4*I(r)-2699/4",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "81/4",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m2-light-owner",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+4*r+I(r)+3*(r-35)**2-547",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "133",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m2-light-opposite",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+7*r+I(r)+3*(r-34)**2-610",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "133",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m2-heavy-owner",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+5*r+4*(r-35)**2-558",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "157",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P3-A1-m2-heavy-opposite",
+      "strata": [
+        "P3"
+      ],
+      "expression": "T(r)+6*r+4*(r-34)**2-552",
+      "parameters": {
+        "r": [
+          22,
+          47
+        ]
+      },
+      "expected_minimum": "157",
+      "source": "P3 opposite-H full proof, Sections 8-9",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-A0-pair-empty",
+      "strata": [
+        "P4"
+      ],
+      "expression": "51+21*imbalance+2*tau+delta",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "tau": [
+          0,
+          null
+        ],
+        "delta": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "51",
+      "source": "P4 original A0, Section 5",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-A0-alpha-retained-m1",
+      "strata": [
+        "P4"
+      ],
+      "expression": "T(r)+5*r+9*I(r)/2+3*delta/2-715",
+      "parameters": {
+        "r": [
+          27,
+          42
+        ],
+        "delta": [
+          9,
+          null
+        ]
+      },
+      "expected_minimum": "7/2",
+      "source": "P4 original A0, Section 6",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-A0-alpha-retained-m2",
+      "strata": [
+        "P4"
+      ],
+      "expression": "T(r)+5*r+8*I(r)-1+5*delta-736",
+      "parameters": {
+        "r": [
+          27,
+          42
+        ],
+        "delta": [
+          9,
+          null
+        ]
+      },
+      "expected_minimum": "44",
+      "source": "P4 original A0, Section 6",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-A0-alpha-empty",
+      "strata": [
+        "P4"
+      ],
+      "expression": "733+47*imbalance+6*tau+3*delta",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "tau": [
+          0,
+          null
+        ],
+        "delta": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "733",
+      "source": "P4 original A0, Section 7",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-opposite-m1",
+      "strata": [
+        "P4"
+      ],
+      "expression": "513-1837/4",
+      "parameters": {},
+      "expected_minimum": "215/4",
+      "source": "P4 classification/B, opposite-owner transport",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-opposite-m2",
+      "strata": [
+        "P4"
+      ],
+      "expression": "513-3685/8",
+      "parameters": {},
+      "expected_minimum": "419/8",
+      "source": "P4 classification/B, opposite-owner transport",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-same-m1",
+      "strata": [
+        "P4"
+      ],
+      "expression": "T(r)+5*r+25*I(r)/8-618",
+      "parameters": {
+        "r": [
+          27,
+          42
+        ]
+      },
+      "expected_minimum": "223/4",
+      "source": "P4 same-owner whole predicate, FINAL",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-same-m2",
+      "strata": [
+        "P4"
+      ],
+      "expression": "T(r)+5*r+25*I(r)/8-1-4943/8",
+      "parameters": {
+        "r": [
+          27,
+          42
+        ]
+      },
+      "expected_minimum": "439/8",
+      "source": "P4 same-owner m2, FINAL-M2; sigma_t >= -1",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-T5-m1",
+      "strata": [
+        "P4"
+      ],
+      "expression": "119/2+11*imbalance/2+sigma",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "sigma": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "119/2",
+      "source": "P4 T5 both first gaps, final",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P4-T5-m2",
+      "strata": [
+        "P4"
+      ],
+      "expression": "62+11*imbalance/2+sigma",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "sigma": [
+          0,
+          null
+        ]
+      },
+      "expected_minimum": "62",
+      "source": "P4 T5 both first gaps, final",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "P5-final",
+      "strata": [
+        "P5"
+      ],
+      "expression": "7+z+imbalance+delta",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "delta": [
+          0,
+          null
+        ],
+        "z": [
+          1,
+          14
+        ]
+      },
+      "expected_minimum": "8",
+      "source": "R-P5, Section 6",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "H-deficit-threshold",
+      "strata": [
+        "H"
+      ],
+      "expression": "155-145",
+      "parameters": {},
+      "expected_minimum": "10",
+      "source": "R-H, Section 2; direct defect floor 328",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "H-j-bound",
+      "strata": [
+        "H"
+      ],
+      "expression": "2*78-154",
+      "parameters": {},
+      "expected_minimum": "2",
+      "source": "R-H, Section 2; c<=154",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "H0-final",
+      "strata": [
+        "H"
+      ],
+      "expression": "638+2*z+4*imbalance+c",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "c": [
+          0,
+          null
+        ],
+        "z": [
+          15,
+          null
+        ]
+      },
+      "expected_minimum": "668",
+      "source": "R-H, Section 5",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "H1-not-O",
+      "strata": [
+        "H"
+      ],
+      "expression": "872+2*z+4*imbalance+delta",
+      "parameters": {
+        "imbalance": [
+          0,
+          null
+        ],
+        "delta": [
+          0,
+          null
+        ],
+        "z": [
+          15,
+          null
+        ]
+      },
+      "expected_minimum": "902",
+      "source": "R-H, Section 7",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "H1-final",
+      "strata": [
+        "H"
+      ],
+      "expression": "74-3*w/2",
+      "parameters": {
+        "w": [
+          0,
+          16
+        ]
+      },
+      "expected_minimum": "50",
+      "source": "R-H, Section 10",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-F-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+4*8-271",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "402",
+      "source": "Consolidated Z4 case card F-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-F-heavy1",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+82+4*8+74-562",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "291",
+      "source": "Consolidated Z4 case card F-heavy1",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-F-heavy2",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+5*I(r)+2*82+4*8+2*74-853",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "171",
+      "source": "Consolidated Z4 case card F-heavy2",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-O-heavy-s",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+69+2020/3-1025",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "1147/3",
+      "source": "Consolidated Z4 case card O-heavy-s",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-O-heavy-t",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+2020/3-1077",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "784/3",
+      "source": "Consolidated Z4 case card O-heavy-t",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-O-light-low",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+69+2020/3-1068",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "1018/3",
+      "source": "Consolidated Z4 case card O-light-low",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-O-light-high",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+69+2020/3-1140",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "802/3",
+      "source": "Consolidated Z4 case card O-light-high",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-S-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+9*I(r)/4+33-2349/4",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "231/4",
+      "source": "Consolidated Z4 case card S-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-S-heavy",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+9*I(r)/4+85/4+33+148-2981/4",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "69",
+      "source": "Consolidated Z4 case card S-heavy",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-EH-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+5*I(r)/2+16-1137/2",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "141/2",
+      "source": "Consolidated Z4 case card EH-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-EH-heavy",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+5*I(r)/2+123+16+74-1453/2",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "219/2",
+      "source": "Consolidated Z4 case card EH-heavy",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-owner-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*8+16-649",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "24",
+      "source": "Consolidated Z4 case card Ealpha-owner-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-owner-heavy-o",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*82+16+74-721",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "174",
+      "source": "Consolidated Z4 case card Ealpha-owner-heavy-o",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-owner-heavy-u",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+4*I(r)+3*82+16+74-929",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "72",
+      "source": "Consolidated Z4 case card Ealpha-owner-heavy-u",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-opposite-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*8+16-410",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "263",
+      "source": "Consolidated Z4 case card Ealpha-opposite-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-opposite-heavy1",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*82+16+4-576",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "249",
+      "source": "Consolidated Z4 case card Ealpha-opposite-heavy1",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-Ealpha-opposite-heavy2",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*82+16+8-742",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "87",
+      "source": "Consolidated Z4 case card Ealpha-opposite-heavy2",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-EC5-light",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*8+16-569",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "104",
+      "source": "Consolidated Z4 case card EC5-light",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-EC5-heavy-t",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*82+16+74-569",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "326",
+      "source": "Consolidated Z4 case card EC5-heavy-t",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-card-EC5-heavy-s",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "T(r)+4*r+3*I(r)+2*82+16+74-727",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "168",
+      "source": "Consolidated Z4 case card EC5-heavy-s",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    },
+    {
+      "id": "Z4-HIGH-beta-opposite-helper",
+      "strata": [
+        "Z4"
+      ],
+      "expression": "r*(r+1)+9*r+4*I(r)-994",
+      "parameters": {
+        "r": [
+          24,
+          45
+        ]
+      },
+      "expected_minimum": "229",
+      "source": "Consolidated Z4 high-beta helper",
+      "scope": "Conditional arithmetic: the cited human argument supplies the inequalities and case coverage.",
+      "note": ""
+    }
+  ],
+  "identities": [
+    {
+      "id": "C04-imbalance",
+      "left": "T(r)+T(69-r)-1225",
+      "right": "I(r)"
+    },
+    {
+      "id": "C04-cover-capacity",
+      "left": "18*78+85",
+      "right": "1489"
+    },
+    {
+      "id": "C04-source-mass-general",
+      "left": "1225+imbalance+tau+4*R+u+2*C+J-(1488+w-78*j-delta)",
+      "right": "-263+78*j-w+imbalance+tau+delta+4*R+u+2*C+J"
+    },
+    {
+      "id": "C08-lambda",
+      "left": "-(2*a1-a2-a3-a4)+(a1-a3-a4)+(a1-a2-a4)+(a1-a2-a3)",
+      "right": "a1-a2-a3-a4"
+    },
+    {
+      "id": "C09-beta",
+      "left": "2*a2-a1-a3-a4",
+      "right": "(a2-a3)-(a1-a2)-a4"
+    },
+    {
+      "id": "C09-alpha-C5",
+      "left": "(b2-b3-b4)+(a1-a2-a3-a4-b2)",
+      "right": "(a1-a2)-2*(a4+b4)-(a3-a4+b3-b4)"
+    },
+    {
+      "id": "P1-baseline-cubic-difference",
+      "left": "(-(k+1)**3+69*(k+1)**2-4*(k+1)+275)-(-k**3+69*k**2-4*k+275)",
+      "right": "-3*k**2+135*k+64"
+    },
+    {
+      "id": "P4-radial-final",
+      "left": "8*(89375/100-802125/1000)+(16+31)*imbalance+6*tau+3*delta",
+      "right": "733+47*imbalance+6*tau+3*delta"
+    }
+  ],
+  "linear_certificates": [
+    {
+      "id": "P4-A0-tight-margin",
+      "variables": [
+        "q",
+        "delta"
+      ],
+      "rows": [
+        {
+          "id": "integer-quadratic-minimum",
+          "coefficients": {
+            "q": "-1"
+          },
+          "rhs": "-705"
+        },
+        {
+          "id": "fixed-loss-nine",
+          "coefficients": {
+            "delta": "-1"
+          },
+          "rhs": "-9"
+        },
+        {
+          "id": "derived-endpoint-inequality",
+          "coefficients": {
+            "q": "1",
+            "delta": "3/2"
+          },
+          "rhs": "715"
+        }
+      ],
+      "multipliers": [
+        "1",
+        "3/2",
+        "1"
+      ],
+      "expected_rhs": "-7/2",
+      "scope": "These are final arithmetic premises, not a certificate of their geometric derivation."
+    }
+  ]
+}

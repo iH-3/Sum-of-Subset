@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "effective_hole_witnesses": 605,
+  "raw_high_states": 8890,
+  "retained_high_states": 11374,
+  "high_intervals": 277,
+  "maximum_c": 354,
+  "canonical_counts": {
+    "low": 936156,
+    "high": 679144
+  },
+  "stages": {
+    "fast": 1563308,
+    "full": 51126,
+    "gaps": 866
+  },
+  "all_actual_gap_descriptors_compared": 866,
+  "parent_ownership_components": 22,
+  "canonical_end": 1615300,
+  "assignment_bytes": 6461200,
+  "scope": "Independent formulas, exact set equality and complete END; ordinary leaf arithmetic is a separate replay obligation"
+}

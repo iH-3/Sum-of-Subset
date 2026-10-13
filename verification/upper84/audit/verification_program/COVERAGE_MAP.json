@@ -1,0 +1,346 @@
+{
+  "schema": "upper85-report-checker-map-v1",
+  "full_theorem_formally_verified": false,
+  "rows": [
+    {
+      "id": "LOWER71",
+      "report_reference": "71-element construction",
+      "checks": [
+        "LOWER71"
+      ],
+      "scope": "All subset sums, exactly fourfold sums, cardinality, mass and all 12 interval identities",
+      "status": "EXACT_COMPLETE_FOR_THIS_FINITE_SET"
+    },
+    {
+      "id": "F-COVER",
+      "report_reference": "four-extreme covering lemma",
+      "checks": [
+        "F-COVER-FIXED",
+        "F-COVER-NEGATIVE",
+        "G-FOREST"
+      ],
+      "scope": "All 110 label formulas and 26 disjoint negative-sum groups are checked, yielding allowance84. Exact unit partition is checked. Completeness of the covering construction and half-line pairing are human proofs.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "F-STRUCT",
+      "report_reference": "original SIZE86 structural theorem",
+      "checks": [
+        "F4_BOOTSTRAP_AP",
+        "F4_INVERSE",
+        "F4_FIXED_WITNESSES"
+      ],
+      "scope": "Exact finite scalar/witness components are checked; actual-set applicability and structural derivation remain written arguments.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "F-GENERAL",
+      "report_reference": "general additive/subset-sum inputs",
+      "checks": [
+        "F3_NONAP_2340"
+      ],
+      "scope": "Only the named non-AP finite base is directly checked; published and infinite deductions remain mathematical inputs.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "F-DENSE",
+      "report_reference": "high-hole foundation theorems",
+      "checks": [
+        "F6_H_PROFILES",
+        "F6_H_BANDS",
+        "F6_DENSE_BASES",
+        "F6_RESTRICTED_DIRECT"
+      ],
+      "scope": "Exact needed bounded bases/proof traces are checked. Density/inverse/scale reductions are written proofs.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-FOREST",
+      "report_reference": "rooted-forest loss lemma",
+      "checks": [
+        "G-FOREST"
+      ],
+      "scope": "Pointwise membership counting for the two used rooted trees is checked; actual resource selection/retention is a human premise.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-STAR4",
+      "report_reference": "lem:one-empty-leaf / eq:star4",
+      "checks": [
+        "G-FOREST"
+      ],
+      "scope": "Single-missing-leaf pointwise count checked; geometric overlap lower bounds remain written.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-FIRSTGAP",
+      "report_reference": "lem:first-gap-seven",
+      "checks": [
+        "G-FIRSTGAP",
+        "P1-baseline-cubic-difference"
+      ],
+      "scope": "Exact baseline identity, scalar range, cubic and minimum checked. Greedy first failure and coordinatewise baseline remain written.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-ONEHOLE",
+      "report_reference": "lem:one-hole-terminal / eq:one-hole-terminal",
+      "checks": [
+        "P1-final",
+        "H1-final"
+      ],
+      "scope": "Exact terminal margins 53 and 50. The compatible six-edge and source inequalities are written premises.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-TAIL",
+      "report_reference": "lem:four-top-tail / eq:tail",
+      "checks": [],
+      "scope": "Human proof of the top-multiset count and its application to targets",
+      "status": "HUMAN_PROOF"
+    },
+    {
+      "id": "G-TWOCAPS",
+      "report_reference": "lem:two-caps / eq:two-caps",
+      "checks": [
+        "P1-both-caps",
+        "H1-not-O"
+      ],
+      "scope": "Final numerical contradictions checked; activity hypotheses and analytical elimination remain human proofs.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-END1",
+      "report_reference": "uniform endpoint lemma and corrected endpoint bridge",
+      "checks": [
+        "G-ENDPOINT-RANKS"
+      ],
+      "scope": "Exact clipping-rank polynomial identities and 259 bounded rank checks are verified. The endpoint geometrical applicability and corrected infinite bridge remain written proofs.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-SOURCE",
+      "report_reference": "source-envelope lemmas",
+      "checks": [
+        "C04-source-mass-general"
+      ],
+      "scope": "Mass polynomial identities checked; set-hull and fringe arguments remain written.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "G-STRIP",
+      "report_reference": "common-strip lemma",
+      "checks": [],
+      "scope": "Analytical localization, complement symmetry and persistence proof",
+      "status": "HUMAN_PROOF"
+    },
+    {
+      "id": "C12-PARTITION",
+      "report_reference": "thirteen-stratum exhaustion",
+      "checks": [
+        "C12-PARTITION"
+      ],
+      "scope": "Complete finite scalar superset under the stated original budget; no configuration enumeration",
+      "status": "EXACT_CONDITIONAL_SCALAR_CHECK"
+    },
+    {
+      "id": "Z0",
+      "report_reference": "stratum Z0",
+      "checks": [
+        "Z0P0-pair1-owner-beta",
+        "Z0P0-pair1-owner-opposite"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "Z1",
+      "report_reference": "stratum Z1",
+      "checks": [
+        "Z1-pair1-missing",
+        "Z1-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "Z2",
+      "report_reference": "stratum Z2",
+      "checks": [
+        "Z2-double-cap-one-hole",
+        "Z2-double-cap-own-C7",
+        "Z2-double-cap-other-C7",
+        "Z2-double-cap-generic",
+        "Z2-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "Z3",
+      "report_reference": "stratum Z3",
+      "checks": [
+        "Z3-A0-light0",
+        "Z3-A0-light1",
+        "Z3-A0-light2",
+        "Z3-A0-alpha-heavy0",
+        "Z3-A0-alpha-heavy-other",
+        "Z3-A0-alpha-heavy-same",
+        "Z3-A1-heavy-s",
+        "Z3-A1-heavy-t",
+        "Z3-A1-heavy-ss",
+        "Z3-A1-heavy-st",
+        "Z3-A1-light-low-A",
+        "Z3-A1-light-high-A"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "Z4",
+      "report_reference": "stratum Z4",
+      "checks": [
+        "Z4-final-both-core-light",
+        "Z4-final-both-core-heavy",
+        "Z4-final-one-no-core",
+        "Z4-final-both-no-core",
+        "Z4-card-F-light",
+        "Z4-card-F-heavy1",
+        "Z4-card-F-heavy2",
+        "Z4-card-O-heavy-s",
+        "Z4-card-O-heavy-t",
+        "Z4-card-O-light-low",
+        "Z4-card-O-light-high",
+        "Z4-card-S-light",
+        "Z4-card-S-heavy",
+        "Z4-card-EH-light",
+        "Z4-card-EH-heavy",
+        "Z4-card-Ealpha-owner-light",
+        "Z4-card-Ealpha-owner-heavy-o",
+        "Z4-card-Ealpha-owner-heavy-u",
+        "Z4-card-Ealpha-opposite-light",
+        "Z4-card-Ealpha-opposite-heavy1",
+        "Z4-card-Ealpha-opposite-heavy2",
+        "Z4-card-EC5-light",
+        "Z4-card-EC5-heavy-t",
+        "Z4-card-EC5-heavy-s",
+        "Z4-HIGH-beta-opposite-helper"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "Z5",
+      "report_reference": "sec:z5; detailed A0/A1 case cards and corrected C5 zero-loss guard",
+      "checks": [
+        "Z5-pair-empty-C5",
+        "Z5-pair-empty-alpha",
+        "Z5-B-alpha-retained",
+        "Z5-E-star",
+        "Z5-ENDPOINT-CARDS",
+        "Z5-FIXED-LEDGERS",
+        "Z5-APPENDIX-ALGEBRA",
+        "Z5-APPENDIX-NEGATIVE"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P0",
+      "report_reference": "stratum P0",
+      "checks": [
+        "Z0P0-pair1-owner-beta",
+        "Z0P0-pair1-owner-opposite"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P1",
+      "report_reference": "stratum P1",
+      "checks": [
+        "P1-both-caps",
+        "P1-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P2",
+      "report_reference": "stratum P2",
+      "checks": [
+        "P2-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P3",
+      "report_reference": "sec:p3; eq:p3-a1-m3-algebra1 through algebra3; eq:p3-a1-m3-quadratic",
+      "checks": [
+        "P3-A0-m1-light",
+        "P3-A0-m1-heavy1",
+        "P3-A0-m1-heavy2",
+        "P3-A0-m2-light",
+        "P3-A0-m2-heavy1",
+        "P3-A0-m2-heavy2",
+        "P3-A0-m3",
+        "P3-m4-both-schemas",
+        "P3-A1-m1-light",
+        "P3-A1-m1-heavy",
+        "P3-A1-m2-light-owner",
+        "P3-A1-m2-light-opposite",
+        "P3-A1-m2-heavy-owner",
+        "P3-A1-m2-heavy-opposite",
+        "P3-APPENDIX-ALGEBRA",
+        "P3-SEEDS",
+        "P3-APPENDIX-NEGATIVE"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P4",
+      "report_reference": "stratum P4",
+      "checks": [
+        "P4-A0-pair-empty",
+        "P4-A0-alpha-retained-m1",
+        "P4-A0-alpha-retained-m2",
+        "P4-A0-alpha-empty",
+        "P4-opposite-m1",
+        "P4-opposite-m2",
+        "P4-same-m1",
+        "P4-same-m2",
+        "P4-T5-m1",
+        "P4-T5-m2",
+        "P4-PROPAGATION-SEEDS"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "P5",
+      "report_reference": "stratum P5",
+      "checks": [
+        "P5-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    },
+    {
+      "id": "H",
+      "report_reference": "stratum H",
+      "checks": [
+        "H-deficit-threshold",
+        "H-j-bound",
+        "H0-final",
+        "H1-not-O",
+        "H1-final"
+      ],
+      "scope": "Listed final arithmetic only. The report supplies activity classification, intermediate inequalities, geometric applicability and transported leaf coverage. No complete formal theorem claim.",
+      "status": "PARTIAL_MACHINE_CHECK_WITH_HUMAN_PROOF"
+    }
+  ],
+  "foundation_map": "foundations/COVERAGE.json",
+  "source_map": "SOURCE_MAP.json"
+}

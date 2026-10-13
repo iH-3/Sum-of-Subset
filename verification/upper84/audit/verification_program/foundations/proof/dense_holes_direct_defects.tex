@@ -1,0 +1,368 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.1cm,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,microtype,fancyhdr,enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Dense subset sums and direct defect bounds},pdfsubject={Rigorous research progress for the fourfold sumset problem}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\ints}[2]{[#1,#2]_{\Z}}
+\newcommand{\dd}{\delta_0}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.48em}
+\setlength{\emergencystretch}{2em}
+\setlist{topsep=.3em,itemsep=.2em,leftmargin=1.5em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Dense subset sums and direct defect bounds}
+\fancyhead[R]{\small 4 October 2026}
+\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{.3pt}
+\begin{document}
+\thispagestyle{plain}
+{\LARGE\bfseries Dense subset sums and direct defect bounds\par}
+\vspace{.5em}
+{\large A new proof update for the fourfold sumset problem\par}
+{4 October 2026\par}
+\section*{Main result and scope}
+For a finite real set $A$, let $\FS(A)$ be its subset sums, including the empty sum, and let $4A=A+A+A+A$, with repeated summands allowed. If $N$ is the largest possible size of a set satisfying $\FS(A)\subseteq4A$, the established global bounds remain
+\[
+\boxed{71\le N\le86}.
+\]
+This report does not exclude size $86$. It gives new rigorous restrictions on a hypothetical size-$86$ set, including the exclusion of its entire high-hole covering stratum $H_2$. These restrictions improve the proof coverage within the remaining upper-bound problem; they do not yet improve the numerical global upper bound to $85$.
+
+The new mathematics has three linked parts.
+\begin{enumerate}
+\item A bounded-deficit density theorem: if $X$ has $r$ positive integer elements, $\max X=r+\beta$, $0\le\beta\le9$, and $r\ge\beta+3$, then
+\[
+\ints{2\beta+1}{\sum X-2\beta-1}\subseteq\FS(X).
+\]
+There are at most $\beta$ lower holes and their reflected upper holes. This is proved for unbounded $r$, but only for $\beta\le9$.
+\item A stronger synchronous inference rule, using the relaxed threshold $i\ge\beta+5$ only for $\beta\le8$. Exact certificates give $280$ profiles and $9\,100$ exhaustive branches. They reduce $H_2$ to $16$ necessary scalar cells.
+\item A direct defect theorem: for primitive $X$, $31\le r=|X|\le38$ and $h(X)\ge15$ imply
+\[
+\rho(X)\ge8r-112.
+\]
+Together with the structural budget, this excludes all $16$ remaining cells by the contradiction $598\le587-I$, where $I\ge0$.
+\end{enumerate}
+\textbf{Verification boundary.} The companion archive rechecks the new finite density bases, the supplied synchronous certificates, the restricted direct-defect finite lemma, and the scalar $H_2$ consequence. The analytic proofs are given here. Previously accepted inverse and structural results are explicitly identified as premises. The archive does not rebuild the complete original canonical catalogue or the endpoint models, and is not a complete proof of the original extremal problem.
+
+\textbf{Frozen catalogue snapshot.} The separately accepted bookkeeping now excludes $1\,940\,385$ of the $2\,175\,360$ original descriptors, leaving $234\,975$: $28\,221$ in $Z$, $202\,952$ in $P$, and $3\,802$ in $H$ (all in $H_1$). These are proof cases, not candidate sets. This snapshot also includes separately accepted low-hole work outside the proofs developed here; the portable archive does not independently reconstruct these catalogue totals.
+
+This is a new report, separate from the earlier effective-hole progress report. No unrestricted density conjecture or general direct-defect extension is used.
+
+\newpage
+\section{Definitions and previously accepted premises}\label{premises}
+For $X=\{x_1<\cdots<x_r\}\subset\Z_{>0}$, write
+\[
+X_i=\{x_1,\ldots,x_i\},\quad S_i=\FS(X_i),\quad T_i=\frac{i(i+1)}2,
+\]
+\[
+\mu_i=|S_i|-1-T_i,\qquad y_i=\mu_i-\mu_{i-1},\qquad
+h(X)=\sum X+1-|\FS(X)|.
+\]
+A set is \emph{primitive} if its gcd is $1$. Define the diagonal defect count and adjusted defect by
+\[
+\dd(X)=\#\{x\in X:2x\notin\{u+v:u,v\in X\cup\{0\},\ u\ne v\}\},
+\qquad \rho(X)=\mu(X)+2-2\dd(X).
+\]
+Distinctness of the two summands in this definition is essential. Since $\dd(X)\le r$,
+\begin{equation}\rho(X)\ge\mu(X)+2-2r.\label{elementary}\end{equation}
+The following are previously accepted foundational premises, not new conclusions of this report.
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+\item \textbf{Chain and defect bounds.} $y_i\ge0$, $|S_i|\ge1+T_i$, and $\rho_i\ge-8$. For $i\ge14$, the retained bounds also give $\rho_i\ge0$. Adding the largest coefficient creates at most one new diagonal defect, so
+\begin{equation}\rho_i\ge\rho_{i-1}+y_i-2.\label{recurrence}\end{equation}
+\item \textbf{Small-increment inverse.} If $i\ge6$ and $y_i\le i-5$, then $X_i=tY$, where $Y$ is an $i$-element positive integer set with retained maximum $i+d$ and $0\le d\le y_i$. Thus $Y$ is $\ints1{i+d}$ with exactly $d$ deleted positions below its maximum. The positive scale $t$ need not initially be presumed integral.
+\item \textbf{Zero-increment equality and AP cases.} For $i\ge4$, $y_i=0$ implies $X_i=t\{1,\ldots,i\}$ and AP subset-sum support. A primitive final AP support has no holes. If the last AP-support prefix has size $k$, the first non-AP step has disjoint translates of its preceding support; its mandatory excess cost is derived in Section~\ref{profiles}.
+\item \textbf{Older counted-hole theorem.} For the larger-parameter uses, the inverse plus the retained theorem at $i\ge2\beta+5$ gives at most $\beta$ lower holes in $\ints1{2\beta}$ and their reflections. This older threshold is retained whenever $\beta>8$ in the new profile verifier.
+\item \textbf{Size-$86$ structure.} In the high-hole family the two cores $P,Q$ are individually primitive positive integer sets on the accepted common lattice. With $a=|P|$, $b=|Q|$, $s=\min(a,b)$,
+\[
+a+b=69,\quad15\le a,b\le54,\quad h(P),h(Q)\ge z\ge15,
+\quad I=(34-s)(35-s)\ge0.
+\]
+Nonnegative structural quantities satisfy
+\begin{equation}
+c+\rho_P+\rho_Q+T\le587-I,\qquad
+T\ge F(z):=\max(146-2z,49,z).\label{budget}
+\end{equation}
+The covering accounting is $c\ge78j+\delta$, with $j\ge0$ integral and $\delta\ge0$. The notation $H_j$ means this high-hole family with covering index $j$. These facts include the original genuine-target and loss-accounting restrictions; scalar inequalities do not assert realizability.
+\end{enumerate}
+
+\newpage
+\section{The bounded density theorem}
+\begin{theorem}\label{dense}
+Let $X$ have $r$ distinct positive integer elements, $M=\max X=r+\beta$, and $L=\sum X$. If $0\le\beta\le9$ and $r\ge\beta+3$, then
+\[
+\FS(X)=\ints0L\setminus\bigl(H\cup(L-H)\bigr),\quad
+H\subseteq\ints1{2\beta},\quad |H|\le\beta.
+\]
+In particular $\ints{2\beta+1}{L-2\beta-1}\subseteq\FS(X)$.
+\end{theorem}
+\textbf{Finite bases.} For $0\le\beta\le8$ check all boundary cases $r=\beta+3$, choosing $r-1$ elements from $\ints1{2\beta+2}$ and retaining $M=2\beta+3$. Their counts are
+\[
+1,4,15,56,210,792,3003,11440,43758,
+\]
+with total $59\,279$. Also check every admissible case $3\le r\le8$, giving $1,5,21,84,330,1287$ cases by size and total $1\,728$. These two lists overlap and are not a distinct-set partition. For $\beta=9$, the boundary $r=12$, $M=21$ has $\binom{20}{9}=167\,960$ cases. The combined boundary count is $227\,239$.
+
+Exact subset sums are obtained from a bitset $B=1$ by replacing $B$ with $B\mathbin{|}(B\ll x)$ for each coefficient $x$. Induction on the processed coefficients proves that bit $t$ is set exactly for represented $t$. Each enumerated set is checked for the central interval and the hole conclusion. This provides finite proofs of the bases, rather than random tests.
+
+\textbf{Induction for $\beta\le8$.} Use strong induction on $r$. Sizes $r\le8$ and all density-boundary cases have been checked. Otherwise $r\ge9$, $r\ge\beta+4$ and $M\le2r-4$. Remove $M$, obtaining $Y$, with total $L'$ and actual deficit $d=\max Y-(r-1)$. Then $0\le d\le\beta$ and $r-1\ge d+3$. By induction, $\FS(Y)$ contains $J=\ints{2d+1}{L'-2d-1}$. The supports of $Y$ and $Y\cup\{M\}$ give both $J$ and $M+J$, using disjoint coefficient sets for the translation. These intervals overlap or touch if $L'\ge M+4d+1$. Indeed,
+\[
+L'-(M+4d+1)\ge\frac{r(r-1)}2-(6r-19)
+=\frac{r^2-13r+38}2\ge1\quad(r\ge9).
+\]
+Their union contains $\ints{2d+1}{L-2d-1}$, hence the asserted interval for $\beta$.
+
+\textbf{Induction for $\beta=9$.} The base is $r=12$. For $r\ge13$, deleting $M=r+9$ leaves actual deficit $d\le9$ and size $r-1\ge12$. Apply the already proved $\beta\le8$ theorem when $d\le8$, and induction when $d=9$. Now
+\[
+L'\ge r(r-1)/2\ge r+46\ge M+4d+1.
+\]
+The middle inequality holds at $r=13$ ($78\ge59$) and its difference increases thereafter. The same joining argument completes this induction.
+
+\textbf{Counting the holes.} The central interval is nonempty: for $\beta\le8$, $L-4\beta-2\ge(r^2-7r+20)/2>0$; for $\beta=9$, $L\ge78>38$. Every lower hole lies in $\ints1{2\beta}$, strictly below $M$, and is absent from $X$ because a coefficient is a singleton sum. There are exactly $\beta$ missing coefficients below $M$. Thus $|H|\le\beta$. Complementing subsets gives $t\in\FS(X)\iff L-t\in\FS(X)$, so the only upper holes are $L-H$. This proves the theorem.
+
+\newpage
+\section{Stronger synchronous profile inference}\label{profiles}
+Suppose $X$ is primitive, $h(X)\ge h_0>0$, and, for contradiction, $\mu_r\le r+C$. Put $u_i=y_i-1$. The exhaustive branches are:
+\begin{itemize}
+\item $N$: no AP-support prefix of size at least $3$. Use indices $4,\ldots,r$, budget $D=C+3$, and initial lower vector $\ell_i=0$.
+\item $k=3,\ldots,r-1$: the last AP-support prefix has size $k$. Use indices $k+1,\ldots,r$, budget $D=C+k$, and initial vector $\ell_{k+1}=T_k-k-1$, all other entries zero.
+\end{itemize}
+By P3, every displayed $y_i$ is positive, so $u_i\ge0$. In either branch, writing $k=3$ for the first summation identity when needed,
+\[
+\sum_{i=k+1}^r u_i=\mu_r-\mu_k-(r-k)\le C+k.
+\]
+For the AP branch, disjoint translates at its first non-AP step give
+\[
+u_{k+1}=|S_k|-(k+1)-1=T_k+\mu_k-k-1\ge T_k-k-1.
+\]
+There is no final AP branch: primitivity and positive holes exclude it.
+
+Given a previously established lower vector $\ell$ with $\sum\ell\le D$, define the simultaneous available budgets
+\[
+U_j=D-\sum_{t\ne j}\ell_t,\qquad u_j\le U_j.
+\]
+A coordinate $\ell_i$ may be increased to $\beta\ge1$ if
+\begin{align}
+2\beta&<h_0,\label{rule1}\\
+i&\ge\begin{cases}\beta+5,&\beta\le8,\\2\beta+5,&\beta>8,\end{cases}\label{rule2}\\
+T_{j-2}-1&>U_j &&\text{for every }j>i,\label{rule3}\\
+T_{j-1}-6\beta&>j+U_j+1 &&\text{for every }j>i.\label{rule4}
+\end{align}
+Every right-hand side uses the \emph{old} vector, before any coordinate changes. All inequalities are strict where displayed. Empty future-index conditions at $i=r$ are vacuous.
+
+\textbf{Why the changed size threshold is valid.} Assume $y_i\le\beta$. When $\beta\le8$, the inverse applies because $i\ge\beta+5$. Its normalized prefix has actual deficit $d\le y_i\le\beta$ and $i\ge d+3$, so Theorem~\ref{dense} applies. When $\beta>8$, retain the older theorem and threshold P4. In each case the normalized support has lower holes $H\subseteq\ints1{2d}$ with $|H|\le d\le\beta$ (the older $\beta$ bounds also suffice in its range).
+
+The normalized coefficients have gcd $1$: they contain $i$ elements in $\ints1{i+d}$ with $i>d$, whereas any integer divisor at least $2$ permits fewer than $i$ multiples. A Bezout combination therefore makes the scale $t$ an integer. If $t>1$, final primitivity forces a first off-scale tail index $j$. Disjoint residue-class translates give $u_j\ge T_{j-2}-1$, contradicting \eqref{rule3}. If $i=r$, final primitivity forces $t=1$ directly. Thus the prefix is on the final integer lattice.
+
+\newpage
+\section{Endpoint propagation and the profile outputs}
+\textbf{The actual-deficit repair.} The relaxed threshold does \emph{not} imply $i>2\beta$. The needed fact is instead
+\[
+\max X_i=i+d>2d\ge\max H.
+\]
+Every later coefficient exceeds this initial maximum. Hence each new coefficient $x$ satisfies $x>\max H$ throughout the induction, without replacing the actual deficit $d$ by a larger artificial value.
+
+Put $a=\max H$ (or $a=0$ if $H=\varnothing$), $q=|H|$, and let $L$ be the current total before index $j$. Its support is $\ints0L\setminus(H\cup(L-H))$. The bands are disjoint because $L\ge T_i>4\beta\ge2a$ under either permitted size threshold. If $x\ge L-2a$, the shifted support adds above $L$ at least
+\[
+\min(x,L+1)-2q\ge L-2a-2q\ge T_{j-1}-6\beta
+\]
+points. But the available support increment is $j+y_j\le j+U_j+1$, contrary to \eqref{rule4}. Thus $x\le L-2a-1$.
+
+The filled integer intervals $\ints{a+1}{L-a-1}$ and $\ints{x+a+1}{x+L-a-1}$ overlap or touch, filling the new central interval. Since $x>a$, exactly the old lower holes $H$ persist below or at $a$. Complementation supplies exactly the upper holes $L+x-H$. Iterating yields $h(X)=2q\le2\beta<h_0$, a contradiction. Therefore $y_i>\beta$, equivalently $u_i\ge\beta$, proving the inference rule.
+
+\textbf{No circularity.} Every update in a round is justified from the same already valid old vector. The updates therefore hold jointly. Induction on rounds proves every certificate vector. A terminal sum $\sum\ell>D$ excludes that branch. Exhausting the $N$ branch and every $k=3,\ldots,r-1$ proves $\mu_r\ge r+C+1$. No stalled search is interpreted as a realization or optimality claim.
+
+\textbf{Finite outputs.} The supplied certificate covers all $15\le r\le54$ and
+\[
+h_0\in\{5,7,9,15,17,21,49\}.
+\]
+It has $280$ claims, $9\,100$ branches, $138\,010$ coordinate increases and $2\,113\,664$ checked future-index pairs; $29\,938$ increases use the relaxed size threshold. Each complete vector sequence is checked directly, including mandatory AP costs. For the high-hole application, the elementary conversion \eqref{elementary} alone gives:
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Hole threshold for each core & Sizes checked & Minimum paired $\rho$ floor\\
+\midrule
+$15$ & every $a+b=69$, $15\le a,b\le54$ & $300$\\
+$17$ & same & $345$\\
+$21$ & same & $391$\\
+$49$ & same & $436$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are minima over all $40$ physical orientations, not an inference from the balanced pair alone. Although the source profiles also record retained flexible-inverse floors, those extra floors are unnecessary for these four paired minima and the $H_2$ proof below.
+
+\newpage
+\section{Reducing the entire high-hole scalar domain}\label{scalar}
+Use only P5 and the paired floors just proved. Since $c$, both defects, and $T$ are nonnegative, $T\ge z$ first gives $z\le587$. Thus checking all $40\cdot573=22\,920$ oriented $(a,z)$ cells with $15\le z\le587$ is exhaustive, not an arbitrary truncation. The following analytic bands also handle the tail directly.
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+Range of $z$ & Paired floor & $F(z)$ & Consequence\\
+\midrule
+$15\le z\le16$ & $300$ & $146-2z$ & $c\le141+2z-I\le173-I$\\
+$17\le z\le20$ & $345$ & $146-2z$ & $c\le96+2z-I\le136-I$\\
+$21\le z\le48$ & $391$ & $146-2z$ & $c\le50+2z-I\le146-I$\\
+$z\ge49$ & $436$ & $z$ & $c+z\le151-I$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In particular $c\le173-I$ and $z\le151$. Since $c\ge78j+\delta$, every $j\ge3$ is excluded: even $3\cdot78=234>173$. For $H_1$, $\delta\le95-I$ and globally $z\le73$ (the high-tail bound gives $z\le73-I$, while $z<49$ is already below $73$).
+
+For $H_2$, $c\ge156+\delta$. Every $z\ge17$ is impossible: the next two band caps are at most $136-I$ and $146-I$, and the high-tail cap is at most $102-I$, all below $156$. At $z=15,16$, the first band gives
+\begin{equation}\delta\le2z-15-I.\label{remaining}
+\end{equation}
+Nonnegativity implies $I\le15$ or $17$, respectively. Writing $s=\min(a,b)$, the only possibilities are $s=31,32,33,34$:
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$s$ & Oriented sizes $(a,b)$ & $I$ & $\delta$ cap at $z=15$ & at $z=16$\\
+\midrule
+31 & $(31,38),(38,31)$ & 12 & 3 & 5\\
+32 & $(32,37),(37,32)$ & 6 & 9 & 11\\
+33 & $(33,36),(36,33)$ & 2 & 13 & 15\\
+34 & $(34,35),(35,34)$ & 0 & 15 & 17\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are exactly $16$ surviving \emph{necessary scalar cells} at this stage. They are not constructed sets, endpoint solutions, or counts of canonical descriptors. Every original $H_2$ case outside these cells has already been excluded by the bounded-profile calculation, independently of the direct defect theorem in the next sections.
+
+The separation matters: a later theorem may now be applied only to $31\le a,b\le38$, rather than claimed for every core size. No stronger full-set hole inequality than the retained structural estimates is introduced, and none is needed for the final arithmetic contradiction.
+
+\newpage
+\section{The finite lemma behind the direct defect bound}
+\begin{lemma}\label{finite}
+For $14\le j\le38$, let $Y$ have $j$ positive integer elements with $\max Y=j+q$ and $0\le q\le9$. If $h(Y)\ge15$, then
+\[
+\rho(Y)\ge8j-44.
+\]
+\end{lemma}
+\textbf{Why a small finite family is exhaustive.} Theorem~\ref{dense} applies since $j\ge14\ge q+3$. Its two hole bands are disjoint: $L=\sum Y\ge T_{14}=105>36$. Therefore $h(Y)=2|H|\ge15$ implies $|H|\ge8$ and $q\in\{8,9\}$. Each lower hole lies in $\ints1{18}$ and is absent as a coefficient. Thus at least eight deleted positions lie in $\ints1{18}$.
+
+There are precisely three deletion types:
+\begin{enumerate}
+\item $q=8$: eight deletions in $\ints1{18}$;
+\item $q=9$: nine deletions in $\ints1{18}$;
+\item $q=9$: eight deletions in $\ints1{18}$ and one in $\ints{19}{j+8}$.
+\end{enumerate}
+The maximum $j+q$ is always retained. Sums up to $18$ depend only on coefficients up to $18$, so the exact low-hole filter can be evaluated before the high coefficient choices.
+
+All $\binom{18}{8}=43\,758$ eight-deletion patterns are tested; exactly $151$ have at least eight missing sums in $\ints1{18}$. All $\binom{18}{9}=48\,620$ nine-deletion patterns are tested; exactly $1\,108$ survive. For each fixed $j$, the exhaustive family therefore has
+\[
+151+1108+151(j-10)=151j-251
+\]
+members. Across $j=14,\ldots,38$, the total is
+\[
+\sum_{j=14}^{38}(151j-251)=91\,875.
+\]
+No reflection or other symmetry representatives replace members of this list.
+
+\textbf{Exact verification.} For each member, compute the full subset-sum support, $\mu$, and $\dd$ using the distinct-pair definition. Check $h\ge15$ and $\rho\ge8j-44$ explicitly. The minimum difference $\rho-(8j-44)$ is zero at every size. A sharp example within this restricted family deletes
+\[
+\{1,3,5,7,9,11,13,15\}\quad\text{from }\ints1{j+8};
+\]
+it has $h=16$, $\dd=1$, and $\rho=8j-44$.
+
+The source result was independently checked using exhaustive $18$-bit masks, descending Boolean-array subset-sum computation, and the sumset of unordered distinct pairs for defects, rather than the producer's combination lists and per-coefficient reflection test. The portable archive provides its own documented exact replay. The finite lemma's exhaustiveness depends on Theorem~\ref{dense}; the number $91\,875$ alone would not justify restricting arbitrary dense sets to these patterns.
+
+This lemma concerns normalized dense prefixes. It is substantially stronger than the final direct theorem on its restricted input family; the loss in passing to general primitive sets comes from controlling all possible tails.
+
+\newpage
+\section{The direct defect theorem and the tail budget}
+\begin{theorem}\label{direct}
+If $X\subset\Z_{>0}$ is primitive, $31\le r=|X|\le38$, and $h(X)\ge15$, then $\rho(X)\ge8r-112$.
+\end{theorem}
+Assume to the contrary that $\rho_r\le8r-113$. If every $y_i\ge10$ for $14\le i\le r$, recurrence \eqref{recurrence} from $\rho_{13}\ge-8$ gives
+\[
+\rho_r\ge-8+8(r-13)=8r-112,
+\]
+a contradiction. Otherwise choose the \emph{last} $j\in\{14,\ldots,r\}$ with $y_j\le9$. The inverse P2 applies since $9\le j-5$, yielding $X_j=tY$ with actual deficit $q\le9$. Write $d=r-j$. Every later $y_i\ge10$.
+
+\textbf{A simultaneous cap before any bridge argument.} If $d>0$, summing the recurrence and using $\rho_j\ge-8$ gives
+\[
+\sum_{i=j+1}^r(y_i-2)\le\rho_r+8\le8r-105.
+\]
+For any chosen tail index, remove the other $d-1$ terms, each at least $8$. The result is
+\begin{equation}
+10\le y_i\le8j-95\qquad(j<i\le r).\label{tailcap}
+\end{equation}
+This cap is established before using scale one or preservation of holes; there is no circular dependence on either conclusion.
+
+Positive scaling preserves subset-sum cardinality and diagonal defects, hence $\rho(Y)=\rho(X_j)$. If $h(Y)\ge15$, Lemma~\ref{finite} and the tail recurrence give
+\[
+\rho_r\ge8j-44+8d=8r-44,
+\]
+contradicting the assumed upper bound by $69$. Thus $h(Y)\le14$. This is a statement about the normalized set $Y$, not the ambient integer hull of $tY$.
+
+\textbf{Forcing scale one.} Since $j>q$, the $j$ elements of $Y$ in $\ints1{j+q}$ cannot all be divisible by any integer at least $2$. Thus $\gcd(Y)=1$, and Bezout applied to the integral set $tY$ shows that $t$ is an integer. If $d=0$, primitivity of the final set gives $t=1$.
+
+If $d>0$ and $t>1$, take the first later coefficient outside $t\Z$, at index $k$. Its preceding support and its translate occupy disjoint residue classes, so
+\[
+y_k=|S_{k-1}|-k\ge1+T_{k-1}-k=T_{k-2}\ge T_{j-1}.
+\]
+But
+\[
+T_{j-1}-(8j-95)>0\qquad(j\ge14):
+\]
+the difference is $74$ at $j=14$ and its next difference is $j-8>0$. This contradicts \eqref{tailcap}. Therefore $t=1$ in every case.
+
+At this point the normalized hole information is valid on the actual final integer lattice. The last step is to prove that no tail coefficient can disrupt its endpoint-hole form while respecting the simultaneous cap \eqref{tailcap}.
+
+\newpage
+\section{Preserving the holes and excluding all of H2}
+By Theorem~\ref{dense}, the prefix support is $\ints0L\setminus(H\cup(L-H))$ with $H\subseteq\ints1{2q}$, $q\le9$. Put $b=\max H$, or $b=0$ when $H$ is empty. We have $b\le18$ and $|H|\le9$ (in fact $|H|\le7$ because $h(Y)\le14$). Every subsequent coefficient exceeds the prefix maximum $j+q>2q\ge b$.
+
+Suppose the same endpoint form holds at a current size $m\ge j$, before adjoining $x$. The span satisfies $L\ge T_m$. If $x\ge L-2b$, the translate adds above $L$ at least
+\[
+\min(x,L+1)-2|H|\ge L-2b-2|H|\ge T_m-54
+\]
+points. This count is valid both for $x\le L$ (there are $x$ potential positions above $L$) and for $x>L$ (all $L+1$ shifted positions lie above $L$), with at most $2|H|$ absent positions.
+
+On the other hand, \eqref{tailcap} allows at most
+\[
+m+1+y_{m+1}\le m+8j-94
+\]
+new support points. The lower bound is strictly larger, since
+\[
+T_m-54-(m+8j-94)=T_m-m-8j+40>0
+\quad(m\ge j\ge14).
+\]
+The minimum is $19$ at $m=j=14$. It increases with $m$, and along the diagonal its next difference is $j-8>0$. Hence $x\le L-2b-1$.
+
+The filled intervals $\ints{b+1}{L-b-1}$ and $\ints{x+b+1}{x+L-b-1}$ overlap or touch. They fill the new central interval. Since $x>b$, the translate cannot fill an old lower hole, and subset complementation gives exactly the reflected upper holes in the new span $L+x$. This also covers $H=\varnothing$. Induction through the tail gives
+\[
+h(X)=2|H|=h(Y)\le14,
+\]
+contradicting $h(X)\ge15$. When $d=0$, this contradiction already held after scale one. Theorem~\ref{direct} is proved.
+
+\begin{corollary}
+The entire high-hole covering stratum $H_2$ is impossible under the accepted size-$86$ structural premises.
+\end{corollary}
+Section~\ref{scalar} independently reduced this stratum to $31\le a,b\le38$ and $z\in\{15,16\}$. Both cores are primitive and each has at least $15$ holes. Theorem~\ref{direct} gives
+\[
+\rho_P+\rho_Q\ge8(a+b)-224=328.
+\]
+The covering index is $j=2$, so $c\ge156$. Also $T\ge146-2z\ge114$. Consequently
+\[
+\boxed{c+\rho_P+\rho_Q+T\ge156+328+114=598>587-I.}
+\]
+This contradicts \eqref{budget} by at least $11$. Combining the earlier excluded cells with this final contradiction covers every original $H_2$ scalar domain, rather than only balanced sizes or selected realizations.
+
+\newpage
+\section{Reproducibility and remaining work}
+\textbf{What the portable verification establishes.} The archive is designed for Python $3.10$ or later using only the standard library and relative paths. Its README gives the exact commands and expected receipts. The finite tasks are:
+\begin{enumerate}
+\item Enumerate the bounded-density bases: $227\,239$ boundary cases for $0\le\beta\le9$ and $1\,728$ small-size cases, with the stated overlap convention.
+\item Check all $280$ supplied profiles and all $9\,100$ branches directly. Reconstruct initial budgets and mandatory AP costs; require monotonic vectors; test each increase against every later index using the old vector, exact strict inequalities, and the appropriate bounded-$\beta$ threshold.
+\item Reconstruct the restricted dense high-hole family in Lemma~\ref{finite}, with $151$ eight-low-deletion patterns, $1\,108$ nine-low-deletion patterns, and $91\,875$ complete sets across $14\le j\le38$.
+\item Convert the profiles to elementary paired defect floors, check the complete scalar domain and its surviving $16$ cells, then verify the direct-theorem budget contradiction for each surviving orientation and $z$.
+\item Run deliberately corrupted inputs or rule tests to check that the verifier rejects malformed coverage, altered bounds, and invalid inference steps. Such negative controls support implementation review; they do not replace the mathematical proofs.
+\end{enumerate}
+The delivered archive is tested from a fresh extraction with normal Python and with Python's \texttt{-O} option. Mathematical failures use explicit checks rather than removable \texttt{assert} statements. File hashes bind the delivered inputs and programs. The receipt describes the exact computations that were run; the README separates the main replay from any slower alternative algorithm.
+
+\textbf{What it does not establish by itself.} No finite checksum proves the infinite induction, the scale-one argument, or the structural reduction. Those have mathematical proofs, with the old results stated in Section~\ref{premises} as dependencies. The archive does not reproduce the entire $2\,175\,360$-descriptor canonical stream, regenerate endpoint matrices, rerun historical optimizations, or show that remaining scalar cells correspond to actual sets. It uses no unrestricted extension of Theorem~\ref{dense} beyond $\beta=9$. The profile threshold relaxation remains restricted to $\beta\le8$, even though the separate direct theorem uses the $\beta=9$ extension.
+
+\textbf{Progress toward the upper bound.} The older high-hole profile had a paired floor of $249$ at $h\ge15$. The new bounded-density profiles raise the minimum to $300$ over the full size range, excluding $H_j$ for every $j\ge3$. The direct method then supplies the needed $328$ paired floor on the independently reduced $H_2$ sizes and excludes $H_2$ completely. Its mechanism is to retain the diagonal defect in $\rho$, rather than discard that information through only the elementary conversion from $\mu$.
+
+The remaining challenge is to close the other possible size-$86$ families. The exact maximum is not determined here, and the current proven global conclusion remains $71\le N\le86$. A future result excluding all size-$86$ configurations would be required before claiming the upper bound $85$.
+\end{document}

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "exact local row arithmetic; resource applicability supplied by written proof",
+  "source_cap_used": 221,
+  "active_Ht_native_loss_cap": 76,
+  "endpoint_cases": [
+    {
+      "P_peeled": 0,
+      "Ht_peeled": 0,
+      "upper": 182,
+      "lower": 394,
+      "margin": 212
+    },
+    {
+      "P_peeled": 1,
+      "Ht_peeled": 0,
+      "upper": 267,
+      "lower": 394,
+      "margin": 127
+    },
+    {
+      "P_peeled": 0,
+      "Ht_peeled": 1,
+      "upper": 253,
+      "lower": 394,
+      "margin": 141
+    },
+    {
+      "P_peeled": 1,
+      "Ht_peeled": 1,
+      "upper": 338,
+      "lower": 394,
+      "margin": 56
+    }
+  ]
+}

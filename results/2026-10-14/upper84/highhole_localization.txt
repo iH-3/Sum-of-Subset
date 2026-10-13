@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "profile_minima": {
+    "15": {
+      "mu": 426,
+      "rho": 294,
+      "orientations": 39
+    },
+    "17": {
+      "mu": 470,
+      "rho": 338,
+      "orientations": 39
+    },
+    "21": {
+      "mu": 514,
+      "rho": 382,
+      "orientations": 39
+    },
+    "49": {
+      "mu": 554,
+      "rho": 422,
+      "orientations": 39
+    }
+  },
+  "bands": [
+    {
+      "h": 15,
+      "width_margin": 195,
+      "core_mass_margin": 171,
+      "kmax": 13
+    },
+    {
+      "h": 17,
+      "width_margin": 315,
+      "core_mass_margin": 199,
+      "kmax": 12
+    },
+    {
+      "h": 21,
+      "width_margin": 363,
+      "core_mass_margin": 131,
+      "kmax": 13
+    }
+  ],
+  "tail_width_margin": 93,
+  "tail_core_mass_margin": 120
+}

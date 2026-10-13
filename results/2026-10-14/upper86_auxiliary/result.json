@@ -1,0 +1,293 @@
+{
+  "schema": "upper86-complete-finite-verification-v1",
+  "started_utc": "2026-10-13T23:19:13.040982+00:00",
+  "output_directory": "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy",
+  "complete_finite_replay": false,
+  "analytic_proof_assistant_formalization": false,
+  "stages": [
+    {
+      "name": "auxiliary_lattice",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "lattice"
+      ],
+      "returncode": 0,
+      "seconds": 0.05832762800037017,
+      "log": "auxiliary_lattice.log",
+      "log_sha256": "a9f325312f8662d8e8079bbe9a0c9f449487f3211621b2c64df088a2aea9146e"
+    },
+    {
+      "name": "auxiliary_gates",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "gates"
+      ],
+      "returncode": 0,
+      "seconds": 107.78466627299986,
+      "log": "auxiliary_gates.log",
+      "log_sha256": "2bf5b5c4e89a52efc0d190013d201546d26e6895e13a22307e17fd06ae77d1e2"
+    },
+    {
+      "name": "auxiliary_boundaries",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "boundaries"
+      ],
+      "returncode": 0,
+      "seconds": 0.09695856399957847,
+      "log": "auxiliary_boundaries.log",
+      "log_sha256": "53641b65ebe8375de605683bb3ec5f447c2a964caa8b14cce993a3059f5aff23"
+    },
+    {
+      "name": "auxiliary_apfree",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/check_apfree_extensions.py",
+        "--output",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/apfree_extensions.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.485858088999521,
+      "log": "auxiliary_apfree.log",
+      "log_sha256": "3f78a1414bef7c7aeec733e2b9600bc33d2cfd24e68935d3663167e67765fe60"
+    },
+    {
+      "name": "verify_front",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_front.py",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/verify_front"
+      ],
+      "returncode": 0,
+      "seconds": 0.1260464970000612,
+      "log": "verify_front.log",
+      "log_sha256": "74aefc59eb4f9664086b303b208b8d69554492d11d23eac816bfae0efd8a1382"
+    },
+    {
+      "name": "verify_foundations_independent",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_foundations_independent.py",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/verify_foundations_independent"
+      ],
+      "returncode": 0,
+      "seconds": 0.06956069100033346,
+      "log": "verify_foundations_independent.log",
+      "log_sha256": "aedb5ecdbf183b09a8ddaddd79b44c8a43e80a44b806279dcea890df41048628"
+    },
+    {
+      "name": "verify_universal_lattice",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_universal_lattice.py",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/verify_universal_lattice"
+      ],
+      "returncode": 0,
+      "seconds": 0.02334557100039092,
+      "log": "verify_universal_lattice.log",
+      "log_sha256": "dc7a7f7623f3b8bae800b7092182540806e2ff68367498a4288d341111cfc6a1"
+    },
+    {
+      "name": "verify_uniform_four_margins",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_uniform_four_margins.py",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/verify_uniform_four_margins"
+      ],
+      "returncode": 0,
+      "seconds": 0.023438902000634698,
+      "log": "verify_uniform_four_margins.log",
+      "log_sha256": "6f4e9316aa668ddee1505937ee6cfd5dc1e026eb09fce0c13c1b6cace0af4ed7"
+    },
+    {
+      "name": "check_ap_exception_symbolic",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/check_ap_exception_symbolic.py",
+        "--proof-root",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/check_ap_exception_symbolic"
+      ],
+      "returncode": 0,
+      "seconds": 0.02720682300059707,
+      "log": "check_ap_exception_symbolic.log",
+      "log_sha256": "065074e792722d4941972138f592d31ee9add6cff79c8bb3f00b2c059c83c03e"
+    },
+    {
+      "name": "check_independent_applicability",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/check_independent_applicability.py",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/check_independent_applicability"
+      ],
+      "returncode": 0,
+      "seconds": 0.8654437599998346,
+      "log": "check_independent_applicability.log",
+      "log_sha256": "5e8ca87ad02f997b9c5d42449f3d96a68734e679ce985bb1619a7b6ef4f23f62"
+    },
+    {
+      "name": "check_canonical_coverage",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/check_canonical_coverage.py",
+        "--proof-root",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/check_canonical_coverage"
+      ],
+      "returncode": 0,
+      "seconds": 7.050204994000524,
+      "log": "check_canonical_coverage.log",
+      "log_sha256": "f1b5e656579c6acd83bf01601ff068d4de1015cd4c70e4ed2900f68f53feca2b"
+    },
+    {
+      "name": "check_selected_forests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/independent_checks/check_selected_forests.py",
+        "--proof-root",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86",
+        "--output-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/check_selected_forests"
+      ],
+      "returncode": 0,
+      "seconds": 26.21575449700049,
+      "log": "check_selected_forests.log",
+      "log_sha256": "fbda3ff9a007986d77b76edd2ebc02914bdc5d48aa76905f45923ca347682cb7"
+    },
+    {
+      "name": "partial_range_positive_control",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "0",
+        "--stop",
+        "1000",
+        "--receipts",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/negative_control_partial_range"
+      ],
+      "returncode": 0,
+      "seconds": 33.84526395299963,
+      "log": "partial_range_positive_control.log",
+      "log_sha256": "a6c223f14e0c8598fc369fcfcd3013c1e3ac603312d72eb8594bb30c642a6fc1"
+    },
+    {
+      "name": "replay_guards",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/check_replay_guards.py",
+        "--receipt-dir",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/negative_control_partial_range",
+        "--output",
+        "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/runs/20261013T231913Z_k561ilgy/replay_guards.json"
+      ],
+      "returncode": 0,
+      "seconds": 63.87146233099975,
+      "log": "replay_guards.log",
+      "log_sha256": "ea12a29b62a2c03a26b75e2ce2aa7db7eea7dfbebe35786811f897279cb33fd3"
+    }
+  ],
+  "complete_manifest_sha256": "5c3be0c63bff175f88a5c32f7d713e5df7fdee3fb8a01b8ac04a575e58b01a7b",
+  "manifested_files": 5286,
+  "mode": "auxiliary-only",
+  "returncode": 0,
+  "finished_utc": "2026-10-13T23:23:16.183721+00:00",
+  "seconds": 243.1427566379998
+}

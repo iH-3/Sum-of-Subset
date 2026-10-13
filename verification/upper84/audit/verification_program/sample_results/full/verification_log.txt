@@ -1,0 +1,145 @@
+Upper-85 exact verification | mode: full
+PASS means a stated executable check passed; analytical dependencies remain explicit.
+PASS | INPUT-DATA | Read required arithmetic inputs
+PASS | LOWER71 | Exact subset sums, exactly four summands and all 12 interval rows
+PASS | F-COVER-FIXED | Exact 110-label expansion and 26 disjoint negative-sum group certificate
+PASS | F-COVER-NEGATIVE | Reject altered fixed-group coefficient and duplicated resource
+PASS | P4-PROPAGATION-SEEDS | Seven exact subset-sum seed supports and propagation mass bounds
+PASS | G-ENDPOINT-RANKS | Exact integer clipping-rank identities and interval inequalities
+PASS | G-FIRSTGAP | Shared P1/H1 exact first-gap identity, integer ranges and baseline minimum
+PASS | G-FOREST | Original whole-unit inventory and pointwise rooted-resource accounting
+PASS | C12-PARTITION | 13 disjoint exhaustive scalar-domain strata under the stated structure
+PASS | ARITHMETIC-INVENTORY | Every mandatory polynomial and terminal arithmetic case is present
+PASS | C04-imbalance | Exact symbolic coefficient identity
+PASS | C04-cover-capacity | Exact symbolic coefficient identity
+PASS | C04-source-mass-general | Exact symbolic coefficient identity
+PASS | C08-lambda | Exact symbolic coefficient identity
+PASS | C09-beta | Exact symbolic coefficient identity
+PASS | C09-alpha-C5 | Exact symbolic coefficient identity
+PASS | P1-baseline-cubic-difference | Exact symbolic coefficient identity
+PASS | P4-radial-final | Exact symbolic coefficient identity
+PASS | Q-I | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z2-3r | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z2-4r | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z3-A0 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z3-A1 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-3I | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-4I | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-5I | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-A1-m2-owner | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-A1-m2-opposite | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-A1-heavy-owner | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-A1-heavy-opposite | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-A0-m3 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P4-A0-m1 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P4-A0-m2-before-minus1 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P4-same-owner | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-P3-boundary143 | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z4-5I | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z4-ninequarters | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z4-fivehalves | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z4-HIGH-beta | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Q-Z2-6r | Exact polynomial expansion, global integer minimum and physical-domain check
+PASS | Z0P0-pair1-owner-beta | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z0P0-pair1-owner-opposite | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z1-pair1-missing | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z1-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z2-double-cap-one-hole | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z2-double-cap-own-C7 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z2-double-cap-other-C7 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z2-double-cap-generic | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z2-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-light0 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-light1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-light2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-alpha-heavy0 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-alpha-heavy-other | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A0-alpha-heavy-same | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-heavy-s | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-heavy-t | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-heavy-ss | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-heavy-st | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-light-low-A | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z3-A1-light-high-A | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-final-both-core-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-final-both-core-heavy | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-final-one-no-core | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-final-both-no-core | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z5-pair-empty-C5 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z5-pair-empty-alpha | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z5-B-alpha-retained | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z5-E-star | Positive terminal contradiction margin under supplied analytical premises
+PASS | P1-both-caps | Positive terminal contradiction margin under supplied analytical premises
+PASS | P1-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | P2-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m1-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m1-heavy1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m1-heavy2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m2-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m2-heavy1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m2-heavy2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A0-m3 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-m4-both-schemas | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m1-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m1-heavy | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m2-light-owner | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m2-light-opposite | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m2-heavy-owner | Positive terminal contradiction margin under supplied analytical premises
+PASS | P3-A1-m2-heavy-opposite | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-A0-pair-empty | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-A0-alpha-retained-m1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-A0-alpha-retained-m2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-A0-alpha-empty | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-opposite-m1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-opposite-m2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-same-m1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-same-m2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-T5-m1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P4-T5-m2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | P5-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | H-deficit-threshold | Positive terminal contradiction margin under supplied analytical premises
+PASS | H-j-bound | Positive terminal contradiction margin under supplied analytical premises
+PASS | H0-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | H1-not-O | Positive terminal contradiction margin under supplied analytical premises
+PASS | H1-final | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-F-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-F-heavy1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-F-heavy2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-O-heavy-s | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-O-heavy-t | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-O-light-low | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-O-light-high | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-S-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-S-heavy | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-EH-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-EH-heavy | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-owner-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-owner-heavy-o | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-owner-heavy-u | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-opposite-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-opposite-heavy1 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-Ealpha-opposite-heavy2 | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-EC5-light | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-EC5-heavy-t | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-card-EC5-heavy-s | Positive terminal contradiction margin under supplied analytical premises
+PASS | Z4-HIGH-beta-opposite-helper | Positive terminal contradiction margin under supplied analytical premises
+PASS | CERT-P4-A0-tight-margin | Exact nonnegative rational combination cancels coefficients and has negative RHS
+PASS | NEGATIVE-CONTROLS | Reject corrupt coefficient, omitted row/case, tampered certificate and zero margin
+PASS | P3-APPENDIX-ALGEBRA | Detailed P3 baseline and complete A1 exact arithmetic, including m3
+PASS | P3-SEEDS | Exact m4 supports and all 2380 thirteen-of-seventeen seed intervals
+PASS | P3-APPENDIX-NEGATIVE | Reject altered m3 coefficient and omitted A1 step
+PASS | Z5-ENDPOINT-CARDS | Exact endpoint bodies, constants, errors and retained-template resource checks
+PASS | Z5-FIXED-LEDGERS | Exact fixed-label credits linked to the independent original-cover certificate
+PASS | Z5-APPENDIX-ALGEBRA | Quadratic minima, positive terminals, eliminations and corrected affine reductions
+PASS | Z5-APPENDIX-NEGATIVE | Reject endpoint, ledger and affine mutations including obsolete C5 constants
+PASS | F3_NONAP_2340 | Generic non-AP deleted-interval finite base
+PASS | F4_BOOTSTRAP_AP | STRUCTURAL86 bootstrap and AP/halfstep scalar predicates
+PASS | F4_INVERSE | STRUCTURAL86 inverse, endpoint repair, overlap and primitivity arithmetic
+PASS | F4_FIXED_WITNESSES | Four fixed integer witnesses over the complete three-family domain
+PASS | F6_H_PROFILES | H-only synchronous profile proof traces at four hole thresholds
+PASS | F6_H_BANDS | H paired floors, four analytic bands, j>=3 and H2 contradiction
+PASS | F6_DENSE_BASES | Bounded-density complete boundary and small-cardinality bases
+PASS | F6_RESTRICTED_DIRECT | Complete restricted direct-defect base with independent algorithms
+Summary: 140 PASS, 0 FAIL, 0 SKIP; 28.411s
+The complete theorem has NOT been formally verified by this program.
+RESULT: All requested executable checks passed.

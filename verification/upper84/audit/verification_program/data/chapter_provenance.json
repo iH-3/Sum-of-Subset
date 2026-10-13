@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "source_id": "chapters/p3/verification_formulas.json",
+      "sha256": "70cabbdb043b676def326e9017230e544d0dc4a36750d2bf910cb9cbfb729b48"
+    },
+    {
+      "source_id": "chapters/z5/algebra_rows.json",
+      "sha256": "90bbb5ec8f00c6aaa099e93f11732e608ceaf099823c5323cf92f9470b4e50bc"
+    }
+  ],
+  "adaptations": [
+    "P3 absolute source paths replaced by stable source IDs; precomputed verification summary removed and all35 A1 arithmetic steps recomputed",
+    "Z5 endpoint/card/ledger/elimination/affine arithmetic ported from the development SymPy checker to exact_math; no SymPy code is shipped",
+    "JSON numeric91.0 normalized to exact rational string91",
+    "Reviewer correction adds mandatory linked C5 constant and affine guards999/7 plus explicit obsolete1039/47 mutation",
+    "Affine substitution bound directions are recorded and verified by exact coefficient signs"
+  ],
+  "scope": "Source identity is provenance only. Arithmetic is recomputed; actual-set geometry and template exhaustiveness remain human proofs."
+}

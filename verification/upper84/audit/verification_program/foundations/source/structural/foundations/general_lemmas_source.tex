@@ -1,0 +1,943 @@
+% Selected general mathematical lemmas. Original line ranges are marked below.
+% This is a source companion, not a standalone LaTeX document.
+
+% Original source lines 269--424
+\section{The four-extreme-element covering count}\label{sec:cover}
+
+For a finite set $F$, put
+\[
+ R(F)=\{x+y:x,y\in F,\ x\ne y\},
+ \qquad \Delta(F)=\card{2F\setminus R(F)}.
+\]
+Every value in $2F\setminus R(F)$ is a diagonal value $2x$, and
+$x\mapsto2x$ is injective.  Hence
+\begin{equation}
+ \Delta(F)\leq\card F.
+ \label{eq:delta-trivial}
+\end{equation}
+
+From a feasible set $A$ containing zero, take the four largest positive
+elements and the four smallest negative elements, taking every element on a
+side that has fewer than four.  Call their union $B$, and put
+\[
+ D=A\setminus B,\qquad d=\card D.
+\]
+Then $0\in D$ and $\card B\leq8$.
+
+\begin{lemma}[Four-extreme-element covering]\label{lem:cover-count}
+If $\FS(A)\subseteq4A$, then
+\begin{equation}
+ \boxed{\card{\FS(D)}\leq2\card{2D}+18d+85.}
+ \label{eq:sharp-cover}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We first work on the positive side.  Let
+$p_1>p_2>p_3>p_4>0$ be the four largest positive elements, and put
+$T_p=p_1+p_2+p_3+p_4$.  If $x\in\FS(D)$ and $x>0$, then
+$T_p+x\in4A$.  Write a representation in decreasing order:
+\[
+ T_p+x=z_1+z_2+z_3+z_4,
+ \qquad z_1\geq z_2\geq z_3\geq z_4.
+\]
+Classifying by the first failure of $z_i\leq p_i$ gives only
+\[
+\begin{array}{c|l}
+2&2p_1+u+v,\\
+3&p_1+2p_2+u\quad\text{or}\quad3p_2+u,\\
+4&p_1+p_2+2p_3,\ p_1+3p_3,\ 2p_2+2p_3,\ p_2+3p_3,\ 4p_3.
+\end{array}
+\]
+Subtracting $T_p$ and substituting $A=D\sqcup B$ gives the table
+\[
+\begin{array}{c|ccc}
+\toprule
+\text{source}&\text{translates of }2D&\text{translates of }D&\text{fixed slots}\\
+\midrule
+(2p_1-T_p)+A+A&1&8&36\\
+(p_1+2p_2-T_p)+(A\setminus\{p_1\})&0&1&7\\
+(3p_2-T_p)+(A\setminus\{p_1\})&0&1&7\\
+\text{five fixed shapes}&0&0&5\\
+\midrule
+\text{total}&1&10&55\\
+\bottomrule
+\end{array}
+\]
+The negative side gives the same table.  Without deletions, the two sides and
+zero yield
+\begin{equation}
+ \card{\FS(D)}\leq2\card{2D}+20d+111.
+ \label{eq:raw-cover}
+\end{equation}
+
+If one side has fewer than four elements, all elements of that sign lie in
+$B$, and $D$ has no subset sum of that sign.  The single remaining table is
+already stronger than \eqref{eq:sharp-cover}.  We may therefore assume that
+both sides have four extreme elements.  Write the absolute values on the
+negative side as $q_1>q_2>q_3>q_4>0$.
+
+Among the twenty translates of $D$, Appendix~\ref{app:slots} gives two
+distinct pairs of centers $u\leq v$.  For any such pair,
+\begin{equation}
+ \card{(u+D)\cap(0,\infty)}+
+ \card{(v+D)\cap(-\infty,0)}\leq d,
+ \label{eq:halfline}
+\end{equation}
+because for one $z\in D$ the conditions $z>-u$ and $z<-v$ cannot both hold.
+The two pairs reduce the linear contribution from $20d$ to $18d$.
+
+There are $110$ fixed slots in the two tables.  Appendix~\ref{app:slots}
+places them in one common universe and gives $26$ mutually disjoint groups.
+The total score in every group is coordinatewise nonpositive in eight
+strictly positive gap variables, so at least one slot in each group lies on
+the wrong open half-line.  At most $110-26=84$ fixed slots survive.  Adding
+zero gives the constant $85$, proving \eqref{eq:sharp-cover}.
+\end{proof}
+
+\section{Two four-element peeling steps}\label{sec:peeling}
+
+\begin{lemma}[Four-element peeling]\label{lem:peeling}
+Let $F$ be a finite real set containing zero and at least four nonzero
+elements.  Four nonzero elements can be deleted to obtain $F'$ such that
+\[
+ \card{\FS(F)}\geq\card{\FS(F')}+\card{R(F)}-1.
+\]
+\end{lemma}
+
+\begin{proof}
+Choose the two largest positive and the two smallest negative elements,
+filling with as-yet unselected nonzero elements if one side has fewer than
+two.  Call the selected set $H$, put $F'=F\setminus H$, and define
+\[
+ \alpha=\sum_{h\in H,\,h<0}h,
+ \qquad \beta=\sum_{h\in H,\,h>0}h,
+ \qquad t=\beta-\alpha>0.
+\]
+The extreme choice gives $R(F)\subseteq[\alpha,\beta]$, while
+\[
+ \alpha+\FS(F')\subseteq\FS(F),
+ \qquad \beta+\FS(F')\subseteq\FS(F).
+\]
+In every residue class modulo $t$ occupied by $\FS(F')$, the union of these
+two translates contains at least one more point than $\FS(F')$.  In the
+length-$t$ interval $[\alpha,\beta]$, each residue class occurs at most once,
+except that the endpoints have the same residue.  Thus $R(F)$ occupies at
+least $\card{R(F)}-1$ residue classes.  Add one point of $R(F)$ from every
+class not already supplied by the two translates.  The stated inequality
+follows.
+\end{proof}
+
+If $d\leq8$, then $\card A\leq d+8\leq16$, so the desired upper bound is
+already trivial.  Hence assume $d\geq9$.  The set $D$ then has at least eight
+nonzero elements, and after the first deletion the remaining set still has at
+least four.  We may therefore apply the lemma twice:
+\[
+ D\supset D_1\supset E,
+ \qquad \card{D_1}=d-4,
+ \qquad \card E=d-8,
+ \qquad 0\in E.
+\]
+Deleting four elements affects at most
+\[
+ 4(d-4)+\binom42=4d-10
+\]
+unordered pairs of distinct elements.  Hence
+\[
+ \card{R(D_1)}\geq\card{R(D)}-(4d-10).
+\]
+If $s=\card{\FS(E)}$, the two peeling inequalities give
+\begin{equation}
+ \card{\FS(D)}\geq s+2\card{R(D)}-4d+8.
+ \label{eq:peel-lower}
+\end{equation}
+Since $\card{2D}=\card{R(D)}+\Delta(D)$, comparison with
+\eqref{eq:sharp-cover} eliminates $R(D)$ and gives
+\begin{equation}
+ \boxed{s\leq22d+2\Delta(D)+77.}
+ \label{eq:core-upper}
+\end{equation}
+
+
+% Original source lines 438--626
+\section{Subset-sum stability, increments, and defects}\label{sec:upper}
+For an $r$-element positive real set $X$, define its subset-sum excess and its
+doubled-value defect by
+\[
+ \mu(X)=\card{\FS(X)}-\left(1+\frac{r(r+1)}2\right),
+ \qquad
+ \delta_0(X)=\card{\{x\in X:2x\notin R(X\cup\{0\})\}}.
+\]
+The elementary increasing-chain argument gives $\mu(X)\geq0$.
+
+We use the following published stability theorem in precisely its stated
+range: if $r\geq4$, $0\leq M\leq r-4$, and
+\[
+ \card{\FS(X)}\leq1+\frac{r(r+1)}2+M,
+\]
+then $X=cB$ for some $c>0$ and an $r$-element set
+$B\subset\mathbb Z_{>0}$ satisfying
+\[
+ \sum_{b\in B}b\leq\frac{r(r+1)}2+M.
+\]
+This is Theorem~1.1 of Carpenter--Defant--Kravitz~\cite{CDK2026}.
+
+We also use Lemma~3.6 and Theorem~1.5 of
+Balandraud--Girard--Griffiths--Hamidoune~\cite{BGGH2013}.  For a finite
+subset of a finite abelian group, these give
+\begin{equation}
+ U\cap(-U)=\varnothing\quad\Longrightarrow\quad
+ \card{\FS(U)}\geq2\card U,
+ \label{eq:antisymmetric-bound}
+\end{equation}
+and, if $S=-S$, $\card S=2p\geq4$, and $\FS(S)$ is aperiodic, then
+\begin{equation}
+ \card{\FS(S)}\geq p(p-1)+5.
+ \label{eq:symmetric-bound}
+\end{equation}
+Here a finite set is \emph{aperiodic} if only translation by zero fixes it.
+
+\begin{lemma}[Aperiodic subset sums]\label{lem:aperiodic-linear}
+Let $G$ be an abelian group and let
+$R\subseteq G\setminus\{0\}$ have $m\geq2$ elements.  If $\FS(R)$ is
+aperiodic, then
+\begin{equation}
+ \boxed{\card{\FS(R)}\geq2m-2.}
+ \label{eq:aperiodic-linear}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+First suppose that $G$ is finite.  No member of $R$ has order two: otherwise
+$\FS$ of that singleton, and hence $\FS(R)$, has a nonzero period.  Decompose
+\[
+ R=S\sqcup U,\qquad S=-S,\quad \card S=2p,\quad
+ U\cap(-U)=\varnothing,\quad \card U=u.
+\]
+The subset-sum set of every subset of $R$ is aperiodic, since any of its
+periods would also be a period after addition of the complementary
+subset-sum set.  Kneser's theorem, whose stabilizer is therefore trivial,
+gives
+\[
+ \card{\FS(R)}\geq\card{\FS(S)}+\card{\FS(U)}-1.
+\]
+If $p=0$, \eqref{eq:antisymmetric-bound} gives the stronger bound $2m$.
+If $p=1$, then $\card{\FS(S)}=3$, and the right side is at least
+$2u+2=2m-2$ (with the empty-$U$ case even larger).  If $p\geq2$ and
+$u\geq1$, equations \eqref{eq:antisymmetric-bound} and
+\eqref{eq:symmetric-bound} give
+\[
+ p(p-1)+5+2u-1
+ =2m-2+(p-2)(p-3)\geq2m-2.
+\]
+If $p\geq2$ and $u=0$, the difference between the bound
+$p(p-1)+5$ and $2m-2=4p-2$ is $p^2-5p+7>0$.
+
+For a general $G$, work in the finitely generated subgroup generated by
+$R$ and put $K=\FS(R)$.  Residual finiteness supplies a finite quotient whose
+map is injective on $K+K-K$.  It also preserves aperiodicity: a nonzero period
+of the image of $K$ can be written as the image of $k_1-k_0$; injectivity on
+$K+K-K$ then lifts every translated point back to $K$, producing a nonzero
+period of $K$.  The finite-group result in this quotient proves
+\eqref{eq:aperiodic-linear}.
+\end{proof}
+
+Order a positive set as $X_i=\{x_1<\cdots<x_i\}$ and put
+\[
+ d_i=\card{(x_i+\FS(X_{i-1}))\setminus\FS(X_{i-1})},
+ \qquad y_i=d_i-i.
+\]
+The standard chain argument gives $y_i\geq0$ and
+\begin{equation}
+ \mu(X_i)=\sum_{j=1}^i y_j.
+ \label{eq:increment-sum}
+\end{equation}
+We shall also use the exact equality case in Lemma~2.1 of
+Carpenter--Defant--Kravitz~\cite{CDK2026}: for $i\geq4$,
+\begin{equation}
+ y_i=0\quad\Longleftrightarrow\quad
+ X_i=t\{1,2,\ldots,i\}\quad\text{for some }t>0.
+ \label{eq:zero-increment}
+\end{equation}
+
+\begin{lemma}[Unit-increment inverse lemma]\label{lem:unit-increment}
+If $i\geq6$ and $y_i=1$, then there are $t>0$ and $q\in\{1,\ldots,i\}$
+such that
+\begin{equation}
+ X_i=t\bigl(\{1,2,\ldots,i+1\}\setminus\{q\}\bigr).
+ \label{eq:unit-increment}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $x=x_i$, reduce $x_1,\ldots,x_{i-1}$ modulo $x$ in the circle group
+$\mathbb R/x\mathbb Z$, and call the resulting $(i-1)$-element set $R$.
+Let $\rho=\card{\FS(R)}$.  Distinct occupied residues give distinct maximal
+$x$-chains in $\FS(X_{i-1})$, while
+$0,x_1,\ldots,x_{i-1}$ occupy distinct residues.  Hence
+\[
+ i\leq\rho\leq d_i=i+1.
+\]
+If $\FS(R)$ were aperiodic, Lemma~\ref{lem:aperiodic-linear} would give
+$\rho\geq2i-4>i+1$, a contradiction.
+
+Let $H$ be the nontrivial stabilizer of $\FS(R)$, write
+$h=\card H$ and $\rho=hq_0$, and put $v=\card{R\cap H}$.  Kneser's theorem
+applied to the $(i-1)$ sets $\{0,r\}$ gives
+\[
+ \rho\geq h(i-v),\qquad v\leq h-1,\qquad h+q_0\geq i+1.
+\]
+If $q_0\geq2$, then
+\[
+ \rho=hq_0\geq2(h+q_0)-4\geq2i-2>i+1,
+\]
+again impossible.  Thus $q_0=1$, so $\FS(R)=H$ and $R\subseteq H$.
+The circle group has a unique subgroup of order $h$; with $t=x/h$ and
+representatives in $(0,x)$,
+\[
+ X_i=t\bigl(\{1,\ldots,h\}\setminus D\bigr),\qquad
+ \card D=h-i,\qquad i\leq h\leq i+1,
+\]
+where $D\subseteq\{1,\ldots,h-1\}$.  The case $h=i$ is the homogeneous
+progression and has $y_i=0$.  Therefore $h=i+1$ and $D=\{q\}$, proving
+\eqref{eq:unit-increment}.
+\end{proof}
+
+\begin{lemma}[Uniform defect versus excess]\label{lem:defect-excess}
+For every finite positive real set $X$,
+\begin{equation}
+ \boxed{2\delta_0(X)-\mu(X)\leq10.}
+ \label{eq:defect-excess}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Use the prefixes above and write $\delta_i=\delta_0(X_i)$ and
+$\Phi_i=2\delta_i-\mu(X_i)$.  Adding $x_i$ can remove old defects and can
+create only the one new defect $x_i$, so
+\begin{equation}
+ \Phi_i\leq\Phi_{i-1}+2-y_i.
+ \label{eq:defect-recurrence}
+\end{equation}
+For $i\leq5$, the trivial bounds $\delta_i\leq i$ and $\mu(X_i)\geq0$
+give $\Phi_i\leq10$.
+
+Proceed by induction for $i\geq6$.  If $y_i\geq2$, equation
+\eqref{eq:defect-recurrence} preserves the bound.  If $y_i=0$, the published
+increment-equality case \eqref{eq:zero-increment} makes $X_i$ a homogeneous
+progression; then $\delta_i=1$, $\mu(X_i)=0$, and $\Phi_i=2$.
+
+It remains to consider $y_i=1$.  By Lemma~\ref{lem:unit-increment}, after
+scaling we have $X_i=[1,i+1]_{\mathbb Z}\setminus\{q\}$.  Every present
+$k\in[2,i-1]_{\mathbb Z}$ has two disjoint representations
+\[
+ 2k=(k-1)+(k+1)=(k-2)+(k+2),
+\]
+where $0$ is allowed; deleting one $q$ cannot destroy both.  The largest
+element $i+1$ is defective.  The only possible additional defect is $1$
+when $q=2$, or $i$ when $q=i-1$.  Thus $\delta_i\leq2$, and
+$\delta_i=2$ is possible only for these two values of $q$.
+
+For $q=2$ and $q=i-1$, the integer totals are respectively
+\[
+ T_i+i-1\quad\hbox{and}\quad T_i+2,
+ \qquad T_i=\frac{i(i+1)}2.
+\]
+Both exceed $T_i+1$.  If $\mu(X_i)\leq1$, the published stability theorem
+with $M=\mu(X_i)\leq1\leq i-4$ would give an integer normalization of total
+at most $T_i+1$.  Since both displayed sets contain $1$, every integer
+normalization has total at least the displayed total, a contradiction.
+Hence $\mu(X_i)\geq2$ whenever $\delta_i=2$.  In all cases
+$\Phi_i\leq2$, completing the induction and the proof.
+\end{proof}
+
+% Original source lines 679--934
+\begin{lemma}[Small-increment inverse lemma]\label{lem:small-increment}
+Let $i\geq6$ and $0\leq y_i\leq i-5$.  There are an integer $h$ and a set
+$D_0\subseteq[1,h-1]_{\mathbb Z}$ such that, for some $t>0$,
+\[
+ i\leq h\leq i+y_i,\qquad \card{D_0}=h-i,\qquad
+ X_i=t\bigl([1,h]_{\mathbb Z}\setminus D_0\bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Repeat the circle-group argument in Lemma~\ref{lem:unit-increment}, now with
+$d_i=i+y_i$.  If the projected subset-sum set were aperiodic, its cardinality
+$\rho$ would satisfy
+\[
+ \rho\geq2i-4>i+y_i.
+\]
+For a nontrivial stabilizer, retain the notation $h,q_0,v$ from that proof.
+If $q_0\geq2$, then
+\[
+ \rho=hq_0\geq2(h+q_0)-4\geq2i-2>i+y_i.
+\]
+Thus $q_0=1$, the projected subset sums form the subgroup of order
+$h=\rho$, and $i\leq h\leq i+y_i$.  Taking the representatives in $(0,x_i)$
+gives the asserted interval with $h-i$ deletions.
+\end{proof}
+
+\section{Two stronger defect estimates}\label{sec:new-defect}
+For a positive set $X$, write
+\[
+\Phi(X)=2\delta_0(X)-\mu(X),\qquad
+\rhoD(X)=2-\Phi(X)=\mu(X)+2-2\delta_0(X).
+\]
+The uniform estimate already proved is $\Phi\leq10$.
+
+\begin{lemma}[Deleted intervals]\label{lem:deleted}
+Let $X=[1,r+q]_{\mathbb Z}\setminus D$, where $|D|=q$, $r+q\notin D$,
+and $r\geq\max(5,4q+1)$. Then $\Phi(X)\leq2$.
+For $q=1,2$ and $r\geq7$, one also has $\delta_0(X)\leq2q$.
+\end{lemma}
+\begin{proof}
+The case $q=0$ is immediate. Put $h=r+q$ and
+$C=\{h-d:d\in D\}$. The integer total excess is
+\[
+e=\sum X-T_r=\sum_{c\in C}c-T_{q-1}.
+\]
+There are $\min(k,h-k)$ disjoint representations of $2k$ by distinct
+members of $[0,h]_{\mathbb Z}$ when $k\ne h/2$; for $k=h/2$, use $0+h$.
+Therefore a defective present $k$ is either in $[1,q]$ or in $[r,h]$.
+There are at most $q+1$ high defects. For $q\geq2$ there are at most $q-1$
+low defects: having all of $1,\ldots,q$ present and defective would make
+2 both absent (from defectivity of 1) and present. For $q=1$, the direct
+one-deletion argument above gives at most two defects. These observations
+prove $\delta_0(X)\leq2q$ and the last assertion.
+
+Since $r>q$, no integer greater than one can divide all $r$ elements
+of this interval with $q$ deletions; hence $X$ has gcd one.
+If $\mu(X)\leq r-4$, the stability theorem in Section~\ref{sec:upper}
+implies $\mu(X)=e$: any integer normalization of a primitive integer set
+is an integer dilation, and the support lies in $[0,\sum X]$.
+Suppose first that there are no low defects. Apart from $h$, let the $m$
+high defects be $h-t$. Their presence and defectivity imply
+$t\notin C$ and $2t\in C$. Replacing these distinct depths $2t$ by their
+absent halves $t$ leaves $q$ distinct positive integers. Hence
+\[
+e\geq q+\sum t\geq q+m\geq2m=2\delta_0(X)-2.
+\]
+If there are $\ell\geq1$ low defects, their forced holes $2k$ have distinct
+depths at least $r-q$, spaced by at least two. Thus
+\[
+e\geq\ell(r-q)+\ell(\ell-1)+T_{q-\ell}-T_{q-1}.
+\]
+Subtracting $2q+2\ell$ gives
+\[
+\ell(r-2q-2)+\tfrac32\ell(\ell-1)-q\geq0
+\]
+under $r\geq4q+1$. Since $\delta_0(X)\leq q+1+\ell$, this again implies
+$e\geq2\delta_0(X)-2$.
+Finally, if $\mu(X)>r-4$, then
+\[
+\Phi(X)\leq4q-(r-3)\leq2.
+\]
+All cases give the claim.
+\end{proof}
+
+\begin{theorem}[Threshold 14]\label{thm:phi14}
+For every positive real set $X$ of size $r\geq14$,
+\[
+\boxed{\Phi(X)\leq2,\qquad\rhoD(X)\geq0.}
+\]
+\end{theorem}
+\begin{proof}
+For $9\leq i\leq14$, put $q_i=\lfloor(i-1)/4\rfloor$.
+If $y_i\leq q_i$, the small-increment inverse lemma expresses $X_i$, up to
+scaling, as an initial integer interval with at most $q_i$ deletions.
+Lemma~\ref{lem:deleted} gives $\Phi(X_i)\leq2$.
+If $y_i\geq q_i+1$, the defect recurrence gives
+$\Phi(X_i)\leq\Phi(X_{i-1})+1-q_i$.
+Starting from the uniform bound 10 at size 8 gives the following successive
+upper bounds:
+\[
+\begin{array}{c|rrrrrrr}
+i&8&9&10&11&12&13&14\\\hline
+\Phi(X_i)\text{ upper bound}&10&9&8&7&6&4&2.
+\end{array}
+\]
+After size 14, increments $y_i\geq2$ preserve the bound. For $y_i=0$ or 1,
+the equality and unit-increment arguments in Section~\ref{sec:upper}
+already give $\Phi(X_i)\leq2$.
+\end{proof}
+
+\begin{theorem}[Penalty for a non-progression support]\label{thm:nonap}
+If $X$ is a positive real set of size $r\geq6$ and $\FS(X)$ is not an
+arithmetic progression, then
+\[
+\boxed{\rhoD(X)\geq r-14.}
+\]
+\end{theorem}
+\begin{proof}
+At $r=6$ the uniform bound gives $\rhoD\geq-8=r-14$.
+Induct on $r\geq7$. If $y_r\leq2$, the small-increment inverse lemma gives
+a primitive deleted interval with at most two deletions. It has at most
+four defects. Its non-progression support implies $\mu\geq r-3$ by the
+stability theorem, since $\mu\leq r-4$ would force a full interval in the
+primitive normalization. Consequently $\rhoD\geq r-9\geq r-14$.
+
+Now let $y_r\geq3$. If the preceding support is not an arithmetic
+progression, the induction hypothesis and
+$\rhoD(X_r)\geq\rhoD(X_{r-1})+y_r-2$ give the result.
+If the preceding support is $t[0,L]_{\mathbb Z}$, its translate by $x_r$
+must be disjoint from it; an overlap would produce an arithmetic progression
+again. Hence
+\[
+y_r=|\FS(X_{r-1})|-r\geq\frac{(r-1)(r-2)}2.
+\]
+Using $\rhoD(X_{r-1})\geq-8$ gives
+$\rhoD(X_r)\geq (r-1)(r-2)/2-10\geq r-14$.
+\end{proof}
+
+\section{A sharper effective hole threshold}\label{sec:holes}
+For a finite integer set $S$, its hull-hole count is
+$\max S-\min S+1-|S|$. For a set on a specified lattice $u\mathbb Z$,
+divide by $u$ before counting holes.
+
+We use Lev's central-interval theorem~\cite{Lev1998}: if
+$B\subseteq[1,L]_{\mathbb Z}$, $|B|=s$, and $L\leq3s/2-2$, then
+\[
+[2L-2s+1,\ \sum B-(2L-2s+1)]_{\mathbb Z}\subseteq\FS(B).
+\]
+Write $\mathcal S(L,H)=[0,L]_{\mathbb Z}\setminus(H\cup(L-H))$.
+The endpoint bridge proved below states that an
+integer prefix of size $m$ with support $\mathcal S(L,H)$ preserves the same
+endpoint holes upon adjoining its next element with excess at most $E$, if
+$2h<L$ and
+\[
+m\geq M(h,q,E):=
+\max\left\{h,1+\left\lfloor
+\frac{1+\sqrt{9+8(E+2q+2h)}}2\right\rfloor\right\},
+\quad h=\max H,\quad q=|H|.
+\]
+Here $h=q=0$ is allowed. We need this explicit bridge, not an unspecified
+``sufficiently large'' threshold from a classification theorem.
+
+\begin{lemma}[Small increments with counted holes]\label{lem:counted-holes}
+If $i\geq2E+5$ and $0\leq y_i=e\leq E$, then
+\[
+X_i=t([1,i+e]_{\mathbb Z}\setminus D),\qquad |D|=e,
+\]
+and, after division by $t$,
+\[
+\FS(t^{-1}X_i)=\mathcal S(L,H),\qquad
+H\subseteq[1,2e]_{\mathbb Z},\qquad |H|\leq e.
+\]
+\end{lemma}
+\begin{proof}
+For $e=0$, the increment equality case gives the assertion directly.
+Assume $e>0$. The small-increment inverse lemma first gives the same form with $\delta$
+deletions, $0\leq\delta\leq e$, and largest coefficient $i+\delta$.
+Remove that coefficient. The remaining $i-1$ integers lie in
+$[1,i+\delta-1]$ and satisfy Lev's density condition, because
+$i\geq2\delta+5$. Their support therefore has endpoint state
+$H\subseteq[1,2\delta]$. Its total $L_0$ satisfies
+\[
+L_0\geq T_{i-1}>i+\delta+4\delta.
+\]
+Adding $i+\delta$ overlaps the two central intervals and leaves exactly
+the same endpoint holes. Its support increment is $i+\delta$; comparison
+with $i+e$ gives $\delta=e$.
+Finally every lower hole in $[1,2e]$ is absent from the coefficient set
+itself. Since $2e<i+e$ and there are exactly $e$ deleted coefficients,
+$H\subseteq D$ and $|H|\leq e$. This last count halves the former bound
+$|H|\leq2e$.
+\end{proof}
+
+\begin{theorem}[Effective hole bound]\label{thm:holes103}
+Let $X$ be a positive real set of size $r\geq35$ with
+$\FS(X)\subseteq u\mathbb Z$. If its hull-hole count $h$ satisfies
+\[
+14<h<|\FS(X)|-1,
+\]
+then
+\[
+\boxed{\mu(X)\geq r+103.}
+\]
+\end{theorem}
+\begin{proof}
+Suppose $\mu(X)\leq r+102$. Divide by $u$ to obtain an integer set $B$.
+It is primitive: a gcd of at least two would leave at least one missing
+lattice point between each two successive support values, contradicting
+$h<|\FS(X)|-1$. The support is not a full integer interval.
+
+We first obtain a tail of positive increments with a uniform budget.
+If no prefix of size at least three has an arithmetic-progression support,
+then $y_j\geq1$ for $j\geq4$, and
+$\sum_{j=4}^r(y_j-1)\leq105$.
+Otherwise let $k\geq3$ be the last size with such a support. The next
+translate is disjoint, so
+\[
+y_{k+1}\geq T_k-k,
+\qquad
+\mu(B)\geq r-1+\frac{k(k-3)}2.
+\]
+Thus $k(k-3)/2\leq103$, whence $k\leq15$. All later increments are
+positive, and
+$\sum_{j=k+1}^r(y_j-1)\leq102+k\leq117$.
+In either case there is $r_0\leq16$ such that
+\begin{equation}
+y_j\geq1\ (j\geq r_0),\qquad
+\sum_{j=r_0}^r(y_j-1)\leq117.\label{eq:tail117}
+\end{equation}
+
+
+The window $19\leq j\leq r$ has at least 17 indices. If every increment
+there were at least eight, it would contribute at least $7\cdot17=119$
+to \eqref{eq:tail117}. Therefore some $i_0\geq19$ has $1\leq y_{i_0}=e\leq7$.
+Lemma~\ref{lem:counted-holes} gives
+\[
+B_{i_0}=t([1,i_0+e]_{\mathbb Z}\setminus D),\quad
+H\subseteq[1,14],\quad |H|\leq7.
+\]
+The coefficient set has gcd one since $i_0>e$, so $t$ is a positive integer.
+If $t>1$, primitivity of $B$ gives a first later coefficient outside
+$t\mathbb Z$. At that step the two supports are disjoint, and
+\[
+y_j-1\geq\frac{i_0(i_0-1)}2-1\geq170>117,
+\]
+contradicting \eqref{eq:tail117}. Hence $t=1$.
+
+Every subsequent increment is at most 118, and
+\[
+M(14,7,118)=19,\qquad T_{19}=190>28.
+\]
+The endpoint bridge now preserves $H$ through the whole remaining tail.
+The final number of holes is $2|H|\leq14$, contradicting $h>14$.
+\end{proof}
+
+
+% Original source lines 936--974
+\begin{lemma}[Unpaired absolute values]\label{lem:unpaired}
+Let $0\in F$, let $e=\card F$, and write the distinct nonzero absolute values
+as $0<b_1<\cdots<b_r$.  Let $m_i\in\{1,2\}$ count how many of
+$\{b_i,-b_i\}$ lie in $F$.  If
+\[
+ p=\card{\{i:m_i=2\}},\qquad q=\card{\{i:m_i=1\}},
+\]
+and
+\[
+ J=\card{\{(i,j):i<j,\ m_i=1,\ m_j=2\}},
+\]
+then
+\begin{equation}
+ \card{\FS(F)}\geq\frac{e^2+3+q^2}{4}+J.
+ \label{eq:unpaired}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Translate $\FS(F)$ by the sum of the absolute values of the negative members
+of $F$.  The resulting set is
+\[
+ \left\{\sum_{i=1}^r k_i b_i:0\leq k_i\leq m_i\right\}.
+\]
+Before $b_i$ is introduced, the residues represented modulo $b_i$ by
+$0,b_1,\ldots,b_{i-1}$ are distinct.  Extending each corresponding maximal
+$b_i$-chain by the $m_i$ new coefficient levels creates at least $i m_i$
+new sums.  Therefore
+\[
+ \card{\FS(F)}\geq1+\sum_{i=1}^r i m_i.
+\]
+If the paired positions are $s_1<\cdots<s_p$, then
+\[
+ \sum_{i=1}^r i m_i
+ =\frac{r(r+1)}2+\sum_{j=1}^p s_j
+ =\frac{r(r+1)}2+\frac{p(p+1)}2+J.
+\]
+Using $r=p+q$ and $e=2p+q+1$ gives \eqref{eq:unpaired}.
+\end{proof}
+
+% Original source lines 1241--1249
+Stanchescu simultaneous inverse theorem: if finite integer sets $U,V$, each of
+size at least two, satisfy
+\[
+ |U+V|<|U|+|V|+\min(|U|,|V|)-3,
+\]
+then, on their common difference lattice, their hull lengths are at most
+$|U+V|-|V|+1$ and $|U+V|-|U|+1$. Stanchescu's corollary allows the slightly
+larger threshold with $-2-\delta$, where $\delta$ is 1 for equal diameters
+and 0 otherwise. Thus the strict hypothesis above is sufficient in both cases.
+
+% Original source lines 1266--1321
+\begin{lemma}[Elementary endpoint bridge]\label{lem:bridge-proof}
+The endpoint bridge stated in Section~\ref{sec:holes} follows directly from
+its displayed threshold $M(h,q,E)$.
+\end{lemma}
+\begin{proof}
+Let $S=\mathcal S(L,H)$ be the support of $m$ positive integers. Then
+$L\geq T_m$, $|S|=L+1-2q$, and $x>\max B\geq m\geq h$.
+If $x\geq L-2h$, the part of $x+S$ above $L$ has at least
+$\min(x,L+1)-2q\geq L-2h-2q$ points. But the definition of $M$ gives
+\[
+ T_m-2h-2q>m+1+E,
+\]
+contradicting the permitted increment. Thus $h<x<L-2h$.
+The intervals $[h+1,L-h]$ and $[x+h+1,x+L-h]$ overlap and cover the
+whole central interval $[h+1,L+x-h]$. Since $x>h$, the lower holes stay $H$
+and the upper holes are their reflections about $(L+x)/2$.
+Consequently $S\cup(x+S)=\mathcal S(L+x,H)$, its cardinality increases by
+$x$, and $x=m+1+e_x$ follows. This also supplies a short self-contained proof
+of the bridge used in the earlier hole estimate.
+\end{proof}
+
+\begin{lemma}[Parameterized effective hole test]\label{lem:hole-parameter}
+Let $C\geq0$ and $b\geq1$ be integers. Define
+\[
+ K=\max\{k\geq3:k(k-3)/2\leq C+1\},\quad
+ D=C+\max(3,K),\quad E=D+1.
+\]
+Suppose integers $J,r$ satisfy
+\begin{gather*}
+ J\geq\max\{K+1,2b+5,M(2b,b,E)\},\\
+ (r-J+1)b>D,\qquad T_{J-1}-1>D.
+\end{gather*}
+If a positive $r$-element set has, on a specified lattice, a hull-hole count
+$h$ satisfying $2b<h<|\FS|-1$, then $\mu\geq r+C+1$.
+\end{lemma}
+\begin{proof}
+Assume instead $\mu\leq r+C$, and divide by the lattice step. The strict
+upper bound on $h$ makes the integer set primitive, and its support is not
+an arithmetic progression. The tail argument of
+Theorem~\ref{thm:holes103}, with $102$ replaced by $C$, gives a starting
+index at most $K+1$ (or 4 if no prefix of size at least three has progression
+support) after which
+\[
+ y_j\geq1,\qquad \sum(y_j-1)\leq D.
+\]
+Here a last progression prefix of size $k$ costs at least
+$r-1+k(k-3)/2$, so $k\leq K$; without such a prefix the budget is $C+3$.
+The window $J,\ldots,r$ contains some increment $1\leq y_i\leq b$.
+Lemma~\ref{lem:counted-holes} gives a deleted interval, with endpoint holes
+in $[1,2b]$ and at most $b$ lower holes. Its scale is an integer. A first
+later coefficient off this scale would cost
+$y_j-1\geq T_{i-1}-1\geq T_{J-1}-1>D$; primitivity therefore makes the
+scale one. Every later increment is at most $E$. The endpoint bridge
+preserves the holes, since $i\geq J$ and $L\geq T_J>4b$.
+The final hole count is at most $2b$, a contradiction.
+\end{proof}
+
+% Original source lines 3242--3278
+\begin{lemma}\label{lem:six-flexible98}
+Let $X$ be a positive real set of size $r\geq15$, and let
+$\rho=\rhoD(X)$. If $0\leq\rho<5(r-14)$, then
+\[
+ \mu(X)\leq\rho+22+2\lfloor\rho/5\rfloor
+ \leq\tfrac75\rho+22.
+\]
+Consequently, a lower bound $\mu(X)\geq u$ implies
+\[
+ \rho\geq\min\left(5(r-14),
+              \left\lceil\frac{5(u-22)}7\right\rceil\right).
+\]
+\end{lemma}
+\begin{proof}
+Use the ordered prefixes $X_j$ and the increments $y_j$ from the defect
+recurrence. The counting part of Lemma~\ref{lem:deleted}, independently of
+its stronger hypothesis for the estimate on $\Phi$, gives
+$\delta_0([1,j+q]\setminus H)\leq2q$ for $q\geq2$ and $j>q$.
+Indeed every defect belongs to $[1,q]$ or $[j,j+q]$, and there are at most
+$q-1$ defects in the former band: if all of $1,\ldots,q$ were present
+and defective, defectivity of 1 would require 2 to be absent.
+There are at most $q+1$ in the latter band. For $q=1$ the one-deletion
+argument gives at most two defects (at the prefix sizes used here);
+for $q=0$ there is one.
+
+If every $y_j$ for $15\leq j\leq r$ were at least 7, nonnegativity of
+$\rhoD(X_{14})$ and the recurrence would give
+$\rho\geq5(r-14)$. Choose the largest $j\geq15$ with $y_j\leq6$.
+The small-increment inverse lemma applies, since $6\leq j-5$, and makes
+$X_j$, up to scaling, an interval with at most six deletions.
+The preceding count gives $\delta_0(X_j)\leq12$.
+Each subsequent step adds at most one defect, while all its increments
+are at least 7; hence $r-j\leq\lfloor\rho/5\rfloor$ and
+$\delta_0(X)\leq12+\lfloor\rho/5\rfloor$.
+Now use $\mu=\rho-2+2\delta_0$. The final assertion follows by separating
+$\rho\geq5(r-14)$ from its complement.
+\end{proof}
+
+% Original source lines 3692--3726
+
+\begin{lemma}[Flexible defect bound with an integer inverse]\label{lem:flex96}
+Let $X$ be a positive real set of size $r\geq15$, and let
+$2\leq\beta\leq10$ be an integer. If
+$0\leq\rhoD(X)<(\beta-1)(r-14)$, then
+\[
+ \mu(X)\leq\rhoD(X)+4\beta-2+
+                    2\left\lfloor\frac{\rhoD(X)}{\beta-1}\right\rfloor.
+\]
+For an integer lower bound $\mu(X)\geq u$, put
+$v=\max(0,u-4\beta+2)$ and write $v=(\beta+1)q+s$, $0\leq s\leq\beta$.
+Then
+\begin{equation}
+ \rhoD(X)\geq\min\bigl((\beta-1)(r-14),
+                  (\beta-1)q+\min(s,\beta-1)\bigr).
+ \label{eq:flex96-inverse}
+\end{equation}
+\end{lemma}
+\begin{proof}
+If all increments $y_i$ for $15\leq i\leq r$ exceed $\beta$, the
+recurrence $\rho_i\geq\rho_{i-1}+y_i-2$ contradicts the hypothesis.
+Choose the last index $i\geq15$ with $y_i\leq\beta$.
+Since $\beta\leq i-5$, Lemma~\ref{lem:small-increment} gives an interval
+with at most $\beta$ deletions. The defect-counting argument in
+Lemma~\ref{lem:six-flexible98} uses only $i>\beta$ and gives at most
+$2\beta$ defects; the zero-deletion case has one defect.
+Every subsequent step adds at most one defect and raises $\rho$ by at
+least $\beta-1$. Nonnegativity at index $i$ therefore gives
+$r-i\leq\lfloor\rhoD(X)/(\beta-1)\rfloor$. Use
+$\mu=\rhoD-2+2\delta_0$.
+Finally, the least nonnegative integer $t$ satisfying
+$t+2\lfloor t/(\beta-1)\rfloor\geq v$ is
+$(\beta-1)q+\min(s,\beta-1)$: each complete block of $\beta-1$ in $t$
+adds $\beta+1$ to the left side. This proves the stated inverse, including
+the alternative where the small-defect hypothesis fails.
+\end{proof}
+
+% Original source lines 4263--4376
+\section{The fixed-slot deletion certificate}\label{app:slots}
+
+Let
+\[
+ p_1>p_2>p_3>p_4>0,
+ \qquad q_1>q_2>q_3>q_4>0,
+\]
+and define the eight positive gaps
+\[
+\begin{gathered}
+ r_1=p_1-p_2,\ r_2=p_2-p_3,\ r_3=p_3-p_4,\ r_4=p_4,\\
+ s_1=q_1-q_2,\ s_2=q_2-q_3,\ s_3=q_3-q_4,\ s_4=q_4.
+\end{gathered}
+\]
+Put
+\[
+\begin{aligned}
+ c_p&=p_1-p_2-p_3-p_4,&
+ \alpha_p&=p_2-p_3-p_4,&
+ \beta_p&=2p_2-p_1-p_3-p_4,\\
+ c_q&=q_1-q_2-q_3-q_4,&
+ \alpha_q&=q_2-q_3-q_4,&
+ \beta_q&=2q_2-q_1-q_3-q_4.
+\end{aligned}
+\]
+The two ordered eight-tuples are
+\[
+ B^+=(p_1,p_2,p_3,p_4,-q_1,-q_2,-q_3,-q_4),
+\]
+\[
+ B^-=(q_1,q_2,q_3,q_4,-p_1,-p_2,-p_3,-p_4).
+\]
+For $\varepsilon\in\{+,-\}$, set
+\[
+ C^\varepsilon_{ij}=c_\varepsilon+B^\varepsilon_i+B^\varepsilon_j,
+ \quad
+ U^\varepsilon_i=\alpha_\varepsilon+B^\varepsilon_i,
+ \quad
+ V^\varepsilon_i=\beta_\varepsilon+B^\varepsilon_i,
+\]
+where $1\leq i\leq j\leq8$, and $U,V$ use $2\leq i\leq8$.  For a decreasing
+quadruple $x=(x_1,x_2,x_3,x_4)$, define
+\[
+\begin{aligned}
+ H_1(x)&=x_3-x_4,& H_2(x)&=2x_3-x_2-x_4,\\
+ H_3(x)&=x_2+x_3-x_1-x_4,& H_4(x)&=2x_3-x_1-x_4,\\
+ H_5(x)&=3x_3-x_1-x_2-x_4.
+\end{aligned}
+\]
+Write $H_i^+=H_i(p)$ and $H_i^-=H_i(q)$.  The common slot universe has size
+\[
+ 2\left(\binom{9}{2}+7+7+5\right)=110.
+\]
+
+The following table gives $15$ templates.  Every starred row is also used
+after interchanging $+$ and $-$.  The four unstarred rows and the two
+orientations of the eleven starred rows give $26$ groups.
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3.6pt}
+\begin{longtable}{c>{\raggedright\arraybackslash}p{0.43\textwidth}p{0.39\textwidth}}
+\toprule
+&\textbf{sum of scores}&$(r_1,r_2,r_3,r_4;s_1,s_2,s_3,s_4)$\\
+\midrule
+\endfirsthead
+\toprule
+&\textbf{sum of scores}&$(r_1,r_2,r_3,r_4;s_1,s_2,s_3,s_4)$\\
+\midrule
+\endhead
+1&$C^+_{25}+C^-_{25}$&$(0,0,-1,-2;0,0,-1,-2)$\\
+$2^*$&$C^+_{48}+H^+_3$&$(0,0,0,-1;0,0,0,-1)$\\
+3&$C^+_{58}+C^-_{58}$&$(0,-1,-2,-4;0,-1,-2,-4)$\\
+$4^*$&$C^+_{77}+H^+_4$&$(0,-1,0,-2;0,0,-2,-2)$\\
+5&$U^+_6+U^-_6$&$(0,0,-1,-2;0,0,-1,-2)$\\
+6&$V^+_6+V^-_6$&$(-1,0,-1,-2;-1,0,-1,-2)$\\
+$7^*$&$C^+_{15}+H^+_1+C^-_{55}$&$(0,-1,-1,-3;0,-1,-2,-3)$\\
+$8^*$&$C^+_{26}+C^-_{57}+V^-_4$&$(0,0,-2,-3;0,0,-2,-3)$\\
+$9^*$&$C^+_{35}+V^+_3+C^-_{46}$&$(0,0,0,-2;0,-1,-2,-2)$\\
+$10^*$&$C^+_{36}+U^+_4+U^-_5$&$(0,0,-1,-2;0,0,-1,-2)$\\
+$11^*$&$C^+_{44}+U^+_8+H^+_5$&$(0,-1,0,-1;0,0,0,-1)$\\
+$12^*$&$C^+_{45}+V^+_8+C^-_{67}$&$(0,0,-3,-4;0,-1,-2,-4)$\\
+$13^*$&$C^+_{47}+V^+_7+H^+_2$&$(0,0,0,-2;0,0,-2,-2)$\\
+$14^*$&$C^+_{56}+V^+_2+C^-_{66}$&$(0,0,-2,-4;0,-2,-3,-4)$\\
+$15^*$&$C^+_{68}+U^+_3+V^-_5$&$(0,0,-1,-3;-1,0,-1,-3)$\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Every gap is strictly positive, while each coefficient vector is
+coordinatewise nonpositive and has a negative coordinate.  Hence all slots in
+one group cannot have positive score.  The $26$ groups are mutually disjoint in the common universe, as can be checked directly from the displayed slot labels.
+
+For the two translate pairings, first take
+\[
+ u_1=c_p-q_1,\qquad v_1=-c_q+p_1.
+\]
+Then
+\[
+ u_1-v_1=-(p_2+p_3+p_4+q_2+q_3+q_4)<0.
+\]
+If $\beta_p+\beta_q\leq0$, take
+$u_2=\beta_p$ and $v_2=-\beta_q$.  Otherwise take
+\[
+ u_2=c_p-q_2,\qquad v_2=-c_q+p_2.
+\]
+The identity
+\[
+ u_2-v_2=-(\beta_p+\beta_q)-2(p_3+p_4+q_3+q_4)<0
+\]
+proves the needed order in the second branch.  The two pairs use distinct
+table slots, so \eqref{eq:halfline} can be applied twice.
+
+% Original source lines 5569--5598
+\begin{thebibliography}{9}
+\setlength{\itemsep}{0pt}
+\bibitem{Stanchescu1996}
+Y.~Stanchescu, \emph{On addition of two distinct sets of integers},
+Acta Arithmetica \textbf{75} (1996), 191--194. In particular, Theorem~4
+and Corollary~2 give the simultaneous hull bounds.
+\url{https://doi.org/10.4064/aa-75-2-191-194}.
+
+\bibitem{CDK2026}
+R.~Carpenter, C.~Defant, and N.~Kravitz,
+\emph{Sets with few subset sums}, arXiv:2605.05498 (2026).
+\url{https://arxiv.org/abs/2605.05498}.
+
+\bibitem{BGGH2013}
+E.~Balandraud, B.~Girard, S.~Griffiths, and Y.~Ould Hamidoune,
+\emph{Subset sums in abelian groups},
+European Journal of Combinatorics \textbf{34} (2013), 1269--1286.
+\url{https://arxiv.org/abs/1112.1929}.
+
+\bibitem{LevSmeliansky1995}
+V.~F.~Lev and P.~Y.~Smeliansky,
+\emph{On addition of two distinct sets of integers},
+Acta Arithmetica \textbf{70} (1995), 85--91.
+\url{https://doi.org/10.4064/aa-70-1-85-91}.
+
+\bibitem{Lev1998}
+V.~F.~Lev, \emph{On consecutive subset sums},
+Discrete Mathematics \textbf{187} (1998), 151--160.
+\url{https://doi.org/10.1016/S0012-365X(98)80006-X}.
+
+\end{thebibliography}

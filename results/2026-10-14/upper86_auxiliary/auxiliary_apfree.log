@@ -1,0 +1,6 @@
+PASS r3(31)<=12; nodes=319; seconds=0.000
+PASS r3(40)<=15; nodes=951; seconds=0.001
+PASS r3(58)<=19; nodes=479381; seconds=0.441
+PASS all70residue partitions; minimum affine margin 0
+PASS selected core-span77/79 caps23/24
+FRESH AUXILIARY PASS: AP-free extension checks

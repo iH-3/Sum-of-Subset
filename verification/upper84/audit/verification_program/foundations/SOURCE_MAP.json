@@ -1,0 +1,163 @@
+[
+  {
+    "source_relative_to_recovered_inputs": "readable/check_bootstrap_ap86.py",
+    "distributed_path": "source/structural/check_bootstrap_ap86.py",
+    "source_sha256": "9437c530f072104e3175c094725383b7742d24a5a0c9b0c90464b27d5f52089e",
+    "distributed_sha256": "9437c530f072104e3175c094725383b7742d24a5a0c9b0c90464b27d5f52089e",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inverse86/check_inverse86.py",
+    "distributed_path": "source/structural/inverse86/check_inverse86.py",
+    "source_sha256": "12910795e060c537ed4ac5a49dd5c31aca96f81f3b412ce67998a91274a7dd11",
+    "distributed_sha256": "12910795e060c537ed4ac5a49dd5c31aca96f81f3b412ce67998a91274a7dd11",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inverse86/source_pins.json",
+    "distributed_path": "source/structural/inverse86/source_pins.json",
+    "source_sha256": "8cf73c2c29789a0bf81941bb0de8b5a66f0a510cbbf0a63c8e3bc42793041ea2",
+    "distributed_sha256": "8cf73c2c29789a0bf81941bb0de8b5a66f0a510cbbf0a63c8e3bc42793041ea2",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inverse86/proof_inverse86.md",
+    "distributed_path": "source/structural/inverse86/proof_inverse86.md",
+    "source_sha256": "da98be61b5586f197303855e58c0769c49e7db734852f8f53bef69c5c42c1f15",
+    "distributed_sha256": "da98be61b5586f197303855e58c0769c49e7db734852f8f53bef69c5c42c1f15",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inverse86/arithmetic_tables.md",
+    "distributed_path": "source/structural/inverse86/arithmetic_tables.md",
+    "source_sha256": "000404c3e50acd675c75b60c348ed45691a06418599d0b88df6e1dce5d5cb7b0",
+    "distributed_sha256": "000404c3e50acd675c75b60c348ed45691a06418599d0b88df6e1dce5d5cb7b0",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/ap_exception86/check86_elementary.py",
+    "distributed_path": "source/structural/ap_exception86/check86_elementary.py",
+    "source_sha256": "718c112d44ddde5a0b645b9f78d858448985104c4f2de28e385ed5df7c937741",
+    "distributed_sha256": "69087b9ce6c284421b13b9f1ef02a68937f77fdd995752d83c1af930f886d52a",
+    "adaptation": "Retained row definitions and fixed integer recombination unchanged; removed historical run() and CLI with redundant expected-output dependency"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/ap_exception86/conditional_exception86.md",
+    "distributed_path": "source/structural/ap_exception86/conditional_exception86.md",
+    "source_sha256": "48900969a4c4c26ec9f6bae832b22457e0bcb865db27c1387571559b00dcfc28",
+    "distributed_sha256": "48900969a4c4c26ec9f6bae832b22457e0bcb865db27c1387571559b00dcfc28",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inputs/four_integer_vectors.json",
+    "distributed_path": "source/structural/inputs/four_integer_vectors.json",
+    "source_sha256": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+    "distributed_sha256": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/inputs/vector_manifest.json",
+    "distributed_path": "source/structural/inputs/vector_manifest.json",
+    "source_sha256": "10bf12459ea6408cc743791497e65aacbcaf26149f86790930fffbecb44d1ed9",
+    "distributed_sha256": "10bf12459ea6408cc743791497e65aacbcaf26149f86790930fffbecb44d1ed9",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/foundations/general_lemmas_source.tex",
+    "distributed_path": "source/structural/foundations/general_lemmas_source.tex",
+    "source_sha256": "848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b",
+    "distributed_sha256": "848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/foundations/budget_and_sharp_defect_source.tex",
+    "distributed_path": "source/structural/foundations/budget_and_sharp_defect_source.tex",
+    "source_sha256": "25b65826d9b81d3c600e1e2ec712360dd908b6cba5413846a3b98f952c486d56",
+    "distributed_sha256": "25b65826d9b81d3c600e1e2ec712360dd908b6cba5413846a3b98f952c486d56",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/foundations/lattice_lemmas.md",
+    "distributed_path": "source/structural/foundations/lattice_lemmas.md",
+    "source_sha256": "7495138ef80c8b88fe60c42130da6dbe0744263ea83cc7963f80c4bbe8bc4b96",
+    "distributed_sha256": "7495138ef80c8b88fe60c42130da6dbe0744263ea83cc7963f80c4bbe8bc4b96",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/foundations/nonap_defect.md",
+    "distributed_path": "source/structural/foundations/nonap_defect.md",
+    "source_sha256": "fbde07b6ed9331444f191f34ef4dce8c5098b60256f8936f92b328b527d4f199",
+    "distributed_sha256": "fbde07b6ed9331444f191f34ef4dce8c5098b60256f8936f92b328b527d4f199",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "readable/foundations/verify_small_deleted.py",
+    "distributed_path": "source/structural/foundations/verify_small_deleted.py",
+    "source_sha256": "a33288447f4fcc09e8b8b04a1bcfb3eed270d45c4d4e3c1895ab08c7e1bc5a7b",
+    "distributed_sha256": "a33288447f4fcc09e8b8b04a1bcfb3eed270d45c4d4e3c1895ab08c7e1bc5a7b",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "focused_bridge_pins/original_reviewed_STRUCTURAL86.md",
+    "distributed_path": "proof/STRUCTURAL86.md",
+    "source_sha256": "2c4b258fddaaa508b1354cdc13266d8ff7b00ab3bf2a330f898b03da0afb6099",
+    "distributed_sha256": "2c4b258fddaaa508b1354cdc13266d8ff7b00ab3bf2a330f898b03da0afb6099",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/common.py",
+    "distributed_path": "dense/common.py",
+    "source_sha256": "6483487ff38c7c46e06b0063e2bcc88c01cd7672c0159b8d4b8594ada37a2269",
+    "distributed_sha256": "6483487ff38c7c46e06b0063e2bcc88c01cd7672c0159b8d4b8594ada37a2269",
+    "adaptation": "relative local imports only"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/dense.py",
+    "distributed_path": "dense/dense.py",
+    "source_sha256": "b755cfba5f038a42f782ac84342bbb32c39b1d6f26c9d5b8b9cc6e984b764e7a",
+    "distributed_sha256": "cc1b4e74ccddbcdd2bd0da0fdf5a33079fc16fc428c1e1d163b178ea4d0aa733",
+    "adaptation": "relative local imports only"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/profiles.py",
+    "distributed_path": "dense/profiles.py",
+    "source_sha256": "7a9ad691cb3f1b112f6a726e2f50b9de7bcb6dc26f8baae70ebb874ebccc63a1",
+    "distributed_sha256": "41aaee1cb049b9c2925508105ebfc365a12a873746b39148afbccee79e01991e",
+    "adaptation": "Relative local import; retained exact inference/update and single-profile arithmetic unchanged; restricted allowed thresholds to 15,17,21,49; replaced unused historical 280-claim bulk runner by scoped wrapper"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/h15.py",
+    "distributed_path": "dense/h15.py",
+    "source_sha256": "8bed619a420cd9188331fe6d3ad089e2ee56b7d7cdfbf0d599497e5cf9cd4615",
+    "distributed_sha256": "abea1e41768323a778f0a7e7cdf91f0dac9a7f99b9b22892890b5f628a660728",
+    "adaptation": "relative local imports only"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/data/certificate.json",
+    "distributed_path": "dense/data/certificate.json",
+    "source_sha256": "58d2df7868d5afff7a0a07c88cae84cc856548b70acab0862af1fb990cf15eb0",
+    "distributed_sha256": "791603197db36f7dfdb66a6eab15f11bef34537622aa9af57b99d2e6b586690e",
+    "adaptation": "retained precisely h=15,17,21,49, all r=15..54; removed unrelated h=5,7,9 claims"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/data/profiles.json",
+    "distributed_path": "dense/data/profiles.json",
+    "source_sha256": "2c216d1aea83f166a35c548cb6080ba81496503be190f70aa8eb80c81fd13782",
+    "distributed_sha256": "a12bc3a8102821cb3c02a56f03cff4973f65cb9ade8a50093e588d9f2f9a4f96",
+    "adaptation": "retained precisely h=15,17,21,49, all r=15..54; removed unrelated h=5,7,9 claims"
+  },
+  {
+    "source_relative_to_recovered_inputs": "dense_holes_direct_verification/package/proof/dense_holes_direct_defects.tex",
+    "distributed_path": "proof/dense_holes_direct_defects.tex",
+    "source_sha256": "8e4818a4b302c85baa6adc3f247146a7d31889c5d44c62d9a8c44b0690203c92",
+    "distributed_sha256": "8e4818a4b302c85baa6adc3f247146a7d31889c5d44c62d9a8c44b0690203c92",
+    "adaptation": "unchanged"
+  },
+  {
+    "source_relative_to_foundation_audit": "ENDPOINT_BRIDGE_LOCAL_CORRECTION_1304UTC.txt",
+    "distributed_path": "proof/endpoint_bridge_correction.txt",
+    "source_sha256": "ecfdccbeb24e21f6e2e224479be5350060f1137e22ed6b14526586ae0e5a8a02",
+    "distributed_sha256": "189ce8316072d544dbb9562164e9ace83ed1b16e013cf0b49a62654cd41f2091",
+    "adaptation": "Replaced two original machine paths by local source references; mathematical correction unchanged"
+  }
+]

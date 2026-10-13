@@ -1,0 +1,216 @@
+{
+  "checked_cardinalities": [
+    115,
+    114,
+    113,
+    112,
+    111,
+    110,
+    109,
+    108,
+    107,
+    106,
+    105,
+    104,
+    103,
+    102,
+    101,
+    100,
+    99,
+    98,
+    97
+  ],
+  "rows": [
+    {
+      "n": 115,
+      "minimum_sign": 36,
+      "omega0": 0,
+      "max_k": 0,
+      "inverse_margin": 1223,
+      "z0_upper": -1845,
+      "zpositive_upper": -2007,
+      "first_layer_margin": 2033
+    },
+    {
+      "n": 114,
+      "minimum_sign": 34,
+      "omega0": 27,
+      "max_k": 4,
+      "inverse_margin": 981,
+      "z0_upper": -1748,
+      "zpositive_upper": -1881,
+      "first_layer_margin": 1961
+    },
+    {
+      "n": 113,
+      "minimum_sign": 33,
+      "omega0": 54,
+      "max_k": 7,
+      "inverse_margin": 854,
+      "z0_upper": -1651,
+      "zpositive_upper": -1755,
+      "first_layer_margin": 1889
+    },
+    {
+      "n": 112,
+      "minimum_sign": 32,
+      "omega0": 80,
+      "max_k": 8,
+      "inverse_margin": 770,
+      "z0_upper": -1557,
+      "zpositive_upper": -1633,
+      "first_layer_margin": 1819
+    },
+    {
+      "n": 111,
+      "minimum_sign": 30,
+      "omega0": 106,
+      "max_k": 10,
+      "inverse_margin": 695,
+      "z0_upper": -1463,
+      "zpositive_upper": -1511,
+      "first_layer_margin": 1749
+    },
+    {
+      "n": 110,
+      "minimum_sign": 29,
+      "omega0": 131,
+      "max_k": 10,
+      "inverse_margin": 643,
+      "z0_upper": -1372,
+      "zpositive_upper": -1393,
+      "first_layer_margin": 1681
+    },
+    {
+      "n": 109,
+      "minimum_sign": 28,
+      "omega0": 156,
+      "max_k": 12,
+      "inverse_margin": 581,
+      "z0_upper": -1281,
+      "zpositive_upper": -1275,
+      "first_layer_margin": 1613
+    },
+    {
+      "n": 108,
+      "minimum_sign": 27,
+      "omega0": 180,
+      "max_k": 12,
+      "inverse_margin": 535,
+      "z0_upper": -1193,
+      "zpositive_upper": -1161,
+      "first_layer_margin": 1547
+    },
+    {
+      "n": 107,
+      "minimum_sign": 26,
+      "omega0": 204,
+      "max_k": 14,
+      "inverse_margin": 486,
+      "z0_upper": -1105,
+      "zpositive_upper": -1047,
+      "first_layer_margin": 1481
+    },
+    {
+      "n": 106,
+      "minimum_sign": 25,
+      "omega0": 227,
+      "max_k": 14,
+      "inverse_margin": 446,
+      "z0_upper": -1020,
+      "zpositive_upper": -937,
+      "first_layer_margin": 1417
+    },
+    {
+      "n": 105,
+      "minimum_sign": 24,
+      "omega0": 250,
+      "max_k": 15,
+      "inverse_margin": 408,
+      "z0_upper": -935,
+      "zpositive_upper": -827,
+      "first_layer_margin": 1353
+    },
+    {
+      "n": 104,
+      "minimum_sign": 23,
+      "omega0": 272,
+      "max_k": 16,
+      "inverse_margin": 371,
+      "z0_upper": -853,
+      "zpositive_upper": -721,
+      "first_layer_margin": 1291
+    },
+    {
+      "n": 103,
+      "minimum_sign": 22,
+      "omega0": 294,
+      "max_k": 17,
+      "inverse_margin": 335,
+      "z0_upper": -771,
+      "zpositive_upper": -615,
+      "first_layer_margin": 1229
+    },
+    {
+      "n": 102,
+      "minimum_sign": 21,
+      "omega0": 315,
+      "max_k": 17,
+      "inverse_margin": 299,
+      "z0_upper": -692,
+      "zpositive_upper": -513,
+      "first_layer_margin": 1169
+    },
+    {
+      "n": 101,
+      "minimum_sign": 20,
+      "omega0": 336,
+      "max_k": 18,
+      "inverse_margin": 264,
+      "z0_upper": -613,
+      "zpositive_upper": -411,
+      "first_layer_margin": 1109
+    },
+    {
+      "n": 100,
+      "minimum_sign": 19,
+      "omega0": 356,
+      "max_k": 18,
+      "inverse_margin": 230,
+      "z0_upper": -537,
+      "zpositive_upper": -313,
+      "first_layer_margin": 1051
+    },
+    {
+      "n": 99,
+      "minimum_sign": 18,
+      "omega0": 376,
+      "max_k": 19,
+      "inverse_margin": 196,
+      "z0_upper": -461,
+      "zpositive_upper": -215,
+      "first_layer_margin": 993
+    },
+    {
+      "n": 98,
+      "minimum_sign": 17,
+      "omega0": 395,
+      "max_k": 19,
+      "inverse_margin": 163,
+      "z0_upper": -388,
+      "zpositive_upper": -121,
+      "first_layer_margin": 937
+    },
+    {
+      "n": 97,
+      "minimum_sign": 17,
+      "omega0": 414,
+      "max_k": 20,
+      "inverse_margin": 131,
+      "z0_upper": -315,
+      "zpositive_upper": -27,
+      "first_layer_margin": 881
+    }
+  ],
+  "status": "PASS"
+}

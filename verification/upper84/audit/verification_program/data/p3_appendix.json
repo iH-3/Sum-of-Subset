@@ -1,0 +1,1073 @@
+{
+  "scope": "Exact identities and scalar certificates for P3 conditional on the analytic resource, rank, and activity arguments in p3.tex, a0.tex and a1.tex; not a finite enumeration of actual source configurations.",
+  "baseline": {
+    "original_domain": "r_s+r_t=69;15<=r_v<=54;1<=z<=14;delta=c-234>=0",
+    "range_exclusions": [
+      {
+        "r_min": [
+          15,
+          20
+        ],
+        "delta_upper": -25
+      },
+      {
+        "r_min": 21,
+        "delta_upper": -6
+      }
+    ],
+    "rows": [
+      "H<=148+4*z-I-delta",
+      "C0-U0-2*H>=146+4*I+3*delta-10*z",
+      "C1-V0-2*H>=396+4*I+3*delta-6*z",
+      "A<=203+w",
+      "tau>=63+2*z",
+      "delta<=140-z-I"
+    ],
+    "seed": {
+      "window": [
+        1,
+        17
+      ],
+      "distinct_selected": 13,
+      "five_missing_mass_floor": 225,
+      "tau_cap_before_seed": 217,
+      "seed_mass_min": 91,
+      "Lev_interval": [
+        9,
+        "T-9"
+      ],
+      "core_mass_cap": 1442,
+      "core_max_cap": 264,
+      "late_selected_mass_floor": 289,
+      "early_failure_mass_floor": 2866
+    },
+    "terminal_domain": "22<=r_v<=47;z in {2,4,6,8};2<=w<=z;delta<=138-I"
+  },
+  "identities": [
+    [
+      "T(r)+I(r)",
+      "408+(r-23)*(3*(r-23)+1)/2"
+    ],
+    [
+      "T(r)+5*r-482+2*I(r)",
+      "5*(2*r-53)**2/8+1139/8"
+    ],
+    [
+      "137-r+I(r)",
+      "102+(r-35)**2"
+    ],
+    [
+      "272-2*r+I(r)",
+      "202+(r-35)*(r-36)"
+    ],
+    [
+      "c*(75-c)-146",
+      "(c-2)*(73-c)"
+    ],
+    [
+      "T(r)+5*r+3*I(r)",
+      "670+(r-29)*(7*(r-29)+3)/2"
+    ],
+    [
+      "T(r)+5*r+4*I(r)",
+      "695+(r-30)*(9*(r-30)-1)/2"
+    ],
+    [
+      "T(r)+5*r+5*I(r)",
+      "711+(r-31)*(11*(r-31)+3)/2"
+    ],
+    [
+      "T(r)+6*r+9*I(r)/4",
+      "666+(r-27)*(11*(r-27)-1)/4"
+    ]
+  ],
+  "classifier": {
+    "forest_rows": [
+      "2*Xv+Xo+gv>=256-tau-delta",
+      "2*Xv+Xo+G>=310-tau-delta",
+      "2*X+4*R+delta>=556"
+    ],
+    "raw_caps": [
+      "d-M<=56+w/2 under O active or beta,H active",
+      "d-M<=57/2+w/4 under beta,O active"
+    ],
+    "contradictions": [
+      {
+        "id": "P3_O_C6",
+        "lhs_min": 52,
+        "rhs_max": 12,
+        "row": "52+I<=3*w/2"
+      },
+      {
+        "id": "P3_beta_H_C6",
+        "lhs_min": 52,
+        "rhs_max": 12,
+        "row": "52+I<=3*w/2"
+      },
+      {
+        "id": "P3_beta_O_C7",
+        "lhs_min": 102,
+        "rhs_max": 40,
+        "row": "102+4*I<=5*w"
+      },
+      {
+        "id": "P3_both_O",
+        "lhs_min": 140,
+        "rhs_max": 48,
+        "row": "140+4*I+4*tau+delta<=6*w"
+      },
+      {
+        "id": "P3_C5_to_C6",
+        "lhs_min": 159,
+        "rhs_max": 138,
+        "row": "delta>=78+3*(r_v+5)"
+      }
+    ],
+    "final_forms": [
+      {
+        "id": "A0",
+        "holes": [
+          "beta_pair",
+          "O_s",
+          "O_t"
+        ],
+        "owners": "pair1 sole s or t"
+      },
+      {
+        "id": "A1",
+        "holes": [
+          "O_s",
+          "O_t",
+          "H_v"
+        ],
+        "owners": "beta sole v;pair1 sole opposite"
+      }
+    ],
+    "orientation_rule": "Both original physical signs occur; never order a named owner by cardinality."
+  },
+  "first_gap": {
+    "domain": [
+      1,
+      155
+    ],
+    "excluded_ge5": {
+      "m5": 219,
+      "m6": 264,
+      "m_ge7": 252,
+      "tau_max": 211
+    },
+    "profiles": [
+      {
+        "m": 1,
+        "baseline_tau": "69",
+        "B": 71,
+        "four_f": "169-sigma+R",
+        "cap": "I+sigma+delta<=134+w",
+        "radial": "2*R+I+delta<=282+w"
+      },
+      {
+        "m": 2,
+        "baseline_tau": "137-k",
+        "B": 72,
+        "four_f": "164-sigma+R",
+        "cap": "(k-35)**2+sigma+delta<=101+w",
+        "radial": "2*R+I+delta<=216+k+w"
+      },
+      {
+        "m": 3,
+        "baseline_tau": "134",
+        "B": 73,
+        "four_f": "159-sigma+R",
+        "cap": "I+sigma+delta<=69+w",
+        "radial": "2*R+I+delta<=221+w"
+      },
+      {
+        "m": "4_split",
+        "baseline_tau": "202",
+        "B": 75,
+        "cap": "I+sigma+delta<=1+w"
+      },
+      {
+        "m": "4_together",
+        "baseline_tau": "272-2*k",
+        "B": 75,
+        "cap": "(k-35)*(k-36)+sigma+delta<=1+w"
+      }
+    ],
+    "seed4": {
+      "values": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "total": 71,
+      "holes": [
+        4,
+        67
+      ]
+    },
+    "subseed4": {
+      "values": [
+        1,
+        2,
+        5,
+        6,
+        7
+      ],
+      "total": 21,
+      "holes": [
+        4,
+        17
+      ]
+    },
+    "m4_terminal": {
+      "delta_max": 3,
+      "fixed_credit_min": 8
+    },
+    "END2": "sigma+epsilon<74 forces every BAD next core rank to its baseline; Z>=72-r_v-l_Z and Z<=S_v+r_o-71+h_Z"
+  },
+  "A0": {
+    "fixed_credit": 8,
+    "endpoint_resources": [
+      "C4_s sole pair1",
+      "alpha_s",
+      "alpha_t",
+      "C5_t",
+      "H_s"
+    ],
+    "endpoint_directions": [
+      "lower",
+      "lower",
+      "lower",
+      "lower",
+      "upper"
+    ],
+    "endpoint_weights": [
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "forest_resources": [
+      "L_s",
+      "own3_s",
+      "own2_s",
+      "C7_s",
+      "L_t",
+      "own3_t",
+      "own2_t",
+      "C7_t"
+    ],
+    "single_budget": "N+DF<=epsilon; Eclip<=2*N; DF>=6*f-(2*X+G)",
+    "endpoint_cases": {
+      "light": "Berr<=6*b+2*epsilon",
+      "heavy": "Berr<=6*b+2*epsilon-q*c+q*sigma+q*e_v; q in {1,2};74<=c<=77;delta>=8+c",
+      "at_most_one_heavy": "N<=epsilon<=134<148"
+    },
+    "main_row": "S_t+2*M+12*f<=2*R+1060+w+delta-2*e+Berr",
+    "terminal_rows": [
+      {
+        "id": "P3_A0_m1_light",
+        "row": "T(r)+5*r+3*I+sigma_t+4*e<=402+4*w",
+        "lhs_min": 702,
+        "rhs_max": 434
+      },
+      {
+        "id": "P3_A0_m1_heavy_q1",
+        "row": "T(r)+5*r+4*I+sigma_t+delta+4*e+c<=702+5*w",
+        "lhs_min": 883,
+        "rhs_max": 742
+      },
+      {
+        "id": "P3_A0_m1_heavy_q2",
+        "row": "T(r)+5*r+5*I+sigma_t+2*delta+4*e+2*c<=1002+6*w",
+        "lhs_min": 1055,
+        "rhs_max": 1050
+      },
+      {
+        "id": "P3_A0_m2_light",
+        "row": "T(r)+(u+4)*r+3*chi+sigma_t+4*e<=335-b0+4*w",
+        "lhs_min": 666,
+        "rhs_max": 354
+      },
+      {
+        "id": "P3_A0_m2_heavy_q1",
+        "row": "T(r)+(u+4)*r+4*chi+sigma_t+delta+4*e+c<=602-b0+5*w",
+        "lhs_min": 835,
+        "rhs_max": 629
+      },
+      {
+        "id": "P3_A0_m2_heavy_q2",
+        "row": "T(r)+(u+4)*r+5*chi+sigma_t+2*delta+4*e+2*c<=869-b0+6*w",
+        "lhs_min": 995,
+        "rhs_max": 904
+      },
+      {
+        "id": "P3_A0_m3",
+        "row": "T(r)+6*r+9*I/4+sigma_t+3*e<=2325/4+13*w/4",
+        "lhs_min": 690,
+        "rhs_max": "2429/4"
+      },
+      {
+        "id": "P3_A0_m4",
+        "row": "8<=delta<=3",
+        "lhs_min": 8,
+        "rhs_max": 3
+      }
+    ],
+    "m2_owner_parameters": [
+      {
+        "owner": "t",
+        "u": 1,
+        "a": 1,
+        "b0": 13,
+        "k": "r_t"
+      },
+      {
+        "owner": "s",
+        "u": 2,
+        "a": 0,
+        "b0": 18,
+        "k": "69-r_t"
+      }
+    ],
+    "m2_owner_bound": "chi=(k-35)**2=I-k+35>=I-12",
+    "m3_transport": [
+      "S_t+M+(2*X+G)+(2*Xt+gt)<=R+1126+w-e",
+      "2*X+G>=6*f-epsilon",
+      "2*Xt+gt>=3*f-epsilon",
+      "S_t+M+5*R/4-9*sigma/4-2*delta+3*e<=3073/4+w",
+      "S_t+M>=T(r)+6*r+182-w+I+sigma+sigma_t+delta",
+      "T(r)+6*r+I-5*sigma/4+sigma_t-delta+3*e<=495+2*w"
+    ]
+  },
+  "A1": {
+    "schema": "p3-proof-formula-register-v1",
+    "scope": "A1 exclusion: every first gap m=1,2,3,4; every integral active-center position. Arithmetic checks are conditional on the analytic resource, endpoint, and source lemmas explicitly proved or referenced in a1.tex.",
+    "proof_file": "a1.tex",
+    "source_documents": [
+      {
+        "sections": "3--9: exact m=1/2 resource choices, endpoints, transport and contradictions",
+        "source_id": "p3_opposite_h_full_exclusion_20261005/PROOF.md"
+      },
+      {
+        "sections": "3--7: eleven-label credit and full m=3 algebra",
+        "source_id": "p3_opposite_h_gap_exclusion_20261005/PROOF.md"
+      },
+      {
+        "sections": "4--8: shared mass/rank/radial/endpoint profiles; these are referenced through the consolidated P3 lemmas, not dispatched to this source",
+        "source_id": "p3_first_gap_profiles_20261005/PROOF.md"
+      }
+    ],
+    "shared_dependencies": [
+      {
+        "label": "prop:p3-profiles",
+        "needed_statement": "Exact m=1,2,3 mass baselines; m=4 has z=w=2 and delta<=3"
+      },
+      {
+        "label": "eq:p3-rank",
+        "needed_statement": "62-point core-trim spans, hence the three f-g overlap bounds"
+      },
+      {
+        "label": "eq:p3-radial",
+        "needed_statement": "Only m=3 is used: 2R+I+delta<=221+w"
+      },
+      {
+        "label": "lem:p3-END2",
+        "needed_statement": "m=3 integral endpoint rows for any licensed singleton or actually sole paired owner when fixed credit e>=4"
+      },
+      {
+        "label": "lem:p3-fixed",
+        "needed_statement": "A1 eleven HIGH labels give e=11 in the original delta budget; generic e=8 is enough for m=4"
+      },
+      {
+        "label": "lem:common-loss",
+        "needed_statement": "Deficiencies of compatible original whole resources share one unchanged delta"
+      },
+      {
+        "label": "lem:common-forest",
+        "needed_statement": "Raw restricted edge intersections lower-bound the deficiency of the full forest vertices, with one leading capacity per target"
+      },
+      {
+        "label": "lem:common-offsets",
+        "needed_statement": "For arbitrary increasing positive integral offsets, 2B-(a+b+c)<=3"
+      }
+    ],
+    "baseline_domain": {
+      "r_s": [
+        22,
+        47
+      ],
+      "r_t": "69-r_s",
+      "r_s_physical": "actual beta owner s, never chosen by sorting",
+      "I": "(r_s-34)*(r_s-35)",
+      "z_values": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "w": "2<=w<=z",
+      "delta": "0<=delta<=138",
+      "epsilon": "delta-11>=0",
+      "K": "K>=155",
+      "integrality": "source, all outer magnitudes, applied centers",
+      "target_holes": "eta_s=eta_t=w/2"
+    },
+    "notation": {
+      "T": "r*(r+1)/2",
+      "B": "b_*=Gamma_beta_s+Gamma_P_t",
+      "H": "h_*=Gamma_H_t; not the H_t center",
+      "L": "e_s+e_t; not a leading resource",
+      "Lams": "native deficiency of leading resource on target s",
+      "U_v": "own2_v",
+      "V_v": "own3_v",
+      "k": "size of the actual low-1 owner in m=2; k=r or k=69-r",
+      "chi": "(k-35)^2",
+      "xi": "radial excess R minus the profile baseline maximum sum",
+      "reserved": "rho and kappa retain their structural meanings"
+    },
+    "actual_resource_inventory": {
+      "m1_m2_ten_edge_forest": {
+        "s": [
+          [
+            "leading_s",
+            "V_s",
+            "U_s"
+          ],
+          [
+            "leading_s",
+            "C7_s",
+            "C6_s",
+            "C5_s"
+          ]
+        ],
+        "t": [
+          [
+            "leading_t",
+            "V_t",
+            "U_t",
+            "H_t"
+          ],
+          [
+            "leading_t",
+            "C7_t",
+            "C6_t"
+          ]
+        ],
+        "gap_sum": "2*Xs+2*Xt+2*gs+2*gt+2*ht",
+        "available_budget": "epsilon-B"
+      },
+      "m1_m2_four_edges": {
+        "arms": [
+          [
+            "leading_s",
+            "V_s",
+            "U_s"
+          ],
+          [
+            "leading_t",
+            "C7_t",
+            "C6_t"
+          ]
+        ],
+        "gap_sum": "2*(Xs+gs)",
+        "available_budget": "epsilon-B-H"
+      },
+      "m1_m2_two_core_edges": {
+        "edges": [
+          [
+            "leading_s",
+            "V_s"
+          ],
+          [
+            "leading_t",
+            "C7_t"
+          ]
+        ],
+        "gap_sum": "2*Xs",
+        "available_budget": "epsilon-B-H"
+      },
+      "m3_ordinary_gap_groups": [
+        [
+          "U_s",
+          "V_s"
+        ],
+        [
+          "C6_t",
+          "C7_t"
+        ]
+      ],
+      "m3_full_stars": {
+        "s": [
+          [
+            "leading_s",
+            "V_s"
+          ],
+          [
+            "leading_s",
+            "C7_s"
+          ]
+        ],
+        "t": [
+          [
+            "leading_t",
+            "V_t"
+          ],
+          [
+            "leading_t",
+            "C7_t"
+          ]
+        ]
+      },
+      "m3_side_s_stars": [
+        [
+          "leading_s",
+          "V_s"
+        ],
+        [
+          "leading_t",
+          "C7_t"
+        ]
+      ],
+      "leading_license": "Every leading hub is one original full capacity K; Q/E copies only lower-bound edge intersections",
+      "paired_license": "Gamma_beta_s and Gamma_P_t are licensed only because the opposite components of those whole pairs are actually empty"
+    },
+    "analytic_inequality_register": [
+      {
+        "id": "mass",
+        "tex_label": "eq:p3-a1-mass",
+        "lhs": "Ss+St",
+        "relation": "=",
+        "rhs": "2*K+1254+w-delta",
+        "domain": "A1 original j=3 cover",
+        "justification": "Exact original deficit identity"
+      },
+      {
+        "id": "fixed_budget",
+        "tex_label": "eq:p3-a1-budget",
+        "lhs": "delta",
+        "relation": ">=",
+        "rhs": "11",
+        "domain": "A1: empty O_s,O_t,H_s; sole beta s; sole pair1 t",
+        "justification": "Eleven explicit HIGH labels in lem:p3-fixed"
+      },
+      {
+        "id": "native_remainder",
+        "tex_label": "eq:p3-a1-reserved-losses",
+        "lhs": "B+H",
+        "relation": "<=",
+        "rhs": "epsilon",
+        "domain": "B=Gamma_beta_s+Gamma_P_t; H=Gamma_H_t; epsilon=delta-11",
+        "justification": "Distinct actual whole resources; both paired owners are genuinely sole"
+      },
+      {
+        "id": "peeled_L",
+        "tex_label": "eq:p3-a1-L",
+        "lhs": "L",
+        "relation": ">=",
+        "rhs": "I+tau+delta-37-w",
+        "domain": "Strictly increasing positive integral source offsets",
+        "justification": "Exact mass plus central/fringe sumset cover and 2B_v-(a_v+b_v+c_v)<=3"
+      },
+      {
+        "id": "ten_edges",
+        "tex_label": "eq:p3-a1-ten-edges",
+        "lhs": "Xs+Xt+gs+gt+ht",
+        "relation": ">=",
+        "rhs": "5*f-(epsilon-B)/2",
+        "domain": "m=1,2; all listed forest vertices retained",
+        "justification": "Both target trees omit the two pairs"
+      },
+      {
+        "id": "four_edges",
+        "tex_label": "eq:p3-a1-four-edges",
+        "lhs": "Xs+gs",
+        "relation": ">=",
+        "rhs": "2*f-(epsilon-B-H)/2",
+        "domain": "m=1,2",
+        "justification": "Two two-edge arms omit the two pairs and H_t"
+      },
+      {
+        "id": "core_two_edges",
+        "tex_label": "eq:p3-a1-two-stars",
+        "lhs": "Xs",
+        "relation": ">=",
+        "rhs": "139-R-(epsilon-B-H)/2",
+        "domain": "m=1,2",
+        "justification": "Two core-restricted leading/leaf edges of gap Xs"
+      },
+      {
+        "id": "leading",
+        "tex_label": "eq:p3-a1-leading",
+        "lhs": "ds",
+        "relation": ">=",
+        "rhs": "K+gs+2*Xs-Lams",
+        "domain": "0<=Lams<=epsilon<=delta<=138<K; K>=155",
+        "justification": "K-Lams distinct positive target hits below leading maximum ds-gs-2Xs"
+      },
+      {
+        "id": "H_transport",
+        "tex_label": "eq:p3-a1-H-transport",
+        "lhs": "Ss+3*gs+4*Xs+2*a+b+gt+ht",
+        "relation": "<=",
+        "rhs": "1102+w+r+delta-2*e+Eerr",
+        "domain": "m=1,2; Eclip+Lams<=epsilon",
+        "justification": "Literal H_t identity, two lower/one upper endpoints, leading lower bound twice"
+      },
+      {
+        "id": "light_displacement",
+        "tex_label": "eq:p3-a1-displacement",
+        "lhs": "(131-q)/(74-q)",
+        "relation": "<=",
+        "rhs": "q",
+        "domain": "27<=q<=73 integral",
+        "justification": "q(75-q)>=131 by concavity; endpoint values 1296 and 146"
+      },
+      {
+        "id": "heavy_credit",
+        "tex_label": "eq:p3-a1-heavy-credit",
+        "lhs": "3*B+5*H/2-Gl",
+        "relation": ">=",
+        "rhs": "185",
+        "domain": "Exactly one relevant clipping count >=74; Gl native losses of other two",
+        "justification": "Minimum heavy coefficient 5/2; remaining coefficients nonnegative"
+      },
+      {
+        "id": "m3_END2_lower",
+        "tex_label": "eq:p3-a1-m3-END2",
+        "lhs": "Z",
+        "relation": ">=",
+        "rhs": "74-r_v-l_Z-2",
+        "domain": "m=3; sigma+epsilon<=66<74; integral retained singleton or true sole pair owner",
+        "justification": "Shared lem:p3-END2 including all integral BAD endpoints"
+      },
+      {
+        "id": "m3_END2_upper",
+        "tex_label": "eq:p3-a1-m3-END2",
+        "lhs": "Z",
+        "relation": "<=",
+        "rhs": "S_v+r_o-73+h_Z+2",
+        "domain": "m=3; sigma+epsilon<=66<74; integral retained singleton or true sole pair owner",
+        "justification": "Shared lem:p3-END2 including all integral BAD endpoints"
+      },
+      {
+        "id": "m3_transport",
+        "tex_label": "eq:p3-a1-m3-transport",
+        "lhs": "Ss+3*gs+4*Xs+2*a+b",
+        "relation": "<=",
+        "rhs": "1108+w+r+delta-2*e",
+        "domain": "m=3; E0+Lams<=epsilon",
+        "justification": "V_t identity and three END2 applications"
+      },
+      {
+        "id": "m3_gap",
+        "tex_label": "eq:p3-a1-m3-gap",
+        "lhs": "3*gs",
+        "relation": ">=",
+        "rhs": "3*f-3*epsilon/2",
+        "domain": "m=3; f=(159-sigma+R)/4",
+        "justification": "Disjoint pairs {U_s,V_s} and {C6_t,C7_t}; raw Q overlaps"
+      },
+      {
+        "id": "m3_star_full",
+        "tex_label": null,
+        "lhs": "2*(Xs+Xt)+4*R+epsilon",
+        "relation": ">=",
+        "rhs": "556",
+        "domain": "m=3",
+        "justification": "Two leading hubs with leaves V_v,C7_v; one full K per target"
+      },
+      {
+        "id": "m3_star_s",
+        "tex_label": null,
+        "lhs": "2*Xs+2*R+epsilon",
+        "relation": ">=",
+        "rhs": "278",
+        "domain": "m=3",
+        "justification": "Only leading_s--V_s and leading_t--C7_t"
+      },
+      {
+        "id": "m3_source",
+        "tex_label": "eq:p3-a1-m3-source",
+        "lhs": "Ss+2*a+b+4*Xs",
+        "relation": ">=",
+        "rhs": "T+7*r+22+sigma_s+R+L+6*Xs+Xt",
+        "domain": "m=3; R_s>=r+2; e_s>=4",
+        "justification": "Four peeled mass >=M_s+3R_s+6 and exact core profile"
+      }
+    ],
+    "exact_arithmetic_checks": [
+      {
+        "id": "m1_integer_quadratic",
+        "lhs": "r*(r+1)/2+5*r+4*(r-34)*(r-35)",
+        "rhs": "695+(r-30)*(9*r-271)/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-q1"
+      },
+      {
+        "id": "m2_low_owner_s_light_quadratic",
+        "lhs": "r*(r+1)/2+4*r+(r-34)*(r-35)+3*(r-35)**2",
+        "rhs": "680+9*(r-30)*(r-31)/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-q2s-light"
+      },
+      {
+        "id": "m2_low_owner_t_light_quadratic",
+        "lhs": "r*(r+1)/2+7*r+(r-34)*(r-35)+3*(r-34)**2",
+        "rhs": "743+9*(r-29)*(r-30)/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-q2t-light"
+      },
+      {
+        "id": "m2_low_owner_s_heavy_quadratic",
+        "lhs": "r*(r+1)/2+5*r+4*(r-35)**2",
+        "rhs": "715+9*(r-30)*(r-31)/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-q2s-heavy"
+      },
+      {
+        "id": "m2_low_owner_t_heavy_quadratic",
+        "lhs": "r*(r+1)/2+6*r+4*(r-34)**2",
+        "rhs": "709+9*(r-29)*(r-30)/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-q2t-heavy"
+      },
+      {
+        "id": "m3_integer_quadratic",
+        "lhs": "r*(r+1)/2+6*r+11*(r-34)*(r-35)/2",
+        "rhs": "748+(r-31)*(6*r-187)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-quadratic"
+      },
+      {
+        "id": "m3_quadratic_expansion",
+        "lhs": "r*(r+1)/2+6*r+11*(r-34)*(r-35)/2",
+        "rhs": "6*r**2-373*r+6545",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-quadratic"
+      },
+      {
+        "id": "literal_beta",
+        "lhs": "hs-a-ds",
+        "rhs": "hs-a-ds",
+        "verified_difference": "0",
+        "note": "alpha_s=hs-a; no gs term"
+      },
+      {
+        "id": "literal_pair1",
+        "lhs": "(dt-2*b-gt)-(a+gs+hs+ds)",
+        "rhs": "dt-2*ds-(hs-a-ds)-2*(a+b)-(gs+gt)",
+        "verified_difference": "0"
+      },
+      {
+        "id": "literal_V_transport",
+        "lhs": "dt-b-gt",
+        "rhs": "2*ds+(hs-a-ds)+(dt-2*ds-(hs-a-ds)-2*(a+b)-(gs+gt))+2*a+b+gs",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-V-identity"
+      },
+      {
+        "id": "literal_H_transport",
+        "lhs": "dt-b+ht",
+        "rhs": "2*ds+(hs-a-ds)+(dt-2*ds-(hs-a-ds)-2*(a+b)-(gs+gt))+2*a+b+gs+gt+ht",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-H-identity"
+      },
+      {
+        "id": "ten_edge_linear_combination",
+        "lhs": "(Xs+Xt+gs+gt+ht-5*f+(epsilon-B)/2)+2*(Xs+gs-2*f+(epsilon-B-H)/2)+3*(Xs-139+R+(epsilon-B-H)/2)",
+        "rhs": "6*Xs+Xt+3*gs+gt+ht-9*f-417+3*R+3*epsilon-3*B-5*H/2",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-W"
+      },
+      {
+        "id": "m1_source_to_scalar",
+        "base_residual": "1102+w+r+delta-2*e+Eerr-(T+6*r+19+sigma_s+R+L+9*f+417-3*R-3*epsilon+3*B+5*H/2)",
+        "substitutions": {
+          "epsilon": "delta-e",
+          "f": "(169-sigma+R)/4"
+        },
+        "result_residual": "1143/4+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-scalar1"
+      },
+      {
+        "id": "m2s_source_to_scalar",
+        "base_residual": "1102+w+r+delta-2*e+Eerr-(T+6*r+18+sigma_s+R+L+9*f+417-3*R-3*epsilon+3*B+5*H/2)",
+        "substitutions": {
+          "epsilon": "delta-e",
+          "f": "41+(R-sigma)/4"
+        },
+        "result_residual": "298+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-scalar2s"
+      },
+      {
+        "id": "m2t_source_to_scalar",
+        "base_residual": "1102+w+r+delta-2*e+Eerr-(T+7*r+24+sigma_s+R+L+9*f+417-3*R-3*epsilon+3*B+5*H/2)",
+        "substitutions": {
+          "epsilon": "delta-e",
+          "f": "41+(R-sigma)/4"
+        },
+        "result_residual": "292+w+4*delta+Eerr-(T+6*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-scalar2t"
+      },
+      {
+        "id": "m1_light_endpoint_and_L",
+        "base_residual": "1143/4+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "3+B+H",
+          "L": "32-w+I+sigma+delta"
+        },
+        "result_residual": "(1027/4+2*w+3*delta-(T+5*r+I+sigma_s-5*sigma/4+R/4+5*e))-2*B-3*H/2",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m1_light_mass_cap",
+        "base_residual": "1027/4+2*w+3*delta-(T+5*r+I+sigma_s-5*sigma/4+R/4+5*e)",
+        "substitutions": {
+          "delta": "134+w-I-sigma"
+        },
+        "result_residual": "2635/4+5*w-(T+5*r+4*I+7*sigma/4+sigma_s+R/4+5*e)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m1-light-final"
+      },
+      {
+        "id": "m2s_light_mass_and_L",
+        "scalar_residual": "298+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "6+B+H",
+          "L": "100-k-w+I+sigma+delta",
+          "k": "r",
+          "delta": "101+w-(k-35)**2-sigma"
+        },
+        "discarded_nonnegative_loss": "2*B+3*H/2",
+        "result_residual": "507+5*w-(T+4*r+I+3*(r-35)**2+7*sigma/4+sigma_s+R/4+5*e)",
+        "tex_label": "eq:p3-a1-m2s-light-final",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m2t_light_mass_and_L",
+        "scalar_residual": "292+w+4*delta+Eerr-(T+6*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "6+B+H",
+          "L": "100-k-w+I+sigma+delta",
+          "k": "69-r",
+          "delta": "101+w-(k-35)**2-sigma"
+        },
+        "discarded_nonnegative_loss": "2*B+3*H/2",
+        "result_residual": "570+5*w-(T+7*r+I+3*(r-34)**2+7*sigma/4+sigma_s+R/4+5*e)",
+        "tex_label": "eq:p3-a1-m2t-light-final",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m1_heavy_endpoint_cancellation",
+        "base_residual": "1143/4+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "Eu+sigma_u+2+Gl",
+          "L": "Eu+4",
+          "sigma_s": "sigma_u-sigma",
+          "B": "(185+Gl-5*H/2)/3"
+        },
+        "result_residual": "1151/4+w+4*delta-(T+5*r-13*sigma/4+R/4+5*e+189)",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m2s_heavy_endpoint_cancellation",
+        "base_residual": "298+w+4*delta+Eerr-(T+5*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "Eu+sigma_u+5+Gl",
+          "L": "Eu+4",
+          "sigma_s": "sigma_u-sigma",
+          "B": "(185+Gl-5*H/2)/3"
+        },
+        "result_residual": "303+w+4*delta-(T+5*r-13*sigma/4+R/4+5*e+189)",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m2t_heavy_endpoint_cancellation",
+        "base_residual": "292+w+4*delta+Eerr-(T+6*r+sigma_s-9*sigma/4+R/4+L+5*e+3*B+5*H/2)",
+        "substitutions": {
+          "Eerr": "Eu+sigma_u+5+Gl",
+          "L": "Eu+4",
+          "sigma_s": "sigma_u-sigma",
+          "B": "(185+Gl-5*H/2)/3"
+        },
+        "result_residual": "297+w+4*delta-(T+6*r-13*sigma/4+R/4+5*e+189)",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m1_heavy_mass_cap",
+        "base_residual": "1151/4+w+4*delta-(T+5*r-13*sigma/4+R/4+5*e+189)",
+        "substitutions": {
+          "delta": "134+w-I-sigma"
+        },
+        "result_residual": "2539/4+5*w-(T+5*r+4*I+3*sigma/4+R/4+5*e)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m1-heavy-final"
+      },
+      {
+        "id": "m2s_heavy_mass_cap",
+        "base_residual": "303+w+4*delta-(T+5*r-13*sigma/4+R/4+5*e+189)",
+        "substitutions": {
+          "delta": "101+w-(r-35)**2-sigma"
+        },
+        "result_residual": "518+5*w-(T+5*r+4*(r-35)**2+3*sigma/4+R/4+5*e)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m2s-heavy-final"
+      },
+      {
+        "id": "m2t_heavy_mass_cap",
+        "base_residual": "297+w+4*delta-(T+6*r-13*sigma/4+R/4+5*e+189)",
+        "substitutions": {
+          "delta": "101+w-(r-34)**2-sigma"
+        },
+        "result_residual": "512+5*w-(T+6*r+4*(r-34)**2+3*sigma/4+R/4+5*e)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m2t-heavy-final"
+      },
+      {
+        "id": "m3_star_combination",
+        "lhs": "(2*(Xs+Xt)+4*R+epsilon-556)/2+5*(2*Xs+2*R+epsilon-278)/2",
+        "rhs": "6*Xs+Xt+7*R+3*epsilon-973",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-star"
+      },
+      {
+        "id": "m3_full_source_transport",
+        "base_residual": "1108+w+r+delta-2*e-(T+7*r+22+sigma_s+R+(97-w+I+sigma+delta)+(973-7*R-3*epsilon)+(3*f-3*epsilon/2))",
+        "substitutions": {
+          "f": "(159-sigma+R)/4"
+        },
+        "result_residual": "21*R/4+9*epsilon/2-(T+6*r+I+sigma/4+sigma_s+413/4-2*w+2*e)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-algebra1"
+      },
+      {
+        "id": "m3_radial_substitution",
+        "base_residual": "21*R/4+9*epsilon/2-(T+6*r+I+sigma/4+sigma_s+413/4-2*w+2*e)",
+        "substitutions": {
+          "epsilon": "delta-e",
+          "R": "(221+w-I-delta)/2"
+        },
+        "result_residual": "3815/8+37*w/8+15*delta/8-(T+6*r+29*I/8+sigma/4+sigma_s+13*e/2)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-algebra2"
+      },
+      {
+        "id": "m3_mass_substitution",
+        "base_residual": "3815/8+37*w/8+15*delta/8-(T+6*r+29*I/8+sigma/4+sigma_s+13*e/2)",
+        "substitutions": {
+          "delta": "69+w-I-sigma"
+        },
+        "result_residual": "2425/4+13*w/2-(T+6*r+11*I/2+17*sigma/8+sigma_s+13*e/2)",
+        "verified_difference": "0",
+        "tex_label": "eq:p3-a1-m3-algebra3"
+      },
+      {
+        "id": "m3_first_constant",
+        "lhs": "22+97+973+3*159/4-1108",
+        "rhs": "413/4",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m3_second_constant",
+        "lhs": "21*221/8-413/4",
+        "rhs": "3815/8",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m3_third_constant",
+        "lhs": "(3815+15*69)/8",
+        "rhs": "2425/4",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m3_w8_bound",
+        "lhs": "2425/4+13*8/2",
+        "rhs": "2633/4",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m1_w8_light_bound",
+        "lhs": "2635/4+5*8",
+        "rhs": "2795/4",
+        "verified_difference": "0"
+      },
+      {
+        "id": "m1_w8_heavy_bound",
+        "lhs": "2539/4+5*8",
+        "rhs": "2699/4",
+        "verified_difference": "0"
+      }
+    ],
+    "strict_terminal_contradictions": [
+      {
+        "case": "m=1, all light",
+        "tex_label": "eq:p3-a1-m1-light-final",
+        "left_lower": "695+71/4",
+        "right_upper": "2795/4",
+        "verified_strict_gap": "14"
+      },
+      {
+        "case": "m=1, one heavy",
+        "tex_label": "eq:p3-a1-m1-heavy-final",
+        "left_lower": "695",
+        "right_upper": "2699/4",
+        "verified_strict_gap": "81/4"
+      },
+      {
+        "case": "m=2, low-1 owner s, all light",
+        "tex_label": "eq:p3-a1-m2s-light-final",
+        "left_lower": "680",
+        "right_upper": "547",
+        "verified_strict_gap": "133"
+      },
+      {
+        "case": "m=2, low-1 owner t, all light",
+        "tex_label": "eq:p3-a1-m2t-light-final",
+        "left_lower": "743",
+        "right_upper": "610",
+        "verified_strict_gap": "133"
+      },
+      {
+        "case": "m=2, low-1 owner s, one heavy",
+        "tex_label": "eq:p3-a1-m2s-heavy-final",
+        "left_lower": "715",
+        "right_upper": "558",
+        "verified_strict_gap": "157"
+      },
+      {
+        "case": "m=2, low-1 owner t, one heavy",
+        "tex_label": "eq:p3-a1-m2t-heavy-final",
+        "left_lower": "709",
+        "right_upper": "552",
+        "verified_strict_gap": "157"
+      },
+      {
+        "case": "m=3, all integral endpoints and both size orientations",
+        "tex_label": "eq:p3-a1-m3-algebra3",
+        "left_lower": "748",
+        "right_upper": "2633/4",
+        "verified_strict_gap": "359/4"
+      },
+      {
+        "case": "m=4, both low-multiset placements",
+        "tex_label": "eq:p3-a1-budget",
+        "left_lower": "11",
+        "right_upper": "3",
+        "verified_strict_gap": "8"
+      }
+    ]
+  }
+}

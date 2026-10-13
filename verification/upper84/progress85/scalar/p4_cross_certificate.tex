@@ -1,0 +1,161 @@
+% Standalone local theorem and proof; requires amsmath,amssymb,amsthm.
+% This is a conditional local exclusion, not a replacement for the structural
+% theorem or for the actual activity/retention classification.
+\subsection{An analytic exclusion of the first-gap-one A0 cross case}
+
+Consider the normalized cardinality-$85$ source with $d=77$ and
+$E=P_s\cup\{0\}\cup(-P_t)$, where $r=|P_s|$, $k=|P_t|$ and
+$r+k=68$. Assume that the first missing positive subset sum of the
+absolute core is $1$, that $z=w=2$, and that the A0 classification gives
+the retained centers $P=C_{4s}$, $\alpha_t$, $C_{6t}$ and $U_s$ and all
+eight CORE8 resources. The selected $P$ is an actual contributor of its
+sole-owned paired unit. The fixed-label credit is $9$; write
+$\varepsilon=\delta-9\ge0$.
+
+The inputs used here are the proved source bound
+\[
+ T=26+I+\tau+\delta\le165,\qquad I=(k-34)^2,
+\]
+the nominal first-gap-one endpoint bounds
+\[
+ Z\ge r_o+4-\ell_Z,\qquad Z\le S_v-r_v-3+h_Z,
+\]
+and the actual native/grouped loss budgets. All subset copies used below
+belong to the specified retained resources; no capacity is assigned to
+an empty center.
+
+Write the four increasing source-tail offsets as $a_v<b_v<c_v<e_v$.
+Let $U=a_s+b_s+a_t+b_t$, $J=e_s-c_s+e_t-c_t$, and let $B_v$ count
+the distinct sums of two offsets on sign $v$ that exceed $e_v$.
+Set $B=B_s+B_t$ and let $p$ be the number of odd integers
+$a_v+b_v$. The two source envelopes and the quartet fringe bound give
+\[
+ J+U\le332-T,\quad J\ge T-18+p,\quad
+ 2B\le U+16-p.
+\]
+Thus $2T+U+p\le350$ and
+\begin{equation}\label{eq:85-cross-fringe}
+ B\le\min(20,183-T).
+\end{equation}
+The full-source central interval gives
+$K\le M+R+1+B$, where $M=M_s+M_t$ and $R=R_s+R_t$.
+Consequently the exact original mass identity yields
+\begin{equation}\label{eq:85-cross-source}
+ S_s+S_t=2K+1164-\delta
+ \le2M+2R+1166+2B-\delta.
+\end{equation}
+
+\paragraph{The endpoint transport, including every constant.}
+Put $a=s_4=M_s+X_s$, $b=t_4=M_t+X_t$ and $G=g_s+g_t$.
+The literal center identity is
+\[
+ U_s=P+\alpha_t+C_{6t}+2a+4b+2G.
+\]
+Three lower endpoints and the upper endpoint of $U_s$ imply
+\[
+ S_s\ge219-2k+2a+4b+2G-E_{\rm end},\qquad
+ E_{\rm end}=\ell_P+\ell_{\alpha_t}+\ell_{C_{6t}}+h_{U_s}
+ \le\varepsilon.
+\]
+Indeed their constant is
+$(k+4)+2(r+4)+(r+3)=219-2k$.
+The opposite source satisfies
+$S_t\ge T_k+\tau_t+4R_t+10$, while
+$R_t\ge k+1$ and $M_t\ge k+5$.
+Combining with \eqref{eq:85-cross-source} therefore gives
+\begin{equation}\label{eq:85-cross-before-overlap}
+ T_k+4k+\tau_t+243+2X_s+4X_t+2G
+ \le2R+1166+2B-\delta+E_{\rm end}.
+\end{equation}
+Here $243=219+10+14$, and $14$ comes from
+$2M_t+4R_t-2k\ge4k+14$.
+
+\paragraph{Admissible asymmetric core copies.}
+Put
+\[
+ E_v=\tau_v-R_v+1\ge0,\quad
+ \zeta=\tau_t-k\ge0,\quad D=E_s+E_t=\tau-R+2.
+\]
+Every core magnitude is at least its rank plus $1$.
+After deleting the maximum, its remaining rank deviations sum to $E_v$.
+Deleting the $j_v$ largest core entries therefore leaves maximum at most
+$r_v-j_v+1+\lfloor E_v/j_v\rfloor$.
+For the signed trimmed core $Q$, this proves
+\[
+ |Q\cap(Q+q)|\ge
+ 67-j_s-j_t-\lfloor E_s/j_s\rfloor-\lfloor E_t/j_t\rfloor-q.
+\]
+Choose $j_s=3$ and choose $j_t\in\{1,2,3\}$ minimizing
+$j_t+\lfloor E_t/j_t\rfloor$. Define
+\[
+ \phi_s=3+\lfloor E_s/3\rfloor,\quad
+ \phi_t=\min_{j=1,2,3}\bigl(j+\lfloor E_t/j\rfloor\bigr),\quad
+ f=67-\phi_s-\phi_t,
+ \quad F=\max(137-R,f).
+\]
+The full core gives the bound $137-R-q$; the trimmed core gives $f-q$.
+
+For a leading-to-own3 edge, the leading resource contains
+$\lambda_v+M_v+Q$ and the ordinary resource contains
+$\lambda_v+v_4+Q$, with gap $X_v=v_4-M_v$.
+The reflected leading-to-$C_7$ edge uses the reflected copies at the
+same gap. Thus these are actual subsets of the retained resources.
+The rooted forest count, separately for an individual two-edge star
+and for the four-edge star, gives
+\[
+ 2X_t\ge2F-\varepsilon,\qquad
+ 2X_s+2X_t\ge4F-\varepsilon,
+\]
+and hence $2X_s+4X_t\ge6F-2\varepsilon$.
+The four disjoint CORE8 ordinary pairs similarly give
+$2G\ge4f-\varepsilon$.
+Substituting into \eqref{eq:85-cross-before-overlap} and using
+$E_{\rm end}\le\varepsilon$ and $\varepsilon=\delta-9$ yields
+\begin{equation}\label{eq:85-cross-raw}
+ T_k+4k+\tau_t+6F+4f
+ \le2R+887+2B+3\delta.
+\end{equation}
+In particular the conservative old-$B=20$ residual is
+\[
+ L=T_k+4k+\tau_t-927-2R-3\delta+6F+4f.
+\]
+The actual residual in \eqref{eq:85-cross-raw} is
+$L+2(20-B)$; this is exactly the fringe correction, not an additional
+credit against $\delta$.
+
+\paragraph{A short integer certificate.}
+Put $q=T_k+5k$. Since $T=26+I+\tau+\delta$,
+\[
+ L+3T=q+3I-855+\zeta+3(E_s+E_t)+R+6F+4f.
+\]
+The two inequalities $F\ge137-R$ and $F\ge f$ give
+$6F\ge137-R+5f$, so
+\[
+ L+3T\ge q+3I-115
+ +(3E_s-9\phi_s)+(\zeta+3E_t-9\phi_t).
+\]
+First, $3E_s-9\phi_s\ge-27$.
+If $E_t=0$, the second parenthesis is at least $-9$.
+If $E_t>0$, then $R_t-k-1\ge1$: equality would force the entire
+$k$-element core to be $\{2,\ldots,k+1\}$, for which $E_t=0$.
+Hence $\zeta=E_t+(R_t-k-1)\ge E_t+1$.
+For $E_t\ge6$, the choice $j_t=3$ gives
+\[
+ \zeta+3E_t-9\phi_t\ge E_t-26\ge-20.
+\]
+For $E_t=1,2,3,4,5$, the respective bounds are
+$-13,-18,-14,-19,-15$, by using $j_t=1,2,2,2,3$.
+Thus the second parenthesis is always at least $-20$.
+Finally, for every integer $k$, with $x=k-28$,
+\[
+ q+3I=T_k+5k+3(k-34)^2
+ =654+\frac{7x^2-5x}{2}\ge654.
+\]
+We have proved $L\ge492-3T$. By \eqref{eq:85-cross-fringe},
+\[
+ L+2(20-B)\ge492-3T+2\max(0,T-163)>0
+ \qquad(T\le165).
+\]
+For $T\le163$ the margin is at least $3$; at $T=164,165$ it is at
+least $2,1$, respectively. This contradicts \eqref{eq:85-cross-raw}
+and excludes the conditional A0 cross case with first gap $1$.

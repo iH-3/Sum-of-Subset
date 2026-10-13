@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.pdf -text
+archive/** -text
+# Historical certificate manifests hash original file bytes, including CRLF.
+verification/upper84/** -text
+reports/upper86_complete_20261005.tex -text
+results/** -text
+experiments/*.log -text
+verify_windows.bat text eol=crlf

@@ -1,0 +1,7 @@
+{
+  "schema": "size86-integer-vector-input-v1",
+  "file": "four_integer_vectors.json",
+  "sha256": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+  "count": 4,
+  "note": "Exact retained integer witness data; all SIZE86 rows are reconstructed locally."
+}

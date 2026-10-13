@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "fixed_slot_universe": 110,
+  "disjoint_groups": 26,
+  "labels_used": 70,
+  "coefficient_vectors_recomputed": true,
+  "peeling_supplemental_tests": 3797,
+  "feasible_cover_supplemental_tests": 4096,
+  "front_upper115_quadratic_at108": 39,
+  "elementary_upper122_first_excluded_d": 115,
+  "boundary": "Written universal arguments and cited published theorems are not established by the supplemental finite tests."
+}

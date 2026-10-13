@@ -1,0 +1,56 @@
+k a b Omega R beta q j zcap D1upper nonprimitive_c_cap
+3 31 37 591 43 3 14 16 6 -171 -119
+4 30 38 584 69 4 14 15 8 -181 -88
+5 29 39 575 92 6 14 21 12 -191 -54
+6 28 40 564 112 6 14 18 12 -213 -35
+7 27 41 551 129 7 14 20 14 -235 -13
+8 26 42 536 143 8 14 22 16 -261 6
+9 25 43 519 154 8 14 21 16 -295 16
+10 24 44 500 162 8 20 24 16 -333 23
+11 23 45 479 167 8 14 22 16 -375 27
+12 22 46 456 169 8 14 22 16 -421 28
+13 21 47 431 168 7 21 22 14 -475 20
+14 20 48 404 173 7 21 22 14 -529 24
+15 19 49 375 166 7 14 22 14 -587 16
+16 18 50 344 156 7 14 24 14 -649 5
+17 17 51 311 143 6 14 23 12 -719 -15
+18 16 52 276 127 5 14 21 10 -793 -38
+19 15 53 239 108 5 14 26 10 -867 -58
+20 14 54 200 86 4 14 26 8 -933 -87
+a13 effective (11, 63, 13, 13, 23, 14) excluded after G144
+a13 strict effective (17, 136, 19, 19, 12, 34) excluded after G144
+Large-hole final-support overlap: k side Z base-margin endpoint-beta j
+0 P 83 -26 5 26
+0 Q 83 -26 5 26
+1 P 84 -53 7 25
+1 Q 84 6 None None
+2 P 87 -75 8 24
+2 Q 87 43 None None
+3 P 92 -92 8 22
+3 Q 92 85 None None
+4 P 99 -104 9 24
+4 Q 99 132 None None
+5 P 108 -111 9 24
+5 Q 108 184 None None
+6 P 119 -113 9 24
+6 Q 119 241 None None
+7 P 132 -110 8 23
+7 Q 132 303 None None
+8 P 147 -102 8 25
+8 Q 147 370 None None
+9 P 164 -89 7 26
+9 Q 164 442 None None
+10 P 183 -71 6 27
+10 Q 183 519 None None
+11 P 204 -48 5 29
+11 Q 204 601 None None
+12 P 227 -20 4 36
+12 Q 227 688 None None
+13 P 252 13 None None
+13 Q 252 780 None None
+14 P 279 51 None None
+14 Q 279 868 None None
+15 P 308 94 None None
+15 Q 308 970 None None
+a14 effective (19, 187, 22, 22, 11, 43) both strict and repaired branches excluded by j0
+PASS: 18 endpoint inverse rows, both a13 effective boundaries, 32 overlap alternatives, 14 endpoint overlap repairs, and a14 closure.

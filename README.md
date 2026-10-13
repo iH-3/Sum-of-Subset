@@ -62,7 +62,7 @@ python verification/upper84/verify84.py --full
 
 ## 上界 86 的完整程序
 
-原始 ZIP 大小 116,323,869 字节，保存在 `archive/upper86/` 的三个分片中，每片小于 50 MiB。分片只是文件存储方式，内容未删改。恢复时检查每片以及完整 ZIP 的 SHA-256：
+原始 ZIP 大小 116,323,869 字节，保存在 `archive/upper86/` 的28 个分片中，每片不超过 4 MiB。分片只是文件存储方式，内容未删改。恢复时检查每片以及完整 ZIP 的 SHA-256：
 
 ```bash
 python verification/unpack_upper86.py

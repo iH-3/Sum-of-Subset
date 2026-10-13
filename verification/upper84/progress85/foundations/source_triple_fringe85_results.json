@@ -1,0 +1,196 @@
+{
+  "status": "PASS",
+  "universal_T_cap": 165,
+  "source_A_constant": 445,
+  "quartet_bound_dependency": "2B<=a+b+8-((a+b)%2)",
+  "finite_small_quartets_checked": 276,
+  "supplementary_quartets_checked": 32419,
+  "small_triple_rows": [
+    {
+      "a": 1,
+      "b": 2,
+      "P_by_c": {
+        "3": 3
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "P_by_c": {
+        "4": 4,
+        "5": 3
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 1,
+      "b": 4,
+      "P_by_c": {
+        "5": 4,
+        "6": 4,
+        "7": 3
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "P_by_c": {
+        "4": 4,
+        "5": 4
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 1,
+      "b": 5,
+      "P_by_c": {
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 3
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 2,
+      "b": 4,
+      "P_by_c": {
+        "5": 5,
+        "6": 3,
+        "7": 4
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 1,
+      "b": 6,
+      "P_by_c": {
+        "7": 4,
+        "8": 4,
+        "9": 4,
+        "10": 4,
+        "11": 3
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "P_by_c": {
+        "6": 5,
+        "7": 4,
+        "8": 3,
+        "9": 4
+      },
+      "P_at_c_ge_2b": 3
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "P_by_c": {
+        "5": 5,
+        "6": 5,
+        "7": 4
+      },
+      "P_at_c_ge_2b": 3
+    }
+  ],
+  "small_quartet_maxima": {
+    "3": {
+      "maximum_finite_P_plus_B_minus_u": 4,
+      "witness": [
+        1,
+        2,
+        3,
+        4,
+        3,
+        4
+      ]
+    },
+    "4": {
+      "maximum_finite_P_plus_B_minus_u": 5,
+      "witness": [
+        1,
+        3,
+        4,
+        5,
+        4,
+        5
+      ]
+    },
+    "5": {
+      "maximum_finite_P_plus_B_minus_u": 5,
+      "witness": [
+        1,
+        4,
+        5,
+        6,
+        4,
+        6
+      ]
+    },
+    "6": {
+      "maximum_finite_P_plus_B_minus_u": 5,
+      "witness": [
+        1,
+        5,
+        6,
+        8,
+        4,
+        7
+      ]
+    },
+    "7": {
+      "maximum_finite_P_plus_B_minus_u": 5,
+      "witness": [
+        2,
+        5,
+        6,
+        7,
+        5,
+        7
+      ]
+    },
+    "8": {
+      "maximum_finite_P_plus_B_minus_u": 4,
+      "witness": [
+        2,
+        6,
+        7,
+        8,
+        5,
+        7
+      ]
+    }
+  },
+  "exceptional_tables": [
+    {
+      "a": 1,
+      "b": 3,
+      "c": 4,
+      "B_by_e": {
+        "5": 5,
+        "6": 5,
+        "7": 4
+      },
+      "B_at_e_ge_2c": 4
+    },
+    {
+      "a": 2,
+      "b": 4,
+      "c": 5,
+      "B_by_e": {
+        "6": 6,
+        "7": 6,
+        "8": 5,
+        "9": 5
+      },
+      "B_at_e_ge_2c": 4
+    }
+  ],
+  "T165_Bsum_cap": 18,
+  "universal_one_maximum_offset_floor": "e_v>=max(4,T-89)",
+  "Z5_offset_floor": "e_v>=A+16"
+}

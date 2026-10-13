@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "universal_T_cap": 165,
+  "source_A_constant": 445,
+  "finite_small_quartets_checked": 276,
+  "supplementary_quartets_checked": 32419,
+  "T165_Bsum_cap": 18
+}

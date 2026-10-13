@@ -1,0 +1,664 @@
+{
+  "weights_source": "/workspace/scratch/525b94449de4/prior/unpacked86/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch27_candidate_v1/bundle/adopted_sources/lattice87/four_exception_vectors.json",
+  "source_sha256": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+  "method": "independent dictionary-polynomial rows from elementary mathematical inequalities, no endpoint imports",
+  "mode_count": 4,
+  "case_count": 32,
+  "all_lhs_nonnegative": true,
+  "all_rhs_negative": true,
+  "results": [
+    {
+      "mode": "A0",
+      "weights": [
+        [
+          "AP exceptional delta cap",
+          1
+        ],
+        [
+          "p4>M",
+          2
+        ],
+        [
+          "pair1p low",
+          1
+        ],
+        [
+          "pair2p low",
+          1
+        ],
+        [
+          "q4>M",
+          2
+        ],
+        [
+          "q5 low",
+          1
+        ],
+        [
+          "q8 low",
+          1
+        ],
+        [
+          "sumloss",
+          1
+        ]
+      ],
+      "rhs": {
+        "E": 1,
+        "1": -320
+      },
+      "nonzero_lhs": {
+        "p3": 2,
+        "q3": 2,
+        "Lp": 1,
+        "Lq": 1,
+        "l_p0": 1,
+        "u_p0": 1,
+        "l_p1": 1,
+        "u_p1": 1,
+        "l_p2": 1,
+        "u_p2": 1,
+        "l_p3": 1,
+        "u_p3": 1,
+        "l_p5": 1,
+        "u_p5": 1,
+        "l_p6": 1,
+        "u_p6": 1,
+        "l_p7": 1,
+        "u_p7": 1,
+        "l_p8": 1,
+        "u_p8": 1,
+        "l_q0": 1,
+        "u_q0": 1,
+        "l_q1": 1,
+        "u_q1": 1,
+        "l_q2": 1,
+        "u_q2": 1,
+        "l_q3": 1,
+        "u_q3": 1,
+        "u_q5": 1,
+        "l_q6": 1,
+        "u_q6": 1,
+        "l_q7": 1,
+        "u_q7": 1,
+        "u_q8": 1,
+        "u_pair1p": 1,
+        "u_pair2p": 1
+      },
+      "cases": [
+        {
+          "a": 22,
+          "b": 48,
+          "E": 4,
+          "rhs": -316
+        },
+        {
+          "a": 23,
+          "b": 47,
+          "E": 6,
+          "rhs": -314
+        },
+        {
+          "a": 24,
+          "b": 46,
+          "E": 5,
+          "rhs": -315
+        },
+        {
+          "a": 25,
+          "b": 45,
+          "E": 1,
+          "rhs": -319
+        },
+        {
+          "a": 45,
+          "b": 25,
+          "E": 1,
+          "rhs": -319
+        },
+        {
+          "a": 46,
+          "b": 24,
+          "E": 5,
+          "rhs": -315
+        },
+        {
+          "a": 47,
+          "b": 23,
+          "E": 6,
+          "rhs": -314
+        },
+        {
+          "a": 48,
+          "b": 22,
+          "E": 4,
+          "rhs": -316
+        }
+      ],
+      "minimum_contradiction": 314
+    },
+    {
+      "mode": "A1",
+      "weights": [
+        [
+          "AP exceptional delta cap",
+          56
+        ],
+        [
+          "Mp>=R+4",
+          6
+        ],
+        [
+          "Rp>=a",
+          24
+        ],
+        [
+          "Rq>=b",
+          12
+        ],
+        [
+          "Sp mass",
+          3
+        ],
+        [
+          "Sq mass",
+          2
+        ],
+        [
+          "cardinality mass",
+          14
+        ],
+        [
+          "mixed envelope 4 4",
+          28
+        ],
+        [
+          "p0 high",
+          8
+        ],
+        [
+          "p3>p4",
+          74
+        ],
+        [
+          "p4>M",
+          152
+        ],
+        [
+          "p8 low",
+          70
+        ],
+        [
+          "pair1p low",
+          16
+        ],
+        [
+          "pair2q low",
+          26
+        ],
+        [
+          "q0 high",
+          10
+        ],
+        [
+          "q3>q4",
+          70
+        ],
+        [
+          "q4>M",
+          148
+        ],
+        [
+          "q5 low",
+          62
+        ],
+        [
+          "sumloss",
+          70
+        ]
+      ],
+      "rhs": {
+        "E": 56,
+        "1": 5434,
+        "a": -24,
+        "b": -12,
+        "Ta": -6,
+        "Tb": -4
+      },
+      "nonzero_lhs": {
+        "p3": 4,
+        "u_p0": 62,
+        "l_pair1p": 54,
+        "q3": 8,
+        "l_pair2q": 44,
+        "u_q0": 60,
+        "l_q5": 8,
+        "Lp": 70,
+        "Lq": 70,
+        "l_p0": 70,
+        "l_p1": 70,
+        "u_p1": 70,
+        "l_p2": 70,
+        "u_p2": 70,
+        "l_p3": 70,
+        "u_p3": 70,
+        "l_p5": 70,
+        "u_p5": 70,
+        "l_p6": 70,
+        "u_p6": 70,
+        "l_p7": 70,
+        "u_p7": 70,
+        "u_p8": 70,
+        "l_q0": 70,
+        "l_q1": 70,
+        "u_q1": 70,
+        "l_q2": 70,
+        "u_q2": 70,
+        "l_q3": 70,
+        "u_q3": 70,
+        "u_q5": 70,
+        "l_q6": 70,
+        "u_q6": 70,
+        "l_q7": 70,
+        "u_q7": 70,
+        "l_q8": 70,
+        "u_q8": 70,
+        "u_pair1p": 70,
+        "u_pair2q": 70
+      },
+      "cases": [
+        {
+          "a": 22,
+          "b": 48,
+          "E": 4,
+          "rhs": -1668
+        },
+        {
+          "a": 23,
+          "b": 47,
+          "E": 6,
+          "rhs": -1514
+        },
+        {
+          "a": 24,
+          "b": 46,
+          "E": 5,
+          "rhs": -1538
+        },
+        {
+          "a": 25,
+          "b": 45,
+          "E": 1,
+          "rhs": -1740
+        },
+        {
+          "a": 45,
+          "b": 25,
+          "E": 1,
+          "rhs": -3400
+        },
+        {
+          "a": 46,
+          "b": 24,
+          "E": 5,
+          "rhs": -3364
+        },
+        {
+          "a": 47,
+          "b": 23,
+          "E": 6,
+          "rhs": -3506
+        },
+        {
+          "a": 48,
+          "b": 22,
+          "E": 4,
+          "rhs": -3826
+        }
+      ],
+      "minimum_contradiction": 1514
+    },
+    {
+      "mode": "B0",
+      "weights": [
+        [
+          "AP exceptional delta cap",
+          11
+        ],
+        [
+          "Mp>=R+4",
+          12
+        ],
+        [
+          "Mq>=R+4",
+          12
+        ],
+        [
+          "Rp>=a",
+          12
+        ],
+        [
+          "Rq>=b",
+          18
+        ],
+        [
+          "Sq mass",
+          1
+        ],
+        [
+          "cardinality mass",
+          4
+        ],
+        [
+          "mixed envelope 4 4",
+          8
+        ],
+        [
+          "p0 high",
+          4
+        ],
+        [
+          "p3>p4",
+          19
+        ],
+        [
+          "p4>M",
+          46
+        ],
+        [
+          "p9 low",
+          4
+        ],
+        [
+          "pair1p low",
+          12
+        ],
+        [
+          "q0 high",
+          2
+        ],
+        [
+          "q2 low",
+          6
+        ],
+        [
+          "q3>q4",
+          32
+        ],
+        [
+          "q4>M",
+          74
+        ],
+        [
+          "q6 low",
+          9
+        ],
+        [
+          "q7 low",
+          15
+        ],
+        [
+          "q9 low",
+          14
+        ],
+        [
+          "sumloss",
+          15
+        ]
+      ],
+      "rhs": {
+        "E": 11,
+        "1": 545,
+        "a": -12,
+        "b": -18,
+        "Tb": -2
+      },
+      "nonzero_lhs": {
+        "p3": 2,
+        "u_p0": 11,
+        "l_p9": 11,
+        "l_pair1p": 3,
+        "q3": 4,
+        "u_q0": 13,
+        "l_q2": 9,
+        "l_q6": 6,
+        "l_q9": 1,
+        "Lp": 15,
+        "Lq": 15,
+        "l_p0": 15,
+        "l_p1": 15,
+        "u_p1": 15,
+        "l_p2": 15,
+        "u_p2": 15,
+        "l_p3": 15,
+        "u_p3": 15,
+        "l_p6": 15,
+        "u_p6": 15,
+        "l_p7": 15,
+        "u_p7": 15,
+        "l_p8": 15,
+        "u_p8": 15,
+        "u_p9": 15,
+        "l_q0": 15,
+        "l_q1": 15,
+        "u_q1": 15,
+        "u_q2": 15,
+        "l_q3": 15,
+        "u_q3": 15,
+        "u_q6": 15,
+        "u_q7": 15,
+        "l_q8": 15,
+        "u_q8": 15,
+        "u_q9": 15,
+        "u_pair1p": 15,
+        "l_pair2p": 15,
+        "u_pair2p": 15
+      },
+      "cases": [
+        {
+          "a": 22,
+          "b": 48,
+          "E": 4,
+          "rhs": -2891
+        },
+        {
+          "a": 23,
+          "b": 47,
+          "E": 6,
+          "rhs": -2767
+        },
+        {
+          "a": 24,
+          "b": 46,
+          "E": 5,
+          "rhs": -2678
+        },
+        {
+          "a": 25,
+          "b": 45,
+          "E": 1,
+          "rhs": -2624
+        },
+        {
+          "a": 45,
+          "b": 25,
+          "E": 1,
+          "rhs": -1084
+        },
+        {
+          "a": 46,
+          "b": 24,
+          "E": 5,
+          "rhs": -984
+        },
+        {
+          "a": 47,
+          "b": 23,
+          "E": 6,
+          "rhs": -919
+        },
+        {
+          "a": 48,
+          "b": 22,
+          "E": 4,
+          "rhs": -889
+        }
+      ],
+      "minimum_contradiction": 889
+    },
+    {
+      "mode": "B1",
+      "weights": [
+        [
+          "AP exceptional delta cap",
+          1
+        ],
+        [
+          "p4>M",
+          2
+        ],
+        [
+          "p9 low",
+          1
+        ],
+        [
+          "pair1p low",
+          1
+        ],
+        [
+          "pair2q low",
+          1
+        ],
+        [
+          "q2 low",
+          1
+        ],
+        [
+          "q4>M",
+          3
+        ],
+        [
+          "q9 low",
+          1
+        ],
+        [
+          "sumloss",
+          1
+        ]
+      ],
+      "rhs": {
+        "E": 1,
+        "1": -400
+      },
+      "nonzero_lhs": {
+        "p3": 2,
+        "q3": 2,
+        "Lp": 1,
+        "Lq": 1,
+        "l_p0": 1,
+        "u_p0": 1,
+        "l_p1": 1,
+        "u_p1": 1,
+        "l_p2": 1,
+        "u_p2": 1,
+        "l_p3": 1,
+        "u_p3": 1,
+        "l_p6": 1,
+        "u_p6": 1,
+        "l_p7": 1,
+        "u_p7": 1,
+        "l_p8": 1,
+        "u_p8": 1,
+        "u_p9": 1,
+        "l_q0": 1,
+        "u_q0": 1,
+        "l_q1": 1,
+        "u_q1": 1,
+        "u_q2": 1,
+        "l_q3": 1,
+        "u_q3": 1,
+        "l_q6": 1,
+        "u_q6": 1,
+        "l_q7": 1,
+        "u_q7": 1,
+        "l_q8": 1,
+        "u_q8": 1,
+        "u_q9": 1,
+        "u_pair1p": 1,
+        "u_pair2q": 1
+      },
+      "cases": [
+        {
+          "a": 22,
+          "b": 48,
+          "E": 4,
+          "rhs": -396
+        },
+        {
+          "a": 23,
+          "b": 47,
+          "E": 6,
+          "rhs": -394
+        },
+        {
+          "a": 24,
+          "b": 46,
+          "E": 5,
+          "rhs": -395
+        },
+        {
+          "a": 25,
+          "b": 45,
+          "E": 1,
+          "rhs": -399
+        },
+        {
+          "a": 45,
+          "b": 25,
+          "E": 1,
+          "rhs": -399
+        },
+        {
+          "a": 46,
+          "b": 24,
+          "E": 5,
+          "rhs": -395
+        },
+        {
+          "a": 47,
+          "b": 23,
+          "E": 6,
+          "rhs": -394
+        },
+        {
+          "a": 48,
+          "b": 22,
+          "E": 4,
+          "rhs": -396
+        }
+      ],
+      "minimum_contradiction": 394
+    }
+  ],
+  "uniform_E6_regression": {
+    "a_domain": [
+      15,
+      55
+    ],
+    "b": "70-a",
+    "maximum_rhs": {
+      "A0": -314,
+      "A1": -1446,
+      "B0": -559,
+      "B1": -394
+    },
+    "cases": 164,
+    "not_required_for_analytic_proof": true
+  },
+  "polynomial_identities": {
+    "E_maximum": "145/24 < 7",
+    "A1_completed_square": "-5*(a-267/10)^2-28911/20",
+    "B0": "-229-b^2-7*b",
+    "exact_integer_coefficients_checked": true
+  }
+}

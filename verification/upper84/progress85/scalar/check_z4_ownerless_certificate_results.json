@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "conditional_family": "Z4 ownerless: P,B,O_s,O_t empty",
+  "source": {
+    "A_cap": 137,
+    "L_floor": "A+20",
+    "individual_depth_floor": "A-69"
+  },
+  "actual_trim_source": {
+    "size": 67,
+    "span_bound": "66+tau-xi",
+    "overlap_constant": "67-tau+xi"
+  },
+  "fixed_credit": 18,
+  "terminal_margins": {
+    "both H core-hit, alpha clips light": "2+4I+ell",
+    "both H core-hit, one heavy": "17",
+    "one H without core hit": "13",
+    "two H without core hits": 9
+  },
+  "scope": "Exact scalar algebra; structural, actual-cover, and label-sign premises remain analytical."
+}

@@ -1,0 +1,225 @@
+% Integralization, exact budget, and sharp four-extreme theorem.
+% Source companion; original source line ranges follow.
+
+% Original source lines 82--110
+\section{Conventions}
+Write $[u,v]_{\Z}=[u,v]\cap\Z$ and $T_r=r(r+1)/2$. For a finite set $F$, put
+\[
+ R(F)=\{x+y:x,y\in F,\ x\ne y\},\qquad
+ \Delta(F)=|2F\setminus R(F)|.
+\]
+The restriction $x\ne y$ applies only to $R(F)$; $2F$ allows repetition.
+For an integer set $S$, its \emph{hull-hole count} is
+$\max S-\min S+1-|S|$. On another specified lattice, first divide by its
+step.
+
+\subsection{The real to integer reduction}
+If $0\notin A$, adjoining zero preserves feasibility, since
+$\FS(A\cup\{0\})=\FS(A)$ and $4A\subseteq4(A\cup\{0\})$.
+Moreover, the existence of a real feasible set of a given size is equivalent
+to the existence of an integer one of that size. Indeed, order its elements,
+choose a four-term representation for every subset sum, and retain all
+these identities as a homogeneous integer-coefficient linear system. Its
+kernel is a rational subspace. Rational points are dense in that subspace,
+so the nonempty relatively open strict-order region contains a rational
+solution. Clearing denominators gives an integer feasible set. A prescribed
+zero coordinate is preserved by adding its equation to the system.
+
+This is an existence reduction. It does not assert that the original real
+set itself lies on a one-dimensional rational lattice. Also, adjoining
+zero in an exact-cardinality exclusion is justified in descending order:
+one first excludes all larger sizes. Feasibility is not assumed to pass to
+arbitrary subsets.
+
+
+% Original source lines 140--329
+\subsection{Core notation and the exact budget}\label{sec:budget}
+Let $A$ be feasible, integral, and contain zero. Remove its four largest
+positive and four smallest negative elements, taking all elements of a
+sign if fewer than four exist; call this removed set $B$, and put
+$D=A\setminus B$, $d=|D|$. Peel the two largest positive and two smallest
+negative elements twice more, obtaining
+\[
+ D\supset D_1\supset E=P\cup\{0\}\cup(-Q),\quad
+ |D_1|=d-4,\quad e=|E|=d-8,
+\]
+where $P,Q$ are positive sets. The endpoint arguments below ensure both
+signs have enough elements for these choices. Put
+\[
+ a=|P|,\quad b=|Q|,\quad m=a+b=e-1,\quad
+ \Lambda=1+T_a+T_b,\quad s=|\FS(E)|.
+\]
+For any positive $r$-element set $X$, define
+\begin{align*}
+ \mu(X)&=|\FS(X)|-1-T_r,\\
+ \delta_0(X)&=|\{x\in X:2x\notin R(X\cup\{0\})\}|,\\
+ \rho(X)&=\mu(X)+2-2\delta_0(X).
+\end{align*}
+Write $\mu=\mu(P)+\mu(Q)$ and $\rho=\rho(P)+\rho(Q)$.
+The increasing-chain bound gives $\mu(X)\ge0$. The threshold-14
+and non-progression theorems in the accompanying general lemma excerpts give
+\begin{equation}\label{eq:input-rho}
+ \rho(X)\ge0\ (r\ge14),\qquad
+ \rho(X)\ge r-14\quad\hbox{if $r\ge6$ and $\FS(X)$ is not an AP}.
+\end{equation}
+The stability theorem of Carpenter--Defant--Kravitz \cite{CDK2026} additionally
+gives $\mu(X)\ge r-3$ for a non-AP support in the range used here.
+Since the maximum of $X$ is defective, $\rho(X)\le\mu(X)$.
+
+The covering and peeling inequalities are
+\begin{align}
+ |\FS(D)|&\le2|2D|+18d+85,\label{eq:cover}\\
+ |\FS(F)|&\ge|\FS(F')|+|R(F)|-1,\label{eq:peel}\\
+ s&\le22d+2\Delta(D)+77\le24d+77.\label{eq:corebound}
+\end{align}
+Here $F'$ is a four-extreme peel of $F$. The proof of \eqref{eq:cover}
+includes a fixed, explicitly checked 110-slot covering and 26 disjoint
+deletion groups; it is not an asymptotic estimate. The last inequality
+uses $\Delta(D)\le d$.
+
+If $a,b\ge14$ and $E$ has an opposite pair, define
+\begin{align*}
+ \kappa&=s-\Lambda-\mu,&
+ \vartheta&=\delta_0(P)+\delta_0(Q)+8-\Delta(D),\\
+ c&=2|2D|+18d+85-|\FS(D)|,\\
+ \ell_1&=|\FS(D)|-|\FS(D_1)|-|R(D)|+1,\\
+ \ell_2&=|\FS(D_1)|-s-|R(D_1)|+1,\\
+ g&=4d-10-(|R(D)|-|R(D_1)|),&
+ T&=\kappa+\ell_1+\ell_2+g.
+\end{align*}
+All these quantities are nonnegative. For $\kappa$, use the elementary
+sumset bound $|U+V|\ge|U|+|V|-1$. For $\vartheta$, zero is not a diagonal
+exception, the eight members of $D\setminus E$ account for at most eight
+exceptions, and any remaining exception is counted in $\delta_0(P)$ or
+$\delta_0(Q)$. For $g$, count the $4(d-4)+6=4d-10$ distinct-element pairs
+that meet the removed layer. The other signs follow from
+\eqref{eq:cover}--\eqref{eq:peel}.
+Direct cancellation gives the exact identity
+\begin{equation}\label{eq:budget}
+ \boxed{\kappa+\rho+2\vartheta+c+\ell_1+\ell_2+g
+       =22d+97-\Lambda=:\Omega.}
+\end{equation}
+For clarity, $c+\ell_1+\ell_2+g=22d+77+2\Delta(D)-s$ and
+$\rho+2\vartheta=\mu+20-2\Delta(D)$, which proves the cancellation
+without an inequality or a duplicated expenditure of slack.
+
+\section{A sharp four-extreme defect inequality}\label{sec:sharp}
+\begin{theorem}\label{thm:sharp}
+Let $F=\{x_1<\cdots<x_m\}\subset\Z$, $m\ge7$, and let
+\[
+ a_1<a_2<x_1<\cdots<x_m<b_2<b_1,\qquad
+ D=F\cup\{a_1,a_2,b_2,b_1\}.
+\]
+Let $\eta_F,\eta_D$ count the holes in the endpoint hulls of $R(F),R(D)$,
+and put $g_H=4m+6-(|R(D)|-|R(F)|)$. Then
+\begin{equation}\label{eq:sharp}
+ \boxed{\eta_D+\eta_F+g_H\ge2m-2.}
+\end{equation}
+The constant is sharp for every $m\ge7$.
+\end{theorem}
+\begin{proof}
+Write $L=x_1+x_2$ and $U=x_{m-1}+x_m$. Let $W_+$ be
+$((b_1+F)\cup(b_2+F))\cap(U,\infty)$, and let $W_-$ be the corresponding
+union of the two lower translates below $L$. Put
+\[
+ I_+=(U,b_1+x_m]\cap\Z,\quad I_-=[a_1+x_1,L)\cap\Z,
+ \quad H_\pm=|I_\pm|-|W_\pm|.
+\]
+Let $q$ count the distinct mixed sums $a_i+b_j$ that lie outside $[L,U]$
+and are not already in $W_-\cup W_+$. These sums lie in $I_-\cup I_+$,
+so $0\le q\le4$ and $q\le H_-+H_+$.
+
+Translate $x_1$ to zero and write
+\[
+\begin{gathered}
+ x_m=M,\quad x_2=s_0,\quad x_{m-1}=M-t_0,\\
+ a_2=-w_0,\quad a_1=-w_0-v_-,\quad
+ b_2=M+u,\quad b_1=M+u+v_+.
+\end{gathered}
+\]
+All six gap parameters are positive integers. At most $u+1$ members of
+$b_2+F$ lie above $U$: at most $u$ eligible points are at or below
+$x_{m-1}$, followed by $x_m$. Thus the integers
+\[
+ S_+=u+1+m-|W_+|,\qquad S_-=w_0+1+m-|W_-|
+\]
+are nonnegative. Set $H=H_++H_-$ and $S=S_++S_-$. We claim
+\begin{equation}\label{eq:HS}
+ H+S\ge2q-2.
+\end{equation}
+For $q\le2$ this follows from $H\ge q$. The same bound proves the case
+$q=3,S\ge1$ and the case $q=4,S\ge2$.
+
+Suppose first that $S=0$. Since $|W_\pm|\le2m$, we have
+$u,w_0\le m-1$. The mixed value $B_0=a_2+b_2=M+u-w_0$ satisfies
+\[
+ M-m+2\le B_0\le M+m-2.
+\]
+Now $s_0\le M-m+2$ and $x_{m-1}\ge m-2$, so
+$B_0\in[s_0,2M-t_0]=[L,U]$. In particular $q=4,S=0$ is impossible.
+
+If $q=3,S=0$, the other mixed values
+\[
+ A_0=B_0-v_-,\qquad C_0=B_0+v_+-v_-,\qquad D_0=B_0+v_+
+\]
+are all outside $[L,U]$. Thus $A_0<L$ and $D_0>U$. Reflection allows us to
+assume $C_0<L$. The definitions give
+\[
+ H_+=v_++t_0-m-1,\qquad H_-=v_-+s_0-m-1.
+\]
+Using integrality in $D_0>U$ and $C_0<L$ yields, respectively,
+\[
+ u-w_0\ge M-H_+-m,\qquad
+ u-w_0\le t_0-M+H_--H_+-1.
+\]
+Consequently
+\[
+ H_-\ge2M-m-t_0+1=M+x_{m-1}-m+1\ge M-1\ge m-2\ge5.
+\]
+This proves \eqref{eq:HS} in that case.
+
+Finally, suppose $q=4,S=1$. Reflect if necessary so that
+$S_+=1,S_-=0$. The cardinality bounds now give $u\le m$ and
+$w_0\le m-1$, so $B_0\ge M-m+2\ge s_0$. Since $B_0$ lies outside the
+old hull, $B_0>U$, whence
+\[
+ u-w_0>x_{m-1}\ge m-2,\qquad u-w_0\le m-1.
+\]
+Equality forces $u=m$, $w_0=1$, and $x_{m-1}=m-2$. The first $m-1$
+members of $F$ are therefore $0,1,\ldots,m-2$, so $s_0=1$, and
+$B_0=M+m-1=U+1$. Because $v_-\ge1$, the value $A_0=B_0-v_-$ is at most
+$U$; it must consequently be less than 1. Thus $v_-\ge M+m-1$ and
+\[
+ H_-=v_-+s_0-m-1=v_--m\ge M-1\ge m-2\ge5.
+\]
+Together with $S=1$, this proves \eqref{eq:HS} in the final case.
+
+Put $h_-=L-(a_1+a_2)$, $h_+=(b_1+b_2)-U$, and $h=h_-+h_+$.
+The definitions give the exact identity
+\[
+ 2(|W_-|+|W_+|)=h+2m+2-H-S.
+\]
+Every new restricted sum outside $[L,U]$ lies in $W_-\cup W_+$, is one
+of the $q$ new mixed values, or is one of $a_1+a_2,b_1+b_2$. The latter
+values are distinct and outside $I_-\cup I_+$. Hence the number $N_{\rm out}$
+of these sums satisfies
+\[
+ 2N_{\rm out}=h+2m+6-H-S+2q\le h+2m+8.
+\]
+Write $N_0=|R(D)|-|R(F)|$. At most $\eta_F$ new sums are inside the old
+hull, so $N_0\le N_{\rm out}+\eta_F$. Also
+$\eta_D=h+\eta_F-N_0$. Therefore
+\begin{align*}
+ \eta_D+\eta_F+g_H
+ &=h+2\eta_F+4m+6-2N_0\\
+ &\ge h+4m+6-2N_{\rm out}\ge2m-2.
+\end{align*}
+For sharpness, take $F=[0,m-1]_{\Z}$ and
+$\{a_1,a_2,b_2,b_1\}=\{-m-2,-1,m,2m+1\}$.
+Here $R(F)=[1,2m-3]_{\Z}$ and $R(D)=[-m-3,3m+1]_{\Z}$.
+For the latter assertion the four translates of $F$ fill the ranges
+$[-m-2,-3]$, $[-1,m-2]$, $[m,2m-1]$, $[2m+1,3m]$;
+$R(F)$ fills the central gap, and the sums of outer elements supply
+$-m-3,-2,2m,3m+1$. Thus both hole counts vanish and $g_H=2m-2$.
+\end{proof}
+

@@ -1,0 +1,25 @@
+{
+  "schema": "n87-compact-exact-interval-receipt-v1",
+  "verified": true,
+  "scope": "Ordinary exact contradictions in stated interval only; gaps remain supplemental proof obligations.",
+  "start": 0,
+  "stop": 1000,
+  "counts": {
+    "fast": 883,
+    "full": 117
+  },
+  "minimum_contradiction": 14,
+  "gap_full_models": [],
+  "compact_manifest_sha256": "0c77a44bb772e1dc98e2730028088cc93ac989bf61b6b61b1dfd5a10ef164fed",
+  "compact_data_sha256": {
+    "assignments.u32le": "395c5651690d43e261cd50145273460ea3db29a6a02b64efbc12e5197e426d55",
+    "gaps.json": "8f2984d98b48030b1fa1b0763fd30d88bf2d68538abcd947edaf5817c4b425e9",
+    "vectors.json": "cb9349f72db6330c018cb2f35fd2db0b639a728bbba4358bea505e772ef59ca7"
+  },
+  "bundle_sha256": "b92b88a7a25b77325a8067a518281b6f4f48755bace58babb8bc204ad19ed04b",
+  "canonical_manifest_sha256": "e37c66bdccd6240c3e119573e65ba840fbe0f517eed7108bdf915e499b6a4e66",
+  "checker_sha256": "ae468cd7a93c350e1efa8ada769db49f8079e19b82806d753915202d1c7ae99e",
+  "support_sha256": "c2ebe9dc385c0e84237cd57a51fc7ce11efffd886b60a618e8003fa129ec3a42",
+  "seconds": 11.52741261400024,
+  "full_ordinary_replay": false
+}

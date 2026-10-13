@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Asia/Tokyo",
+  "exact_maximum_determined": false,
+  "inherited_interval": [
+    71,
+    84
+  ],
+  "independent_elementary_interval": [
+    71,
+    122
+  ],
+  "upper86_historical_full_rerun_this_session": false,
+  "upper86_auxiliary_rerun_this_session": true,
+  "upper84_and_inherited_upper85_full_rerun_this_session": true,
+  "archive_reassembly_test": "PASS: all part hashes, full ZIP hash, and local extraction",
+  "new_independent_driver": "python -O verification/verify.py; all numerical proof checks use explicit exceptions",
+  "exploratory_searches": [
+    {
+      "source": "experiments/search.cpp",
+      "seed": 20261014,
+      "iterations": 2000000,
+      "core": [
+        -31,
+        32
+      ],
+      "result": "No feasible candidate found; best exact missing count 9; heuristic only"
+    },
+    {
+      "source": "experiments/family_search.cpp",
+      "seed": 20261019,
+      "iterations": 500000,
+      "positive_tail_count": 5,
+      "result": "No improvement on cardinality 71; heuristic only"
+    }
+  ]
+}

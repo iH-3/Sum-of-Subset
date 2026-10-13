@@ -1,0 +1,24 @@
+PASS quadratic m1 min 679 at 30
+PASS quadratic m2_s_light min 661 at 30
+PASS quadratic m2_t_light min 723 at 29
+PASS quadratic m2_s_heavy min 695 at 30
+PASS quadratic m2_t_heavy min 689 at 29
+PASS quadratic m3 min 709 at 29
+PASS quadratic m4_chi33 min 2469/4 at 26
+PASS quadratic m4_chi34 min 2601/4 at 27
+PASS quadratic m4_chi35 min 684 at 27
+PASS A0 heavy 1 1 gap 175
+PASS A0 heavy 1 2 gap 18
+PASS A0 heavy 2 1 gap 282
+PASS A0 heavy 2 2 gap 156
+PASS A0 heavy 3 1 gap 396
+PASS A0 heavy 3 2 gap 301
+PASS A1 m1_light_w4 gap 10
+PASS A1 m1_light_w6 gap 189
+PASS A1 m1_heavy gap 57/2
+PASS A1 m2_s_light gap 241/4
+PASS A1 m2_t_light gap 241/4
+PASS A1 m2_s_heavy gap 355/4
+PASS A1 m2_t_heavy gap 355/4
+PASS A1 m3_light gap 191
+PASS A1 m3_heavy gap 439/2

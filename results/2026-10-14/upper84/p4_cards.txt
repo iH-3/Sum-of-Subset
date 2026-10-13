@@ -1,0 +1,10 @@
+PASS exact profile minima licensing the seven source seeds
+PASS seven source seeds and both propagation failure bounds
+PASS T5 exact fixed-label incidence credit13
+PASS quadratic opposite 1401/2 31
+PASS quadratic same 5265/8 29
+PASS quadratic m2cross_t 496 32
+PASS quadratic m2cross_s 971 31
+PASS T5 0 gap 3
+PASS T5 1 gap 9/2
+PASS all fresh P4 arithmetic cards

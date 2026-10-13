@@ -1,0 +1,55 @@
+INDEPENDENT LOCAL CORRECTION OF THE ENDPOINT-BRIDGE PROOF
+5 October 2026, 13:04 UTC
+
+Decision: the displayed filled intervals in the recovered proof require an
+endpoint correction. With the correction below, the same theorem follows
+with exactly its existing hypotheses and threshold. No finite computation,
+new external theorem, stronger bound or changed parameter is required.
+
+Reviewed source:
+ ../source/structural/foundations/general_lemmas_source.tex
+ SHA256 848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b
+ Statement lines498-515; proof lines663-683
+Focused source excerpt:
+ the endpoint-bridge passage of the same retained source
+ SHA256 c48f3287b101ebf325316c40ecf92e9ad9e2c1ad102d26191d0141d087d46a22
+
+Defect in the prose
+The proof calls [h+1,L-h] filled. If H is nonempty and h=max H, L-h is
+itself one of the omitted upper holes. The filled central interval is
+[h+1,L-h-1]. The x-shift and the stated final central interval require the
+same minus-one correction. "Overlap" must allow adjacency of integer intervals.
+
+Exact retained statement and corrected proof
+Let B be the existing prefix of m DISTINCT positive integers, L=sum B, and
+S=FS(B)=[0,L]_Z minus(H union(L-H)), where H is its lower endpoint-hole set,
+q=|H|, h=max H (h=q=0 if H is empty), and 2h<L. Let the next coefficient
+x>max B be integral and have excess increment e_x<=E:
+ |S union(x+S)|-|S|=m+1+e_x.
+Retain the original hypothesis
+ m>=max(h,1+floor((1+sqrt(9+8(E+2q+2h)))/2)).
+
+Distinct positive integrality gives L>=T_m and x>max B>=m>=h. The strict
+threshold gives T_m-2h-2q>m+1+E. If x>=L-2h, x+S has at least
+ min(x,L+1)-2q >= L-2h-2q >= T_m-2h-2q
+points above L. That contradicts the permitted increment. Therefore
+x<L-2h, equivalently x<=L-2h-1 by integrality.
+
+Both [h+1,L-h-1]_Z and [x+h+1,x+L-h-1]_Z are filled. The second left
+endpoint is at most L-h, one above the first right endpoint. The intervals
+therefore overlap or abut and fill [h+1,L+x-h-1]_Z.
+
+Since x>h, adjoining x cannot fill a lower hole in H and cannot create a
+new lower hole. Subset complementation in B union{x} makes the upper holes
+exactly L+x-H. The central interval is filled, so there are no other holes:
+ S union(x+S)=[0,L+x]_Z minus(H union(L+x-H)).
+This also covers H empty, with both endpoints supplied by subset sums.
+Thus the new support has cardinality L+x+1-2q versus L+1-2q before,
+and its increment is x=m+1+e_x, as asserted.
+
+This directly checks the correction for every allowed parameter, rather than
+testing samples. It is an independent local proof review of the recovered
+bridge; it is not a new audit of all other foundational lemmas or finite
+bases. Original source bytes remain unchanged. Downstream uses may cite this
+correction together with the original statement.
+

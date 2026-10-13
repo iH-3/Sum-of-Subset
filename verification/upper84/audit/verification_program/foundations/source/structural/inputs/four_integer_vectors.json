@@ -1,0 +1,266 @@
+[
+  {
+    "mode": [
+      "A",
+      [],
+      0
+    ],
+    "weights": [
+      [
+        "AP exceptional delta cap",
+        1
+      ],
+      [
+        "p4>M",
+        2
+      ],
+      [
+        "pair1p low",
+        1
+      ],
+      [
+        "pair2p low",
+        1
+      ],
+      [
+        "q4>M",
+        2
+      ],
+      [
+        "q5 low",
+        1
+      ],
+      [
+        "q8 low",
+        1
+      ],
+      [
+        "sumloss",
+        1
+      ]
+    ]
+  },
+  {
+    "mode": [
+      "A",
+      [],
+      1
+    ],
+    "weights": [
+      [
+        "AP exceptional delta cap",
+        56
+      ],
+      [
+        "Mp>=R+4",
+        6
+      ],
+      [
+        "Rp>=a",
+        24
+      ],
+      [
+        "Rq>=b",
+        12
+      ],
+      [
+        "Sp mass",
+        3
+      ],
+      [
+        "Sq mass",
+        2
+      ],
+      [
+        "cardinality mass",
+        14
+      ],
+      [
+        "mixed envelope 4 4",
+        28
+      ],
+      [
+        "p0 high",
+        8
+      ],
+      [
+        "p3>p4",
+        74
+      ],
+      [
+        "p4>M",
+        152
+      ],
+      [
+        "p8 low",
+        70
+      ],
+      [
+        "pair1p low",
+        16
+      ],
+      [
+        "pair2q low",
+        26
+      ],
+      [
+        "q0 high",
+        10
+      ],
+      [
+        "q3>q4",
+        70
+      ],
+      [
+        "q4>M",
+        148
+      ],
+      [
+        "q5 low",
+        62
+      ],
+      [
+        "sumloss",
+        70
+      ]
+    ]
+  },
+  {
+    "mode": [
+      "B",
+      [],
+      0
+    ],
+    "weights": [
+      [
+        "AP exceptional delta cap",
+        11
+      ],
+      [
+        "Mp>=R+4",
+        12
+      ],
+      [
+        "Mq>=R+4",
+        12
+      ],
+      [
+        "Rp>=a",
+        12
+      ],
+      [
+        "Rq>=b",
+        18
+      ],
+      [
+        "Sq mass",
+        1
+      ],
+      [
+        "cardinality mass",
+        4
+      ],
+      [
+        "mixed envelope 4 4",
+        8
+      ],
+      [
+        "p0 high",
+        4
+      ],
+      [
+        "p3>p4",
+        19
+      ],
+      [
+        "p4>M",
+        46
+      ],
+      [
+        "p9 low",
+        4
+      ],
+      [
+        "pair1p low",
+        12
+      ],
+      [
+        "q0 high",
+        2
+      ],
+      [
+        "q2 low",
+        6
+      ],
+      [
+        "q3>q4",
+        32
+      ],
+      [
+        "q4>M",
+        74
+      ],
+      [
+        "q6 low",
+        9
+      ],
+      [
+        "q7 low",
+        15
+      ],
+      [
+        "q9 low",
+        14
+      ],
+      [
+        "sumloss",
+        15
+      ]
+    ]
+  },
+  {
+    "mode": [
+      "B",
+      [],
+      1
+    ],
+    "weights": [
+      [
+        "AP exceptional delta cap",
+        1
+      ],
+      [
+        "p4>M",
+        2
+      ],
+      [
+        "p9 low",
+        1
+      ],
+      [
+        "pair1p low",
+        1
+      ],
+      [
+        "pair2q low",
+        1
+      ],
+      [
+        "q2 low",
+        1
+      ],
+      [
+        "q4>M",
+        3
+      ],
+      [
+        "q9 low",
+        1
+      ],
+      [
+        "sumloss",
+        1
+      ]
+    ]
+  }
+]

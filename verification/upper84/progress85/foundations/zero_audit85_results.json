@@ -1,0 +1,493 @@
+{
+  "status": "PASS",
+  "all13_templates": [
+    {
+      "card": "D",
+      "extra_holes": [
+        "as",
+        "at"
+      ]
+    },
+    {
+      "card": "A",
+      "extra_holes": [
+        "Us",
+        "Hs"
+      ]
+    },
+    {
+      "card": "A",
+      "extra_holes": [
+        "Ut",
+        "Ht"
+      ]
+    },
+    {
+      "card": "A",
+      "extra_holes": [
+        "Hs",
+        "Ht"
+      ]
+    },
+    {
+      "card": "B",
+      "extra_holes": [
+        "at",
+        "Hs"
+      ]
+    },
+    {
+      "card": "C",
+      "extra_holes": [
+        "at",
+        "Ht"
+      ]
+    },
+    {
+      "card": "E",
+      "extra_holes": [
+        "as",
+        "Ht"
+      ]
+    },
+    {
+      "card": "F",
+      "extra_holes": [
+        "as",
+        "Hs"
+      ]
+    },
+    {
+      "card": "G",
+      "extra_holes": [
+        "C5t",
+        "as"
+      ]
+    },
+    {
+      "card": "H",
+      "extra_holes": [
+        "C5t",
+        "at"
+      ]
+    },
+    {
+      "card": "I",
+      "extra_holes": [
+        "C5t",
+        "Ht"
+      ]
+    },
+    {
+      "card": "J",
+      "extra_holes": [
+        "C5t",
+        "C6t"
+      ]
+    },
+    {
+      "card": "K",
+      "extra_holes": [
+        "C5t",
+        "Hs"
+      ]
+    }
+  ],
+  "card_reconstructions": {
+    "A": {
+      "upper": [
+        "Vs",
+        "Vt"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2,
+        "as": 2,
+        "at": 1
+      },
+      "endpoint_constant": {
+        "1": "310"
+      },
+      "generic_error": {
+        "xi_s": "4",
+        "xi_t": "4"
+      },
+      "transport_body": {
+        "M_s": "3",
+        "M_t": "3",
+        "X_s": "5",
+        "X_t": "5",
+        "g_s": "2",
+        "g_t": "2"
+      },
+      "exact_residual": {
+        "1": "356",
+        "I": "9/2",
+        "tau": "1",
+        "xi_s": "1/2",
+        "xi_t": "1/2"
+      },
+      "strict_margin": "356"
+    },
+    "B": {
+      "upper": [
+        "Vs",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2,
+        "as": 2
+      },
+      "endpoint_constant": {
+        "1": "305",
+        "r": "-1"
+      },
+      "generic_error": {
+        "xi_s": "4",
+        "xi_t": "3"
+      },
+      "transport_body": {
+        "M_s": "3",
+        "M_t": "2",
+        "X_s": "5",
+        "X_t": "4",
+        "g_s": "2",
+        "g_t": "3",
+        "h_t": "2"
+      },
+      "exact_residual": {
+        "1": "166",
+        "I": "5",
+        "tau": "3/2",
+        "xi_s": "1/2",
+        "xi_t": "1/2"
+      },
+      "strict_margin": "166"
+    },
+    "C": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2,
+        "as": 3
+      },
+      "endpoint_constant": {
+        "1": "378",
+        "r": "-2"
+      },
+      "generic_error": {
+        "xi_s": "5",
+        "xi_t": "3"
+      },
+      "transport_body": {
+        "M_s": "4",
+        "M_t": "2",
+        "X_s": "6",
+        "X_t": "4",
+        "g_s": "3",
+        "g_t": "3",
+        "h_t": "1"
+      },
+      "exact_residual": {
+        "1": "351",
+        "I": "13/2",
+        "tau": "5/2",
+        "xi_s": "1",
+        "xi_t": "1"
+      },
+      "strict_margin": "351"
+    },
+    "D": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2
+      },
+      "endpoint_constant": {
+        "1": "159",
+        "r": "1"
+      },
+      "generic_error": {
+        "xi_s": "2",
+        "xi_t": "3"
+      },
+      "transport_body": {
+        "M_s": "1",
+        "M_t": "2",
+        "X_s": "3",
+        "X_t": "4",
+        "g_s": "3",
+        "g_t": "3",
+        "h_s": "3",
+        "h_t": "2"
+      },
+      "exact_residual": {
+        "1": "53",
+        "I": "6",
+        "tau": "11/4",
+        "xi_s": "1/4",
+        "xi_t": "1/4"
+      },
+      "strict_margin": "53"
+    },
+    "E": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2,
+        "at": 1
+      },
+      "endpoint_constant": {
+        "1": "164",
+        "r": "2"
+      },
+      "generic_error": {
+        "xi_s": "2",
+        "xi_t": "4"
+      },
+      "transport_body": {
+        "M_s": "1",
+        "M_t": "3",
+        "X_s": "3",
+        "X_t": "5",
+        "g_s": "3",
+        "g_t": "3",
+        "h_s": "3"
+      },
+      "exact_residual": {
+        "1": "2",
+        "I": "5",
+        "tau": "3/2",
+        "xi_s": "1/2",
+        "xi_t": "1/2"
+      },
+      "strict_margin": "2"
+    },
+    "F": {
+      "upper": [
+        "Us",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C5t": 2,
+        "at": 2
+      },
+      "endpoint_constant": {
+        "1": "169",
+        "r": "3"
+      },
+      "generic_error": {
+        "xi_s": "2",
+        "xi_t": "5"
+      },
+      "transport_body": {
+        "M_s": "1",
+        "M_t": "4",
+        "X_s": "3",
+        "X_t": "6",
+        "g_s": "3",
+        "g_t": "3",
+        "h_s": "2"
+      },
+      "exact_residual": {
+        "1": "178",
+        "I": "11/2",
+        "tau": "7/4",
+        "xi_s": "3/4",
+        "xi_t": "3/4"
+      },
+      "strict_margin": "178"
+    },
+    "G": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C6t": 2,
+        "at": 2
+      },
+      "endpoint_constant": {
+        "1": "169",
+        "r": "3"
+      },
+      "generic_error": {
+        "xi_s": "2",
+        "xi_t": "5"
+      },
+      "transport_body": {
+        "M_s": "1",
+        "M_t": "4",
+        "X_s": "3",
+        "X_t": "6",
+        "g_s": "3",
+        "g_t": "3",
+        "h_s": "1"
+      },
+      "exact_residual": {
+        "1": "178",
+        "I": "11/2",
+        "tau": "7/4",
+        "xi_s": "3/4",
+        "xi_t": "3/4"
+      },
+      "strict_margin": "178"
+    },
+    "H": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C6t": 2,
+        "as": 1
+      },
+      "endpoint_constant": {
+        "1": "232"
+      },
+      "generic_error": {
+        "xi_s": "3",
+        "xi_t": "3"
+      },
+      "transport_body": {
+        "M_s": "2",
+        "M_t": "2",
+        "X_s": "4",
+        "X_t": "4",
+        "g_s": "3",
+        "g_t": "3",
+        "h_t": "2"
+      },
+      "exact_residual": {
+        "1": "51",
+        "I": "9/2",
+        "tau": "1",
+        "xi_s": "1/2",
+        "xi_t": "1/2"
+      },
+      "strict_margin": "51"
+    },
+    "I": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C6t": 2,
+        "as": 1,
+        "at": 1
+      },
+      "endpoint_constant": {
+        "1": "237",
+        "r": "1"
+      },
+      "generic_error": {
+        "xi_s": "3",
+        "xi_t": "4"
+      },
+      "transport_body": {
+        "M_s": "2",
+        "M_t": "3",
+        "X_s": "4",
+        "X_t": "5",
+        "g_s": "3",
+        "g_t": "3"
+      },
+      "exact_residual": {
+        "1": "227",
+        "I": "5",
+        "tau": "5/4",
+        "xi_s": "3/4",
+        "xi_t": "3/4"
+      },
+      "strict_margin": "227"
+    },
+    "J": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C7t": 2,
+        "as": 1,
+        "at": 2
+      },
+      "endpoint_constant": {
+        "1": "242",
+        "r": "2"
+      },
+      "generic_error": {
+        "xi_s": "3",
+        "xi_t": "5"
+      },
+      "transport_body": {
+        "M_s": "2",
+        "M_t": "4",
+        "X_s": "4",
+        "X_t": "6",
+        "g_s": "1",
+        "g_t": "3"
+      },
+      "exact_residual": {
+        "1": "281",
+        "I": "11/2",
+        "tau": "2",
+        "xi_s": "1/2",
+        "xi_t": "1/2"
+      },
+      "strict_margin": "281"
+    },
+    "K": {
+      "upper": [
+        "Us",
+        "Ht"
+      ],
+      "lower_weights": {
+        "P": 1,
+        "C6t": 2,
+        "at": 2
+      },
+      "endpoint_constant": {
+        "1": "169",
+        "r": "3"
+      },
+      "generic_error": {
+        "xi_s": "2",
+        "xi_t": "5"
+      },
+      "transport_body": {
+        "M_s": "1",
+        "M_t": "4",
+        "X_s": "3",
+        "X_t": "6",
+        "g_s": "3",
+        "g_t": "3"
+      },
+      "exact_residual": {
+        "1": "178",
+        "I": "11/2",
+        "tau": "7/4",
+        "xi_s": "3/4",
+        "xi_t": "3/4"
+      },
+      "strict_margin": "178"
+    }
+  },
+  "minimum_strict_margin": 2,
+  "scope": "Exact actual endpoint algebra and scalar substitutions; written retention/forest/source lemmas remain mathematical premises."
+}

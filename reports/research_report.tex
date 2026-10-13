@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[margin=25mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}[1]{T_{#1}}
+\title{Subset sums contained in a fourfold sumset\\\large Research report, exact certificates, and a finite search reduction}
+\author{Research project for H-3}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a finite set $A\subset\R$, let $\FS(A)$ contain every subset sum, including zero, and let $4A$ allow repeated summands. We study the largest possible $|A|$ under $\FS(A)\subseteq4A$. The exact maximum is not determined in this report. The inherited research chain claims $71\le N\le84$; its reports and complete verification inputs are preserved, with a precise account of which computations were rerun. Independently, we give a self-contained proof of $71\le N\le122$, an exact classification of the scaled 71-point construction family, and an explicit integer-size reduction: any real solution with $n$ elements has an integer representative in $[-H_n,H_n]$, where $H_n=\lfloor\sqrt{(n+16)^{n+1}}\rfloor$. Thus the exact extremum has a finite, although impractical, exhaustive decision procedure. An independent certificate checks all 3,349 subset-sum values of the 71-point example.
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{Problem and the status of the answer}
+For a finite real set $A$, write
+\[
+ \FS(A)=\left\{\sum_{a\in X}a:X\subseteq A\right\},\qquad
+ 4A=\{a_1+a_2+a_3+a_4:a_i\in A\}.
+\]
+The empty subset has sum zero. Repetition is allowed in $4A$, but not in a subset of $A$. We call $A$ \emph{feasible} if $\FS(A)\subseteq4A$. The question asks for
+\[N=\max\{|A|: A\subset\R\text{ finite and feasible}\}.\]
+The elementary bound below proves that the maximum exists. The empty set is not feasible, whereas $\{0\}$ is feasible.
+
+\begin{center}
+\begin{tabular}{p{.25\linewidth}p{.29\linewidth}p{.35\linewidth}}
+\toprule
+Conclusion & Basis & Status in this report\\\midrule
+$N\ge71$ & Explicit construction & Reproved and independently certified\\
+$N\le122$ & Covering, peeling, and elementary counting & Complete self-contained proof below\\
+$N\le86$ & Archived full descent & Complete original inputs preserved; only auxiliary checks rerun here\\
+$N\le85$, then $N\le84$ & Archived endpoint exclusions & Finite checks rerun successfully; written reductions and inherited inputs remain essential\\
+Exact value of $N$ & Requires closing the gap & Unresolved\\\bottomrule
+\end{tabular}
+\end{center}
+The current project interval is therefore $71\le N\le84$ \emph{when the inherited proof chain is accepted}. This assembly does not claim a fresh independent audit of every page of that chain. Its elementary upper bound is a separately checkable baseline, not an improvement on 84 and not a retraction of the inherited results.
+
+\subsection{Basic operations and necessary conditions}
+Multiplication of all elements by a nonzero real scalar preserves feasibility. Adjoining zero also preserves it:
+\[\FS(A\cup\{0\})=\FS(A),\qquad4A\subseteq4(A\cup\{0\}).\]
+Translation is not an invariance: $\{-1,0,1\}$ is feasible but $\{1,2,3\}$ is not. Feasibility is not inherited by subsets: $\{-1,1\}$ fails because its subset sum 1 is not a sum of four elements of $\{-1,1\}$.
+For any nonempty feasible set, putting $P=\sum_{a>0}a$ and $Q=-\sum_{a<0}a$ gives
+\[P\le4\max A,\qquad -Q\ge4\min A.\]
+These are useful pruning conditions, but do not suffice for feasibility. An extremal set must contain zero, because otherwise adjoining zero increases its size.
+
+\section{The construction and its exact family boundary}
+Put $I_m=[-m,m]\cap\Z$ for $m\ge1$ and define
+\[ A_m=I_m\cup\{\pm3m,\pm5m,\pm7m,\pm23m\}. \]
+There are $2m+9$ distinct elements. Its positive mass is
+\[M_m=\frac{m(m+1)}2+38m.\]
+
+\begin{lemma}\label{lem:fullsupport}
+For every positive integer $m$, $\FS(A_m)=[-M_m,M_m]\cap\Z$.
+\end{lemma}
+\begin{proof}
+The subsets of $\{1,\ldots,m\}$ represent every integer between 0 and $T_m=m(m+1)/2$, by induction. Hence $\FS(I_m)=[-T_m,T_m]\cap\Z$. If an integer support is a full interval of width $W$, adjoining a positive or negative integer of magnitude $x\le W+1$ preserves the full-interval property: the original and translated intervals overlap or are adjacent.
+Adjoin the opposite pairs with magnitudes $3m,5m,7m,23m$ in that order. Before the first pair the width is $m(m+1)$, and
+\[3m\le m(m+1)+1\quad\Longleftrightarrow\quad (m-1)^2\ge0.\]
+After each pair, the width increases by twice its magnitude. The subsequent required inequalities are
+\[5m\le m^2+7m+1,\quad7m\le m^2+17m+1,\quad23m\le m^2+31m+1,\]
+all valid. The resulting endpoints are the negative and positive masses, as claimed.
+\end{proof}
+
+\begin{lemma}\label{lem:coverfamily}
+The fourfold sumset $4A_m$ contains $[-54m,54m]\cap\Z$.
+\end{lemma}
+\begin{proof}
+Each row below uses exactly four summand positions. In rows containing a three-element set, the component intervals overlap or meet; all integer values between the displayed endpoints occur.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Subset of $4A_m$ & Covered integer interval\\\midrule
+$4I_m$ & $[-4m,4m]$\\
+$7m+3I_m$ & $[4m,10m]$\\
+$7m+3m+2I_m$ & $[8m,12m]$\\
+$7m+5m+2I_m$ & $[10m,14m]$\\
+$14m+2I_m$ & $[12m,16m]$\\
+$14m+\{3m,5m,7m\}+I_m$ & $[16m,22m]$\\
+$23m+3I_m$ & $[20m,26m]$\\
+$23m+\{3m,5m,7m\}+2I_m$ & $[24m,32m]$\\
+$30m+\{3m,5m,7m\}+I_m$ & $[32m,38m]$\\
+$46m-\{7m,5m,3m\}+I_m$ & $[38m,44m]$\\
+$46m+2I_m$ & $[44m,48m]$\\
+$46m+\{3m,5m,7m\}+I_m$ & $[48m,54m]$\\\bottomrule
+\end{tabular}
+\end{center}
+These intervals cover the nonnegative half. Reflect using $A_m=-A_m$.
+\end{proof}
+
+\begin{theorem}\label{thm:family}
+$A_m$ is feasible if and only if $1\le m\le31$. In particular,
+\[A_{31}=[-31,31]\cap\Z\ \cup\ \{\pm93,\pm155,\pm217,\pm713\}\]
+is a feasible set with 71 elements, and $N\ge71$.
+\end{theorem}
+\begin{proof}
+If $m\le31$, then $M_m\le54m$, so the previous two lemmas imply feasibility.
+If $m\ge32$, let $t=54m+1$. Then
+\[M_m-54m=\frac{m(m-31)}2\ge16,\]
+so $t\in\FS(A_m)$. We show $t\notin4A_m$. A sum with no core summand is a multiple of $m$, unlike $t$. With at least two core summands its value is at most $2(23m)+2m=48m$ (the cases with more core summands are smaller). With exactly one core summand, the other three are chosen from the eight tails. Unless all three are $23m$, their sum is at most $23m+23m+7m=53m$, so the total is at most $54m$. If all three are $23m$, the total is at least $68m$. Neither possibility gives $t$.
+\end{proof}
+For $m=31$, the subset-sum support has $2(1674)+1=3349$ values. The exact program finds $|4A_{31}|=3495$ and checks a separate four-term identity for each of those 3349 targets. At $m=32$, the cardinality is 73 and the 32 targets $\pm1729,\ldots,\pm1744$ are missing from $4A_{32}$.
+\begin{remark}
+The theorem only classifies this fixed family. It gives no exclusion of arbitrary 72-point or 73-point sets. The even value 72 cannot occur as the size $2m+9$ of this family in the first place.
+\end{remark}
+
+\section{A self-contained universal finite bound}
+This section extracts the elementary beginning of the inherited method and supplies all finite fixed-label details needed for the bound 122. It uses no inverse sumset theorem.
+For a finite real set $F$, define
+\[R(F)=\{x+y:x,y\in F,\ x\ne y\},\qquad \Delta(F)=|2F\setminus R(F)|\le|F|.\]
+Adjoin zero to a feasible set if necessary. Remove its four largest positive and four smallest negative elements, taking all elements of a sign when fewer than four are present. Denote the removed set by $B$, the remainder by $D$, and $d=|D|$. Thus $|B|\le8$ and $0\in D$.
+
+\begin{lemma}[Four-extreme cover]\label{lem:extreme}
+\[|\FS(D)|\le2|2D|+18d+85.\]
+\end{lemma}
+\begin{proof}
+Suppose first that the positive sign has four elements $p_1>p_2>p_3>p_4>0$, and set $T=p_1+p_2+p_3+p_4$. Every positive $x\in\FS(D)$ has $T+x=z_1+z_2+z_3+z_4$ with $z_1\ge\cdots\ge z_4$ in $A$. At least one $z_i>p_i$, and the first such index is 2, 3, or 4. The corresponding forms are
+\[
+\begin{array}{ll}
+2:&2p_1+u+v,\\
+3:&p_1+2p_2+u,\quad3p_2+u,\\
+4:&p_1+p_2+2p_3,\quad p_1+3p_3,\quad2p_2+2p_3,\\
+ &p_2+3p_3,\quad4p_3.
+\end{array}
+\]
+In the second row the free entry is not $p_1$. Subtract $T$, and split the free entries between $D$ and $B$. This gives one translate of $2D$, ten translates of $D$, and 55 fixed labels: respectively $36$, $7+7$, and 5. The reflected argument handles the negative sign.
+
+If a sign has fewer than four original elements, $D$ has no subset sum of that sign. Its one remaining table is bounded by $|2D|+10d+56$, which is at most the asserted bound; if neither sign remains the result is trivial. Suppose both signs have four elements, with negative magnitudes $q_1>q_2>q_3>q_4>0$.
+Set
+\[\lambda_p=p_1-p_2-p_3-p_4,\quad\alpha_p=p_2-p_3-p_4,\quad
+\beta_p=2p_2-p_1-p_3-p_4,\]
+and define the $q$ versions identically. For $u\le v$,
+\[|(u+D)\cap(0,\infty)|+|(v+D)\cap(-\infty,0)|\le d,\]
+since one source point cannot satisfy both strict inequalities. Always $\lambda_p-q_1<-\lambda_q+p_1$, giving one pairing. If $\beta_p+\beta_q\le0$, pair the centers $\beta_p$ and $-\beta_q$. Otherwise pair $\lambda_p-q_2$ and $-\lambda_q+p_2$, whose difference is
+\[-(\beta_p+\beta_q)-2(p_3+p_4+q_3+q_4)<0.\]
+These are distinct from the first pair, reducing $20d$ to $18d$. Appendix~\ref{app:labels} partitions some of the 110 fixed labels into 26 disjoint groups with negative sums. Each group loses at least one label on its required positive half-line, so at most 84 fixed labels contribute. Adding the zero subset sum gives 85.
+\end{proof}
+
+\begin{lemma}[Four-element peeling]\label{lem:peeling}
+If $0\in F$ and $|F|\ge5$, delete four nonzero elements to obtain $F'$ with
+\[|\FS(F)|\ge|\FS(F')|+|R(F)|-1.\]
+\end{lemma}
+\begin{proof}
+Delete the two largest positive and two smallest negative elements, taking additional extreme elements from the other sign if necessary. Write $\alpha$ and $\beta$ for the sums of the negative and positive deleted elements. Then $R(F)\subseteq[\alpha,\beta]$ and $t=\beta-\alpha>0$.
+Both $\alpha+\FS(F')$ and $\beta+\FS(F')$ are contained in $\FS(F)$. In every occupied class of $\R/t\Z$, their union has at least one more point than $\FS(F')$ in that class: a nonempty finite chain and its shift by $t$ gain at least one endpoint. Classes are translated by $\alpha$, a bijection on the quotient, so their total base cardinality is still $|\FS(F')|$.
+The interval $[\alpha,\beta]$ contains at most one representative of a residue class except at its endpoints. Thus $R(F)$ occupies at least $|R(F)|-1$ classes. In each such class either the two translates already gain one point above their base contribution, or a point of $R(F)$ supplies an additional point. Summing proves the inequality.
+\end{proof}
+
+Assume $d\ge9$, since otherwise $|A|\le16$. Apply peeling twice to obtain $D\supset D_1\supset E$, of sizes $d,d-4,d-8$, all containing zero. Deleting four points destroys at most $4d-10$ distinct unordered pair labels. Consequently, with $s=|\FS(E)|$,
+\[|\FS(D)|\ge s+2|R(D)|-4d+8.\]
+Comparing with Lemma~\ref{lem:extreme} gives
+\begin{equation}\label{eq:elementarybudget}
+ s\le22d+2\Delta(D)+77\le24d+77.
+\end{equation}
+
+\begin{lemma}\label{lem:positive}
+An $r$-element set of positive reals has at least $1+r(r+1)/2$ subset sums.
+\end{lemma}
+\begin{proof}
+Order the set $x_1<\cdots<x_r$. Before adjoining $x_i$, the subset support occupies at least $i$ distinct classes modulo $x_i$, represented by $0,x_1,\ldots,x_{i-1}$. In each class, the largest old point shifted by $x_i$ is new. At least $i$ new sums are added. Sum these increments.
+\end{proof}
+Write $E=P\cup\{0\}\cup(-Q)$ with $P,Q$ positive and $a+b=d-9$. The elementary inequality $|U+V|\ge|U|+|V|-1$ for finite nonempty real sets follows by listing a strictly increasing chain of that length. Therefore
+\[
+ s\ge1+\frac{a(a+1)}2+\frac{b(b+1)}2
+ \ge\frac{(d-8)^2+3}{4}.
+\]
+Combining this with \eqref{eq:elementarybudget} gives
+\[d^2-112d-241\le0.\]
+The polynomial equals $-13$ at 114, equals 104 at 115, and is strictly increasing thereafter. Hence $d\le114$ and $|A|\le d+8\le122$.
+\begin{theorem}\label{thm:cap}
+Every feasible finite real set has at most 122 elements. In particular the extremal cardinality $N$ is a well-defined integer, and $71\le N\le122$ without using the inherited inverse or endpoint arguments.
+\end{theorem}
+
+\section{An explicit bounded integer reduction}
+The existence of a rational representative is elementary; an explicit bound makes the reduction algorithmic without an unspecified search radius.
+\begin{theorem}\label{thm:bounded}
+For every $n\ge1$, existence of a feasible real $n$-element set is equivalent to existence of a feasible integer $n$-element set contained in
+\[[-H_n,H_n],\qquad H_n=\left\lfloor\sqrt{(n+16)^{n+1}}\right\rfloor.\]
+A prescribed zero and the sign of every coordinate can also be preserved.
+\end{theorem}
+\begin{proof}
+The reverse direction is immediate. For the forward direction write the real solution as $a_1<\cdots<a_n$. For each subset indicator $\varepsilon\in\{0,1\}^n$, select one representation using a multiplicity vector $m_\varepsilon\in\Z_{\ge0}^n$ with $\sum_i(m_\varepsilon)_i=4$. All chosen identities are
+\[(\varepsilon-m_\varepsilon)\cdot a=0.\]
+Collect these rows into an integer matrix $M$. They have squared Euclidean norm at most $n+16$, since
+\[\|\varepsilon-m_\varepsilon\|_2^2
+ =\|\varepsilon\|_2^2+\|m_\varepsilon\|_2^2-2\varepsilon\cdot m_\varepsilon
+ \le n+16.\]
+A positive rescaling of $a$ makes every successive gap at least 1. If signs are to be preserved, rescale further so all nonzero coordinates have magnitude at least 1. Impose the linear constraints
+\[
+ Mx=0,\qquad x_{i+1}-x_i\ge1,\qquad -t\le x_i\le t,\qquad t\ge0.
+\]
+Append $x_i=0$ for a prescribed zero, and $x_i\ge1$ or $-x_i\ge1$ for prescribed positive or negative signs. This rational polyhedron in $n+1$ variables is nonempty.
+
+Minimize $t$. Given any feasible value $t_0$, the part with $0\le t\le t_0$ is compact, so a minimum exists. The minimum face is compact and nonempty; choose an extreme point of it. It is also an extreme point of the entire polyhedron, because any segment expressing it as an interior point must have both endpoints at the same minimum value of $t$. At this vertex, select $n+1$ linearly independent active constraint rows. They give
+\[ B(x,t)^\mathsf T=b,\]
+with $B$ an invertible integer matrix and $b$ integral.
+Every row from a chosen representation has right-hand side zero and norm at most $\sqrt{n+16}$. The other rows have norm at most $\sqrt2$ and right-hand side 0 or 1, up to sign. After replacing any one column of $B$ by $b$, its row norms are still at most $\sqrt{n+16}$: the non-representation rows have squared norm at most 3. Hadamard's determinant inequality therefore gives
+\[|\det B_i|\le(n+16)^{(n+1)/2},\]
+where $B_i$ is the Cramer matrix for coordinate $x_i$.
+Set $D=|\det B|\ge1$ and $z_i=Dx_i$. Cramer's rule makes $z_i$ an integer, with $|z_i|=|\det B_i|\le H_n$. Moreover,
+\[z_{i+1}-z_i\ge D\ge1,\qquad Mz=0.\]
+Thus the coordinates are distinct and every selected four-term identity still holds. The optional zero and sign constraints also persist. The resulting integer set is feasible.
+\end{proof}
+
+\begin{corollary}[Finite decision procedure]\label{cor:algorithm}
+The exact value of $N$ is computable by a finite exhaustive algorithm using only integer arithmetic and the elementary cap 122.
+\end{corollary}
+\begin{proof}
+For $n=122,121,\ldots,1$, enumerate all $n$-element subsets of $[-H_n,H_n]\cap\Z$ and test the defining inclusion exactly. Theorem~\ref{thm:bounded} ensures that no real solution of that size is missed. The first size containing a solution equals $N$. Termination follows because every enumerated box is finite and $\{0\}$ is feasible.
+\end{proof}
+The size bound is deliberately conservative. For $n=84$ it equals $10^{85}$. Thus this is a completeness theorem, not a practical proposal to search those boxes. The program \texttt{bounded\_search.py} implements the same exact box test for user-specified manageable sizes; failure in a smaller box is not a global exclusion. In particular the rationalization argument alone never licenses an arbitrary small numerical search radius.
+
+\section{Inherited stronger bounds and their verification boundary}
+The following original reports are retained without rewriting their mathematical content:
+\begin{enumerate}
+\item \texttt{upper86\_complete\_20261005.pdf}: the 151-page descent to 86, with its editable source and the complete original verification archive.
+\item \texttt{upper85\_consolidated\_20261005.pdf}: the 91-page exclusion of cardinality 86, together with the 71-point construction.
+\item \texttt{upper84\_supplement\_20261005.pdf}: the 73-page exclusion of cardinality 85, with source and finite checks.
+\end{enumerate}
+The upper-84 package includes the upper-85 code and its declared foundations. Its original README says the complete upper-86 proof was absent from its supplied inputs. That is a historical statement, not a description of this repository: the later complete upper-86 proof and program are now included separately. The old files have not been silently edited to remove this provenance.
+
+The descent must exclude each relevant exact cardinality. It cannot argue that a larger feasible set has a feasible subset of a desired size. Its main mathematical obligations are: integralization; source and core lattice reductions; defect estimates; validity of every necessary inequality for actual sets; exhaustiveness of branch divisions; and an exact contradiction at every terminal system.
+
+For a necessary system $Mx\le b$ with $x\ge0$, an exact vector $w\ge0$ satisfying $w^\mathsf TM\ge0$ and $w^\mathsf Tb<0$ certifies infeasibility. Checking those matrix calculations does not establish that every actual set satisfies the modeled system. Similarly, checking a list of branches does not prove its mathematical exhaustiveness unless the set-to-branch argument has been justified.
+
+The inherited proof invokes, among other inputs, the subset-sum stability results of Carpenter, Defant and Kravitz~\cite{CDK}. The primary arXiv record was checked for this assembly; v2 was revised on 24 August 2026. This bibliographic check is not a substitute for auditing every use of that paper or the other inverse theorems reproduced in the original reports.
+
+\subsection{Fresh computations in this assembly}
+\begin{itemize}
+\item The independent verifier checked all 3349 construction identities, the 110-label/26-group symbolic cover, the elementary integer cutoff, and nine sample values around the construction-family boundary.
+\item On all 512 sets contained in $[-4,4]\cap\Z$, dynamic subset supports and the $2+2$ four-sum algorithm were compared with direct enumeration. Invalid-input and corrupted-certificate controls were rejected.
+\item \texttt{verification/upper84/verify84.py --full} passed all 11 requested suites, including the inherited full upper-85 finite suite. The ten fresh top-level suites cover the package's 17 modules through its aggregate children.
+\item The original upper-86 driver was run with \texttt{--auxiliary-only}; it passed its additional dependency calculations and negative controls. Historical endpoint stages 1--19 were not rerun in this assembly. The earlier full-run record is preserved as historical evidence, not relabeled as a new run.
+\end{itemize}
+Fresh logs and JSON summaries are under \texttt{results/2026-10-14/}. The date is the user's Japan-local date; some original run identifiers use UTC on 13 October.
+
+\section{Programs, certificates, and reproduction}
+Python 3.10 or later is sufficient for the mathematical verifiers; no solver, network, or third-party Python library is required. Run commands from the repository root:
+\begin{verbatim}
+python verification/verify.py --output .work/independent.json
+python verification/check_set.py --certificate data/construction71.json
+python verification/check_set.py --elements -1 0 1
+python verification/bounded_search.py --radius 4 --size 5
+python verification/upper84/verify84.py --full
+\end{verbatim}
+The large unchanged upper-86 ZIP is split into 28 binary parts of at most 4 MiB each. Its manifest records the part and reconstructed-file SHA-256 hashes. Reassemble and extract it with
+\begin{verbatim}
+python verification/unpack_upper86.py
+\end{verbatim}
+Then enter the extracted directory below \texttt{.work/upper86/} and run
+\begin{verbatim}
+python -I -S -B verify_complete_upper86.py
+\end{verbatim}
+The original full checker requires about 2 GB of extracted files and may run for several hours. Archive identity checks alone establish no mathematical theorem. The optional original \texttt{--auxiliary-only} mode explicitly omits the historical endpoint chain.
+
+The new checker uses explicit exceptions instead of relying on Python assertions. It uses exact integers or rational strings; binary floating-point inputs and duplicate elements are rejected. Exceeding its configured support limit raises an inconclusive error, rather than reporting infeasibility. Its witness checker reconstructs subset support independently and verifies that every target has exactly four summands belonging to $A$; it does not trust a cached success flag.
+
+The certificate generator computes pair sums with one witness per pair-sum value, then combines two pair sums. This is exhaustive for four summands, including repetitions. If the subset-support size is $S$ and the pair-sum size is $P$, this requires $O(nS+P^2)$ arithmetic operations, apart from sorting and integer bit complexity. In general $S$ may be $2^n$; the construction has only 3349 distinct subset sums. This compression is why checking that example is fast.
+
+\section{Next research tasks}
+\begin{enumerate}
+\item Close the actual gap. Seek a feasible set of size at least 72, or prove further exact-size exclusions below 85. The scaled family in Theorem~\ref{thm:family} is exhausted and cannot improve the lower bound.
+\item Audit the strongest inherited bound at its mathematical interfaces: the common lattice, the non-progression defect theorem, the selected branch coverage, and the passage from actual target contributions to forest inequalities. Each newly established interface should have a precise statement and proof reference.
+\item Run the preserved full upper-86 driver and attach fresh endpoint receipts before describing the whole older chain as freshly replayed. The current auxiliary PASS is explicitly insufficient for that statement.
+\item Improve the explicit integer-size bound or prove a structural theorem giving a much smaller justified search domain. Such a theorem would turn the finite algorithm into a practical method; an arbitrary coordinate cutoff cannot do so.
+\item Explore asymmetric cores and more flexible tails. Every positive candidate should be checked independently from its full subset support. Every negative search result must record its exact family and search domain and must not be called a universal upper bound.
+\end{enumerate}
+
+\appendix
+\section{Fixed-label certificate for the elementary cover}\label{app:labels}
+For the positive table define
+\[B^+=(p_1,p_2,p_3,p_4,-q_1,-q_2,-q_3,-q_4),\]
+and let $B^-$ exchange $p$ and $q$. For $\varepsilon\in\{+,-\}$ set
+\[C^\varepsilon_{ij}=\lambda_\varepsilon+B^\varepsilon_i+B^\varepsilon_j
+ \ (1\le i\le j\le8),\qquad
+ U^\varepsilon_i=\alpha_\varepsilon+B^\varepsilon_i,\quad
+ V^\varepsilon_i=\beta_\varepsilon+B^\varepsilon_i\ (2\le i\le8).\]
+On a side with ordered quadruple $x$, the five remaining labels are
+\[
+\begin{aligned}
+ F_1&=x_3-x_4,&F_2&=2x_3-x_2-x_4,\\
+ F_3&=x_2+x_3-x_1-x_4,&F_4&=2x_3-x_1-x_4,\\
+ F_5&=3x_3-x_1-x_2-x_4.&&
+\end{aligned}
+\]
+A label is usable only if its score is strictly positive on its reflected target. Express all scores in the positive gaps
+\[r=(p_1-p_2,p_2-p_3,p_3-p_4,p_4),\quad
+ s=(q_1-q_2,q_2-q_3,q_3-q_4,q_4).\]
+The following are the coefficient vectors of the indicated sums. A star means that the sign-reflected group is also included; its vector exchanges the two blocks. The four unstarred and eleven starred rows give 26 pairwise disjoint groups. Every vector is coordinatewise nonpositive and nonzero, hence its score is strictly negative.
+
+\begin{center}\small
+\begin{tabular}{cll}
+\toprule
+ & Group sum & Vector in $(r;s)$\\\midrule
+1 & $C^+_{25}+C^-_{25}$ & $(0,0,-1,-2;0,0,-1,-2)$\\
+$2^*$ & $C^+_{48}+F^+_3$ & $(0,0,0,-1;0,0,0,-1)$\\
+3 & $C^+_{58}+C^-_{58}$ & $(0,-1,-2,-4;0,-1,-2,-4)$\\
+$4^*$ & $C^+_{77}+F^+_4$ & $(0,-1,0,-2;0,0,-2,-2)$\\
+5 & $U^+_6+U^-_6$ & $(0,0,-1,-2;0,0,-1,-2)$\\
+6 & $V^+_6+V^-_6$ & $(-1,0,-1,-2;-1,0,-1,-2)$\\
+$7^*$ & $C^+_{15}+F^+_1+C^-_{55}$ & $(0,-1,-1,-3;0,-1,-2,-3)$\\
+$8^*$ & $C^+_{26}+C^-_{57}+V^-_4$ & $(0,0,-2,-3;0,0,-2,-3)$\\
+$9^*$ & $C^+_{35}+V^+_3+C^-_{46}$ & $(0,0,0,-2;0,-1,-2,-2)$\\
+$10^*$ & $C^+_{36}+U^+_4+U^-_5$ & $(0,0,-1,-2;0,0,-1,-2)$\\
+$11^*$ & $C^+_{44}+U^+_8+F^+_5$ & $(0,-1,0,-1;0,0,0,-1)$\\
+$12^*$ & $C^+_{45}+V^+_8+C^-_{67}$ & $(0,0,-3,-4;0,-1,-2,-4)$\\
+$13^*$ & $C^+_{47}+V^+_7+F^+_2$ & $(0,0,0,-2;0,0,-2,-2)$\\
+$14^*$ & $C^+_{56}+V^+_2+C^-_{66}$ & $(0,0,-2,-4;0,-2,-3,-4)$\\
+$15^*$ & $C^+_{68}+U^+_3+V^-_5$ & $(0,0,-1,-3;-1,0,-1,-3)$\\\bottomrule
+\end{tabular}\end{center}
+The JSON certificate records these same templates. The independent program regenerates each of the 110 labels from its formula, checks the displayed vectors, checks disjointness, and verifies all 26 strict-negative groups. No floating-point inequality is used.
+
+\begin{thebibliography}{9}
+\bibitem{CDK} R. Carpenter, C. Defant, N. Kravitz, \emph{Sets with Few Subset Sums}, arXiv:2605.05498, v2 (24 August 2026). \url{https://arxiv.org/abs/2605.05498}.
+\bibitem{archive86} Project research archive, \emph{Subset Sums in a Fourfold Sumset: Proof Supplement for the Upper Bound 86}, 5 October 2026. Report and complete electronic inputs preserved in this repository.
+\bibitem{archive85} Project research archive, \emph{Subset sums representable by four summands: a consolidated proof of the bounds $71\le N\le85$}, 5 October 2026.
+\bibitem{archive84} Project research archive, \emph{A cardinality-85 exclusion and the upper bound 84}, 5 October 2026.
+\end{thebibliography}
+\end{document}

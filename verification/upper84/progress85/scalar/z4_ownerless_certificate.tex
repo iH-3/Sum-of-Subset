@@ -1,0 +1,159 @@
+% Conditional local exclusion. Requires amsmath,amssymb.
+\subsection{The cardinality-85 ownerless $Z_4$ family}
+
+Assume the actual activity classification has left exactly the four
+missing whole units $\{P,B,O_s,O_t\}$ in branch A. Both paired units
+are empty; no component is assigned an owner. The fourteen retained
+singletons are $H_v,U_v,V_v,C_{5v},C_{6v},C_{7v},\alpha_v$ on the two
+physical signs. Use the cardinality-$85$ structural source
+\[
+ |D|=77,\quad r_s+r_t=68,\quad
+ I=(r_s-34)^2,\quad \xi_v=R_v-r_v,\quad \xi=\xi_s+\xi_t,
+ \quad A=I+\tau+\delta.
+\]
+The source results used here, without changing the meaning of $\delta$,
+are
+\begin{equation}\label{eq:85-ownerless-source}
+ A\le137,\qquad L=e_s+e_t=M-R\ge A+20,
+ \qquad e_v\ge\max(4,A-69),\quad 0\le\xi\le\tau.
+\end{equation}
+The deliberately weaker last depth bound is enough; the sharper
+one-maximum bound $e_v\ge A-61$ is unnecessary for this proof.
+
+\paragraph{The fixed credit and the two $H$ gaps.}
+The same actual gap-label inventories as in the ownerless $Z_4$ proof
+give fixed credit $\eta=18$. Here are the fresh numerical checks needed
+to use those inventories at cardinality $85$. The four-edge physical
+arm gives
+\[
+ 2X_v+X_o+g_v\ge252-\tau-\delta\ge115+I.
+\]
+Consequently the literal active-center identities imply
+\[
+ d_v\ge M+116+I,\qquad X+g_v\ge58,\qquad h_v\ge X_v+1.
+\]
+The raw gap first gives $h_v\le M+56<d_v$; the complete ten-label
+inventory improves this to $h_v\le M+11$. Its only possible fixed
+labels are
+\[
+ C_{33},C_{34},C_{44},C_{15},C_{26},C_{27},C_{28},U_2,U_3,V_2.
+\]
+Here indexed $U_i,V_i$ are fixed labels, not ordinary resources.
+The paired centers are LOW. Per sign the sixteen LOW labels
+\[
+ C_{55},C_{56},C_{57},C_{58},\quad V_3,V_4,V_5,V_6,V_7,V_8,
+ \quad U_5,U_6,U_7,\quad F_3,F_4,F_5
+\]
+occupy 25 of the 26 baseline groups over both signs. Three additional
+LOW witnesses are supplied by the reflected pairs $V_2,C_{35},C_{45}$
+in already occupied groups. In particular
+$V_2^s+V_2^t\le20-3X-G<0$, since
+$3X+G\ge230+2I$. The untouched $C_{25}$ group supplies another
+LOW witness. Together with the eight HIGH $O$ labels this is 44
+misses against the baseline 26. Thus
+\[
+ \varepsilon=\delta-18\ge0.
+\]
+
+For the truncated core gap below $H_v$, the original counts $37$ and
+$30$ are unchanged. The two strict eliminations used to pass from
+$37$ to $30$ remain valid: freshly
+\[
+ a-(\alpha_v+M_v)\ge79+I>0,\qquad
+ a-U_3\ge X+g_o+h_o-36>0.
+\]
+Therefore
+\begin{equation}\label{eq:85-ownerless-H}
+ h_v\le R+31\quad(H_v\text{ has a core hit}),\qquad
+ h_v\le R_v+M_o+30\quad(H_v\text{ has no core hit}).
+\end{equation}
+In the second case its actual native upper clipping loss is at least
+$73$: the 69 core values and four positive source peels are all above
+the target. This uses the complete target $[1,S_v]$, not its hull.
+
+\paragraph{A source obtained by deleting just the two maxima.}
+Put $D_0=\tau-\xi\ge0$. After the maximum on each core side is
+deleted, its remaining rank deviations sum to $\tau_v-\xi_v$.
+Hence the resulting signed source $Q$ has 67 values and span at most
+$66+D_0$. At every integral displacement $q$,
+\[
+ |Q\cap(Q+q)|\ge67-D_0-q.
+\]
+Write $f=67-D_0$. Even when this lower bound is negative it is a valid
+intersection bound, so no positivity assumption on $f$ is needed.
+Each leading-to-$V$ edge contains the actual copies
+$\lambda_v+M_v+Q$ and $\lambda_v+v_4+Q$ at gap $X_v$;
+the reflected leading-to-$C_7$ edge has the same gap.
+Designate the two full leadings as roots, with summed native loss
+$\ell\ge0$. These stars avoid both alphas and both $H$ resources.
+
+Let $\Gamma_v$ be the native alpha deficiency, $k_v$ its lower clip,
+$N=\Gamma_s+\Gamma_t\ge k_s+k_t=k$, and let $B$ denote the sum of
+the two actual rank errors. The fresh complete-target endpoints give
+\[
+ \alpha_s+\alpha_t\ge78-k-B.
+\]
+For a light clip $k_v<73$ its error is at most $\xi_v$.
+At most one clip is heavy, because $2\cdot73>\varepsilon$.
+The rooted stars give separately valid inequalities
+\begin{equation}\label{eq:85-ownerless-stars}
+ 2X_v\ge2f+N+\ell-\varepsilon,\qquad
+ 2X\ge4f+N+\ell-\varepsilon.
+\end{equation}
+If an $H$ has no core hit, its unused native upper clip $u\ge73$
+rebates the second row:
+\begin{equation}\label{eq:85-ownerless-stars-H}
+ N+u\le\varepsilon,\qquad
+ 2X\ge4f+N+u+\ell-\varepsilon.
+\end{equation}
+These are deficiencies of distinct original retained resources.
+
+\paragraph{Both $H$ have core hits; both alpha clips are light.}
+Now $B\le\xi$ and $h_s+h_t\le2R+62$. The identity
+$\alpha_s+\alpha_t=h_s+h_t-M-X$ gives
+$L+X\le R-16+k+B$. Insert $L\ge A+20$ and
+\eqref{eq:85-ownerless-stars}, then use
+$N\ge k$, $k\le\varepsilon$, $B\le\xi$. This yields
+\[
+ 4f+2I+2\tau+2\eta+\ell\le64+4\xi.
+\]
+Since $f=67-\tau+\xi$ and $\eta=18$, it follows that
+$2\tau\ge240+2I+\ell$. But
+$\tau\le137-I-\delta\le119-I$. Thus
+$2+4I+\ell\le0$, a contradiction.
+
+\paragraph{Both $H$ have core hits; one alpha clip is heavy.}
+Say $k_v\ge73$. The opposite alpha is light. Its endpoint and
+$h_o\le R+31$ imply
+$e_o+X_o\le26+\xi_v+k_o+\zeta_o$, where
+$\zeta_o\le\xi_o$. Using the individual star,
+$N\ge k_v+k_o$ and $k_o\le\varepsilon-k_v$ gives
+\[
+ 2f+2e_o+2k_v+\ell\le52+2\xi+2\varepsilon.
+\]
+Consequently $2e_o+264+\ell\le2(\tau+\delta)
+\le274-2I$, so $e_o\le5$. On the other hand
+$\delta\ge18+73=91$, and the source floor gives
+$e_o\ge A-69\ge22$. This is impossible; the heavy endpoint error
+has not been bounded or discarded.
+
+\paragraph{Exactly one $H$ has no core hit.}
+Its clip $u\ge73$ leaves $N\le\varepsilon-u\le46$, so both alphas
+are light and $B\le\xi$. If $v$ is the core-hit side, the two caps
+in \eqref{eq:85-ownerless-H} give
+$h_s+h_t\le2R+e_o+61$, hence
+$e_v+X\le R-17+k+B$. Use
+\eqref{eq:85-ownerless-stars-H} and $k\le\varepsilon-u$ to get
+\[
+ 2e_v+4f+2u+\ell+34\le2R+2B+2\varepsilon.
+\]
+Thus $2e_v+202+2u+\ell\le4\tau+2\delta$.
+Since $\delta\ge18+u\ge91$ and $A\le137$,
+the right side is at most $366-4I$. Hence $e_v\le9$,
+whereas $e_v\ge A-69\ge22$.
+
+\paragraph{Neither $H$ has a core hit.}
+The two distinct native deficiencies total at least $146>137\ge\delta$.
+All four $H$ statuses are therefore impossible. This excludes the
+conditional cardinality-$85$ ownerless $Z_4$ family without assigning
+an owner or capacity to either empty pair.

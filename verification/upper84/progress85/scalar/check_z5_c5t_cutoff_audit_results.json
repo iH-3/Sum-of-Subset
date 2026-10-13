@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "conditional_family": "Z5 A1, exact holes O_s,H_s,O_t,P,C5_t; sole beta_s",
+  "cutoff_endpoint_loss": "2*l_C5s+2*l_alphat+u_alphas",
+  "cutoff_fixed_credit": 13,
+  "cutoff_scalar_margin": 420,
+  "additional_HIGH_tail_types": [
+    "U2_s",
+    "U3_s",
+    "U4_s",
+    "V2_s"
+  ],
+  "new_fixed_credit": 17,
+  "remaining_fixed_tail_types": 22,
+  "final_scalar_margin": 4,
+  "scope": "Local scalar algebra and literal tail-type membership; analytical structural/activity and actual-cover premises are external."
+}

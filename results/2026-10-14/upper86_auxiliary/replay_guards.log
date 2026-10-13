@@ -1,0 +1,66 @@
+{
+  "scope": "Exact-kernel and fail-closed completeness guard tests, not full proof replay",
+  "positive_controls": 2,
+  "negative_controls": [
+    {
+      "name": "negative combined coordinate",
+      "rejected": true,
+      "message": "w*A has a negative component"
+    },
+    {
+      "name": "nonnegative combined RHS",
+      "rejected": true,
+      "message": "w*b is not strictly negative"
+    },
+    {
+      "name": "absent row label",
+      "rejected": true,
+      "message": "certificate refers to absent current row: missing"
+    },
+    {
+      "name": "noninteger matrix coefficient",
+      "rejected": true,
+      "message": "noninteger matrix"
+    },
+    {
+      "name": "wrong variable domain",
+      "rejected": true,
+      "message": "unsupported or missing variable domain"
+    },
+    {
+      "name": "negative certificate multiplier",
+      "rejected": true,
+      "message": "nonpositive or noninteger certificate weight"
+    },
+    {
+      "name": "Boolean certificate multiplier",
+      "rejected": true,
+      "message": "nonpositive or noninteger certificate weight"
+    },
+    {
+      "name": "duplicate certificate label",
+      "rejected": true,
+      "message": "duplicate or nonstring weight label"
+    },
+    {
+      "name": "missing coefficient row coordinate",
+      "rejected": true,
+      "message": "noninteger matrix"
+    },
+    {
+      "name": "omitted supplemental component",
+      "rejected": true,
+      "message": "supplemental completeness"
+    },
+    {
+      "name": "duplicate supplemental component",
+      "rejected": true,
+      "message": "overlapping supplemental packages"
+    },
+    {
+      "name": "partial ordinary union",
+      "rejected": true,
+      "message": "ordinary union is incomplete"
+    }
+  ]
+}

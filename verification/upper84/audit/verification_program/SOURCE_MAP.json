@@ -1,0 +1,150 @@
+{
+  "schema": "upper85-arithmetic-provenance-v1",
+  "sources": [
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P3-strip-proof__ADDENDUM.md",
+      "sha256": "80957a0a42de87b7665c66f9cc132b316a5d36fe9a6e6e6e3aaef69f6075568e",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P5-proof__PROOF.md",
+      "sha256": "f719f12fec6849b9a0cdb266ad91276e0bc236c803c7041607b9b08158955547",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z4-proof__PROOF.md",
+      "sha256": "34711b0192de69c9339aec2c1c3d55e00f0fec02db5509a2253f0cb0d8177c15",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P4-A1-proof__PROOF.md",
+      "sha256": "f8d1d2212a2e2e9dcdef61fcbd0afce1be4cf18fbef846f401660201d725c847",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z0P0-proof__PROOF.md",
+      "sha256": "27bbb78c9e87fcf36ff18d672469f43ee6b8fbb5fcd367ee38da02fb2c607e33",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z3-proof__COMPOSITION.md",
+      "sha256": "68d4aaadaca4f1b1771cc728f21e02ae1f5692526db1b56d23924424d0b1aefe",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P3-bridge-proof__PROOF.md",
+      "sha256": "b65723b6c9bba35055afa314b07fa6abff4474dc9b4c7edf3832187175a7f1bb",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z5-proof__COMPOSITION.md",
+      "sha256": "252fe538621ce276b240d11498ec2e7ab29ba7b20df5da33a1224f0a8c3ddad2",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-H-proof__PROOF.md",
+      "sha256": "0f551f80e99e95e877425981e15d8e472af292a157bfb6c2e4f18d41b462f530",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z2-proof__PROOF.md",
+      "sha256": "763e87a5a02cc9fe5e8cb83ec1b26b0d7275a2f7ee88039533c6ebbb4d656b1a",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P4-A0-proof__PROOF.md",
+      "sha256": "7eedccbac2bcc4ad25d2ab972eb987a246cf15ff48f6c8835d10b0880a1a9e51",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P3-proof__COMPOSITION.md",
+      "sha256": "0e12b1140ac70ee294ecec9aed11df9094053ccac1a3ee9978f8eb04cf85acc0",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P2-proof__PROOF.md",
+      "sha256": "087391da409ac1c0c7684338dbd50884c1d2f3e91600ac59dc44da656d3f5bcb",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P1-proof__PROOF.md",
+      "sha256": "fc9704e46a0f9e43a01e9c7aa8536b4f8540ad360580abc5eff81d32c9f5ba65",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P4-B-proof__PROOF.md",
+      "sha256": "a53d565df6fc9cd1da8e168184a6d1f05037f01b3c89aafbaa2b83a170243e03",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-Z1-proof__PROOF.md",
+      "sha256": "d2ab7a956d6fd927f2c1a05369f460310dd77a967b3ac9c4f73897145397597f",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P3-boundary-proof__PROOF.md",
+      "sha256": "b4955cc0600e75799f63d73123806f36a1411ce4471eaeb39c57a408306f4f77",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P4-baseline-proof__PROOF.md",
+      "sha256": "2f16360b8f86bfb7177a0be7aa58069fa000187a73d0b34f53df40b9494c35b8",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/R-P4-whole-proof__COMPOSITION.md",
+      "sha256": "242b9b20d4914f05512042b9ccfb87800fcb3323791fa2bef0231914c1fe13f2",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "original_size86_thirteen_stratum_composition_20261005/pinned_inputs/F-general__general_lemmas_source.tex",
+      "sha256": "848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "z3_empty_beta_full_exclusion_20261005/PROOF.md",
+      "sha256": "838c8a06fe4cd76d6621ee797817b56bd62be859f102d8d78810e06fd9f2fe08",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "z3_opposite_h_full_exclusion_20261005/PROOF.md",
+      "sha256": "9d1aedb392367ff10dd42da60f69213444c2e403d8f0c2b8acdacb39c944e384",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p3_opposite_h_full_exclusion_20261005/PROOF.md",
+      "sha256": "e1be73e7c05a9fd2295fa2d3ff69289914d060ca20084aca71696d34b397baf2",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p3_empty_beta_small_gap_exclusion_20261005/PROOF.md",
+      "sha256": "71a6afb309d6f1c88014fb55df1d2472226b65033a1e27ba174aabc16ae6e1bf",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p3_empty_beta_m3_exclusion_20261005/PROOF.md",
+      "sha256": "c53e585f4bf5692b56d8207a785f95affff8d02629412460627d53cb8849781f",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p4_normal_same_owner_exclusion_20261005/NEW_m1_same_owner_whole_predicate_exclusion_v2.txt",
+      "sha256": "fc9001a53e647001b324377640e8514443c16542e54f9d88ee69dc0be44218c1",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p4_normal_same_owner_exclusion_20261005/NEW_m2_same_owner_T7_addendum_v1.txt",
+      "sha256": "b32a49437e71643a2ace9f6313e9fb4c74bc29f545a7109c6f89f4bfd946b9c1",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "p4_pair1_empty_t5_exclusion_20261005/NEW_T5_both_first_gaps_exclusion_v1.txt",
+      "sha256": "1d293d57aca21ef9804a2e8a339a4babf74dadad121d94302d38f566a73862f5",
+      "use": "Source for arithmetic transcription and scope; hash is provenance only, never a mathematical check."
+    },
+    {
+      "source_id": "subset_sums_checkpoint_20261005.zip",
+      "sha256": "b2895b1f1571c71a3a319c547083fdd6cae6775dfa881b0ca49e75f0c2bad2b0",
+      "use": "Accepted archival provenance. Archive is not a runtime dependency and is not copied into this package."
+    }
+  ]
+}

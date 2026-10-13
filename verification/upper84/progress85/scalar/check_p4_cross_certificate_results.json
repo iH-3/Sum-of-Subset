@@ -1,0 +1,53 @@
+{
+  "status": "PASS_EXACT_LOCAL_ARITHMETIC",
+  "quadratic_minimum": "654",
+  "minimizer": 28,
+  "small_opposite_cases": [
+    {
+      "E": 1,
+      "trim": 1,
+      "margin_bound": -13
+    },
+    {
+      "E": 2,
+      "trim": 2,
+      "margin_bound": -18
+    },
+    {
+      "E": 3,
+      "trim": 2,
+      "margin_bound": -14
+    },
+    {
+      "E": 4,
+      "trim": 2,
+      "margin_bound": -19
+    },
+    {
+      "E": 5,
+      "trim": 3,
+      "margin_bound": -15
+    }
+  ],
+  "raw_bound": "492-3T",
+  "terminal_margins": [
+    {
+      "T": 164,
+      "Bsum_cap": 19,
+      "positive_margin": 2
+    },
+    {
+      "T": 165,
+      "Bsum_cap": 18,
+      "positive_margin": 1
+    }
+  ],
+  "lower_T_margin_at_163": 3,
+  "written_premises": [
+    "normalized first-gap1 P4 A0 cross configuration and physical ranks",
+    "valid nominal END1 native endpoints and fixed credit9",
+    "actual leading/ordinary trimmed copies and rooted loss budgets",
+    "source mass and source/cardinality fringes",
+    "new universal source theorem T<=165"
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "name": "ap_bootstrap",
+    "script": "progress85/foundations/ap_bootstrap85.py"
+  },
+  {
+    "name": "inverse_and_boundaries",
+    "script": "progress85/inverse/check85_inverse.py"
+  },
+  {
+    "name": "highhole_localization",
+    "script": "progress85/foundations/highhole_localization85.py"
+  },
+  {
+    "name": "source_fringe",
+    "script": "progress85/foundations/source_triple_fringe85.py"
+  },
+  {
+    "name": "zero_low_indices",
+    "script": "progress85/zero/check_zero85.py"
+  },
+  {
+    "name": "zero_endpoint_cards",
+    "script": "progress85/zero/check_zero_cards85.py"
+  },
+  {
+    "name": "z3_side_union",
+    "script": "progress85/common/check_z3a1_side_union.py"
+  },
+  {
+    "name": "p2_activity_and_forests",
+    "script": "progress85/p2/check85_p2.py"
+  },
+  {
+    "name": "dense_seed_6188",
+    "script": "progress85/positive/dense_seed_check.py"
+  },
+  {
+    "name": "p3_terminal",
+    "script": "progress85/positive/check_p3_terminal.py"
+  },
+  {
+    "name": "p4_cards",
+    "script": "progress85/positive/check_p4_cards.py"
+  },
+  {
+    "name": "p4_cross",
+    "script": "progress85/scalar/check_p4_cross_certificate.py"
+  },
+  {
+    "name": "z4_ownerless",
+    "script": "progress85/scalar/check_z4_ownerless_certificate.py"
+  },
+  {
+    "name": "z5_thirteen_cards",
+    "script": "progress85/foundations/zero_audit85.py"
+  },
+  {
+    "name": "z5_alpha_final",
+    "script": "progress85/foundations/z5_alpha_final85.py"
+  },
+  {
+    "name": "z5_a1_b",
+    "script": "progress85/zero/check_zero85_z5_a1_b.py"
+  },
+  {
+    "name": "z5_c5t_cutoff",
+    "script": "progress85/scalar/check_z5_c5t_cutoff_audit.py"
+  }
+]

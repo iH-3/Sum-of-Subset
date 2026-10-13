@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "valid_manifest_accepted": true,
+  "invalid_manifests_rejected": [
+    "omitted_top_level",
+    "omitted_aggregate_child",
+    "omitted_module"
+  ]
+}

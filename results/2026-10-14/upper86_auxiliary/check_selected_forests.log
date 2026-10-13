@@ -1,0 +1,244 @@
+0 {'children': 27, 'nodes': 115, 'splits': 44, 'leaves': 71}
+1 {'children': 77, 'nodes': 533, 'splits': 228, 'leaves': 305}
+2 {'children': 42, 'nodes': 1456, 'splits': 707, 'leaves': 749}
+3 {'children': 165, 'nodes': 5407, 'splits': 2621, 'leaves': 2786}
+4 {'children': 24, 'nodes': 162, 'splits': 69, 'leaves': 93}
+5 {'children': 59, 'nodes': 1577, 'splits': 759, 'leaves': 818}
+6 {'children': 33, 'nodes': 5951, 'splits': 2959, 'leaves': 2992}
+7 {'children': 9, 'nodes': 29, 'splits': 10, 'leaves': 19}
+8 {'children': 28, 'nodes': 200, 'splits': 86, 'leaves': 114}
+9 {'children': 85, 'nodes': 371, 'splits': 143, 'leaves': 228}
+10 {'children': 3, 'nodes': 183, 'splits': 90, 'leaves': 93}
+11 {'children': 107, 'nodes': 655, 'splits': 274, 'leaves': 381}
+12 {'children': 121, 'nodes': 805, 'splits': 342, 'leaves': 463}
+13 {'children': 1, 'nodes': 31, 'splits': 15, 'leaves': 16}
+14 {'children': 2, 'nodes': 104, 'splits': 51, 'leaves': 53}
+15 {'children': 86, 'nodes': 710, 'splits': 312, 'leaves': 398}
+16 {'children': 9, 'nodes': 511, 'splits': 251, 'leaves': 260}
+17 {'children': 2, 'nodes': 100, 'splits': 49, 'leaves': 51}
+18 {'children': 150, 'nodes': 1438, 'splits': 644, 'leaves': 794}
+19 {'children': 2, 'nodes': 58, 'splits': 28, 'leaves': 30}
+20 {'children': 8, 'nodes': 784, 'splits': 388, 'leaves': 396}
+21 {'children': 2, 'nodes': 188, 'splits': 93, 'leaves': 95}
+{
+  "status": "PASS",
+  "parents": 866,
+  "totals": {
+    "children": 1042,
+    "nodes": 21368,
+    "splits": 10163,
+    "leaves": 11205
+  },
+  "split_kinds": {
+    "normal": 2660,
+    "inner": 1024,
+    "fixed-nonpositive": 3317,
+    "fixed-high": 2966,
+    "core-large": 154,
+    "both-sole": 22,
+    "Stanchescu": 14,
+    "AP-cap": 6
+  },
+  "minimum_contradiction": 1,
+  "components": [
+    {
+      "component": 0,
+      "package": "endpoint87/branch27_candidate_v1",
+      "parents": 27,
+      "children": 27,
+      "nodes": 115,
+      "splits": 44,
+      "leaves": 71
+    },
+    {
+      "component": 1,
+      "package": "endpoint87/branch77_candidate_v1",
+      "parents": 77,
+      "children": 77,
+      "nodes": 533,
+      "splits": 228,
+      "leaves": 305
+    },
+    {
+      "component": 2,
+      "package": "endpoint87/branch42z5_candidate_v1",
+      "parents": 42,
+      "children": 42,
+      "nodes": 1456,
+      "splits": 707,
+      "leaves": 749
+    },
+    {
+      "component": 3,
+      "package": "endpoint87/loss_cover11_candidate_v1",
+      "parents": 11,
+      "children": 165,
+      "nodes": 5407,
+      "splits": 2621,
+      "leaves": 2786
+    },
+    {
+      "component": 4,
+      "package": "endpoint87/branch24p3_candidate_v1",
+      "parents": 24,
+      "children": 24,
+      "nodes": 162,
+      "splits": 69,
+      "leaves": 93
+    },
+    {
+      "component": 5,
+      "package": "endpoint87/positive59_candidate_v1",
+      "parents": 59,
+      "children": 59,
+      "nodes": 1577,
+      "splits": 759,
+      "leaves": 818
+    },
+    {
+      "component": 6,
+      "package": "endpoint87/positive_small11_candidate_v1",
+      "parents": 11,
+      "children": 33,
+      "nodes": 5951,
+      "splits": 2959,
+      "leaves": 2992
+    },
+    {
+      "component": 7,
+      "package": "endpoint87/high9_candidate_v1",
+      "parents": 9,
+      "children": 9,
+      "nodes": 29,
+      "splits": 10,
+      "leaves": 19
+    },
+    {
+      "component": 8,
+      "package": "endpoint87/high28_candidate_v1",
+      "parents": 28,
+      "children": 28,
+      "nodes": 200,
+      "splits": 86,
+      "leaves": 114
+    },
+    {
+      "component": 9,
+      "package": "endpoint87/high85_candidate_v1",
+      "parents": 85,
+      "children": 85,
+      "nodes": 371,
+      "splits": 143,
+      "leaves": 228
+    },
+    {
+      "component": 10,
+      "package": "endpoint87/high3_mass_candidate_v1",
+      "parents": 3,
+      "children": 3,
+      "nodes": 183,
+      "splits": 90,
+      "leaves": 93
+    },
+    {
+      "component": 11,
+      "package": "endpoint87/high107_candidate_v1",
+      "parents": 107,
+      "children": 107,
+      "nodes": 655,
+      "splits": 274,
+      "leaves": 381
+    },
+    {
+      "component": 12,
+      "package": "endpoint87/high_recovery_20261003_v1/high121_recovered_v1",
+      "parents": 121,
+      "children": 121,
+      "nodes": 805,
+      "splits": 342,
+      "leaves": 463
+    },
+    {
+      "component": 13,
+      "package": "endpoint87/high_recovery_20261003_v1/high1_mass_recovered_v1",
+      "parents": 1,
+      "children": 1,
+      "nodes": 31,
+      "splits": 15,
+      "leaves": 16
+    },
+    {
+      "component": 14,
+      "package": "endpoint87/high_recovery_20261003_v1/high2_mass_recovered_v1",
+      "parents": 2,
+      "children": 2,
+      "nodes": 104,
+      "splits": 51,
+      "leaves": 53
+    },
+    {
+      "component": 15,
+      "package": "endpoint87/high_recovery_20261003_v1/high86_geometry_v1",
+      "parents": 86,
+      "children": 86,
+      "nodes": 710,
+      "splits": 312,
+      "leaves": 398
+    },
+    {
+      "component": 16,
+      "package": "endpoint87/high_recovery_20261003_v1/high9_dense_v1",
+      "parents": 9,
+      "children": 9,
+      "nodes": 511,
+      "splits": 251,
+      "leaves": 260
+    },
+    {
+      "component": 17,
+      "package": "endpoint87/high_recovery_20261003_v1/high2_new_mass_v1",
+      "parents": 2,
+      "children": 2,
+      "nodes": 100,
+      "splits": 49,
+      "leaves": 51
+    },
+    {
+      "component": 18,
+      "package": "endpoint87/high_recovery_20261003_v1/high150_geometry_v1",
+      "parents": 150,
+      "children": 150,
+      "nodes": 1438,
+      "splits": 644,
+      "leaves": 794
+    },
+    {
+      "component": 19,
+      "package": "endpoint87/high_recovery_20261003_v1/high2_final_mass_v1",
+      "parents": 2,
+      "children": 2,
+      "nodes": 58,
+      "splits": 28,
+      "leaves": 30
+    },
+    {
+      "component": 20,
+      "package": "endpoint87/high_last10_math_v2/exact8_candidate_v1",
+      "parents": 8,
+      "children": 8,
+      "nodes": 784,
+      "splits": 388,
+      "leaves": 396
+    },
+    {
+      "component": 21,
+      "package": "endpoint87/high_last10_math_v2/exact2_candidate_v1",
+      "parents": 2,
+      "children": 2,
+      "nodes": 188,
+      "splits": 93,
+      "leaves": 95
+    }
+  ],
+  "scope": "All actual selected parents/covers, original-cap integer witnesses, both independently reconstructed children at every split, protected cardinality row, exact arithmetic on every stored-row path, and exact END checked. Full source matrix regeneration remains the separate fresh replay obligation."
+}

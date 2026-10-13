@@ -1,0 +1,109 @@
+{
+  "schema": "upper85-delivery-qa-v1",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "linux",
+  "tests": [
+    {
+      "test": "optimized_full",
+      "command": "python -S -B -O verify.py --full",
+      "exit_code": 0,
+      "counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      },
+      "failed_checks": [],
+      "seconds": 28.589,
+      "platform": "Linux",
+      "isolated_zip_directory_contains_spaces_and_non_ascii": true,
+      "PYTHONPATH_removed": true,
+      "site_packages_disabled": true
+    },
+    {
+      "test": "missing_required_foundation_data",
+      "command": "python -S -B verify.py --full",
+      "exit_code": 1,
+      "counts": {
+        "PASS": 139,
+        "FAIL": 1,
+        "SKIP": 0
+      },
+      "failed_checks": [
+        "F6_H_PROFILES"
+      ],
+      "seconds": 20.576,
+      "platform": "Linux",
+      "isolated_zip_directory_contains_spaces_and_non_ascii": true,
+      "PYTHONPATH_removed": true,
+      "site_packages_disabled": true
+    },
+    {
+      "test": "wrong_coefficient_cli",
+      "command": "python -S -B verify.py --quick --data \"wrong coefficient.json\"",
+      "exit_code": 1,
+      "counts": {
+        "PASS": 137,
+        "FAIL": 1,
+        "SKIP": 2
+      },
+      "failed_checks": [
+        "Q-I"
+      ],
+      "seconds": 8.457,
+      "platform": "Linux",
+      "isolated_zip_directory_contains_spaces_and_non_ascii": true,
+      "PYTHONPATH_removed": true,
+      "site_packages_disabled": true
+    },
+    {
+      "test": "windows_launchers_static",
+      "result": "PASS",
+      "actual_windows_execution": false,
+      "checks": [
+        "CRLF",
+        "quoted script-directory path",
+        "launcher fallback",
+        "preserved exit code"
+      ]
+    }
+  ],
+  "full_theorem_formally_verified": false,
+  "imports_reviewed": [
+    ".common",
+    ".dense",
+    "argparse",
+    "ast",
+    "chapter_checks",
+    "chapter_expected",
+    "checks",
+    "contextlib",
+    "copy",
+    "datetime",
+    "exact_math",
+    "expected_cases",
+    "foundations",
+    "fractions",
+    "hashlib",
+    "io",
+    "itertools",
+    "json",
+    "math",
+    "pathlib",
+    "platform",
+    "sys",
+    "time",
+    "types"
+  ],
+  "excluded_runtime_dependencies": [
+    "network",
+    "external packages",
+    "original research directories",
+    "historical checkpoint ZIP"
+  ],
+  "current_scope": "Integrated P3/Z5 exact appendices and all requested finite checks; human-proof boundary remains explicit.",
+  "runtime_code_and_data_identical_to_extracted_tested_copy": true,
+  "checked_runtime_files": 30,
+  "runtime_test_embedded_proof_source_sha256": "cefafcb002b6c6068b7a8863786bbd7843c8a3c1d619f4acfdf8664286f75e6c",
+  "packaged_proof_source_sha256": "c771ff79b1683e3a618826a3a1eead6e77eaafde82101937d8b8e73b062b9c33",
+  "proof_only_update_after_runtime_tests": "The lower-hole-set premise H subset [1,L/2), source-guide typography, and TeX ASCII CLI dash rendering were clarified. No executable code or mathematical data changed; all 30 runtime files remain identical to the isolated full-test copy."
+}

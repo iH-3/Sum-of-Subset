@@ -1,0 +1,5 @@
+it=0 F=-4 R=35 coefficients=2,3,4,7,23, predicted_n=-7
+it=3 F=12 R=50 coefficients=2,3,5,7,21, predicted_n=57
+it=15 F=13 R=52 coefficients=2,3,5,7,22, predicted_n=61
+it=37 F=14 R=54 coefficients=2,3,5,7,23, predicted_n=65
+it=146 F=15 R=61 coefficients=2,4,6,8,26, predicted_n=69

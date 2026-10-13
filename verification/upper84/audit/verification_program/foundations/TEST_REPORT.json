@@ -1,0 +1,111 @@
+{
+  "schema": "upper85-foundations-final-test-v1",
+  "date_utc": "2026-10-05",
+  "python": "3.12.14",
+  "dependencies": "Python 3.10+ standard library only",
+  "status": "PASS",
+  "test_execution": {
+    "normal": {
+      "cwd": "/",
+      "copied_package_root": "<fresh temporary copy>/verification",
+      "command": "python3 -I -S -B - <<'PY'\nimport sys,json,time\nsys.path.insert(0,'<fresh temporary copy>/verification')\nimport foundations\nstart=time.perf_counter(); result=foundations.run_checks('full')\np='<test output directory>/portability_normal.json'\nopen(p,'w').write(json.dumps(result,indent=2)+'\\n')\nfor r in result: print(r['id'],r['status'],r.get('elapsed_seconds'),r['details'].get('error',''))\nprint('TOTAL_SECONDS',time.perf_counter()-start)\nraise SystemExit(any(r['status']!='PASS' for r in result))\nPY",
+      "elapsed_seconds": 28.965181116000167,
+      "command_note": "Paths are substituted labels for the actual fresh directory and receipt directory; the Python statements and interpreter options are exact."
+    },
+    "optimized": {
+      "cwd": "/",
+      "same_command_with_python_option": "-O",
+      "output_basename": "portability_optimized.json",
+      "elapsed_seconds": 28.09693535700353
+    }
+  },
+  "comparison": {
+    "equal_after_removing_elapsed_seconds": true,
+    "mathematical_records_sha256": "a5d9cd72a3d44298757ba490727c10c75801d8aef1d5f804eee11bbd4ee47acd",
+    "normal_and_optimized_all_pass": true
+  },
+  "stages": [
+    {
+      "id": "F3_NONAP_2340",
+      "status": "PASS",
+      "normal_seconds": 0.083373,
+      "optimized_seconds": 0.088399
+    },
+    {
+      "id": "F4_BOOTSTRAP_AP",
+      "status": "PASS",
+      "normal_seconds": 0.001731,
+      "optimized_seconds": 0.001882
+    },
+    {
+      "id": "F4_INVERSE",
+      "status": "PASS",
+      "normal_seconds": 0.005784,
+      "optimized_seconds": 0.020031
+    },
+    {
+      "id": "F4_FIXED_WITNESSES",
+      "status": "PASS",
+      "normal_seconds": 0.030736,
+      "optimized_seconds": 0.045126
+    },
+    {
+      "id": "F6_H_PROFILES",
+      "status": "PASS",
+      "normal_seconds": 8.898827,
+      "optimized_seconds": 8.119481
+    },
+    {
+      "id": "F6_H_BANDS",
+      "status": "PASS",
+      "normal_seconds": 0.001038,
+      "optimized_seconds": 0.000785
+    },
+    {
+      "id": "F6_DENSE_BASES",
+      "status": "PASS",
+      "normal_seconds": 8.053636,
+      "optimized_seconds": 8.209888
+    },
+    {
+      "id": "F6_RESTRICTED_DIRECT",
+      "status": "PASS",
+      "normal_seconds": 11.878223,
+      "optimized_seconds": 11.599093
+    }
+  ],
+  "checks_summarized": {
+    "generic_nonap_sets": 2340,
+    "generic_nonfull_sets": 910,
+    "fixed_structural_systems": 152,
+    "H_profiles": 160,
+    "H_branches": 5200,
+    "H_upgrades": 95701,
+    "H_future_index_checks": 1461470,
+    "dense_boundary_sets": 227239,
+    "dense_small_sets": 1728,
+    "dense_boundary_small_overlap": 1078,
+    "dense_distinct_union": 227889,
+    "restricted_q8_low_patterns_examined": 43758,
+    "restricted_q9_low_patterns_examined": 48620,
+    "qualifying_q8_patterns": 151,
+    "qualifying_q9_patterns": 1108,
+    "restricted_full_sets": 91875
+  },
+  "code_and_data_sha256": {
+    "__init__.py": "55dce049cc534d13f70c67b5158c1ec6d117d43d97ac13baecc1626b07b1dcab",
+    "dense/__init__.py": "dcab38d68862858abee7dd40f209ca31fdb62ab0124d53188bdf3017a7fe05c9",
+    "dense/common.py": "6483487ff38c7c46e06b0063e2bcc88c01cd7672c0159b8d4b8594ada37a2269",
+    "dense/data/certificate.json": "791603197db36f7dfdb66a6eab15f11bef34537622aa9af57b99d2e6b586690e",
+    "dense/data/profiles.json": "a12bc3a8102821cb3c02a56f03cff4973f65cb9ade8a50093e588d9f2f9a4f96",
+    "dense/dense.py": "cc1b4e74ccddbcdd2bd0da0fdf5a33079fc16fc428c1e1d163b178ea4d0aa733",
+    "dense/h15.py": "abea1e41768323a778f0a7e7cdf91f0dac9a7f99b9b22892890b5f628a660728",
+    "dense/profiles.py": "41aaee1cb049b9c2925508105ebfc365a12a873746b39148afbccee79e01991e",
+    "source/structural/ap_exception86/check86_elementary.py": "69087b9ce6c284421b13b9f1ef02a68937f77fdd995752d83c1af930f886d52a",
+    "source/structural/check_bootstrap_ap86.py": "9437c530f072104e3175c094725383b7742d24a5a0c9b0c90464b27d5f52089e",
+    "source/structural/foundations/verify_small_deleted.py": "a33288447f4fcc09e8b8b04a1bcfb3eed270d45c4d4e3c1895ab08c7e1bc5a7b",
+    "source/structural/inputs/four_integer_vectors.json": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+    "source/structural/inverse86/check_inverse86.py": "12910795e060c537ed4ac5a49dd5c31aca96f81f3b412ce67998a91274a7dd11"
+  },
+  "scope": "All eight bounded finite foundation stages; mathematical applicability and universal proof reductions remain the written proof. No solver, discovery, historical census or endpoint model was run."
+}

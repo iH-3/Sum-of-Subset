@@ -1,0 +1,40 @@
+{
+  "fixed_slots": 110,
+  "groups": 26,
+  "distinct_grouped_slots": 70,
+  "all_coefficients_checked": true,
+  "deleted_interval_base": [
+    {
+      "r": 10,
+      "count": 285,
+      "nonfull": 130,
+      "min_rho_minus_r": -5
+    },
+    {
+      "r": 11,
+      "count": 363,
+      "nonfull": 154,
+      "min_rho_minus_r": -5
+    },
+    {
+      "r": 12,
+      "count": 454,
+      "nonfull": 180,
+      "min_rho_minus_r": -5
+    },
+    {
+      "r": 13,
+      "count": 559,
+      "nonfull": 208,
+      "min_rho_minus_r": -5
+    },
+    {
+      "r": 14,
+      "count": 679,
+      "nonfull": 238,
+      "min_rho_minus_r": -5
+    }
+  ],
+  "total_cases": 2340,
+  "nonfull_cases": 910
+}

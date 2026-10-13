@@ -1,0 +1,1279 @@
+{
+  "schema": "Z5 exact finite assertions, version 1",
+  "scope": "Checks symbolic endpoint transports, the displayed finite fixed-label ledger counts and algebraic terminal certificates. Does not establish source/activity hypotheses, interval-cover lemmas, or the historical numerical campaign.",
+  "notation": {
+    "G": "gs+gt",
+    "k": "69-r",
+    "tau": "ts+tt",
+    "I_size": "(r-34)*(r-35)"
+  },
+  "cards": {
+    "A": {
+      "upper": [
+        "Vs",
+        "Vt"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2,
+        "alphas": 2,
+        "alphat": 1
+      },
+      "body": "5*a+5*b+2*G",
+      "constant": "314",
+      "error": "4*ts+4*tt",
+      "terminal": "228+22*I+84*tau/23+13*delta"
+    },
+    "B": {
+      "upper": [
+        "Vs",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2,
+        "alphas": 2
+      },
+      "body": "5*a+4*b+2*gs+3*gt+2*ht",
+      "constant": "309-r",
+      "error": "4*ts+3*tt",
+      "terminal": "211+39*I+(53*ts+57*tt)/23+17*delta"
+    },
+    "C": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2,
+        "alphas": 3
+      },
+      "body": "6*a+4*b+3*G+ht",
+      "constant": "383-2*r",
+      "error": "5*ts+3*tt",
+      "terminal": "195+21*I+(13*ts+17*tt)/23+8*delta"
+    },
+    "D": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2
+      },
+      "body": "3*a+4*b+3*G+3*hs+2*ht",
+      "constant": "161+r",
+      "error": "2*ts+3*tt",
+      "terminal": "43+59*I+(21*ts+20*tt)/23"
+    },
+    "E": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2,
+        "alphat": 1
+      },
+      "body": "3*a+5*b+3*G+3*hs",
+      "constant": "166+2*r",
+      "error": "2*ts+4*tt",
+      "terminal": "33+61*I+delta"
+    },
+    "F": {
+      "upper": [
+        "Us",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C5t": 2,
+        "alphat": 2
+      },
+      "body": "3*a+6*b+3*G+2*hs",
+      "constant": "171+3*r",
+      "error": "2*ts+5*tt",
+      "terminal": "553+33*I+delta"
+    },
+    "G": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C6t": 2,
+        "alphat": 2
+      },
+      "body": "3*a+6*b+3*G+hs",
+      "constant": "171+3*r",
+      "error": "2*ts+5*tt",
+      "terminal": "15+67*I+19*delta"
+    },
+    "H": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C6t": 2,
+        "alphas": 1
+      },
+      "body": "4*a+4*b+3*G+2*ht",
+      "constant": "235",
+      "error": "3*ts+3*tt",
+      "terminal": "71+17*I+17*tau/23+7*delta"
+    },
+    "I": {
+      "upper": [
+        "Hs",
+        "Ut"
+      ],
+      "lower": {
+        "P": 1,
+        "C6t": 2,
+        "alphas": 1,
+        "alphat": 1
+      },
+      "body": "4*a+5*b+3*G",
+      "constant": "309-k",
+      "error": "3*ts+4*tt",
+      "terminal": "75+21*I+(17*ts+15*tt)/23+11*delta"
+    },
+    "J": {
+      "upper": [
+        "Hs",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C7t": 2,
+        "alphas": 1,
+        "alphat": 2
+      },
+      "body": "4*a+6*b+gs+3*gt",
+      "constant": "383-2*k",
+      "error": "3*ts+5*tt",
+      "terminal": "24+26*I+(40*ts+36*tt)/23+15*delta"
+    },
+    "K": {
+      "upper": [
+        "Us",
+        "Ht"
+      ],
+      "lower": {
+        "P": 1,
+        "C6t": 2,
+        "alphat": 2
+      },
+      "body": "3*a+6*b+3*G",
+      "constant": "171+3*r",
+      "error": "0",
+      "terminal": "15*I+2*tau+16*delta <= 82+9*epsilon/2",
+      "normal": true
+    }
+  },
+  "retained_pair1_templates": [
+    {
+      "row": 1,
+      "extra_holes": [
+        "alphas",
+        "alphat"
+      ],
+      "card": "D"
+    },
+    {
+      "row": 2,
+      "extra_holes": [
+        "Us",
+        "Hs"
+      ],
+      "card": "A"
+    },
+    {
+      "row": 3,
+      "extra_holes": [
+        "Ut",
+        "Ht"
+      ],
+      "card": "A"
+    },
+    {
+      "row": 4,
+      "extra_holes": [
+        "Hs",
+        "Ht"
+      ],
+      "card": "A"
+    },
+    {
+      "row": 5,
+      "extra_holes": [
+        "alphat",
+        "Hs"
+      ],
+      "card": "B"
+    },
+    {
+      "row": 6,
+      "extra_holes": [
+        "alphat",
+        "Ht"
+      ],
+      "card": "C"
+    },
+    {
+      "row": 7,
+      "extra_holes": [
+        "alphas",
+        "Ht"
+      ],
+      "card": "E"
+    },
+    {
+      "row": 8,
+      "extra_holes": [
+        "alphas",
+        "Hs"
+      ],
+      "card": "F"
+    },
+    {
+      "row": 9,
+      "extra_holes": [
+        "C5t",
+        "alphas"
+      ],
+      "card": "G"
+    },
+    {
+      "row": 10,
+      "extra_holes": [
+        "C5t",
+        "alphat"
+      ],
+      "card": "H"
+    },
+    {
+      "row": 11,
+      "extra_holes": [
+        "C5t",
+        "Ht"
+      ],
+      "card": "I"
+    },
+    {
+      "row": 12,
+      "extra_holes": [
+        "C5t",
+        "C6t"
+      ],
+      "card": "J"
+    },
+    {
+      "row": 13,
+      "extra_holes": [
+        "C5t",
+        "Hs"
+      ],
+      "card": "K"
+    }
+  ],
+  "empty_pair1_templates": [
+    {
+      "extra_hole": "Hs",
+      "credit": 17,
+      "terminal": "17*I+tau+3*delta+18*e <= 343"
+    },
+    {
+      "extra_hole": "C5s",
+      "credit": 17,
+      "terminal": "17*I+tau+3*delta+18*e <= 343"
+    },
+    {
+      "extra_hole": "alphas",
+      "credit": 38,
+      "terminal": "43*I+6*tau+11*delta+40*e <= 1927"
+    }
+  ],
+  "a1_empty_pair1_classifier": {
+    "alphas": "HIGH-alpha",
+    "C5s": "three-group",
+    "Us": "three-group",
+    "Ht": "double-cross",
+    "alphat": "final-alpha",
+    "C5t": "final-cross"
+  },
+  "fixed_groups": [
+    [
+      "C25_s",
+      "C25_t"
+    ],
+    [
+      "C58_s",
+      "C58_t"
+    ],
+    [
+      "U6_s",
+      "U6_t"
+    ],
+    [
+      "V6_s",
+      "V6_t"
+    ],
+    [
+      "C48_s",
+      "F3_s"
+    ],
+    [
+      "C77_s",
+      "F4_s"
+    ],
+    [
+      "C15_s",
+      "F1_s",
+      "C55_t"
+    ],
+    [
+      "C26_s",
+      "C57_t",
+      "V4_t"
+    ],
+    [
+      "C35_s",
+      "V3_s",
+      "C46_t"
+    ],
+    [
+      "C36_s",
+      "U4_s",
+      "U5_t"
+    ],
+    [
+      "C44_s",
+      "U8_s",
+      "F5_s"
+    ],
+    [
+      "C45_s",
+      "V8_s",
+      "C67_t"
+    ],
+    [
+      "C47_s",
+      "V7_s",
+      "F2_s"
+    ],
+    [
+      "C56_s",
+      "V2_s",
+      "C66_t"
+    ],
+    [
+      "C68_s",
+      "U3_s",
+      "V5_t"
+    ],
+    [
+      "C48_t",
+      "F3_t"
+    ],
+    [
+      "C77_t",
+      "F4_t"
+    ],
+    [
+      "C15_t",
+      "F1_t",
+      "C55_s"
+    ],
+    [
+      "C26_t",
+      "C57_s",
+      "V4_s"
+    ],
+    [
+      "C35_t",
+      "V3_t",
+      "C46_s"
+    ],
+    [
+      "C36_t",
+      "U4_t",
+      "U5_s"
+    ],
+    [
+      "C44_t",
+      "U8_t",
+      "F5_t"
+    ],
+    [
+      "C45_t",
+      "V8_t",
+      "C67_s"
+    ],
+    [
+      "C47_t",
+      "V7_t",
+      "F2_t"
+    ],
+    [
+      "C56_t",
+      "V2_t",
+      "C66_s"
+    ],
+    [
+      "C68_t",
+      "U3_t",
+      "V5_s"
+    ]
+  ],
+  "fixed_ledgers": [
+    {
+      "id": "A0_H_base",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C22_s",
+        "C23_s",
+        "C24_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 11,
+        "low": 16,
+        "touched": 14,
+        "credit": 13
+      }
+    },
+    {
+      "id": "A0_H_direct",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C22_s",
+        "C23_s",
+        "C24_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 11,
+        "low": 22,
+        "touched": 20,
+        "credit": 13
+      }
+    },
+    {
+      "id": "A0_C5_direct",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "C66_s",
+        "C67_s",
+        "C68_s",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 8,
+        "low": 25,
+        "touched": 20,
+        "credit": 13
+      }
+    },
+    {
+      "id": "A0_alpha14",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "U5_s",
+        "U6_s",
+        "U7_s",
+        "U8_s",
+        "V2_s",
+        "V3_s",
+        "V4_s",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 8,
+        "low": 29,
+        "touched": 23,
+        "credit": 14
+      }
+    },
+    {
+      "id": "A0_H17",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C22_s",
+        "C23_s",
+        "C24_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "F5_s",
+        "U7_s",
+        "U8_s",
+        "V2_s",
+        "V4_s",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 11,
+        "low": 21,
+        "touched": 15,
+        "credit": 17
+      }
+    },
+    {
+      "id": "A0_C5_17",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "C66_s",
+        "C67_s",
+        "C68_s",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "U7_s",
+        "U8_s",
+        "V2_s",
+        "V4_s",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 8,
+        "low": 29,
+        "touched": 20,
+        "credit": 17
+      }
+    },
+    {
+      "id": "A0_alpha27",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C16_s",
+        "C16_t",
+        "C17_s",
+        "C17_t",
+        "C18_s",
+        "C18_t",
+        "C22_s",
+        "C22_t",
+        "C23_s",
+        "C23_t",
+        "C24_s",
+        "C24_t",
+        "C33_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "U5_s",
+        "U6_s",
+        "U7_s",
+        "U8_s",
+        "V2_s",
+        "V3_s",
+        "V4_s",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 21,
+        "low": 29,
+        "touched": 23,
+        "credit": 27
+      }
+    },
+    {
+      "id": "A0_alpha34",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C16_s",
+        "C16_t",
+        "C17_s",
+        "C17_t",
+        "C18_s",
+        "C18_t",
+        "C22_s",
+        "C22_t",
+        "C23_s",
+        "C23_t",
+        "C24_s",
+        "C24_t",
+        "C33_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "C66_t",
+        "C67_t",
+        "C68_t",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "U5_s",
+        "U5_t",
+        "U6_s",
+        "U6_t",
+        "U7_s",
+        "U7_t",
+        "U8_s",
+        "U8_t",
+        "V2_s",
+        "V3_s",
+        "V3_t",
+        "V4_s",
+        "V4_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 21,
+        "low": 38,
+        "touched": 25,
+        "credit": 34
+      }
+    },
+    {
+      "id": "A0_alpha38",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C16_s",
+        "C16_t",
+        "C17_s",
+        "C17_t",
+        "C18_s",
+        "C18_t",
+        "C22_s",
+        "C22_t",
+        "C23_s",
+        "C23_t",
+        "C24_s",
+        "C24_t",
+        "C33_s"
+      ],
+      "LOW": [
+        "C35_s",
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "C66_s",
+        "C66_t",
+        "C67_s",
+        "C67_t",
+        "C68_s",
+        "C68_t",
+        "F3_s",
+        "F3_t",
+        "F4_s",
+        "F4_t",
+        "F5_s",
+        "F5_t",
+        "U5_s",
+        "U5_t",
+        "U6_s",
+        "U6_t",
+        "U7_s",
+        "U7_t",
+        "U8_s",
+        "U8_t",
+        "V2_s",
+        "V3_s",
+        "V3_t",
+        "V4_s",
+        "V4_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 21,
+        "low": 42,
+        "touched": 25,
+        "credit": 38
+      }
+    },
+    {
+      "id": "A0_K14",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C22_s",
+        "C23_s",
+        "C24_s"
+      ],
+      "LOW": [
+        "C55_t",
+        "C56_t",
+        "C57_t",
+        "C58_t",
+        "C66_t",
+        "C67_t",
+        "C68_t",
+        "V5_s",
+        "V5_t",
+        "V6_s",
+        "V6_t",
+        "V7_s",
+        "V7_t",
+        "V8_s",
+        "V8_t"
+      ],
+      "counts": {
+        "high": 11,
+        "low": 15,
+        "touched": 12,
+        "credit": 14
+      }
+    },
+    {
+      "id": "A1_C5t_13",
+      "HIGH": [
+        "C11_s",
+        "C11_t",
+        "C12_s",
+        "C12_t",
+        "C13_s",
+        "C13_t",
+        "C14_s",
+        "C14_t",
+        "C22_s",
+        "C23_s",
+        "C24_s"
+      ],
+      "LOW": [
+        "C55_s",
+        "C55_t",
+        "C56_s",
+        "C56_t",
+        "C57_s",
+        "C57_t",
+        "C58_s",
+        "C58_t",
+        "C66_t",
+        "C67_t",
+        "C68_t"
+      ],
+      "counts": {
+        "high": 11,
+        "low": 11,
+        "touched": 9,
+        "credit": 13
+      }
+    }
+  ],
+  "polynomials": [
+    {
+      "id": "split_beta_and_tail",
+      "lhs": "r*(r+1)/2+4*r+12*(r-34)*(r-35)",
+      "rhs": "717+(25*(r-33)**2+3*(r-33))/2",
+      "integer_min": 717,
+      "upper_bound": 567
+    },
+    {
+      "id": "E_star",
+      "lhs": "23*r*(r+1)/2+92*r+95*(r-34)*(r-35)",
+      "rhs": "15355+(213*(r-30)**2-123*(r-30))/2",
+      "integer_min": 15355,
+      "upper_bound": 13987
+    },
+    {
+      "id": "B_alpha_strict",
+      "lhs": "r*(r+1)/2+4*r+3*(r-34)*(r-35)",
+      "rhs": "641+(7*(r-29)**2+(r-29))/2",
+      "integer_min": 641,
+      "strict_upper_bound": 448
+    },
+    {
+      "id": "opposite_owners",
+      "lhs": "440*r**2-28566*r+466105",
+      "real_min": "1082111/440"
+    },
+    {
+      "id": "same_owner_alpha",
+      "lhs": "13*r**2-819*r+12924",
+      "real_min": "99/4"
+    },
+    {
+      "id": "HIGH_alpha",
+      "lhs": "141*r**2-7935*r+114895",
+      "real_min": "612185/188"
+    }
+  ],
+  "linear_eliminations": [
+    {
+      "id": "three_group",
+      "row1": "8*I+83*tau/69+delta-37",
+      "row2": "333+2*I-187*tau/23-5*delta",
+      "multipliers": [
+        "561",
+        "83"
+      ],
+      "result": "6882+4654*I+146*delta"
+    },
+    {
+      "id": "double_cross",
+      "row1": "18*I+64*tau/23+25*delta/2-57",
+      "row2": "768+3*I-281*tau/23-5*delta/2",
+      "multipliers": [
+        "562",
+        "128"
+      ],
+      "result": "66270+10500*I+6705*delta"
+    },
+    {
+      "id": "final_A1_alpha",
+      "row1": "41*I+12*xi+13*delta-183",
+      "row2": "417+61*I+24*xi-19*delta",
+      "multipliers": [
+        "19",
+        "13"
+      ],
+      "result": "1944+1572*I+540*xi"
+    }
+  ],
+  "affine_reductions": [
+    {
+      "id": "A",
+      "row": "1106+3*I+42*tau/23-8*R-3*delta/2",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "2",
+      "result": "228+22*I+84*tau/23+13*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "B",
+      "row": "4055/4+2*I+(53*ts+57*tt)/92-31*R/4-7*delta/2",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "4",
+      "result": "211+39*I+(53*ts+57*tt)/23+17*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "C",
+      "row": "2303/2+2*I+(13*ts+17*tt)/46-17*R/2-9*delta/2",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "2",
+      "result": "195+21*I+(13*ts+17*tt)/23+8*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "D",
+      "row": "15*I+(21*ts+20*tt)/23+11*delta-364",
+      "substitutions": {
+        "delta": "37+4*I"
+      },
+      "scale": "1",
+      "result": "43+59*I+(21*ts+20*tt)/23",
+      "substitution_directions": {
+        "delta": "lower"
+      }
+    },
+    {
+      "id": "E",
+      "row": "2439/4+2*I-15*R/4-5*tau/4-11*delta/2",
+      "substitutions": {
+        "R": "124-I-delta",
+        "tau": "(225-3*I-3*delta)/2"
+      },
+      "scale": "8",
+      "result": "33+61*I+delta",
+      "substitution_directions": {
+        "R": "upper",
+        "tau": "upper"
+      }
+    },
+    {
+      "id": "F",
+      "row": "1753/2+2*I-tau/2-11*R/2-6*delta",
+      "substitutions": {
+        "R": "124-I-delta",
+        "tau": "(225-3*I-3*delta)/2"
+      },
+      "scale": "4",
+      "result": "553+33*I+delta",
+      "substitution_directions": {
+        "R": "upper",
+        "tau": "upper"
+      }
+    },
+    {
+      "id": "G",
+      "row": "2949/4+2*I-3*tau/4-21*R/4-4*delta",
+      "substitutions": {
+        "R": "124-I-delta",
+        "tau": "(225-3*I-3*delta)/2"
+      },
+      "scale": "8",
+      "result": "15+67*I+19*delta",
+      "substitution_directions": {
+        "R": "upper",
+        "tau": "upper"
+      }
+    },
+    {
+      "id": "H",
+      "row": "1683/2+2*I+17*tau/46-13*R/2-3*delta",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "2",
+      "result": "71+17*I+17*tau/23+7*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "I",
+      "row": "1935/2+3*I+(17*ts+15*tt)/46-15*R/2-2*delta",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "2",
+      "result": "75+21*I+(17*ts+15*tt)/23+11*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "J",
+      "row": "1128+4*I+(20*ts+18*tt)/23-9*R-3*delta/2",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "2",
+      "result": "24+26*I+(40*ts+36*tt)/23+15*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "K_slice",
+      "row": "1987/2+2*I-tau/2-17*R/2-2*delta",
+      "substitutions": {
+        "R": "124-I-delta",
+        "tau": "(225-3*I-3*delta)/2"
+      },
+      "scale": "4",
+      "result": "45*I+29*delta-467",
+      "substitution_directions": {
+        "R": "upper",
+        "tau": "upper"
+      }
+    },
+    {
+      "id": "corrected_H_C5",
+      "row": "1269+4*I+tau+4*delta+4*e-13*R-14*epsilon",
+      "substitutions": {
+        "R": "124-I-delta",
+        "epsilon": "delta-e"
+      },
+      "scale": "1",
+      "result": "17*I+tau+3*delta+18*e-343",
+      "substitution_directions": {
+        "R": "upper",
+        "epsilon": "equality"
+      }
+    },
+    {
+      "id": "alpha38",
+      "row": "1615+8*I+3*tau+20*e-27*R-8*delta",
+      "substitutions": {
+        "R": "(191-I-delta)/2"
+      },
+      "scale": "2",
+      "result": "43*I+6*tau+11*delta+40*e-1927",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    },
+    {
+      "id": "C5_zero_loss",
+      "row": "999+5*I+5*tau+6*delta-8*R",
+      "substitutions": {
+        "R": "124-I-delta"
+      },
+      "scale": "1",
+      "result": "7+13*I+5*tau+14*delta",
+      "substitution_directions": {
+        "R": "upper"
+      }
+    }
+  ],
+  "terminal_margin_checks": [
+    {
+      "id": "corrected_C5_and_H",
+      "lower_lhs": 357,
+      "rhs": 343
+    },
+    {
+      "id": "alpha38",
+      "lower_lhs": 1938,
+      "rhs": 1927
+    },
+    {
+      "id": "last_pair1_native",
+      "lower_lhs": 224,
+      "rhs": "91"
+    },
+    {
+      "id": "final_A1_cross",
+      "lower_lhs": 278,
+      "rhs": 274
+    }
+  ],
+  "arithmetic_guards": [
+    {
+      "id": "C5_zero_loss_constant",
+      "lhs": "5*121+973+556-1135",
+      "rhs": "999",
+      "affine_id": "C5_zero_loss"
+    }
+  ]
+}

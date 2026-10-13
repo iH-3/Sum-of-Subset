@@ -1,0 +1,172 @@
+{
+  "schema": "upper85-finite-foundation-coverage-v1",
+  "entry_api": "foundations.run_checks(mode='quick'|'full')",
+  "full_required_for_all_finite_bases": true,
+  "stages": [
+    {
+      "id": "F3_NONAP_2340",
+      "description": "Generic non-AP deleted-interval finite base",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "source/structural/foundations/nonap_defect.md",
+        "source/structural/foundations/general_lemmas_source.tex"
+      ],
+      "scope": "Finite base only; see nonap_defect.md for finite-to-infinite reduction",
+      "counts": {
+        "enumerated": 2340,
+        "nonfull": 910
+      }
+    },
+    {
+      "id": "F4_BOOTSTRAP_AP",
+      "description": "STRUCTURAL86 bootstrap and AP/halfstep scalar predicates",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "proof/STRUCTURAL86.md",
+        "source/structural/foundations/budget_and_sharp_defect_source.tex"
+      ],
+      "scope": "Exact scalar predicates supporting written STRUCTURAL86 bootstrap/AP arguments",
+      "counts": {}
+    },
+    {
+      "id": "F4_INVERSE",
+      "description": "STRUCTURAL86 inverse, endpoint repair, overlap and primitivity arithmetic",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "proof/STRUCTURAL86.md",
+        "source/structural/inverse86/proof_inverse86.md",
+        "source/structural/inverse86/arithmetic_tables.md",
+        "proof/endpoint_bridge_correction.txt"
+      ],
+      "scope": "Exact inequalities only; lattice, inverse and actual-set applicability are written premises",
+      "counts": {
+        "inverse_rows": 17,
+        "endpoint_repairs": 4,
+        "dense_diameter_rows": 13,
+        "oriented_overlap_alternatives": 30
+      }
+    },
+    {
+      "id": "F4_FIXED_WITNESSES",
+      "description": "Four fixed integer witnesses over the complete three-family domain",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "source/structural/ap_exception86/conditional_exception86.md",
+        "proof/STRUCTURAL86.md"
+      ],
+      "scope": "Three written actual-set families only; this is no solver or endpoint search",
+      "counts": {
+        "systems": 152,
+        "families": [
+          {
+            "family": "nonprimitive",
+            "systems": 72,
+            "minimum_contradiction": 283
+          },
+          {
+            "family": "halfstep",
+            "systems": 72,
+            "minimum_contradiction": 288
+          },
+          {
+            "family": "boundary14",
+            "systems": 8,
+            "minimum_contradiction": 295
+          }
+        ]
+      }
+    },
+    {
+      "id": "F6_H_PROFILES",
+      "description": "H-only synchronous profile proof traces at four hole thresholds",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "proof/dense_holes_direct_defects.tex",
+        "source/structural/foundations/general_lemmas_source.tex",
+        "proof/endpoint_bridge_correction.txt"
+      ],
+      "scope": "Complete supplied proof traces for the 160 H claims, not profile discovery or maximization",
+      "counts": {
+        "stats": {
+          "claims": 160,
+          "branches": 5200,
+          "immediate": 1929,
+          "upgrades": 95701,
+          "future_pairs": 1461470,
+          "bounded_new_upgrades": 27058,
+          "max_rounds": 10
+        }
+      }
+    },
+    {
+      "id": "F6_H_BANDS",
+      "description": "H paired floors, four analytic bands, j>=3 and H2 contradiction",
+      "mode": "quick_and_full",
+      "written_dependencies": [
+        "proof/dense_holes_direct_defects.tex",
+        "proof/STRUCTURAL86.md"
+      ],
+      "scope": "Conditional on primitive cores, h(P),h(Q)>=z, exact structural budget and c>=78j+delta",
+      "counts": {
+        "pair_count": 160,
+        "paired_floor_minima": {
+          "15": 300,
+          "17": 345,
+          "21": 391,
+          "49": 436
+        }
+      }
+    },
+    {
+      "id": "F6_DENSE_BASES",
+      "description": "Bounded-density complete boundary and small-cardinality bases",
+      "mode": "full_only",
+      "written_dependencies": [
+        "proof/dense_holes_direct_defects.tex"
+      ],
+      "scope": "Finite density bases; written induction and endpoint-hole counting prove unbounded r",
+      "counts": {
+        "boundary_total": 227239,
+        "small_total": 1728,
+        "small_boundary_overlap": 1078,
+        "distinct_cases_in_union": 227889
+      }
+    },
+    {
+      "id": "F6_RESTRICTED_DIRECT",
+      "description": "Complete restricted direct-defect base with independent algorithms",
+      "mode": "full_only",
+      "written_dependencies": [
+        "proof/dense_holes_direct_defects.tex",
+        "source/structural/foundations/general_lemmas_source.tex"
+      ],
+      "scope": "Finite lemma rho>=8j-44 on exactly the three deletion families, j=14..38; the written small-increment/tail/scale reduction proves primitive r=31..38, h>=15 => rho>=8r-112",
+      "counts": {
+        "count": 91875,
+        "low_pattern_counts": {
+          "8": 151,
+          "9": 1108
+        },
+        "low_deletion_enumeration": {
+          "q8": 43758,
+          "q9": 48620
+        }
+      }
+    }
+  ],
+  "retained_nonprogram_premises": [
+    "Accepted upper-86 starting theorem and rational integralization",
+    "General covering, peeling, exact loss accounting and published additive/inverse inputs",
+    "Written actual-set applicability and lattice/primitivity reductions",
+    "Corrected endpoint propagation",
+    "Infinite signature/depth, density induction and last-small-increment/tail reductions"
+  ],
+  "excluded_work": [
+    "2175360-descriptor historical census",
+    "301 high-interval catalogue",
+    "endpoint models",
+    "LP/Farkas discovery or optimization",
+    "profile discovery or maximization",
+    "retired stronger TH21/profile routes"
+  ]
+}
