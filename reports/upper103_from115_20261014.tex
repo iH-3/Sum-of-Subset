@@ -1,0 +1,803 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\title{Subset Sums in a Fourfold Sumset\\
+\large A checked continuation from the upper bound 115 to 103}
+\author{Sum-of-Subset research project}
+\date{14 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $\FS(A)$ include the empty subset sum, and let $4A$ allow repeated
+summands. Starting with the previously audited bound $N\le115$ for
+$\FS(A)\subseteq4A$, we exclude every cardinality from 104 through 115
+by one common argument. The resulting independently checked continuation
+gives $71\le N\le103$. Its finite part consists of 24 explicit hole
+witnesses and exact scalar inequalities, verified by a short standard-library
+Python program. It uses no numerical optimization or search over candidate
+sets. The structural lemmas are proved here, with the audited 115 foundation
+explicitly identified. The repository's earlier claim $N\le84$ is stronger;
+this report does not claim a new project record or certify that entire chain.
+\end{abstract}
+\tableofcontents
+
+\section{Scope, prerequisites, and the main conclusion}
+For a finite real set $X$, put
+\[
+ \FS(X)=\left\{\sum_{x\in Y}x:Y\subseteq X\right\},\qquad
+ R(X)=\{x+y:x,y\in X,\ x\ne y\},\quad
+ \Delta(X)=|2X|-|R(X)|.
+\]
+Here $2X=X+X$, $T_r=r(r+1)/2$, and $N$ is the largest feasible
+cardinality. The following theorem concerns all real sets, not only integer
+sets or sets of a prescribed shape.
+\begin{theorem}\label{thm:main}
+If $\FS(A)\subseteq4A$, then $|A|\le103$.
+\end{theorem}
+The 71-element construction from the accompanying research report remains
+unchanged:
+\[
+ A=[-31,31]_{\Z}\cup\{\pm93,\pm155,\pm217,\pm713\}.
+\]
+The precise maximum is not determined here.
+
+\subsection{The audited starting point}
+This is a continuation of the 115 foundation, not a replacement for its
+proof. We use the following previously checked facts, as stated in Part I
+of \texttt{upper86\_complete\_20261005.tex}, with the peeling correction in
+\texttt{proof\_review\_20261014.md}.
+\begin{enumerate}
+\item A feasible set remains feasible on adjoining zero. Any feasible real
+set has an integer realization of the same cardinality and sign order,
+preserving zero when present. To see the latter, fix one four-term
+representation for every subset sum. These are homogeneous rational linear
+equations; rational points are dense in their real kernel. Preserve the
+strict order inequalities and then clear denominators.
+\item Every feasible set has at most 115 elements.
+\item Remove the four largest positive and four most negative elements,
+taking all of a sign if fewer than four exist. With remainder $D$, $d=|D|$,
+\begin{equation}\label{eq:cover}
+ |\FS(D)|\le2|2D|+18d+85.
+\end{equation}
+The refined count consists of two leading $2D$ translates, eighteen
+ordinary units of capacity $d$, at most 84 nonzero fixed contributions,
+and zero. Its 110 fixed labels and 26 disjoint nonpositive groups are
+also reproduced and checked in the newer research report and
+\texttt{verification/verify.py}.
+\item A four-extreme peel, preserving zero, gives
+\begin{equation}\label{eq:peel}
+ |\FS(F)|\ge|\FS(F')|+|R(F)|-1.
+\end{equation}
+When both signs suffice, remove two elements at each extreme. If the
+extreme deleted sums are $\alpha,\beta$, the residue-class argument counts
+the classes of $\alpha+\FS(F')$ modulo $\beta-\alpha$, not the original
+classes of $\FS(F')$. In each translated class the two extreme translates
+provide one additional point. Restricted sums in other classes then prove
+\eqref{eq:peel}. This is the correction used throughout this report.
+\item For $X_i=\{0<x_1<\cdots<x_i\}$, write
+\[
+ \mu(X_i)=|\FS(X_i)|-1-T_i=\sum_{j=1}^i y_j,\qquad y_j\ge0,
+\]
+\[
+ \delta_0(X_i)=|\{x\in X_i:2x\notin R(X_i\cup\{0\})\}|,
+ \quad\rho(X_i)=\mu(X_i)+2-2\delta_0(X_i).
+\]
+Then $\Phi=2-\rho=2\delta_0-\mu\le10$, and
+$\rho(X_i)\ge\rho(X_{i-1})+y_i-2$. If $i\ge6$ and $y_i\le i-5$,
+the small-increment inverse lemma gives
+\begin{equation}\label{eq:small-inverse}
+ X_i=t([1,h]_{\Z}\setminus D_0),\quad i\le h\le i+y_i,
+ \quad |D_0|=h-i,\quad h\notin D_0.
+\end{equation}
+The circle-group argument proving this lemma uses the subset-sum growth
+results of Balandraud--Girard--Griffiths--Hamidoune \cite{BGGH}.
+Equality $y_i=0$ yields an initial progression; for $i\ge6$, $y_i=0,1$
+implies $\Phi(X_i)\le2$.
+\end{enumerate}
+We additionally use the following precise external results. The stability
+theorem of Carpenter--Defant--Kravitz \cite[Theorem 1.1]{CDK} says that for
+$r\ge4$ and $0\le M\le r-4$, $\mu(X)\le M$ implies
+$X=tB$, where $B$ is a positive integer set of size $r$ and
+$\sum B\le T_r+M$. In particular a non-progression subset-sum support
+has $\mu\ge r-3$. The two-set inverse theorem and central-interval theorem
+are stated at their actual applications below. We do not assume any
+post-115 endpoint exclusion from the archived reports.
+
+\section{Positive-side defect estimates}
+\begin{lemma}[Deleted intervals]\label{lem:deleted}
+If $X=[1,r+q]_{\Z}\setminus D$, $|D|=q$, $r+q\notin D$, and
+$r\ge\max(5,4q+1)$, then $\Phi(X)\le2$. For $q\ge1$ one also has
+$\delta_0(X)\le2q$. The latter defect bound remains valid for $q=1,2$
+and $r\ge7$.
+\end{lemma}
+\begin{proof}
+The case $q=0$ is immediate. Write $h=r+q$ and
+$C=\{h-d:d\in D\}$. The integer mass excess is
+\[
+ e_0=\sum X-T_r=\sum_{c\in C}c-T_{q-1}.
+\]
+There are $\min(k,h-k)$ pairwise disjoint representations of $2k$ by
+distinct members of $[0,h]_{\Z}$. Thus a defective present $k$ must be
+in $[1,q]$ or $[r,h]$. At most $q+1$ high defects occur. For $q\ge2$,
+all $1,\ldots,q$ cannot be both present and defective: defectivity of 1
+forces 2 absent. Hence at most $q-1$ low defects occur. For $q=1$,
+the only extra defect besides the maximum can arise from deleting 2 or
+$h-2$; these are distinct for $r\ge5$. This proves the defect counts.
+
+Since $r>q$, $X$ is primitive. If $\mu\le r-4$, stability implies
+$\mu=e_0$: every integer normalization of a primitive integer set is an
+integer dilation, while $|\FS(X)|\le\sum X+1$. With no low defects, let
+the high defects other than $h$ be $h-t$. Then $t\notin C$ and $2t\in C$.
+Replacing those depths $2t$ by the absent halves $t$ leaves $q$ distinct
+positive integers. If there are $v$ such defects,
+\[
+ e_0\ge q+\sum t\ge q+v\ge2v=2\delta_0-2.
+\]
+If there are $\ell\ge1$ low defects, their forced holes $2k$ have depths
+at least $r-q$, spaced by at least two. Therefore
+\[
+ e_0\ge\ell(r-q)+\ell(\ell-1)+T_{q-\ell}-T_{q-1}.
+\]
+Subtracting $2q+2\ell$ from the right side gives
+\[
+ \ell(r-2q-2)+\tfrac32\ell(\ell-1)-q\ge0
+\]
+under $r\ge4q+1$. Since $\delta_0\le q+1+\ell$, again
+$e_0\ge2\delta_0-2$. Finally, if $\mu>r-4$, then
+$\Phi\le4q-(r-3)\le2$.
+\end{proof}
+
+\begin{lemma}\label{lem:threshold}
+For a positive real set of size $r\ge14$, $\rho\ge0$.
+If $r\ge6$ and its subset-sum support is not an arithmetic progression,
+then $\rho\ge r-14$.
+\end{lemma}
+\begin{proof}
+For $9\le i\le14$, put $q_i=\lfloor(i-1)/4\rfloor$. If $y_i\le q_i$,
+\eqref{eq:small-inverse} and Lemma~\ref{lem:deleted} give $\Phi_i\le2$.
+Otherwise $\Phi_i\le\Phi_{i-1}+1-q_i$. Starting at $\Phi_8\le10$ gives
+successive bounds $9,8,7,6,4,2$. Larger increments $y_i\ge2$ preserve
+the bound, and the audited cases $y_i=0,1$ do also.
+
+For the second assertion, start with $\rho\ge-8$ at $r=6$ and induct.
+If $y_r\le2$, \eqref{eq:small-inverse} gives at most two deletions, hence
+$\delta_0\le4$, while stability gives $\mu\ge r-3$. Thus $\rho\ge r-9$.
+If $y_r\ge3$ and the preceding support is not a progression, the defect
+recurrence gives the result. If the preceding support is $t[0,L]_{\Z}$,
+its next translate must be disjoint: any overlap would again produce a
+progression. Consequently $y_r\ge(r-1)(r-2)/2$, and
+$\rho_r\ge(r-1)(r-2)/2-10\ge r-14$ for $r\ge7$.
+\end{proof}
+
+\begin{lemma}[Span bound]\label{lem:span}
+For a positive integer set $X$ of size $r\ge15$, with support hull-hole
+count $h_X$, one has
+\[
+ \max X\le r+\rho(X)+h_X+2.
+\]
+\end{lemma}
+\begin{proof}
+Delete the largest element $r+q$ and let $\nu\ge0$ be the number of
+previous defects it destroys. If primes denote the preceding prefix,
+\[
+ \rho(X)=\rho(X')+q-h_X+h_{X'}-2+2\nu.
+\]
+Now $\rho(X')\ge0$, $h_{X'}\ge0$, and $\nu\ge0$.
+\end{proof}
+
+\section{One common lattice and one exact budget}
+Assume for now that $0\in A$ and $104\le n=|A|\le115$. Integralize
+before using an integer inverse theorem. Form $B,D$ as in the covering
+lemma and make two four-element peels $D\supset D_1\supset E$.
+The elementary comparison of \eqref{eq:cover} and two copies of
+\eqref{eq:peel} gives
+\begin{equation}\label{eq:crude-core}
+ s:=|\FS(E)|\le22d+2\Delta(D)+77\le24d+77.
+\end{equation}
+If $|B|\le7$, $D$ is one-sided and $E$ has at least $n-16\ge88$
+nonzero elements of one sign. Then $s\ge1+T_{88}=3917$, contradicting
+$s\le24\cdot115+77=2837$. Thus $|B|=8$ and
+\[
+ d=n-8,\qquad e=|E|=n-16,\qquad
+ E=P\cup\{0\}\cup(-Q),\quad a=|P|,\ b=|Q|,\quad m=a+b=n-17.
+\]
+
+\subsection{Ensuring both signs and an opposite pair}
+If $E$ contains $p$ pairs $\{x,-x\}$ and $q$ singly occurring absolute
+values, then $e=2p+q+1$ and
+\begin{equation}\label{eq:unpaired}
+ |\FS(E)|\ge1+T_{p+q}+T_p=\frac{e^2+3+q^2}{4}.
+\end{equation}
+Indeed translate the support to replace negative elements by their positive
+magnitudes. For ordered distinct magnitudes $b_i$, of multiplicity
+$m_i\in\{1,2\}$, adjoining the $m_i$ copies of $b_i$ increases the
+support by at least $i m_i$. The residues of $0,b_1,\ldots,b_{i-1}$
+modulo $b_i$ are distinct, and each of these classes gains at least $m_i$
+points. The smallest possible sum of these increments assigns multiplicity
+two to the first $p$ positions, proving \eqref{eq:unpaired}.
+
+Combining with \eqref{eq:crude-core}, where $d=e+8$, gives
+\[
+ q^2\le96e+1073-e^2,\qquad q\equiv e-1\pmod2.
+\]
+For $88\le e\le99$ this forces $p\ge23$ (see the table below).
+Hence $a,b\ge23$, both peels really removed two elements of each sign,
+and zero is not a diagonal exception in $D$.
+
+\subsection{The exact slack identity}
+Write $\mu=\mu(P)+\mu(Q)$ and $\rho=\rho(P)+\rho(Q)$. Set
+\begin{align*}
+ \Lambda&=1+T_a+T_b,&\kappa&=s-\Lambda-\mu,\\
+ \theta&=\delta_0(P)+\delta_0(Q)+8-\Delta(D),&
+ c&=2|2D|+18d+85-|\FS(D)|,\\
+ \ell_1&=|\FS(D)|-|\FS(D_1)|-|R(D)|+1,\\
+ \ell_2&=|\FS(D_1)|-s-|R(D_1)|+1,\\
+ g&=4d-10-(|R(D)|-|R(D_1)|),&
+ \T&=\kappa+\ell_1+\ell_2+g.
+\end{align*}
+All these slacks are nonnegative. For $\kappa$, use
+$|U+V|\ge|U|+|V|-1$; for $g$, at most $4d-10$ pairs involve a
+deleted point. The opposite pair just proved removes zero from the count
+of possible diagonal exceptions. Direct cancellation gives the exact identity
+\begin{equation}\label{eq:budget}
+ \boxed{\rho+2\theta+c+\T=\Omega:=22d+97-\Lambda.}
+\end{equation}
+
+\subsection{Core normalization and propagation to the peeled layers}
+We use the following sufficient form of Stanchescu's inverse theorem
+\cite[Corollary 2]{Stanchescu}. If integer sets $U,V$, each of size at
+least two, satisfy
+\[
+ |U+V|<|U|+|V|+\min(|U|,|V|)-3,
+\]
+their hull cardinalities on a common difference lattice are at most
+$|U+V|-|V|+1$ and $|U+V|-|U|+1$, respectively.
+For every possible oriented $(a,b)$ with $a,b\ge23$, $a+b=m$ and
+$\Omega\ge0$, the table below verifies
+\begin{equation}\label{eq:inverse-margin}
+ T_{\min(a,b)}-2-\Omega>0.
+\end{equation}
+Thus $\kappa\le\Omega<\min(|\FS(P)|,|\FS(Q)|)-3$, which is a
+stronger sufficient hypothesis. Apply the theorem to
+$U=\FS(P)$ and $V=-\FS(Q)$ and divide by the common step. Because both
+supports contain zero, $P,Q,E$ are now integral. If $h_P,h_Q$ and $z$
+denote their support hull-hole counts, respectively, then
+\begin{equation}\label{eq:holes}
+ h_P,h_Q\le\kappa,\qquad z=h_P+h_Q-\kappa,\qquad
+ 0\le z\le\min(h_P,h_Q)\le\kappa.
+\end{equation}
+Moreover $h_X<|\FS(X)|-1$ for either side.
+
+Let $R_p=\max P$ and $R_q=\max Q$. Lemma~\ref{lem:span} gives
+$R_p+R_q\le m+\rho+\kappa+z+4$. Since
+$|R(E)|\le2(R_p+R_q)+1$ and the next four points create at most $4e+6$
+restricted sums, with $C_*=2m+4e+14-\Lambda$ we have
+\begin{align}
+ |\FS(D_1)|-2s
+ &\le C_*+2\rho-\mu+\kappa+2z+\ell_2\notag\\
+ &\le C_*+3\Omega.\label{eq:inner}
+\end{align}
+The second inequality follows from $z\le\kappa$ and
+$\rho+\kappa+\ell_2\le\Omega$. The table verifies that it is strictly
+negative. Any added point off the core lattice would give two disjoint
+copies of $\FS(E)$ in $\FS(D_1)$, a contradiction. Hence $D_1$ is integral.
+Similarly,
+\begin{equation}\label{eq:outer}
+ |\FS(D)|-2|\FS(D_1)|\le4d-10+\ell_1-\ell_2-s
+ \le4d-10+\Omega-\Lambda<0,
+\end{equation}
+so $D$ is integral. No integrality of the outer eight points is assumed yet.
+
+In the table, ``paired minimum'' is the lower bound on $p$ from
+\eqref{eq:unpaired}, ``inverse'' is the minimum in
+\eqref{eq:inverse-margin}, ``inner'' is the maximum of $C_*+3\Omega$,
+and ``outer'' is the minimum of $\Lambda-(4d-10+\Omega)$.
+All oriented pairs, including both reflections, are checked.
+
+\begin{center}\small
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & oriented pairs & paired minimum & inverse & inner & outer\\\midrule
+115 & 1 & 36 & 1223 & -1845 & 2033\\
+114 & 10 & 34 & 981 & -1721 & 1961\\
+113 & 15 & 33 & 854 & -1597 & 1889\\
+112 & 18 & 32 & 770 & -1477 & 1819\\
+111 & 21 & 30 & 695 & -1357 & 1749\\
+110 & 22 & 29 & 643 & -1241 & 1681\\
+109 & 25 & 28 & 581 & -1125 & 1613\\
+108 & 26 & 27 & 535 & -1013 & 1547\\
+107 & 29 & 26 & 486 & -901 & 1481\\
+106 & 30 & 25 & 446 & -793 & 1417\\
+105 & 31 & 24 & 408 & -685 & 1353\\
+104 & 34 & 23 & 371 & -581 & 1291\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+The two extreme translates of $\FS(E)$ inside $\FS(D_1)$ overlap by
+\eqref{eq:inner}; their hulls cover the new hull, leaving at most $2z$
+holes. If their displacement is $u$, their union has at least $s+u-z$
+points: its hull has $u$ more lattice points than the old hull and at most
+$2z$ holes. Comparing this to the exact definition of $\ell_2$ gives
+$\eta_2\le z+\ell_2$, where $\eta_2$ counts holes of $R(D_1)$ in
+its integer hull. The same argument at the other peel, using
+\eqref{eq:outer}, gives
+\begin{equation}\label{eq:propagation}
+ w:=\operatorname{holes}(\FS(D))\le4z,\qquad
+ \eta_1\le2z+\ell_1,\qquad\eta_2\le z+\ell_2.
+\end{equation}
+
+\section{The four-extreme defect budget}
+\begin{lemma}\label{lem:four}
+Let $F=\{x_1<\cdots<x_v\}\subset\Z$, $v\ge2$, and add four integers
+$a_1<a_2<x_1<x_v<b_2<b_1$ to obtain $D$. If $\eta_F,\eta_D$ count
+restricted-sum hull holes and
+$g_H=4v+6-(|R(D)|-|R(F)|)$, then
+\[
+ \eta_D+\eta_F+g_H\ge2v-4.
+\]
+\end{lemma}
+\begin{proof}
+Put $L=x_1+x_2$, $U=x_{v-1}+x_v$,
+$h_+=b_1+b_2-U$, $h_-=L-a_1-a_2$, and $h=h_++h_-$.
+Let $W_+$ be the union of the portions of $b_1+F,b_2+F$ above $U$.
+Write $u=b_2-x_v$, $v_0=b_1-b_2$, $e_0=x_v-x_{v-1}$, and
+$I_+=(U,b_1+x_v]_{\Z}$. If $H_+=|I_+|-|W_+|$, then
+\[
+ |W_+|\le u+1+v,\quad |W_+|=u+v_0+e_0-H_+,\quad
+ 2|W_+|\le h_++v+1-H_+.
+\]
+For the first bound, the terms of $b_2+F$ above $U$ use at most $u$
+integers up to $x_{v-1}$ and the one point $x_v$; the other translate
+has at most $v$ terms. Reflection gives the corresponding $W_-,H_-$.
+Apart from $W_+,W_-$ and the two new extreme sums, at most four mixed
+pairs $a_i+b_j$ create new values outside $[L,U]$. Let $q_0$ count
+those not already counted. They lie in the unused parts of $I_+,I_-$,
+so $q_0\le4$ and $q_0\le H_++H_-$. Therefore
+\[
+ 2N_{\rm out}\le h+2v+6-(H_++H_-)+2q_0\le h+2v+10.
+\]
+If $N=|R(D)|-|R(F)|$, then $N\le N_{\rm out}+\eta_F$ and
+$\eta_D=h+\eta_F-N$. Substitution yields
+\[
+ \eta_D+\eta_F+g_H=h+2\eta_F+4v+6-2N\ge2v-4.
+\]
+\end{proof}
+Apply the lemma with $F=D_1$, $v=d-4$. Equations
+\eqref{eq:holes} and \eqref{eq:propagation} imply, for $G=2d-12$,
+\begin{equation}\label{eq:Tlower}
+ \boxed{\T\ge\kappa+G-3z\ge G-2z,\qquad
+ \T\ge z,\qquad\T\ge t_0:=\lceil G/3\rceil.}
+\end{equation}
+If $z>0$, both $h_P,h_Q$ are positive but smaller than their support
+cardinalities minus one. Thus neither support is an arithmetic progression:
+step one has no holes and step at least two has too many. Stability and
+Lemma~\ref{lem:threshold} now give
+\begin{equation}\label{eq:nonap}
+ \mu(P)\ge a-3,\quad\mu(Q)\ge b-3,\quad\rho\ge m-28.
+\end{equation}
+
+\section{Twenty-four effective hole witnesses}
+Only the hole threshold 14 is needed. We give its complete quantitative
+proof to avoid any unspecified large-size assumption.
+
+\begin{lemma}[Counted endpoint holes]\label{lem:counted}
+If $i\ge2e_0+5$ and $y_i=e_0\ge0$, then, up to positive scaling,
+\[
+ X_i=[1,i+e_0]_{\Z}\setminus D_0,\quad |D_0|=e_0,
+\]
+and its support is
+\[
+ \mathcal S(L,H):=[0,L]_{\Z}\setminus(H\cup(L-H)),\quad
+ H\subseteq[1,2e_0]_{\Z},\quad |H|\le e_0.
+\]
+\end{lemma}
+\begin{proof}
+The equality case handles $e_0=0$. Otherwise
+\eqref{eq:small-inverse} first gives $\delta\le e_0$ deletions and maximum
+$i+\delta$. Remove the maximum. Lev's theorem \cite[Theorem 1]{Lev}
+states that for $B\subseteq[1,L_0]_{\Z}$, $|B|=s_0$, and
+$L_0\le3s_0/2-2$,
+\[
+ [2L_0-2s_0+1,\ \sum B-(2L_0-2s_0+1)]_{\Z}\subseteq\FS(B).
+\]
+Apply this with $s_0=i-1$, $L_0=i+\delta-1$; the density condition is
+$i\ge2\delta+5$. By symmetry its support has endpoint holes in
+$[1,2\delta]$. Its total is at least $T_{i-1}>i+5\delta$. Adding
+$i+\delta>2\delta$ overlaps the central intervals and keeps precisely
+the same endpoint holes. Its support increment is $i+\delta$, so
+$\delta=e_0$. Every lower hole is absent from the coefficient set itself;
+there are only $e_0$ missing coefficients. Hence $|H|\le e_0$.
+\end{proof}
+
+\begin{lemma}[Effective hole test]\label{lem:effective}
+For an integer $C\ge0$, define
+\begin{gather*}
+ K=\max\{k\ge3:k(k-3)/2\le C+1\},\qquad D_*=C+K,
+ \qquad E_*=D_*+1,\\
+ M=\max\left\{14,1+\left\lfloor
+ \frac{1+\sqrt{9+8(E_*+42)}}2\right\rfloor\right\},
+ \qquad J=\max\{K+1,19,M\}.
+\end{gather*}
+If
+\begin{equation}\label{eq:hole-tests}
+ 7(r-J+1)>D_*,\qquad T_{J-1}-1>D_*,
+\end{equation}
+a positive $r$-element set whose support has, on a specified lattice,
+$14<h<|\FS|-1$ must satisfy $\mu\ge r+C+1$.
+\end{lemma}
+\begin{proof}
+Assume $\mu\le r+C$ and divide by the specified lattice step.
+The set is integral and primitive: a gcd at least two would create at
+least $|\FS|-1$ holes. Its support is not a progression.
+If no prefix of size at least three has progression support, then
+$y_j\ge1$ for $j\ge4$ and $\sum_{j=4}^r(y_j-1)\le C+3\le D_*$.
+Otherwise let $k\ge3$ be the last progression prefix. The next support
+translate is disjoint, giving $y_{k+1}\ge T_k-k$. Subsequent increments
+are positive, so
+\[
+ \mu\ge r-1+k(k-3)/2,\qquad k\le K.
+\]
+In either case a tail starting no later than $K+1$ satisfies
+\begin{equation}\label{eq:tail}
+ y_j\ge1,\qquad \sum(y_j-1)\le D_*.
+\end{equation}
+The first test in \eqref{eq:hole-tests} forces some $i\in[J,r]$ with
+$1\le y_i\le7$. Lemma~\ref{lem:counted} gives a scaled deleted interval
+with endpoint state $H\subseteq[1,14]$, $|H|\le7$. Its coefficient set
+has gcd one, so its scale $t$ is a positive integer. If $t>1$, primitivity
+of the full set gives a first later coefficient off $t\Z$. At that step
+the supports are disjoint and
+\[
+ y_j-1\ge T_{j-1}-j\ge T_{i-1}-1\ge T_{J-1}-1>D_*,
+\]
+contradicting \eqref{eq:tail}. Thus $t=1$.
+
+Every later excess is at most $E_*$. We verify that the endpoint state
+persists. For a current prefix of size $v\ge M$ with support
+$\mathcal S(L,H)$, $L\ge T_v$, and its next element $x>v\ge14$.
+If $x\ge L-28$, the portion of $x+\mathcal S(L,H)$ above $L$ has at
+least $L-42\ge T_v-42>v+1+E_*$ points, contradicting its allowed
+increment. The last strict inequality is exactly the definition of $M$.
+Hence $14<x<L-28$. The two central integer intervals overlap or abut;
+the lower holes remain $H$ and symmetry gives upper holes $L+x-H$.
+Induction leaves at most $2|H|\le14$ holes in the final support, a contradiction.
+\end{proof}
+
+The following witnesses are sufficient, with no assertion of optimality.
+The last columns are $7(r-J+1)-D_*$ and $T_{J-1}-1-D_*$, respectively.
+The program also verifies $T_M-42>M+1+E_*$ using integer arithmetic.
+
+\begin{center}\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$r$ & $C$ & $K$ & $D$ & $J$ & window margin & off-scale margin\\\midrule
+32 & 83 & 14 & 97 & 19 & 1 & 73\\
+33 & 89 & 15 & 104 & 19 & 1 & 66\\
+34 & 96 & 15 & 111 & 19 & 1 & 59\\
+35 & 102 & 15 & 117 & 19 & 2 & 53\\
+36 & 109 & 16 & 125 & 19 & 1 & 45\\
+37 & 110 & 16 & 126 & 19 & 7 & 44\\
+38 & 116 & 16 & 132 & 20 & 1 & 57\\
+39 & 122 & 17 & 139 & 20 & 1 & 50\\
+40 & 128 & 17 & 145 & 20 & 2 & 44\\
+41 & 129 & 17 & 146 & 21 & 1 & 63\\
+42 & 135 & 18 & 153 & 21 & 1 & 56\\
+43 & 142 & 18 & 160 & 21 & 1 & 49\\
+44 & 147 & 18 & 165 & 21 & 3 & 44\\
+45 & 149 & 18 & 167 & 22 & 1 & 63\\
+46 & 155 & 19 & 174 & 22 & 1 & 56\\
+47 & 162 & 19 & 181 & 22 & 1 & 49\\
+48 & 167 & 19 & 186 & 22 & 3 & 44\\
+49 & 168 & 19 & 187 & 23 & 2 & 65\\
+50 & 175 & 20 & 195 & 23 & 1 & 57\\
+51 & 182 & 20 & 202 & 23 & 1 & 50\\
+52 & 187 & 20 & 207 & 23 & 3 & 45\\
+53 & 188 & 21 & 209 & 24 & 1 & 66\\
+54 & 195 & 21 & 216 & 24 & 1 & 59\\
+55 & 202 & 21 & 223 & 24 & 1 & 52\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{A covering certificate retaining the core masses}
+This section includes centers outside the target hull. Their errors are
+absorbed by the available source span, so no additional case enumeration
+for such centers is needed.
+Write the eight outer elements as
+\[
+ p_1>p_2>p_3>p_4>M_p:=\max D,\qquad
+ q_1>q_2>q_3>q_4>M_q:=-\min D.
+\]
+Let $S_p,S_q$ be the sums of the positive and negative magnitudes in $D$.
+Put
+\begin{gather*}
+ \varepsilon_p=\sum P-T_a=\mu(P)+h_P,\qquad
+ \varepsilon_q=\sum Q-T_b=\mu(Q)+h_Q,\\
+ F=S_p+S_q+c-2(M_p+M_q)-2(R_p+R_q),\\
+ F_A(a,b)=\tfrac12T_a+T_b+6a+8b+85,\\
+ F_B(a,b)=\tfrac23T_a+T_b+6a+\tfrac{22}3b+\tfrac{236}3.
+\end{gather*}
+Every sum involving a core point, and every mixed-sign sum from $D\setminus E$,
+lies in $[-M_q-R_q,M_p+R_p]$. Only ten positive-positive and ten
+negative-negative pairs of the four peeled points per sign can lie outside.
+Thus $|2D|\le M_p+M_q+R_p+R_q+21$. Using the definition of $c$ and
+$|\FS(D)|=S_p+S_q+1-w$ gives
+\begin{equation}\label{eq:Fupper}
+ \boxed{F\le18d+126+w\le18d+126+4z.}
+\end{equation}
+
+\begin{lemma}[All ordinary units active]\label{lem:active}
+If $c<d$, then after a possible reflection one of the following holds:
+\begin{align}
+ F&\ge F_A(a,b)+\tfrac12\varepsilon_p+\varepsilon_q,\label{eq:FA}\\
+ F&\ge F_B(a,b)+\tfrac23\varepsilon_p+\varepsilon_q.\label{eq:FB}
+\end{align}
+There is no hypothesis limiting the number of out-of-hull centers.
+\end{lemma}
+\begin{proof}
+Define, on the positive side,
+\[
+ \lambda_p=p_1-p_2-p_3-p_4,\quad
+ \alpha_p=p_2-p_3-p_4,\quad\beta_p=2p_2-p_1-p_3-p_4.
+\]
+The ten ordinary centers are $\lambda_p+p_i$ ($1\le i\le4$),
+$\lambda_p-q_j$ ($1\le j\le4$), $\alpha_p$, and $\beta_p$.
+Reflection defines the negative side, represented as positive targets
+and translates of $-D$. Pair $\lambda_p-q_1$ with $\lambda_q-p_1$.
+If $\beta_p+\beta_q\le0$ (branch A), pair $\beta_p$ with $\beta_q$;
+otherwise (branch B), pair $\lambda_p-q_2$ with $\lambda_q-p_2$.
+These are the two capacity-$d$ pairings in \eqref{eq:cover}.
+
+If any of the eighteen units were empty, it would cost $d$ in the cover
+slack, contrary to $c<d$. Every unpaired center therefore contributes to
+the actual support. The first pair's centers sum to less than
+$-(M_p+M_q)$, so at most one even meets its open half-line. In branch A
+the two unpaired centers $\lambda_p-q_2,\lambda_q-p_2$ both contribute,
+and their sum is greater than $-(M_p+M_q)$. The identity
+\[
+ \beta_p+\beta_q=-(\lambda_p-q_2+\lambda_q-p_2)
+                  -2(p_3+p_4+q_3+q_4)
+\]
+then makes $\beta_p+\beta_q<-(M_p+M_q)$. In branch B the second pair's
+sum is already less than $-(M_p+M_q)$ by the same identity. Thus each
+paired unit has precisely one contributing member.
+
+All four own centers $b_i=\lambda_p+p_i$ contribute, and hence are
+integers because $D$ and the target support are integral. Since
+$\lambda_p=-b_1+b_2+b_3+b_4$, all $p_i$ are integral. Reflection proves
+the same for all $q_i$.
+
+Reflect so the first pair's contributor is $A_0=\lambda_p-q_1$.
+In branch A put $B_0=\lambda_q-p_2$, which contributes. Then
+\[
+ \beta_p=-(A_0+B_0)-2(p_3+p_4)-q_2-q_3-q_4<-M_p,
+\]
+so the second contributor must be $\beta_q$. In branch B, $\beta_p$
+is unpaired and contributes, giving
+\[
+ p_2-q_1=A_0+\beta_p+2p_3+2p_4>2M_p.
+\]
+It follows that $\lambda_q-p_2<-M_q$, and the second contributor is
+$\lambda_p-q_2$. This proves that the following two combinations exhaust
+the actual configurations.
+
+For each selected slot, let $l_v,u_v$ count the points of its translate
+below 1 and above its target maximum $S_p$ or $S_q$. Hull counts dominate
+actual target counts; the cover, with 84 fixed contributions, gives
+\begin{equation}\label{eq:loss}
+ \sum_v(l_v+u_v)\le c.
+\end{equation}
+Define the nonnegative span allowances
+\[
+ U=M_p-a-4,\quad V=M_q-b-4,\quad q_p=R_p-a\le U,\quad q_q=R_q-b\le V.
+\]
+A contributing positive center obeys
+\begin{equation}\label{eq:quantile}
+ v\ge b+5-l_v-U\mathbf1_{v<0},\qquad
+ v\le S_p-a-4+u_v+V\mathbf1_{v>S_p}.
+\end{equation}
+For $0\le v\le S_p$, count the $b+4$ negative elements and zero at the
+lower end, and the $a+4$ positive elements at the upper end. If $v<0$,
+contribution implies $-v<M_p$; among $[1,-v]$ at least $-v-U$ integers
+belong to the positive part of $D$. This proves the corrected lower
+bound. If $v>S_p$, contribution implies $v-S_p<M_q$; the corresponding
+count of negative magnitudes proves the upper bound. The negative-side
+versions interchange $a,b$ and $U,V$.
+
+In branch A use the lower centers
+\[
+ \lambda_p-q_1,\quad\lambda_q-p_2,\quad\lambda_q-p_3,
+ \quad\alpha_p,\quad\beta_q
+\]
+with coefficient one and the upper center $O=\lambda_p+p_1$ with
+coefficient $1/2$. Their exact difference is
+\[
+ \tfrac12 O-\bigl((\lambda_p-q_1)+(\lambda_q-p_2)
+ +(\lambda_q-p_3)+\alpha_p+\beta_q\bigr)
+ =\tfrac12p_2+\tfrac52p_3+\tfrac32p_4+3q_3+3q_4.
+\]
+All losses used are distinct formal slots with coefficients at most one,
+so \eqref{eq:loss}, \eqref{eq:quantile}, and integral outer spacings give
+\begin{equation}\label{eq:Amid}
+ \tfrac12S_p+c\ge\tfrac92M_p+6M_q+\tfrac72a+2b+44-\xi_A,
+ \qquad\xi_A\le2U+\tfrac72V.
+\end{equation}
+The corrections count two positive lower rows, three negative lower rows,
+and half a positive upper row.
+
+In branch B use lower centers
+$\lambda_p-q_1,\lambda_q-p_3,\lambda_q-p_4,\beta_q$ with coefficient
+one, $\beta_p$ with coefficient $1/3$, and the upper center $O$ with
+coefficient $1/3$. Here the difference is
+$2p_3+2p_4+3q_3+3q_4$, and the result is
+\begin{equation}\label{eq:Bmid}
+ \tfrac13S_p+c\ge4M_p+6M_q+\tfrac{10}3a+\tfrac43b+38-\xi_B,
+ \qquad\xi_B\le\tfrac43U+\tfrac{10}3V.
+\end{equation}
+
+Finally retain the exact core masses:
+\[
+ S_p\ge T_a+\varepsilon_p+3R_p+6+M_p,\qquad
+ S_q\ge T_b+\varepsilon_q+3R_q+6+M_q.
+\]
+Substitute these into the unused $S_p/2+S_q$ in branch A and
+$2S_p/3+S_q$ in branch B. After subtracting
+$2(M_p+M_q)+2(R_p+R_q)$, the constant parts are exactly $F_A,F_B$.
+The residual span terms, after all corrections, are at least
+\begin{align*}
+ 3U+5V-\tfrac12q_p+q_q-\xi_A&\ge\tfrac12U+\tfrac32V\ge0,\\
+ \tfrac83U+5V+q_q-\xi_B&\ge\tfrac43U+\tfrac53V\ge0.
+\end{align*}
+This proves \eqref{eq:FA} and \eqref{eq:FB}, even when several centers
+are outside their target hulls. Formal-slot multiplicities are retained
+throughout, so coincidences between numerical centers do not invalidate
+the loss accounting.
+\end{proof}
+
+\section{Exact exclusion of all remaining scalar states}
+There are finitely many necessary integer parameters, not finitely many
+candidate real sets. For each $104\le n\le115$, enumerate all oriented
+integers $a,b\ge23$, $a+b=n-17$, $\Omega\ge0$. There are 262 such
+orientations in total. The preceding proofs apply to every actual set
+with these parameters.
+
+\subsection{At most fourteen core holes}
+For each $z\in\{0,\ldots,14\}$ define
+\[
+ \rho_0=\begin{cases}0&z=0,\\m-28&z>0,\end{cases}\qquad
+ c_{\max}=\Omega-\rho_0-\max\{t_0,z,G-2z\}.
+\]
+If $c_{\max}<0$, the state is impossible. Otherwise the program checks
+$c_{\max}<d$, licensing Lemma~\ref{lem:active}. For $z=0$ use
+$\varepsilon_p,\varepsilon_q\ge0$; for $z>0$ use
+\[
+ \varepsilon_p\ge a-3+z,\qquad\varepsilon_q\ge b-3+z.
+\]
+It then checks that both lower bounds in \eqref{eq:FA}, \eqref{eq:FB}
+strictly exceed $18d+126+4z$. All 416 surviving scalar states fail in
+this way. These are necessary relaxations; they need not be realizable.
+
+\subsection{At least fifteen core holes}
+If $z\ge15$, first require $\Omega-(m-28)\ge t_0$, or the budget is
+already impossible. The 113 orientations surviving this condition have
+both side sizes in $[32,55]$, exactly within the explicit witness table.
+For either side put
+\[
+ u(r)=r+C(r)+1,\qquad v(r)=\max\{r-14,u(r)+2-2r\}.
+\]
+Because $h_X\ge z>14$ and $h_X<|\FS(X)|-1$, Lemma~\ref{lem:effective}
+gives $\mu(X)\ge u(r)$, and $\delta_0(X)\le r$ gives $\rho(X)\ge v(r)$.
+Let $H=\Omega-v(a)-v(b)$. Then
+\[
+ \T+c\le H,\qquad z\le\T\le H,\qquad c\le H-t_0.
+\]
+If $H<t_0$, discard the state. Only six orientations remain. In every
+one, $H-t_0<d$. Use $\varepsilon_p\ge u(a)+z$ and
+$\varepsilon_q\ge u(b)+z$ in the active certificate. The two margins over
+\eqref{eq:Fupper} are bounded below by
+\begin{align*}
+ F_A(a,b)+\tfrac12u(a)+u(b)-(18d+126)-\tfrac52H,\\
+ F_B(a,b)+\tfrac23u(a)+u(b)-(18d+126)-\tfrac73H.
+\end{align*}
+Both are strictly positive for every remaining orientation.
+
+\subsection{Results and the real-set conclusion}
+In the table below, a dash means that the preceding budget already
+discarded all states. A reported margin is the minimum of both
+certificate margins over all states in that column. All are exact
+rational numbers. The $c$ columns give the largest remaining upper bound
+on $c$, which is strictly below $d=n-8$.
+
+\begin{center}\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$n$ & low states & $c_{\rm low}$ & low margin & high states & $c_{\rm high}$ & high margin\\\midrule
+115 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+114 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+113 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+112 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+111 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+110 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+109 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+108 & 0 & $\text{--}$ & $\text{--}$ & 0 & $\text{--}$ & $\text{--}$\\
+107 & 9 & $18$ & $\frac{545}{2}$ & 0 & $\text{--}$ & $\text{--}$\\
+106 & 42 & $43$ & $209$ & 0 & $\text{--}$ & $\text{--}$\\
+105 & 151 & $68$ & $168$ & 0 & $\text{--}$ & $\text{--}$\\
+104 & 214 & $92$ & $\frac{263}{2}$ & 6 & $7$ & $351$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+This excludes all zero-containing feasible sets of sizes 104 through
+115. Any feasible real set has size at most 115 by the audited foundation.
+If one of size at least 104 omitted zero, adjoining zero would either
+contradict that foundation or give one of the excluded zero-containing
+sizes. This proves Theorem~\ref{thm:main}. No step assumes that feasibility
+passes to arbitrary subsets.
+
+\section{Reproduction, audit boundary, and the next obstruction}
+The new verifier is \texttt{verification/upper103.py}, using Python 3.10+
+and only the standard library. From the repository root run:
+\begin{verbatim}
+python verification/upper103.py \
+  --output results/2026-10-14/upper103/result.json
+\end{verbatim}
+It reconstructs the four center identities over the rationals, checks
+span absorption, all 24 effective-hole witnesses and all strict gates,
+all lattice margins, all low-hole states and all high-hole orientations.
+Integer square roots and rational arithmetic are used throughout.
+No floating-point tolerance, external solver, archived endpoint certificate,
+or claimed historical PASS result is an input. Checks use explicit
+exceptions and remain enabled under \texttt{python -O}.
+
+The output is an arithmetic audit of the displayed reductions. It is
+not a formal proof-assistant certification of the analytic lemmas or of
+the cited theorems. Its two deliberately invalid effective-hole rows are
+rejected. It also records the obstruction at the next endpoint:
+\[
+ n=103,\quad a=b=43,\quad z=0,\quad d=95,\quad
+ \Omega=294,\quad G=178,\quad c\le116.
+\]
+Here $116\ge95$, so the proof does not force all ordinary units active.
+This is a failure of the current relaxation, not a feasible 103-element
+example. Continuing below 103 requires a stronger slack bound or a proof
+covering at least one empty unit. The verifier deliberately does not
+certify this next endpoint with the all-active lemma.
+
+The threshold-14, non-progression, effective-hole, and active-center ideas
+come from the archived continuation. This report rechecks and consolidates
+the needed portion into one uniform descent, retains the exact core mass,
+and makes the outside-center span absorption explicit. It leaves the
+longer 103-to-84 chain outside the current independent audit.
+
+\begin{thebibliography}{9}
+\bibitem{CDK} R. Carpenter, C. Defant and N. Kravitz,
+\emph{Sets with few subset sums}, arXiv:2605.05498v2 (2026),
+Theorem 1.1 and Lemma 2.1.
+\url{https://arxiv.org/html/2605.05498v2}.
+\bibitem{BGGH} E. Balandraud, B. Girard, S. Griffiths and Y. Ould Hamidoune,
+\emph{Subset sums in abelian groups}, European Journal of Combinatorics
+\textbf{34} (2013), 1269--1286, Lemma 3.6 and Theorem 1.5.
+\url{https://arxiv.org/abs/1112.1929}.
+\bibitem{Stanchescu} Y. Stanchescu,
+\emph{On addition of two distinct sets of integers},
+Acta Arithmetica \textbf{75} (1996), 191--194, Theorem 4 and Corollary 2.
+\url{https://doi.org/10.4064/aa-75-2-191-194}.
+\bibitem{Lev} V. F. Lev, \emph{On consecutive subset sums},
+Discrete Mathematics \textbf{187} (1998), 151--160, Theorem 1.
+\url{https://doi.org/10.1016/S0012-365X(98)80006-X}.
+\end{thebibliography}
+\end{document}
