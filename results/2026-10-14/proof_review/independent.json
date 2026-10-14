@@ -1,0 +1,71 @@
+{
+  "scope": "Bounded independent checks only; see proof_review_20261014.md",
+  "peeling": {
+    "counterexample_set": [
+      -3,
+      -2,
+      0,
+      1,
+      2
+    ],
+    "alpha": -5,
+    "beta": 3,
+    "modulus": 8,
+    "old_residue": 0,
+    "new_residue": 3,
+    "literal_sentence_false": true,
+    "corrected_lemma_small_sets": 3797,
+    "domain": "all F in [-6,6], 0 in F, |F|>=5"
+  },
+  "defects": {
+    "domain": "all nonempty X in [1,18]; plus stated deleted intervals",
+    "deleted_interval_sizes": [
+      21,
+      22,
+      31,
+      34,
+      50
+    ],
+    "deletions": [
+      1,
+      2,
+      3
+    ],
+    "counts": {
+      "all_sets": 262143,
+      "threshold14": 4048,
+      "nonap_old_bound": 203753,
+      "small_increment": 47536,
+      "deleted_interval_nonap21": 6016
+    }
+  },
+  "sharp_four_extreme": {
+    "domain": "all 11-element D in [0,15], F=D[2:-2]",
+    "sets": 4368,
+    "equality_sizes_m": [
+      7,
+      40
+    ]
+  },
+  "source_fringes": {
+    "domain": "all 1<=a<b<c<e<=32",
+    "quartets": 35960,
+    "maximum_P_plus_B_minus_a_minus_b": 5
+  },
+  "raw_gaps": {
+    "scope": "seeded rational samples, not exhaustive and not feasible A",
+    "seed": 20261014,
+    "samples": 12000,
+    "eligible_first_second_union": [
+      8556,
+      4131,
+      4131
+    ],
+    "largest_label_counts_first_second_union": [
+      10,
+      8,
+      15
+    ]
+  },
+  "status": "PASS"
+}

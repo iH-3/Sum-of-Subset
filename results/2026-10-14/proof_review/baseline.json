@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "scope": "Finite checks only; the new universal theorems are proved in the report. The inherited upper84 chain is separate.",
+  "construction": {
+    "n": 71,
+    "identities_checked": 3349,
+    "status": "PASS"
+  },
+  "fixed_cover": {
+    "labels": 110,
+    "disjoint_negative_groups": 26,
+    "fixed_capacity": 84
+  },
+  "differential_small_sets": 512,
+  "negative_controls": 4,
+  "family_samples": [
+    {
+      "m": 1,
+      "n": 11,
+      "subset_sum_count": 79,
+      "four_sum_count": 135,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 2,
+      "n": 13,
+      "subset_sum_count": 159,
+      "four_sum_count": 247,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 7,
+      "n": 23,
+      "subset_sum_count": 589,
+      "four_sum_count": 807,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 15,
+      "n": 39,
+      "subset_sum_count": 1381,
+      "four_sum_count": 1703,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 30,
+      "n": 69,
+      "subset_sum_count": 3211,
+      "four_sum_count": 3383,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 31,
+      "n": 71,
+      "subset_sum_count": 3349,
+      "four_sum_count": 3495,
+      "feasible": true,
+      "missing_count": 0,
+      "first_missing": null
+    },
+    {
+      "m": 32,
+      "n": 73,
+      "subset_sum_count": 3489,
+      "four_sum_count": 3607,
+      "feasible": false,
+      "missing_count": 32,
+      "first_missing": "-1744"
+    },
+    {
+      "m": 33,
+      "n": 75,
+      "subset_sum_count": 3631,
+      "four_sum_count": 3719,
+      "feasible": false,
+      "missing_count": 66,
+      "first_missing": "-1815"
+    },
+    {
+      "m": 40,
+      "n": 89,
+      "subset_sum_count": 4681,
+      "four_sum_count": 4503,
+      "feasible": false,
+      "missing_count": 356,
+      "first_missing": "-2340"
+    }
+  ],
+  "elementary_upper_bound": 122,
+  "integer_bound_formula": "floor(sqrt((n+16)^(n+1)))",
+  "integer_bound_at_84": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "integer_bound_at_122": "400464306798938555996340768556636761791974576169187930950183742268206238817802731010404485508343576963586804616138619778914448786137"
+}

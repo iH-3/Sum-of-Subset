@@ -11,9 +11,12 @@
 
 **精确最大值尚未确定。** 本项目既有证明链给出 **71 ≤ N ≤ 84**。2026-10-14 的整理保留原始材料，并重跑了下列明确列出的有限检查；不声称已经独立重审整条上界证明。
 
+**后续证明审查：** 已确认构造、新报告和旧基础上界 `N ≤ 115`；发现旧剥离证明的一处剩余类表述错误，给出了不改变引理结论的修正。完整 `N ≤ 84` 链尚不能标为独立复核通过。详见 [审查报告与勘误](reports/proof_review_20261014.md)。
+
 ## 先读什么
 
 - [本次研究报告 PDF](reports/research_report.pdf) · [可编辑 LaTeX](reports/research_report.tex)：约定、完整构造证明、构造族的精确边界、显式整数化界、核验范围和下一步任务。
+- [既有证明审查](reports/proof_review_20261014.md)：具体反例、剥离证明修正、基础上界 115 的核对、原始文献和审查范围。
 - [原上界 86 完整报告](reports/upper86_complete_20261005.pdf) · [LaTeX](reports/upper86_complete_20261005.tex)。
 - [原上界 85 汇总报告](reports/upper85_consolidated_20261005.pdf) · [LaTeX](verification/upper84/audit/verification_program/proof/report.tex)。
 - [原上界 84 补充报告](reports/upper84_supplement_20261005.pdf) · [LaTeX](verification/upper84/proof/report.tex)。
@@ -25,6 +28,7 @@
 | --- | --- |
 | `N ≥ 71` | 明确构造；重新证明；独立核验全部 3349 个子集和值的四项表示 |
 | `N ≤ 122` | 新报告中给出完整初等证明，作为不依赖旧逆定理的独立基线；不是对 84 的改进 |
+| 已审查的旧基础上界 `N ≤ 115` | 原始定理条件和基础推导已核对；采用审查报告中的剥离表述修正 |
 | 既有证明链 `N ≤ 84` | 完整原报告与程序已保留；84/85 有限套件本次通过；86 仅重跑附加检查，未重跑全部历史端点 |
 | 固定构造族 `A_m` | 当且仅当 `1 ≤ m ≤ 31` 可行，证明覆盖所有整数参数 |
 | 显式整数化 | 若有 n 元实数解，则有坐标绝对值至多 `floor(sqrt((n+16)^(n+1)))` 的 n 元整数解 |
@@ -81,6 +85,7 @@ python -I -S -B verify_complete_upper86.py
 | `reports/` | 新研究报告与旧上界报告 |
 | `verification/exact.py` | 精确子集和、四重和、独立证书校验 |
 | `verification/verify.py` | 新结果的有限检查和负面控制 |
+| `verification/review_checks.py` | 本次审查的独立有限边界检查，不认证完整上界 84 |
 | `verification/bounded_search.py` | 指定整数盒内的完整穷举 |
 | `verification/upper84/` | 原 upper-84 源码、数据、证明，以及其继承的 upper-85 包 |
 | `archive/upper86/` | 原 upper-86 全部验证输入，无删节 |
