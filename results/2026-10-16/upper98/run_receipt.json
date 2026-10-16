@@ -1,0 +1,293 @@
+{
+  "status": "PASS",
+  "normal_optimized_byte_identical": true,
+  "interval_exhaustive_identical_except_mode": true,
+  "baseline99_matches_previous_result": true,
+  "runs": [
+    {
+      "label": "interval",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper98.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper98/result.json"
+      ],
+      "elapsed_seconds": 6.87,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 98 using the written reduction and audited N <= 99 foundation",
+        "verification_mode": "symbolic-interval",
+        "scalar_summary": {
+          "lattice_orientations": 39,
+          "low_states": 391,
+          "high_states": 1217,
+          "empty_states": 267,
+          "inverse_min": 196,
+          "inner_max": -85,
+          "outer_min": 993,
+          "low_margin": "15",
+          "high_margin": "201/2",
+          "high_c_max": 73
+        },
+        "linear_summary": {
+          "groups": 5439,
+          "systems": 82257,
+          "vectors": 90,
+          "regime_counts": {
+            "Z": 1428,
+            "P": 1292,
+            "ZE": 39237,
+            "PE": 34620,
+            "ZZ": 748,
+            "EE": 4932
+          },
+          "interval_checks": 5443,
+          "extremum_points": 20867,
+          "minimum_normalized_gap": "12/271"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "degree_overflow",
+            "missing_group",
+            "missing_integer_in_interval",
+            "missing_gap_four_branch",
+            "missing_split_pair_branch",
+            "unproved_next_cardinality"
+          ]
+        }
+      }
+    },
+    {
+      "label": "optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-O",
+        "verification/upper98.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper98_O.json"
+      ],
+      "elapsed_seconds": 6.714,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 98 using the written reduction and audited N <= 99 foundation",
+        "verification_mode": "symbolic-interval",
+        "scalar_summary": {
+          "lattice_orientations": 39,
+          "low_states": 391,
+          "high_states": 1217,
+          "empty_states": 267,
+          "inverse_min": 196,
+          "inner_max": -85,
+          "outer_min": 993,
+          "low_margin": "15",
+          "high_margin": "201/2",
+          "high_c_max": 73
+        },
+        "linear_summary": {
+          "groups": 5439,
+          "systems": 82257,
+          "vectors": 90,
+          "regime_counts": {
+            "Z": 1428,
+            "P": 1292,
+            "ZE": 39237,
+            "PE": 34620,
+            "ZZ": 748,
+            "EE": 4932
+          },
+          "interval_checks": 5443,
+          "extremum_points": 20867,
+          "minimum_normalized_gap": "12/271"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "degree_overflow",
+            "missing_group",
+            "missing_integer_in_interval",
+            "missing_gap_four_branch",
+            "missing_split_pair_branch",
+            "unproved_next_cardinality"
+          ]
+        }
+      }
+    },
+    {
+      "label": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper98.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper98_exhaustive.json"
+      ],
+      "elapsed_seconds": 50.714,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 98 using the written reduction and audited N <= 99 foundation",
+        "verification_mode": "interval-plus-exhaustive",
+        "scalar_summary": {
+          "lattice_orientations": 39,
+          "low_states": 391,
+          "high_states": 1217,
+          "empty_states": 267,
+          "inverse_min": 196,
+          "inner_max": -85,
+          "outer_min": 993,
+          "low_margin": "15",
+          "high_margin": "201/2",
+          "high_c_max": 73
+        },
+        "linear_summary": {
+          "groups": 5439,
+          "systems": 82257,
+          "vectors": 90,
+          "regime_counts": {
+            "Z": 1428,
+            "P": 1292,
+            "ZE": 39237,
+            "PE": 34620,
+            "ZZ": 748,
+            "EE": 4932
+          },
+          "interval_checks": 5443,
+          "extremum_points": 20867,
+          "minimum_normalized_gap": "12/271"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "degree_overflow",
+            "missing_group",
+            "missing_integer_in_interval",
+            "missing_gap_four_branch",
+            "missing_split_pair_branch",
+            "unproved_next_cardinality"
+          ]
+        }
+      }
+    },
+    {
+      "label": "baseline99",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper99.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper98/baseline99.json"
+      ],
+      "elapsed_seconds": 17.703,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 99 using the written reduction and audited N <= 100 foundation",
+        "scalar_summary": {
+          "lattice_orientations": 38,
+          "low_states": 364,
+          "high_states": 966,
+          "empty_states": 222,
+          "inverse_min": 230,
+          "inner_max": -181,
+          "outer_min": 1051,
+          "low_margin": "33",
+          "high_margin": "150",
+          "high_c_max": 64
+        },
+        "linear_summary": {
+          "groups": 5367,
+          "systems": 59206,
+          "vectors": 204,
+          "regime_counts": {
+            "Z": 1360,
+            "P": 1088,
+            "ZE": 32312,
+            "PE": 23080,
+            "ZZ": 272,
+            "EE": 1094
+          },
+          "minimum_normalized_gap": "12/83"
+        },
+        "zero_core_corroboration": {
+          "status": "PASS",
+          "scope": "r=15..30, at most two deleted positions; corroboration only",
+          "sets_checked": 4776,
+          "equality_cases": 32
+        },
+        "negative_controls": {
+          "rejected": [
+            "invalid_hole_witness",
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "missing_group",
+            "missing_integer_in_interval",
+            "unproved_next_cardinality"
+          ],
+          "next_obstruction": {
+            "n": 99,
+            "a": 41,
+            "b": 41,
+            "z": 0,
+            "c_upper": 206,
+            "two_empty_cost": 182,
+            "residual": 24
+          }
+        }
+      }
+    }
+  ],
+  "regeneration": {
+    "byte_identical": true,
+    "elapsed_seconds": 12.977,
+    "sha256": "d8a330503f70b1b2a1ea35e5af9bc76b79e316a1eeea9a7c90dcad0fb60d1a95",
+    "summary": {
+      "groups": 5439,
+      "optimizer_calls": 91,
+      "vectors": 90,
+      "interval_checks": 5443,
+      "systems": 82257,
+      "elapsed_seconds": 12.49
+    }
+  },
+  "base_commit": "3e35fbebd817343351a12a0eb9dffb8a3eb84121",
+  "recorded_utc": "2026-10-16T05:01:19.550551+00:00",
+  "python": "3.12.14",
+  "pdf_review": {
+    "pages": 9,
+    "all_pages_rendered_and_visually_inspected": true,
+    "final_latex_warnings": 0
+  },
+  "artifact_sha256": {
+    "verification/upper98.py": "85dfaccfef108c7e73fa302f757390a675bd410767397d4ca0d2d4dc4748fef8",
+    "experiments/generate_upper98_certificates.py": "a4bedb5fbc6f2e686a6372e7e3b76a80541834e66219e0f05f1226d2c1fc1919",
+    "data/upper98_certificates.json": "d8a330503f70b1b2a1ea35e5af9bc76b79e316a1eeea9a7c90dcad0fb60d1a95",
+    "reports/upper98_from99_20261016.tex": "069a17ab7047c60708e846bf8864ea3a412f2480f1f3aa09943ee64d51adb128",
+    "reports/upper98_from99_20261016.pdf": "249618bdd1aeb61d832d4cc0ff2cae899d46b5638596d9bfe4b5cca02d34e489",
+    "results/2026-10-16/upper98/result.json": "3a8c6fb0cef8c7bf1beecb28d0b3405bb79fb7f10c9aef4f080b834bad6cb0f9",
+    "results/2026-10-16/upper98/baseline99.json": "e3e659203989addab87befe505a71b367d4f2abf66fc83590d820264c0b74641"
+  }
+}

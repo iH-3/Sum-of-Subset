@@ -1,0 +1,608 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={Subset Sums: optimized proof paths and a checked upper bound of 98},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\title{Subset Sums in a Fourfold Sumset\\\large An optimized proof path from 99 to 98}
+\author{Sum-of-Subset research project}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We exclude cardinality 99 and continue the independently checked upper
+bound to $N\le98$. The proof retains the residual loss after two empty
+covering units, bounds core spans using small defect, and bounds the
+inner double sumset by nested interval envelopes. A symbolic quadratic
+checker replaces repeated checks at every integer side size: 5,443
+interval certificates cover all 82,257 models, using 90 freshly generated
+integer vectors. An independent execution mode expands every interval
+and verifies each integer model. The resulting checked range is
+$71\le N\le98$. The archived claim $N\le84$ remains stronger numerically;
+this report advances the independently audited chain and simplifies its
+finite certification, without claiming to surpass that archived record.
+\end{abstract}
+\tableofcontents
+
+\section{Conclusion, dependencies, and the shorter proof path}
+For a finite real set $A$, let
+\[
+ \FS(A)=\left\{\sum_{a\in X}a:X\subseteq A\right\},
+ \qquad 4A=A+A+A+A.
+\]
+The empty sum is included and repeated summands in $4A$ are allowed.
+Let $N$ denote the largest feasible cardinality.
+\begin{theorem}\label{thm:main}
+If $\FS(A)\subseteq4A$, then $|A|\le98$.
+\end{theorem}
+The known feasible set
+$[-31,31]_{\Z}\cup\{\pm93,\pm155,\pm217,\pm713\}$ has 71 elements.
+Thus the independently closed interval is now $71\le N\le98$.
+
+Our foundation is the audited chain
+$115\to103\to100\to99$ \cite{base103,base100,base99}.
+We use its integralization, sign bootstrap, inverse theorem, propagation,
+peeling budget, effective-hole lemma, and covering-unit lemmas.
+The relevant lattice conditions are checked again at size 99.
+The archived report \cite{archive} already contains the strategy for
+this endpoint. We reconstruct its necessary inequalities, supply fresh
+certificates, and reorganize the verification; we do not import its
+endpoint certificate files. An arithmetic PASS is not a formalization
+of the structural theorems: those remain mathematical dependencies.
+
+The proof path has three stages. First the scalar budget eliminates high
+holes and all configurations with no empty unit. Second a single
+small-defect span lemma supplies the extra inequalities for both
+remaining difficult regimes. Third, symbolic right-hand sides reduce
+verification over integer parameter ranges to exact quadratic extrema.
+The double-exception regime uses corrected rows at all retained centers,
+so no enumeration of pairs of exceptional locations is needed.
+The two discrete refinements are explicit; neither is hidden in a
+numerical feasibility test.
+
+\section{The size-99 reduction and scalar budget}
+A hypothetical 99-element feasible set contains zero, since adjoining
+zero otherwise gives a forbidden 100-element set. Apply the integralization
+argument from the foundation, remove the four outer elements of each
+sign to obtain $D$, and make two four-extreme peels to a core
+$E=P\cup\{0\}\cup(-Q)$. With $T_r=r(r+1)/2$, put
+\begin{gather*}
+ d=|D|=91,\quad e=|E|=83,\quad a=|P|,\quad b=|Q|,\quad a+b=82,\\
+ \{a,b\}=\{41-k,41+k\},\quad I=k^2,\quad
+ \Lambda=1+T_a+T_b=1723+I,\quad\Omega=376-I.
+\end{gather*}
+The one-sided alternative is excluded by $1+T_{83}>24\cdot99+77$.
+The inherited paired bootstrap uses
+$q^2\le96e+1073-e^2$, $q\equiv e-1\pmod2$, and
+$p=(e-1-q)/2$; it gives both side sizes at least 18.
+For every oriented pair in this bootstrap range with $\Omega\ge0$, check
+\begin{equation}\label{eq:gates}
+ T_{\min(a,b)}-2-\Omega>0,\quad
+ 2(a+b)+4e+14-\Lambda+3\Omega<0,\quad
+ \Lambda-(4d-10+\Omega)>0.
+\end{equation}
+There are 39 orientations; the respective extremal values are
+196, $-85$, and 993. The common-lattice argument therefore applies.
+After scaling, $D$ is integral. This does not yet give integrality of
+all eight outer elements.
+
+For a positive set $X$ of size $r$ define
+\[
+ \mu(X)=|\FS(X)|-1-T_r,\quad
+ \delta_0(X)=|\{x\in X:2x\notin R(X\cup\{0\})\}|,
+ \quad\rho(X)=\mu(X)+2-2\delta_0(X),
+\]
+where $R$ is the restricted two-sum set. Put $\rho=\rho(P)+\rho(Q)$ and
+\[
+ c=2|2D|+18d+85-|\FS(D)|,\qquad
+ \kappa=|\FS(E)|-\Lambda-\mu(P)-\mu(Q).
+\]
+The inherited nonnegative slacks satisfy
+\begin{equation}\label{eq:budget}
+ \rho+2\theta+c+\T=376-I.
+\end{equation}
+Here $\T=\kappa+\ell_1+\ell_2+g$ consists of the core and peeling slacks.
+Let $h_P,h_Q,z,w$ count the missing integers in the hulls of the
+supports of $P,Q,E,D$, respectively. Then
+\begin{gather}
+ h_P,h_Q\le\kappa,\quad z=h_P+h_Q-\kappa,
+ \quad0\le z\le\min(h_P,h_Q)\le\kappa,
+ \quad h_X<|\FS(X)|-1,\label{eq:holes}\\
+ w\le4z,\quad \T\ge\kappa+170-3z,
+ \quad\T\ge\max\{57,z,170-2z\}.\label{eq:T}
+\end{gather}
+If $z>0$, neither side support is a progression. The foundation gives
+$\mu(X)\ge r-3$ and $\rho(X)\ge r-14$ on either side, hence $\rho\ge54$.
+
+\subsection{A small-defect bound for the high-hole stage}
+\begin{lemma}\label{lem:small}
+For a positive real set $X$ of size $r\ge15$, if
+$0\le\rho(X)<5(r-14)$, then
+\[
+ \mu(X)\le\rho(X)+22+2\lfloor\rho(X)/5\rfloor
+ \le\tfrac75\rho(X)+22.
+\]
+Consequently $\mu(X)\ge u$ implies
+$\rho(X)\ge\min\{5(r-14),\lceil5(u-22)/7\rceil\}$.
+\end{lemma}
+\begin{proof}
+For ordered prefixes $X_j$, use the inherited excess increments $y_j$
+and recurrence $\rho(X_j)\ge\rho(X_{j-1})+y_j-2$.
+If all $y_j\ge7$ for $15\le j\le r$, then
+$\rho(X)\ge5(r-14)$, a contradiction.
+Choose the last $j\ge15$ with $y_j\le6$. The small-increment inverse
+lemma applies since $6\le j-5$; up to scaling, $X_j$ is an interval
+$[1,j+q]\setminus H$ with $q\le6$ deleted positions.
+Its diagonal-defect count is at most 12.
+Indeed for $q\ge2$ all defects lie in $[1,q]$ or $[j,j+q]$.
+There are at most $q-1$ in the first band: if all its positions were
+present and defective, defectivity of 1 would force 2 absent.
+There are at most $q+1$ in the second band. The one-deletion case has
+at most two defects, and the interval has one.
+Every later prefix adds at most one defect, while its increment is at
+least 7. Nonnegativity of $\rho(X_j)$ gives
+$r-j\le\lfloor\rho(X)/5\rfloor$. Thus
+$\delta_0(X)\le12+\lfloor\rho(X)/5\rfloor$; substitute
+$\mu=\rho-2+2\delta_0$. Separate $\rho\ge5(r-14)$ from its complement
+to obtain the last assertion.
+\end{proof}
+
+The effective-hole lemma of \cite{base100} gives $\mu(X)\ge r+C+1$
+when $2\beta<h_X<|\FS(X)|-1$ and the following exact tests hold:
+\begin{gather*}
+ K=\max\{k\ge3:k(k-3)/2\le C+1\},\quad D_*=C+K,\quad E_*=D_*+1,\\
+ M=\max\left\{2\beta,1+\left\lfloor
+ \frac{1+\sqrt{9+8(E_*+6\beta)}}2\right\rfloor\right\},\quad
+ J=\max\{K+1,2\beta+5,M\},\\
+ T_M-6\beta>M+1+E_*,\quad
+ \beta(r-J+1)>D_*,\quad T_{J-1}-1>D_*.
+\end{gather*}
+As before, the finite search uses $20\le r\le64$, $7\le\beta\le20$,
+and $0\le C\le600$. Every selected row is rechecked; optimality is
+unnecessary. For each $z\ge15$, choose the greatest available $C$ with
+$2\beta<z$ for each side, and set
+\begin{align*}
+ u_r&=r+C+1,\\
+ v_r&=\max\{r-14,u_r+2-2r,
+           \min(5(r-14),\lceil5(u_r-22)/7\rceil)\}.
+\end{align*}
+The second entry uses $\delta_0\le r$; the third uses Lemma~\ref{lem:small}.
+Every actual state obeys
+\begin{equation}\label{eq:cmax}
+ c\le376-I-v_a-v_b-\max\{57,z,170-2z\}.
+\end{equation}
+The range $15\le z\le\Omega$ is exhaustive by \eqref{eq:holes}--\eqref{eq:budget}.
+
+Write $R_p=\max P$, $R_q=\max Q$, $M_p=\max D$, $M_q=-\min D$,
+and let $S_p,S_q$ be the positive and negative-magnitude masses of $D$.
+Set $\varepsilon_p=\mu(P)+h_P$, $\varepsilon_q=\mu(Q)+h_Q$ and
+\[
+ F=S_p+S_q+c-2(M_p+M_q)-2(R_p+R_q).
+\]
+The inherited estimates give $F\le1764+4z$. If all eighteen covering
+units are nonempty, after reflection the applicable lower alternative is
+\begin{align*}
+ F&\ge\tfrac12T_a+T_b+6a+8b+85
+                  +\tfrac12\varepsilon_p+\varepsilon_q,\\
+ \text{or }F&\ge\tfrac23T_a+T_b+6a+(22b+236)/3
+                  +\tfrac23\varepsilon_p+\varepsilon_q.
+\end{align*}
+The verifier checks both alternatives in both orientations.
+Use $\varepsilon_r\ge u_r+z$ at high holes, and use $u_r=0$ for $z=0$
+or $u_r=r-3$ for $1\le z\le14$. After discarding negative budgets:
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Core holes&Surviving scalar states&Minimum active margin&Maximum high-hole $c$\\
+\midrule
+$0\le z\le14$&391&15&--\\
+$z\ge15$&1217&$201/2$&73\\
+\bottomrule
+\end{tabular}
+\end{center}
+An empty unit costs $d=91$, so $c\le73$ forces all units active at high
+holes. All high-hole states and all low-hole states with no empty unit
+are excluded. There are 267 low-hole scalar states permitting empty
+units. They are necessary relaxations, not asserted realizable sets.
+
+\section{Classifying the remaining loss}
+At zero holes the stronger budget is
+\begin{equation}\label{eq:zero}
+ \rho+\kappa+2\theta+c\le206-k^2.
+\end{equation}
+At positive low holes it gives $c\le152-k^2+2z\le180-k^2$.
+There are at most two empty units, and two require $z=0$.
+Put $\delta=c-91$ with one empty unit and $\delta=c-182$ with two.
+Every retained center outside its target hull loses at least
+$L=\min(a,b)+5=46-k$ points. The exhaustive regimes are
+\begin{center}\small
+\begin{tabular}{lrrrl}
+\toprule
+Regime&Range of $a$&Upper $\delta$&Upper $F$&Description\\
+\midrule
+Z&31--51&$115-k^2$&1764&One empty, no outside center\\
+P&32--50&$89-k^2$&1820&Positive holes, no outside center\\
+ZE&33--49&$115-k^2$&1764&One empty, one outside center\\
+PE&34--48&$89-k^2$&1820&Positive holes, one outside center\\
+ZZ&36--46&$115-k^2$&1764&One empty, two outside centers\\
+EE&37--45&$24-k^2$&1764&Two empty, no outside center\\
+\bottomrule
+\end{tabular}
+\end{center}
+The ranges follow by imposing $\delta\ge0,L,2L$, respectively.
+The identities
+\[
+ 3L-(115-k^2)=(k-3/2)^2+83/4>0,\qquad
+ 2L-(89-k^2)=(k-1)^2+2>0
+\]
+exclude further exceptions. In EE, $24-k^2<L$.
+With one empty unit, the inherited outer-integrality lemma makes every
+outer gap at least one. In EE we use only weak outer order.
+
+\subsection{One span lemma for both difficult regimes}
+\begin{lemma}\label{lem:span}
+Let $X\subset\Z_{>0}$ have size $r\ge16$ and full interval support.
+If $0\le\rho(X)\le r-5$, then $\max X\le r+\rho(X)+1$.
+\end{lemma}
+\begin{proof}
+Writing $x_1<\cdots<x_r$, fullness forces $x_1=1$ and
+$x_i\le1+\sum_{j<i}x_j$; every prefix has full interval support.
+Set $q=x_r-r\ge0$. The last excess increment is $y_r=q$.
+If $\nu$ old diagonal defects disappear at the last step, the exact
+recurrence is
+\[
+ \rho(X)=\rho(X_{r-1})+q-2+2\nu.
+\]
+Thus $q\le\rho(X)+2$. Equality would force
+$\rho(X_{r-1})=\nu=0$ and $2\le q\le r-3$.
+The zero-defect classification proved in \cite{base99} gives
+$X_{r-1}=[1,r-1]$ or $[1,r]\setminus\{r-2\}$.
+In the first case its defective maximum $r-1$ acquires the distinct-sum
+representation $2(r-1)=x_r+(r-q-2)$.
+In the second case $r,r-1$ are defective. For $q\ne2$ use
+$2r=x_r+(r-q)$; for $q=2$ use $2(r-1)=x_r+(r-4)$.
+The second summands are present in the stated prefixes, so in each case
+$\nu>0$, a contradiction. Integrality gives the claimed sharper bound.
+\end{proof}
+
+In ZZ, \eqref{eq:zero} and $\delta\ge2L$ imply
+$\rho+\kappa\le23+2k-k^2$, $k\le5$.
+In EE they imply $\rho+\kappa+\delta\le24-k^2$, $k\le4$.
+Both bounds on $\rho$ are strictly below $\min(a,b)-14$; the inherited
+nonprogression penalty therefore forces both side supports to be
+arithmetic progressions. A support progression of step at least two and
+cardinality $s$ has at least $s-1$ hull holes. But
+$h_X\le\kappa\le24<T_{\min(a,b)}\le s-1$.
+Hence both supports have step one, and $h_P=h_Q=\kappa=0$.
+The individual defect bounds meet Lemma~\ref{lem:span}; adding its two
+conclusions to the budget yields
+\begin{equation}\label{eq:span}
+ R_p+R_q+\delta\le
+ \begin{cases}199-k^2,&\text{ZZ},\\106-k^2,&\text{EE}.\end{cases}
+\end{equation}
+
+In ZZ each retained center loses at most
+$\delta-L\le69+k-k^2\le69$. Its contribution to the hull is at least
+$91-69=22>4$; at an outside endpoint it therefore has a contributing
+core point. Counting the at most $R_p-a$ missing positive core positions
+and $R_q-b$ missing negative core positions gives, for every positive
+center $v$, the simultaneous relaxed rows
+\begin{equation}\label{eq:ZZ}
+ -v-l_v-R_p\le-87,\qquad v-u_v-S_p-R_q\le-86.
+\end{equation}
+Reflect for negative centers. This uses the actual spans, without
+assuming the zero-defect bounds $R_p\le a+1$, $R_q\le b+1$.
+
+\section{Mass and double-sumset information}
+Distinct positive integers in the core give
+$\sum P\ge T_{a-1}+R_p$. The next three points are at least
+$R_p+1,R_p+2,R_p+3$ and the fourth is $M_p$. Consequently
+\begin{equation}\label{eq:mass}
+ S_p\ge T_{a-1}+4R_p+6+M_p,
+ \qquad S_q\ge T_{b-1}+4R_q+6+M_q.
+\end{equation}
+These are imposed alongside the usual bounds
+$S_p\ge T_a+\varepsilon_p+3R_p+6+M_p$ and its reflection.
+The two lower bounds are not added together.
+
+If $M_q-R_q=4$, the four negative outliers inside $D$ are consecutive.
+Their ten unordered repeated pairs have only seven distinct sums.
+All pairs except the same-sign outlier pairs lie in
+$[-M_q-R_q,M_p+R_p]$. Therefore
+\begin{equation}\label{eq:gap4}
+ |2D|\le M_p+M_q+R_p+R_q+18,
+ \qquad F\le1758\quad(z=0).
+\end{equation}
+The ordinary count uses $+21$ and gives $F\le1764$.
+One ZE case will split the integral gap into 4 and at least 5.
+
+In EE expose the four inner extreme magnitudes on each side:
+\[
+ x_0=R_p<x_1<x_2<x_3<x_4=M_p,\qquad
+ y_0=R_q<y_1<y_2<y_3<y_4=M_q.
+\]
+All successive gaps are at least one, and
+\begin{equation}\label{eq:innermass}
+ S_p\ge T_{a-1}+\sum_{i=0}^4x_i,
+ \qquad S_q\ge T_{b-1}+\sum_{i=0}^4y_i.
+\end{equation}
+\begin{lemma}[Nested interval envelopes]\label{lem:envelope}
+For $0\le j\le3$, put $W_j=x_j+y_j$, $t_j=2(4-j)$. Then
+\begin{equation}\label{eq:envelope}
+ |2D|\le2W_j+1+\binom{t_j+1}{2}
+ +\sum_{i=j+1}^4\!\left[
+ \min(W_j+1,x_i-x_{i-1})+\min(W_j+1,y_i-y_{i-1})\right].
+\end{equation}
+\end{lemma}
+\begin{proof}
+Replace the core together with the first $j$ inner points on each side
+by its integer hull $[-y_j,x_j]$. Its double sum has $2W_j+1$ integers.
+Add the positive translates $x_i+[-y_j,x_j]$ in order. Their union with
+the first interval enlarges at step $i$ by at most
+$\min(W_j+1,x_i-x_{i-1})$: the preceding upper endpoint is $2x_j$
+initially and $x_{i-1}+x_j$ subsequently. The negative translates give
+the reflected bound. Adding the two enlargement bounds remains valid
+even when the two sides overlap. Only pairs entirely among the $t_j$
+external points remain; with repetition there are at most
+$\binom{t_j+1}{2}$ of them. Every pair in $2D$ has now been covered.
+\end{proof}
+For each minimum introduce a nonnegative variable $g$ bounded above by
+both arguments. An actual set realizes these rows by choosing the
+minimum, so this is a valid relaxation. Set $K=|2D|$.
+Since $w=0$ in EE, the definition of $c=182+\delta$ gives
+\begin{equation}\label{eq:cardinality}
+ S_p+S_q+\delta-2K=18\cdot91+84-182=1540.
+\end{equation}
+The model needs only its upper inequality.
+
+\section{Complete specification of the finite models}
+\subsection{Centers, paired units, and modes}
+Let the outer magnitudes be $p_1>p_2>p_3>p_4>M_p$ and their $q$
+reflection. Define
+\[
+ \lambda_p=p_1-p_2-p_3-p_4,\quad
+ \alpha_p=p_2-p_3-p_4,\quad\beta_p=2p_2-p_1-p_3-p_4.
+\]
+The ten positive centers, indexed from zero, are
+\[
+ v^p=(\lambda_p+p_1,\ldots,\lambda_p+p_4,
+       \lambda_p-q_1,\ldots,\lambda_p-q_4,\alpha_p,\beta_p).
+\]
+Interchange $p,q$ for $v^q$. Slots \texttt{p0},\ldots,\texttt{q9}
+are center labels, distinct from the magnitude variables $p_i,q_i$.
+Positive centers translate $D$ into $[1,S_p]$; negative centers
+translate $-D$ into $[1,S_q]$.
+
+There are sixteen single units and two paired units. Pair 1 uses
+\texttt{p4,q4}. In branch A, $\beta_p+\beta_q\le0$, pair 2 uses
+\texttt{p9,q9}; in branch B, $\beta_p+\beta_q>0$, it uses
+\texttt{p5,q5}. Remove the chosen one or two missing units and retain
+all other singles. If pair 1 is present, reflect so that its contributor
+is \texttt{p4}. If pair 2 is present, choose its $p$ and $q$ contributors
+in separate modes, except in branch A when \texttt{p5} or \texttt{q5}
+is missing: then omit individual constraints on pair 2, allowing splitting.
+No mode is duplicated for this dropped pair.
+
+The foundation proves this choice exhaustive: pair 1 has at most one
+contributor; so does pair 2 in B. In A the same follows when both
+\texttt{p5,q5} contribute from
+$\beta_p+\beta_q=-(v^p_5+v^q_5)-2(p_3+p_4+q_3+q_4)$.
+There are 68 one-empty modes (33 A, 35 B) and 547 two-empty modes
+(258 A, 289 B). In the one-empty modes, 66 retain 17 centers and two
+retain 16. ZE and PE designate each retained center and each endpoint,
+giving $2(66\cdot17+2\cdot16)=2308$ choices per side size.
+
+\subsection{Rows shared by the regimes}
+All variables are nonnegative real numbers. The base variables are
+\[
+ p_1,\ldots,p_4,q_1,\ldots,q_4,M_p,M_q,R_p,R_q,S_p,S_q,\delta
+\]
+and $(l_v,u_v)$ for each retained center. Rows have orientation $Ax\le b$.
+Include the reflected counterpart of every positive-side row below:
+\begin{align*}
+ D_i^p &:p_{i+1}-p_i\le-1\quad(1\le i\le3),\qquad
+ D_4^p :M_p-p_4\le-1,\\
+ E_p &:R_p-M_p\le-4,\qquad G_p :-R_p\le-a,\\
+ H_p &:2M_p+6R_p-2S_p\le-2T_a-12-2\eta_p,\\
+ \widehat H_p &:M_p+4R_p-S_p\le-T_{a-1}-6.
+\end{align*}
+Here $(\eta_p,\eta_q)=(a-2,b-2)$ in P and PE, and $(0,0)$ otherwise.
+In EE the right sides of all eight outer $D$ rows are zero.
+The branch row is $\beta_p+\beta_q\le0$ in A, and
+$-\beta_p-\beta_q\le-1$ in B; the B right side is zero in EE.
+Add the regime's budget $\delta\le\delta_{\max}$ and
+\begin{equation}\label{eq:loss}
+ \sum_{v\text{ retained}}(l_v+u_v)\le\delta.
+\end{equation}
+For a positive in-hull center, the ordinary quantile rows are
+\[
+ -v-l_v\le-b-5,\qquad v-u_v-S_p\le-a-4.
+\]
+Reflect to obtain the negative-center rows.
+For the designated outside endpoint in ZE or PE replace only that row:
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+Endpoint&Replacement&Extra loss row\\
+\midrule
+Positive lower&$-v-l_v-M_p\le-91$&$-l_v\le-b-5$\\
+Positive upper&$v-u_v-S_p-M_q\le-90$&$-u_v\le-a-5$\\
+Negative lower&$-v-l_v-M_q\le-91$&$-l_v\le-a-5$\\
+Negative upper&$v-u_v-S_q-M_p\le-90$&$-u_v\le-b-5$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The opposite endpoint retains its ordinary row. No actual outside-location
+condition is imposed, so the systems remain necessary relaxations.
+In ZZ replace every quantile by \eqref{eq:ZZ} or its reflection, and add
+$-\delta\le-2(46-k)$ and \eqref{eq:span}. EE retains ordinary quantiles
+and adds its version of \eqref{eq:span}. Its residual budget is less than
+$L$, so these centers are in-hull and contribute. A contributing center
+is integral because $D$ and its target support are integral; outer
+integrality is not needed.
+
+Finally set
+$f=S_p+S_q+\delta-2M_p-2M_q-2R_p-2R_q$ and include
+$f\le F_{\max}-91$ for one-empty regimes or
+$f\le F_{\max}-182$ for EE. Usually $F_{\max}$ is in the regime table;
+the special gap-four branch uses 1758.
+
+\subsection{EE envelope rows and two discrete refinements}
+Only EE adds $x_1,x_2,x_3,y_1,y_2,y_3,K$ and
+$g^p_{ji},g^q_{ji}$, $0\le j\le3$, $j<i\le4$.
+With $x_0=R_p$, $x_4=M_p$ and the reflected $y$ notation, include
+\begin{gather*}
+ x_{i-1}-x_i\le-1\ (1\le i\le4),\qquad
+ \sum_{i=0}^4x_i-S_p\le-T_{a-1},\\
+ g^p_{ji}-x_i+x_{i-1}\le0,\qquad g^p_{ji}-W_j\le1,
+\end{gather*}
+and their reflections. Include the four envelope rows
+\[
+ K-2W_j-\sum_{i=j+1}^4(g^p_{ji}+g^q_{ji})
+ \le1+\binom{t_j+1}{2},\quad0\le j\le3,
+\]
+and $S_p+S_q+\delta-2K\le1540$.
+Two additional exhaustive splits finish the specification:
+\begin{enumerate}
+\item ZE, $a=47$, branch A, missing \texttt{q5}, exceptional lower
+endpoint of \texttt{p4}: replace the single case by the two integral
+possibilities $M_q-R_q\le4$ and $R_q-M_q\le-5$.
+The ordinary row already gives $M_q-R_q\ge4$.
+The first possibility uses $F\le1758$ by \eqref{eq:gap4}; the second
+keeps $F\le1764$. Equality at 1764 is not treated as a contradiction.
+\item EE, branch A, missing \texttt{p0,q5}: the dropped second pair has
+combined contribution at least $91-\delta>0$.
+At least one of its individual slots contributes. Its center is integral;
+its largest translated point gives either
+$\beta_p+M_p\ge1$ or $\beta_q+M_q\ge1$.
+Replace each of the nine side sizes by two models, with the corresponding
+row $-\beta_p-M_p\le-1$ or $-\beta_q-M_q\le-1$.
+Both may hold; the disjunction is exhaustive without requiring a unique
+contributor or integral outer elements.
+\end{enumerate}
+The complete counts are
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Regime&Enumeration&Models\\
+\midrule
+Z&$21\cdot68$&1428\\
+P&$19\cdot68$&1292\\
+ZE&$17\cdot2308+1$&39237\\
+PE&$15\cdot2308$&34620\\
+ZZ&$11\cdot68$&748\\
+EE&$9\cdot547+9$&4932\\
+\midrule
+Total&&82257\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Symbolic interval verification and reproducibility}
+\subsection{Why interval checking is exact}
+Within a fixed structural group the matrix $A$ is constant and every
+right-hand side is a rational polynomial of degree at most two in $a$:
+$b=82-a$, $k^2=(41-a)^2$, and the triangular numbers are quadratic.
+The only absolute value appears in the ZZ row $-\delta\le-2(46-k)$.
+Split each ZZ group into $a\le41$ and $a\ge42$, so $k=41-a$ or $a-41$
+is linear. The special ZE point is isolated at $a=47$, and the two EE
+pair choices are separate groups. This produces 5,439 structural groups.
+
+For integer weights $w_i>0$, verify $wA\ge0$ coordinate by coordinate.
+Then form the polynomial $p(a)=wb(a)$ \emph{symbolically}, using exact
+rational coefficient arithmetic. If $p(a)<0$ throughout the assigned
+integer interval, no $x\ge0$ can satisfy $Ax\le b(a)$.
+For $p(a)=c_0+c_1a+c_2a^2$, its integer maximum on $[L,U]$ occurs at
+an endpoint when $c_2\ge0$; when $c_2<0$, also check the floor and ceiling
+of $-c_1/(2c_2)$ when they lie in the interval.
+Thus at most four exact evaluations suffice. There is no interpolation
+assumption: the row formulas themselves are evaluated in a polynomial
+class which rejects degree greater than two.
+
+The certificate file records a pool of 90 integer vectors and a partition
+of each group into closed integer intervals. The verifier reconstructs
+the group universe from the mode rules, requires exact key equality,
+checks contiguous coverage with no overlap or gap, and rejects unused
+vectors. It checks 5,443 intervals instead of repeating matrix
+combinations for all 82,257 integers, a reduction of about 93.4\%.
+The stored result records every combined polynomial and its worst
+integer parameter. The normalization of a contradiction is
+$-\max p(a)/\sum_iw_i$; only strict positivity is accepted.
+The minimum over all delivered intervals is $12/271$.
+
+An optional \texttt{--exhaustive} mode independently builds the ordinary
+integer model at every parameter, compares every matrix row and right-hand
+side against the symbolic model, checks the integer combination, and
+requires the same minimum margin as the quadratic extremum calculation.
+This full cross-check was run for the delivered certificate set.
+
+\subsection{Files and verification commands}
+The report source and PDF are
+\path{reports/upper98_from99_20261016.tex} and its PDF companion.
+The standard-library checker is \texttt{verification/upper98.py}; the proof
+data are \path{data/upper98_certificates.json}. The optional generator
+\path{experiments/generate_upper98_certificates.py} uses SciPy only to
+propose weights. Integer reconstruction and an exact check are required
+before any proposed vector is accepted. Global certificate reuse required
+91 optimizer calls to produce the delivered 90-vector pool.
+
+From the repository root, using Python 3.10 or newer:
+\begin{verbatim}
+python -I -S -B verification/upper98.py --output .work/upper98.json
+python -I -S -B verification/upper98.py --exhaustive
+python -I -S -B verification/upper99.py
+\end{verbatim}
+On Windows, \texttt{verify\_upper98\_windows.bat} runs all four continuation
+stages in order. Verification needs no optimizer, third-party Python
+package, or network. The result, baseline rerun, generation log, and run
+receipt are under \texttt{results/2026-10-16/upper98/}.
+
+Ten negative controls reject negative weights, a noncontradictory vector,
+an unknown row, an interior-vertex failure missed by endpoint-only checks,
+a polynomial of excessive degree, a missing group, a missing integer,
+an omitted gap-four branch, an omitted split-pair branch, and an attempt
+to certify the unproved next cardinality. Checks use explicit exceptions,
+not removable Python assertions. Normal and \texttt{-O} outputs agree
+byte for byte; exhaustive and interval outputs agree apart from their mode
+label. The preceding upper-99 finite result is reproduced unchanged.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The foundation excludes all sizes above 99. A feasible set of size 99
+passes the sign and lattice reduction, hence satisfies the scalar budget.
+The high-hole and all-active comparisons eliminate those cases.
+Every remaining set maps, after the justified reflection and disjunctions,
+to a model in one of the six complete regimes. All such models have a
+strict nonnegative integer-row contradiction, certified throughout their
+parameter intervals and also checked pointwise in the delivered run.
+No feasible 99-element set exists.
+\end{proof}
+
+The next task is to exclude size 98; none of these size-specific budgets,
+case counts, or certificates establishes that exclusion. The verifier
+rejects it explicitly. Nor does this continuation complete the independent
+audit of the stronger archived upper bound 84.
+
+\begin{thebibliography}{9}
+\bibitem{base103} Sum-of-Subset project,
+\emph{A checked continuation from 115 to 103}, 14 October 2026.
+Repository: \texttt{reports/upper103\_from115\_20261014.tex}.
+\bibitem{base100} Sum-of-Subset project,
+\emph{A checked continuation from 103 to 100}, 16 October 2026.
+Repository: \texttt{reports/upper100\_from103\_20261016.tex}.
+\bibitem{base99} Sum-of-Subset project,
+\emph{A checked continuation from 100 to 99}, 16 October 2026.
+Repository: \texttt{reports/upper99\_from100\_20261016.tex}.
+\bibitem{archive} Sum-of-Subset project,
+\emph{Complete upper-bound 86 report}, 5 October 2026,
+section ``Retaining residual loss: a general upper bound of 98'' and
+its certificate appendix.
+Repository: \texttt{reports/upper86\_complete\_20261005.tex}.
+\end{thebibliography}
+\end{document}

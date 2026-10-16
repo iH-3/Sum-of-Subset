@@ -1,0 +1,6 @@
+{"completed_regime": "Z", "groups": 68, "optimizer_calls": 11, "vectors": 11, "elapsed_seconds": 0.17}
+{"completed_regime": "P", "groups": 136, "optimizer_calls": 11, "vectors": 11, "elapsed_seconds": 0.24}
+{"completed_regime": "ZE", "groups": 2447, "optimizer_calls": 57, "vectors": 57, "elapsed_seconds": 3.09}
+{"completed_regime": "PE", "groups": 4755, "optimizer_calls": 59, "vectors": 58, "elapsed_seconds": 5.78}
+{"completed_regime": "ZZ", "groups": 4891, "optimizer_calls": 71, "vectors": 70, "elapsed_seconds": 6.12}
+{"groups": 5439, "optimizer_calls": 91, "vectors": 90, "interval_checks": 5443, "systems": 82257, "elapsed_seconds": 12.92}
