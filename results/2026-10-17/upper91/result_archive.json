@@ -1,0 +1,10 @@
+{
+  "codec": "gzip",
+  "stored_file": "results/2026-10-17/upper91/result.json.gz",
+  "decoded_name": "result.json",
+  "raw_bytes": 29324213,
+  "compressed_bytes": 573391,
+  "raw_sha256": "7bbd5f11a2133a8c0b02b3d9438cd68a5f330c8bb029478449c31bc2d74fac29",
+  "compressed_sha256": "01d0efde73067e22fa82b30f36f7ecd9532b7f0a987b4ff283774bbb5bd5c3b8",
+  "lossless_roundtrip": true
+}

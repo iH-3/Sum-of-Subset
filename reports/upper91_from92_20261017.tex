@@ -1,0 +1,707 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Subset sums: anchored hole bounds and the audited bound 91},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\RootGroups}{28,180}
+\newcommand{\RootSystems}{271,156}
+\newcommand{\CoarseGroups}{27,795}
+\newcommand{\NestedGroups}{385}
+\newcommand{\IntervalChecks}{28,412}
+\newcommand{\ExtremumPoints}{74,021}
+\newcommand{\TreeRoots}{1,342}
+\newcommand{\BinaryNodes}{3,320}
+\newcommand{\TreeLeaves}{4,662}
+\newcommand{\MaxDepth}{14}
+\newcommand{\FinalSystems}{274,476}
+\newcommand{\Vectors}{4,130}
+\newcommand{\MinGap}{3/2519}
+\newcommand{\NegativeControls}{36}
+\title{Subset Sums in a Fourfold Sumset\\\large Anchored hole bounds and integer center bases,\\and the audited bound $N\le91$}
+\author{Sum-of-Subset research project}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the audited bound $N\le92$ by excluding cardinality 92.
+The former uniform inverse margin becomes negative in fourteen
+orientations. A progression/non-progression dichotomy repairs this
+gate: non-progressions improve both the support and defect budgets;
+two progression supports are treated exactly by residue classes.
+The only unequal-step case left by the cardinality budget contradicts
+the subsequent peeling budget. We then use the persistent-hole theorem
+earlier, after core normalization but before propagating the lattice.
+A full-prefix central interval lowers its density threshold by one;
+a sharp non-progression anchor strengthens the defect recurrence.
+For the size-92 model, these reduce the high-hole covering cap
+from 199 to 150.
+For covering, integer row operations on actual contributing centers
+replace the former one-coordinate propagation. All three-empty modes
+become integral without assuming contribution by the leading translates.
+Four empty units now occur; all 10,880 modes are retained, with partial
+integer information in the 30 exceptional modes. Finally, the second
+core cutoff supplies stronger leading quantiles. A cardinality charge
+after trimming one or both extremes strengthens the twofold-sumset
+bound without classifying individual core sets. Low-hole mass transport
+also retains the stronger support-excess floors from the hole witnesses.
+Exact integer
+certificates, a standard-library checker, and complete run records
+accompany the report. The stronger archived bound 84 remains pending
+complete independent replay.
+\end{abstract}
+
+\section{Result and inherited structure}
+For a finite real set $A$, let $\FS(A)$ include the empty sum and let
+$4A=A+A+A+A$ allow repeated summands. Write $N$ for the largest feasible
+cardinality under $\FS(A)\subseteq4A$.
+\begin{theorem}\label{main}
+Every feasible set has at most 91 elements; hence $71\le N\le91$.
+\end{theorem}
+The unchanged lower construction is
+$([-31,31]\cap\Z)\cup\{\pm93,\pm155,\pm217,\pm713\}$.
+The audited foundation $N\le92$ is \cite{previous}. It suffices to
+exclude size 92. Such a set contains zero, since adjoining zero to
+one without it preserves feasibility and would give 93 elements.
+No deletion principle for arbitrary subsets is assumed.
+
+We inherit the corrected integralization and peeling lemmas
+\cite{foundation}, the sharp four-extreme and joint-covering bounds
+\cite{overlap}, the threshold-17 non-progression theorem \cite{sharp},
+and the exact prefix inverse \cite{prefix}. For a positive $r$-set,
+\[
+ T_r=\frac{r(r+1)}2,\quad
+ \mu(X)=|\FS(X)|-1-T_r,\quad
+ \rho(X)=\mu(X)+2-2\delta_0(X),
+\]
+where $\delta_0$ counts $x$ for which $2x$ is not a distinct-element
+two-sum of $X\cup\{0\}$. The maximum is defective, so $\rho\le\mu$.
+The general floors are $\rho\ge-8$ and $\rho\ge0$ for $r\ge14$.
+For non-progression support, $\mu\ge r-3$, $\rho\ge r-14$ for $r\ge6$,
+and $\rho\ge r-5$ for $r\ge17$.
+
+Peel as before to $D\supset D_1\supset E=P\cup\{0\}\cup(-Q)$, with
+\[
+ d=84,\quad e=76,\quad a+b=m=75,\quad I=(a-37)(a-38),
+ \quad\Lambda=1445+I,\quad\Omega=500-I.
+\]
+Put $\rho=\rho(P)+\rho(Q)$ and $\mu=\mu(P)+\mu(Q)$.
+The exact inherited identity is
+\begin{equation}\label{identity}
+ \rho+2\vartheta+c+\T=\Omega,\qquad
+ \T=\kappa+\ell_1+\ell_2+g,
+ \qquad c=2|2D|+18d+85-|\FS(D)|.
+\end{equation}
+All displayed slacks other than $\rho$ are nonnegative, and
+$\kappa=|\FS(P)-\FS(Q)|-|\FS(P)|-|\FS(Q)|+1$.
+The deficient-sign inequality is $1+T_{76}>24\cdot92+77$.
+The paired bootstrap gives $q^2\le2593$ with odd $q$, hence $q\le49$
+and $a,b\ge13$. At size 13 on one side, $\Omega=-100<-8$;
+the other side has size 62 and nonnegative defect. This is impossible.
+Both sides are now at least 14; $\Omega\ge0$ leaves $16\le a\le59$.
+
+\section{Repairing the simultaneous inverse gate}
+The sufficient inverse condition used in the foundation is
+\begin{equation}\label{inverse}
+ \kappa<\min(|\FS(P)|,|\FS(Q)|)-3.
+\end{equation}
+Let $r=\min(a,b)$, $t=\max(a,b)$, and
+$J=T_r-2-\Omega$. Its minimum is now $-21$.
+The fourteen orientations with $J\le0$ have $22\le r\le28$.
+
+\begin{lemma}[Use non-progression before the inverse theorem]\label{nonapgate}
+In each exceptional orientation, \eqref{inverse} holds whenever at
+least one side-support is not a progression.
+\end{lemma}
+\begin{proof}
+If the side of size $r$ is non-progression, its support grows by at
+least $r-3$ above $1+T_r$ and its defect is at least $r-5$.
+Since $t>r$, $T_t\ge T_r+r-3$. Thus the margin in \eqref{inverse}
+is at least $J+2r-8$. If only the larger side is known to be
+non-progression, its defect gives margin at least $J+t-5$.
+Here we used $\kappa\le\Omega-\rho$, directly from \eqref{identity}.
+The two exact minima over the fourteen orientations are 20 and 24.
+\end{proof}
+The exceptional sizes, with both orientations included, are as follows.
+The last column is the residual budget in the double-step progression
+case treated below.
+\begin{center}\small
+\begin{tabular}{rrrrrr}\toprule
+$r$&$\Omega$&$J$&$J+2r-8$&$J+t-5$&$\Omega-T_r$\\\midrule
+22&260&$-9$&27&39&7\\
+23&290&$-16$&22&31&14\\
+24&318&$-20$&20&26&18\\
+25&344&$-21$&21&24&19\\
+26&368&$-19$&25&25&17\\
+27&390&$-14$&32&29&12\\
+28&410&$-6$&42&36&4\\\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{lemma}[Two progression supports]\label{AP}
+Let $U=p[0,u-1]_{\Z}$ and $V=q[0,v-1]_{\Z}$, with
+$p,q\ge1$, $\gcd(p,q)=1$, and $u,v\ge2$. Then
+\[
+ |U+V|=\begin{cases}
+ uv,&p\ge v\text{ or }q\ge u,\\
+ pu+qv-pq,&p<v\text{ and }q<u.
+ \end{cases}
+\]
+\end{lemma}
+\begin{proof}
+A collision requires index differences divisible by $q$ and $p$,
+respectively. There are none in the first case. In the other case,
+group indices of $U$ by $i=i_0+qk$, $0\le i_0<q$.
+The corresponding sums in their residue class are translates of
+$[0,v-1]$ by successive multiples of $p$. These intervals overlap
+because $p<v$. If there are $K+1$ indices in the class, its union has
+$v+pK$ values. Summing $K$ over the $q$ classes gives $u-q$,
+and the asserted cardinality follows.
+\end{proof}
+
+Suppose now both supports are progressions in an exceptional orientation.
+Integralize first, divide their steps by their gcd, and label the
+side of size $r$ as $U$, so $u\ge1+T_r$ and $v\ge1+T_t$.
+Reflection of the second support does not change the sumset cardinality.
+The collision-free case gives $\kappa\ge T_rT_t>\Omega$.
+In the other case,
+\[
+ \kappa=(p-1)(u-q)+(q-1)(v-1).
+\]
+Since $T_t>\Omega$, we must have $q=1$. Then
+$\kappa=(p-1)(u-1)$, and $2T_r>\Omega$ forces $p\le2$.
+If $p=1$, both supports already have a common step and no hull holes;
+no inverse theorem is needed.
+
+It remains to exclude $p=2,q=1$. The difference support is a full
+interval because $v\ge2$. On this common lattice,
+\[
+ h_P+h_Q=\kappa=u-1,\qquad z=0,\qquad
+ \Omega-\kappa\le\Omega-T_r\le19.
+\]
+This case has $h_U=|U|-1$, so we do \emph{not} apply any theorem
+requiring a strict side-hole bound. Instead use the general span lemma
+$\max X\le |X|+\rho(X)+h_X+2$, valid for every positive integer set
+of size at least 15. For completeness, delete its largest element
+$r+q$ and write $X'$ for the remaining set. If $\nu\ge0$ counts
+destroyed diagonal defects, the exact increment identity is
+$\rho(X)=\rho(X')+q-h_X+h_{X'}-2+2\nu$.
+Since $|X'|\ge14$, all terms other than $q-h_X-2$ are nonnegative.
+This proves the stated span bound without a primitivity hypothesis.
+The two lattice-propagation comparisons below
+apply directly, with $z=0$. They put $D_1,D$ on this lattice and
+propagate zero holes. The sharp four-extreme theorem then gives
+\[
+ \T\ge\kappa+158,
+\]
+contradicting \eqref{identity} and $\Omega-\kappa\le19$.
+The strict contradiction has margin at least 139.
+This excludes every unequal-step progression case left by the budget.
+Lemma~\ref{AP} is also checked against 8,428 directly enumerated
+small progression pairs; its arbitrary-length proof is the residue
+argument above.
+
+\section{An earlier use of persistent holes}
+In the remaining cases, the inverse theorem or equal progression
+steps give a common core lattice with
+\[
+ h_P,h_Q\le\kappa,\quad z=h_P+h_Q-\kappa,
+ \quad0\le z\le\min(h_P,h_Q),\quad h_X<|\FS(X)|-1.
+\]
+The inverse is not reapplied to the excluded double-step case.
+The persistent-hole argument can be shortened and strengthened in two
+places. Apply the central-interval theorem to the full prefix, avoiding
+the deletion of its maximum. Then start the defect recurrence at the
+sharp positive floor of the preceding non-progression prefix.
+
+\begin{lemma}[Full-prefix endpoint holes]\label{fullprefix}
+Let $Y\subseteq[1,i+\delta]_{\Z}$ have $i$ elements, where
+$0\le\delta\le\beta$ and $i\ge2\beta+4$. With $S=\sum Y$,
+\[
+ \FS(Y)=[0,S]_{\Z}\setminus(H\cup(S-H)),\qquad
+ H\subseteq[1,2\beta],\qquad |H|\le\beta.
+\]
+\end{lemma}
+\begin{proof}
+Theorem 1 of Lev \cite{lev} states that an $i$-element subset of
+$[1,l]_{\Z}$ with $l\le3i/2-2$ has all subset sums in
+$[2l-2i+1,S-(2l-2i+1)]_{\Z}$. Here $l=i+\delta$ meets that
+hypothesis, so the interval $[2\delta+1,S-2\delta-1]$ is full.
+Every missing lower sum in $[1,2\delta]$ is a missing member of $Y$,
+because $2\delta\le i+\delta$; there are at most $\delta$ such
+members. Complement symmetry determines the upper holes. Enlarging
+the endpoint range from $2\delta$ to $2\beta$ proves the statement.
+Unlike the previous counted-endpoint argument, this use does not need
+to identify the number of deletions with the exact support increment.
+\end{proof}
+
+\begin{theorem}[Anchored persistent-hole bound]\label{holerho}
+Let $X$ be a positive integer $r$-set with
+$2\beta<h_X<|\FS(X)|-1$, where $\beta\ge2$. Choose
+$\varepsilon\in\{0,1\}$ and
+$r\ge L\ge\max(17+\varepsilon,2\beta+4)$. Then
+\begin{equation}\label{persistent}
+ \rho(X)\ge B_\varepsilon(r,\beta,L):=
+ \min\left\{\begin{aligned}
+ &\varepsilon(L-6)+(\beta-1)(r-L+1),\\
+ &T_{L-\varepsilon}-r-1,\\
+ &T_L+L-6\beta-r-7
+ \end{aligned}\right\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Assume $\rho_r$ is less than all three terms. The strict upper hole
+condition forces $X$ to be primitive: a gcd at least two creates at
+least $|\FS(X)|-1$ hull holes. Its support is non-progression because
+a primitive progression support containing zero is a full interval.
+For the increasing prefixes $X_i$, put
+$y_i=|\FS(X_i)|-|\FS(X_{i-1})|-i$. The inherited increment identity
+gives $\rho_i\ge\rho_{i-1}+y_i-2$; for $i\ge6$, $y_i=0$
+forces progression support.
+
+If the last progression prefix has size $t\ge L-\varepsilon$, its
+next support translate is disjoint. Indeed, an on-lattice translate
+that meets or abuts the previous progression preserves progression
+support; an off-lattice translate is disjoint. Thus
+$y_{t+1}\ge T_t-t$, and all subsequent increments are at least one.
+Using $\rho_t\ge0$ gives
+\[
+ \rho_r\ge T_t-t-2-(r-t-1)=T_t-r-1
+ \ge T_{L-\varepsilon}-r-1,
+\]
+a contradiction. All prefixes from $L-\varepsilon$ onward are
+therefore non-progressions. If $\varepsilon=1$, the sharp theorem at
+size $L-1\ge17$ gives $\rho_{L-1}\ge L-6$; if
+$\varepsilon=0$, the general floor gives $\rho_{L-1}\ge0$.
+If $y_i>\beta$ throughout $L\le i\le r$, telescoping from this
+anchor gives the first term of \eqref{persistent}, again impossible.
+Choose $i\ge L$ with $1\le y_i\le\beta$.
+
+Since $i\ge2\beta+4\ge\beta+5$, the inherited small-increment
+inverse applies and writes $X_i=tY$ with $Y$
+primitive, $|Y|=i$, and $\max Y\le i+\beta$.
+The scale $t$ is an integer since $X_i$ is integral and $\gcd(Y)=1$.
+If $t>1$, final primitivity forces a first later element off $t\Z$,
+say at index $k$. Its support translate is disjoint. The same increment
+calculation, with $\rho_{k-1}\ge0$, gives
+$\rho_r\ge T_{k-1}-r-1\ge T_L-r-1$, contradicting the second term.
+Hence $t=1$ and Lemma~\ref{fullprefix} applies to $X_i$.
+
+Suppose the endpoint-hole description holds at size $v\ge i$, with
+sum $S$, and let $x$ be the next element. If $x\ge S-4\beta$,
+its translate adds at least $S-6\beta$ points above $S$.
+For $x\le S$, at least $x-2\beta$ of the last $x$ positions are
+present; for $x>S$, the whole translate is new. Consequently
+$y_{v+1}\ge S-6\beta-v-1$. Using the sharp floor
+$\rho_v\ge v-5$ and all later increments at least one gives
+\[
+ \rho_r\ge S+v-6\beta-r-7\ge T_L+L-6\beta-r-7,
+\]
+contradicting the third term. Therefore $x<S-4\beta$.
+Also $x>2\beta$ since $x$ exceeds the maximum of a prefix of size
+at least $2\beta+4$. The two central intervals overlap or abut;
+the lower holes remain $H$, and complement symmetry supplies the upper
+holes. This propagates to $X_r$, giving $h_X\le2\beta$, the final
+contradiction.
+\end{proof}
+For $z\ge19$, $(\beta,L,\varepsilon)=(9,22,1)$ gives respective
+floors $136,152,168$ at sizes $36,38,40$, instead of the previous
+$112,128,144$. The new helper \path{verification/nonap_hole_rho_full.py}
+checks 22,335 parameter rows, retaining both values of $\varepsilon$.
+It also checks the endpoint description directly in 88,392 deleted
+intervals at the boundary $i=2\beta+4$, for $2\le\beta\le6$ and
+$0\le\delta\le\beta$. These finite checks supplement the general
+proof; they do not substitute for the central-interval theorem.
+
+Let $\mathcal R(r,z)$ be the maximum of zero and these accepted floors
+with $2\beta<z$, $\beta\le20$, both permitted values of
+$\varepsilon$, and all permitted $L$. Let $F(r,u)$ be the unchanged exact
+prefix inverse of \cite{prefix}, and write
+$W(r,u,z)=\max\{F(r,u),\mathcal R(r,z)\}$.
+
+Put $C=2m+4e+14-\Lambda=-977-I$. The inherited inner comparisons are
+\[
+ |\FS(D_1)|-2|\FS(E)|\le
+ \min\{C+\Omega+\rho-\mu+2z,\ C+3\Omega-\rho-\mu\}.
+\]
+For $z\le14$, $\rho\le\mu$ gives the upper bound $-449-2I$.
+For $z\ge15$, first use $\mu\ge69$ and the applicable non-progression
+floors. The only unresolved sizes have $a,b\ge28$.
+The inherited effective-hole witnesses at $\beta=7$ supply lower
+bounds $u_r=r+C_7(r)+1$ for $\mu(X)$; now use
+\[
+ \rho+\mu\ge u_a+u_b+W(a,u_a,15)+W(b,u_b,15).
+\]
+The high-hole inner comparison is at most $-31$ over all 44 orientations.
+This use of \eqref{persistent} is legitimate because $P,Q$ have already
+been normalized, even though the peeled layers are not yet known to
+lie on their lattice. The outer comparison is
+\[
+ \Lambda-(4d-10+\Omega)=619+2I>0.
+\]
+Disjoint translates would violate these strict factor-two comparisons,
+so $D_1,D$ lie on the core lattice. In the double-step progression case
+of the previous section only the low-hole comparison is used; its
+derivation needs the general span lemma, not a primitive side support.
+
+Hole propagation and the sharp four-extreme theorem now give
+\begin{equation}\label{peeling}
+ w\le4z,\quad \T\ge\kappa+158-3z,
+ \qquad\T\ge\max(53,z,158-2z).
+\end{equation}
+Neither size-16 boundary can survive these budgets. Thus all subsequent
+calls to $F$ and $\mathcal R$ are within their proved range $r\ge17$.
+
+\section{Integer bases of contributing centers}
+Write the original four positive outer magnitudes as
+$p_1>p_2>p_3>p_4>M_p$, and similarly use $q_i>M_q$ on the negative
+side. The core lattice already contains $M_p,M_q$ and all of $D$.
+Set
+\[
+ c_p=p_1-p_2-p_3-p_4,\qquad
+ b_p=-p_1+2p_2-p_3-p_4,
+\]
+and reflect for $q$. The twenty ordinary center forms are
+\begin{align*}
+ v_{pi}&=c_p+p_{i+1},&v_{p,i+4}&=c_p-q_{i+1}&&(0\le i<4),\\
+ v_{p8}&=p_2-p_3-p_4,&v_{p9}&=b_p,
+\end{align*}
+and their reflected forms. The eighteen-unit selection and the two
+branches $b_p+b_q\le0$ and $b_p+b_q>0$ are inherited from
+\cite{overlap,previous}. Every actual contributing ordinary center is
+integral: its translate of the integral set $D$ intersects the integral
+target. The actual member of a split pair is treated in the same way.
+
+\begin{lemma}[Integer row certificates]\label{integerbasis}
+Let $M$ have, as rows, the coefficient vectors of known integral center
+forms in the eight outer coordinates. If an integer row vector $v$ is
+an integer combination of rows of $M$, then $v\cdot(p,q)$ is integral.
+In particular, an integer matrix $U$ with $UM=I_8$ proves integrality
+of all eight outer coordinates.
+\end{lemma}
+\begin{proof}
+Integer linear combinations of integers are integers. This also proves
+the claim for individual gaps and for the branch form $b_p+b_q$.
+\end{proof}
+The new helper \path{verification/integral_centers.py} uses row swaps,
+sign changes, and integer row subtraction to construct an echelon
+basis by the Euclidean algorithm. It tracks the integer combinations
+and checks $H=UM$ independently by matrix multiplication. A target
+form is accepted only when integer elimination against $H$ leaves zero
+remainder. A nonunit pivot is never divided away. Thus row reduction
+is a means of finding explicit integer combinations, not a rational
+rank test.
+
+For zero through three empty units, the ordinary contributing forms
+alone recover all coordinates in respectively $4,70,578,2992$ modes.
+Leading contribution is not needed for these assertions. For example,
+the old exception in branch B with missing $p0,p1,p8$ and second-pair
+choice $p$ has
+\[
+ p_2=c_p+v_{p9}+2p_3+2p_4.
+\]
+The retained $q$ centers recover its side, $v_{p4}+q_1$ recovers $c_p$,
+and the retained own centers recover $p_3,p_4$. The displayed integer
+combination then recovers $p_2$, followed by $p_1$.
+This is the combination missed by the former one-unknown rule.
+
+Four empty units are now possible. All 10,880 modes are enumerated.
+Ordinary centers recover 10,812 of them. If the residual cap is below
+$2d-1=167$, a leading center may be added \emph{only on a side whose
+own-center block is nonempty}. That block charges the actual leading
+loss, which is then less than $|2D|$ and proves contribution.
+This recovers 38 more modes, for a total of 10,850.
+The remaining 30 modes are not discarded: 12 have rank seven, and 18
+have rank eight with a nonunit obstruction. The checker retains every
+individually proved integral gap or branch form and leaves other strict
+gaps weak in the real relaxation. Their integer-gap counts are
+\[
+ 6\text{ modes with }4,\quad18\text{ with }5,\quad
+ 4\text{ with }6,\quad2\text{ with }7.
+\]
+No leading quantile is imposed on a side with no charged own-center block.
+
+\section{A deeper leading quantile}
+Retain $C_p$, the second-largest element of the positive core $P$, and
+$C_q$ on the other side. The mass and independent-cutoff rows of
+\cite{previous} remain valid. With
+$x_{-1}=C_p,x_0=R_p,x_4=M_p$, and similarly $y_i$, these include
+\begin{gather*}
+ C_p\ge a-1,\quad C_p+1\le R_p,\quad
+ C_p+R_p+x_1+x_2+x_3+M_p-S_p\le-T_{a-2},\\
+ K:=|2D|\le M_p+M_q+x_i+y_h+1+T_{4-i}+T_{4-h}
+ \qquad(-1\le i,h\le4).
+\end{gather*}
+The 36 tail bounds are inherited, not claimed as a new theorem here.
+The new use of $C_p,C_q$ concerns the leading translates.
+
+\begin{lemma}[Leading quantiles from a smaller core]\label{deep}
+Let a leading center $c$ target $[1,S]_{\Z}$ and let $L$ be its actual
+total loss from $c+2D$. If $L<2d-11$, then
+\[
+ c+2C_p+L\ge2d-11,\qquad
+ c-S-2C_q-L\le12-2d.
+\]
+For $d=84$, the two right sides are 157 and $-156$.
+\end{lemma}
+\begin{proof}
+Remove the five largest positive elements of $D$. The remaining set
+has $d-5$ elements, maximum $C_p$, and a twofold sumset of at least
+$2d-11$ points. Its translate is a subset of $c+2D$. Since its total
+loss is at most $L<2d-11$, it contributes to $[1,S]$.
+At most $c+2C_p$ positive integers lie at or below its maximum;
+at most $L$ further points lie below 1. This proves the first inequality.
+Remove the five most negative elements instead. The minimum is
+$-C_q$. Counting integers from $c-2C_q$ to $S$, with at most $L$
+points above $S$, proves the second inequality.
+\end{proof}
+The proof uses the same total loss in two alternative necessary
+inequalities; it does not add the losses twice. In the model the rows
+are enabled only when the entire group's residual cap is less than
+157 and that side's leading loss is charged. They are used only in the
+nested model, where $C_p,C_q$ are retained.
+
+\section{Trim first, then bound the sumset}
+The independent hull cutoffs can overcount the contribution of a
+widely separated extreme. Its number of possible partners gives a
+second, independent upper bound.
+\begin{lemma}[Cardinality cost of trimmed extremes]\label{trim}
+Let $D$ have $d$ elements and $F=D\setminus T$, where $|T|=s$.
+Then
+\[
+ |2D|\le |2F|+sd-T_{s-1}.
+\]
+\end{lemma}
+\begin{proof}
+Use $2D=2F\cup(F+T)\cup2T$, with
+$|F+T|\le s(d-s)$ and $|2T|\le s(s+1)/2$.
+The sets may overlap; summing their cardinalities is an upper bound.
+The last two terms sum to $sd-T_{s-1}$.
+\end{proof}
+Remove the $k$ largest positive and the $\ell$ most negative elements,
+where $(k,\ell)\in\{(1,0),(0,1),(1,1)\}$. Put
+$A=4-k$, $B=4-\ell$, and $s=k+\ell$.
+The remaining extremes are $x_A,-y_B$ in the preceding notation.
+The same independent-cutoff proof applied to $F$ gives, for
+$-1\le i\le A$ and $-1\le h\le B$,
+\begin{equation}\label{trimrow}
+ K\le x_A+y_B+x_i+y_h+1+T_{A-i}+T_{B-h}+84s-T_{s-1}.
+\end{equation}
+There are $30+30+25=85$ such rows. They do not require the original
+outer coordinates to be integral, and are valid for every actual $D$.
+All mass-transport coefficients in these rows are zero. They are
+retained in nested models, while coarse models may discard them.
+
+For illustration, a size-92 relaxation in the four-empty family had
+$R_p=41$, $R_q=38$, $x_3=50$, $y_3=47$ and allowed $K=373$.
+Removing both extremes and using $i=h=0$ gives instead
+\[
+ K\le50+47+41+38+1+6+6+167=356.
+\]
+This is an excluded relaxation point, not a feasible construction.
+The proof no longer needs an enumeration of small-defect core sets
+to remove this obstruction.
+
+The checker directly enumerates the same 784 small set pairs used for
+the inherited core-cutoff audit. All 66,640 trimmed cutoff checks pass;
+735 of these pairs have a strictly better minimum bound than the 36
+untrimmed cutoffs. This finite check supplements Lemma~\ref{trim} and
+the general cutoff proof. The three-element example $D=\{-3,0,1\}$
+shows why the two-extreme increment cannot be reduced from $2d-1$
+to $2d-2$: $|2D|=6$ and $|2\{0\}|=1$.
+
+\section{Complete size-92 model universe}
+Let $U(r,z)$ be the inherited effective-hole lower bound for $\mu$,
+with $U(r,1)=U(r,2)=r-3$. For positive holes the scalar cap is
+\[
+ c\le500-I-W(a,U(a,z),z)-W(b,U(b,z),z)-\max(53,z,158-2z).
+\]
+For zero holes use $c\le342-I$. In particular $342\ge4d=336$ but
+$342<5d$; retaining only three empty units would be incomplete.
+There are 460 surviving low-hole states and 2,968 high-hole states.
+The positive low bands are
+\begin{center}
+\begin{tabular}{lrrrr}\toprule
+Band&Hole range&Combined defect floor&$c+I$ cap&Endpoint\\\midrule
+$P$&1--2&65&281&2\\
+$Q$&3--4&77&273&4\\
+$R$&5--14&100&270&14\\\bottomrule
+\end{tabular}
+\end{center}
+The latter two defect floors follow from the exact $\beta=1,2$ witnesses
+and the prefix inverse, over all 42 orientations with $17\le a\le58$.
+We also retain the support excess supplied by those same witnesses.
+For every $17\le r\le58$, the effective-hole parameter checks accept
+$(\beta,C)=(1,5)$ and $(2,r-6)$, respectively. Since the conclusion is
+$\mu\ge r+C+1$ when $h_X>2\beta$, the necessary mass floors are
+\[
+ \epsilon_r=\begin{cases}
+ r-3,&1\le z\le2,\\
+ r+6,&3\le z\le4,\\
+ 2r-5,&5\le z\le14.
+ \end{cases}
+\]
+All 84 parameter witnesses are checked exactly. The latter two rows
+use $h_X\ge z$ and the strict side-hole bound established after the
+inverse gate. In particular, they are not applied to the excluded
+double-step progression case. The mass inequalities become
+\[
+ S_p\ge T_a+\epsilon_a+z+x_1+x_2+x_3+M_p,
+ \qquad 2S_p\ge2T_a+2\epsilon_a+2z+2M_p+6R_p+12,
+\]
+and their reflections. Keeping only the weaker $\epsilon_r=r-3$
+in all three bands admits a residual $R_2$ relaxation; the stronger
+floors preserve information already proved by the hole witnesses.
+Each band now permits three empty units. Before endpoint transport
+impose its constant cap; then move $z$ to its upper endpoint $Z$ and
+increase $S_p,S_q$ by $Z-z$. The new mass floors depend only on side
+size, so this transport remains valid. Every retained row has
+$v_{S_p}+v_{S_q}+v_z\le0$, except the upper-hole row, which becomes
+an equality. This invariant is checked for every rebuilt model.
+
+For $z\ge15$, the strengthened bound gives $c\le150<2d$.
+Thus two empty units are impossible, every charged leading loss is
+below 157, and a one-empty model has residual cap at most
+$150-84=66<80$. All high groups consequently license the deeper
+leading quantiles; their one-empty cases also license core quantiles.
+The actual contributor fixes the direction of the active-center test,
+as in the preceding reports. The remaining states comprise 1,068
+zero-empty and 1,022 one-empty states, counting each permitted empty
+count separately. They are grouped by
+$(a,j,U(a,z),U(b,z),v_p,v_q)$, retaining one common hole coordinate
+across each group's interval. There are 54 groups, with
+871,618 source-to-group row checks over 2,090 retained states.
+With all other conditions fixed, replacing only the previous
+persistent-hole floor reduces the complete structural universe from
+35,372 to 28,180 groups; the high-hole portion drops from 9,916 to
+2,724. The comparison is recorded in \path{hole_bound_comparison.json}
+in the results directory. The former universe is only a comparison
+of necessary conditions, not an additional completed certificate.
+For $E_*=500-I-v_p-v_q$ and $\delta=c-84j$, retain together
+\[
+ \delta\le C_*-84j,\quad\delta+z\le E_*-84j,\quad
+ \delta\le E_*-53-84j,\quad\delta-2z\le E_*-158-84j.
+\]
+The hole variable may not be maximized independently of the cap.
+
+The mass rows are the preceding report's rows with $a+b=75$; the span
+and cardinality budgets become
+\[
+ R_p+R_q+\delta-4z\le421-I-84j,\qquad
+ S_p+S_q+\delta-2K-4z\le1596-84j.
+\]
+The dense-span lemma $2R\ge2r+\min(z,r-3)$ is unchanged, including
+its valid chord on a high group's fixed hole interval. Joint block
+deficits use the core size $e=76$ and are charged only once.
+For a block of $k$ retained ordinary centers,
+\[
+ O\ge76k-(R_p+R_q+v_{\max}-v_{\min}+1)+\max_v(l_v+u_v).
+\]
+The inherited leading-plus-own-center block inequalities use the same
+replacement of 77 by 76; no leading loss is charged for an absent block.
+The coarse bound is $K\le M_p+M_q+R_p+R_q+21$; nested models retain
+the five envelope levels, all 36 core cutoffs, the 85 trimmed cutoffs,
+and six inner-loss positions.
+The group-wide residual cap $C_g$ controls the quantile rows:
+\begin{center}
+\begin{tabular}{ll}\toprule
+Rows&Required cap\\\midrule
+Ordinary quantiles&$C_g<r_{\min}+5$\\
+Core quantiles&$C_g<80$\\
+Basic leading quantiles&$C_g<167$ and a charged own block\\
+Nested leading quantiles&$C_g<159$ and a charged own block\\
+Second-core leading quantiles&$C_g<157$ and a charged own block\\\bottomrule
+\end{tabular}
+\end{center}
+Global quantiles use 84 and 83, core quantiles 80 and 79, and ordinary
+quantiles $b+5$ and $a+4$ on side $p$. A leading nested level $i$
+uses $159+2i$ and $158+2i$ for $0\le i\le4$.
+Strict outer gaps and the strict branch-B row are licensed by their
+individual integer row certificates, not by an empty-count shortcut.
+All inherited binary alternatives remain available, with both children
+required and no restriction on how many large-loss centers occur.
+
+\section{Exact certificates and reproduction}
+Every root, matrix and right side is rebuilt from these necessary
+conditions. The low universe contains 268,432 integer root systems.
+The complete verified statistics are
+\begin{center}\small
+\begin{tabular}{lr}\toprule
+Quantity&Count\\\midrule
+Structural groups&\RootGroups\\
+Integer root systems&\RootSystems\\
+Coarse / nested groups&\CoarseGroups\ / \NestedGroups\\
+Symbolic interval checks&\IntervalChecks\\
+Integer extremum evaluations&\ExtremumPoints\\
+Integer roots requiring trees&\TreeRoots\\
+Binary internal nodes / leaves&\BinaryNodes\ / \TreeLeaves\\
+Maximum tree depth&\MaxDepth\\
+Final integer leaf systems&\FinalSystems\\
+Distinct integer vectors&\Vectors\\\bottomrule
+\end{tabular}
+\end{center}
+For $Ax\le b$ and $x\ge0$, an integer multiplier $w\ge0$ with
+$w^TA\ge0$ and $w^Tb<0$ is a contradiction. The minimum normalized
+strict margin is $\MinGap$. Symbolic right sides are exact quadratics;
+their integer extrema are checked at endpoints and around the vertex.
+The complete integer parameter range is covered exactly once, and
+every binary tree certifies both children. High-hole certificates
+cover their common real hole interval simultaneously.
+The saved multiplier inventory confirms use of the trimmed-sumset
+rows in 2,787 vectors covering 324 structural groups, and use of the
+second-core leading quantiles in 39 vectors covering 28 groups.
+These counts are recorded in \path{method_usage.json}.
+
+The \NegativeControls\ negative controls include omission of the
+new $Z_4,Q_3,R_3$ families, an unjustified raw inverse gate, division
+by a nonunit pivot, universal four-empty integrality, a leading
+quantile without a charged block, and an attempt to exclude size 91.
+The general mathematical reductions are proved here and in the cited
+foundation; these finite checks are not a proof-assistant formalization.
+
+Only Python 3.10+ and its standard library are required for verification:
+\begin{verbatim}
+python -I -S -B verification/upper91.py --output .work/upper91.json
+python -I -S -B verification/upper91.py --exhaustive
+\end{verbatim}
+The data are \path{data/upper91_certificates.json}. The optional
+\path{experiments/generate_upper91_certificates.py} uses SciPy to
+discover candidates; exact integer arithmetic determines acceptance.
+Standard and optimized Python outputs agree byte for byte. The exhaustive
+result agrees except for its mode label, regenerated certificates are
+byte-identical, and the unchanged upper-92 baseline is reproduced.
+The large standard result is archived as \path{result.json.gz};
+lossless decompression recovers the exact verifier-output bytes.
+\path{result_archive.json} records both hashes and the roundtrip check.
+Run receipts, hashes, center-basis witnesses, scalar data and logs are in
+\path{results/2026-10-17/upper91/}. The Windows entry point runs all eleven
+audited finite continuations. The archived endpoint 84 has not thereby
+received a complete independent replay.
+
+\begin{thebibliography}{9}
+\bibitem{lev} V. F. Lev, \emph{On consecutive subset sums},
+Discrete Mathematics 187 (1998), 151--160, Theorem 1.
+\href{https://doi.org/10.1016/S0012-365X(98)80006-X}{doi:10.1016/S0012-365X(98)80006-X}.
+\bibitem{previous} Sum-of-Subset research project,
+\emph{Core cutoffs and the audited bound $N\le92$},
+\path{reports/upper92_from93_20261016.tex}, 16 October 2026.
+\bibitem{prefix} Sum-of-Subset research project,
+\emph{An integer prefix inverse and the audited bound $N\le93$},
+\path{reports/upper93_from94_20261016.tex}, 16 October 2026.
+\bibitem{sharp} Sum-of-Subset research project,
+\emph{A sharper non-progression lemma and the audited bound $N\le94$},
+\path{reports/upper94_from95_20261016.tex}, 16 October 2026.
+\bibitem{overlap} Sum-of-Subset research project,
+\emph{Joint covering losses and the audited bound $N\le95$},
+\path{reports/upper95_from96_20261016.tex}, 16 October 2026.
+\bibitem{foundation} Sum-of-Subset research project,
+\emph{The audited continuation from 115 to 103},
+\path{reports/upper103_from115_20261014.tex}, 14 October 2026.
+\end{thebibliography}
+\end{document}

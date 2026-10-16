@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "pages": 9,
+  "compilation": "pdflatex, two final passes",
+  "latex_warnings": [],
+  "visual_review": {
+    "render": "pdftoppm -png -scale-to 1400",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "result": "All nine pages inspected: formulas, tables, text and references fit the page; no clipping or overlap observed.",
+    "final_revision": "After the archive-format note was added, pages 1\u20138 remained pixel-identical and page 9 was visually reinspected."
+  },
+  "sha256": {
+    "reports/upper91_from92_20261017.tex": "f186756142b7552072a1ae44b32765b67f38629bc32a004354cb13282d06856f",
+    "reports/upper91_from92_20261017.pdf": "7177bc1c45675d02835970793760af2db7b2359d9d305801b089f96fea9a9aba"
+  }
+}

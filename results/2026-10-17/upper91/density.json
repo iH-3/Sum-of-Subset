@@ -1,0 +1,7 @@
+{
+  "dense_sets": 16593,
+  "maximum_holes": 10,
+  "chord_points": 14154,
+  "necessary_bound": "2R >= 2r + min(z,r-3)",
+  "scope": "finite checks supplement the general central-interval proof"
+}

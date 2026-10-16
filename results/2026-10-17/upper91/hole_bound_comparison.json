@@ -1,0 +1,85 @@
+{
+  "scope": "Size-92 necessary-condition universes with identical AP gate, band envelopes and center modes; only the persistent-hole helper changes. This comparison does not certify the previous universe.",
+  "comparison": {
+    "previous_persistent_bound": {
+      "scalar": {
+        "lattice_orientations": 44,
+        "raw_inverse_min": -21,
+        "conditional_inverse_orientations": 14,
+        "small_nonap_margin": 20,
+        "large_nonap_margin": 24,
+        "ap_double_remaining_max": 19,
+        "ap_double_peeling_margin": 139,
+        "inner_low_max": -449,
+        "inner_high_max": -14,
+        "outer_min": 619,
+        "low_states": 462,
+        "high_states": 4268,
+        "high_c_max": 199,
+        "high_active_remaining": 1934,
+        "high_empty_states": 2112,
+        "high_two_empty_states": 330,
+        "high_merged_groups": 87
+      },
+      "root_groups": 35372,
+      "root_systems": 278348,
+      "examples": [
+        {
+          "r": 36,
+          "z": 19,
+          "floor": 112
+        },
+        {
+          "r": 38,
+          "z": 19,
+          "floor": 128
+        },
+        {
+          "r": 40,
+          "z": 19,
+          "floor": 144
+        }
+      ]
+    },
+    "full_prefix_and_sharp_anchor": {
+      "scalar": {
+        "lattice_orientations": 44,
+        "raw_inverse_min": -21,
+        "conditional_inverse_orientations": 14,
+        "small_nonap_margin": 20,
+        "large_nonap_margin": 24,
+        "ap_double_remaining_max": 19,
+        "ap_double_peeling_margin": 139,
+        "inner_low_max": -449,
+        "inner_high_max": -31,
+        "outer_min": 619,
+        "low_states": 460,
+        "high_states": 2968,
+        "high_c_max": 150,
+        "high_active_remaining": 1068,
+        "high_empty_states": 1022,
+        "high_two_empty_states": 0,
+        "high_merged_groups": 54
+      },
+      "root_groups": 28180,
+      "root_systems": 271156,
+      "examples": [
+        {
+          "r": 36,
+          "z": 19,
+          "floor": 136
+        },
+        {
+          "r": 38,
+          "z": 19,
+          "floor": 152
+        },
+        {
+          "r": 40,
+          "z": 19,
+          "floor": 168
+        }
+      ]
+    }
+  }
+}

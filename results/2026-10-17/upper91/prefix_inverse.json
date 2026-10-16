@@ -1,0 +1,19 @@
+{
+  "integer_inverse_cases": 5409,
+  "strict_improvement_cases": 7307,
+  "example": {
+    "value": 111,
+    "route": "prefix",
+    "L": 20,
+    "beta": 8,
+    "M": 172,
+    "A": 141,
+    "B": 111,
+    "C": 112
+  },
+  "minimum_size": 17,
+  "beta_range": [
+    3,
+    10
+  ]
+}

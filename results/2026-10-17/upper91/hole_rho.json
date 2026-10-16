@@ -1,0 +1,54 @@
+{
+  "parameter_rows": 22335,
+  "beta_max": 20,
+  "minimum_size": 17,
+  "full_prefix_base": {
+    "cases": 88392,
+    "beta_range": [
+      2,
+      6
+    ],
+    "size": "2*beta+4",
+    "deletions": "0..beta; maximum retained",
+    "status": "PASS"
+  },
+  "examples": [
+    {
+      "z": 19,
+      "r": 36,
+      "beta": 9,
+      "L": 22,
+      "anchored": true,
+      "A": 136,
+      "C1": 194,
+      "C2": 178,
+      "value": 136,
+      "route": "persistent-holes"
+    },
+    {
+      "z": 19,
+      "r": 40,
+      "beta": 9,
+      "L": 22,
+      "anchored": true,
+      "A": 168,
+      "C1": 190,
+      "C2": 174,
+      "value": 168,
+      "route": "persistent-holes"
+    },
+    {
+      "z": 19,
+      "r": 38,
+      "beta": 9,
+      "L": 22,
+      "anchored": true,
+      "A": 152,
+      "C1": 192,
+      "C2": 176,
+      "value": 152,
+      "route": "persistent-holes"
+    }
+  ],
+  "scope": "exact parameter checks; the general contradiction proof is in the report"
+}

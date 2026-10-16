@@ -1,0 +1,1617 @@
+{"tree_closed": "Z1:A:pair2:-:-", "a": 41, "kind": "binary", "seconds": 0.51}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 42, "kind": "binary", "seconds": 0.58}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 43, "kind": "binary", "seconds": 0.63}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 44, "kind": "binary", "seconds": 0.76}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 45, "kind": "binary", "seconds": 0.83}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 46, "kind": "binary", "seconds": 0.89}
+{"tree_closed": "Z1:A:pair2:-:-", "a": 47, "kind": "binary", "seconds": 0.95}
+{"tree_closed": "Z1:A:p0:q:-", "a": 37, "kind": "binary", "seconds": 1.4}
+{"tree_closed": "Z1:A:p0:q:-", "a": 38, "kind": "binary", "seconds": 1.84}
+{"tree_closed": "Z1:A:p0:q:-", "a": 36, "kind": "binary", "seconds": 2.79}
+{"tree_closed": "Z1:A:p0:q:-", "a": 39, "kind": "binary", "seconds": 3.13}
+{"tree_closed": "Z1:A:p0:q:-", "a": 35, "kind": "binary", "seconds": 4.02}
+{"tree_closed": "Z1:A:p0:q:-", "a": 40, "kind": "binary", "seconds": 4.33}
+{"tree_closed": "Z1:A:p0:q:-", "a": 34, "kind": "binary", "seconds": 4.69}
+{"tree_closed": "Z1:A:p0:q:-", "a": 41, "kind": "binary", "seconds": 5.32}
+{"tree_closed": "Z1:A:p0:q:-", "a": 33, "kind": "binary", "seconds": 5.37}
+{"tree_closed": "Z1:A:p0:q:-", "a": 42, "kind": "binary", "seconds": 6.03}
+{"tree_closed": "Z1:A:p0:q:-", "a": 32, "kind": "binary", "seconds": 6.08}
+{"tree_closed": "Z1:A:p0:q:-", "a": 43, "kind": "binary", "seconds": 6.16}
+{"tree_closed": "Z1:A:p0:q:-", "a": 44, "kind": "binary", "seconds": 6.21}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 37, "kind": "binary", "seconds": 12.95}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 38, "kind": "binary", "seconds": 17.9}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 36, "kind": "binary", "seconds": 22.01}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 39, "kind": "binary", "seconds": 26.78}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 35, "kind": "binary", "seconds": 31.41}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 40, "kind": "binary", "seconds": 35.27}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 34, "kind": "binary", "seconds": 38.32}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 41, "kind": "binary", "seconds": 42.01}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 33, "kind": "binary", "seconds": 44.07}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 42, "kind": "binary", "seconds": 45.95}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 32, "kind": "binary", "seconds": 48.02}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 43, "kind": "binary", "seconds": 49.99}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 31, "kind": "binary", "seconds": 51.14}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 44, "kind": "binary", "seconds": 52.77}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 30, "kind": "binary", "seconds": 53.14}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 45, "kind": "binary", "seconds": 53.49}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 29, "kind": "binary", "seconds": 53.6}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 46, "kind": "binary", "seconds": 53.7}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 28, "kind": "binary", "seconds": 53.75}
+{"tree_closed": "Z2:A:pair1,pair2:-:-", "a": 47, "kind": "binary", "seconds": 53.81}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 37, "kind": "binary", "seconds": 54.45}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 38, "kind": "binary", "seconds": 54.8}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 36, "kind": "binary", "seconds": 55.92}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 39, "kind": "binary", "seconds": 56.03}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 35, "kind": "binary", "seconds": 57.41}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 40, "kind": "binary", "seconds": 57.46}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 34, "kind": "binary", "seconds": 58.63}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 33, "kind": "binary", "seconds": 59.02}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 32, "kind": "binary", "seconds": 59.69}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 31, "kind": "binary", "seconds": 60.02}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 30, "kind": "binary", "seconds": 60.12}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 29, "kind": "binary", "seconds": 60.16}
+{"tree_closed": "Z2:A:pair1,p0:q:-", "a": 28, "kind": "binary", "seconds": 60.2}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 37, "kind": "binary", "seconds": 60.43}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 36, "kind": "binary", "seconds": 60.48}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 35, "kind": "binary", "seconds": 60.52}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 34, "kind": "binary", "seconds": 60.57}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 33, "kind": "binary", "seconds": 60.61}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 32, "kind": "binary", "seconds": 60.66}
+{"tree_closed": "Z2:A:pair1,p5:-:p", "a": 31, "kind": "binary", "seconds": 60.7}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 37, "kind": "binary", "seconds": 61.51}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 38, "kind": "binary", "seconds": 61.84}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 36, "kind": "binary", "seconds": 62.42}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 39, "kind": "binary", "seconds": 62.49}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 35, "kind": "binary", "seconds": 63.09}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 40, "kind": "binary", "seconds": 63.17}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 34, "kind": "binary", "seconds": 63.88}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 41, "kind": "binary", "seconds": 63.94}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 33, "kind": "binary", "seconds": 64.66}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 32, "kind": "binary", "seconds": 65.64}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 31, "kind": "binary", "seconds": 66.52}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 30, "kind": "binary", "seconds": 67.17}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 29, "kind": "binary", "seconds": 67.5}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 28, "kind": "binary", "seconds": 67.55}
+{"tree_closed": "Z2:A:pair1,p5:-:q", "a": 27, "kind": "binary", "seconds": 67.61}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 37, "kind": "binary", "seconds": 68.17}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 38, "kind": "binary", "seconds": 68.54}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 36, "kind": "binary", "seconds": 68.61}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 39, "kind": "binary", "seconds": 69.34}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 35, "kind": "binary", "seconds": 69.38}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 40, "kind": "binary", "seconds": 70.43}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 41, "kind": "binary", "seconds": 71.33}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 42, "kind": "binary", "seconds": 71.67}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 43, "kind": "binary", "seconds": 72.01}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 44, "kind": "binary", "seconds": 72.31}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 45, "kind": "binary", "seconds": 72.4}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 46, "kind": "binary", "seconds": 72.45}
+{"tree_closed": "Z2:A:pair1,q0:p:-", "a": 47, "kind": "binary", "seconds": 72.49}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 37, "kind": "binary", "seconds": 73.11}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 38, "kind": "binary", "seconds": 73.86}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 36, "kind": "binary", "seconds": 73.95}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 39, "kind": "binary", "seconds": 74.66}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 35, "kind": "binary", "seconds": 74.73}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 40, "kind": "binary", "seconds": 75.46}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 34, "kind": "binary", "seconds": 75.52}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 41, "kind": "binary", "seconds": 76.36}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 42, "kind": "binary", "seconds": 77.25}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 43, "kind": "binary", "seconds": 78.2}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 44, "kind": "binary", "seconds": 79.15}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 45, "kind": "binary", "seconds": 79.79}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 46, "kind": "binary", "seconds": 80.15}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 47, "kind": "binary", "seconds": 80.22}
+{"tree_closed": "Z2:A:pair1,q5:-:p", "a": 48, "kind": "binary", "seconds": 80.28}
+{"roots": 100, "routing": {"coarse": 87, "global_nested": 13}, "certificate_searches": 628, "unsuccessful_searches": 116, "primal_searches": 14361, "seconds": 80.3}
+{"tree_closed": "Z2:A:pair1,q5:-:q", "a": 38, "kind": "binary", "seconds": 80.36}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 88.57}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 38, "kind": "binary", "seconds": 96.6}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 102.38}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 39, "kind": "binary", "seconds": 109.21}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 112.94}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 40, "kind": "binary", "seconds": 118.31}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 121.06}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 41, "kind": "binary", "seconds": 124.58}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 126.21}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 42, "kind": "binary", "seconds": 127.99}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 129.19}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 43, "kind": "binary", "seconds": 130.66}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 131.3}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 44, "kind": "binary", "seconds": 132.14}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 30, "kind": "binary", "seconds": 132.47}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 45, "kind": "binary", "seconds": 133.17}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 29, "kind": "binary", "seconds": 133.24}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 46, "kind": "binary", "seconds": 133.59}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 28, "kind": "binary", "seconds": 133.63}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 47, "kind": "binary", "seconds": 133.68}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 27, "kind": "binary", "seconds": 133.74}
+{"tree_closed": "Z2:A:pair2,p0:-:-", "a": 48, "kind": "binary", "seconds": 133.78}
+{"tree_closed": "Z2:A:p0,p1:q:-", "a": 37, "kind": "binary", "seconds": 134.68}
+{"tree_closed": "Z2:A:p0,p1:q:-", "a": 38, "kind": "binary", "seconds": 134.72}
+{"tree_closed": "Z2:A:p0,p2:q:-", "a": 37, "kind": "binary", "seconds": 134.82}
+{"tree_closed": "Z2:A:p0,p2:q:-", "a": 38, "kind": "binary", "seconds": 134.86}
+{"tree_closed": "Z2:A:p0,p2:q:-", "a": 39, "kind": "binary", "seconds": 134.91}
+{"tree_closed": "Z2:A:p0,p3:q:-", "a": 37, "kind": "binary", "seconds": 135.01}
+{"tree_closed": "Z2:A:p0,p3:q:-", "a": 38, "kind": "binary", "seconds": 135.06}
+{"tree_closed": "Z2:A:p0,p3:q:-", "a": 39, "kind": "binary", "seconds": 135.1}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 37, "kind": "binary", "seconds": 135.2}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 38, "kind": "binary", "seconds": 135.24}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 36, "kind": "binary", "seconds": 135.28}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 39, "kind": "binary", "seconds": 135.32}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 35, "kind": "binary", "seconds": 135.35}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 40, "kind": "binary", "seconds": 135.39}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 34, "kind": "binary", "seconds": 135.43}
+{"tree_closed": "Z2:A:p0,p5:-:q", "a": 41, "kind": "binary", "seconds": 135.46}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 37, "kind": "binary", "seconds": 135.73}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 38, "kind": "binary", "seconds": 136.01}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 36, "kind": "binary", "seconds": 136.05}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 39, "kind": "binary", "seconds": 136.62}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 35, "kind": "binary", "seconds": 136.66}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 40, "kind": "binary", "seconds": 137.21}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 41, "kind": "binary", "seconds": 137.84}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 42, "kind": "binary", "seconds": 138.36}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 43, "kind": "binary", "seconds": 138.89}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 44, "kind": "binary", "seconds": 139.19}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 45, "kind": "binary", "seconds": 139.26}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 46, "kind": "binary", "seconds": 139.3}
+{"tree_closed": "Z2:A:p0,q0:q:-", "a": 47, "kind": "binary", "seconds": 139.34}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 41, "kind": "binary", "seconds": 139.52}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 42, "kind": "binary", "seconds": 139.58}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 43, "kind": "binary", "seconds": 139.65}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 44, "kind": "binary", "seconds": 139.73}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 45, "kind": "binary", "seconds": 139.8}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 46, "kind": "binary", "seconds": 139.85}
+{"tree_closed": "Z2:A:p0,q5:-:p", "a": 47, "kind": "binary", "seconds": 139.89}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 37, "kind": "binary", "seconds": 141.05}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 38, "kind": "binary", "seconds": 141.92}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 36, "kind": "binary", "seconds": 142.87}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 39, "kind": "binary", "seconds": 143.77}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 35, "kind": "binary", "seconds": 144.42}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 40, "kind": "binary", "seconds": 145.66}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 34, "kind": "binary", "seconds": 145.99}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 41, "kind": "binary", "seconds": 146.95}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 33, "kind": "binary", "seconds": 147.07}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 42, "kind": "binary", "seconds": 147.64}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 32, "kind": "binary", "seconds": 147.7}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 43, "kind": "binary", "seconds": 148.01}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 31, "kind": "binary", "seconds": 148.05}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 44, "kind": "binary", "seconds": 148.13}
+{"tree_closed": "Z2:A:p0,q5:-:q", "a": 45, "kind": "binary", "seconds": 148.18}
+{"tree_closed": "Z2:A:p0,q6:q:-", "a": 37, "kind": "binary", "seconds": 148.27}
+{"tree_closed": "Z2:A:p0,q6:q:-", "a": 38, "kind": "binary", "seconds": 148.31}
+{"tree_closed": "Z2:A:p0,q6:q:-", "a": 39, "kind": "binary", "seconds": 148.37}
+{"tree_closed": "Z2:A:p0,q7:q:-", "a": 37, "kind": "binary", "seconds": 148.48}
+{"tree_closed": "Z2:A:p0,q7:q:-", "a": 38, "kind": "binary", "seconds": 148.52}
+{"tree_closed": "Z2:A:p0,q7:q:-", "a": 39, "kind": "binary", "seconds": 148.57}
+{"roots": 200, "routing": {"coarse": 154, "global_nested": 46}, "certificate_searches": 1227, "unsuccessful_searches": 235, "primal_searches": 27941, "seconds": 149.05}
+{"roots": 300, "routing": {"coarse": 254, "global_nested": 46}, "certificate_searches": 1233, "unsuccessful_searches": 235, "primal_searches": 27941, "seconds": 149.7}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 37, "kind": "binary", "seconds": 151.04}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 38, "kind": "binary", "seconds": 151.42}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 36, "kind": "binary", "seconds": 151.75}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 39, "kind": "binary", "seconds": 152.12}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 35, "kind": "binary", "seconds": 152.2}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 40, "kind": "binary", "seconds": 152.26}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 34, "kind": "binary", "seconds": 152.33}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 41, "kind": "binary", "seconds": 152.38}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 33, "kind": "binary", "seconds": 152.46}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 42, "kind": "binary", "seconds": 152.52}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 32, "kind": "binary", "seconds": 152.56}
+{"tree_closed": "Z2:B:pair1,pair2:-:-", "a": 43, "kind": "binary", "seconds": 152.61}
+{"roots": 400, "routing": {"coarse": 351, "global_nested": 49}, "certificate_searches": 1308, "unsuccessful_searches": 250, "primal_searches": 28275, "seconds": 153.63}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 37, "kind": "binary", "seconds": 153.73}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 38, "kind": "binary", "seconds": 154.06}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 36, "kind": "binary", "seconds": 154.11}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 39, "kind": "binary", "seconds": 154.45}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 35, "kind": "binary", "seconds": 154.49}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 40, "kind": "binary", "seconds": 154.84}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 41, "kind": "binary", "seconds": 154.93}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 42, "kind": "binary", "seconds": 154.98}
+{"tree_closed": "Z2:B:p0,p1:p:-", "a": 43, "kind": "binary", "seconds": 155.03}
+{"roots": 500, "routing": {"coarse": 450, "global_nested": 50}, "certificate_searches": 1351, "unsuccessful_searches": 260, "primal_searches": 28520, "seconds": 155.83}
+{"roots": 600, "routing": {"coarse": 550, "global_nested": 50}, "certificate_searches": 1354, "unsuccessful_searches": 260, "primal_searches": 28520, "seconds": 156.31}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 158.37}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 38, "kind": "binary", "seconds": 159.32}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 160.74}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 39, "kind": "binary", "seconds": 161.67}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 163.13}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 40, "kind": "binary", "seconds": 163.49}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 164.94}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 41, "kind": "binary", "seconds": 165.01}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 166.94}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 42, "kind": "binary", "seconds": 167.01}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 168.73}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 43, "kind": "binary", "seconds": 168.79}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 170.2}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 44, "kind": "binary", "seconds": 170.24}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 30, "kind": "binary", "seconds": 171.42}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 29, "kind": "binary", "seconds": 172.63}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 37, "kind": "binary", "seconds": 173.35}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 38, "kind": "binary", "seconds": 174.28}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 36, "kind": "binary", "seconds": 174.96}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 39, "kind": "binary", "seconds": 175.68}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 35, "kind": "binary", "seconds": 176.03}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 40, "kind": "binary", "seconds": 176.4}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 34, "kind": "binary", "seconds": 176.44}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 41, "kind": "binary", "seconds": 176.52}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 33, "kind": "binary", "seconds": 176.57}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 42, "kind": "binary", "seconds": 176.64}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 32, "kind": "binary", "seconds": 176.7}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 43, "kind": "binary", "seconds": 176.75}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 31, "kind": "binary", "seconds": 176.8}
+{"tree_closed": "Z3:A:pair1,pair2,p1:-:-", "a": 44, "kind": "binary", "seconds": 176.84}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 37, "kind": "binary", "seconds": 177.62}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 38, "kind": "binary", "seconds": 178.33}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 36, "kind": "binary", "seconds": 179.03}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 39, "kind": "binary", "seconds": 179.69}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 35, "kind": "binary", "seconds": 180.1}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 40, "kind": "binary", "seconds": 180.5}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 34, "kind": "binary", "seconds": 180.54}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 41, "kind": "binary", "seconds": 180.63}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 33, "kind": "binary", "seconds": 180.68}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 42, "kind": "binary", "seconds": 180.77}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 32, "kind": "binary", "seconds": 180.81}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 43, "kind": "binary", "seconds": 180.85}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 31, "kind": "binary", "seconds": 180.91}
+{"tree_closed": "Z3:A:pair1,pair2,p2:-:-", "a": 44, "kind": "binary", "seconds": 180.98}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 37, "kind": "binary", "seconds": 181.85}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 38, "kind": "binary", "seconds": 182.5}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 36, "kind": "binary", "seconds": 183.33}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 39, "kind": "binary", "seconds": 184.01}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 35, "kind": "binary", "seconds": 184.32}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 40, "kind": "binary", "seconds": 184.65}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 34, "kind": "binary", "seconds": 184.69}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 41, "kind": "binary", "seconds": 184.77}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 33, "kind": "binary", "seconds": 184.81}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 42, "kind": "binary", "seconds": 184.88}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 32, "kind": "binary", "seconds": 184.93}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 43, "kind": "binary", "seconds": 184.98}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 31, "kind": "binary", "seconds": 185.02}
+{"tree_closed": "Z3:A:pair1,pair2,p3:-:-", "a": 44, "kind": "binary", "seconds": 185.07}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 37, "kind": "binary", "seconds": 186.22}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 38, "kind": "binary", "seconds": 186.98}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 36, "kind": "binary", "seconds": 188.0}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 39, "kind": "binary", "seconds": 188.74}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 35, "kind": "binary", "seconds": 189.76}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 40, "kind": "binary", "seconds": 190.13}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 34, "kind": "binary", "seconds": 191.23}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 41, "kind": "binary", "seconds": 191.28}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 33, "kind": "binary", "seconds": 191.64}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 42, "kind": "binary", "seconds": 191.71}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 32, "kind": "binary", "seconds": 191.75}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 43, "kind": "binary", "seconds": 191.79}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 31, "kind": "binary", "seconds": 191.83}
+{"tree_closed": "Z3:A:pair1,pair2,p5:-:-", "a": 30, "kind": "binary", "seconds": 191.88}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 37, "kind": "binary", "seconds": 193.6}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 38, "kind": "binary", "seconds": 194.38}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 36, "kind": "binary", "seconds": 194.82}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 39, "kind": "binary", "seconds": 195.52}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 35, "kind": "binary", "seconds": 195.87}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 40, "kind": "binary", "seconds": 196.27}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 34, "kind": "binary", "seconds": 196.63}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 41, "kind": "binary", "seconds": 196.99}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 33, "kind": "binary", "seconds": 197.03}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 42, "kind": "binary", "seconds": 197.07}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 32, "kind": "binary", "seconds": 197.12}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 43, "kind": "binary", "seconds": 197.16}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 31, "kind": "binary", "seconds": 197.21}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 44, "kind": "binary", "seconds": 197.26}
+{"tree_closed": "Z3:A:pair1,pair2,p6:-:-", "a": 30, "kind": "binary", "seconds": 197.3}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 37, "kind": "binary", "seconds": 198.95}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 38, "kind": "binary", "seconds": 199.69}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 36, "kind": "binary", "seconds": 200.4}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 39, "kind": "binary", "seconds": 201.09}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 35, "kind": "binary", "seconds": 201.45}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 40, "kind": "binary", "seconds": 201.87}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 34, "kind": "binary", "seconds": 202.24}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 41, "kind": "binary", "seconds": 202.63}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 33, "kind": "binary", "seconds": 202.68}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 42, "kind": "binary", "seconds": 202.73}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 32, "kind": "binary", "seconds": 202.78}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 43, "kind": "binary", "seconds": 202.82}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 31, "kind": "binary", "seconds": 202.87}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 44, "kind": "binary", "seconds": 202.91}
+{"tree_closed": "Z3:A:pair1,pair2,p7:-:-", "a": 30, "kind": "binary", "seconds": 202.96}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 37, "kind": "binary", "seconds": 203.9}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 38, "kind": "binary", "seconds": 204.64}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 36, "kind": "binary", "seconds": 205.0}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 39, "kind": "binary", "seconds": 205.72}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 35, "kind": "binary", "seconds": 206.48}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 40, "kind": "binary", "seconds": 206.86}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 34, "kind": "binary", "seconds": 206.92}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 41, "kind": "binary", "seconds": 206.97}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 33, "kind": "binary", "seconds": 207.01}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 42, "kind": "binary", "seconds": 207.06}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 32, "kind": "binary", "seconds": 207.1}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 43, "kind": "binary", "seconds": 207.16}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 31, "kind": "binary", "seconds": 207.23}
+{"tree_closed": "Z3:A:pair1,pair2,p8:-:-", "a": 44, "kind": "binary", "seconds": 207.28}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 37, "kind": "binary", "seconds": 208.55}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 38, "kind": "binary", "seconds": 209.84}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 36, "kind": "binary", "seconds": 210.51}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 39, "kind": "binary", "seconds": 211.72}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 35, "kind": "binary", "seconds": 212.07}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 40, "kind": "binary", "seconds": 213.71}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 34, "kind": "binary", "seconds": 213.82}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 41, "kind": "binary", "seconds": 215.42}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 33, "kind": "binary", "seconds": 215.5}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 42, "kind": "binary", "seconds": 217.32}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 32, "kind": "binary", "seconds": 217.37}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 43, "kind": "binary", "seconds": 219.19}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 31, "kind": "binary", "seconds": 219.27}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 44, "kind": "binary", "seconds": 220.67}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 45, "kind": "binary", "seconds": 221.93}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 46, "kind": "binary", "seconds": 223.24}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 37, "kind": "binary", "seconds": 224.13}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 38, "kind": "binary", "seconds": 225.22}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 36, "kind": "binary", "seconds": 225.66}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 39, "kind": "binary", "seconds": 226.43}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 35, "kind": "binary", "seconds": 226.81}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 40, "kind": "binary", "seconds": 227.18}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 34, "kind": "binary", "seconds": 227.26}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 41, "kind": "binary", "seconds": 227.35}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 33, "kind": "binary", "seconds": 227.41}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 42, "kind": "binary", "seconds": 227.48}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 32, "kind": "binary", "seconds": 227.52}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 43, "kind": "binary", "seconds": 227.56}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 31, "kind": "binary", "seconds": 227.6}
+{"tree_closed": "Z3:A:pair1,pair2,q1:-:-", "a": 44, "kind": "binary", "seconds": 227.65}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 37, "kind": "binary", "seconds": 228.35}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 38, "kind": "binary", "seconds": 229.05}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 36, "kind": "binary", "seconds": 229.39}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 39, "kind": "binary", "seconds": 230.0}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 35, "kind": "binary", "seconds": 230.34}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 40, "kind": "binary", "seconds": 230.76}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 34, "kind": "binary", "seconds": 230.84}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 41, "kind": "binary", "seconds": 230.93}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 33, "kind": "binary", "seconds": 230.99}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 42, "kind": "binary", "seconds": 231.06}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 32, "kind": "binary", "seconds": 231.15}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 43, "kind": "binary", "seconds": 231.23}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 31, "kind": "binary", "seconds": 231.28}
+{"tree_closed": "Z3:A:pair1,pair2,q2:-:-", "a": 44, "kind": "binary", "seconds": 231.32}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 37, "kind": "binary", "seconds": 232.09}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 38, "kind": "binary", "seconds": 232.81}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 36, "kind": "binary", "seconds": 233.2}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 39, "kind": "binary", "seconds": 233.87}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 35, "kind": "binary", "seconds": 234.21}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 40, "kind": "binary", "seconds": 234.53}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 34, "kind": "binary", "seconds": 234.59}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 41, "kind": "binary", "seconds": 234.65}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 33, "kind": "binary", "seconds": 234.71}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 42, "kind": "binary", "seconds": 234.78}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 32, "kind": "binary", "seconds": 234.82}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 43, "kind": "binary", "seconds": 234.87}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 31, "kind": "binary", "seconds": 234.92}
+{"tree_closed": "Z3:A:pair1,pair2,q3:-:-", "a": 44, "kind": "binary", "seconds": 234.96}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 37, "kind": "binary", "seconds": 235.72}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 38, "kind": "binary", "seconds": 237.1}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 36, "kind": "binary", "seconds": 237.47}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 39, "kind": "binary", "seconds": 238.53}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 35, "kind": "binary", "seconds": 238.97}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 40, "kind": "binary", "seconds": 240.02}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 34, "kind": "binary", "seconds": 240.1}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 41, "kind": "binary", "seconds": 240.82}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 33, "kind": "binary", "seconds": 240.88}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 42, "kind": "binary", "seconds": 241.32}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 32, "kind": "binary", "seconds": 241.36}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 43, "kind": "binary", "seconds": 241.4}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 44, "kind": "binary", "seconds": 241.48}
+{"tree_closed": "Z3:A:pair1,pair2,q5:-:-", "a": 45, "kind": "binary", "seconds": 241.57}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 37, "kind": "binary", "seconds": 242.45}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 38, "kind": "binary", "seconds": 243.29}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 36, "kind": "binary", "seconds": 244.07}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 39, "kind": "binary", "seconds": 244.82}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 35, "kind": "binary", "seconds": 245.3}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 40, "kind": "binary", "seconds": 246.05}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 34, "kind": "binary", "seconds": 246.41}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 41, "kind": "binary", "seconds": 247.12}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 33, "kind": "binary", "seconds": 247.18}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 42, "kind": "binary", "seconds": 247.26}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 32, "kind": "binary", "seconds": 247.31}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 43, "kind": "binary", "seconds": 247.37}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 31, "kind": "binary", "seconds": 247.42}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 44, "kind": "binary", "seconds": 247.47}
+{"tree_closed": "Z3:A:pair1,pair2,q6:-:-", "a": 45, "kind": "binary", "seconds": 247.52}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 37, "kind": "binary", "seconds": 248.61}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 38, "kind": "binary", "seconds": 249.31}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 36, "kind": "binary", "seconds": 250.35}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 39, "kind": "binary", "seconds": 251.05}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 35, "kind": "binary", "seconds": 252.06}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 40, "kind": "binary", "seconds": 253.07}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 34, "kind": "binary", "seconds": 253.48}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 41, "kind": "binary", "seconds": 253.86}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 33, "kind": "binary", "seconds": 253.92}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 42, "kind": "binary", "seconds": 253.99}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 32, "kind": "binary", "seconds": 254.1}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 43, "kind": "binary", "seconds": 254.19}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 31, "kind": "binary", "seconds": 254.23}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 44, "kind": "binary", "seconds": 254.29}
+{"tree_closed": "Z3:A:pair1,pair2,q7:-:-", "a": 45, "kind": "binary", "seconds": 254.34}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 37, "kind": "binary", "seconds": 255.41}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 38, "kind": "binary", "seconds": 256.42}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 36, "kind": "binary", "seconds": 257.08}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 39, "kind": "binary", "seconds": 257.47}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 35, "kind": "binary", "seconds": 258.12}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 40, "kind": "binary", "seconds": 258.45}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 34, "kind": "binary", "seconds": 258.52}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 41, "kind": "binary", "seconds": 258.58}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 33, "kind": "binary", "seconds": 258.62}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 42, "kind": "binary", "seconds": 258.68}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 32, "kind": "binary", "seconds": 258.75}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 43, "kind": "binary", "seconds": 258.81}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 31, "kind": "binary", "seconds": 258.88}
+{"tree_closed": "Z3:A:pair1,pair2,q8:-:-", "a": 44, "kind": "binary", "seconds": 258.94}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 37, "kind": "binary", "seconds": 260.56}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 38, "kind": "binary", "seconds": 261.5}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 36, "kind": "binary", "seconds": 262.13}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 39, "kind": "binary", "seconds": 262.76}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 35, "kind": "binary", "seconds": 263.1}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 40, "kind": "binary", "seconds": 263.72}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 34, "kind": "binary", "seconds": 264.03}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 41, "kind": "binary", "seconds": 264.42}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 33, "kind": "binary", "seconds": 264.49}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 42, "kind": "binary", "seconds": 264.85}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 32, "kind": "binary", "seconds": 264.9}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 43, "kind": "binary", "seconds": 264.96}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 31, "kind": "binary", "seconds": 265.0}
+{"tree_closed": "Z3:A:pair1,p0,q0:p:-", "a": 44, "kind": "binary", "seconds": 265.04}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 37, "kind": "binary", "seconds": 265.7}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 38, "kind": "binary", "seconds": 266.65}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 36, "kind": "binary", "seconds": 267.27}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 39, "kind": "binary", "seconds": 268.13}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 35, "kind": "binary", "seconds": 268.54}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 40, "kind": "binary", "seconds": 269.5}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 34, "kind": "binary", "seconds": 269.85}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 41, "kind": "binary", "seconds": 270.16}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 33, "kind": "binary", "seconds": 270.48}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 42, "kind": "binary", "seconds": 270.53}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 32, "kind": "binary", "seconds": 270.59}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 43, "kind": "binary", "seconds": 270.63}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 31, "kind": "binary", "seconds": 270.67}
+{"tree_closed": "Z3:A:pair1,p0,q0:q:-", "a": 44, "kind": "binary", "seconds": 270.71}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 37, "kind": "binary", "seconds": 272.73}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 38, "kind": "binary", "seconds": 274.36}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 36, "kind": "binary", "seconds": 274.98}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 39, "kind": "binary", "seconds": 276.27}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 35, "kind": "binary", "seconds": 276.93}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 40, "kind": "binary", "seconds": 278.13}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 34, "kind": "binary", "seconds": 278.46}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 41, "kind": "binary", "seconds": 279.78}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 33, "kind": "binary", "seconds": 279.86}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 42, "kind": "binary", "seconds": 280.55}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 32, "kind": "binary", "seconds": 280.6}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 43, "kind": "binary", "seconds": 280.66}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 31, "kind": "binary", "seconds": 280.7}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 44, "kind": "binary", "seconds": 280.76}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:p", "a": 45, "kind": "binary", "seconds": 280.82}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 37, "kind": "binary", "seconds": 281.2}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 38, "kind": "binary", "seconds": 281.26}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 36, "kind": "binary", "seconds": 281.65}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 39, "kind": "binary", "seconds": 281.72}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 35, "kind": "binary", "seconds": 282.06}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 40, "kind": "binary", "seconds": 282.1}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 34, "kind": "binary", "seconds": 282.44}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 41, "kind": "binary", "seconds": 282.48}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 33, "kind": "binary", "seconds": 282.82}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 32, "kind": "binary", "seconds": 283.22}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 31, "kind": "binary", "seconds": 283.28}
+{"tree_closed": "Z3:A:pair1,p0,q5:-:q", "a": 30, "kind": "binary", "seconds": 283.33}
+{"roots": 700, "routing": {"coarse": 616, "global_nested": 84}, "certificate_searches": 2710, "unsuccessful_searches": 581, "primal_searches": 52087, "seconds": 283.75}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 36, "kind": "binary", "seconds": 284.99}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 35, "kind": "binary", "seconds": 285.04}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 34, "kind": "binary", "seconds": 285.1}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 33, "kind": "binary", "seconds": 285.15}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 32, "kind": "binary", "seconds": 285.2}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 31, "kind": "binary", "seconds": 285.26}
+{"tree_closed": "Z3:A:pair1,p5,p6:-:q", "a": 30, "kind": "binary", "seconds": 285.31}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 36, "kind": "binary", "seconds": 285.54}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 35, "kind": "binary", "seconds": 285.59}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 34, "kind": "binary", "seconds": 285.65}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 33, "kind": "binary", "seconds": 285.71}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 32, "kind": "binary", "seconds": 285.76}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 31, "kind": "binary", "seconds": 285.84}
+{"tree_closed": "Z3:A:pair1,p5,p7:-:q", "a": 30, "kind": "binary", "seconds": 285.9}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 37, "kind": "binary", "seconds": 286.1}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 38, "kind": "binary", "seconds": 286.43}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 36, "kind": "binary", "seconds": 286.53}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 39, "kind": "binary", "seconds": 286.87}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 35, "kind": "binary", "seconds": 286.91}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 40, "kind": "binary", "seconds": 287.25}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 34, "kind": "binary", "seconds": 287.3}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 41, "kind": "binary", "seconds": 287.64}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 42, "kind": "binary", "seconds": 288.01}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 43, "kind": "binary", "seconds": 288.4}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 44, "kind": "binary", "seconds": 288.47}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:p", "a": 45, "kind": "binary", "seconds": 288.52}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 37, "kind": "binary", "seconds": 290.59}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 38, "kind": "binary", "seconds": 292.03}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 36, "kind": "binary", "seconds": 293.36}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 39, "kind": "binary", "seconds": 294.02}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 35, "kind": "binary", "seconds": 295.3}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 40, "kind": "binary", "seconds": 295.93}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 34, "kind": "binary", "seconds": 296.96}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 41, "kind": "binary", "seconds": 297.37}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 33, "kind": "binary", "seconds": 298.16}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 42, "kind": "binary", "seconds": 298.21}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 32, "kind": "binary", "seconds": 298.28}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 43, "kind": "binary", "seconds": 298.33}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 31, "kind": "binary", "seconds": 298.4}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 44, "kind": "binary", "seconds": 298.44}
+{"tree_closed": "Z3:A:pair1,p5,q0:-:q", "a": 30, "kind": "binary", "seconds": 298.48}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 37, "kind": "binary", "seconds": 298.7}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 38, "kind": "binary", "seconds": 298.76}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 36, "kind": "binary", "seconds": 298.82}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 39, "kind": "binary", "seconds": 298.87}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 40, "kind": "binary", "seconds": 298.93}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 41, "kind": "binary", "seconds": 299.05}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 42, "kind": "binary", "seconds": 299.12}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 43, "kind": "binary", "seconds": 299.18}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:p", "a": 44, "kind": "binary", "seconds": 299.23}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 37, "kind": "binary", "seconds": 299.39}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 38, "kind": "binary", "seconds": 299.45}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 36, "kind": "binary", "seconds": 299.53}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 39, "kind": "binary", "seconds": 299.58}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 35, "kind": "binary", "seconds": 299.68}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 34, "kind": "binary", "seconds": 299.79}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 33, "kind": "binary", "seconds": 299.87}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 32, "kind": "binary", "seconds": 299.96}
+{"tree_closed": "Z3:A:pair1,p5,q5:-:q", "a": 31, "kind": "binary", "seconds": 300.02}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 35, "kind": "binary", "seconds": 300.21}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 34, "kind": "binary", "seconds": 300.26}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 33, "kind": "binary", "seconds": 300.32}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 32, "kind": "binary", "seconds": 300.38}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 31, "kind": "binary", "seconds": 300.42}
+{"tree_closed": "Z3:A:pair1,p5,q6:-:q", "a": 30, "kind": "binary", "seconds": 300.46}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 35, "kind": "binary", "seconds": 300.59}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 34, "kind": "binary", "seconds": 300.63}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 33, "kind": "binary", "seconds": 300.67}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 32, "kind": "binary", "seconds": 300.73}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 31, "kind": "binary", "seconds": 300.79}
+{"tree_closed": "Z3:A:pair1,p5,q7:-:q", "a": 30, "kind": "binary", "seconds": 300.86}
+{"roots": 800, "routing": {"coarse": 691, "global_nested": 109}, "certificate_searches": 3018, "unsuccessful_searches": 677, "primal_searches": 54644, "seconds": 301.01}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 40, "kind": "binary", "seconds": 301.28}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 41, "kind": "binary", "seconds": 301.33}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 42, "kind": "binary", "seconds": 301.38}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 43, "kind": "binary", "seconds": 301.43}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 44, "kind": "binary", "seconds": 301.47}
+{"tree_closed": "Z3:A:pair1,p6,q5:-:p", "a": 45, "kind": "binary", "seconds": 301.52}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 40, "kind": "binary", "seconds": 301.85}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 41, "kind": "binary", "seconds": 301.92}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 42, "kind": "binary", "seconds": 302.03}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 43, "kind": "binary", "seconds": 302.08}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 44, "kind": "binary", "seconds": 302.13}
+{"tree_closed": "Z3:A:pair1,p7,q5:-:p", "a": 45, "kind": "binary", "seconds": 302.18}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 39, "kind": "binary", "seconds": 303.96}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 40, "kind": "binary", "seconds": 304.01}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 41, "kind": "binary", "seconds": 304.06}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 42, "kind": "binary", "seconds": 304.12}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 43, "kind": "binary", "seconds": 304.18}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 44, "kind": "binary", "seconds": 304.24}
+{"tree_closed": "Z3:A:pair1,q5,q6:-:p", "a": 45, "kind": "binary", "seconds": 304.29}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 39, "kind": "binary", "seconds": 304.52}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 40, "kind": "binary", "seconds": 304.59}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 41, "kind": "binary", "seconds": 304.66}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 42, "kind": "binary", "seconds": 304.74}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 43, "kind": "binary", "seconds": 304.81}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 44, "kind": "binary", "seconds": 304.87}
+{"tree_closed": "Z3:A:pair1,q5,q7:-:p", "a": 45, "kind": "binary", "seconds": 304.91}
+{"roots": 900, "routing": {"coarse": 769, "global_nested": 131}, "certificate_searches": 3162, "unsuccessful_searches": 725, "primal_searches": 54742, "seconds": 305.02}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 37, "kind": "binary", "seconds": 306.78}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 38, "kind": "binary", "seconds": 308.41}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 36, "kind": "binary", "seconds": 309.37}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 39, "kind": "binary", "seconds": 310.27}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 35, "kind": "binary", "seconds": 310.91}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 40, "kind": "binary", "seconds": 311.31}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 34, "kind": "binary", "seconds": 311.99}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 41, "kind": "binary", "seconds": 312.39}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 33, "kind": "binary", "seconds": 312.75}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 42, "kind": "binary", "seconds": 312.83}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 32, "kind": "binary", "seconds": 312.93}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 43, "kind": "binary", "seconds": 312.99}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 31, "kind": "binary", "seconds": 313.04}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 44, "kind": "binary", "seconds": 313.09}
+{"tree_closed": "Z3:A:pair2,p0,p1:-:-", "a": 30, "kind": "binary", "seconds": 313.12}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 37, "kind": "binary", "seconds": 314.77}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 38, "kind": "binary", "seconds": 316.59}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 36, "kind": "binary", "seconds": 317.31}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 39, "kind": "binary", "seconds": 318.36}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 35, "kind": "binary", "seconds": 319.04}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 40, "kind": "binary", "seconds": 319.76}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 34, "kind": "binary", "seconds": 320.15}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 41, "kind": "binary", "seconds": 320.56}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 33, "kind": "binary", "seconds": 320.96}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 42, "kind": "binary", "seconds": 321.02}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 32, "kind": "binary", "seconds": 321.08}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 43, "kind": "binary", "seconds": 321.13}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 31, "kind": "binary", "seconds": 321.17}
+{"tree_closed": "Z3:A:pair2,p0,p2:-:-", "a": 44, "kind": "binary", "seconds": 321.21}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 37, "kind": "binary", "seconds": 322.79}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 38, "kind": "binary", "seconds": 323.76}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 36, "kind": "binary", "seconds": 324.45}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 39, "kind": "binary", "seconds": 325.45}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 35, "kind": "binary", "seconds": 326.12}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 40, "kind": "binary", "seconds": 326.72}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 34, "kind": "binary", "seconds": 327.15}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 41, "kind": "binary", "seconds": 327.6}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 33, "kind": "binary", "seconds": 327.96}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 42, "kind": "binary", "seconds": 328.01}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 32, "kind": "binary", "seconds": 328.06}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 43, "kind": "binary", "seconds": 328.11}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 31, "kind": "binary", "seconds": 328.15}
+{"tree_closed": "Z3:A:pair2,p0,p3:-:-", "a": 44, "kind": "binary", "seconds": 328.19}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 37, "kind": "binary", "seconds": 329.24}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 38, "kind": "binary", "seconds": 330.24}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 36, "kind": "binary", "seconds": 331.12}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 39, "kind": "binary", "seconds": 332.11}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 35, "kind": "binary", "seconds": 332.55}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 40, "kind": "binary", "seconds": 332.93}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 34, "kind": "binary", "seconds": 333.35}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 41, "kind": "binary", "seconds": 333.79}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 33, "kind": "binary", "seconds": 334.18}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 42, "kind": "binary", "seconds": 334.24}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 32, "kind": "binary", "seconds": 334.3}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 43, "kind": "binary", "seconds": 334.34}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 31, "kind": "binary", "seconds": 334.38}
+{"tree_closed": "Z3:A:pair2,p0,p5:-:-", "a": 44, "kind": "binary", "seconds": 334.44}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 37, "kind": "binary", "seconds": 335.55}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 38, "kind": "binary", "seconds": 336.62}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 36, "kind": "binary", "seconds": 337.75}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 39, "kind": "binary", "seconds": 338.77}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 35, "kind": "binary", "seconds": 339.26}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 40, "kind": "binary", "seconds": 339.61}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 34, "kind": "binary", "seconds": 339.99}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 41, "kind": "binary", "seconds": 340.35}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 33, "kind": "binary", "seconds": 340.7}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 42, "kind": "binary", "seconds": 340.77}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 32, "kind": "binary", "seconds": 340.86}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 43, "kind": "binary", "seconds": 340.93}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 31, "kind": "binary", "seconds": 340.99}
+{"tree_closed": "Z3:A:pair2,p0,p6:-:-", "a": 44, "kind": "binary", "seconds": 341.04}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 37, "kind": "binary", "seconds": 342.2}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 38, "kind": "binary", "seconds": 343.49}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 36, "kind": "binary", "seconds": 344.27}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 39, "kind": "binary", "seconds": 345.22}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 35, "kind": "binary", "seconds": 345.59}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 40, "kind": "binary", "seconds": 345.95}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 34, "kind": "binary", "seconds": 346.36}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 41, "kind": "binary", "seconds": 346.78}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 33, "kind": "binary", "seconds": 347.19}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 42, "kind": "binary", "seconds": 347.24}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 32, "kind": "binary", "seconds": 347.3}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 43, "kind": "binary", "seconds": 347.34}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 31, "kind": "binary", "seconds": 347.39}
+{"tree_closed": "Z3:A:pair2,p0,p7:-:-", "a": 44, "kind": "binary", "seconds": 347.42}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 37, "kind": "binary", "seconds": 348.6}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 38, "kind": "binary", "seconds": 350.03}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 36, "kind": "binary", "seconds": 351.08}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 39, "kind": "binary", "seconds": 351.64}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 35, "kind": "binary", "seconds": 352.24}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 40, "kind": "binary", "seconds": 353.12}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 34, "kind": "binary", "seconds": 353.68}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 41, "kind": "binary", "seconds": 354.07}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 33, "kind": "binary", "seconds": 354.43}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 42, "kind": "binary", "seconds": 354.49}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 32, "kind": "binary", "seconds": 354.53}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 43, "kind": "binary", "seconds": 354.58}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 31, "kind": "binary", "seconds": 354.62}
+{"tree_closed": "Z3:A:pair2,p0,p8:-:-", "a": 44, "kind": "binary", "seconds": 354.67}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 37, "kind": "binary", "seconds": 355.87}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 38, "kind": "binary", "seconds": 357.22}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 36, "kind": "binary", "seconds": 357.84}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 39, "kind": "binary", "seconds": 359.05}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 35, "kind": "binary", "seconds": 359.68}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 40, "kind": "binary", "seconds": 360.91}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 34, "kind": "binary", "seconds": 361.28}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 41, "kind": "binary", "seconds": 362.55}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 33, "kind": "binary", "seconds": 362.62}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 42, "kind": "binary", "seconds": 364.52}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 32, "kind": "binary", "seconds": 364.58}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 43, "kind": "binary", "seconds": 366.56}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 31, "kind": "binary", "seconds": 366.6}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 44, "kind": "binary", "seconds": 368.24}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 45, "kind": "binary", "seconds": 369.34}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 46, "kind": "binary", "seconds": 370.62}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 37, "kind": "binary", "seconds": 371.4}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 38, "kind": "binary", "seconds": 372.41}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 36, "kind": "binary", "seconds": 373.43}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 39, "kind": "binary", "seconds": 374.1}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 35, "kind": "binary", "seconds": 374.8}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 40, "kind": "binary", "seconds": 375.53}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 34, "kind": "binary", "seconds": 375.94}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 41, "kind": "binary", "seconds": 376.36}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 33, "kind": "binary", "seconds": 376.7}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 42, "kind": "binary", "seconds": 376.77}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 32, "kind": "binary", "seconds": 376.84}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 43, "kind": "binary", "seconds": 376.89}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 31, "kind": "binary", "seconds": 376.95}
+{"tree_closed": "Z3:A:pair2,p0,q1:-:-", "a": 44, "kind": "binary", "seconds": 377.01}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 37, "kind": "binary", "seconds": 377.85}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 38, "kind": "binary", "seconds": 379.05}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 36, "kind": "binary", "seconds": 380.07}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 39, "kind": "binary", "seconds": 381.12}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 35, "kind": "binary", "seconds": 381.82}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 40, "kind": "binary", "seconds": 382.49}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 34, "kind": "binary", "seconds": 383.14}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 41, "kind": "binary", "seconds": 383.57}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 33, "kind": "binary", "seconds": 383.95}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 42, "kind": "binary", "seconds": 384.03}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 32, "kind": "binary", "seconds": 384.09}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 43, "kind": "binary", "seconds": 384.16}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 31, "kind": "binary", "seconds": 384.21}
+{"tree_closed": "Z3:A:pair2,p0,q2:-:-", "a": 44, "kind": "binary", "seconds": 384.25}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 37, "kind": "binary", "seconds": 385.02}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 38, "kind": "binary", "seconds": 386.03}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 36, "kind": "binary", "seconds": 387.04}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 39, "kind": "binary", "seconds": 388.05}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 35, "kind": "binary", "seconds": 388.73}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 40, "kind": "binary", "seconds": 389.49}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 34, "kind": "binary", "seconds": 390.09}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 41, "kind": "binary", "seconds": 390.45}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 33, "kind": "binary", "seconds": 390.79}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 42, "kind": "binary", "seconds": 390.85}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 32, "kind": "binary", "seconds": 390.89}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 43, "kind": "binary", "seconds": 390.95}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 31, "kind": "binary", "seconds": 390.99}
+{"tree_closed": "Z3:A:pair2,p0,q3:-:-", "a": 44, "kind": "binary", "seconds": 391.03}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 37, "kind": "binary", "seconds": 393.16}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 38, "kind": "binary", "seconds": 395.62}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 36, "kind": "binary", "seconds": 396.69}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 39, "kind": "binary", "seconds": 398.65}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 35, "kind": "binary", "seconds": 399.65}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 40, "kind": "binary", "seconds": 401.39}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 34, "kind": "binary", "seconds": 402.17}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 41, "kind": "binary", "seconds": 403.14}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 33, "kind": "binary", "seconds": 403.53}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 42, "kind": "binary", "seconds": 404.22}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 32, "kind": "binary", "seconds": 404.31}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 43, "kind": "binary", "seconds": 404.72}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 31, "kind": "binary", "seconds": 404.77}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 44, "kind": "binary", "seconds": 404.82}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 30, "kind": "binary", "seconds": 404.87}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 45, "kind": "binary", "seconds": 404.91}
+{"tree_closed": "Z3:A:pair2,p0,q5:-:-", "a": 46, "kind": "binary", "seconds": 404.98}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 37, "kind": "binary", "seconds": 406.15}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 38, "kind": "binary", "seconds": 407.11}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 36, "kind": "binary", "seconds": 407.82}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 39, "kind": "binary", "seconds": 408.48}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 35, "kind": "binary", "seconds": 408.88}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 40, "kind": "binary", "seconds": 409.22}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 34, "kind": "binary", "seconds": 409.58}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 41, "kind": "binary", "seconds": 410.0}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 33, "kind": "binary", "seconds": 410.46}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 42, "kind": "binary", "seconds": 410.51}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 32, "kind": "binary", "seconds": 410.58}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 43, "kind": "binary", "seconds": 410.63}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 31, "kind": "binary", "seconds": 410.67}
+{"tree_closed": "Z3:A:pair2,p0,q6:-:-", "a": 44, "kind": "binary", "seconds": 410.71}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 37, "kind": "binary", "seconds": 411.51}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 38, "kind": "binary", "seconds": 412.47}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 36, "kind": "binary", "seconds": 413.11}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 39, "kind": "binary", "seconds": 413.76}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 35, "kind": "binary", "seconds": 414.43}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 40, "kind": "binary", "seconds": 415.06}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 34, "kind": "binary", "seconds": 415.44}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 41, "kind": "binary", "seconds": 415.79}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 33, "kind": "binary", "seconds": 416.13}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 42, "kind": "binary", "seconds": 416.18}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 32, "kind": "binary", "seconds": 416.25}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 43, "kind": "binary", "seconds": 416.3}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 31, "kind": "binary", "seconds": 416.34}
+{"tree_closed": "Z3:A:pair2,p0,q7:-:-", "a": 44, "kind": "binary", "seconds": 416.38}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 37, "kind": "binary", "seconds": 417.69}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 38, "kind": "binary", "seconds": 418.91}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 36, "kind": "binary", "seconds": 419.61}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 39, "kind": "binary", "seconds": 420.36}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 35, "kind": "binary", "seconds": 421.11}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 40, "kind": "binary", "seconds": 421.55}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 34, "kind": "binary", "seconds": 422.01}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 41, "kind": "binary", "seconds": 422.45}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 33, "kind": "binary", "seconds": 422.85}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 42, "kind": "binary", "seconds": 422.9}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 32, "kind": "binary", "seconds": 422.96}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 43, "kind": "binary", "seconds": 423.0}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 31, "kind": "binary", "seconds": 423.04}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 44, "kind": "binary", "seconds": 423.08}
+{"tree_closed": "Z3:A:pair2,p0,q8:-:-", "a": 45, "kind": "binary", "seconds": 423.14}
+{"roots": 1000, "routing": {"coarse": 850, "global_nested": 150}, "certificate_searches": 4227, "unsuccessful_searches": 961, "primal_searches": 76911, "seconds": 424.47}
+{"tree_closed": "Z3:A:p0,p1,q0:q:-", "a": 40, "kind": "binary", "seconds": 425.73}
+{"tree_closed": "Z3:A:p0,p1,q0:q:-", "a": 41, "kind": "binary", "seconds": 425.77}
+{"tree_closed": "Z3:A:p0,p1,q0:q:-", "a": 42, "kind": "binary", "seconds": 425.81}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 37, "kind": "binary", "seconds": 429.13}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 38, "kind": "binary", "seconds": 431.89}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 36, "kind": "binary", "seconds": 433.67}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 39, "kind": "binary", "seconds": 435.74}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 35, "kind": "binary", "seconds": 436.91}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 40, "kind": "binary", "seconds": 438.29}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 34, "kind": "binary", "seconds": 439.42}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 41, "kind": "binary", "seconds": 440.82}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 33, "kind": "binary", "seconds": 441.79}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 42, "kind": "binary", "seconds": 442.38}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 32, "kind": "binary", "seconds": 443.12}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 43, "kind": "binary", "seconds": 443.7}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 31, "kind": "binary", "seconds": 443.85}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 44, "kind": "binary", "seconds": 443.9}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 30, "kind": "binary", "seconds": 443.97}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 45, "kind": "binary", "seconds": 444.04}
+{"tree_closed": "Z3:A:p0,p1,q5:-:p", "a": 46, "kind": "binary", "seconds": 444.11}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 37, "kind": "binary", "seconds": 444.26}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 38, "kind": "binary", "seconds": 444.38}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 36, "kind": "binary", "seconds": 444.43}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 39, "kind": "binary", "seconds": 444.48}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 35, "kind": "binary", "seconds": 444.53}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 40, "kind": "binary", "seconds": 444.57}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 34, "kind": "binary", "seconds": 444.62}
+{"tree_closed": "Z3:A:p0,p1,q5:-:q", "a": 41, "kind": "binary", "seconds": 444.67}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 37, "kind": "binary", "seconds": 445.14}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 38, "kind": "binary", "seconds": 445.18}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 36, "kind": "binary", "seconds": 445.22}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 39, "kind": "binary", "seconds": 445.28}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 40, "kind": "binary", "seconds": 445.34}
+{"tree_closed": "Z3:A:p0,p2,q5:-:q", "a": 41, "kind": "binary", "seconds": 445.38}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 37, "kind": "binary", "seconds": 445.88}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 38, "kind": "binary", "seconds": 445.92}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 36, "kind": "binary", "seconds": 445.96}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 39, "kind": "binary", "seconds": 446.0}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 40, "kind": "binary", "seconds": 446.05}
+{"tree_closed": "Z3:A:p0,p3,q5:-:q", "a": 41, "kind": "binary", "seconds": 446.1}
+{"roots": 1100, "routing": {"coarse": 939, "global_nested": 161}, "certificate_searches": 4463, "unsuccessful_searches": 1012, "primal_searches": 80653, "seconds": 446.13}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 39, "kind": "binary", "seconds": 446.33}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 40, "kind": "binary", "seconds": 446.37}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 41, "kind": "binary", "seconds": 446.4}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 42, "kind": "binary", "seconds": 446.45}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 43, "kind": "binary", "seconds": 446.49}
+{"tree_closed": "Z3:A:p0,p5,q0:-:q", "a": 44, "kind": "binary", "seconds": 446.55}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 37, "kind": "binary", "seconds": 446.75}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 38, "kind": "binary", "seconds": 446.79}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 36, "kind": "binary", "seconds": 446.84}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 39, "kind": "binary", "seconds": 446.88}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 40, "kind": "binary", "seconds": 446.93}
+{"tree_closed": "Z3:A:p0,p5,q5:-:q", "a": 41, "kind": "binary", "seconds": 446.97}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 37, "kind": "binary", "seconds": 447.42}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 38, "kind": "binary", "seconds": 447.47}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 36, "kind": "binary", "seconds": 447.51}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 39, "kind": "binary", "seconds": 447.55}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 40, "kind": "binary", "seconds": 447.61}
+{"tree_closed": "Z3:A:p0,p6,q5:-:q", "a": 41, "kind": "binary", "seconds": 447.65}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 37, "kind": "binary", "seconds": 448.0}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 38, "kind": "binary", "seconds": 448.04}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 36, "kind": "binary", "seconds": 448.08}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 39, "kind": "binary", "seconds": 448.12}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 40, "kind": "binary", "seconds": 448.17}
+{"tree_closed": "Z3:A:p0,p7,q5:-:q", "a": 41, "kind": "binary", "seconds": 448.22}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 37, "kind": "binary", "seconds": 448.58}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 38, "kind": "binary", "seconds": 448.62}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 36, "kind": "binary", "seconds": 448.67}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 39, "kind": "binary", "seconds": 448.71}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 40, "kind": "binary", "seconds": 448.79}
+{"tree_closed": "Z3:A:p0,p8,q5:-:q", "a": 41, "kind": "binary", "seconds": 448.85}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 37, "kind": "binary", "seconds": 449.37}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 38, "kind": "binary", "seconds": 449.43}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 36, "kind": "binary", "seconds": 449.49}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 39, "kind": "binary", "seconds": 449.92}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 40, "kind": "binary", "seconds": 450.25}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 41, "kind": "binary", "seconds": 450.65}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 42, "kind": "binary", "seconds": 451.07}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 43, "kind": "binary", "seconds": 451.49}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 44, "kind": "binary", "seconds": 451.53}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 45, "kind": "binary", "seconds": 451.58}
+{"tree_closed": "Z3:A:p0,q0,q5:-:q", "a": 46, "kind": "binary", "seconds": 451.63}
+{"roots": 1200, "routing": {"coarse": 1018, "global_nested": 182}, "certificate_searches": 4648, "unsuccessful_searches": 1074, "primal_searches": 81116, "seconds": 451.96}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 37, "kind": "binary", "seconds": 452.09}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 38, "kind": "binary", "seconds": 452.13}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 36, "kind": "binary", "seconds": 452.2}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 39, "kind": "binary", "seconds": 452.26}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 40, "kind": "binary", "seconds": 452.32}
+{"tree_closed": "Z3:A:p0,q1,q5:-:q", "a": 41, "kind": "binary", "seconds": 452.38}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 37, "kind": "binary", "seconds": 452.61}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 38, "kind": "binary", "seconds": 452.68}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 36, "kind": "binary", "seconds": 452.73}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 39, "kind": "binary", "seconds": 452.8}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 40, "kind": "binary", "seconds": 452.86}
+{"tree_closed": "Z3:A:p0,q2,q5:-:q", "a": 41, "kind": "binary", "seconds": 452.91}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 37, "kind": "binary", "seconds": 453.13}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 38, "kind": "binary", "seconds": 453.24}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 36, "kind": "binary", "seconds": 453.3}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 39, "kind": "binary", "seconds": 453.39}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 40, "kind": "binary", "seconds": 453.48}
+{"tree_closed": "Z3:A:p0,q3,q5:-:q", "a": 41, "kind": "binary", "seconds": 453.54}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 37, "kind": "binary", "seconds": 453.86}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 38, "kind": "binary", "seconds": 453.92}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 36, "kind": "binary", "seconds": 453.96}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 39, "kind": "binary", "seconds": 454.0}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 40, "kind": "binary", "seconds": 454.06}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 41, "kind": "binary", "seconds": 454.11}
+{"tree_closed": "Z3:A:p0,q5,q6:-:q", "a": 42, "kind": "binary", "seconds": 454.18}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 37, "kind": "binary", "seconds": 454.36}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 38, "kind": "binary", "seconds": 454.42}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 36, "kind": "binary", "seconds": 454.48}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 39, "kind": "binary", "seconds": 454.58}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 40, "kind": "binary", "seconds": 454.66}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 41, "kind": "binary", "seconds": 454.71}
+{"tree_closed": "Z3:A:p0,q5,q7:-:q", "a": 42, "kind": "binary", "seconds": 454.77}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 37, "kind": "binary", "seconds": 455.0}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 38, "kind": "binary", "seconds": 455.06}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 36, "kind": "binary", "seconds": 455.11}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 39, "kind": "binary", "seconds": 455.15}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 40, "kind": "binary", "seconds": 455.2}
+{"tree_closed": "Z3:A:p0,q5,q8:-:q", "a": 41, "kind": "binary", "seconds": 455.24}
+{"roots": 1300, "routing": {"coarse": 1106, "global_nested": 194}, "certificate_searches": 4794, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 455.64}
+{"roots": 1400, "routing": {"coarse": 1206, "global_nested": 194}, "certificate_searches": 4795, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 456.07}
+{"roots": 1500, "routing": {"coarse": 1306, "global_nested": 194}, "certificate_searches": 4795, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 456.57}
+{"roots": 1600, "routing": {"coarse": 1406, "global_nested": 194}, "certificate_searches": 4797, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 457.27}
+{"roots": 1700, "routing": {"coarse": 1506, "global_nested": 194}, "certificate_searches": 4797, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 457.8}
+{"roots": 1800, "routing": {"coarse": 1606, "global_nested": 194}, "certificate_searches": 4800, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 458.59}
+{"roots": 1900, "routing": {"coarse": 1706, "global_nested": 194}, "certificate_searches": 4801, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 459.16}
+{"roots": 2000, "routing": {"coarse": 1806, "global_nested": 194}, "certificate_searches": 4801, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 459.66}
+{"roots": 2100, "routing": {"coarse": 1906, "global_nested": 194}, "certificate_searches": 4805, "unsuccessful_searches": 1124, "primal_searches": 81294, "seconds": 460.55}
+{"tree_closed": "Z3:B:pair1,pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 461.96}
+{"tree_closed": "Z3:B:pair1,pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 462.03}
+{"tree_closed": "Z3:B:pair1,pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 462.08}
+{"tree_closed": "Z3:B:pair1,pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 462.12}
+{"tree_closed": "Z3:B:pair1,pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 462.18}
+{"tree_closed": "Z3:B:pair1,pair2,q0:-:-", "a": 38, "kind": "binary", "seconds": 462.75}
+{"tree_closed": "Z3:B:pair1,pair2,q0:-:-", "a": 39, "kind": "binary", "seconds": 462.8}
+{"tree_closed": "Z3:B:pair1,pair2,q0:-:-", "a": 40, "kind": "binary", "seconds": 462.85}
+{"tree_closed": "Z3:B:pair1,pair2,q0:-:-", "a": 41, "kind": "binary", "seconds": 462.9}
+{"tree_closed": "Z3:B:pair1,pair2,q0:-:-", "a": 42, "kind": "binary", "seconds": 462.97}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 37, "kind": "binary", "seconds": 463.57}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 38, "kind": "binary", "seconds": 463.63}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 36, "kind": "binary", "seconds": 463.71}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 39, "kind": "binary", "seconds": 463.76}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 35, "kind": "binary", "seconds": 463.81}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 34, "kind": "binary", "seconds": 463.87}
+{"tree_closed": "Z3:B:pair1,p0,p1:p:-", "a": 33, "kind": "binary", "seconds": 463.91}
+{"roots": 2200, "routing": {"coarse": 1987, "global_nested": 213}, "certificate_searches": 4906, "unsuccessful_searches": 1160, "primal_searches": 81353, "seconds": 464.41}
+{"roots": 2300, "routing": {"coarse": 2087, "global_nested": 213}, "certificate_searches": 4915, "unsuccessful_searches": 1160, "primal_searches": 81353, "seconds": 465.62}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 37, "kind": "binary", "seconds": 466.14}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 38, "kind": "binary", "seconds": 466.24}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 36, "kind": "binary", "seconds": 466.3}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 39, "kind": "binary", "seconds": 466.45}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 40, "kind": "binary", "seconds": 466.58}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 41, "kind": "binary", "seconds": 466.65}
+{"tree_closed": "Z3:B:pair1,q0,q1:q:-", "a": 42, "kind": "binary", "seconds": 466.7}
+{"roots": 2400, "routing": {"coarse": 2185, "global_nested": 215}, "certificate_searches": 4947, "unsuccessful_searches": 1169, "primal_searches": 81428, "seconds": 467.41}
+{"roots": 2500, "routing": {"coarse": 2284, "global_nested": 216}, "certificate_searches": 4952, "unsuccessful_searches": 1170, "primal_searches": 81428, "seconds": 468.09}
+{"tree_closed": "Z3:B:p0,p1,q0:p:-", "a": 41, "kind": "binary", "seconds": 468.88}
+{"tree_closed": "Z3:B:p0,p1,q0:p:-", "a": 42, "kind": "binary", "seconds": 468.92}
+{"tree_closed": "Z3:B:p0,p1,q0:p:-", "a": 43, "kind": "binary", "seconds": 468.96}
+{"tree_closed": "Z3:B:p0,p1,q0:p:-", "a": 44, "kind": "binary", "seconds": 469.03}
+{"tree_closed": "Z3:B:p0,p1,q9:p:-", "a": 41, "kind": "binary", "seconds": 469.66}
+{"tree_closed": "Z3:B:p0,p1,q9:p:-", "a": 42, "kind": "binary", "seconds": 469.74}
+{"tree_closed": "Z3:B:p0,p1,q9:p:-", "a": 43, "kind": "binary", "seconds": 469.79}
+{"tree_closed": "Z3:B:p0,p1,q9:p:-", "a": 44, "kind": "binary", "seconds": 469.83}
+{"roots": 2600, "routing": {"coarse": 2370, "global_nested": 230}, "certificate_searches": 5012, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 470.2}
+{"roots": 2700, "routing": {"coarse": 2470, "global_nested": 230}, "certificate_searches": 5012, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 470.84}
+{"roots": 2800, "routing": {"coarse": 2570, "global_nested": 230}, "certificate_searches": 5022, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 471.9}
+{"roots": 2900, "routing": {"coarse": 2670, "global_nested": 230}, "certificate_searches": 5022, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 472.26}
+{"roots": 3000, "routing": {"coarse": 2770, "global_nested": 230}, "certificate_searches": 5022, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 472.67}
+{"roots": 3100, "routing": {"coarse": 2870, "global_nested": 230}, "certificate_searches": 5026, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 473.29}
+{"roots": 3200, "routing": {"coarse": 2970, "global_nested": 230}, "certificate_searches": 5029, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 473.98}
+{"roots": 3300, "routing": {"coarse": 3070, "global_nested": 230}, "certificate_searches": 5029, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 474.34}
+{"roots": 3400, "routing": {"coarse": 3170, "global_nested": 230}, "certificate_searches": 5029, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 474.73}
+{"roots": 3500, "routing": {"coarse": 3270, "global_nested": 230}, "certificate_searches": 5029, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 475.2}
+{"roots": 3600, "routing": {"coarse": 3370, "global_nested": 230}, "certificate_searches": 5029, "unsuccessful_searches": 1192, "primal_searches": 81456, "seconds": 475.64}
+{"roots": 3700, "routing": {"coarse": 3469, "global_nested": 231}, "certificate_searches": 5049, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 477.21}
+{"roots": 3800, "routing": {"coarse": 3569, "global_nested": 231}, "certificate_searches": 5059, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 478.77}
+{"roots": 3900, "routing": {"coarse": 3669, "global_nested": 231}, "certificate_searches": 5072, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 480.17}
+{"roots": 4000, "routing": {"coarse": 3769, "global_nested": 231}, "certificate_searches": 5088, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 481.53}
+{"roots": 4100, "routing": {"coarse": 3869, "global_nested": 231}, "certificate_searches": 5089, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 482.51}
+{"roots": 4200, "routing": {"coarse": 3969, "global_nested": 231}, "certificate_searches": 5092, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 483.71}
+{"roots": 4300, "routing": {"coarse": 4069, "global_nested": 231}, "certificate_searches": 5096, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 484.55}
+{"roots": 4400, "routing": {"coarse": 4169, "global_nested": 231}, "certificate_searches": 5100, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 485.56}
+{"roots": 4500, "routing": {"coarse": 4269, "global_nested": 231}, "certificate_searches": 5106, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 486.68}
+{"roots": 4600, "routing": {"coarse": 4369, "global_nested": 231}, "certificate_searches": 5106, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 487.7}
+{"roots": 4700, "routing": {"coarse": 4469, "global_nested": 231}, "certificate_searches": 5113, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 488.59}
+{"roots": 4800, "routing": {"coarse": 4569, "global_nested": 231}, "certificate_searches": 5121, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 489.8}
+{"roots": 4900, "routing": {"coarse": 4669, "global_nested": 231}, "certificate_searches": 5123, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 491.01}
+{"roots": 5000, "routing": {"coarse": 4769, "global_nested": 231}, "certificate_searches": 5143, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 492.73}
+{"roots": 5100, "routing": {"coarse": 4869, "global_nested": 231}, "certificate_searches": 5144, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 493.78}
+{"roots": 5200, "routing": {"coarse": 4969, "global_nested": 231}, "certificate_searches": 5148, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 494.87}
+{"roots": 5300, "routing": {"coarse": 5069, "global_nested": 231}, "certificate_searches": 5148, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 495.97}
+{"roots": 5400, "routing": {"coarse": 5169, "global_nested": 231}, "certificate_searches": 5157, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 497.5}
+{"roots": 5500, "routing": {"coarse": 5269, "global_nested": 231}, "certificate_searches": 5167, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 498.86}
+{"roots": 5600, "routing": {"coarse": 5369, "global_nested": 231}, "certificate_searches": 5173, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 500.02}
+{"roots": 5700, "routing": {"coarse": 5469, "global_nested": 231}, "certificate_searches": 5177, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 501.45}
+{"roots": 5800, "routing": {"coarse": 5569, "global_nested": 231}, "certificate_searches": 5179, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 502.58}
+{"roots": 5900, "routing": {"coarse": 5669, "global_nested": 231}, "certificate_searches": 5181, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 503.59}
+{"roots": 6000, "routing": {"coarse": 5769, "global_nested": 231}, "certificate_searches": 5181, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 504.71}
+{"roots": 6100, "routing": {"coarse": 5869, "global_nested": 231}, "certificate_searches": 5181, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 505.72}
+{"roots": 6200, "routing": {"coarse": 5969, "global_nested": 231}, "certificate_searches": 5183, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 506.71}
+{"roots": 6300, "routing": {"coarse": 6069, "global_nested": 231}, "certificate_searches": 5187, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 507.72}
+{"roots": 6400, "routing": {"coarse": 6169, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 508.83}
+{"roots": 6500, "routing": {"coarse": 6269, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 509.4}
+{"roots": 6600, "routing": {"coarse": 6369, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 509.92}
+{"roots": 6700, "routing": {"coarse": 6469, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 510.56}
+{"roots": 6800, "routing": {"coarse": 6569, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 511.37}
+{"roots": 6900, "routing": {"coarse": 6669, "global_nested": 231}, "certificate_searches": 5199, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 511.85}
+{"roots": 7000, "routing": {"coarse": 6769, "global_nested": 231}, "certificate_searches": 5203, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 512.47}
+{"roots": 7100, "routing": {"coarse": 6869, "global_nested": 231}, "certificate_searches": 5204, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 513.2}
+{"roots": 7200, "routing": {"coarse": 6969, "global_nested": 231}, "certificate_searches": 5204, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 513.87}
+{"roots": 7300, "routing": {"coarse": 7069, "global_nested": 231}, "certificate_searches": 5204, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 514.48}
+{"roots": 7400, "routing": {"coarse": 7169, "global_nested": 231}, "certificate_searches": 5204, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 515.09}
+{"roots": 7500, "routing": {"coarse": 7269, "global_nested": 231}, "certificate_searches": 5204, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 515.72}
+{"roots": 7600, "routing": {"coarse": 7369, "global_nested": 231}, "certificate_searches": 5208, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 516.57}
+{"roots": 7700, "routing": {"coarse": 7469, "global_nested": 231}, "certificate_searches": 5210, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 517.33}
+{"roots": 7800, "routing": {"coarse": 7569, "global_nested": 231}, "certificate_searches": 5210, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 517.95}
+{"roots": 7900, "routing": {"coarse": 7669, "global_nested": 231}, "certificate_searches": 5210, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 518.55}
+{"roots": 8000, "routing": {"coarse": 7769, "global_nested": 231}, "certificate_searches": 5214, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 519.51}
+{"roots": 8100, "routing": {"coarse": 7869, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 520.34}
+{"roots": 8200, "routing": {"coarse": 7969, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 521.01}
+{"roots": 8300, "routing": {"coarse": 8069, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 521.66}
+{"roots": 8400, "routing": {"coarse": 8169, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 522.42}
+{"roots": 8500, "routing": {"coarse": 8269, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 523.01}
+{"roots": 8600, "routing": {"coarse": 8369, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 523.49}
+{"roots": 8700, "routing": {"coarse": 8469, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 524.18}
+{"roots": 8800, "routing": {"coarse": 8569, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 524.73}
+{"roots": 8900, "routing": {"coarse": 8669, "global_nested": 231}, "certificate_searches": 5215, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 525.42}
+{"roots": 9000, "routing": {"coarse": 8769, "global_nested": 231}, "certificate_searches": 5220, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 526.35}
+{"roots": 9100, "routing": {"coarse": 8869, "global_nested": 231}, "certificate_searches": 5231, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 527.62}
+{"roots": 9200, "routing": {"coarse": 8969, "global_nested": 231}, "certificate_searches": 5244, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 529.4}
+{"roots": 9300, "routing": {"coarse": 9069, "global_nested": 231}, "certificate_searches": 5249, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 530.29}
+{"roots": 9400, "routing": {"coarse": 9169, "global_nested": 231}, "certificate_searches": 5256, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 531.33}
+{"roots": 9500, "routing": {"coarse": 9269, "global_nested": 231}, "certificate_searches": 5259, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 532.2}
+{"roots": 9600, "routing": {"coarse": 9369, "global_nested": 231}, "certificate_searches": 5259, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 532.82}
+{"roots": 9700, "routing": {"coarse": 9469, "global_nested": 231}, "certificate_searches": 5263, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 533.58}
+{"roots": 9800, "routing": {"coarse": 9569, "global_nested": 231}, "certificate_searches": 5266, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 534.45}
+{"roots": 9900, "routing": {"coarse": 9669, "global_nested": 231}, "certificate_searches": 5270, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 535.36}
+{"roots": 10000, "routing": {"coarse": 9769, "global_nested": 231}, "certificate_searches": 5272, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 536.29}
+{"roots": 10100, "routing": {"coarse": 9869, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 537.29}
+{"roots": 10200, "routing": {"coarse": 9969, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 537.96}
+{"roots": 10300, "routing": {"coarse": 10069, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 538.75}
+{"roots": 10400, "routing": {"coarse": 10169, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 539.71}
+{"roots": 10500, "routing": {"coarse": 10269, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 540.42}
+{"roots": 10600, "routing": {"coarse": 10369, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 541.11}
+{"roots": 10700, "routing": {"coarse": 10469, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 541.73}
+{"roots": 10800, "routing": {"coarse": 10569, "global_nested": 231}, "certificate_searches": 5275, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 542.19}
+{"roots": 10900, "routing": {"coarse": 10669, "global_nested": 231}, "certificate_searches": 5277, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 542.98}
+{"roots": 11000, "routing": {"coarse": 10769, "global_nested": 231}, "certificate_searches": 5281, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 544.06}
+{"roots": 11100, "routing": {"coarse": 10869, "global_nested": 231}, "certificate_searches": 5292, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 545.09}
+{"roots": 11200, "routing": {"coarse": 10969, "global_nested": 231}, "certificate_searches": 5294, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 545.96}
+{"roots": 11300, "routing": {"coarse": 11069, "global_nested": 231}, "certificate_searches": 5296, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 546.98}
+{"roots": 11400, "routing": {"coarse": 11169, "global_nested": 231}, "certificate_searches": 5297, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 547.79}
+{"roots": 11500, "routing": {"coarse": 11269, "global_nested": 231}, "certificate_searches": 5297, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 548.49}
+{"roots": 11600, "routing": {"coarse": 11369, "global_nested": 231}, "certificate_searches": 5297, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 549.08}
+{"roots": 11700, "routing": {"coarse": 11469, "global_nested": 231}, "certificate_searches": 5297, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 550.02}
+{"roots": 11800, "routing": {"coarse": 11569, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 551.1}
+{"roots": 11900, "routing": {"coarse": 11669, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 551.55}
+{"roots": 12000, "routing": {"coarse": 11769, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 552.03}
+{"roots": 12100, "routing": {"coarse": 11869, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 552.79}
+{"roots": 12200, "routing": {"coarse": 11969, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 553.15}
+{"roots": 12300, "routing": {"coarse": 12069, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 553.52}
+{"roots": 12400, "routing": {"coarse": 12169, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 553.94}
+{"roots": 12500, "routing": {"coarse": 12269, "global_nested": 231}, "certificate_searches": 5307, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 554.4}
+{"roots": 12600, "routing": {"coarse": 12369, "global_nested": 231}, "certificate_searches": 5308, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 554.89}
+{"roots": 12700, "routing": {"coarse": 12469, "global_nested": 231}, "certificate_searches": 5308, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 555.39}
+{"roots": 12800, "routing": {"coarse": 12569, "global_nested": 231}, "certificate_searches": 5308, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 555.92}
+{"roots": 12900, "routing": {"coarse": 12669, "global_nested": 231}, "certificate_searches": 5308, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 556.45}
+{"roots": 13000, "routing": {"coarse": 12769, "global_nested": 231}, "certificate_searches": 5308, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 557.08}
+{"roots": 13100, "routing": {"coarse": 12869, "global_nested": 231}, "certificate_searches": 5310, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 557.86}
+{"roots": 13200, "routing": {"coarse": 12969, "global_nested": 231}, "certificate_searches": 5310, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 558.45}
+{"roots": 13300, "routing": {"coarse": 13069, "global_nested": 231}, "certificate_searches": 5310, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 559.19}
+{"roots": 13400, "routing": {"coarse": 13169, "global_nested": 231}, "certificate_searches": 5310, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 559.84}
+{"roots": 13500, "routing": {"coarse": 13269, "global_nested": 231}, "certificate_searches": 5310, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 560.52}
+{"roots": 13600, "routing": {"coarse": 13369, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 561.28}
+{"roots": 13700, "routing": {"coarse": 13469, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 561.87}
+{"roots": 13800, "routing": {"coarse": 13569, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 562.43}
+{"roots": 13900, "routing": {"coarse": 13669, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 563.34}
+{"roots": 14000, "routing": {"coarse": 13769, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 563.94}
+{"roots": 14100, "routing": {"coarse": 13869, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 564.71}
+{"roots": 14200, "routing": {"coarse": 13969, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 565.26}
+{"roots": 14300, "routing": {"coarse": 14069, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 566.0}
+{"roots": 14400, "routing": {"coarse": 14169, "global_nested": 231}, "certificate_searches": 5311, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 566.81}
+{"roots": 14500, "routing": {"coarse": 14269, "global_nested": 231}, "certificate_searches": 5313, "unsuccessful_searches": 1193, "primal_searches": 81456, "seconds": 567.74}
+{"tree_closed": "P1:A:pair2:-:-", "a": 44, "kind": "binary", "seconds": 568.44}
+{"tree_closed": "P1:A:pair2:-:-", "a": 45, "kind": "binary", "seconds": 568.49}
+{"tree_closed": "P1:A:pair2:-:-", "a": 46, "kind": "binary", "seconds": 568.54}
+{"tree_closed": "P1:A:p0:q:-", "a": 37, "kind": "binary", "seconds": 569.37}
+{"tree_closed": "P1:A:p0:q:-", "a": 38, "kind": "binary", "seconds": 570.05}
+{"tree_closed": "P1:A:p0:q:-", "a": 36, "kind": "binary", "seconds": 570.68}
+{"tree_closed": "P1:A:p0:q:-", "a": 39, "kind": "binary", "seconds": 571.81}
+{"tree_closed": "P1:A:p0:q:-", "a": 35, "kind": "binary", "seconds": 572.14}
+{"tree_closed": "P1:A:p0:q:-", "a": 40, "kind": "binary", "seconds": 573.05}
+{"tree_closed": "P1:A:p0:q:-", "a": 34, "kind": "binary", "seconds": 573.13}
+{"tree_closed": "P1:A:p0:q:-", "a": 41, "kind": "binary", "seconds": 573.21}
+{"tree_closed": "P1:A:p0:q:-", "a": 33, "kind": "binary", "seconds": 573.28}
+{"tree_closed": "P1:A:p0:q:-", "a": 42, "kind": "binary", "seconds": 573.34}
+{"tree_closed": "P1:A:p0:q:-", "a": 43, "kind": "binary", "seconds": 573.42}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 37, "kind": "binary", "seconds": 578.34}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 38, "kind": "binary", "seconds": 582.44}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 36, "kind": "binary", "seconds": 585.25}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 39, "kind": "binary", "seconds": 588.04}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 35, "kind": "binary", "seconds": 590.47}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 40, "kind": "binary", "seconds": 592.0}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 34, "kind": "binary", "seconds": 593.48}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 41, "kind": "binary", "seconds": 595.3}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 33, "kind": "binary", "seconds": 597.0}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 42, "kind": "binary", "seconds": 597.76}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 32, "kind": "binary", "seconds": 598.91}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 43, "kind": "binary", "seconds": 599.31}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 31, "kind": "binary", "seconds": 599.76}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 44, "kind": "binary", "seconds": 600.22}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 30, "kind": "binary", "seconds": 600.26}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 45, "kind": "binary", "seconds": 600.33}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 29, "kind": "binary", "seconds": 600.38}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 46, "kind": "binary", "seconds": 600.44}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 28, "kind": "binary", "seconds": 600.5}
+{"tree_closed": "P2:A:pair1,pair2:-:-", "a": 47, "kind": "binary", "seconds": 600.57}
+{"roots": 14600, "routing": {"coarse": 14366, "global_nested": 234}, "certificate_searches": 5539, "unsuccessful_searches": 1230, "primal_searches": 87192, "seconds": 600.62}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 37, "kind": "binary", "seconds": 600.79}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 38, "kind": "binary", "seconds": 600.85}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 36, "kind": "binary", "seconds": 601.25}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 39, "kind": "binary", "seconds": 601.3}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 35, "kind": "binary", "seconds": 601.66}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 34, "kind": "binary", "seconds": 602.81}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 33, "kind": "binary", "seconds": 603.67}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 32, "kind": "binary", "seconds": 604.1}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 31, "kind": "binary", "seconds": 604.16}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 30, "kind": "binary", "seconds": 604.22}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 29, "kind": "binary", "seconds": 604.27}
+{"tree_closed": "P2:A:pair1,p0:q:-", "a": 28, "kind": "binary", "seconds": 604.31}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 37, "kind": "binary", "seconds": 605.01}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 38, "kind": "binary", "seconds": 605.08}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 36, "kind": "binary", "seconds": 605.46}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 39, "kind": "binary", "seconds": 605.51}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 35, "kind": "binary", "seconds": 606.23}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 40, "kind": "binary", "seconds": 606.27}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 34, "kind": "binary", "seconds": 607.33}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 33, "kind": "binary", "seconds": 608.07}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 32, "kind": "binary", "seconds": 608.77}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 31, "kind": "binary", "seconds": 609.52}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 30, "kind": "binary", "seconds": 609.64}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 29, "kind": "binary", "seconds": 609.71}
+{"tree_closed": "P2:A:pair1,p5:-:q", "a": 28, "kind": "binary", "seconds": 609.76}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 37, "kind": "binary", "seconds": 609.91}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 38, "kind": "binary", "seconds": 610.07}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 36, "kind": "binary", "seconds": 610.11}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 39, "kind": "binary", "seconds": 610.46}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 40, "kind": "binary", "seconds": 610.82}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 41, "kind": "binary", "seconds": 611.96}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 42, "kind": "binary", "seconds": 612.63}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 43, "kind": "binary", "seconds": 613.05}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 44, "kind": "binary", "seconds": 613.13}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 45, "kind": "binary", "seconds": 613.2}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 46, "kind": "binary", "seconds": 613.26}
+{"tree_closed": "P2:A:pair1,q0:p:-", "a": 47, "kind": "binary", "seconds": 613.31}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 37, "kind": "binary", "seconds": 613.52}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 38, "kind": "binary", "seconds": 613.87}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 36, "kind": "binary", "seconds": 613.92}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 39, "kind": "binary", "seconds": 614.3}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 35, "kind": "binary", "seconds": 614.35}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 40, "kind": "binary", "seconds": 614.98}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 41, "kind": "binary", "seconds": 615.66}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 42, "kind": "binary", "seconds": 616.44}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 43, "kind": "binary", "seconds": 617.2}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 44, "kind": "binary", "seconds": 617.95}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 45, "kind": "binary", "seconds": 618.1}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 46, "kind": "binary", "seconds": 618.18}
+{"tree_closed": "P2:A:pair1,q5:-:p", "a": 47, "kind": "binary", "seconds": 618.24}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 623.95}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 38, "kind": "binary", "seconds": 630.55}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 633.67}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 39, "kind": "binary", "seconds": 639.24}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 642.17}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 40, "kind": "binary", "seconds": 645.68}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 646.76}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 41, "kind": "binary", "seconds": 649.57}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 650.29}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 42, "kind": "binary", "seconds": 651.39}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 652.09}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 43, "kind": "binary", "seconds": 652.42}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 652.76}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 44, "kind": "binary", "seconds": 653.1}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 30, "kind": "binary", "seconds": 653.15}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 45, "kind": "binary", "seconds": 653.21}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 29, "kind": "binary", "seconds": 653.28}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 46, "kind": "binary", "seconds": 653.32}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 28, "kind": "binary", "seconds": 653.37}
+{"tree_closed": "P2:A:pair2,p0:-:-", "a": 47, "kind": "binary", "seconds": 653.41}
+{"tree_closed": "P2:A:p0,p5:-:q", "a": 37, "kind": "binary", "seconds": 654.63}
+{"tree_closed": "P2:A:p0,p5:-:q", "a": 38, "kind": "binary", "seconds": 654.67}
+{"tree_closed": "P2:A:p0,p5:-:q", "a": 36, "kind": "binary", "seconds": 654.74}
+{"tree_closed": "P2:A:p0,p5:-:q", "a": 39, "kind": "binary", "seconds": 654.81}
+{"tree_closed": "P2:A:p0,p5:-:q", "a": 40, "kind": "binary", "seconds": 654.87}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 37, "kind": "binary", "seconds": 655.22}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 38, "kind": "binary", "seconds": 655.28}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 39, "kind": "binary", "seconds": 655.36}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 40, "kind": "binary", "seconds": 655.44}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 41, "kind": "binary", "seconds": 655.83}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 42, "kind": "binary", "seconds": 656.21}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 43, "kind": "binary", "seconds": 656.57}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 44, "kind": "binary", "seconds": 656.64}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 45, "kind": "binary", "seconds": 656.69}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 46, "kind": "binary", "seconds": 656.74}
+{"tree_closed": "P2:A:p0,q0:q:-", "a": 47, "kind": "binary", "seconds": 656.78}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 37, "kind": "binary", "seconds": 657.85}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 38, "kind": "binary", "seconds": 658.72}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 36, "kind": "binary", "seconds": 659.24}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 39, "kind": "binary", "seconds": 659.98}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 35, "kind": "binary", "seconds": 660.05}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 40, "kind": "binary", "seconds": 660.4}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 34, "kind": "binary", "seconds": 660.45}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 41, "kind": "binary", "seconds": 660.85}
+{"tree_closed": "P2:A:p0,q5:-:q", "a": 42, "kind": "binary", "seconds": 660.98}
+{"roots": 14700, "routing": {"coarse": 14437, "global_nested": 263}, "certificate_searches": 6071, "unsuccessful_searches": 1354, "primal_searches": 97363, "seconds": 661.57}
+{"roots": 14800, "routing": {"coarse": 14537, "global_nested": 263}, "certificate_searches": 6071, "unsuccessful_searches": 1354, "primal_searches": 97363, "seconds": 662.07}
+{"roots": 14900, "routing": {"coarse": 14636, "global_nested": 264}, "certificate_searches": 6073, "unsuccessful_searches": 1355, "primal_searches": 97363, "seconds": 662.72}
+{"tree_closed": "P2:B:p0,p1:p:-", "a": 38, "kind": "binary", "seconds": 663.04}
+{"tree_closed": "P2:B:p0,p1:p:-", "a": 39, "kind": "binary", "seconds": 663.1}
+{"tree_closed": "P2:B:p0,p1:p:-", "a": 40, "kind": "binary", "seconds": 663.19}
+{"tree_closed": "P2:B:p0,p1:p:-", "a": 41, "kind": "binary", "seconds": 663.26}
+{"roots": 15000, "routing": {"coarse": 14735, "global_nested": 265}, "certificate_searches": 6088, "unsuccessful_searches": 1360, "primal_searches": 97375, "seconds": 663.7}
+{"roots": 15100, "routing": {"coarse": 14835, "global_nested": 265}, "certificate_searches": 6088, "unsuccessful_searches": 1360, "primal_searches": 97375, "seconds": 664.21}
+{"roots": 15200, "routing": {"coarse": 14933, "global_nested": 267}, "certificate_searches": 6106, "unsuccessful_searches": 1362, "primal_searches": 97375, "seconds": 665.57}
+{"roots": 15300, "routing": {"coarse": 15032, "global_nested": 268}, "certificate_searches": 6120, "unsuccessful_searches": 1363, "primal_searches": 97375, "seconds": 667.14}
+{"roots": 15400, "routing": {"coarse": 15131, "global_nested": 269}, "certificate_searches": 6135, "unsuccessful_searches": 1364, "primal_searches": 97375, "seconds": 669.53}
+{"roots": 15500, "routing": {"coarse": 15228, "global_nested": 272}, "certificate_searches": 6153, "unsuccessful_searches": 1367, "primal_searches": 97375, "seconds": 672.23}
+{"tree_closed": "P3:A:p0,p1,q5:-:p", "a": 37, "kind": "binary", "seconds": 674.01}
+{"tree_closed": "P3:A:p0,p1,q5:-:p", "a": 38, "kind": "binary", "seconds": 674.07}
+{"roots": 15600, "routing": {"coarse": 15327, "global_nested": 273}, "certificate_searches": 6169, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 674.52}
+{"roots": 15700, "routing": {"coarse": 15427, "global_nested": 273}, "certificate_searches": 6171, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 676.02}
+{"roots": 15800, "routing": {"coarse": 15527, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 677.13}
+{"roots": 15900, "routing": {"coarse": 15627, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 677.82}
+{"roots": 16000, "routing": {"coarse": 15727, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 678.58}
+{"roots": 16100, "routing": {"coarse": 15827, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 679.61}
+{"roots": 16200, "routing": {"coarse": 15927, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 680.52}
+{"roots": 16300, "routing": {"coarse": 16027, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 681.49}
+{"roots": 16400, "routing": {"coarse": 16127, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 682.74}
+{"roots": 16500, "routing": {"coarse": 16227, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 683.39}
+{"roots": 16600, "routing": {"coarse": 16327, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 684.02}
+{"roots": 16700, "routing": {"coarse": 16427, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 685.15}
+{"roots": 16800, "routing": {"coarse": 16527, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 686.03}
+{"roots": 16900, "routing": {"coarse": 16627, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 686.86}
+{"roots": 17000, "routing": {"coarse": 16727, "global_nested": 273}, "certificate_searches": 6173, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 687.56}
+{"roots": 17100, "routing": {"coarse": 16827, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 688.37}
+{"roots": 17200, "routing": {"coarse": 16927, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 689.25}
+{"roots": 17300, "routing": {"coarse": 17027, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 690.02}
+{"roots": 17400, "routing": {"coarse": 17127, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 690.56}
+{"roots": 17500, "routing": {"coarse": 17227, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 691.28}
+{"roots": 17600, "routing": {"coarse": 17327, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 692.38}
+{"roots": 17700, "routing": {"coarse": 17427, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 692.93}
+{"roots": 17800, "routing": {"coarse": 17527, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 693.68}
+{"roots": 17900, "routing": {"coarse": 17627, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 694.15}
+{"roots": 18000, "routing": {"coarse": 17727, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 694.64}
+{"roots": 18100, "routing": {"coarse": 17827, "global_nested": 273}, "certificate_searches": 6176, "unsuccessful_searches": 1370, "primal_searches": 97381, "seconds": 695.2}
+{"tree_closed": "Q1:A:pair2:-:-", "a": 44, "kind": "binary", "seconds": 695.97}
+{"tree_closed": "Q1:A:pair2:-:-", "a": 45, "kind": "binary", "seconds": 696.02}
+{"tree_closed": "Q1:A:pair2:-:-", "a": 46, "kind": "binary", "seconds": 696.07}
+{"tree_closed": "Q1:A:p0:q:-", "a": 37, "kind": "binary", "seconds": 696.85}
+{"tree_closed": "Q1:A:p0:q:-", "a": 38, "kind": "binary", "seconds": 698.12}
+{"tree_closed": "Q1:A:p0:q:-", "a": 36, "kind": "binary", "seconds": 698.46}
+{"tree_closed": "Q1:A:p0:q:-", "a": 39, "kind": "binary", "seconds": 699.68}
+{"tree_closed": "Q1:A:p0:q:-", "a": 35, "kind": "binary", "seconds": 700.0}
+{"tree_closed": "Q1:A:p0:q:-", "a": 40, "kind": "binary", "seconds": 701.01}
+{"tree_closed": "Q1:A:p0:q:-", "a": 34, "kind": "binary", "seconds": 701.07}
+{"tree_closed": "Q1:A:p0:q:-", "a": 41, "kind": "binary", "seconds": 701.19}
+{"tree_closed": "Q1:A:p0:q:-", "a": 33, "kind": "binary", "seconds": 701.25}
+{"tree_closed": "Q1:A:p0:q:-", "a": 42, "kind": "binary", "seconds": 701.31}
+{"roots": 18200, "routing": {"coarse": 17925, "global_nested": 275}, "certificate_searches": 6239, "unsuccessful_searches": 1385, "primal_searches": 98410, "seconds": 701.45}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 37, "kind": "binary", "seconds": 705.71}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 38, "kind": "binary", "seconds": 710.07}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 36, "kind": "binary", "seconds": 712.69}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 39, "kind": "binary", "seconds": 714.71}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 35, "kind": "binary", "seconds": 717.08}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 40, "kind": "binary", "seconds": 718.9}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 34, "kind": "binary", "seconds": 719.73}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 41, "kind": "binary", "seconds": 720.56}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 33, "kind": "binary", "seconds": 721.44}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 42, "kind": "binary", "seconds": 722.4}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 32, "kind": "binary", "seconds": 722.84}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 43, "kind": "binary", "seconds": 723.45}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 31, "kind": "binary", "seconds": 723.52}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 44, "kind": "binary", "seconds": 723.63}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 30, "kind": "binary", "seconds": 723.68}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 45, "kind": "binary", "seconds": 723.77}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 29, "kind": "binary", "seconds": 723.82}
+{"tree_closed": "Q2:A:pair1,pair2:-:-", "a": 46, "kind": "binary", "seconds": 723.87}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 37, "kind": "binary", "seconds": 724.07}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 38, "kind": "binary", "seconds": 724.16}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 36, "kind": "binary", "seconds": 724.54}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 35, "kind": "binary", "seconds": 724.94}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 34, "kind": "binary", "seconds": 725.59}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 33, "kind": "binary", "seconds": 726.23}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 32, "kind": "binary", "seconds": 726.6}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 31, "kind": "binary", "seconds": 726.66}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 30, "kind": "binary", "seconds": 726.7}
+{"tree_closed": "Q2:A:pair1,p0:q:-", "a": 29, "kind": "binary", "seconds": 726.75}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 37, "kind": "binary", "seconds": 727.43}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 38, "kind": "binary", "seconds": 727.51}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 36, "kind": "binary", "seconds": 727.9}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 39, "kind": "binary", "seconds": 727.95}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 35, "kind": "binary", "seconds": 728.62}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 40, "kind": "binary", "seconds": 728.66}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 34, "kind": "binary", "seconds": 729.01}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 33, "kind": "binary", "seconds": 729.4}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 32, "kind": "binary", "seconds": 729.83}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 31, "kind": "binary", "seconds": 730.23}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 30, "kind": "binary", "seconds": 730.34}
+{"tree_closed": "Q2:A:pair1,p5:-:q", "a": 29, "kind": "binary", "seconds": 730.4}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 37, "kind": "binary", "seconds": 730.56}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 38, "kind": "binary", "seconds": 730.66}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 39, "kind": "binary", "seconds": 731.1}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 40, "kind": "binary", "seconds": 731.5}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 41, "kind": "binary", "seconds": 731.91}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 42, "kind": "binary", "seconds": 732.39}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 43, "kind": "binary", "seconds": 732.79}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 44, "kind": "binary", "seconds": 732.9}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 45, "kind": "binary", "seconds": 732.95}
+{"tree_closed": "Q2:A:pair1,q0:p:-", "a": 46, "kind": "binary", "seconds": 732.99}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 37, "kind": "binary", "seconds": 733.2}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 38, "kind": "binary", "seconds": 733.58}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 36, "kind": "binary", "seconds": 733.63}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 39, "kind": "binary", "seconds": 733.99}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 35, "kind": "binary", "seconds": 734.03}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 40, "kind": "binary", "seconds": 734.67}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 41, "kind": "binary", "seconds": 735.01}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 42, "kind": "binary", "seconds": 735.35}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 43, "kind": "binary", "seconds": 735.7}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 44, "kind": "binary", "seconds": 736.08}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 45, "kind": "binary", "seconds": 736.21}
+{"tree_closed": "Q2:A:pair1,q5:-:p", "a": 46, "kind": "binary", "seconds": 736.27}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 741.52}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 38, "kind": "binary", "seconds": 745.8}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 748.59}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 39, "kind": "binary", "seconds": 751.65}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 753.51}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 40, "kind": "binary", "seconds": 756.46}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 757.49}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 41, "kind": "binary", "seconds": 758.75}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 759.72}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 42, "kind": "binary", "seconds": 760.36}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 760.78}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 43, "kind": "binary", "seconds": 761.17}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 761.26}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 44, "kind": "binary", "seconds": 761.32}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 30, "kind": "binary", "seconds": 761.37}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 45, "kind": "binary", "seconds": 761.43}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 29, "kind": "binary", "seconds": 761.5}
+{"tree_closed": "Q2:A:pair2,p0:-:-", "a": 46, "kind": "binary", "seconds": 761.55}
+{"tree_closed": "Q2:A:p0,p5:-:q", "a": 37, "kind": "binary", "seconds": 762.68}
+{"tree_closed": "Q2:A:p0,p5:-:q", "a": 38, "kind": "binary", "seconds": 762.72}
+{"tree_closed": "Q2:A:p0,p5:-:q", "a": 36, "kind": "binary", "seconds": 762.77}
+{"tree_closed": "Q2:A:p0,p5:-:q", "a": 39, "kind": "binary", "seconds": 762.81}
+{"tree_closed": "Q2:A:p0,p5:-:q", "a": 40, "kind": "binary", "seconds": 762.86}
+{"roots": 18300, "routing": {"coarse": 18007, "global_nested": 293}, "certificate_searches": 6732, "unsuccessful_searches": 1488, "primal_searches": 109201, "seconds": 762.91}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 37, "kind": "binary", "seconds": 763.42}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 38, "kind": "binary", "seconds": 763.47}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 39, "kind": "binary", "seconds": 763.6}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 40, "kind": "binary", "seconds": 763.73}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 41, "kind": "binary", "seconds": 764.15}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 42, "kind": "binary", "seconds": 764.51}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 43, "kind": "binary", "seconds": 765.15}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 44, "kind": "binary", "seconds": 765.21}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 45, "kind": "binary", "seconds": 765.27}
+{"tree_closed": "Q2:A:p0,q0:q:-", "a": 46, "kind": "binary", "seconds": 765.32}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 37, "kind": "binary", "seconds": 766.56}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 38, "kind": "binary", "seconds": 767.28}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 36, "kind": "binary", "seconds": 767.64}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 39, "kind": "binary", "seconds": 768.32}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 35, "kind": "binary", "seconds": 768.37}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 40, "kind": "binary", "seconds": 768.72}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 34, "kind": "binary", "seconds": 768.77}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 41, "kind": "binary", "seconds": 768.85}
+{"tree_closed": "Q2:A:p0,q5:-:q", "a": 42, "kind": "binary", "seconds": 768.92}
+{"roots": 18400, "routing": {"coarse": 18095, "global_nested": 305}, "certificate_searches": 6823, "unsuccessful_searches": 1519, "primal_searches": 110106, "seconds": 769.83}
+{"roots": 18500, "routing": {"coarse": 18195, "global_nested": 305}, "certificate_searches": 6823, "unsuccessful_searches": 1519, "primal_searches": 110106, "seconds": 770.29}
+{"tree_closed": "Q2:B:p0,p1:p:-", "a": 38, "kind": "binary", "seconds": 771.05}
+{"tree_closed": "Q2:B:p0,p1:p:-", "a": 39, "kind": "binary", "seconds": 771.12}
+{"tree_closed": "Q2:B:p0,p1:p:-", "a": 40, "kind": "binary", "seconds": 771.22}
+{"tree_closed": "Q2:B:p0,p1:p:-", "a": 41, "kind": "binary", "seconds": 771.29}
+{"roots": 18600, "routing": {"coarse": 18293, "global_nested": 307}, "certificate_searches": 6841, "unsuccessful_searches": 1525, "primal_searches": 110118, "seconds": 771.44}
+{"roots": 18700, "routing": {"coarse": 18393, "global_nested": 307}, "certificate_searches": 6841, "unsuccessful_searches": 1525, "primal_searches": 110118, "seconds": 771.96}
+{"roots": 18800, "routing": {"coarse": 18493, "global_nested": 307}, "certificate_searches": 6841, "unsuccessful_searches": 1525, "primal_searches": 110118, "seconds": 772.41}
+{"roots": 18900, "routing": {"coarse": 18590, "global_nested": 310}, "certificate_searches": 6854, "unsuccessful_searches": 1528, "primal_searches": 110118, "seconds": 774.31}
+{"roots": 19000, "routing": {"coarse": 18689, "global_nested": 311}, "certificate_searches": 6857, "unsuccessful_searches": 1529, "primal_searches": 110118, "seconds": 776.17}
+{"roots": 19100, "routing": {"coarse": 18786, "global_nested": 314}, "certificate_searches": 6864, "unsuccessful_searches": 1532, "primal_searches": 110118, "seconds": 778.13}
+{"roots": 19200, "routing": {"coarse": 18886, "global_nested": 314}, "certificate_searches": 6865, "unsuccessful_searches": 1532, "primal_searches": 110118, "seconds": 780.66}
+{"tree_closed": "Q3:A:p0,p1,q5:-:p", "a": 37, "kind": "binary", "seconds": 780.97}
+{"roots": 19300, "routing": {"coarse": 18985, "global_nested": 315}, "certificate_searches": 6871, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 782.12}
+{"roots": 19400, "routing": {"coarse": 19085, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 783.59}
+{"roots": 19500, "routing": {"coarse": 19185, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 784.18}
+{"roots": 19600, "routing": {"coarse": 19285, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 785.15}
+{"roots": 19700, "routing": {"coarse": 19385, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 785.85}
+{"roots": 19800, "routing": {"coarse": 19485, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 786.67}
+{"roots": 19900, "routing": {"coarse": 19585, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 787.48}
+{"roots": 20000, "routing": {"coarse": 19685, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 788.24}
+{"roots": 20100, "routing": {"coarse": 19785, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 788.73}
+{"roots": 20200, "routing": {"coarse": 19885, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 789.3}
+{"roots": 20300, "routing": {"coarse": 19985, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 790.14}
+{"roots": 20400, "routing": {"coarse": 20085, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 791.09}
+{"roots": 20500, "routing": {"coarse": 20185, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 791.82}
+{"roots": 20600, "routing": {"coarse": 20285, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 792.53}
+{"roots": 20700, "routing": {"coarse": 20385, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 793.38}
+{"roots": 20800, "routing": {"coarse": 20485, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 794.04}
+{"roots": 20900, "routing": {"coarse": 20585, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 794.62}
+{"roots": 21000, "routing": {"coarse": 20685, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 795.02}
+{"roots": 21100, "routing": {"coarse": 20785, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 795.47}
+{"roots": 21200, "routing": {"coarse": 20885, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 796.0}
+{"roots": 21300, "routing": {"coarse": 20985, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 796.56}
+{"roots": 21400, "routing": {"coarse": 21085, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 797.17}
+{"roots": 21500, "routing": {"coarse": 21185, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 797.62}
+{"roots": 21600, "routing": {"coarse": 21285, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 798.12}
+{"roots": 21700, "routing": {"coarse": 21385, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 798.72}
+{"roots": 21800, "routing": {"coarse": 21485, "global_nested": 315}, "certificate_searches": 6872, "unsuccessful_searches": 1534, "primal_searches": 110121, "seconds": 799.34}
+{"tree_closed": "R1:A:pair2:-:-", "a": 43, "kind": "binary", "seconds": 799.98}
+{"tree_closed": "R1:A:pair2:-:-", "a": 44, "kind": "binary", "seconds": 800.05}
+{"tree_closed": "R1:A:pair2:-:-", "a": 45, "kind": "binary", "seconds": 800.11}
+{"tree_closed": "R1:A:pair2:-:-", "a": 46, "kind": "binary", "seconds": 800.19}
+{"tree_closed": "R1:A:pair2:-:-", "a": 47, "kind": "binary", "seconds": 800.25}
+{"tree_closed": "R1:A:p0:q:-", "a": 37, "kind": "binary", "seconds": 801.73}
+{"tree_closed": "R1:A:p0:q:-", "a": 38, "kind": "binary", "seconds": 803.35}
+{"tree_closed": "R1:A:p0:q:-", "a": 36, "kind": "binary", "seconds": 804.25}
+{"tree_closed": "R1:A:p0:q:-", "a": 39, "kind": "binary", "seconds": 805.3}
+{"tree_closed": "R1:A:p0:q:-", "a": 35, "kind": "binary", "seconds": 805.94}
+{"tree_closed": "R1:A:p0:q:-", "a": 40, "kind": "binary", "seconds": 806.89}
+{"tree_closed": "R1:A:p0:q:-", "a": 34, "kind": "binary", "seconds": 806.96}
+{"tree_closed": "R1:A:p0:q:-", "a": 41, "kind": "binary", "seconds": 807.02}
+{"tree_closed": "R1:A:p0:q:-", "a": 33, "kind": "binary", "seconds": 807.06}
+{"tree_closed": "R1:A:p0:q:-", "a": 42, "kind": "binary", "seconds": 807.1}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 37, "kind": "binary", "seconds": 810.01}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 38, "kind": "binary", "seconds": 812.32}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 36, "kind": "binary", "seconds": 813.96}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 39, "kind": "binary", "seconds": 816.2}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 35, "kind": "binary", "seconds": 817.69}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 40, "kind": "binary", "seconds": 818.41}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 34, "kind": "binary", "seconds": 819.21}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 41, "kind": "binary", "seconds": 819.65}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 33, "kind": "binary", "seconds": 820.02}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 42, "kind": "binary", "seconds": 820.39}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 32, "kind": "binary", "seconds": 820.5}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 43, "kind": "binary", "seconds": 820.62}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 31, "kind": "binary", "seconds": 820.68}
+{"tree_closed": "R2:A:pair1,pair2:-:-", "a": 44, "kind": "binary", "seconds": 820.74}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 37, "kind": "binary", "seconds": 821.02}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 38, "kind": "binary", "seconds": 821.09}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 36, "kind": "binary", "seconds": 821.15}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 35, "kind": "binary", "seconds": 821.29}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 34, "kind": "binary", "seconds": 821.66}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 33, "kind": "binary", "seconds": 821.77}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 32, "kind": "binary", "seconds": 821.89}
+{"tree_closed": "R2:A:pair1,p0:q:-", "a": 31, "kind": "binary", "seconds": 821.97}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 37, "kind": "binary", "seconds": 822.41}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 38, "kind": "binary", "seconds": 822.5}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 36, "kind": "binary", "seconds": 822.9}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 39, "kind": "binary", "seconds": 822.95}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 35, "kind": "binary", "seconds": 823.37}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 40, "kind": "binary", "seconds": 823.41}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 34, "kind": "binary", "seconds": 823.86}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 33, "kind": "binary", "seconds": 824.01}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 32, "kind": "binary", "seconds": 824.15}
+{"tree_closed": "R2:A:pair1,p5:-:q", "a": 31, "kind": "binary", "seconds": 824.3}
+{"roots": 21900, "routing": {"coarse": 21579, "global_nested": 321}, "certificate_searches": 7097, "unsuccessful_searches": 1587, "primal_searches": 114164, "seconds": 824.36}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 37, "kind": "binary", "seconds": 824.51}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 38, "kind": "binary", "seconds": 824.6}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 39, "kind": "binary", "seconds": 824.73}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 40, "kind": "binary", "seconds": 824.81}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 41, "kind": "binary", "seconds": 825.19}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 42, "kind": "binary", "seconds": 825.3}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 43, "kind": "binary", "seconds": 825.43}
+{"tree_closed": "R2:A:pair1,q0:p:-", "a": 44, "kind": "binary", "seconds": 825.51}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 37, "kind": "binary", "seconds": 825.77}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 38, "kind": "binary", "seconds": 825.84}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 36, "kind": "binary", "seconds": 825.88}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 39, "kind": "binary", "seconds": 826.28}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 35, "kind": "binary", "seconds": 826.33}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 40, "kind": "binary", "seconds": 826.73}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 41, "kind": "binary", "seconds": 827.11}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 42, "kind": "binary", "seconds": 827.23}
+{"tree_closed": "R2:A:pair1,q5:-:p", "a": 43, "kind": "binary", "seconds": 827.4}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 829.87}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 38, "kind": "binary", "seconds": 831.76}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 833.24}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 39, "kind": "binary", "seconds": 834.89}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 836.47}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 40, "kind": "binary", "seconds": 837.72}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 838.69}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 41, "kind": "binary", "seconds": 839.09}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 839.59}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 42, "kind": "binary", "seconds": 840.42}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 840.52}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 43, "kind": "binary", "seconds": 840.6}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 840.69}
+{"tree_closed": "R2:A:pair2,p0:-:-", "a": 44, "kind": "binary", "seconds": 840.77}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 37, "kind": "binary", "seconds": 842.53}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 38, "kind": "binary", "seconds": 842.58}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 36, "kind": "binary", "seconds": 842.64}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 39, "kind": "binary", "seconds": 842.69}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 35, "kind": "binary", "seconds": 842.74}
+{"tree_closed": "R2:A:p0,p5:-:q", "a": 40, "kind": "binary", "seconds": 842.8}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 37, "kind": "binary", "seconds": 843.66}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 38, "kind": "binary", "seconds": 843.74}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 39, "kind": "binary", "seconds": 843.89}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 40, "kind": "binary", "seconds": 844.26}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 41, "kind": "binary", "seconds": 844.62}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 42, "kind": "binary", "seconds": 844.73}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 43, "kind": "binary", "seconds": 844.81}
+{"tree_closed": "R2:A:p0,q0:q:-", "a": 44, "kind": "binary", "seconds": 844.86}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 37, "kind": "binary", "seconds": 845.78}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 38, "kind": "binary", "seconds": 846.21}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 36, "kind": "binary", "seconds": 846.58}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 39, "kind": "binary", "seconds": 846.99}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 35, "kind": "binary", "seconds": 847.05}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 40, "kind": "binary", "seconds": 847.38}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 34, "kind": "binary", "seconds": 847.44}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 41, "kind": "binary", "seconds": 847.53}
+{"tree_closed": "R2:A:p0,q5:-:q", "a": 42, "kind": "binary", "seconds": 847.58}
+{"roots": 22000, "routing": {"coarse": 21653, "global_nested": 347}, "certificate_searches": 7368, "unsuccessful_searches": 1668, "primal_searches": 117713, "seconds": 848.18}
+{"roots": 22100, "routing": {"coarse": 21753, "global_nested": 347}, "certificate_searches": 7368, "unsuccessful_searches": 1668, "primal_searches": 117713, "seconds": 848.59}
+{"roots": 22200, "routing": {"coarse": 21852, "global_nested": 348}, "certificate_searches": 7371, "unsuccessful_searches": 1669, "primal_searches": 117713, "seconds": 849.24}
+{"tree_closed": "R2:B:p0,p1:p:-", "a": 38, "kind": "binary", "seconds": 849.46}
+{"tree_closed": "R2:B:p0,p1:p:-", "a": 39, "kind": "binary", "seconds": 849.51}
+{"tree_closed": "R2:B:p0,p1:p:-", "a": 40, "kind": "binary", "seconds": 849.55}
+{"roots": 22300, "routing": {"coarse": 21951, "global_nested": 349}, "certificate_searches": 7383, "unsuccessful_searches": 1673, "primal_searches": 117722, "seconds": 849.86}
+{"roots": 22400, "routing": {"coarse": 22051, "global_nested": 349}, "certificate_searches": 7383, "unsuccessful_searches": 1673, "primal_searches": 117722, "seconds": 850.2}
+{"roots": 22500, "routing": {"coarse": 22151, "global_nested": 349}, "certificate_searches": 7389, "unsuccessful_searches": 1673, "primal_searches": 117722, "seconds": 851.35}
+{"roots": 22600, "routing": {"coarse": 22249, "global_nested": 351}, "certificate_searches": 7393, "unsuccessful_searches": 1675, "primal_searches": 117722, "seconds": 853.53}
+{"roots": 22700, "routing": {"coarse": 22349, "global_nested": 351}, "certificate_searches": 7396, "unsuccessful_searches": 1675, "primal_searches": 117722, "seconds": 855.67}
+{"roots": 22800, "routing": {"coarse": 22447, "global_nested": 353}, "certificate_searches": 7399, "unsuccessful_searches": 1677, "primal_searches": 117722, "seconds": 857.73}
+{"roots": 22900, "routing": {"coarse": 22546, "global_nested": 354}, "certificate_searches": 7400, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 859.25}
+{"roots": 23000, "routing": {"coarse": 22646, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 860.55}
+{"roots": 23100, "routing": {"coarse": 22746, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 861.43}
+{"roots": 23200, "routing": {"coarse": 22846, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 862.31}
+{"roots": 23300, "routing": {"coarse": 22946, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 863.03}
+{"roots": 23400, "routing": {"coarse": 23046, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 863.89}
+{"roots": 23500, "routing": {"coarse": 23146, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 864.6}
+{"roots": 23600, "routing": {"coarse": 23246, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 865.38}
+{"roots": 23700, "routing": {"coarse": 23346, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 866.06}
+{"roots": 23800, "routing": {"coarse": 23446, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 866.63}
+{"roots": 23900, "routing": {"coarse": 23546, "global_nested": 354}, "certificate_searches": 7401, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 867.2}
+{"roots": 24000, "routing": {"coarse": 23646, "global_nested": 354}, "certificate_searches": 7404, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 868.26}
+{"roots": 24100, "routing": {"coarse": 23746, "global_nested": 354}, "certificate_searches": 7404, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 868.92}
+{"roots": 24200, "routing": {"coarse": 23846, "global_nested": 354}, "certificate_searches": 7404, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 869.58}
+{"roots": 24300, "routing": {"coarse": 23946, "global_nested": 354}, "certificate_searches": 7404, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 870.11}
+{"roots": 24400, "routing": {"coarse": 24046, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 871.13}
+{"roots": 24500, "routing": {"coarse": 24146, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 871.75}
+{"roots": 24600, "routing": {"coarse": 24246, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 872.29}
+{"roots": 24700, "routing": {"coarse": 24346, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 872.67}
+{"roots": 24800, "routing": {"coarse": 24446, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 873.18}
+{"roots": 24900, "routing": {"coarse": 24546, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 873.94}
+{"roots": 25000, "routing": {"coarse": 24646, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 874.51}
+{"roots": 25100, "routing": {"coarse": 24746, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 875.03}
+{"roots": 25200, "routing": {"coarse": 24846, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 875.53}
+{"roots": 25300, "routing": {"coarse": 24946, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 876.0}
+{"roots": 25400, "routing": {"coarse": 25046, "global_nested": 354}, "certificate_searches": 7405, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 876.7}
+{"roots": 25500, "routing": {"coarse": 25146, "global_nested": 354}, "certificate_searches": 7420, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 882.43}
+{"roots": 25600, "routing": {"coarse": 25246, "global_nested": 354}, "certificate_searches": 7430, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 887.64}
+{"roots": 25700, "routing": {"coarse": 25346, "global_nested": 354}, "certificate_searches": 7444, "unsuccessful_searches": 1678, "primal_searches": 117722, "seconds": 893.36}
+{"roots": 25800, "routing": {"coarse": 25445, "global_nested": 355}, "certificate_searches": 7458, "unsuccessful_searches": 1679, "primal_searches": 117722, "seconds": 898.22}
+{"roots": 25900, "routing": {"coarse": 25545, "global_nested": 355}, "certificate_searches": 7462, "unsuccessful_searches": 1679, "primal_searches": 117722, "seconds": 903.77}
+{"tree_closed": "H1:34:131:193:120:180:A:p0:q:-", "a": 34, "kind": "binary", "seconds": 906.95}
+{"roots": 26000, "routing": {"coarse": 25644, "global_nested": 356}, "certificate_searches": 7475, "unsuccessful_searches": 1681, "primal_searches": 117725, "seconds": 909.0}
+{"roots": 26100, "routing": {"coarse": 25744, "global_nested": 356}, "certificate_searches": 7480, "unsuccessful_searches": 1681, "primal_searches": 117725, "seconds": 914.32}
+{"tree_closed": "H1:35:139:184:128:171:A:p0:q:-", "a": 35, "kind": "binary", "seconds": 919.16}
+{"roots": 26200, "routing": {"coarse": 25840, "global_nested": 360}, "certificate_searches": 7499, "unsuccessful_searches": 1686, "primal_searches": 117736, "seconds": 920.65}
+{"roots": 26300, "routing": {"coarse": 25940, "global_nested": 360}, "certificate_searches": 7510, "unsuccessful_searches": 1686, "primal_searches": 117736, "seconds": 926.19}
+{"roots": 26400, "routing": {"coarse": 26040, "global_nested": 360}, "certificate_searches": 7514, "unsuccessful_searches": 1686, "primal_searches": 117736, "seconds": 931.47}
+{"tree_closed": "H1:36:148:174:136:162:A:pair1:p:-", "a": 36, "kind": "binary", "seconds": 934.57}
+{"tree_closed": "H1:36:148:174:136:162:A:p0:q:-", "a": 36, "kind": "binary", "seconds": 935.69}
+{"roots": 26500, "routing": {"coarse": 26136, "global_nested": 364}, "certificate_searches": 7551, "unsuccessful_searches": 1692, "primal_searches": 117866, "seconds": 937.99}
+{"roots": 26600, "routing": {"coarse": 26236, "global_nested": 364}, "certificate_searches": 7556, "unsuccessful_searches": 1692, "primal_searches": 117866, "seconds": 943.63}
+{"roots": 26700, "routing": {"coarse": 26336, "global_nested": 364}, "certificate_searches": 7556, "unsuccessful_searches": 1692, "primal_searches": 117866, "seconds": 949.82}
+{"tree_closed": "H1:37:156:165:144:153:A:pair1:p:-", "a": 37, "kind": "binary", "seconds": 952.01}
+{"tree_closed": "H1:37:156:165:144:153:A:pair1:q:-", "a": 37, "kind": "binary", "seconds": 952.16}
+{"tree_closed": "H1:37:156:165:144:153:A:pair2:-:-", "a": 37, "kind": "binary", "seconds": 952.36}
+{"tree_closed": "H1:37:156:165:144:153:A:p0:q:-", "a": 37, "kind": "binary", "seconds": 954.42}
+{"roots": 26800, "routing": {"coarse": 26432, "global_nested": 368}, "certificate_searches": 7590, "unsuccessful_searches": 1700, "primal_searches": 118252, "seconds": 957.92}
+{"roots": 26900, "routing": {"coarse": 26532, "global_nested": 368}, "certificate_searches": 7595, "unsuccessful_searches": 1700, "primal_searches": 118252, "seconds": 963.84}
+{"roots": 27000, "routing": {"coarse": 26632, "global_nested": 368}, "certificate_searches": 7595, "unsuccessful_searches": 1700, "primal_searches": 118252, "seconds": 968.99}
+{"tree_closed": "H1:38:165:156:153:144:A:pair1:p:-", "a": 38, "kind": "binary", "seconds": 970.15}
+{"tree_closed": "H1:38:165:156:153:144:A:pair1:q:-", "a": 38, "kind": "binary", "seconds": 970.32}
+{"tree_closed": "H1:38:165:156:153:144:A:pair2:-:-", "a": 38, "kind": "binary", "seconds": 970.53}
+{"tree_closed": "H1:38:165:156:153:144:A:p0:q:-", "a": 38, "kind": "binary", "seconds": 972.05}
+{"roots": 27100, "routing": {"coarse": 26728, "global_nested": 372}, "certificate_searches": 7630, "unsuccessful_searches": 1708, "primal_searches": 118506, "seconds": 976.25}
+{"roots": 27200, "routing": {"coarse": 26828, "global_nested": 372}, "certificate_searches": 7630, "unsuccessful_searches": 1708, "primal_searches": 118506, "seconds": 981.95}
+{"roots": 27300, "routing": {"coarse": 26928, "global_nested": 372}, "certificate_searches": 7630, "unsuccessful_searches": 1708, "primal_searches": 118506, "seconds": 987.48}
+{"tree_closed": "H1:39:174:148:162:136:A:pair1:q:-", "a": 39, "kind": "binary", "seconds": 987.97}
+{"tree_closed": "H1:39:174:148:162:136:A:pair2:-:-", "a": 39, "kind": "binary", "seconds": 988.16}
+{"tree_closed": "H1:39:174:148:162:136:A:p0:q:-", "a": 39, "kind": "binary", "seconds": 988.99}
+{"roots": 27400, "routing": {"coarse": 27024, "global_nested": 376}, "certificate_searches": 7661, "unsuccessful_searches": 1715, "primal_searches": 118645, "seconds": 994.87}
+{"roots": 27500, "routing": {"coarse": 27124, "global_nested": 376}, "certificate_searches": 7661, "unsuccessful_searches": 1715, "primal_searches": 118645, "seconds": 1000.48}
+{"tree_closed": "H1:40:184:139:171:128:A:pair2:-:-", "a": 40, "kind": "binary", "seconds": 1002.0}
+{"tree_closed": "H1:40:184:139:171:128:A:p0:q:-", "a": 40, "kind": "binary", "seconds": 1002.23}
+{"roots": 27600, "routing": {"coarse": 27219, "global_nested": 381}, "certificate_searches": 7688, "unsuccessful_searches": 1722, "primal_searches": 118653, "seconds": 1007.43}
+{"roots": 27700, "routing": {"coarse": 27319, "global_nested": 381}, "certificate_searches": 7688, "unsuccessful_searches": 1722, "primal_searches": 118653, "seconds": 1013.26}
+{"tree_closed": "H1:41:193:131:180:120:A:p0:q:-", "a": 41, "kind": "binary", "seconds": 1015.55}
+{"roots": 27800, "routing": {"coarse": 27417, "global_nested": 383}, "certificate_searches": 7703, "unsuccessful_searches": 1725, "primal_searches": 118656, "seconds": 1018.99}
+{"roots": 27900, "routing": {"coarse": 27515, "global_nested": 385}, "certificate_searches": 7710, "unsuccessful_searches": 1727, "primal_searches": 118656, "seconds": 1024.75}
+{"roots": 28000, "routing": {"coarse": 27615, "global_nested": 385}, "certificate_searches": 7717, "unsuccessful_searches": 1727, "primal_searches": 118656, "seconds": 1030.19}
+{"roots": 28100, "routing": {"coarse": 27715, "global_nested": 385}, "certificate_searches": 7717, "unsuccessful_searches": 1727, "primal_searches": 118656, "seconds": 1035.76}
+{"status": "PASS", "root_groups": 28180, "root_systems": 271156, "root_counts": {"Z0": 152, "Z1": 2240, "Z2": 15028, "Z3": 59840, "Z4": 65280, "P0": 136, "P1": 1960, "P2": 12716, "P3": 29920, "Q0": 136, "Q1": 1960, "Q2": 11560, "Q3": 29920, "R0": 128, "R1": 1960, "R2": 11560, "R3": 23936, "H1": 2660, "H0": 64}, "counts": {"route/coarse": 27795, "interval_checks": 28412, "extremum_points": 74021, "parameter_systems": 271156, "leaf_groups": 28180, "kind/coarse": 27795, "route/global_nested": 385, "kind/global_nested": 385, "tree_roots": 1342, "binary_splits": 3320, "tree_leaves": 4662}, "certified_systems": 274476, "vectors": 4130, "maximum_tree_depth": 14, "split_types": {"core": 2514, "ordinary": 428, "inner": 73, "pair": 305}, "minimum_normalized_gap": "3/2519", "discovery": {"certificate_searches": 7717, "unsuccessful_searches": 1727, "primal_searches": 118656}, "seconds": 1138.41}

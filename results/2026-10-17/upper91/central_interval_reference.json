@@ -1,0 +1,9 @@
+{
+  "author": "Vsevolod F. Lev",
+  "title": "On consecutive subset sums",
+  "publication": "Discrete Mathematics 187 (1998), 151–160",
+  "doi": "10.1016/S0012-365X(98)80006-X",
+  "author_source": "https://math.haifa.ac.il/seva/Papers/coblis.dvi",
+  "sha256": "5be8c646936f12df33c4c60c80e393b43f1e8514c22b95f6f9960b71780319ea",
+  "checked": "Theorem 1: for n positive integers at most l with 2l <= 3n-4, the subset sums contain the interval from 2l-2n+1 to total minus that value."
+}

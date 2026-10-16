@@ -1,0 +1,5 @@
+{
+  "cases": 8428,
+  "formula": "uv if p>=v or q>=u; otherwise pu+qv-pq",
+  "scope": "finite sanity check; general proof uses residue classes"
+}

@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "finished_utc": "2026-10-16T17:09:16.355278+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "discovery_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "comparisons": {
+    "standard_equals_optimized": true,
+    "exhaustive_equals_standard_except_mode": true,
+    "regenerated_certificates_byte_identical": true,
+    "baseline92_byte_identical": true
+  },
+  "runs": [
+    {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper91.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-17/upper91/result.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 129.15,
+      "stdout_sha256": "4898ddb5fe6f9defdcb0d0c3e4e7d549030ea722f9de94761d75f1dfa667333d"
+    },
+    {
+      "name": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper91.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper91/exhaustive.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 832.22,
+      "stdout_sha256": "451a4c9e6eab2ff1597ecd136690c3ae8dd0382b260ac698cb7d6ebde0062088"
+    },
+    {
+      "name": "regenerate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/generate_upper91_certificates.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper91/regenerated.json",
+        "--log",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-17/upper91/regeneration.log"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1139.972,
+      "stdout_sha256": "c68cac5cd614cbda7211bba49f0c7082fa37ef19cdf2ccb11768a68a5dd51584"
+    },
+    {
+      "name": "optimized_python",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper91.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper91/optimized.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 130.655,
+      "stdout_sha256": "4898ddb5fe6f9defdcb0d0c3e4e7d549030ea722f9de94761d75f1dfa667333d"
+    },
+    {
+      "name": "baseline_upper92",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper92.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper91/baseline92.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 125.325,
+      "stdout_sha256": "9907903b96a85841ce3a747ea44d36f24cc7d1e6e92fa620bc96c9be274062b0"
+    }
+  ],
+  "sha256": {
+    "verification/integral_centers.py": "c8f9032e81f2dc0183cebe0ce61f31f9770b095cba292fd3b7de834642050cea",
+    "verification/nonap_inverse.py": "07759d2c408ff81bb45c82e3c3aa044a53da8596a57b0512fd4b6440dcdea81b",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "verification/nonap_hole_rho.py": "d5446bf2f96c18f7ae55b7aae4d493e55443a76450d0bbf4ce0004602fc9da38",
+    "verification/nonap_hole_rho_full.py": "bd94f2b737e70d29754306dc88f5a0c04dbaef72fcad28819fe6afb28d221c1b",
+    "verification/upper91.py": "fccaf533f52becd41af3282db431ec2619cc6ac814bc02d4b3b4274795656af8",
+    "experiments/generate_upper91_certificates.py": "352d4a4eb5ceb3d476cb72036280983ba1b8e3306de516ff7207eb191a8df701",
+    "experiments/generate_upper100_certificates.py": "8cdc49256e9562a2a3eb81d6d818857b3980dec317d3097c3d3c81684cfcdbd6",
+    "data/upper91_certificates.json": "3804f7aaa5357383ffc49813237376001812e1f167bff5bc59d837e13f409008",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-17/upper91/result.json": "7bbd5f11a2133a8c0b02b3d9438cd68a5f330c8bb029478449c31bc2d74fac29",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper91/exhaustive.json": "bb7159ee17215e0304c6718c4c3f0e4f45945110f55620f5d05c6b7202f69b24",
+    "results/2026-10-16/upper92/result.json": "4930e559664bc2fa8cbfc199519bbec85d7018080cbcc4f2213d02b48c8f4df7",
+    "results/2026-10-17/upper91/result.json.gz": "01d0efde73067e22fa82b30f36f7ecd9532b7f0a987b4ff283774bbb5bd5c3b8",
+    "results/2026-10-17/upper91/result_archive.json": "ab954eb691efb646ea2d28ffad93329cf66b7482f78991fe07d1f3a77ac61ace"
+  },
+  "archived_outputs": [
+    {
+      "original_output": "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-17/upper91/result.json",
+      "codec": "gzip",
+      "stored_file": "results/2026-10-17/upper91/result.json.gz",
+      "decoded_name": "result.json",
+      "raw_bytes": 29324213,
+      "compressed_bytes": 573391,
+      "raw_sha256": "7bbd5f11a2133a8c0b02b3d9438cd68a5f330c8bb029478449c31bc2d74fac29",
+      "compressed_sha256": "01d0efde73067e22fa82b30f36f7ecd9532b7f0a987b4ff283774bbb5bd5c3b8",
+      "lossless_roundtrip": true
+    }
+  ],
+  "archive_finished_utc": "2026-10-16T17:09:49.911248+00:00"
+}
