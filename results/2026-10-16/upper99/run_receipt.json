@@ -1,0 +1,108 @@
+{
+  "recorded_at_utc": "2026-10-16T03:51:33.513687+00:00",
+  "repository_base_commit": "623cd73435a3f5de9eca820b9e1714cc872ce81e",
+  "python": "3.12.14",
+  "conclusion": "71 <= N <= 99 in the independently audited chain; archived 84 not fully recertified",
+  "commands": [
+    {
+      "command": "python -I -S -B verification/upper99.py --output results/2026-10-16/upper99/result.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B -O verification/upper99.py --output .work/upper99/optimized.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python -I -S -B verification/upper100.py --output results/2026-10-16/upper99/baseline100.json",
+      "exit_code": 0
+    },
+    {
+      "command": "python experiments/generate_upper99_certificates.py --output .work/upper99/regenerated.json",
+      "exit_code": 0
+    }
+  ],
+  "optimization_mode_byte_identical": true,
+  "regenerated_certificates_byte_identical": true,
+  "baseline100_matches_previous_result": true,
+  "summary": {
+    "status": "PASS",
+    "conclusion": "N <= 99 using the written reduction and audited N <= 100 foundation",
+    "scalar_summary": {
+      "lattice_orientations": 38,
+      "low_states": 364,
+      "high_states": 966,
+      "empty_states": 222,
+      "inverse_min": 230,
+      "inner_max": -181,
+      "outer_min": 1051,
+      "low_margin": "33",
+      "high_margin": "150",
+      "high_c_max": 64
+    },
+    "linear_summary": {
+      "groups": 5367,
+      "systems": 59206,
+      "vectors": 204,
+      "regime_counts": {
+        "Z": 1360,
+        "P": 1088,
+        "ZE": 32312,
+        "PE": 23080,
+        "ZZ": 272,
+        "EE": 1094
+      },
+      "minimum_normalized_gap": "12/83"
+    },
+    "zero_core_corroboration": {
+      "status": "PASS",
+      "scope": "r=15..30, at most two deleted positions; corroboration only",
+      "sets_checked": 4776,
+      "equality_cases": 32
+    },
+    "negative_controls": {
+      "rejected": [
+        "invalid_hole_witness",
+        "negative_weight",
+        "noncontradictory_weight",
+        "unknown_row",
+        "missing_group",
+        "missing_integer_in_interval",
+        "unproved_next_cardinality"
+      ],
+      "next_obstruction": {
+        "n": 99,
+        "a": 41,
+        "b": 41,
+        "z": 0,
+        "c_upper": 206,
+        "two_empty_cost": 182,
+        "residual": 24
+      }
+    }
+  },
+  "pdf": {
+    "engine": "pdfLaTeX",
+    "compilation_passes": 3,
+    "pages": 8,
+    "warnings_in_final_build": false,
+    "all_pages_visually_checked": true
+  },
+  "discovery": {
+    "optimizer": "SciPy 1.17.0 / HiGHS",
+    "exact_validation_before_saving": true,
+    "required_for_verification": false
+  },
+  "sha256": {
+    "verification/upper99.py": "1f814cc616ad4c6e9bf6362056ee474d2fcf17e45c018a9f9c7dc4ef84348fbf",
+    "verification/upper100.py": "0f9ba1ba81c0785e16dcd9a1ea5a46168077eea7711b73755baf43ab813bb100",
+    "data/upper99_certificates.json": "10a2da7da13e1ba79f7b7885141b1cbdcb38b43a7528441763623bcdc6fa1e7d",
+    "data/upper100_certificates.json": "fcb59f5269a9a115aec68fdb5adbe8adfe7651b21269b7307fc2672672716a78",
+    "experiments/generate_upper99_certificates.py": "855737a5c555d849742a2c83086f0ecb9fc31e79f684d6f429fe443166d399ec",
+    "experiments/generate_upper100_certificates.py": "8cdc49256e9562a2a3eb81d6d818857b3980dec317d3097c3d3c81684cfcdbd6",
+    "reports/upper99_from100_20261016.tex": "d54a4e84c5ba4d50f30e5369cd76b43161e95899e07e6df2f58f3b6cc30b5cb2",
+    "reports/upper99_from100_20261016.pdf": "60f9964e1f2f4e88870fc3c5aec0b5ba42ae819c2be432c5c6a7f389687bf2db",
+    "results/2026-10-16/upper99/result.json": "e3e659203989addab87befe505a71b367d4f2abf66fc83590d820264c0b74641",
+    "results/2026-10-16/upper99/baseline100.json": "b2a0647e90c69f37f5210268b8e6efcb603cae99cf20c2936dcfac6029d93c34",
+    "results/2026-10-16/upper99/generation.log": "0bfd5c001df872edeeb93a0c0dcab1656eb92c51b3211520f0b1f00ed4712c35"
+  }
+}
