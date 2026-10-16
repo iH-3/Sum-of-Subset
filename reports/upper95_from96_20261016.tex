@@ -1,0 +1,595 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,needspace}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Subset sums: joint covering losses and the audited bound 95},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Z}{\mathbb Z}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\title{Subset Sums in a Fourfold Sumset\\\large Joint covering losses and the audited bound $N\le95$}
+\author{Sum-of-Subset research project}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We exclude cardinality 96 and extend the independently audited chain to
+$71\le N\le95$. A sharp four-extreme estimate reduces two coupled
+budgets by two. The covering is then organized by actual union deficits:
+leading twofold translates and retained onefold translates share one
+loss budget. This handles three empty units and multiple large-loss
+centers without a global ``at most one large loss'' assumption.
+Positive low holes are transported to 14; 1,241 retained oriented
+high-hole states are compressed into 26 endpoint groups.
+All endpoint certificates are newly generated and checked by exact
+integer arithmetic. The stronger archived bound 84 is preserved, but
+its entire proof chain has not been independently replayed; this result
+advances the audited chain and does not surpass 84.
+\end{abstract}
+
+\section{Statement and inherited foundation}
+For finite $A\subset\mathbb R$, write
+$\FS(A)=\{\sum_{x\in X}x:X\subseteq A\}$, including the empty sum,
+and $4A=A+A+A+A$, allowing repeated summands. Let $N$ be the maximum
+cardinality under $\FS(A)\subseteq4A$.
+\begin{theorem}
+Every feasible set has at most 95 elements. Hence $71\le N\le95$.
+\end{theorem}
+The lower bound is the unchanged construction
+$[-31,31]\cap\Z\cup\{\pm93,\pm155,\pm217,\pm713\}$.
+The upper-bound foundation is the independently audited chain
+$115\to103\to100\to99\to98\to97\to96$; see \cite{previous,method} and
+their dependencies. We reuse its integralization, fixed covering,
+peeling, inverse, effective-hole, span, mass, and pairing lemmas.
+We reprove here the additional geometric inequalities drawn from the
+archived research report \cite{archive}, and generate fresh certificates.
+No archived endpoint certificate is read.
+
+A size-96 counterexample contains zero: otherwise adjoining zero gives
+a forbidden size-97 example. This uses the preceding global bound;
+feasibility is not assumed hereditary under arbitrary deletion.
+Integralize, remove four outer elements on each side to obtain $D$,
+and peel two largest and two smallest elements twice, obtaining
+$D\supset D_1\supset E=P\cup\{0\}\cup(-Q)$. Put
+\begin{gather*}
+ d=88,\quad e=80,\quad m=a+b=79,\quad a=|P|,\quad b=|Q|,\\
+ I=(a-39)(a-40),\quad T_r=r(r+1)/2,\\
+ \Lambda=1+T_a+T_b=1601+I,\qquad \Omega=22d+97-\Lambda=432-I.
+\end{gather*}
+
+\section{A complete lattice gate at cardinality 96}
+For a positive $r$-element set $X$, define
+$\mu(X)=|\FS(X)|-1-T_r$ and
+$\rho(X)=\mu(X)+2-2\delta_0(X)$, where $\delta_0(X)$ counts the $x$
+whose double is absent from the distinct-element two-sum set of
+$X\cup\{0\}$. Write $\mu=\mu(P)+\mu(Q)$ and
+$\rho=\rho(P)+\rho(Q)$. With the inherited nonnegative quantities,
+\begin{equation}\label{budget}
+ \rho+2\vartheta+c+\T=\Omega,\quad
+ c=2|2D|+18d+85-|\FS(D)|,\quad
+ \T=\kappa+\ell_1+\ell_2+g.
+\end{equation}
+Here $\kappa=|\FS(E)|-\Lambda-\mu$; the $\ell_i$ are peeling slacks and
+$g=4d-10-(|R(D)|-|R(D_1)|)$.
+The deficient-sign case is impossible since
+$1+T_{80}>24\cdot96+77$. The paired bootstrap gives $q^2\le2353$,
+$q$ odd, hence $q\le47$ and $a,b\ge16$. Nonnegative $\Omega$ leaves
+exactly $a=19,\ldots,60$. For these 42 oriented pairs,
+\[
+ T_{\min(a,b)}-2-\Omega\ge99>0.
+\]
+The simultaneous inverse theorem therefore gives a common core lattice,
+with side-support holes satisfying
+\[
+ h_P,h_Q\le\kappa,\quad z=h_P+h_Q-\kappa,\quad
+ 0\le z\le\min(h_P,h_Q)\le\kappa,\quad h_X<|\FS(X)|-1.
+\]
+It remains to put the peeled elements on this lattice. The universal
+span bound $\max X\le r+\rho(X)+h_X+2$, used before asserting lattice
+membership of the peeled layers, gives, for $s=|\FS(E)|$ and
+$C=2m+4e+14-\Lambda=-1109-I$,
+\begin{align*}
+ |\FS(D_1)|-2s&\le C+\Omega+\rho-\mu+2z,\\
+ |\FS(D_1)|-2s&\le C+3\Omega-\rho-\mu.
+\end{align*}
+The maximum is always defective, so $\rho\le\mu$. For $z\le14$ the
+first bound is at most $-649-2I<0$. For $z\ge15$ both supports are
+non-progressions, so $\rho+\mu\ge(79-28)+(79-6)=124$.
+The second bound is then $63-4I$. Any remaining pair has
+$I=k(k+1)$ with $k\le3$, hence $a,b\ge36$.
+The effective-hole row $(r,C_0,\beta)=(36,109,7)$ gives
+$\mu(P)\ge a+110$, $\mu(Q)\ge b+110$; its strict tests are checked
+exactly and remain valid for larger $r$. Thus $\rho+\mu\ge350$,
+whereas $C+3\Omega=187-4I$. Across all pairs the resulting high-hole
+comparison is at most $-17$.
+Finally
+$\Lambda-(4d-10+\Omega)=827+2I>0$.
+The inherited overlap argument puts $D$ on the core lattice and
+propagates its support holes. Only now do we use integer interval counts.
+
+\section{A sharp four-extreme defect inequality}\label{sharp}
+\begin{theorem}\label{sharp:thm:sharp}
+Let $F=\{x_1<\cdots<x_m\}\subset\Z$, $m\ge7$, and let
+\[
+ a_1<a_2<x_1<\cdots<x_m<b_2<b_1,\qquad
+ D=F\cup\{a_1,a_2,b_2,b_1\}.
+\]
+Let $\eta_F,\eta_D$ count the holes in the endpoint hulls of $R(F),R(D)$,
+and put $g_H=4m+6-(|R(D)|-|R(F)|)$. Then
+\begin{equation}\label{sharp:eq:sharp}
+ \boxed{\eta_D+\eta_F+g_H\ge2m-2.}
+\end{equation}
+The constant is sharp for every $m\ge7$.
+\end{theorem}
+\begin{proof}
+Write $L=x_1+x_2$ and $U=x_{m-1}+x_m$. Let $W_+$ be
+$((b_1+F)\cup(b_2+F))\cap(U,\infty)$, and let $W_-$ be the corresponding
+union of the two lower translates below $L$. Put
+\[
+ I_+=(U,b_1+x_m]\cap\Z,\quad I_-=[a_1+x_1,L)\cap\Z,
+ \quad H_\pm=|I_\pm|-|W_\pm|.
+\]
+Let $q$ count the distinct mixed sums $a_i+b_j$ that lie outside $[L,U]$
+and are not already in $W_-\cup W_+$. These sums lie in $I_-\cup I_+$,
+so $0\le q\le4$ and $q\le H_-+H_+$.
+
+Translate $x_1$ to zero and write
+\[
+\begin{gathered}
+ x_m=M,\quad x_2=s_0,\quad x_{m-1}=M-t_0,\\
+ a_2=-w_0,\quad a_1=-w_0-v_-,\quad
+ b_2=M+u,\quad b_1=M+u+v_+.
+\end{gathered}
+\]
+All six gap parameters are positive integers. At most $u+1$ members of
+$b_2+F$ lie above $U$: at most $u$ eligible points are at or below
+$x_{m-1}$, followed by $x_m$. Thus the integers
+\[
+ S_+=u+1+m-|W_+|,\qquad S_-=w_0+1+m-|W_-|
+\]
+are nonnegative. Set $H=H_++H_-$ and $S=S_++S_-$. We claim
+\begin{equation}\label{sharp:eq:HS}
+ H+S\ge2q-2.
+\end{equation}
+For $q\le2$ this follows from $H\ge q$. The same bound proves the case
+$q=3,S\ge1$ and the case $q=4,S\ge2$.
+
+Suppose first that $S=0$. Since $|W_\pm|\le2m$, we have
+$u,w_0\le m-1$. The mixed value $B_0=a_2+b_2=M+u-w_0$ satisfies
+\[
+ M-m+2\le B_0\le M+m-2.
+\]
+Now $s_0\le M-m+2$ and $x_{m-1}\ge m-2$, so
+$B_0\in[s_0,2M-t_0]=[L,U]$. In particular $q=4,S=0$ is impossible.
+
+If $q=3,S=0$, the other mixed values
+\[
+ A_0=B_0-v_-,\qquad C_0=B_0+v_+-v_-,\qquad D_0=B_0+v_+
+\]
+are all outside $[L,U]$. Thus $A_0<L$ and $D_0>U$. Reflection allows us to
+assume $C_0<L$. The definitions give
+\[
+ H_+=v_++t_0-m-1,\qquad H_-=v_-+s_0-m-1.
+\]
+Using integrality in $D_0>U$ and $C_0<L$ yields, respectively,
+\[
+ u-w_0\ge M-H_+-m,\qquad
+ u-w_0\le t_0-M+H_--H_+-1.
+\]
+Consequently
+\[
+ H_-\ge2M-m-t_0+1=M+x_{m-1}-m+1\ge M-1\ge m-2\ge5.
+\]
+This proves \eqref{sharp:eq:HS} in that case.
+
+Finally, suppose $q=4,S=1$. Reflect if necessary so that
+$S_+=1,S_-=0$. The cardinality bounds now give $u\le m$ and
+$w_0\le m-1$, so $B_0\ge M-m+2\ge s_0$. Since $B_0$ lies outside the
+old hull, $B_0>U$, whence
+\[
+ u-w_0>x_{m-1}\ge m-2,\qquad u-w_0\le m-1.
+\]
+Equality forces $u=m$, $w_0=1$, and $x_{m-1}=m-2$. The first $m-1$
+members of $F$ are therefore $0,1,\ldots,m-2$, so $s_0=1$, and
+$B_0=M+m-1=U+1$. Because $v_-\ge1$, the value $A_0=B_0-v_-$ is at most
+$U$; it must consequently be less than 1. Thus $v_-\ge M+m-1$ and
+\[
+ H_-=v_-+s_0-m-1=v_--m\ge M-1\ge m-2\ge5.
+\]
+Together with $S=1$, this proves \eqref{sharp:eq:HS} in the final case.
+
+Put $h_-=L-(a_1+a_2)$, $h_+=(b_1+b_2)-U$, and $h=h_-+h_+$.
+The definitions give the exact identity
+\[
+ 2(|W_-|+|W_+|)=h+2m+2-H-S.
+\]
+Every new restricted sum outside $[L,U]$ lies in $W_-\cup W_+$, is one
+of the $q$ new mixed values, or is one of $a_1+a_2,b_1+b_2$. The latter
+values are distinct and outside $I_-\cup I_+$. Hence the number $N_{\rm out}$
+of these sums satisfies
+\[
+ 2N_{\rm out}=h+2m+6-H-S+2q\le h+2m+8.
+\]
+Write $N_0=|R(D)|-|R(F)|$. At most $\eta_F$ new sums are inside the old
+hull, so $N_0\le N_{\rm out}+\eta_F$. Also
+$\eta_D=h+\eta_F-N_0$. Therefore
+\begin{align*}
+ \eta_D+\eta_F+g_H
+ &=h+2\eta_F+4m+6-2N_0\\
+ &\ge h+4m+6-2N_{\rm out}\ge2m-2.
+\end{align*}
+For sharpness, take $F=[0,m-1]_{\Z}$ and
+$\{a_1,a_2,b_2,b_1\}=\{-m-2,-1,m,2m+1\}$.
+Here $R(F)=[1,2m-3]_{\Z}$ and $R(D)=[-m-3,3m+1]_{\Z}$.
+For the latter assertion the four translates of $F$ fill the ranges
+$[-m-2,-3]$, $[-1,m-2]$, $[m,2m-1]$, $[2m+1,3m]$;
+$R(F)$ fills the central gap, and the sums of outer elements supply
+$-m-3,-2,2m,3m+1$. Thus both hole counts vanish and $g_H=2m-2$.
+\end{proof}
+
+\section{Coupled budgets and endpoint transport}
+Apply the sharp theorem to $F=D_1$, so
+$G=2(d-4)-2=166$. The inherited hole propagation
+$w\le4z$ yields
+\begin{equation}\label{coupled}
+ \T\ge\kappa+G-3z,\qquad
+ \T\ge\max(56,z,166-2z).
+\end{equation}
+If $j$ of the eighteen covering units are empty, put $\delta=c-88j$.
+Combining the span lemma with \eqref{budget}--\eqref{coupled} gives
+\begin{equation}\label{span}
+ R_p+R_q+\delta\le349-I-88j+4z,
+ \qquad R_p=\max P,\quad R_q=\max Q.
+\end{equation}
+For $z=0$, $c\le266-I$; for $1\le z\le14$, both supports are
+non-progressions and $\rho\ge51$, so $c\le215-I+2z\le243-I$.
+Consequently the complete low-hole root ranges are
+\begin{center}
+\begin{tabular}{lrrrrrrr}\toprule
+Regime&$Z_0$&$Z_1$&$Z_2$&$Z_3$&$P_0$&$P_1$&$P_2$\\\midrule
+$a$&24--55&27--52&30--49&38--41&24--55&28--51&32--47\\
+Integer roots&128&1820&11560&11968&128&1680&9248\\\bottomrule
+\end{tabular}
+\end{center}
+These ranges deliberately retain every parameter allowed by the scalar
+cap. In particular, $Z_1$ allows $\delta\le178\ge2\cdot84$ and $Z_2$
+allows $\delta\le90\ge84$. Neither ``one large loss'' nor universal
+$Z_2$ core quantiles may be assumed. In $Z_3$, $\delta\le2$, so ordinary
+quantiles are valid. In $P_2$, $\delta\le67$, so core quantiles are valid.
+
+For $z\ge15$, the checker reconstructs the inherited effective-hole
+catalogue. For each side it chooses the strongest available certified
+$u=r+C_0+1$ with $2\beta<z$, and checks the strict effective-hole tests,
+including the endpoint bridge. The flexible inverse gives
+\[
+ \rho_*(r,u)=\max\{r-14,u+2-2r,L_2(r,u),\ldots,L_{10}(r,u)\},
+\]
+where, with $v=\max(0,u-4\beta+2)=(\beta+1)q+s$,
+\[
+ L_\beta(r,u)=\min\{(\beta-1)(r-14),(\beta-1)q+\min(s,\beta-1)\}.
+\]
+Thus $c\le\Omega-\rho_*(a,u_p)-\rho_*(b,u_q)-\max(56,z,166-2z)$.
+There are 2,840 surviving oriented scalar states and $c\le144<176$,
+so $j\le1$. For $j=0$, first orient the actual first-pair contributor
+positively. In that fixed orientation the active bound is one of
+\begin{align*}
+ F&\ge\tfrac12T_a+T_b+6a+8b+85+\tfrac12(u_p+z)+u_q+z,\\
+ F&\ge\tfrac23T_a+T_b+6a+(22b+236)/3+\tfrac23(u_p+z)+u_q+z,
+\end{align*}
+while $F\le1710+4z$. A positive minimum excludes that oriented state;
+choosing the stronger reflected orientation is invalid.
+This leaves 477 states for $j=0$ and 764 for $j=1$.
+For $H_1$, $\delta\le56<84$ permits core quantiles.
+
+\begin{lemma}[Mass transport]
+For fixed side sizes and common lower bounds $u_p,u_q$, let $Z$ be the
+largest hole count in a group and $C_*$ the largest covering cap.
+Replace $S_p,S_q$ by $S_p+Z-z,S_q+Z-z$, leave all other coordinates
+unchanged, and replace $z$ by $Z$. Every necessary row used below
+continues to hold with cap $C_*$.
+\end{lemma}
+\begin{proof}
+Writing $t=Z-z\ge0$, the doubled mass row has change
+$-2t+2t=0$, the exposed mass row has change $-t+t=0$, the
+cardinality row has change $2t-4t=-2t$, and the span row has change
+$-4t$. Upper quantiles and leading-slot upper rows only weaken.
+All overlap rows are unchanged. The low cap $\delta-2z$ decreases
+by $2t$; the high cap is replaced by its maximum. Nonnegativity is
+preserved. The shifted masses are auxiliary coordinates, not a claim
+about a new actual set. All shifts are integral.
+\end{proof}
+For low positive holes take $Z=14$. For high holes group by
+$(a,j,u_p,u_q)$, regardless of which affine part of the scalar cap is
+active. This yields 12 $H_0$ and 14 $H_1$ groups, hence
+$12\cdot4+14\cdot70=1028$ integer models instead of
+$477\cdot4+764\cdot70=55388$.
+The checker compares every source row with its transported row on all
+1,241 retained states. This is in addition to the general coefficient
+argument above.
+
+\section{One loss budget for overlapping covering slots}
+Let $S_p=\sum(D\cap\mathbb R_{>0})$ and
+$S_q=-\sum(D\cap\mathbb R_{<0})$, initially before transport.
+Write the original outer magnitudes as
+$p_1>p_2>p_3>p_4>M_p$ and their negative-side analogues $q_i$.
+Put $c_p=p_1-p_2-p_3-p_4$, $\alpha_p=p_2-p_3-p_4$,
+$\beta_p=-p_1+2p_2-p_3-p_4$, and reflect for $q$.
+The twenty center labels are
+\[
+ v_{p,i}=c_p+p_{i+1}\ (0\le i\le3),\quad
+ v_{p,i+4}=c_p-q_{i+1}\ (0\le i\le3),\quad
+ v_{p,8}=\alpha_p,\quad v_{p,9}=\beta_p,
+\]
+and their reflected counterparts. Pair 1 is $p4,q4$. In branch A,
+$\beta_p+\beta_q\le0$, pair 2 is $p9,q9$; in branch B it is $p5,q5$.
+There are sixteen singleton units and two paired units, each of capacity
+$d$. Enumerate every $j$-subset of missing units. If pair 1 is present,
+orient its actual contributor positively. If pair 2 is present and
+not potentially split, select either actual contributor. In branch A
+with $p5$ or $q5$ missing, pair 2 can split: do not count an individual
+loss for it, but select an actual member and retain
+$\beta_s+M_s\ge1$. The numbers of modes for $j=0,1,2,3$ are
+$4,70,578,2992$; both member choices are retained.
+
+For each retained individual center let $l_v,u_v$ be its point counts
+below and above the target integer hull, and $\lambda_v=l_v+u_v$.
+Let $K=|2D|$ and let $L_p,L_q$ be the losses of the leading slots
+$c_p+2D,c_q+2D$ from their actual positive or reflected targets.
+The fixed covering gives
+\begin{equation}\label{loss}
+ L_p+L_q+\sum_v\lambda_v\le\delta.
+\end{equation}
+We strengthen this by replacing groups of slots by their actual union
+deficits. This construction is valid even when a leading slot is empty.
+
+\begin{proposition}[Ordinary and leading groups]
+For $k$ retained same-sign individual slots with extreme centers
+$v_{\min},v_{\max}$, their union deficit is at least
+\[
+ H_G+\max_v\lambda_v,\qquad
+ H_G=ke-(R_p+R_q+v_{\max}-v_{\min}+1),
+\]
+and at least $\sum_v\lambda_v$.
+For a leading slot and $k$ retained own-center slots $c_p+p_i+D$,
+the union deficit is at least
+\[
+ H_*+\max(L_p,\lambda_1,\ldots,\lambda_k),\qquad
+ H_*=(k+2)e-2-p_{\max}-R_p-2R_q,
+\]
+and at least $L_p+\sum\lambda_i$. Reflect on the other side.
+\end{proposition}
+\begin{proof}
+The core pieces of the first group lie in an integer interval of length
+$R_p+R_q+v_{\max}-v_{\min}+1$; the other points number at most
+$k(d-e)$. Subtract this raw union bound from $kd$. Points outside the
+target include each member's loss set, adding at least its largest
+loss. The sum bound follows by bounding the union by the sum of the
+individual target contributions.
+For the second group, $c_p+2E$ and the $c_p+p_i+E$ lie in
+$[c_p-2R_q,c_p+p_{\max}+R_p]_{\Z}$. Since $|2E|\ge2e-1$, the other
+points number at most $K-(2e-1)+k(d-e)$. Subtraction from $K+kd$
+gives $H_*$. The same outside-target and sum arguments finish the proof.
+\end{proof}
+The leading centers are integral with at most one empty unit by the
+inherited contributor argument. With two or three empty units,
+$\delta\le90<175\le K$, so both leading slots contribute and their
+centers are integral. Thus the integer hull count in this proposition
+is justified in every regime.
+
+The model partitions the retained centers, on each side, into own labels
+$0,1,2,3$, cross labels $4,5,6,7$, and ungrouped labels $8,9$.
+Each own block also includes its leading slot; at most three missing
+units ensure that at least one own label remains. Introduce one
+nonnegative variable $O$ for each own block and for each cross block of
+size at least two. Choose $O$ to be that block's actual union deficit.
+Impose its sum-of-losses bound and its ordinary hull bound for each
+member. For every nonempty subset of an own block impose the leading
+bound for that subset, plus the losses of the unselected members.
+All these rows are valid: a union deficit for disjoint groups of slot
+labels is at least the sum of their separate deficits. Finally,
+\[
+ \sum_{\text{blocks}}O+\sum_{\text{ungrouped }v}\lambda_v\le\delta.
+\]
+No overlap gain is counted twice. The variables $O$ represent actual
+whole-block deficits; alternative subset bounds are inequalities for
+the same variable, not separate credits added to the budget.
+
+\section{Remaining necessary rows and finite disjunctions}
+Write $x_0=R_p<x_1<x_2<x_3<x_4=M_p$ and similarly $y_i$.
+All coordinates and losses are nonnegative. Besides the cap and span
+rows, the model contains the inherited mass rows, on each side:
+\begin{align*}
+ 2M_p+6R_p-2S_p+2z&\le-2T_a-12-2u_p,\\
+ M_p+4R_p-S_p&\le-T_{a-1}-6,\\
+ x_1+x_2+x_3+M_p-S_p+z&\le-T_a-u_p,\\
+ R_p+x_1+x_2+x_3+M_p-S_p&\le-T_{a-1}.
+\end{align*}
+Here $u_p=0$ for $Z$, $a-3$ for $P$, and the certified effective-hole
+bound for $H$; transport changes $z$ to its endpoint and the mass
+constants accordingly. Also $R_p\ge a$, $M_p\ge R_p+4$, all inner gaps
+are at least one, and
+\[
+ S_p+S_q+\delta-2K-4z\le1668-88j.
+\]
+Global positive-center quantiles are
+$v+l_v+M_p\ge88$ and $v-u_v-M_q\le S_p-87$.
+Core quantiles replace $M_p,M_q$ by $R_p,R_q$ and 88,87 by 84,83.
+Ordinary quantiles are $v+l_v\ge b+5$, $v-u_v\le S_p-a-4$.
+Use global quantiles generally, core quantiles for $P_2,H_1$, and
+ordinary quantiles for $Z_3$. Individual loss caps are 87 globally and
+83 in core models. Reflection supplies the other side.
+
+If $j\ge2$, or the regime is $P_1$ or $H$, then $\delta<167$.
+Counting the leading-slot contributors yields
+\begin{align*}
+ c_p+2M_p+L_p&\ge K,&S_p+2M_q-c_p+L_p&\ge K-1,&S_p+L_p&\ge K,\\
+ c_p+2x_i+L_p&\ge167+2i,&S_p+2y_i-c_p+L_p&\ge166+2i.
+\end{align*}
+Indeed, a set consisting of $E$, four negative outliers and $i$ positive
+outliers has at least $2(e+4+i)-1=167+2i$ twofold sums; at most $L_p$
+fail to contribute. The bound $L_p\le\delta<167$ ensures a nonempty
+counted interval. The three $K$ rows follow by counting all $K-L_p$
+contributors. The coarse model replaces $K$ here by its lower bound 175.
+
+With two empty units the leading centers are integral. If an original
+outer element were nonintegral, its own unpaired slot would be empty.
+There cannot be exactly one such element on a side, since $c_p$ or
+$c_q$ is integral. Exactly two would exhaust the missing units; the
+unpaired cross labels force outer elements 3 and 4 integral, and in
+branch A the remaining cross label forces element 2 integral, while in
+branch B the unpaired $\alpha$ does so. The leading-center identity then
+forces element 1 integral, a contradiction. Thus strict outer gaps and
+$\beta_p+\beta_q\ge1$ in branch B are valid for $j\le2$. For $j=3$
+only weak outer gaps and a weak branch-B inequality are used.
+
+The coarse envelope is $K\le M_p+M_q+R_p+R_q+21$; substitute it into
+the cardinality row to eliminate $K$. Only the remaining difficult
+groups retain inner coordinates and the five nested envelopes
+\[
+ K\le2(x_t+y_t)+1+T_{2(4-t)}+\sum_{s\in\{p,q\}}\sum_{i=t+1}^4g_{s,t,i},
+\]
+where $0\le g_{p,t,i}\le x_i-x_{i-1}$ and
+$g_{p,t,i}\le x_t+y_t+1$, and similarly for $q$.
+These are the inherited interval-union envelope rows. We also impose
+\[
+ K\le M_p+M_q+x_i+y_h+1+T_{4-i}+T_{4-h}\quad(0\le i,h\le4).
+\]
+Every mixed-sign sum and every same-sign sum with a summand below its
+cutoff lies in $[-M_q-y_h,M_p+x_i]$. The only exceptions are pairs
+among the remaining outliers, at most the displayed triangular counts.
+This proves all 25 additional envelopes.
+
+The finite trees use only the following exhaustive alternatives. All
+statements apply equally after mass transport, with the enlarged upper
+endpoint used to select an upper-endpoint alternative.
+\begin{enumerate}
+\item \emph{Core or large loss:} either $l_v+u_v\ge84$, or
+$l_v+u_v\le83$ and both core quantiles hold. Actual losses are integers;
+in the second case more than four points contribute, giving the core
+counting inequalities. No bound on the number of large centers is needed.
+\item \emph{Ordinary or outside:} either $v+l_v\ge b+5$, or
+$l_v\ge b+5$ and $v\le-1$. At the upper end either
+$v-u_v\le S_p-a-4$, or $u_v\ge a+5$ and $v\ge S_p+1$.
+For nonnegative $v$, count the $b+5$ nonpositive members; for negative
+$v$ all are lost. At the upper endpoint use the $a+4$ positive members
+and, outside the hull, zero. Integral centers justify the unit gaps.
+Enlarging the endpoint decreases the actual upper loss, so the original
+loss variables still dominate the necessary counts.
+\item \emph{Inner endpoint:} for $1\le i\le4$, either $l_v\ge i$ or
+$v\ge y_{5-i}+1$; either $u_v\ge i$ or $v\le S_p-x_{5-i}$.
+Otherwise all of the corresponding $i$ extreme points are lost.
+\item \emph{Both or sole pair contributor:} in a split pair with selected
+actual member $s$, either the other member satisfies the necessary
+condition $\beta_t+M_t\ge1$, or $s$ is the sole contributor. In the
+latter case introduce its two hull losses $l_*,u_*$, impose their global
+quantiles, and add them to the sum-of-individual-losses budget.
+Only necessity is used in the first branch; positivity alone is never
+asserted sufficient for contribution.
+\end{enumerate}
+All alternatives keep both children. Since transformed masses, centers
+and actual losses are integral, the displayed integer gaps remain valid.
+Tree variables themselves may be relaxed to real nonnegative values.
+\section{Exact certificate coverage and reproducibility}
+The verifier reconstructs the complete root set from the scalar gates
+and mode grammar. A root uses either the coarse model or the full
+nested model. It does not enumerate designated large-loss positions:
+where necessary, the proved core-or-large binary split supplies that
+information locally. In the final certificate bundle:
+\begin{center}
+\begin{tabular}{lr}\toprule
+Quantity&Count\\\midrule
+Structural root groups&5,324\\
+Integer root systems&37,560\\
+Groups using the coarse model&5,301\\
+Groups using the nested model&23\\
+Direct symbolic interval checks&5,350\\
+Integer roots requiring a tree&141\\
+Binary internal nodes / tree leaves&275 / 416\\
+Maximum tree depth&5\\
+Final integer leaf systems&37,835\\
+Distinct integer certificate vectors&651\\\bottomrule
+\end{tabular}
+\end{center}
+The 275 splits consist of 207 core-or-large, 43 ordinary-or-outside,
+24 both-or-sole pair, and one inner-endpoint split. The count identity
+$416=141+275$ is verified. The minimum normalized strict certificate
+gap is $1/73$.
+
+For each system $Ax\le b$, $x\ge0$, a certificate is an integer row
+weight vector $w\ge0$ with $w^TA\ge0$ coefficientwise and $w^Tb<0$.
+Then $0\le w^TAx\le w^Tb<0$, a contradiction. The normalized gap is
+$-w^Tb/\sum w_i$. In a parameter interval the matrix is fixed and
+the right-hand sides are directly constructed as quadratic polynomials
+in the integer side size $a$. Their weighted maximum is checked at
+both endpoints and the relevant integers around the vertex, using
+exact rational arithmetic. No polynomial is inferred from sampling.
+There are 13,020 such extremum-point checks.
+
+Every integer parameter is covered exactly once by a direct interval
+or a complete two-child tree. Unknown rows, nonpositive contradictions,
+negative weights, missing parameters, missing roots, unknown splits,
+repeated splits on a path, and missing children are rejected. The
+15 negative controls also reject omission of a three-empty mode,
+omission of a split pair's actual contributor, the invalid universal
+$Z_2$ core shortcut, the invalid one-large-loss shortcut, arbitrary
+reflection in the active estimate, and an unsupported claim about
+cardinality 95. In particular, this program certifies $N\le95$, not
+$N\le94$.
+
+\paragraph{Files and commands.}
+The verifier is \path{verification/upper95.py}.\par
+Its certificate data are \path{data/upper95_certificates.json}.\par
+Verification needs Python 3.10 or later and only its standard library:
+\begin{verbatim}
+python -I -S -B verification/upper95.py --output .work/upper95.json
+python -I -S -B verification/upper95.py --exhaustive
+\end{verbatim}
+The exhaustive mode regenerates every numerical integer model, compares
+every row with the symbolic formula, and checks every assigned
+certificate independently of interval compression. All tree leaves are
+always checked at their actual integer parameter. The optional generator
+\path{experiments/generate_upper95_certificates.py} uses SciPy to search
+for multipliers and useful disjunctions; floating-point solver status
+is not accepted as proof. Every saved multiplier is rechecked exactly.
+
+The actual verification runs and hashes are stored under
+\path{results/2026-10-16/upper95/}. Standard and optimized Python
+outputs agree byte for byte; exhaustive and interval results agree
+apart from the mode label; regenerated certificates agree byte for
+byte; the preceding upper-96 result is unchanged. The Windows entry
+\path{verify_upper95_windows.bat} runs the seven finite continuations
+from 115 down to 95. Program success validates the finite certificates;
+the infinite mathematical reductions are supplied by the report and
+its cited foundation, rather than by a proof assistant.
+
+\paragraph{What the method improves.}
+Three-empty modes are handled explicitly with their tiny residual
+budget. All other modes use a common loss geometry, so increasing the
+allowed number of large-loss centers does not require a new global
+case grammar. Only 23 of the 5,324 structural groups need nested geometry; every other
+group closes with the coarse model. The high-hole transport independently
+removes about 98.1\% of the unmerged high-hole model instances.
+
+At the next cardinality 95, the balanced coarse parameters would be
+$d=87$, $e=79$, $\Omega=450$, $G=164$. The low positive-hole cap can
+reach $450-50-164+28=264\ge3\cdot87$, so positive three-empty modes
+must be addressed as well. No exclusion of that endpoint is claimed.
+
+\begin{thebibliography}{9}
+\bibitem{previous} Sum-of-Subset research project,
+\emph{Transported hole bounds and a proof of $N\le96$},
+\path{reports/upper96_from97_20261016.tex}, 16 October 2026.
+\bibitem{method} Sum-of-Subset research project,
+\emph{Proof-method optimization},
+\path{reports/proof_method_20261016.tex}, 16 October 2026.
+\bibitem{archive} Sum-of-Subset research project,
+\emph{Complete upper-86 research report},
+\path{reports/upper86_complete_20261005.tex}, 5 October 2026.
+The sharp four-extreme, grouped-overlap, leading-slot and outer-integrality
+arguments are reconstructed here; its endpoint certificates are not used.
+\end{thebibliography}
+\end{document}

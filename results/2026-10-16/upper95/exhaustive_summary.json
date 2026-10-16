@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "conclusion": "N <= 95, continuing the audited N <= 96 foundation",
+  "verification_mode": "interval-plus-exhaustive",
+  "scalar": {
+    "lattice_orientations": 42,
+    "inverse_min": 99,
+    "inner_low_max": -649,
+    "inner_high_max": -17,
+    "outer_min": 827,
+    "low_states": 456,
+    "high_states": 2840,
+    "high_c_max": 144,
+    "high_active_remaining": 477,
+    "high_empty_states": 764,
+    "high_merged_groups": 26
+  },
+  "high_transport": {
+    "groups": 26,
+    "states": 1241,
+    "row_checks": 369244
+  },
+  "linear": {
+    "root_groups": 5324,
+    "root_systems": 37560,
+    "root_counts": {
+      "Z0": 128,
+      "Z1": 1820,
+      "Z2": 11560,
+      "Z3": 11968,
+      "P0": 128,
+      "P1": 1680,
+      "P2": 9248,
+      "H1": 980,
+      "H0": 48
+    },
+    "counts": {
+      "route/coarse": 5301,
+      "interval_checks": 5350,
+      "extremum_points": 13020,
+      "parameter_systems": 37560,
+      "leaf_groups": 5324,
+      "kind/coarse": 5301,
+      "route/global_nested": 23,
+      "tree_roots": 141,
+      "binary_splits": 275,
+      "tree_leaves": 416,
+      "kind/global_nested": 23
+    },
+    "certified_systems": 37835,
+    "vectors": 651,
+    "maximum_tree_depth": 5,
+    "split_types": {
+      "core": 207,
+      "ordinary": 43,
+      "pair": 24,
+      "inner": 1
+    },
+    "minimum_normalized_gap": "1/73"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "missing_third_empty_unit",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_two_empty_core_shortcut",
+      "invalid_one_large_shortcut",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 40,
+      "z": 154,
+      "valid_margin": "-2",
+      "invalid_best_margin": "25"
+    }
+  }
+}

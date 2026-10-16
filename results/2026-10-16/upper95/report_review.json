@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "pages": 8,
+  "compiled_with": "pdfLaTeX",
+  "latex_warnings": false,
+  "overfull_or_underfull_boxes": false,
+  "visual_review": "All pages reviewed; references fit on final page; no clipping or overlap.",
+  "sha256": {
+    "reports/upper95_from96_20261016.tex": "003750bd30bd1513fcce9ece4b898fb213b75fd2cc075d5e760f1b73422ae8bc",
+    "reports/upper95_from96_20261016.pdf": "a275d6eec962d5699c30b4e73b818279790190a8f921c7a3113b1d0d6bf06089"
+  }
+}
