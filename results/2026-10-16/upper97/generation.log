@@ -1,0 +1,9 @@
+{"completed_regime": "Z0", "groups": 4, "optimizer_calls": 3, "vectors": 3, "elapsed_seconds": 0.12}
+{"completed_regime": "P0", "groups": 8, "optimizer_calls": 6, "vectors": 6, "elapsed_seconds": 0.23}
+{"completed_regime": "Z1", "groups": 78, "optimizer_calls": 19, "vectors": 19, "elapsed_seconds": 0.7}
+{"completed_regime": "P1", "groups": 148, "optimizer_calls": 33, "vectors": 33, "elapsed_seconds": 1.24}
+{"completed_regime": "ZL", "groups": 1334, "optimizer_calls": 92, "vectors": 92, "elapsed_seconds": 4.07}
+{"completed_regime": "PL", "groups": 2520, "optimizer_calls": 153, "vectors": 153, "elapsed_seconds": 8.33}
+{"completed_regime": "Z2", "groups": 3098, "optimizer_calls": 182, "vectors": 182, "elapsed_seconds": 9.67}
+{"completed_regime": "P2", "groups": 3676, "optimizer_calls": 209, "vectors": 209, "elapsed_seconds": 11.14}
+{"status": "PASS", "groups": 3746, "optimizer_calls": 209, "vectors": 209, "interval_checks": 3750, "systems": 45928, "elapsed_seconds": 16.8}

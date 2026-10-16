@@ -1,0 +1,299 @@
+{
+  "status": "PASS",
+  "python": "3.12.14",
+  "normal_optimized_byte_identical": true,
+  "interval_exhaustive_identical_except_mode": true,
+  "baseline98_matches_previous_result": true,
+  "runs": [
+    {
+      "label": "interval",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper97/result.json"
+      ],
+      "elapsed_seconds": 6.461,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 97 using the written reduction and audited N <= 98 foundation",
+        "verification_mode": "symbolic-interval",
+        "scalar_summary": {
+          "lattice_orientations": 40,
+          "inverse_min": 163,
+          "inner_zero_max": -388,
+          "inner_positive_max": -121,
+          "old_inner_max": 7,
+          "outer_min": 937,
+          "low_states": 416,
+          "high_states": 1574,
+          "high_empty_states": 4,
+          "high_margin": "35",
+          "high_c_max": 91
+        },
+        "linear_summary": {
+          "groups": 3746,
+          "systems": 45928,
+          "vectors": 209,
+          "regime_counts": {
+            "Z0": 120,
+            "P0": 112,
+            "Z1": 1680,
+            "P1": 1540,
+            "ZL": 16604,
+            "PL": 11860,
+            "Z2": 8092,
+            "P2": 5780,
+            "H1": 140
+          },
+          "interval_checks": 3750,
+          "extremum_points": 10711,
+          "minimum_normalized_gap": "12/349"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "missing_group",
+            "missing_integer",
+            "missing_actual_contributor_choice",
+            "invalid_flexible_threshold",
+            "unrefined_lattice_gate",
+            "unproved_next_cardinality"
+          ],
+          "integer_inverse_boundary_checks": 5409
+        }
+      }
+    },
+    {
+      "label": "optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-O",
+        "verification/upper97.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper97_O.json"
+      ],
+      "elapsed_seconds": 7.761,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 97 using the written reduction and audited N <= 98 foundation",
+        "verification_mode": "symbolic-interval",
+        "scalar_summary": {
+          "lattice_orientations": 40,
+          "inverse_min": 163,
+          "inner_zero_max": -388,
+          "inner_positive_max": -121,
+          "old_inner_max": 7,
+          "outer_min": 937,
+          "low_states": 416,
+          "high_states": 1574,
+          "high_empty_states": 4,
+          "high_margin": "35",
+          "high_c_max": 91
+        },
+        "linear_summary": {
+          "groups": 3746,
+          "systems": 45928,
+          "vectors": 209,
+          "regime_counts": {
+            "Z0": 120,
+            "P0": 112,
+            "Z1": 1680,
+            "P1": 1540,
+            "ZL": 16604,
+            "PL": 11860,
+            "Z2": 8092,
+            "P2": 5780,
+            "H1": 140
+          },
+          "interval_checks": 3750,
+          "extremum_points": 10711,
+          "minimum_normalized_gap": "12/349"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "missing_group",
+            "missing_integer",
+            "missing_actual_contributor_choice",
+            "invalid_flexible_threshold",
+            "unrefined_lattice_gate",
+            "unproved_next_cardinality"
+          ],
+          "integer_inverse_boundary_checks": 5409
+        }
+      }
+    },
+    {
+      "label": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper97_exhaustive.json"
+      ],
+      "elapsed_seconds": 67.391,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 97 using the written reduction and audited N <= 98 foundation",
+        "verification_mode": "interval-plus-exhaustive",
+        "scalar_summary": {
+          "lattice_orientations": 40,
+          "inverse_min": 163,
+          "inner_zero_max": -388,
+          "inner_positive_max": -121,
+          "old_inner_max": 7,
+          "outer_min": 937,
+          "low_states": 416,
+          "high_states": 1574,
+          "high_empty_states": 4,
+          "high_margin": "35",
+          "high_c_max": 91
+        },
+        "linear_summary": {
+          "groups": 3746,
+          "systems": 45928,
+          "vectors": 209,
+          "regime_counts": {
+            "Z0": 120,
+            "P0": 112,
+            "Z1": 1680,
+            "P1": 1540,
+            "ZL": 16604,
+            "PL": 11860,
+            "Z2": 8092,
+            "P2": 5780,
+            "H1": 140
+          },
+          "interval_checks": 3750,
+          "extremum_points": 10711,
+          "minimum_normalized_gap": "12/349"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "missing_group",
+            "missing_integer",
+            "missing_actual_contributor_choice",
+            "invalid_flexible_threshold",
+            "unrefined_lattice_gate",
+            "unproved_next_cardinality"
+          ],
+          "integer_inverse_boundary_checks": 5409
+        }
+      }
+    },
+    {
+      "label": "baseline98",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper98.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper97/baseline98.json"
+      ],
+      "elapsed_seconds": 7.067,
+      "exit_code": 0,
+      "summary": {
+        "status": "PASS",
+        "conclusion": "N <= 98 using the written reduction and audited N <= 99 foundation",
+        "verification_mode": "symbolic-interval",
+        "scalar_summary": {
+          "lattice_orientations": 39,
+          "low_states": 391,
+          "high_states": 1217,
+          "empty_states": 267,
+          "inverse_min": 196,
+          "inner_max": -85,
+          "outer_min": 993,
+          "low_margin": "15",
+          "high_margin": "201/2",
+          "high_c_max": 73
+        },
+        "linear_summary": {
+          "groups": 5439,
+          "systems": 82257,
+          "vectors": 90,
+          "regime_counts": {
+            "Z": 1428,
+            "P": 1292,
+            "ZE": 39237,
+            "PE": 34620,
+            "ZZ": 748,
+            "EE": 4932
+          },
+          "interval_checks": 5443,
+          "extremum_points": 20867,
+          "minimum_normalized_gap": "12/271"
+        },
+        "negative_controls": {
+          "rejected": [
+            "negative_weight",
+            "noncontradictory_weight",
+            "unknown_row",
+            "interior_vertex_failure",
+            "degree_overflow",
+            "missing_group",
+            "missing_integer_in_interval",
+            "missing_gap_four_branch",
+            "missing_split_pair_branch",
+            "unproved_next_cardinality"
+          ]
+        }
+      }
+    }
+  ],
+  "regeneration": {
+    "byte_identical": true,
+    "sha256": "1711c878313c734dae99917a7c8af232d3678f645126ce3ab8025fda579ce97c",
+    "summary": {
+      "status": "PASS",
+      "groups": 3746,
+      "optimizer_calls": 209,
+      "vectors": 209,
+      "interval_checks": 3750,
+      "systems": 45928,
+      "elapsed_seconds": 16.8
+    }
+  },
+  "base_commit": "e05a378be55258c6f2c1767e1d4787144ae1f36e",
+  "recorded_utc": "2026-10-16T05:22:02.466443+00:00",
+  "pdf_review": {
+    "pages": 9,
+    "all_pages_rendered_and_visually_inspected": true,
+    "final_latex_warnings": 0
+  },
+  "artifact_sha256": {
+    "verification/upper97.py": "9f288073c6c64c7ffeb2ff6c07fbae946c476073ad60e6b0521551145f667085",
+    "experiments/generate_upper97_certificates.py": "784683e25a211abc37e7485d8ecdd2fe048f4c45880a0186e81b2826c07af537",
+    "data/upper97_certificates.json": "1711c878313c734dae99917a7c8af232d3678f645126ce3ab8025fda579ce97c",
+    "reports/upper97_from98_20261016.tex": "803ca0f5eedb5495f62ab632f29863c0cbcb057ff764466acdf50032af16e0ed",
+    "reports/upper97_from98_20261016.pdf": "32bee93f993bab5c3af1d61276e5946d9fd8fd414945902deb46c646caa23b23",
+    "results/2026-10-16/upper97/result.json": "8653de3959761c68eb47f19d167646363f375029a920a69866d6a402402cba82",
+    "results/2026-10-16/upper97/baseline98.json": "3a8c6fb0cef8c7bf1beecb28d0b3405bb79fb7f10c9aef4f080b834bad6cb0f9"
+  }
+}
