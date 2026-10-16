@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "finished_utc": "2026-10-16T05:38:26.619980+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "comparisons": {
+    "standard_equals_optimized": true,
+    "exhaustive_equals_standard_except_mode": true,
+    "regenerated_certificates_byte_identical": true,
+    "baseline97_byte_identical": true
+  },
+  "runs": [
+    {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97_simplified.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/proof_method/result.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.893,
+      "stdout_sha256": "5723cc90b3d8a59cc4d0e6c59cd33147cda5a4eda66c7cbe2223f0507bc45401"
+    },
+    {
+      "name": "optimized_python",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97_simplified.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/proof_method/optimized.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.965,
+      "stdout_sha256": "5723cc90b3d8a59cc4d0e6c59cd33147cda5a4eda66c7cbe2223f0507bc45401"
+    },
+    {
+      "name": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97_simplified.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/proof_method/exhaustive.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 65.323,
+      "stdout_sha256": "7f1ce77b75ce59a1ed3c73cf2d551e82680d51736000831641ed725314dca099"
+    },
+    {
+      "name": "regenerate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/generate_upper97_simplified_certificates.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/proof_method/regenerated.json",
+        "--log",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/proof_method/regeneration.log"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 16.244,
+      "stdout_sha256": "9f4c591a9404e0cf3142be77acdd6eced053f0e049628ce67be5f8f03ad2c651"
+    },
+    {
+      "name": "baseline_upper97",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper97.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/proof_method/baseline97.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.3,
+      "stdout_sha256": "7fe8298d9299e908e2471bb0a125c20fd623f290da1e5207e7d7e1d0c8d75147"
+    }
+  ],
+  "sha256": {
+    "verification/upper97_simplified.py": "3a3751682e196fc56349b050159a7f3ea8b1f5cbe682f4fe4cd595cdb53aef36",
+    "experiments/generate_upper97_simplified_certificates.py": "1a1167d991401a5dd358b7dbe0dd56bd97067c155d1da23956df6118dd1b09b2",
+    "data/upper97_simplified_certificates.json": "976c5b40c6dcb23741207d90c9a9a61fdeb127c84c2066bb5306cd86ae5a5bba",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/proof_method/result.json": "4851378122137ebec8d11ac05fdb6056f7e2cdb454a20c05361525361f7834c1",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/proof_method/exhaustive.json": "a5ee1488f7b36d44fa473342de4d4da876b1c789f30a3f6dfaeaa4dd86e76321",
+    "results/2026-10-16/upper97/result.json": "8653de3959761c68eb47f19d167646363f375029a920a69866d6a402402cba82"
+  }
+}

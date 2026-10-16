@@ -1,0 +1,421 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,needspace}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A shorter proof method for the audited upper bound 97},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\title{A Shorter Proof Method for Subset Sums\\\large Endpoint transport, a coarse proof spine, and five exceptions}
+\author{Sum-of-Subset research project}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We simplify the independently audited proof that a finite real set
+$A$ satisfying $\FS(A)\subseteq4A$ has at most 97 elements.
+A monotone change of the two mass variables replaces every positive
+low-hole parameter by the endpoint 14. A coarse sumset estimate then
+handles 1,313 of 1,374 structural roots directly. Only four roots need
+the large-loss split; after refinement, only five of the 1,442 leaves
+need nested envelopes. The finite proof shrinks from 45,928 to 18,280
+integer models, from 3,750 to 1,455 interval checks, and from 209 to 94
+integer certificates. This is a simplification of the proof of $N\le97$,
+not a new numerical upper bound. The independently closed range remains
+$71\le N\le97$; the stronger archived claim $N\le84$ still requires its
+separate complete audit.
+\end{abstract}
+
+\section{Scope and inherited structural reduction}
+For a finite real set $A$, define
+$\FS(A)=\{\sum_{x\in X}x:X\subseteq A\}$, including the empty sum.
+Repeated summands are allowed in $4A=A+A+A+A$.
+The previous report \cite{previous} excludes size 98 using the audited
+upper bound 98 and structural lemmas from the preceding chain.
+Here we retain its lattice proof, scalar hole bounds, covering units,
+and actual-set-to-model derivation, but replace the final linear proof.
+No previous endpoint certificate file is used by the new checker.
+
+For a hypothetical size-98 set, the inherited reduction gives an integral
+90-element set $D$, a core $E=P\cup\{0\}\cup(-Q)$ of size 82, and
+\[
+ a=|P|,\quad b=|Q|=81-a,\quad I=(a-40)(a-41),\quad
+ \Omega=395-I,\quad T_r=r(r+1)/2.
+\]
+Put $R_p=\max P$, $R_q=\max Q$, $M_p=\max D$, $M_q=-\min D$,
+and let $S_p,S_q$ be the positive and negative-magnitude masses of $D$.
+The support of $E$ has $z$ holes; the support of $D$ has $w\le4z$ holes.
+The covering slack is
+$c=2|2D|+18\cdot90+85-|\FS(D)|$.
+If $j$ covering units are empty, set $\delta=c-90j$.
+For a retained center $v$, let $l_v,u_v$ be its lower and upper hull
+losses and $\lambda_v=l_v+u_v$. Then
+\begin{equation}\label{eq:loss}
+ \sum_{v\text{ retained}}\lambda_v\le\delta,\qquad0\le\lambda_v\le89.
+\end{equation}
+The common-lattice proof in \cite{previous} is essential: its refined
+inner comparisons are at most $-388$ for $z=0$ and $-121$ for $z>0$,
+whereas the discarded coarse comparison can equal 7.
+We do not replace that argument by a finite solver result.
+
+At low holes, the inherited scalar bounds give
+\begin{align*}
+ z=0 &: c\le227-I,\quad \varepsilon_p,\varepsilon_q\ge0,\\
+ 1\le z\le14 &: c\le174-I+2z,\quad
+ \varepsilon_p\ge a-3+z,\quad\varepsilon_q\ge b-3+z,
+\end{align*}
+where $\varepsilon_p=\sum P-T_a$, and similarly on the negative side.
+Thus $j\le2$. For high holes the unchanged exact scalar audit excludes
+all-active states by a margin of at least 35. Only
+$(a,z)=(40,56),(40,57),(41,56),(41,57)$ allow an empty unit.
+They belong to H1, with
+\begin{equation}\label{eq:high}
+ \delta\le1,\quad \varepsilon_p\ge240+9(a-40),\quad
+ \varepsilon_q\ge249-9(a-40),\quad
+ S_p+S_q+\delta-2K\le1842,
+\end{equation}
+where $K=|2D|$. There are 40 lattice orientations, 416 surviving low-hole
+states, and 1,574 surviving high-hole states, exactly as before.
+
+\section{Eliminate the hole variable by mass transport}
+The preceding proof retained the same real variable $z$ in every
+positive low-hole row. It is possible to eliminate it without replacing
+correlated inequalities by unrelated worst-case bounds.
+
+\begin{lemma}[Monotone endpoint transport]\label{lem:transport}
+Every feasible positive low-hole model with $1\le z\le14$ maps to a
+feasible model with $z=14$ by the change
+\[
+ t=14-z,\qquad \widehat S_p=S_p+t,\quad
+ \widehat S_q=S_q+t,
+\]
+with all other coordinates unchanged. This holds for global, core,
+and ordinary quantiles, and for every allowed large-loss refinement.
+\end{lemma}
+\begin{proof}
+Here $t\ge0$, so nonnegativity is preserved. The rows involving $z$
+or a mass variable have the following changes in their left sides:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Row or expression&Change\\
+\midrule
+$\delta-2z$&$-2t$\\
+$R_p+R_q+\delta-4z$&$-4t$\\
+$2M_s+6R_s-2S_s+2z$&$0$\\
+$\sum_{i=1}^4x_i^s-S_s+z$&$0$\\
+$M_s+4R_s-S_s$, $\sum_{i=0}^4x_i^s-S_s$&$-t$\\
+Upper quantile: $v-u_v-S_s$ plus unchanged terms&$-t$\\
+$S_p+S_q+\delta-2K-4z$&$-2t$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All other rows are unchanged, except the hole bounds: the new value
+14 satisfies both. Thus no upper-bound row is violated. The argument
+is uniform in $a$, the center choices, and the loss classification.
+\end{proof}
+The transported masses are auxiliary coordinates; they need not be
+masses of another actual set. This is sufficient for a necessary linear
+relaxation. The implication is from every actual low-hole state to the
+endpoint model, not an assertion that the actual hole count equals 14.
+In the rest of this report $S_p,S_q$ denote these transported coordinates
+for positive low-hole models. Their mass bonuses are now
+\begin{equation}\label{eq:bonuses}
+ (\varepsilon_p,\varepsilon_q)\ge(a+11,b+11).
+\end{equation}
+The verifier checks the transport direction in every source row before
+eliminating $z$. This algebraic check covers all real $t\ge0$; it is not
+a sampling check at selected hole counts.
+
+\section{A coarse proof spine with no inner-point variables}
+The outer magnitudes are $p_1>p_2>p_3>p_4>M_p$ and their $q$ reflection.
+The eight outer gaps are at least one when $j\le1$; for $j=2$ only weak
+order is used. Always $M_s\ge R_s+4$ and $R_p\ge a$, $R_q\ge b$.
+Use the two mass lower bounds on each side:
+\begin{equation}\label{eq:mass}
+ S_p\ge T_a+\varepsilon_p+3R_p+6+M_p,
+ \qquad S_p\ge T_{a-1}+4R_p+6+M_p.
+\end{equation}
+Their reflections hold with $p,a$ replaced by $q,b$.
+The bonuses are zero for Z, \eqref{eq:bonuses} for P, and
+\eqref{eq:high} for H1. As in the previous verifier, the first mass row
+is multiplied by two and labelled H; the second is labelled Hhat.
+
+\Needspace{11\baselineskip}
+\begin{lemma}[Coarse double-sumset bound]\label{lem:coarse}
+For the integral set $D$,
+\[
+ K\le M_p+M_q+R_p+R_q+21.
+\]
+\end{lemma}
+\begin{proof}
+Every pair except a pair of two positive outliers or two negative
+outliers lies in $[-M_q-R_q,M_p+R_p]$. This integer interval contains
+$M_p+M_q+R_p+R_q+1$ positions. There are at most ten unordered repeated
+pairs among the four positive outliers and ten among the negative ones.
+Adding these possible exceptions proves the bound.
+\end{proof}
+The cardinality identity and $w\le4z$ give
+$S_p+S_q+\delta-2K\le1704-90j+4z$ at low holes.
+Add twice Lemma~\ref{lem:coarse} to eliminate $K$ entirely:
+\begin{equation}\label{eq:spine}
+ \boxed{S_p+S_q+\delta-2(M_p+M_q+R_p+R_q)\le B,}
+\end{equation}
+where $B=1746-90j$ for Z, $B=1802-90j$ for P, and $B=1884$ for H1.
+The code forms this row by exact addition of the two source rows.
+
+For every nonempty positive translate use the global quantiles
+\begin{equation}\label{eq:global}
+ -v-l_v-M_p\le-90,\qquad v-u_v-S_p-M_q\le-89,
+\end{equation}
+with reflected rows for negative centers. These are integer interval
+counts and require no assumption that a center lies in its target hull.
+For H1 ordinary quantiles are justified by $\delta\le1$.
+Together with \eqref{eq:loss}, \eqref{eq:mass}, orders, and the inherited
+branch/contributor rows, \eqref{eq:spine} defines the coarse model.
+It has no $K$, no hole variable, no exposed inner points, and no
+minimum-linearization variables. We also omit the separate loss cap,
+joint span, and individual slot caps from every final model. Their
+scalar consequences still justify the ranges and refinements below.
+
+\subsection{A readable integer-row contradiction}
+The certificate mechanism can be seen without an optimizer. Consider
+Z0, branch A, with pair 2's positive contributor chosen. Write D$s i$
+for the outer order row, G$s$ for $-R_s\le-r$, H$s$ for the doubled
+first row in \eqref{eq:mass}, L$v$ for a lower quantile,
+C for \eqref{eq:spine}, and L for \eqref{eq:loss}.
+Take the following nonnegative row combination:
+\begin{align*}
+ &2(\mathrm{Dp3}+\mathrm{Dq3})+6(\mathrm{Dp4}+\mathrm{Dq4})
+ +2(\mathrm{Gp}+\mathrm{Gq})+\mathrm{Hp}+\mathrm{Hq}\\
+ &\qquad+2(\mathrm{Lp4}+\mathrm{Lp9}+\mathrm{Lq5}+\mathrm{Lq8})
+ +2\mathrm C+2\mathrm L.
+\end{align*}
+Every resulting variable coefficient is nonnegative. The remaining
+outer coefficients are $2p_3+2q_3$; all other surviving terms are
+nonnegative loss coordinates. The right side is exactly
+\[
+ -2a^2+162a-4072=-792-2I<0.
+\]
+Thus this entire family is impossible. The other stored vectors are
+checked in exactly the same way, with their quadratic right sides
+maximized over their full integer parameter intervals.
+
+\section{Refine only when the coarse spine needs it}
+\subsection{Root coverage and center conventions}
+Set $\lambda_p=p_1-p_2-p_3-p_4$,
+$\alpha_p=p_2-p_3-p_4$, and $\beta_p=2p_2-p_1-p_3-p_4$.
+The positive center list is
+\[
+ v^p=(\lambda_p+p_1,\ldots,\lambda_p+p_4,
+ \lambda_p-q_1,\ldots,\lambda_p-q_4,\alpha_p,\beta_p),
+\]
+with the reflected list $v^q$. Labels \texttt{p0},\ldots,\texttt{q9}
+mean these centers, not the outer magnitude variables.
+Pair 1 is \texttt{p4,q4}. Branch A has $\beta_p+\beta_q\le0$ and
+pair 2 is \texttt{p9,q9}; branch B has $\beta_p+\beta_q>0$ and pair 2
+is \texttt{p5,q5}. The other sixteen units are singles.
+The mode construction is the unchanged exhaustive construction in
+\cite{previous}: enumerate the missing units, reflect a present pair 1
+to its positive contributor, and enumerate pair 2's contributor.
+If branch A has a missing single \texttt{p5} or \texttt{q5}, a present
+pair 2 may split. Drop its individual loss rows, enumerate an actually
+contributing member $s$, and retain $-\beta_s-M_s\le-1$.
+This necessary row is not treated as a sufficient condition for contribution.
+There are respectively 4, 70, and 578 modes when $j=0,1,2$.
+
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+Family&$j$&Integer $a$ range&Root groups&Integer root models\\
+\midrule
+Z0&0&26--55&4&120\\
+P0&0&27--54&4&112\\
+Z1&1&29--52&70&1680\\
+P1&1&30--51&70&1540\\
+Z2&2&34--47&578&8092\\
+P2&2&36--45&578&5780\\
+H1&1&40--41&70&140\\
+\midrule
+Total&&&1374&17464\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every root must either have a certificate or undergo an explicitly
+allowed refinement. The certificate file cannot supply a smaller root
+universe: the checker reconstructs it and compares exact key sets.
+
+\subsection{Two loss rules, with no blanket large-center enumeration}
+A retained translate has $90-\lambda_v$ hull points. If this number
+exceeds four, the core quantiles are valid:
+\[
+ -v-l_v-R_p\le-86,\qquad v-u_v-S_p-R_q\le-85.
+\]
+The derivation is the core interval count in \cite{previous}: an
+outside translate using more than four hull points must use a core
+point, since only four points on that side lie outside the core.
+
+When $j=2$, the actual residual budgets are at most 47 in Z and 22 in P.
+Thus all centers use core quantiles. In P2 the stronger ordinary rows
+are valid because $\delta<\min(a,b)+5$, the minimum outside loss:
+\[
+ -v-l_v\le-b-5,\qquad v-u_v-S_p\le-a-4.
+\]
+This justifies the two-empty refinement, independently of whether the
+final linear model retains its loss-cap row.
+
+When $j=1$, the budgets are at most 137 in Z and 112 in P, both below
+$2\cdot86$. At most one retained center has $\lambda_v\ge86$.
+The complete refinement is therefore: either every center uses core
+quantiles, or choose each retained center once as the unique large-loss
+center, impose $\lambda_v\ge86$ there and use its global quantiles,
+and use core quantiles elsewhere. The large-center ranges are
+$a=34,\ldots,47$ in Z and $a=36,\ldots,45$ in P, as independently
+checked from the original scalar budgets. Deleting slot caps weakens
+these necessary models and causes no loss of coverage.
+
+Only four roots actually require this split:
+Z1 and P1 in branch A with pair 2 missing, or with single \texttt{p0}
+missing and pair 2's negative contributor chosen. Each has 17 retained
+centers and produces 18 leaves. All 136 other one-empty low-hole roots
+are excluded directly by the global coarse model. In particular, the
+large-loss location is never enumerated for those roots.
+
+\subsection{The five leaves that need nested envelopes}
+In the delivered proof, only these leaves use more than the coarse sumset bound:
+\begin{center}\small
+\begin{tabular}{llllr}
+\toprule
+Family&Missing units&Pair-2 choice/member&Large center&$a$ range\\
+\midrule
+Z1&A: \texttt{p0}&negative contributor&\texttt{p8}&34--47\\
+P1&A: \texttt{p0}&negative contributor&\texttt{p8}&36--45\\
+Z2&A: \texttt{p0,p8}&negative contributor&none&34--47\\
+Z2&A: \texttt{p0,q5}&negative actual member&none&34--47\\
+P2&A: \texttt{p0,p8}&negative contributor&none&36--45\\
+\bottomrule
+\end{tabular}
+\end{center}
+Expose $x_0=R_p<x_1<x_2<x_3<x_4=M_p$ and their negative analogues
+$y_i$, with integer gaps at least one. Use the two exposed mass rows
+\[
+ S_p\ge T_a+\varepsilon_p+\sum_{i=1}^4x_i,
+ \qquad S_p\ge T_{a-1}+\sum_{i=0}^4x_i,
+\]
+and their reflections. The two coarse mass rows follow from these
+and the first three gaps, so they need not be included again.
+The four gaps also imply $M_p\ge R_p+4$.
+For $t=1,2,3$ put $W_t=x_t+y_t$ and $s_t=2(4-t)$, and use
+\begin{equation}\label{eq:nested}
+ K\le2W_t+1+\binom{s_t+1}{2}
+ +\sum_{i=t+1}^4\left[
+ \min(W_t+1,x_i-x_{i-1})+\min(W_t+1,y_i-y_{i-1})\right].
+\end{equation}
+To prove this, replace the inner points through level $t$ by their
+integer hull. Its double sum has $2W_t+1$ points. Each successive
+external translate extends the union by at most the smaller of its
+gap and $W_t+1$. At most $\binom{s_t+1}{2}$ pairs among the remaining
+external points remain. Introduce one nonnegative variable for each
+minimum, bounded above by both arguments. Actual sets choose the minima;
+equality is unnecessary in the relaxation.
+These leaves retain $K$, the coarse bound, and the original cardinality
+row. They use only three envelope levels; neither level 0 nor level 4
+is needed. They introduce 19 additional coordinates: six inner points,
+$K$, and twelve minimum variables. No such coordinates occur in the
+other 1,437 leaves.
+
+\section{Exact verification and result}
+Every final model is $Ax\le b(a)$, $x\ge0$, with integer $A$ and a
+rational quadratic right side. A stored nonnegative integer vector $u$
+is accepted only if $uA\ge0$ and
+$\max_{a\in[L,U]\cap\mathbb Z}ub(a)<0$.
+The maximum is computed at endpoints and, for a concave quadratic, the
+floor and ceiling of the vertex when in range. The polynomial is built
+symbolically; it is not fitted to sampled values.
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule
+Measure&Previous proof&This proof\\
+\midrule
+Final structural leaves&3746&1442\\
+Integer models covered&45928&18280\\
+Interval certificate checks&3750&1455\\
+Stored integer vectors&209&94\\
+Leaves requiring nested coordinates&3746&5\\
+Least normalized strict gap&$12/349$&$4/85$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The previous model imposed nested coordinates at every leaf; the table
+does not claim that every previous certificate used them.
+The new routing has 1,313 direct coarse roots, 54 two-empty coarse
+refinements, three two-empty nested refinements, and four loss splits.
+The splits have 70 coarse leaves and two nested leaves. The totals
+include every branch, not just successful representative instances.
+Model count falls by about 60.2\%, interval checks by 61.2\%, and stored
+vectors by 55.0\%. These are proof-size comparisons, not timing claims.
+
+The standard-library checker rejects a missing root, a missing actual
+contributor, a missing large-loss outcome, interval gaps or overlaps,
+invalid refinements, unknown rows, negative weights, and noncontradictory
+weights. It checks transport before eliminating the hole coordinate.
+The \texttt{--exhaustive} run additionally rebuilds every one of the
+18,280 numerical models, compares every row with the symbolic formula,
+checks every row combination, and compares the minimum pointwise gap
+with the interval maximum. This run agrees with the interval result.
+Standard and \texttt{-O} result files are byte-identical; fresh certificate
+discovery reproduces the certificate file byte-for-byte; the previous
+upper-97 checker reproduces its saved result unchanged. Twelve negative
+controls pass. Actual commands, elapsed times, hashes, and comparisons
+are recorded in \texttt{results/2026-10-16/proof\_method/}.
+
+\Needspace{13\baselineskip}
+\begin{theorem}
+Assuming the audited foundation and structural reduction stated in
+\cite{previous}, every finite real set $A$ with $\FS(A)\subseteq4A$
+satisfies $|A|\le97$.
+\end{theorem}
+\begin{proof}
+The foundation excludes sizes above 98. A hypothetical size-98 set
+satisfies the unchanged scalar reduction. High-hole active cases are
+excluded there; the remaining high cases map to H1. Every low-hole case
+maps to one of the seven root families. Lemma~\ref{lem:transport} sends
+positive low holes to their endpoint models. A directly certified root
+is impossible. Every other root undergoes a valid exhaustive refinement
+by the two loss rules. The resulting necessary models, including all
+five nested exceptions, have strict exact integer-row contradictions.
+Therefore no size-98 set exists.
+\end{proof}
+This proof does not establish $N\le96$, and its verifier explicitly
+rejects a request to certify the next cardinality. The next research
+step is to apply the simplified coarse spine and isolate its genuinely
+necessary exceptions at size 97.
+
+\paragraph{Reproduction.}
+From the repository root, Python 3.10 or later suffices:
+\begin{verbatim}
+python -I -S -B verification/upper97_simplified.py
+python -I -S -B verification/upper97_simplified.py --exhaustive
+\end{verbatim}
+The optional generator requires SciPy; it is not imported by verification:
+\begin{verbatim}
+python experiments/generate_upper97_simplified_certificates.py
+\end{verbatim}
+The Windows entry is \texttt{verify\_upper97\_simplified\_windows.bat}.
+It runs the four preceding continuation checks and then this simplified
+size-98 exclusion. The earlier endpoint proof and its data remain available
+for comparison.
+
+\begin{thebibliography}{9}
+\bibitem{previous} Sum-of-Subset research project,
+\emph{Subset Sums in a Fourfold Sumset: A unified loss and hole proof from
+98 to 97}, 16 October 2026.
+\href{https://github.com/iH-3/Sum-of-Subset/blob/main/reports/upper97_from98_20261016.pdf}{Repository report},
+with \texttt{verification/upper97.py}; includes references to the audited
+115--103--100--99--98 foundation and the archived strategy.
+\end{thebibliography}
+\end{document}

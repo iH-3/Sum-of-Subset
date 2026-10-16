@@ -15,6 +15,7 @@
 
 ## 先读什么
 
+- **[证明方法优化报告 PDF](reports/proof_method_20261016.pdf) · [LaTeX 源码](reports/proof_method_20261016.tex)**：6 页；通过质量平移把正低空洞统一到 `z=14`，先用粗双和集界反证，仅 5 个叶节点需要嵌套包络。1,455 次区间检查、94 组整数证书覆盖 18,280 个模型；上界保持 `N≤97`。
 - **[98→97 续研报告 PDF](reports/upper97_from98_20261016.pdf) · [LaTeX 源码](reports/upper97_from98_20261016.tex)**：9 页；统一含空洞的跨度预算，以大损失中心组织分支，并补强 98 元端点的格化比较。3,750 次区间证书检查覆盖 45,928 个模型，全部逐个整数交叉核验通过。
 - **[99→98 续研报告 PDF](reports/upper98_from99_20261016.pdf) · [LaTeX 源码](reports/upper98_from99_20261016.tex)**：9 页；小缺陷跨度、保留损失预算的两个空单元、嵌套区间包络，以及符号二次区间证书。5,443 次区间检查覆盖 82,257 个模型，并已逐个整数交叉核验。
 - **[100→99 续研报告 PDF](reports/upper99_from100_20261016.pdf) · [LaTeX 源码](reports/upper99_from100_20261016.tex)**：8 页；零缺陷核心的分类、一个空单元与两个区间外中心、两个空单元的零损失覆盖，以及全部 59,206 个线性模型的精确反证。
@@ -38,7 +39,7 @@
 | **续研上界 `N ≤ 100`** | 接续 103；108 个格化方向、894 个低空洞状态和 431 个高空洞终端状态通过；2,580 个空单元分支由新生成的 189 组整数证书全部排除 |
 | **续研上界 `N ≤ 99`** | 排除 100 元端点；38 个格化方向、364 个低空洞状态及 966 个高空洞终端状态通过；59,206 个线性模型由重新生成的 204 组整数证书全部排除 |
 | **续研上界 `N ≤ 98`** | 排除 99 元端点；39 个格化方向、391 个低空洞状态、1,217 个高空洞终端状态通过；90 组新整数证书，5,443 个符号区间覆盖 82,257 个线性模型，全部逐点交叉核验通过 |
-| **最新续研上界 `N ≤ 97`** | 排除 98 元端点；40 个格化方向、416 个低空洞状态、1,574 个高空洞终端状态通过；209 组新整数证书覆盖 45,928 个模型，共 3,750 次符号区间检查，全部逐点交叉核验通过 |
+| **最新续研上界 `N ≤ 97`** | 排除 98 元端点；结构参数检查不变。新简化证明使用 94 组整数证书、1,455 次区间检查，覆盖 18,280 个模型，全部逐点核验通过；原 209 组证书版本保留 |
 | 既有证明链 `N ≤ 84` | 完整原报告与程序已保留；84/85 有限套件本次通过；86 仅重跑附加检查，未重跑全部历史端点 |
 | 固定构造族 `A_m` | 当且仅当 `1 ≤ m ≤ 31` 可行，证明覆盖所有整数参数 |
 | 显式整数化 | 若有 n 元实数解，则有坐标绝对值至多 `floor(sqrt((n+16)^(n+1)))` 的 n 元整数解 |
@@ -65,11 +66,13 @@ python -I -S -B verification/upper100.py --output .work/upper100.json
 python -I -S -B verification/upper99.py --output .work/upper99.json
 python -I -S -B verification/upper98.py --output .work/upper98.json
 python -I -S -B verification/upper97.py --output .work/upper97.json
-# 可选：逐个整数复核最新符号模型与区间极值
-python -I -S -B verification/upper97.py --exhaustive
+# 简化后的同一上界证明
+python -I -S -B verification/upper97_simplified.py --output .work/upper97_simplified.json
+# 可选：逐个整数复核简化模型与区间极值
+python -I -S -B verification/upper97_simplified.py --exhaustive
 ```
 
-Windows 可将 `python` 换成 `py -3`。双击 `verify_windows.bat` 检查构造与基础有限证书；双击 `verify_upper97_windows.bat` 依次检查 115→103→100→99→98→97 的五段续研有限验证。旧入口仍保留。
+Windows 可将 `python` 换成 `py -3`。双击 `verify_windows.bat` 检查构造与基础有限证书；双击 `verify_upper97_windows.bat` 依次检查 115→103→100→99→98→97 的五段续研有限验证。也可双击 `verify_upper97_simplified_windows.bat`，以本轮简化证明替代最后一段。旧入口仍保留。
 
 校验自己的集合时，可以传入整数或有理数字符串，例如 `--elements -1/3 0 1/3`。也可使用 `--input candidate.json`，文件格式为 `{"A":[-1,0,1]}`。重复元素和浮点输入会被拒绝；触发资源上限时会报“无法得出结论”，不会误报不可行。
 
@@ -86,6 +89,12 @@ Windows 可将 `python` 换成 `py -3`。双击 `verify_windows.bat` 检查构�
 **最新的 98→97 续研已处理上述更大的损失预算。** [upper97.py](verification/upper97.py) 在所有低空洞分支中统一使用含空洞的跨度预算，正空洞模型保留同一个 `z∈[1,14]` 变量，使质量、跨度、损失与和集基数约束互相配合。一个空单元时最多一个中心损失达到 86，因而可按“大损失中心”分类，无需枚举其区间外端点。五层区间包络、有效损失计数上限和粗略双和集界都被显式保留。
 
 格化步骤也有实质补强：直接复用旧比较，在平衡参数处只能得到 7，不能推出所需的严格负值；保留缺陷项后，零空洞和正空洞两种比较分别至多为 `-388` 和 `-121`。[209 组新整数证书](data/upper97_certificates.json) 覆盖全部 45,928 个模型；3,750 次二次区间检查减少约 91.8% 的重复矩阵组合，最小规范化严格余量为 `12/349`。标准模式约 6.5 秒，完整逐点交叉核验约 67.4 秒，二者结果一致；此时间比较包含逐点模式额外的逐行公式核对。10 项负面控制、5,409 项整数逆公式边界检查、`-O` 一致性、证书再生成一致性和 98 基础回归均通过。[完整记录](results/2026-10-16/upper97/) 与 [可选生成器](experiments/generate_upper97_certificates.py) 已保存。
+
+**证明方法优化（上界仍为 97）。** [新报告](reports/proof_method_20261016.pdf) 证明：对 `1≤z≤14`，令两侧质量坐标各增加 `14−z`，所有必要约束在 `z=14` 仍成立，因而可消去空洞变量。再把粗双和集界代入基数行，直接消去 `K`，形成只含外侧元素、核心跨度、两侧质量和损失的证明主干。
+
+[upper97_simplified.py](verification/upper97_simplified.py) 重建全部 1,374 个结构根组；其中 1,313 组直接由计数约束和粗界排除。仅 4 组需要枚举大损失中心；最终 1,442 个叶节点中，1,437 个使用粗模型，只有报告明确列出的 5 个例外需要三个层级的嵌套包络。完整证明从 45,928 缩减至 18,280 个整数模型（减少约 60.2%），从 3,750 缩减至 1,455 次区间检查；[整数证书](data/upper97_simplified_certificates.json) 从 209 组减至 94 组，最小规范化余量为 `4/85`。这是证明规模的比较，不是运行速度的声明。
+
+全部 18,280 个数值模型已逐行与符号模型核对；12 项负面控制、普通模式与 `-O` 的逐字节一致性、证书重新生成及旧 upper97 回归均通过。[完整结果与运行记录](results/2026-10-16/proof_method/) 和 [可选生成器](experiments/generate_upper97_simplified_certificates.py) 已保存。验证器只依赖标准库，不读取上一版端点证书；报告保留实际集合到模型的推导依据，并给出一组可直接手算的整数行反证。上一版报告、源码和数据均保留供对照。
 
 下一端点是 `n=97`：平衡参数下，两个空单元后仍可有零空洞余量 70、正低空洞余量 46。后者超过区间外中心最低损失 45，因此不能直接沿用本轮 P2 的普通分位数约束。这只是松弛预算，不是可行构造；当前验证器明确拒绝认证上界 96。
 
@@ -121,10 +130,12 @@ python -I -S -B verify_complete_upper86.py
 | `verification/review_checks.py` | 本次审查的独立有限边界检查，不认证完整上界 84 |
 | `verification/upper103.py` | 115→103 统一证明的精确参数验证与负面控制 |
 | `verification/upper100.py` | 103→100 的完整参数、分支、整数证书验证与负面控制 |
+| `verification/upper97_simplified.py` | 质量平移、粗界主干与仅五类嵌套例外的同一上界简化证明 |
 | `verification/upper97.py` | 98→97 的统一空洞/跨度/损失模型、区间证书与逐点交叉核验 |
 | `verification/upper98.py` | 99→98 的符号二次区间证书、完整分支与可选逐点交叉核验 |
 | `verification/upper99.py` | 100→99 的六类模型、完整区间覆盖及整数证书验证 |
 | `data/upper100_certificates.json` | 189 组整数行权重与全部 2,580 个分支的映射 |
+| `data/upper97_simplified_certificates.json` | 94 组整数证书与穷尽的选择性细化树；覆盖 18,280 个模型 |
 | `data/upper97_certificates.json` | 209 组整数行权重；3,750 个区间覆盖 45,928 个模型 |
 | `data/upper98_certificates.json` | 90 组整数行权重；5,443 个区间覆盖 82,257 个模型 |
 | `data/upper99_certificates.json` | 204 组整数行权重；压缩区间覆盖全部 59,206 个模型 |
@@ -136,6 +147,7 @@ python -I -S -B verify_complete_upper86.py
 | `results/2026-10-16/upper100/` | 最新 103→100 完整运行结果与 103 基础回归结果 |
 | `results/2026-10-16/upper99/` | 100→99 完整运行、证书重新生成与 100 基础回归结果 |
 | `results/2026-10-16/upper98/` | 99→98 区间验证、逐点交叉核验回执、证书再生成与 99 基础回归 |
+| `results/2026-10-16/proof_method/` | 简化证明的完整结果、逐点摘要、再生成日志与实际运行回执 |
 | `results/2026-10-16/upper97/` | 98→97 完整核验、证书再生成和 98 基础回归记录 |
 | `experiments/` | 探索性搜索；不作为不存在证明 |
 
@@ -162,3 +174,10 @@ pdflatex -output-directory reports reports/upper97_from98_20261016.tex
 ```
 
 也可使用 XeLaTeX 编译同一份英文数学源文件。验证程序不需要 LaTeX。
+
+编译本轮证明方法报告：
+
+```bash
+pdflatex -output-directory reports reports/proof_method_20261016.tex
+pdflatex -output-directory reports reports/proof_method_20261016.tex
+```

@@ -1,0 +1,14 @@
+{"roots": 100, "routing": {"coarse": 96, "split": 4}, "optimizer_calls": 46, "failed_attempts": 6, "seconds": 2.6}
+{"roots": 200, "routing": {"coarse": 184, "split": 4, "core": 12}, "optimizer_calls": 79, "failed_attempts": 18, "seconds": 3.65}
+{"roots": 300, "routing": {"coarse": 269, "split": 4, "core": 25, "core_nested": 2}, "optimizer_calls": 102, "failed_attempts": 35, "seconds": 4.36}
+{"roots": 400, "routing": {"coarse": 369, "split": 4, "core": 25, "core_nested": 2}, "optimizer_calls": 106, "failed_attempts": 35, "seconds": 4.96}
+{"roots": 500, "routing": {"coarse": 467, "split": 4, "core": 27, "core_nested": 2}, "optimizer_calls": 122, "failed_attempts": 37, "seconds": 5.93}
+{"roots": 600, "routing": {"coarse": 567, "split": 4, "core": 27, "core_nested": 2}, "optimizer_calls": 124, "failed_attempts": 37, "seconds": 6.41}
+{"roots": 700, "routing": {"coarse": 667, "split": 4, "core": 27, "core_nested": 2}, "optimizer_calls": 125, "failed_attempts": 37, "seconds": 6.87}
+{"roots": 800, "routing": {"coarse": 744, "split": 4, "core": 49, "core_nested": 3}, "optimizer_calls": 165, "failed_attempts": 61, "seconds": 7.85}
+{"roots": 900, "routing": {"coarse": 841, "split": 4, "core": 52, "core_nested": 3}, "optimizer_calls": 168, "failed_attempts": 64, "seconds": 8.32}
+{"roots": 1000, "routing": {"coarse": 941, "split": 4, "core": 52, "core_nested": 3}, "optimizer_calls": 168, "failed_attempts": 64, "seconds": 8.75}
+{"roots": 1100, "routing": {"coarse": 1039, "split": 4, "core": 54, "core_nested": 3}, "optimizer_calls": 172, "failed_attempts": 66, "seconds": 9.23}
+{"roots": 1200, "routing": {"coarse": 1139, "split": 4, "core": 54, "core_nested": 3}, "optimizer_calls": 172, "failed_attempts": 66, "seconds": 9.68}
+{"roots": 1300, "routing": {"coarse": 1239, "split": 4, "core": 54, "core_nested": 3}, "optimizer_calls": 172, "failed_attempts": 66, "seconds": 10.13}
+{"status": "PASS", "optimizer_calls": 172, "failed_attempts": 66, "root_groups": 1374, "root_systems": 17464, "routing_counts": {"coarse": 1313, "split": 4, "core": 54, "core_nested": 3}, "leaf_groups": 1442, "leaf_counts": {"coarse": 1313, "loss": 70, "loss_nested": 2, "core": 54, "core_nested": 3}, "systems": 18280, "vectors": 94, "interval_checks": 1455, "extremum_points": 4381, "minimum_normalized_gap": "4/85", "seconds": 15.82}
