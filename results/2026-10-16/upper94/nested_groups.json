@@ -1,0 +1,6664 @@
+{
+  "count": 48,
+  "source": "result.json proof_checks",
+  "groups": {
+    "Z1:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 25,
+      "hi": 53,
+      "policy": {
+        "cap": 199,
+        "quantile": "global",
+        "leading_basic": false,
+        "leading_nested": false,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 269,
+      "segments": [
+        {
+          "first": 25,
+          "last": 41,
+          "vector": 6,
+          "normalized_gap": "22/95",
+          "worst_parameter": 41,
+          "rhs_polynomial": [
+            "-9657",
+            "399",
+            "-4"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 47,
+          "last": 53,
+          "vector": 16,
+          "normalized_gap": "7/65",
+          "worst_parameter": 47,
+          "rhs_polynomial": [
+            "-4378",
+            "234",
+            "-3"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "42": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 7,
+              "normalized_gap": "98/169"
+            },
+            {
+              "vector": 8,
+              "normalized_gap": "80/39"
+            }
+          ]
+        },
+        "43": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 9,
+              "normalized_gap": "58/127"
+            },
+            {
+              "vector": 10,
+              "normalized_gap": "163/105"
+            }
+          ]
+        },
+        "44": {
+          "split": "core:q0",
+          "children": [
+            {
+              "vector": 11,
+              "normalized_gap": "260/101"
+            },
+            {
+              "vector": 12,
+              "normalized_gap": "56/117"
+            }
+          ]
+        },
+        "45": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 13,
+              "normalized_gap": "225/71"
+            },
+            {
+              "vector": 14,
+              "normalized_gap": "35/38"
+            }
+          ]
+        },
+        "46": {
+          "split": "core:q0",
+          "children": [
+            {
+              "vector": 15,
+              "normalized_gap": "211/71"
+            },
+            {
+              "vector": 12,
+              "normalized_gap": "77/117"
+            }
+          ]
+        }
+      }
+    },
+    "Z1:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 25,
+      "hi": 53,
+      "policy": {
+        "cap": 199,
+        "quantile": "global",
+        "leading_basic": false,
+        "leading_nested": false,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 240,
+      "segments": [
+        {
+          "first": 25,
+          "last": 31,
+          "vector": 54,
+          "normalized_gap": "126/247",
+          "worst_parameter": 31,
+          "rhs_polynomial": [
+            "-44768",
+            "2211",
+            "-25"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 47,
+          "last": 53,
+          "vector": 55,
+          "normalized_gap": "46/157",
+          "worst_parameter": 47,
+          "rhs_polynomial": [
+            "-6438",
+            "606",
+            "-10"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 17,
+              "normalized_gap": "13/68"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 18,
+                  "normalized_gap": "5200/1623"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 19,
+                      "normalized_gap": "661/240"
+                    },
+                    {
+                      "split": "core:q0",
+                      "children": [
+                        {
+                          "vector": 20,
+                          "normalized_gap": "1199/252"
+                        },
+                        {
+                          "vector": 21,
+                          "normalized_gap": "2/71"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 22,
+              "normalized_gap": "100/73"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 23,
+                  "normalized_gap": "4310/1947"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 24,
+                      "normalized_gap": "29/10"
+                    },
+                    {
+                      "vector": 25,
+                      "normalized_gap": "2/35"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 17,
+              "normalized_gap": "1/4"
+            },
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 26,
+                  "normalized_gap": "1387/1279"
+                },
+                {
+                  "split": "ordinary:p8:lower",
+                  "children": [
+                    {
+                      "vector": 27,
+                      "normalized_gap": "430/149"
+                    },
+                    {
+                      "split": "ordinary:q6:lower",
+                      "children": [
+                        {
+                          "vector": 28,
+                          "normalized_gap": "59/102"
+                        },
+                        {
+                          "vector": 29,
+                          "normalized_gap": "143/97"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 17,
+              "normalized_gap": "29/68"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 30,
+                  "normalized_gap": "7/24"
+                },
+                {
+                  "vector": 31,
+                  "normalized_gap": "5/242"
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 22,
+              "normalized_gap": "112/73"
+            },
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 32,
+                  "normalized_gap": "3394/1809"
+                },
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 33,
+                      "normalized_gap": "110/73"
+                    },
+                    {
+                      "vector": 34,
+                      "normalized_gap": "9/82"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 35,
+              "normalized_gap": "7/10"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 36,
+                  "normalized_gap": "330/107"
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 37,
+                      "normalized_gap": "853/219"
+                    },
+                    {
+                      "vector": 38,
+                      "normalized_gap": "42/73"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 22,
+              "normalized_gap": "132/73"
+            },
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 39,
+                  "normalized_gap": "596/211"
+                },
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 33,
+                      "normalized_gap": "142/73"
+                    },
+                    {
+                      "vector": 34,
+                      "normalized_gap": "31/82"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 35,
+              "normalized_gap": "11/10"
+            },
+            {
+              "split": "ordinary:p4:lower",
+              "children": [
+                {
+                  "vector": 40,
+                  "normalized_gap": "184/223"
+                },
+                {
+                  "vector": 41,
+                  "normalized_gap": "192/539"
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 22,
+              "normalized_gap": "160/73"
+            },
+            {
+              "split": "ordinary:q7:lower",
+              "children": [
+                {
+                  "vector": 42,
+                  "normalized_gap": "1/19"
+                },
+                {
+                  "vector": 43,
+                  "normalized_gap": "3/8"
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 35,
+              "normalized_gap": "113/70"
+            },
+            {
+              "split": "core:q9",
+              "children": [
+                {
+                  "vector": 44,
+                  "normalized_gap": "398/131"
+                },
+                {
+                  "vector": 45,
+                  "normalized_gap": "742/1069"
+                }
+              ]
+            }
+          ]
+        },
+        "44": {
+          "split": "ordinary:q6:lower",
+          "children": [
+            {
+              "vector": 46,
+              "normalized_gap": "17/11"
+            },
+            {
+              "vector": 47,
+              "normalized_gap": "26/73"
+            }
+          ]
+        },
+        "33": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 35,
+              "normalized_gap": "157/70"
+            },
+            {
+              "vector": 48,
+              "normalized_gap": "41/44"
+            }
+          ]
+        },
+        "45": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 49,
+              "normalized_gap": "74/67"
+            },
+            {
+              "vector": 50,
+              "normalized_gap": "41/44"
+            }
+          ]
+        },
+        "32": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 35,
+              "normalized_gap": "209/70"
+            },
+            {
+              "vector": 51,
+              "normalized_gap": "341/125"
+            }
+          ]
+        },
+        "46": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 52,
+              "normalized_gap": "287/122"
+            },
+            {
+              "vector": 53,
+              "normalized_gap": "341/125"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 297,
+      "segments": [
+        {
+          "first": 29,
+          "last": 29,
+          "vector": 166,
+          "normalized_gap": "35/18",
+          "worst_parameter": 29,
+          "rhs_polynomial": [
+            "-84758",
+            "4473",
+            "-54"
+          ],
+          "extremum_points": 1
+        },
+        {
+          "first": 49,
+          "last": 49,
+          "vector": 167,
+          "normalized_gap": "35/18",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-64400",
+            "3951",
+            "-54"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 74,
+                  "normalized_gap": "27/2"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 75,
+                      "normalized_gap": "27/2"
+                    },
+                    {
+                      "vector": 76,
+                      "normalized_gap": "23/48"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 77,
+                      "normalized_gap": "27/2"
+                    },
+                    {
+                      "vector": 78,
+                      "normalized_gap": "9/46"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 79,
+                      "normalized_gap": "5/61"
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 80,
+                          "normalized_gap": "24/25"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 81,
+                              "normalized_gap": "2056/979"
+                            },
+                            {
+                              "split": "core:p8",
+                              "children": [
+                                {
+                                  "vector": 82,
+                                  "normalized_gap": "1007/231"
+                                },
+                                {
+                                  "vector": 83,
+                                  "normalized_gap": "1/91"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 84,
+                  "normalized_gap": "55/4"
+                },
+                {
+                  "split": "ordinary:q5:lower",
+                  "children": [
+                    {
+                      "vector": 85,
+                      "normalized_gap": "5/4"
+                    },
+                    {
+                      "vector": 86,
+                      "normalized_gap": "15/4"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 87,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "vector": 88,
+                      "normalized_gap": "13/61"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 89,
+                      "normalized_gap": "11/52"
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 90,
+                          "normalized_gap": "83/72"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 91,
+                              "normalized_gap": "574/239"
+                            },
+                            {
+                              "split": "core:q8",
+                              "children": [
+                                {
+                                  "vector": 92,
+                                  "normalized_gap": "1040/231"
+                                },
+                                {
+                                  "vector": 83,
+                                  "normalized_gap": "15/182"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 74,
+                  "normalized_gap": "55/4"
+                },
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 87,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 93,
+                          "normalized_gap": "55/4"
+                        },
+                        {
+                          "vector": 94,
+                          "normalized_gap": "23/51"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 95,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "vector": 96,
+                      "normalized_gap": "59/45"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 97,
+                      "normalized_gap": "209/137"
+                    },
+                    {
+                      "split": "core:q8",
+                      "children": [
+                        {
+                          "vector": 98,
+                          "normalized_gap": "209/137"
+                        },
+                        {
+                          "split": "core:p5",
+                          "children": [
+                            {
+                              "vector": 99,
+                              "normalized_gap": "52/17"
+                            },
+                            {
+                              "split": "core:q0",
+                              "children": [
+                                {
+                                  "vector": 100,
+                                  "normalized_gap": "5056/1083"
+                                },
+                                {
+                                  "vector": 83,
+                                  "normalized_gap": "15/182"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 74,
+                  "normalized_gap": "29/2"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 77,
+                      "normalized_gap": "29/2"
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 84,
+                          "normalized_gap": "29/2"
+                        },
+                        {
+                          "vector": 101,
+                          "normalized_gap": "28/27"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 102,
+                  "normalized_gap": "29/46"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 103,
+                      "normalized_gap": "8/5"
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 90,
+                          "normalized_gap": "29/18"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 104,
+                              "normalized_gap": "259/73"
+                            },
+                            {
+                              "split": "core:q8",
+                              "children": [
+                                {
+                                  "vector": 92,
+                                  "normalized_gap": "1139/231"
+                                },
+                                {
+                                  "vector": 83,
+                                  "normalized_gap": "27/91"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 74,
+                  "normalized_gap": "29/2"
+                },
+                {
+                  "vector": 105,
+                  "normalized_gap": "29/47"
+                }
+              ]
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "split": "ordinary:q5:lower",
+                  "children": [
+                    {
+                      "vector": 106,
+                      "normalized_gap": "46/251"
+                    },
+                    {
+                      "vector": 107,
+                      "normalized_gap": "21/4"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 108,
+                          "normalized_gap": "29/2"
+                        },
+                        {
+                          "vector": 109,
+                          "normalized_gap": "3/152"
+                        }
+                      ]
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 110,
+                          "normalized_gap": "22/69"
+                        },
+                        {
+                          "split": "core:q5",
+                          "children": [
+                            {
+                              "vector": 111,
+                              "normalized_gap": "28/27"
+                            },
+                            {
+                              "split": "core:p8",
+                              "children": [
+                                {
+                                  "vector": 82,
+                                  "normalized_gap": "1139/231"
+                                },
+                                {
+                                  "vector": 83,
+                                  "normalized_gap": "27/91"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 112,
+                  "normalized_gap": "63/4"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 74,
+                      "normalized_gap": "63/4"
+                    },
+                    {
+                      "split": "core:q0",
+                      "children": [
+                        {
+                          "vector": 77,
+                          "normalized_gap": "63/4"
+                        },
+                        {
+                          "vector": 113,
+                          "normalized_gap": "22/131"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 114,
+                  "normalized_gap": "680/269"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 103,
+                      "normalized_gap": "1034/305"
+                    },
+                    {
+                      "split": "core:p0",
+                      "children": [
+                        {
+                          "vector": 115,
+                          "normalized_gap": "63/26"
+                        },
+                        {
+                          "split": "core:q8",
+                          "children": [
+                            {
+                              "vector": 116,
+                              "normalized_gap": "761/140"
+                            },
+                            {
+                              "split": "core:q0",
+                              "children": [
+                                {
+                                  "vector": 117,
+                                  "normalized_gap": "698/95"
+                                },
+                                {
+                                  "vector": 118,
+                                  "normalized_gap": "306/385"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 74,
+                  "normalized_gap": "63/4"
+                },
+                {
+                  "vector": 119,
+                  "normalized_gap": "136/55"
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 87,
+                      "normalized_gap": "63/4"
+                    },
+                    {
+                      "vector": 120,
+                      "normalized_gap": "680/269"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 121,
+                      "normalized_gap": "85/164"
+                    },
+                    {
+                      "split": "core:q5",
+                      "children": [
+                        {
+                          "vector": 122,
+                          "normalized_gap": "75/83"
+                        },
+                        {
+                          "split": "ordinary:p0:upper",
+                          "children": [
+                            {
+                              "vector": 123,
+                              "normalized_gap": "693/1913"
+                            },
+                            {
+                              "vector": 124,
+                              "normalized_gap": "497/188"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "core:p5",
+          "children": [
+            {
+              "split": "core:p6",
+              "children": [
+                {
+                  "vector": 125,
+                  "normalized_gap": "35/2"
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 126,
+                      "normalized_gap": "35/2"
+                    },
+                    {
+                      "vector": 127,
+                      "normalized_gap": "28/23"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 128,
+                  "normalized_gap": "118/25"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 129,
+                      "normalized_gap": "1298/269"
+                    },
+                    {
+                      "split": "ordinary:p8:lower",
+                      "children": [
+                        {
+                          "vector": 130,
+                          "normalized_gap": "54/23"
+                        },
+                        {
+                          "vector": 131,
+                          "normalized_gap": "7/6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q0",
+          "children": [
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 132,
+                  "normalized_gap": "35/2"
+                },
+                {
+                  "vector": 133,
+                  "normalized_gap": "800/269"
+                }
+              ]
+            },
+            {
+              "split": "inner:q5:lower:1",
+              "children": [
+                {
+                  "split": "inner:q5:lower:2",
+                  "children": [
+                    {
+                      "split": "core:q5",
+                      "children": [
+                        {
+                          "split": "core:q6",
+                          "children": [
+                            {
+                              "vector": 134,
+                              "normalized_gap": "35/2"
+                            },
+                            {
+                              "vector": 135,
+                              "normalized_gap": "28/23"
+                            }
+                          ]
+                        },
+                        {
+                          "split": "core:p5",
+                          "children": [
+                            {
+                              "vector": 136,
+                              "normalized_gap": "851/131"
+                            },
+                            {
+                              "split": "ordinary:q8:lower",
+                              "children": [
+                                {
+                                  "split": "core:p8",
+                                  "children": [
+                                    {
+                                      "vector": 137,
+                                      "normalized_gap": "275/32"
+                                    },
+                                    {
+                                      "vector": 138,
+                                      "normalized_gap": "864/265"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "vector": 139,
+                                  "normalized_gap": "26/25"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "vector": 140,
+                      "normalized_gap": "1/40"
+                    }
+                  ]
+                },
+                {
+                  "vector": 141,
+                  "normalized_gap": "1/38"
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "inner:p5:lower:1",
+          "children": [
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 142,
+                  "normalized_gap": "5/164"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 143,
+                      "normalized_gap": "836/233"
+                    },
+                    {
+                      "split": "core:p5",
+                      "children": [
+                        {
+                          "vector": 144,
+                          "normalized_gap": "740/281"
+                        },
+                        {
+                          "vector": 145,
+                          "normalized_gap": "112/73"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "vector": 146,
+              "normalized_gap": "12/7"
+            }
+          ]
+        },
+        "44": {
+          "split": "inner:q5:lower:1",
+          "children": [
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 147,
+                  "normalized_gap": "5/164"
+                },
+                {
+                  "split": "core:p5",
+                  "children": [
+                    {
+                      "vector": 148,
+                      "normalized_gap": "836/245"
+                    },
+                    {
+                      "split": "core:q5",
+                      "children": [
+                        {
+                          "vector": 149,
+                          "normalized_gap": "95/73"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 150,
+                              "normalized_gap": "2468/293"
+                            },
+                            {
+                              "vector": 151,
+                              "normalized_gap": "25/14"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "vector": 152,
+              "normalized_gap": "12/7"
+            }
+          ]
+        },
+        "33": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 153,
+              "normalized_gap": "7/3"
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 154,
+                  "normalized_gap": "568/55"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 155,
+                      "normalized_gap": "2840/269"
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 156,
+                          "normalized_gap": "3872/317"
+                        },
+                        {
+                          "vector": 157,
+                          "normalized_gap": "276/73"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "45": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "7/3"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 119,
+                  "normalized_gap": "568/55"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 133,
+                      "normalized_gap": "2342/269"
+                    },
+                    {
+                      "split": "ordinary:q8:lower",
+                      "children": [
+                        {
+                          "vector": 159,
+                          "normalized_gap": "21/17"
+                        },
+                        {
+                          "vector": 160,
+                          "normalized_gap": "809/128"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "32": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 153,
+              "normalized_gap": "20/3"
+            },
+            {
+              "split": "core:p0",
+              "children": [
+                {
+                  "vector": 161,
+                  "normalized_gap": "3266/269"
+                },
+                {
+                  "vector": 162,
+                  "normalized_gap": "143/95"
+                }
+              ]
+            }
+          ]
+        },
+        "46": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "20/3"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 133,
+                  "normalized_gap": "3266/269"
+                },
+                {
+                  "vector": 163,
+                  "normalized_gap": "143/95"
+                }
+              ]
+            }
+          ]
+        },
+        "31": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 153,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 164,
+              "normalized_gap": "308/173"
+            }
+          ]
+        },
+        "47": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 165,
+              "normalized_gap": "308/173"
+            }
+          ]
+        },
+        "30": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 153,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 164,
+              "normalized_gap": "1436/173"
+            }
+          ]
+        },
+        "48": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 165,
+              "normalized_gap": "1436/173"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,p0:q:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 268,
+      "segments": [
+        {
+          "first": 29,
+          "last": 30,
+          "vector": 195,
+          "normalized_gap": "2/51",
+          "worst_parameter": 30,
+          "rhs_polynomial": [
+            "-41496",
+            "2193",
+            "-27"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 43,
+          "last": 49,
+          "vector": 185,
+          "normalized_gap": "2/21",
+          "worst_parameter": 43,
+          "rhs_polynomial": [
+            "725",
+            "69",
+            "-2"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 169,
+              "normalized_gap": "74/41"
+            },
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 170,
+                  "normalized_gap": "5"
+                },
+                {
+                  "vector": 171,
+                  "normalized_gap": "20/67"
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 172,
+              "normalized_gap": "51/49"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 173,
+                  "normalized_gap": "800/143"
+                },
+                {
+                  "vector": 174,
+                  "normalized_gap": "53/134"
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 169,
+              "normalized_gap": "818/287"
+            },
+            {
+              "vector": 175,
+              "normalized_gap": "38/51"
+            }
+          ]
+        },
+        "37": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 176,
+              "normalized_gap": "65/112"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 173,
+                  "normalized_gap": "719/143"
+                },
+                {
+                  "vector": 174,
+                  "normalized_gap": "71/134"
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 177,
+              "normalized_gap": "73/90"
+            },
+            {
+              "vector": 178,
+              "normalized_gap": "452/219"
+            }
+          ]
+        },
+        "36": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 176,
+              "normalized_gap": "43/112"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 179,
+                  "normalized_gap": "31/13"
+                },
+                {
+                  "vector": 180,
+                  "normalized_gap": "11/50"
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 181,
+              "normalized_gap": "420/173"
+            },
+            {
+              "vector": 182,
+              "normalized_gap": "40/11"
+            }
+          ]
+        },
+        "35": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 176,
+              "normalized_gap": "47/112"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 183,
+                  "normalized_gap": "14309/4362"
+                },
+                {
+                  "vector": 184,
+                  "normalized_gap": "17/47"
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 186,
+              "normalized_gap": "166/65"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 187,
+                  "normalized_gap": "3328/987"
+                },
+                {
+                  "vector": 188,
+                  "normalized_gap": "29/33"
+                }
+              ]
+            }
+          ]
+        },
+        "33": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 189,
+              "normalized_gap": "479/814"
+            },
+            {
+              "vector": 190,
+              "normalized_gap": "63/61"
+            }
+          ]
+        },
+        "32": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 191,
+              "normalized_gap": "2021/939"
+            },
+            {
+              "vector": 192,
+              "normalized_gap": "841/341"
+            }
+          ]
+        },
+        "31": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 193,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 194,
+              "normalized_gap": "6/11"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,p5:-:p": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 196,
+          "normalized_gap": "485/328",
+          "worst_parameter": 31,
+          "rhs_polynomial": [
+            "-13412",
+            "1671/2",
+            "-27/2"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:pair1,p5:-:q": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 29,
+          "last": 29,
+          "vector": 236,
+          "normalized_gap": "105/62",
+          "worst_parameter": 29,
+          "rhs_polynomial": [
+            "-69179",
+            "7497/2",
+            "-95/2"
+          ],
+          "extremum_points": 1
+        },
+        {
+          "first": 45,
+          "last": 49,
+          "vector": 228,
+          "normalized_gap": "258/259",
+          "worst_parameter": 45,
+          "rhs_polynomial": [
+            "-2418",
+            "588",
+            "-12"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "10276/689"
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 198,
+                  "normalized_gap": "127/96"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 199,
+                      "normalized_gap": "94/13"
+                    },
+                    {
+                      "vector": 200,
+                      "normalized_gap": "43/14"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "9790/689"
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 201,
+                  "normalized_gap": "55/109"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 199,
+                      "normalized_gap": "1217/182"
+                    },
+                    {
+                      "vector": 202,
+                      "normalized_gap": "560/267"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "10834/689"
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 203,
+                  "normalized_gap": "289/112"
+                },
+                {
+                  "vector": 204,
+                  "normalized_gap": "126/157"
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "9376/689"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 205,
+                  "normalized_gap": "1034/359"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 206,
+                      "normalized_gap": "65/57"
+                    },
+                    {
+                      "vector": 207,
+                      "normalized_gap": "64/49"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "11464/689"
+            },
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "vector": 203,
+                  "normalized_gap": "451/112"
+                },
+                {
+                  "vector": 208,
+                  "normalized_gap": "452/219"
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "9034/689"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 209,
+                  "normalized_gap": "1502/335"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 210,
+                      "normalized_gap": "6008/2351"
+                    },
+                    {
+                      "vector": 211,
+                      "normalized_gap": "2089/570"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 212,
+              "normalized_gap": "100/29"
+            },
+            {
+              "vector": 213,
+              "normalized_gap": "178/157"
+            }
+          ]
+        },
+        "35": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 214,
+              "normalized_gap": "9681/761"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 205,
+                  "normalized_gap": "1196/359"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 215,
+                      "normalized_gap": "112/67"
+                    },
+                    {
+                      "vector": 207,
+                      "normalized_gap": "1/7"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 216,
+              "normalized_gap": "1136/211"
+            },
+            {
+              "vector": 217,
+              "normalized_gap": "251/97"
+            }
+          ]
+        },
+        "34": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 214,
+              "normalized_gap": "9540/761"
+            },
+            {
+              "split": "core:p6",
+              "children": [
+                {
+                  "vector": 218,
+                  "normalized_gap": "1892/335"
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 219,
+                      "normalized_gap": "1080/187"
+                    },
+                    {
+                      "split": "ordinary:p8:lower",
+                      "children": [
+                        {
+                          "vector": 220,
+                          "normalized_gap": "1912/849"
+                        },
+                        {
+                          "vector": 221,
+                          "normalized_gap": "45/16"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "44": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 197,
+              "normalized_gap": "13786/689"
+            },
+            {
+              "vector": 222,
+              "normalized_gap": "104/67"
+            }
+          ]
+        },
+        "33": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 223,
+              "normalized_gap": "15850/1271"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 224,
+                  "normalized_gap": "83/15"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 225,
+                      "normalized_gap": "180/37"
+                    },
+                    {
+                      "split": "core:p6",
+                      "children": [
+                        {
+                          "vector": 226,
+                          "normalized_gap": "1494/125"
+                        },
+                        {
+                          "vector": 227,
+                          "normalized_gap": "412/207"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "32": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 229,
+              "normalized_gap": "22511/1783"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 230,
+                  "normalized_gap": "157/358"
+                },
+                {
+                  "vector": 231,
+                  "normalized_gap": "144/43"
+                }
+              ]
+            }
+          ]
+        },
+        "31": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 232,
+              "normalized_gap": "73/64"
+            },
+            {
+              "vector": 233,
+              "normalized_gap": "170/37"
+            }
+          ]
+        },
+        "30": {
+          "split": "core:p6",
+          "children": [
+            {
+              "vector": 234,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 235,
+              "normalized_gap": "488/173"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,q0:p:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 268,
+      "segments": [
+        {
+          "first": 29,
+          "last": 35,
+          "vector": 252,
+          "normalized_gap": "2/21",
+          "worst_parameter": 35,
+          "rhs_polynomial": [
+            "-6061",
+            "243",
+            "-2"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 48,
+          "last": 49,
+          "vector": 265,
+          "normalized_gap": "2/51",
+          "worst_parameter": 48,
+          "rhs_polynomial": [
+            "-34710",
+            "2019",
+            "-27"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 239,
+              "normalized_gap": "74/41"
+            },
+            {
+              "split": "ordinary:p5:lower",
+              "children": [
+                {
+                  "vector": 240,
+                  "normalized_gap": "5"
+                },
+                {
+                  "vector": 241,
+                  "normalized_gap": "20/67"
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 239,
+              "normalized_gap": "818/287"
+            },
+            {
+              "vector": 242,
+              "normalized_gap": "38/51"
+            }
+          ]
+        },
+        "40": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 243,
+              "normalized_gap": "51/49"
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 244,
+                  "normalized_gap": "800/143"
+                },
+                {
+                  "vector": 245,
+                  "normalized_gap": "53/134"
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 239,
+              "normalized_gap": "1196/287"
+            },
+            {
+              "vector": 246,
+              "normalized_gap": "148/73"
+            }
+          ]
+        },
+        "41": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 247,
+              "normalized_gap": "65/112"
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 248,
+                  "normalized_gap": "719/143"
+                },
+                {
+                  "vector": 245,
+                  "normalized_gap": "71/134"
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 249,
+              "normalized_gap": "420/173"
+            },
+            {
+              "vector": 250,
+              "normalized_gap": "40/11"
+            }
+          ]
+        },
+        "42": {
+          "split": "core:p9",
+          "children": [
+            {
+              "vector": 247,
+              "normalized_gap": "43/112"
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 251,
+                  "normalized_gap": "1253/258"
+                },
+                {
+                  "vector": 245,
+                  "normalized_gap": "101/134"
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q1",
+          "children": [
+            {
+              "vector": 253,
+              "normalized_gap": "596/293"
+            },
+            {
+              "split": "core:p9",
+              "children": [
+                {
+                  "vector": 254,
+                  "normalized_gap": "63/32"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 255,
+                      "normalized_gap": "132/19"
+                    },
+                    {
+                      "vector": 256,
+                      "normalized_gap": "661/204"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "44": {
+          "split": "core:q1",
+          "children": [
+            {
+              "vector": 257,
+              "normalized_gap": "166/65"
+            },
+            {
+              "split": "ordinary:q8:lower",
+              "children": [
+                {
+                  "vector": 258,
+                  "normalized_gap": "3328/987"
+                },
+                {
+                  "vector": 259,
+                  "normalized_gap": "29/33"
+                }
+              ]
+            }
+          ]
+        },
+        "45": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 260,
+              "normalized_gap": "479/814"
+            },
+            {
+              "vector": 261,
+              "normalized_gap": "63/61"
+            }
+          ]
+        },
+        "46": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 262,
+              "normalized_gap": "2021/939"
+            },
+            {
+              "vector": 263,
+              "normalized_gap": "841/341"
+            }
+          ]
+        },
+        "47": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 153,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 264,
+              "normalized_gap": "73/56"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,q5:-:p": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 29,
+          "last": 33,
+          "vector": 292,
+          "normalized_gap": "258/259",
+          "worst_parameter": 33,
+          "rhs_polynomial": [
+            "-29562",
+            "1284",
+            "-12"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 49,
+          "last": 49,
+          "vector": 303,
+          "normalized_gap": "105/62",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-65786",
+            "7323/2",
+            "-95/2"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "10276/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 268,
+                  "normalized_gap": "127/96"
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 269,
+                      "normalized_gap": "94/13"
+                    },
+                    {
+                      "vector": 270,
+                      "normalized_gap": "43/14"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "10834/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 271,
+                  "normalized_gap": "289/112"
+                },
+                {
+                  "vector": 272,
+                  "normalized_gap": "126/157"
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "9790/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 273,
+                  "normalized_gap": "55/109"
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 269,
+                      "normalized_gap": "1217/182"
+                    },
+                    {
+                      "vector": 274,
+                      "normalized_gap": "560/267"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "11464/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 271,
+                  "normalized_gap": "451/112"
+                },
+                {
+                  "vector": 275,
+                  "normalized_gap": "452/219"
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "9376/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 276,
+                  "normalized_gap": "3/14"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 277,
+                      "normalized_gap": "55/7"
+                    },
+                    {
+                      "vector": 278,
+                      "normalized_gap": "2401/570"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 279,
+              "normalized_gap": "100/29"
+            },
+            {
+              "vector": 280,
+              "normalized_gap": "178/157"
+            }
+          ]
+        },
+        "42": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "9034/689"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 276,
+                  "normalized_gap": "5/18"
+                },
+                {
+                  "split": "core:p0",
+                  "children": [
+                    {
+                      "vector": 281,
+                      "normalized_gap": "604/91"
+                    },
+                    {
+                      "vector": 282,
+                      "normalized_gap": "33/49"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "core:p5",
+          "children": [
+            {
+              "vector": 283,
+              "normalized_gap": "1136/211"
+            },
+            {
+              "vector": 284,
+              "normalized_gap": "251/97"
+            }
+          ]
+        },
+        "43": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 285,
+              "normalized_gap": "9681/761"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 286,
+                  "normalized_gap": "23/31"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 287,
+                      "normalized_gap": "17/2"
+                    },
+                    {
+                      "vector": 288,
+                      "normalized_gap": "1093/320"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 267,
+              "normalized_gap": "13786/689"
+            },
+            {
+              "vector": 289,
+              "normalized_gap": "104/67"
+            }
+          ]
+        },
+        "44": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 285,
+              "normalized_gap": "9540/761"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 286,
+                  "normalized_gap": "233/124"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 290,
+                      "normalized_gap": "850/91"
+                    },
+                    {
+                      "vector": 291,
+                      "normalized_gap": "740/189"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "45": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 293,
+              "normalized_gap": "15850/1271"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 294,
+                  "normalized_gap": "247/71"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 295,
+                      "normalized_gap": "958/91"
+                    },
+                    {
+                      "vector": 291,
+                      "normalized_gap": "872/189"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "46": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 296,
+              "normalized_gap": "22511/1783"
+            },
+            {
+              "split": "ordinary:q8:lower",
+              "children": [
+                {
+                  "vector": 297,
+                  "normalized_gap": "157/358"
+                },
+                {
+                  "vector": 298,
+                  "normalized_gap": "144/43"
+                }
+              ]
+            }
+          ]
+        },
+        "47": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 299,
+              "normalized_gap": "73/64"
+            },
+            {
+              "vector": 300,
+              "normalized_gap": "170/37"
+            }
+          ]
+        },
+        "48": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 301,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 302,
+              "normalized_gap": "488/173"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair1,q5:-:q": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 304,
+          "normalized_gap": "485/328",
+          "worst_parameter": 47,
+          "rhs_polynomial": [
+            "-30377",
+            "2541/2",
+            "-27/2"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:pair2,p0:-:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 269,
+      "segments": [
+        {
+          "first": 29,
+          "last": 29,
+          "vector": 394,
+          "normalized_gap": "165/163",
+          "worst_parameter": 29,
+          "rhs_polynomial": [
+            "-57237",
+            "6111/2",
+            "-75/2"
+          ],
+          "extremum_points": 1
+        },
+        {
+          "first": 49,
+          "last": 49,
+          "vector": 395,
+          "normalized_gap": "334/529",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-119698",
+            "7434",
+            "-102"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "27/2"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 307,
+                      "normalized_gap": "27/2"
+                    },
+                    {
+                      "split": "core:q8",
+                      "children": [
+                        {
+                          "vector": 75,
+                          "normalized_gap": "27/2"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 87,
+                              "normalized_gap": "27/2"
+                            },
+                            {
+                              "split": "core:p1",
+                              "children": [
+                                {
+                                  "vector": 308,
+                                  "normalized_gap": "27/2"
+                                },
+                                {
+                                  "vector": 309,
+                                  "normalized_gap": "1/9"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 310,
+                      "normalized_gap": "27/2"
+                    },
+                    {
+                      "vector": 311,
+                      "normalized_gap": "11/72"
+                    }
+                  ]
+                },
+                {
+                  "split": "ordinary:q0:upper",
+                  "children": [
+                    {
+                      "split": "core:p1",
+                      "children": [
+                        {
+                          "vector": 312,
+                          "normalized_gap": "59/50"
+                        },
+                        {
+                          "split": "core:p4",
+                          "children": [
+                            {
+                              "vector": 313,
+                              "normalized_gap": "59/51"
+                            },
+                            {
+                              "split": "core:p8",
+                              "children": [
+                                {
+                                  "vector": 314,
+                                  "normalized_gap": "151/42"
+                                },
+                                {
+                                  "vector": 315,
+                                  "normalized_gap": "68/223"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 316,
+                          "normalized_gap": "203/31"
+                        },
+                        {
+                          "vector": 317,
+                          "normalized_gap": "4/71"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "55/4"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 307,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "split": "core:q8",
+                      "children": [
+                        {
+                          "vector": 75,
+                          "normalized_gap": "55/4"
+                        },
+                        {
+                          "split": "ordinary:p8:lower",
+                          "children": [
+                            {
+                              "vector": 318,
+                              "normalized_gap": "17/39"
+                            },
+                            {
+                              "vector": 319,
+                              "normalized_gap": "1736/335"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 320,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "vector": 321,
+                      "normalized_gap": "23/72"
+                    }
+                  ]
+                },
+                {
+                  "split": "ordinary:q0:upper",
+                  "children": [
+                    {
+                      "split": "core:p1",
+                      "children": [
+                        {
+                          "vector": 312,
+                          "normalized_gap": "23/50"
+                        },
+                        {
+                          "split": "core:p4",
+                          "children": [
+                            {
+                              "vector": 322,
+                              "normalized_gap": "66/67"
+                            },
+                            {
+                              "split": "core:p8",
+                              "children": [
+                                {
+                                  "vector": 314,
+                                  "normalized_gap": "2519/651"
+                                },
+                                {
+                                  "vector": 323,
+                                  "normalized_gap": "970/2007"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 316,
+                          "normalized_gap": "641/93"
+                        },
+                        {
+                          "vector": 317,
+                          "normalized_gap": "12/71"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "55/4"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 307,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "split": "core:q8",
+                      "children": [
+                        {
+                          "vector": 75,
+                          "normalized_gap": "55/4"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 132,
+                              "normalized_gap": "55/4"
+                            },
+                            {
+                              "split": "core:p1",
+                              "children": [
+                                {
+                                  "vector": 308,
+                                  "normalized_gap": "55/4"
+                                },
+                                {
+                                  "split": "ordinary:p8:lower",
+                                  "children": [
+                                    {
+                                      "vector": 324,
+                                      "normalized_gap": "2342/1705"
+                                    },
+                                    {
+                                      "vector": 325,
+                                      "normalized_gap": "1071/185"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 310,
+                      "normalized_gap": "55/4"
+                    },
+                    {
+                      "vector": 326,
+                      "normalized_gap": "42/121"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 327,
+                      "normalized_gap": "11/50"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 328,
+                          "normalized_gap": "11/52"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 329,
+                              "normalized_gap": "313/170"
+                            },
+                            {
+                              "split": "core:q0",
+                              "children": [
+                                {
+                                  "vector": 330,
+                                  "normalized_gap": "5056/1083"
+                                },
+                                {
+                                  "vector": 331,
+                                  "normalized_gap": "10/123"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "29/2"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 75,
+                      "normalized_gap": "29/2"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 307,
+                          "normalized_gap": "29/2"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 87,
+                              "normalized_gap": "29/2"
+                            },
+                            {
+                              "vector": 332,
+                              "normalized_gap": "13/47"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 320,
+                      "normalized_gap": "29/2"
+                    },
+                    {
+                      "vector": 311,
+                      "normalized_gap": "59/72"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:p8",
+                  "children": [
+                    {
+                      "vector": 333,
+                      "normalized_gap": "7/43"
+                    },
+                    {
+                      "split": "core:q0",
+                      "children": [
+                        {
+                          "vector": 334,
+                          "normalized_gap": "508/201"
+                        },
+                        {
+                          "split": "ordinary:p4:lower",
+                          "children": [
+                            {
+                              "vector": 335,
+                              "normalized_gap": "21/1576"
+                            },
+                            {
+                              "vector": 336,
+                              "normalized_gap": "176/125"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "29/2"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 307,
+                      "normalized_gap": "29/2"
+                    },
+                    {
+                      "split": "core:q8",
+                      "children": [
+                        {
+                          "vector": 75,
+                          "normalized_gap": "29/2"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 132,
+                              "normalized_gap": "29/2"
+                            },
+                            {
+                              "split": "core:p1",
+                              "children": [
+                                {
+                                  "vector": 308,
+                                  "normalized_gap": "29/2"
+                                },
+                                {
+                                  "split": "core:p8",
+                                  "children": [
+                                    {
+                                      "vector": 87,
+                                      "normalized_gap": "29/2"
+                                    },
+                                    {
+                                      "vector": 337,
+                                      "normalized_gap": "2/9"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 338,
+                      "normalized_gap": "29/2"
+                    },
+                    {
+                      "vector": 339,
+                      "normalized_gap": "79/108"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 340,
+                      "normalized_gap": "488/293"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 341,
+                          "normalized_gap": "8/5"
+                        },
+                        {
+                          "split": "core:q0",
+                          "children": [
+                            {
+                              "vector": 342,
+                              "normalized_gap": "79/56"
+                            },
+                            {
+                              "split": "core:p8",
+                              "children": [
+                                {
+                                  "vector": 343,
+                                  "normalized_gap": "333/79"
+                                },
+                                {
+                                  "vector": 331,
+                                  "normalized_gap": "12/41"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "63/4"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 75,
+                      "normalized_gap": "63/4"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 307,
+                          "normalized_gap": "63/4"
+                        },
+                        {
+                          "vector": 344,
+                          "normalized_gap": "41/48"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 345,
+                      "normalized_gap": "63/4"
+                    },
+                    {
+                      "vector": 346,
+                      "normalized_gap": "61/43"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 347,
+                      "normalized_gap": "6/85"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 348,
+                          "normalized_gap": "69/98"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 349,
+                              "normalized_gap": "1421/359"
+                            },
+                            {
+                              "split": "core:q0",
+                              "children": [
+                                {
+                                  "vector": 350,
+                                  "normalized_gap": "698/95"
+                                },
+                                {
+                                  "vector": 351,
+                                  "normalized_gap": "34/43"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 134,
+                  "normalized_gap": "63/4"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 75,
+                      "normalized_gap": "63/4"
+                    },
+                    {
+                      "split": "core:q0",
+                      "children": [
+                        {
+                          "vector": 132,
+                          "normalized_gap": "63/4"
+                        },
+                        {
+                          "vector": 352,
+                          "normalized_gap": "4/17"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 353,
+                  "normalized_gap": "61/43"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 354,
+                      "normalized_gap": "536/287"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 355,
+                          "normalized_gap": "761/143"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 356,
+                              "normalized_gap": "761/140"
+                            },
+                            {
+                              "split": "core:p1",
+                              "children": [
+                                {
+                                  "vector": 357,
+                                  "normalized_gap": "698/95"
+                                },
+                                {
+                                  "vector": 358,
+                                  "normalized_gap": "153/194"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 359,
+                  "normalized_gap": "13/35"
+                },
+                {
+                  "vector": 360,
+                  "normalized_gap": "35/4"
+                }
+              ]
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 361,
+                  "normalized_gap": "1/22"
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 362,
+                      "normalized_gap": "184/81"
+                    },
+                    {
+                      "split": "ordinary:p4:lower",
+                      "children": [
+                        {
+                          "vector": 363,
+                          "normalized_gap": "54/23"
+                        },
+                        {
+                          "vector": 364,
+                          "normalized_gap": "66/175"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 75,
+                  "normalized_gap": "35/2"
+                },
+                {
+                  "split": "core:q6",
+                  "children": [
+                    {
+                      "vector": 134,
+                      "normalized_gap": "35/2"
+                    },
+                    {
+                      "vector": 365,
+                      "normalized_gap": "2/23"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 366,
+                  "normalized_gap": "932/251"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 367,
+                      "normalized_gap": "1694/305"
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 368,
+                          "normalized_gap": "1694/293"
+                        },
+                        {
+                          "vector": 369,
+                          "normalized_gap": "41/93"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "core:q5",
+          "children": [
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 75,
+                  "normalized_gap": "79/4"
+                },
+                {
+                  "vector": 370,
+                  "normalized_gap": "96/247"
+                }
+              ]
+            },
+            {
+              "split": "core:p1",
+              "children": [
+                {
+                  "vector": 371,
+                  "normalized_gap": "22/49"
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 372,
+                      "normalized_gap": "229/67"
+                    },
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 348,
+                          "normalized_gap": "325/98"
+                        },
+                        {
+                          "split": "core:p8",
+                          "children": [
+                            {
+                              "vector": 373,
+                              "normalized_gap": "2414/281"
+                            },
+                            {
+                              "vector": 374,
+                              "normalized_gap": "916/505"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "44": {
+          "split": "inner:q5:lower:1",
+          "children": [
+            {
+              "split": "core:q5",
+              "children": [
+                {
+                  "split": "core:q6",
+                  "children": [
+                    {
+                      "vector": 134,
+                      "normalized_gap": "79/4"
+                    },
+                    {
+                      "vector": 375,
+                      "normalized_gap": "1/8"
+                    }
+                  ]
+                },
+                {
+                  "split": "core:q8",
+                  "children": [
+                    {
+                      "vector": 376,
+                      "normalized_gap": "1598/251"
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 377,
+                          "normalized_gap": "2468/293"
+                        },
+                        {
+                          "vector": 378,
+                          "normalized_gap": "112/73"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "vector": 379,
+              "normalized_gap": "12/7"
+            }
+          ]
+        },
+        "33": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "7/3"
+            },
+            {
+              "split": "core:p1",
+              "children": [
+                {
+                  "vector": 380,
+                  "normalized_gap": "705/247"
+                },
+                {
+                  "split": "core:p4",
+                  "children": [
+                    {
+                      "vector": 381,
+                      "normalized_gap": "159/37"
+                    },
+                    {
+                      "split": "core:p8",
+                      "children": [
+                        {
+                          "vector": 382,
+                          "normalized_gap": "3302/281"
+                        },
+                        {
+                          "vector": 383,
+                          "normalized_gap": "276/73"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "45": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "7/3"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 384,
+                  "normalized_gap": "1856/245"
+                },
+                {
+                  "split": "ordinary:q8:lower",
+                  "children": [
+                    {
+                      "vector": 385,
+                      "normalized_gap": "21/17"
+                    },
+                    {
+                      "vector": 386,
+                      "normalized_gap": "271/61"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "32": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "20/3"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 193,
+                  "normalized_gap": "20/3"
+                },
+                {
+                  "vector": 387,
+                  "normalized_gap": "5/4"
+                }
+              ]
+            }
+          ]
+        },
+        "46": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "20/3"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 384,
+                  "normalized_gap": "386/35"
+                },
+                {
+                  "vector": 388,
+                  "normalized_gap": "137/95"
+                }
+              ]
+            }
+          ]
+        },
+        "31": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 389,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 390,
+              "normalized_gap": "2/33"
+            }
+          ]
+        },
+        "47": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 391,
+              "normalized_gap": "36/31"
+            }
+          ]
+        },
+        "30": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 389,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 392,
+              "normalized_gap": "824/191"
+            }
+          ]
+        },
+        "48": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 393,
+              "normalized_gap": "1178/167"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:pair2,q5:-:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 297,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 398,
+          "normalized_gap": "53/115",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-12842",
+            "963/2",
+            "-9/2"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:pair2,q8:-:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 298,
+      "segments": [
+        {
+          "first": 29,
+          "last": 45,
+          "vector": 400,
+          "normalized_gap": "13/56",
+          "worst_parameter": 45,
+          "rhs_polynomial": [
+            "-12581",
+            "963/2",
+            "-9/2"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 46,
+          "last": 49,
+          "vector": 401,
+          "normalized_gap": "53/62",
+          "worst_parameter": 46,
+          "rhs_polynomial": [
+            "-7413",
+            "390",
+            "-5"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:p0,p5:-:q": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 266,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 404,
+          "normalized_gap": "1/7",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-3050",
+            "156",
+            "-2"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:p0,p8:q:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 269,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 405,
+          "normalized_gap": "10/3",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-9646",
+            "468",
+            "-6"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:p0,q0:q:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 240,
+      "segments": [
+        {
+          "first": 29,
+          "last": 35,
+          "vector": 420,
+          "normalized_gap": "22/59",
+          "worst_parameter": 35,
+          "rhs_polynomial": [
+            "-4572",
+            "165",
+            "-1"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 49,
+          "last": 49,
+          "vector": 432,
+          "normalized_gap": "125/39",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-31762",
+            "1863",
+            "-25"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 406,
+              "normalized_gap": "367/151"
+            },
+            {
+              "split": "ordinary:p4:lower",
+              "children": [
+                {
+                  "vector": 407,
+                  "normalized_gap": "682/423"
+                },
+                {
+                  "vector": 408,
+                  "normalized_gap": "39/46"
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 406,
+              "normalized_gap": "520/151"
+            },
+            {
+              "vector": 409,
+              "normalized_gap": "114/149"
+            }
+          ]
+        },
+        "40": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 410,
+              "normalized_gap": "245/122"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 411,
+                  "normalized_gap": "1544/329"
+                },
+                {
+                  "vector": 412,
+                  "normalized_gap": "560/267"
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 406,
+              "normalized_gap": "718/151"
+            },
+            {
+              "vector": 413,
+              "normalized_gap": "148/71"
+            }
+          ]
+        },
+        "41": {
+          "split": "core:p1",
+          "children": [
+            {
+              "vector": 414,
+              "normalized_gap": "74/55"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 411,
+                  "normalized_gap": "1454/329"
+                },
+                {
+                  "vector": 415,
+                  "normalized_gap": "64/49"
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 406,
+              "normalized_gap": "961/151"
+            },
+            {
+              "vector": 416,
+              "normalized_gap": "64/17"
+            }
+          ]
+        },
+        "42": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 417,
+              "normalized_gap": "61/50"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 418,
+                  "normalized_gap": "1611/335"
+                },
+                {
+                  "vector": 419,
+                  "normalized_gap": "101/134"
+                }
+              ]
+            }
+          ]
+        },
+        "43": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 417,
+              "normalized_gap": "7/5"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 421,
+                  "normalized_gap": "410/71"
+                },
+                {
+                  "vector": 419,
+                  "normalized_gap": "143/134"
+                }
+              ]
+            }
+          ]
+        },
+        "44": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 422,
+              "normalized_gap": "554/293"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 423,
+                  "normalized_gap": "500/71"
+                },
+                {
+                  "vector": 424,
+                  "normalized_gap": "104/69"
+                }
+              ]
+            }
+          ]
+        },
+        "45": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "7/3"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 425,
+                  "normalized_gap": "971/84"
+                },
+                {
+                  "vector": 426,
+                  "normalized_gap": "775/138"
+                }
+              ]
+            }
+          ]
+        },
+        "46": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 427,
+              "normalized_gap": "448/325"
+            },
+            {
+              "vector": 428,
+              "normalized_gap": "50/61"
+            }
+          ]
+        },
+        "47": {
+          "split": "core:q5",
+          "children": [
+            {
+              "vector": 158,
+              "normalized_gap": "35/3"
+            },
+            {
+              "vector": 429,
+              "normalized_gap": "4/3"
+            }
+          ]
+        },
+        "48": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 430,
+              "normalized_gap": "52/3"
+            },
+            {
+              "vector": 431,
+              "normalized_gap": "740/173"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:A:p0,q5:-:p": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 266,
+      "segments": [
+        {
+          "first": 29,
+          "last": 45,
+          "vector": 433,
+          "normalized_gap": "29/115",
+          "worst_parameter": 45,
+          "rhs_polynomial": [
+            "-12584",
+            "963/2",
+            "-9/2"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 46,
+          "last": 49,
+          "vector": 434,
+          "normalized_gap": "818/651",
+          "worst_parameter": 47,
+          "rhs_polynomial": [
+            "-60602",
+            "2541",
+            "-27"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:A:p0,q5:-:q": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 266,
+      "segments": [
+        {
+          "first": 29,
+          "last": 33,
+          "vector": 458,
+          "normalized_gap": "95/96",
+          "worst_parameter": 33,
+          "rhs_polynomial": [
+            "-60069",
+            "5421/2",
+            "-55/2"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 46,
+          "last": 49,
+          "vector": 461,
+          "normalized_gap": "898/699",
+          "worst_parameter": 46,
+          "rhs_polynomial": [
+            "-17642",
+            "2388",
+            "-44"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "7699/479"
+            },
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 436,
+                  "normalized_gap": "3547/2338"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 437,
+                      "normalized_gap": "111/19"
+                    },
+                    {
+                      "vector": 438,
+                      "normalized_gap": "249/139"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "8116/479"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 439,
+                  "normalized_gap": "74/137"
+                },
+                {
+                  "vector": 440,
+                  "normalized_gap": "886/2505"
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "7333/479"
+            },
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 441,
+                  "normalized_gap": "187/313"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 437,
+                      "normalized_gap": "571/95"
+                    },
+                    {
+                      "vector": 438,
+                      "normalized_gap": "258/139"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "8584/479"
+            },
+            {
+              "split": "core:p4",
+              "children": [
+                {
+                  "vector": 442,
+                  "normalized_gap": "754/373"
+                },
+                {
+                  "vector": 443,
+                  "normalized_gap": "226/425"
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "7018/479"
+            },
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 444,
+                  "normalized_gap": "49/55"
+                },
+                {
+                  "split": "core:q0",
+                  "children": [
+                    {
+                      "vector": 445,
+                      "normalized_gap": "619/95"
+                    },
+                    {
+                      "vector": 446,
+                      "normalized_gap": "631/263"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 447,
+              "normalized_gap": "44/13"
+            },
+            {
+              "vector": 448,
+              "normalized_gap": "66/71"
+            }
+          ]
+        },
+        "42": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "6754/479"
+            },
+            {
+              "split": "ordinary:q7:lower",
+              "children": [
+                {
+                  "vector": 449,
+                  "normalized_gap": "198/53"
+                },
+                {
+                  "vector": 450,
+                  "normalized_gap": "187/670"
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 447,
+              "normalized_gap": "356/65"
+            },
+            {
+              "vector": 451,
+              "normalized_gap": "251/100"
+            }
+          ]
+        },
+        "43": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 435,
+              "normalized_gap": "6541/479"
+            },
+            {
+              "split": "core:q6",
+              "children": [
+                {
+                  "vector": 452,
+                  "normalized_gap": "70/23"
+                },
+                {
+                  "vector": 453,
+                  "normalized_gap": "1466/953"
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 454,
+              "normalized_gap": "2389/110"
+            },
+            {
+              "vector": 455,
+              "normalized_gap": "1884/1357"
+            }
+          ]
+        },
+        "44": {
+          "split": "core:q6",
+          "children": [
+            {
+              "vector": 456,
+              "normalized_gap": "188/69"
+            },
+            {
+              "vector": 457,
+              "normalized_gap": "79/44"
+            }
+          ]
+        },
+        "45": {
+          "split": "pair:both_or_sole",
+          "children": [
+            {
+              "vector": 459,
+              "normalized_gap": "1976/151"
+            },
+            {
+              "vector": 460,
+              "normalized_gap": "226/251"
+            }
+          ]
+        }
+      }
+    },
+    "Z2:B:pair1,pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 295,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 481,
+          "normalized_gap": "259/89",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-20550",
+            "1014",
+            "-13"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "Z2:B:p0,p1:p:-": {
+      "kind": "global_nested",
+      "lo": 29,
+      "hi": 49,
+      "policy": {
+        "cap": 112,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 255,
+      "segments": [
+        {
+          "first": 29,
+          "last": 49,
+          "vector": 491,
+          "normalized_gap": "3/13",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-6108",
+            "312",
+            "-4"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P1:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 27,
+      "hi": 51,
+      "policy": {
+        "cap": 159,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 301,
+      "segments": [
+        {
+          "first": 27,
+          "last": 42,
+          "vector": 676,
+          "normalized_gap": "176/521",
+          "worst_parameter": 42,
+          "rhs_polynomial": [
+            "-50324",
+            "1950",
+            "-18"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 49,
+          "last": 51,
+          "vector": 688,
+          "normalized_gap": "7/16",
+          "worst_parameter": 49,
+          "rhs_polynomial": [
+            "-2870",
+            "156",
+            "-2"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "43": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 677,
+              "normalized_gap": "1528/495"
+            },
+            {
+              "vector": 678,
+              "normalized_gap": "119/114"
+            }
+          ]
+        },
+        "44": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 679,
+              "normalized_gap": "2804/599"
+            },
+            {
+              "vector": 680,
+              "normalized_gap": "98/349"
+            }
+          ]
+        },
+        "45": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 681,
+              "normalized_gap": "2458/1007"
+            },
+            {
+              "vector": 682,
+              "normalized_gap": "11/38"
+            }
+          ]
+        },
+        "46": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 683,
+              "normalized_gap": "6604/2611"
+            },
+            {
+              "vector": 678,
+              "normalized_gap": "5/114"
+            }
+          ]
+        },
+        "47": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 684,
+              "normalized_gap": "61/85"
+            },
+            {
+              "vector": 685,
+              "normalized_gap": "19/125"
+            }
+          ]
+        },
+        "48": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 686,
+              "normalized_gap": "5/3"
+            },
+            {
+              "vector": 687,
+              "normalized_gap": "7/48"
+            }
+          ]
+        }
+      }
+    },
+    "P1:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 27,
+      "hi": 51,
+      "policy": {
+        "cap": 159,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [
+        {
+          "first": 27,
+          "last": 33,
+          "vector": 420,
+          "normalized_gap": "42/59",
+          "worst_parameter": 33,
+          "rhs_polynomial": [
+            "-4464",
+            "167",
+            "-1"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 46,
+          "last": 51,
+          "vector": 726,
+          "normalized_gap": "424/343",
+          "worst_parameter": 46,
+          "rhs_polynomial": [
+            "4524",
+            "1254",
+            "-30"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "core:p8",
+          "children": [
+            {
+              "vector": 689,
+              "normalized_gap": "84/109"
+            },
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 690,
+                  "normalized_gap": "591/329"
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 691,
+                      "normalized_gap": "8/5"
+                    },
+                    {
+                      "split": "ordinary:p4:lower",
+                      "children": [
+                        {
+                          "vector": 692,
+                          "normalized_gap": "734/1489"
+                        },
+                        {
+                          "vector": 693,
+                          "normalized_gap": "38/41"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "38": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 694,
+              "normalized_gap": "119/244"
+            },
+            {
+              "split": "ordinary:p4:lower",
+              "children": [
+                {
+                  "vector": 695,
+                  "normalized_gap": "1006/1699"
+                },
+                {
+                  "vector": 696,
+                  "normalized_gap": "40/117"
+                }
+              ]
+            }
+          ]
+        },
+        "40": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 697,
+              "normalized_gap": "346/901"
+            },
+            {
+              "split": "core:q0",
+              "children": [
+                {
+                  "vector": 698,
+                  "normalized_gap": "1/9"
+                },
+                {
+                  "split": "core:p1",
+                  "children": [
+                    {
+                      "vector": 699,
+                      "normalized_gap": "282/229"
+                    },
+                    {
+                      "split": "ordinary:q9:lower",
+                      "children": [
+                        {
+                          "vector": 700,
+                          "normalized_gap": "1250/1513"
+                        },
+                        {
+                          "vector": 701,
+                          "normalized_gap": "1/35"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "37": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 702,
+              "normalized_gap": "1394/895"
+            },
+            {
+              "split": "ordinary:p4:lower",
+              "children": [
+                {
+                  "vector": 703,
+                  "normalized_gap": "536/371"
+                },
+                {
+                  "vector": 696,
+                  "normalized_gap": "62/117"
+                }
+              ]
+            }
+          ]
+        },
+        "41": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 704,
+              "normalized_gap": "1972/1285"
+            },
+            {
+              "split": "ordinary:q9:lower",
+              "children": [
+                {
+                  "vector": 705,
+                  "normalized_gap": "8/45"
+                },
+                {
+                  "split": "ordinary:q6:lower",
+                  "children": [
+                    {
+                      "vector": 706,
+                      "normalized_gap": "298/877"
+                    },
+                    {
+                      "vector": 707,
+                      "normalized_gap": "62/123"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "36": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 708,
+              "normalized_gap": "114/179"
+            },
+            {
+              "split": "ordinary:q0:upper",
+              "children": [
+                {
+                  "vector": 709,
+                  "normalized_gap": "50/99"
+                },
+                {
+                  "vector": 710,
+                  "normalized_gap": "314/629"
+                }
+              ]
+            }
+          ]
+        },
+        "42": {
+          "split": "ordinary:q9:lower",
+          "children": [
+            {
+              "vector": 711,
+              "normalized_gap": "148/241"
+            },
+            {
+              "split": "core:p1",
+              "children": [
+                {
+                  "vector": 712,
+                  "normalized_gap": "5844/2971"
+                },
+                {
+                  "split": "ordinary:q0:upper",
+                  "children": [
+                    {
+                      "vector": 713,
+                      "normalized_gap": "7/202"
+                    },
+                    {
+                      "vector": 714,
+                      "normalized_gap": "158/385"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "35": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 715,
+              "normalized_gap": "306/65"
+            },
+            {
+              "vector": 716,
+              "normalized_gap": "244/1093"
+            }
+          ]
+        },
+        "43": {
+          "split": "ordinary:q9:lower",
+          "children": [
+            {
+              "vector": 717,
+              "normalized_gap": "28/13"
+            },
+            {
+              "split": "ordinary:p1:upper",
+              "children": [
+                {
+                  "vector": 718,
+                  "normalized_gap": "238/361"
+                },
+                {
+                  "vector": 719,
+                  "normalized_gap": "682/971"
+                }
+              ]
+            }
+          ]
+        },
+        "34": {
+          "split": "core:p4",
+          "children": [
+            {
+              "vector": 720,
+              "normalized_gap": "626/609"
+            },
+            {
+              "vector": 721,
+              "normalized_gap": "120/71"
+            }
+          ]
+        },
+        "44": {
+          "split": "ordinary:p1:upper",
+          "children": [
+            {
+              "vector": 722,
+              "normalized_gap": "170/353"
+            },
+            {
+              "vector": 723,
+              "normalized_gap": "288/337"
+            }
+          ]
+        },
+        "45": {
+          "split": "core:q9",
+          "children": [
+            {
+              "vector": 724,
+              "normalized_gap": "109/116"
+            },
+            {
+              "vector": 725,
+              "normalized_gap": "311/88"
+            }
+          ]
+        }
+      }
+    },
+    "P2:A:pair1,pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 297,
+      "segments": [
+        {
+          "first": 31,
+          "last": 35,
+          "vector": 745,
+          "normalized_gap": "1298/1537",
+          "worst_parameter": 35,
+          "rhs_polynomial": [
+            "-204578",
+            "9588",
+            "-108"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 43,
+          "last": 47,
+          "vector": 746,
+          "normalized_gap": "1298/1537",
+          "worst_parameter": 43,
+          "rhs_polynomial": [
+            "-113786",
+            "7260",
+            "-108"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "ordinary:q0:upper",
+          "children": [
+            {
+              "split": "ordinary:p5:lower",
+              "children": [
+                {
+                  "split": "ordinary:p8:lower",
+                  "children": [
+                    {
+                      "vector": 727,
+                      "normalized_gap": "32/153"
+                    },
+                    {
+                      "vector": 728,
+                      "normalized_gap": "171/115"
+                    }
+                  ]
+                },
+                {
+                  "vector": 729,
+                  "normalized_gap": "90/89"
+                }
+              ]
+            },
+            {
+              "vector": 730,
+              "normalized_gap": "14/15"
+            }
+          ]
+        },
+        "38": {
+          "split": "ordinary:p5:lower",
+          "children": [
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 731,
+                  "normalized_gap": "2126/2119"
+                },
+                {
+                  "vector": 732,
+                  "normalized_gap": "776/431"
+                }
+              ]
+            },
+            {
+              "vector": 733,
+              "normalized_gap": "51/89"
+            }
+          ]
+        },
+        "40": {
+          "split": "ordinary:p0:upper",
+          "children": [
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "split": "ordinary:q8:lower",
+                  "children": [
+                    {
+                      "vector": 734,
+                      "normalized_gap": "686/603"
+                    },
+                    {
+                      "vector": 735,
+                      "normalized_gap": "955/454"
+                    }
+                  ]
+                },
+                {
+                  "vector": 736,
+                  "normalized_gap": "100/89"
+                }
+              ]
+            },
+            {
+              "vector": 737,
+              "normalized_gap": "16/15"
+            }
+          ]
+        },
+        "37": {
+          "split": "ordinary:p5:lower",
+          "children": [
+            {
+              "vector": 738,
+              "normalized_gap": "266/293"
+            },
+            {
+              "vector": 733,
+              "normalized_gap": "74/89"
+            }
+          ]
+        },
+        "41": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 739,
+              "normalized_gap": "1/13"
+            },
+            {
+              "vector": 740,
+              "normalized_gap": "14/17"
+            }
+          ]
+        },
+        "36": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 741,
+              "normalized_gap": "3806/3291"
+            },
+            {
+              "vector": 742,
+              "normalized_gap": "4332/2255"
+            }
+          ]
+        },
+        "42": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 743,
+              "normalized_gap": "3806/3291"
+            },
+            {
+              "vector": 744,
+              "normalized_gap": "4332/2255"
+            }
+          ]
+        }
+      }
+    },
+    "P2:A:pair1,p5:-:q": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 752,
+          "normalized_gap": "41/568",
+          "worst_parameter": 32,
+          "rhs_polynomial": [
+            "-43625",
+            "2706",
+            "-42"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P2:A:pair1,q5:-:p": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 294,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 756,
+          "normalized_gap": "41/568",
+          "worst_parameter": 46,
+          "rhs_polynomial": [
+            "-88085",
+            "3846",
+            "-42"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P2:A:pair2,p0:-:-": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 269,
+      "segments": [
+        {
+          "first": 31,
+          "last": 35,
+          "vector": 774,
+          "normalized_gap": "1298/1545",
+          "worst_parameter": 35,
+          "rhs_polynomial": [
+            "-204578",
+            "9588",
+            "-108"
+          ],
+          "extremum_points": 2
+        },
+        {
+          "first": 43,
+          "last": 47,
+          "vector": 775,
+          "normalized_gap": "1298/1545",
+          "worst_parameter": 43,
+          "rhs_polynomial": [
+            "-113786",
+            "7260",
+            "-108"
+          ],
+          "extremum_points": 2
+        }
+      ],
+      "trees": {
+        "39": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 759,
+                  "normalized_gap": "17/180"
+                },
+                {
+                  "vector": 760,
+                  "normalized_gap": "12/11"
+                }
+              ]
+            },
+            {
+              "vector": 761,
+              "normalized_gap": "40/89"
+            }
+          ]
+        },
+        "38": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 762,
+                  "normalized_gap": "2126/2123"
+                },
+                {
+                  "vector": 763,
+                  "normalized_gap": "10/87"
+                }
+              ]
+            },
+            {
+              "vector": 764,
+              "normalized_gap": "16/15"
+            }
+          ]
+        },
+        "40": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "split": "ordinary:q5:lower",
+              "children": [
+                {
+                  "vector": 765,
+                  "normalized_gap": "2126/2127"
+                },
+                {
+                  "vector": 760,
+                  "normalized_gap": "13/11"
+                }
+              ]
+            },
+            {
+              "vector": 761,
+              "normalized_gap": "51/89"
+            }
+          ]
+        },
+        "37": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 766,
+              "normalized_gap": "156/157"
+            },
+            {
+              "vector": 767,
+              "normalized_gap": "2/167"
+            }
+          ]
+        },
+        "41": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 768,
+              "normalized_gap": "266/293"
+            },
+            {
+              "vector": 769,
+              "normalized_gap": "7/22"
+            }
+          ]
+        },
+        "36": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 770,
+              "normalized_gap": "2330/2701"
+            },
+            {
+              "vector": 771,
+              "normalized_gap": "14276/5957"
+            }
+          ]
+        },
+        "42": {
+          "split": "ordinary:q8:lower",
+          "children": [
+            {
+              "vector": 772,
+              "normalized_gap": "1534/1503"
+            },
+            {
+              "vector": 773,
+              "normalized_gap": "4896/2267"
+            }
+          ]
+        }
+      }
+    },
+    "P2:A:p0,p8:q:-": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 269,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 785,
+          "normalized_gap": "1559/314",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-76126",
+            "3744",
+            "-48"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P2:A:p0,q5:-:q": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 80,
+      "rows": 266,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 790,
+          "normalized_gap": "46/51",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-30696",
+            "1560",
+            "-20"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P2:B:pair1,pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 295,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 801,
+          "normalized_gap": "398/77",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-19048",
+            "936",
+            "-12"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "P2:B:p0,p1:p:-": {
+      "kind": "global_nested",
+      "lo": 31,
+      "hi": 47,
+      "policy": {
+        "cap": 72,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 82,
+      "rows": 255,
+      "segments": [
+        {
+          "first": 31,
+          "last": 47,
+          "vector": 809,
+          "normalized_gap": "451/94",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-47434",
+            "2340",
+            "-30"
+          ],
+          "extremum_points": 4
+        }
+      ],
+      "trees": {}
+    },
+    "H1:37:156:193:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 37,
+      "hi": 37,
+      "policy": {
+        "cap": 78,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [],
+      "trees": {
+        "37": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 827,
+              "normalized_gap": "213/440"
+            },
+            {
+              "vector": 828,
+              "normalized_gap": "1291/370"
+            }
+          ]
+        }
+      }
+    },
+    "H1:38:165:184:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 38,
+      "hi": 38,
+      "policy": {
+        "cap": 82,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 301,
+      "segments": [
+        {
+          "first": 38,
+          "last": 38,
+          "vector": 829,
+          "normalized_gap": "91/32",
+          "worst_parameter": 38,
+          "rhs_polynomial": [
+            "-30585",
+            "2835/2",
+            "-33/2"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    },
+    "H1:38:165:184:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 38,
+      "hi": 38,
+      "policy": {
+        "cap": 82,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [],
+      "trees": {
+        "38": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 830,
+              "normalized_gap": "543/481"
+            },
+            {
+              "vector": 831,
+              "normalized_gap": "96/137"
+            }
+          ]
+        }
+      }
+    },
+    "H0:39:174:174:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 39,
+      "hi": 39,
+      "policy": {
+        "cap": 78,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [
+        {
+          "first": 39,
+          "last": 39,
+          "vector": 834,
+          "normalized_gap": "184/135",
+          "worst_parameter": 39,
+          "rhs_polynomial": [
+            "-5098",
+            "165",
+            "-1"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    },
+    "H1:39:174:174:A:pair1:p:-": {
+      "kind": "global_nested",
+      "lo": 39,
+      "hi": 39,
+      "policy": {
+        "cap": 84,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 300,
+      "segments": [],
+      "trees": {
+        "39": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 835,
+              "normalized_gap": "323/150"
+            },
+            {
+              "split": "core:q8",
+              "children": [
+                {
+                  "vector": 836,
+                  "normalized_gap": "43/4"
+                },
+                {
+                  "vector": 837,
+                  "normalized_gap": "1/60"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H1:39:174:174:A:pair1:q:-": {
+      "kind": "global_nested",
+      "lo": 39,
+      "hi": 39,
+      "policy": {
+        "cap": 84,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 300,
+      "segments": [],
+      "trees": {
+        "39": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 838,
+              "normalized_gap": "565/151"
+            },
+            {
+              "split": "core:p5",
+              "children": [
+                {
+                  "vector": 839,
+                  "normalized_gap": "43/4"
+                },
+                {
+                  "vector": 840,
+                  "normalized_gap": "274/207"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H1:39:174:174:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 39,
+      "hi": 39,
+      "policy": {
+        "cap": 84,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 301,
+      "segments": [],
+      "trees": {
+        "39": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 841,
+              "normalized_gap": "323/150"
+            },
+            {
+              "split": "core:p8",
+              "children": [
+                {
+                  "vector": 842,
+                  "normalized_gap": "43/4"
+                },
+                {
+                  "vector": 843,
+                  "normalized_gap": "1/60"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H1:39:174:174:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 39,
+      "hi": 39,
+      "policy": {
+        "cap": 84,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [],
+      "trees": {
+        "39": {
+          "split": "ordinary:q9:lower",
+          "children": [
+            {
+              "split": "inner:q5:lower:1",
+              "children": [
+                {
+                  "split": "inner:p8:lower:1",
+                  "children": [
+                    {
+                      "split": "core:p4",
+                      "children": [
+                        {
+                          "vector": 844,
+                          "normalized_gap": "1/5"
+                        },
+                        {
+                          "split": "ordinary:p4:lower",
+                          "children": [
+                            {
+                              "split": "inner:p8:lower:4",
+                              "children": [
+                                {
+                                  "split": "core:q5",
+                                  "children": [
+                                    {
+                                      "vector": 845,
+                                      "normalized_gap": "3/4"
+                                    },
+                                    {
+                                      "split": "ordinary:p8:lower",
+                                      "children": [
+                                        {
+                                          "vector": 846,
+                                          "normalized_gap": "1031/1651"
+                                        },
+                                        {
+                                          "split": "core:q0",
+                                          "children": [
+                                            {
+                                              "vector": 847,
+                                              "normalized_gap": "43/4"
+                                            },
+                                            {
+                                              "split": "ordinary:q5:lower",
+                                              "children": [
+                                                {
+                                                  "vector": 848,
+                                                  "normalized_gap": "446/1881"
+                                                },
+                                                {
+                                                  "vector": 849,
+                                                  "normalized_gap": "1"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "vector": 850,
+                                  "normalized_gap": "75/329"
+                                }
+                              ]
+                            },
+                            {
+                              "split": "core:q5",
+                              "children": [
+                                {
+                                  "vector": 851,
+                                  "normalized_gap": "43/4"
+                                },
+                                {
+                                  "split": "ordinary:p8:lower",
+                                  "children": [
+                                    {
+                                      "vector": 852,
+                                      "normalized_gap": "90/31"
+                                    },
+                                    {
+                                      "vector": 853,
+                                      "normalized_gap": "1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "vector": 854,
+                      "normalized_gap": "709/375"
+                    }
+                  ]
+                },
+                {
+                  "vector": 855,
+                  "normalized_gap": "511/393"
+                }
+              ]
+            },
+            {
+              "split": "core:p1",
+              "children": [
+                {
+                  "vector": 856,
+                  "normalized_gap": "43/4"
+                },
+                {
+                  "split": "core:q5",
+                  "children": [
+                    {
+                      "vector": 857,
+                      "normalized_gap": "43/4"
+                    },
+                    {
+                      "split": "ordinary:p8:lower",
+                      "children": [
+                        {
+                          "vector": 858,
+                          "normalized_gap": "593/410"
+                        },
+                        {
+                          "vector": 859,
+                          "normalized_gap": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H0:40:184:165:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 40,
+      "hi": 40,
+      "policy": {
+        "cap": 86,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [
+        {
+          "first": 40,
+          "last": 40,
+          "vector": 874,
+          "normalized_gap": "76/117",
+          "worst_parameter": 40,
+          "rhs_polynomial": [
+            "-5076",
+            "165",
+            "-1"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    },
+    "H1:40:184:165:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 40,
+      "hi": 40,
+      "policy": {
+        "cap": 82,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 301,
+      "segments": [
+        {
+          "first": 40,
+          "last": 40,
+          "vector": 829,
+          "normalized_gap": "19/16",
+          "worst_parameter": 40,
+          "rhs_polynomial": [
+            "-30528",
+            "2835/2",
+            "-33/2"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    },
+    "H1:40:184:165:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 40,
+      "hi": 40,
+      "policy": {
+        "cap": 82,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [],
+      "trees": {
+        "40": {
+          "split": "ordinary:q5:lower",
+          "children": [
+            {
+              "vector": 876,
+              "normalized_gap": "431/426"
+            },
+            {
+              "vector": 877,
+              "normalized_gap": "47/46"
+            }
+          ]
+        }
+      }
+    },
+    "H0:41:193:156:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 41,
+      "hi": 41,
+      "policy": {
+        "cap": 91,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [],
+      "trees": {
+        "41": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 879,
+              "normalized_gap": "874/331"
+            },
+            {
+              "vector": 880,
+              "normalized_gap": "91/115"
+            }
+          ]
+        }
+      }
+    },
+    "H1:41:193:156:A:pair2:-:-": {
+      "kind": "global_nested",
+      "lo": 41,
+      "hi": 41,
+      "policy": {
+        "cap": 78,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 301,
+      "segments": [
+        {
+          "first": 41,
+          "last": 41,
+          "vector": 829,
+          "normalized_gap": "23/16",
+          "worst_parameter": 41,
+          "rhs_polynomial": [
+            "-30657",
+            "2835/2",
+            "-33/2"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    },
+    "H1:41:193:156:A:p0:q:-": {
+      "kind": "global_nested",
+      "lo": 41,
+      "hi": 41,
+      "policy": {
+        "cap": 78,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 84,
+      "rows": 272,
+      "segments": [],
+      "trees": {
+        "41": {
+          "split": "ordinary:p1:upper",
+          "children": [
+            {
+              "vector": 881,
+              "normalized_gap": "10/27"
+            },
+            {
+              "vector": 882,
+              "normalized_gap": "1291/370"
+            }
+          ]
+        }
+      }
+    },
+    "H0:42:203:148:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 42,
+      "hi": 42,
+      "policy": {
+        "cap": 93,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [],
+      "trees": {
+        "42": {
+          "split": "ordinary:p8:lower",
+          "children": [
+            {
+              "vector": 883,
+              "normalized_gap": "232/111"
+            },
+            {
+              "vector": 880,
+              "normalized_gap": "28/115"
+            }
+          ]
+        }
+      }
+    },
+    "H0:43:213:139:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 43,
+      "hi": 43,
+      "policy": {
+        "cap": 93,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [],
+      "trees": {
+        "43": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 885,
+              "normalized_gap": "182/111"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 886,
+                  "normalized_gap": "110/43"
+                },
+                {
+                  "split": "inner:p0:upper:4",
+                  "children": [
+                    {
+                      "split": "inner:q9:lower:4",
+                      "children": [
+                        {
+                          "vector": 887,
+                          "normalized_gap": "8/137"
+                        },
+                        {
+                          "vector": 888,
+                          "normalized_gap": "149/58"
+                        }
+                      ]
+                    },
+                    {
+                      "vector": 889,
+                      "normalized_gap": "152/115"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H0:44:224:131:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 44,
+      "hi": 44,
+      "policy": {
+        "cap": 88,
+        "quantile": "global",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [],
+      "trees": {
+        "44": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 885,
+              "normalized_gap": "170/111"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 886,
+                  "normalized_gap": "334/129"
+                },
+                {
+                  "split": "ordinary:q0:upper",
+                  "children": [
+                    {
+                      "split": "inner:p0:upper:4",
+                      "children": [
+                        {
+                          "vector": 890,
+                          "normalized_gap": "22/991"
+                        },
+                        {
+                          "vector": 889,
+                          "normalized_gap": "136/115"
+                        }
+                      ]
+                    },
+                    {
+                      "vector": 891,
+                      "normalized_gap": "29/5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H0:45:234:123:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 45,
+      "hi": 45,
+      "policy": {
+        "cap": 80,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [],
+      "trees": {
+        "45": {
+          "split": "ordinary:p4:lower",
+          "children": [
+            {
+              "vector": 892,
+              "normalized_gap": "200/119"
+            },
+            {
+              "split": "ordinary:p8:lower",
+              "children": [
+                {
+                  "vector": 893,
+                  "normalized_gap": "35/11"
+                },
+                {
+                  "vector": 894,
+                  "normalized_gap": "970/2451"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "H0:46:245:116:A:-:q:-": {
+      "kind": "global_nested",
+      "lo": 46,
+      "hi": 46,
+      "policy": {
+        "cap": 69,
+        "quantile": "core",
+        "leading_basic": true,
+        "leading_nested": true,
+        "strict_outer": true
+      },
+      "variables": 86,
+      "rows": 304,
+      "segments": [
+        {
+          "first": 46,
+          "last": 46,
+          "vector": 895,
+          "normalized_gap": "204/343",
+          "worst_parameter": 46,
+          "rhs_polynomial": [
+            "-14924",
+            "780",
+            "-10"
+          ],
+          "extremum_points": 1
+        }
+      ],
+      "trees": {}
+    }
+  }
+}
