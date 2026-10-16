@@ -1,0 +1,316 @@
+{
+  "counts": {
+    "0": {
+      "total": 4,
+      "complete": 4
+    },
+    "1": {
+      "total": 70,
+      "complete": 70
+    },
+    "2": {
+      "total": 578,
+      "complete": 578
+    },
+    "3": {
+      "total": 2992,
+      "complete": 2987
+    }
+  },
+  "incomplete_three_empty": [
+    {
+      "mode": {
+        "branch": "B",
+        "missing": [
+          "p0",
+          "p1",
+          "p8"
+        ],
+        "choice": "p",
+        "member": "-",
+        "slots": [
+          "p2",
+          "p3",
+          "p6",
+          "p7",
+          "p9",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "p4",
+          "p5"
+        ]
+      },
+      "known": [
+        "p3",
+        "p4",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    {
+      "mode": {
+        "branch": "B",
+        "missing": [
+          "p1",
+          "p2",
+          "q6"
+        ],
+        "choice": "p",
+        "member": "-",
+        "slots": [
+          "p0",
+          "p3",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q7",
+          "q8",
+          "q9",
+          "p4",
+          "p5"
+        ]
+      },
+      "known": [
+        "p1",
+        "p4",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    {
+      "mode": {
+        "branch": "B",
+        "missing": [
+          "p1",
+          "p3",
+          "q7"
+        ],
+        "choice": "p",
+        "member": "-",
+        "slots": [
+          "p0",
+          "p2",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q6",
+          "q8",
+          "q9",
+          "p4",
+          "p5"
+        ]
+      },
+      "known": [
+        "p1",
+        "p3",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ]
+    },
+    {
+      "mode": {
+        "branch": "B",
+        "missing": [
+          "p6",
+          "q1",
+          "q2"
+        ],
+        "choice": "q",
+        "member": "-",
+        "slots": [
+          "p0",
+          "p1",
+          "p2",
+          "p3",
+          "p7",
+          "p8",
+          "p9",
+          "q0",
+          "q3",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "p4",
+          "q5"
+        ]
+      },
+      "known": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "q1",
+        "q4"
+      ]
+    },
+    {
+      "mode": {
+        "branch": "B",
+        "missing": [
+          "p7",
+          "q1",
+          "q3"
+        ],
+        "choice": "q",
+        "member": "-",
+        "slots": [
+          "p0",
+          "p1",
+          "p2",
+          "p3",
+          "p6",
+          "p8",
+          "p9",
+          "q0",
+          "q2",
+          "q6",
+          "q7",
+          "q8",
+          "q9",
+          "p4",
+          "q5"
+        ]
+      },
+      "known": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "q1",
+        "q3"
+      ]
+    }
+  ],
+  "obstruction_example": {
+    "mode": {
+      "branch": "A",
+      "missing": [
+        "p0",
+        "p1",
+        "q5"
+      ],
+      "choice": "-",
+      "member": "p",
+      "slots": [
+        "p2",
+        "p3",
+        "p5",
+        "p6",
+        "p7",
+        "p8",
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q6",
+        "q7",
+        "q8",
+        "p4"
+      ]
+    },
+    "known": [
+      "p1",
+      "p2",
+      "p3",
+      "p4",
+      "q1",
+      "q2",
+      "q3",
+      "q4"
+    ],
+    "steps": [
+      {
+        "variable": "p3",
+        "source": "difference_p2",
+        "form": {
+          "p3": 1
+        },
+        "coefficient": 1
+      },
+      {
+        "variable": "p4",
+        "source": "difference_p3",
+        "form": {
+          "p4": 1
+        },
+        "coefficient": 1
+      },
+      {
+        "variable": "q2",
+        "source": "difference_p5",
+        "form": {
+          "q2": -1
+        },
+        "coefficient": -1
+      },
+      {
+        "variable": "q3",
+        "source": "difference_p6",
+        "form": {
+          "q3": -1
+        },
+        "coefficient": -1
+      },
+      {
+        "variable": "q4",
+        "source": "difference_p7",
+        "form": {
+          "q4": -1
+        },
+        "coefficient": -1
+      },
+      {
+        "variable": "p2",
+        "source": "center_p8",
+        "form": {
+          "p2": 1,
+          "p3": -1,
+          "p4": -1
+        },
+        "coefficient": 1
+      },
+      {
+        "variable": "p1",
+        "source": "difference_p8",
+        "form": {
+          "p2": 2,
+          "p1": -1
+        },
+        "coefficient": -1
+      },
+      {
+        "variable": "q1",
+        "source": "difference_q0",
+        "form": {
+          "q1": 1
+        },
+        "coefficient": 1
+      }
+    ],
+    "complete": true
+  },
+  "rule": "single unknown with coefficient +1 or -1; leading losses below 2d-1"
+}

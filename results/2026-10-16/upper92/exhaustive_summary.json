@@ -1,0 +1,628 @@
+{
+  "status": "PASS",
+  "conclusion": "N <= 92, continuing the audited N <= 93 foundation",
+  "verification_mode": "interval-plus-exhaustive",
+  "scalar": {
+    "lattice_orientations": 45,
+    "inverse_min": 8,
+    "inner_low_max": -497,
+    "inner_high_max": -17,
+    "outer_min": 669,
+    "low_states": 443,
+    "high_states": 3602,
+    "high_c_max": 174,
+    "high_active_remaining": 1330,
+    "high_empty_states": 1535,
+    "high_two_empty_states": 24,
+    "high_merged_groups": 67
+  },
+  "nonap_finite_base": {
+    "total": 2723,
+    "nonfull": 1106,
+    "by_size": [
+      {
+        "size": 8,
+        "total": 164,
+        "nonfull": 88,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 9,
+        "total": 219,
+        "nonfull": 108,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 10,
+        "total": 285,
+        "nonfull": 130,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 11,
+        "total": 363,
+        "nonfull": 154,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 12,
+        "total": 454,
+        "nonfull": 180,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 13,
+        "total": 559,
+        "nonfull": 208,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 14,
+        "total": 679,
+        "nonfull": 238,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      }
+    ],
+    "enumeration_sha256": "f9256d38bf66251129b859efc33464615eefd288063d2b227fec3e5419ca4826",
+    "sharpness": [
+      {
+        "size": 17,
+        "rho": 12,
+        "mu": 14,
+        "defects": [
+          1,
+          18
+        ]
+      },
+      {
+        "size": 18,
+        "rho": 13,
+        "mu": 15,
+        "defects": [
+          1,
+          19
+        ]
+      },
+      {
+        "size": 21,
+        "rho": 16,
+        "mu": 18,
+        "defects": [
+          1,
+          22
+        ]
+      },
+      {
+        "size": 39,
+        "rho": 34,
+        "mu": 36,
+        "defects": [
+          1,
+          40
+        ]
+      },
+      {
+        "size": 78,
+        "rho": 73,
+        "mu": 75,
+        "defects": [
+          1,
+          79
+        ]
+      }
+    ]
+  },
+  "prefix_inverse": {
+    "integer_inverse_cases": 5409,
+    "strict_improvement_cases": 7307,
+    "example": {
+      "value": 111,
+      "route": "prefix",
+      "L": 20,
+      "beta": 8,
+      "M": 172,
+      "A": 141,
+      "B": 111,
+      "C": 112
+    },
+    "minimum_size": 17,
+    "beta_range": [
+      3,
+      10
+    ]
+  },
+  "hole_rho": {
+    "parameter_rows": 10869,
+    "beta_max": 20,
+    "minimum_size": 17,
+    "examples": [
+      {
+        "z": 19,
+        "r": 36,
+        "beta": 8,
+        "L": 21,
+        "A": 112,
+        "C1": 194,
+        "C2": 161,
+        "value": 112,
+        "route": "persistent-holes"
+      },
+      {
+        "z": 19,
+        "r": 40,
+        "beta": 9,
+        "L": 23,
+        "A": 144,
+        "C1": 235,
+        "C2": 198,
+        "value": 144,
+        "route": "persistent-holes"
+      },
+      {
+        "z": 19,
+        "r": 38,
+        "beta": 9,
+        "L": 23,
+        "A": 128,
+        "C1": 237,
+        "C2": 200,
+        "value": 128,
+        "route": "persistent-holes"
+      }
+    ],
+    "scope": "exact parameter checks; the general contradiction proof is in the report"
+  },
+  "center_integrality": {
+    "counts": {
+      "0": {
+        "total": 4,
+        "complete": 4
+      },
+      "1": {
+        "total": 70,
+        "complete": 70
+      },
+      "2": {
+        "total": 578,
+        "complete": 578
+      },
+      "3": {
+        "total": 2992,
+        "complete": 2987
+      }
+    },
+    "incomplete_three_empty": [
+      {
+        "mode": {
+          "branch": "B",
+          "missing": [
+            "p0",
+            "p1",
+            "p8"
+          ],
+          "choice": "p",
+          "member": "-",
+          "slots": [
+            "p2",
+            "p3",
+            "p6",
+            "p7",
+            "p9",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q6",
+            "q7",
+            "q8",
+            "q9",
+            "p4",
+            "p5"
+          ]
+        },
+        "known": [
+          "p3",
+          "p4",
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      {
+        "mode": {
+          "branch": "B",
+          "missing": [
+            "p1",
+            "p2",
+            "q6"
+          ],
+          "choice": "p",
+          "member": "-",
+          "slots": [
+            "p0",
+            "p3",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q7",
+            "q8",
+            "q9",
+            "p4",
+            "p5"
+          ]
+        },
+        "known": [
+          "p1",
+          "p4",
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      {
+        "mode": {
+          "branch": "B",
+          "missing": [
+            "p1",
+            "p3",
+            "q7"
+          ],
+          "choice": "p",
+          "member": "-",
+          "slots": [
+            "p0",
+            "p2",
+            "p6",
+            "p7",
+            "p8",
+            "p9",
+            "q0",
+            "q1",
+            "q2",
+            "q3",
+            "q6",
+            "q8",
+            "q9",
+            "p4",
+            "p5"
+          ]
+        },
+        "known": [
+          "p1",
+          "p3",
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      {
+        "mode": {
+          "branch": "B",
+          "missing": [
+            "p6",
+            "q1",
+            "q2"
+          ],
+          "choice": "q",
+          "member": "-",
+          "slots": [
+            "p0",
+            "p1",
+            "p2",
+            "p3",
+            "p7",
+            "p8",
+            "p9",
+            "q0",
+            "q3",
+            "q6",
+            "q7",
+            "q8",
+            "q9",
+            "p4",
+            "q5"
+          ]
+        },
+        "known": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "q1",
+          "q4"
+        ]
+      },
+      {
+        "mode": {
+          "branch": "B",
+          "missing": [
+            "p7",
+            "q1",
+            "q3"
+          ],
+          "choice": "q",
+          "member": "-",
+          "slots": [
+            "p0",
+            "p1",
+            "p2",
+            "p3",
+            "p6",
+            "p8",
+            "p9",
+            "q0",
+            "q2",
+            "q6",
+            "q7",
+            "q8",
+            "q9",
+            "p4",
+            "q5"
+          ]
+        },
+        "known": [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "q1",
+          "q3"
+        ]
+      }
+    ],
+    "obstruction_example": {
+      "mode": {
+        "branch": "A",
+        "missing": [
+          "p0",
+          "p1",
+          "q5"
+        ],
+        "choice": "-",
+        "member": "p",
+        "slots": [
+          "p2",
+          "p3",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "q0",
+          "q1",
+          "q2",
+          "q3",
+          "q6",
+          "q7",
+          "q8",
+          "p4"
+        ]
+      },
+      "known": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "steps": [
+        {
+          "variable": "p3",
+          "source": "difference_p2",
+          "form": {
+            "p3": 1
+          },
+          "coefficient": 1
+        },
+        {
+          "variable": "p4",
+          "source": "difference_p3",
+          "form": {
+            "p4": 1
+          },
+          "coefficient": 1
+        },
+        {
+          "variable": "q2",
+          "source": "difference_p5",
+          "form": {
+            "q2": -1
+          },
+          "coefficient": -1
+        },
+        {
+          "variable": "q3",
+          "source": "difference_p6",
+          "form": {
+            "q3": -1
+          },
+          "coefficient": -1
+        },
+        {
+          "variable": "q4",
+          "source": "difference_p7",
+          "form": {
+            "q4": -1
+          },
+          "coefficient": -1
+        },
+        {
+          "variable": "p2",
+          "source": "center_p8",
+          "form": {
+            "p2": 1,
+            "p3": -1,
+            "p4": -1
+          },
+          "coefficient": 1
+        },
+        {
+          "variable": "p1",
+          "source": "difference_p8",
+          "form": {
+            "p2": 2,
+            "p1": -1
+          },
+          "coefficient": -1
+        },
+        {
+          "variable": "q1",
+          "source": "difference_q0",
+          "form": {
+            "q1": 1
+          },
+          "coefficient": 1
+        }
+      ],
+      "complete": true
+    },
+    "rule": "single unknown with coefficient +1 or -1; leading losses below 2d-1"
+  },
+  "core_cutoff": {
+    "sets": 784,
+    "cutoff_checks": 28224,
+    "strict_improvement_examples": 159,
+    "cutoff_positions": 6,
+    "tail_rows": 36,
+    "inner_loss_cutoffs": 6,
+    "scope": "finite sanity check; arbitrary-set proof is in the report"
+  },
+  "density": {
+    "dense_sets": 16593,
+    "maximum_holes": 10,
+    "chord_points": 14491,
+    "necessary_bound": "2R >= 2r + min(z,r-3)",
+    "scope": "finite checks supplement the general central-interval proof"
+  },
+  "high_grouping": {
+    "groups": 67,
+    "states": 2889,
+    "row_checks": 947062,
+    "method": "retain-common-hole-variable"
+  },
+  "linear": {
+    "root_groups": 14700,
+    "root_systems": 126400,
+    "root_counts": {
+      "Z0": 148,
+      "Z1": 2170,
+      "Z2": 14450,
+      "Z3": 50864,
+      "P0": 132,
+      "P1": 1890,
+      "P2": 10982,
+      "P3": 14960,
+      "Q0": 124,
+      "Q1": 1890,
+      "Q2": 10982,
+      "R0": 124,
+      "R1": 1750,
+      "R2": 9826,
+      "H1": 3150,
+      "H0": 68,
+      "H2": 2890
+    },
+    "counts": {
+      "route/coarse": 14518,
+      "interval_checks": 14761,
+      "extremum_points": 35013,
+      "parameter_systems": 126400,
+      "leaf_groups": 14700,
+      "kind/coarse": 14518,
+      "route/global_nested": 182,
+      "tree_roots": 532,
+      "binary_splits": 1706,
+      "tree_leaves": 2238,
+      "kind/global_nested": 182
+    },
+    "certified_systems": 128106,
+    "vectors": 2450,
+    "maximum_tree_depth": 13,
+    "split_types": {
+      "core": 1092,
+      "ordinary": 410,
+      "inner": 71,
+      "pair": 133
+    },
+    "minimum_normalized_gap": "1/936"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "missing_third_empty_unit",
+      "missing_high_two_empty_unit",
+      "missing_positive_three_empty_unit",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_two_empty_core_shortcut",
+      "invalid_one_large_shortcut",
+      "invalid_H1_core_shortcut",
+      "invalid_high_nested_leading",
+      "unproved_nonap_size16",
+      "false_r_minus4_bound",
+      "unproved_prefix_size16",
+      "nonminimal_integer_inverse",
+      "uncoupled_hole_and_cap_extrema",
+      "unproved_leading_integrality",
+      "universal_three_empty_integrality",
+      "unproved_hole_rho_size16",
+      "unproved_dense_prefix_threshold",
+      "nonstrict_hole_threshold",
+      "density_without_size_condition",
+      "invalid_band_endpoint",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 39,
+      "z": 118,
+      "valid_margin": "0",
+      "invalid_best_margin": "103/2"
+    },
+    "uncoupled_extrema": {
+      "a": 30,
+      "b": 46,
+      "cmax": 94,
+      "zmax": 63,
+      "upper_c_plus_z": 148
+    }
+  }
+}

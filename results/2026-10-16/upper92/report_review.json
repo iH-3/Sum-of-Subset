@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "pages": 9,
+  "compilation": "pdflatex, two final passes",
+  "latex_warnings": [],
+  "visual_review": {
+    "render": "pdftoppm -png -scale-to 1400",
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "result": "All nine pages inspected: formulas, tables, text and references fit the page; no clipping or overlap observed."
+  },
+  "sha256": {
+    "reports/upper92_from93_20261016.tex": "f084597b803b0bdb16c9d98c1a901aca094857eb02484eaf332f18ed0f200646",
+    "reports/upper92_from93_20261016.pdf": "b59bbbc1cf62b432d21041c726b699a375c911baa16dc5a0904e852be7a8e316"
+  }
+}

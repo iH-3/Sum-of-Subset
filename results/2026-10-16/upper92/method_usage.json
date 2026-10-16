@@ -1,0 +1,14 @@
+{
+  "distinct_vectors": 2450,
+  "new_core_cutoff_vectors": 1354,
+  "core_mass_lower_vectors": 1346,
+  "core_mass_upper_vectors": 0,
+  "density_chord_vectors": 434,
+  "sixth_inner_cutoff_vectors": 113,
+  "binary_nodes_by_type": {
+    "core": 1092,
+    "ordinary": 410,
+    "inner": 71,
+    "pair": 133
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "finished_utc": "2026-10-16T14:37:44.773938+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "discovery_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "comparisons": {
+    "standard_equals_optimized": true,
+    "exhaustive_equals_standard_except_mode": true,
+    "regenerated_certificates_byte_identical": true,
+    "baseline93_byte_identical": true
+  },
+  "runs": [
+    {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper92.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper92/result.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 134.654,
+      "stdout_sha256": "9907903b96a85841ce3a747ea44d36f24cc7d1e6e92fa620bc96c9be274062b0"
+    },
+    {
+      "name": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper92.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper92/exhaustive.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 995.122,
+      "stdout_sha256": "84223a9314cab8087967e931b996ca7b7e074a423822773fe6f46d38c2a69e0d"
+    },
+    {
+      "name": "regenerate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/generate_upper92_certificates.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper92/regenerated.json",
+        "--log",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper92/regeneration.log"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 845.892,
+      "stdout_sha256": "c07be4c2967a433128ee7a33dc82031c0dbfa08982ca2d685bcb88ccf5df3d2d"
+    },
+    {
+      "name": "optimized_python",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper92.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper92/optimized.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 131.016,
+      "stdout_sha256": "9907903b96a85841ce3a747ea44d36f24cc7d1e6e92fa620bc96c9be274062b0"
+    },
+    {
+      "name": "baseline_upper93",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper93.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper92/baseline93.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 96.644,
+      "stdout_sha256": "ed1c374e071519b15a68f9ec9c9c7aa78986c682a3313d292d344fc34fa3bfaf"
+    }
+  ],
+  "sha256": {
+    "verification/nonap_inverse.py": "07759d2c408ff81bb45c82e3c3aa044a53da8596a57b0512fd4b6440dcdea81b",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "verification/nonap_hole_rho.py": "d5446bf2f96c18f7ae55b7aae4d493e55443a76450d0bbf4ce0004602fc9da38",
+    "verification/upper92.py": "b3057e8d62be5242e2492f21620136aab160c539df886832f3db54cfe36fe320",
+    "experiments/generate_upper92_certificates.py": "1e470a4a7a37d9bd762bcc98f6824a8e42fb0b9f615fda82b92f25bdbc273034",
+    "experiments/generate_upper100_certificates.py": "8cdc49256e9562a2a3eb81d6d818857b3980dec317d3097c3d3c81684cfcdbd6",
+    "data/upper92_certificates.json": "5f9f43a3c945caab887fdc2ecf7692e6f5d43fd39d954a922bf2a37cb9ec9ed1",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper92/result.json": "4930e559664bc2fa8cbfc199519bbec85d7018080cbcc4f2213d02b48c8f4df7",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper92/exhaustive.json": "33d1689ee4c049b65b4227c65b48bb7c54c9f9476d98b409b5cf7ee858160f7a",
+    "results/2026-10-16/upper93/result.json": "55c110ac181aba58bbce2644de2cc3ade44d41a5fb07e2fa974e8efd512891e7"
+  }
+}

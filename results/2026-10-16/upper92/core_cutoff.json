@@ -1,0 +1,9 @@
+{
+  "sets": 784,
+  "cutoff_checks": 28224,
+  "strict_improvement_examples": 159,
+  "cutoff_positions": 6,
+  "tail_rows": 36,
+  "inner_loss_cutoffs": 6,
+  "scope": "finite sanity check; arbitrary-set proof is in the report"
+}
