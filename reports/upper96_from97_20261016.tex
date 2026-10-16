@@ -1,0 +1,664 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,needspace}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Subset sums: transported hole bounds and a proof of N at most 96},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\title{Subset Sums in a Fourfold Sumset\\\large Transported hole bounds and a proof of $N\le96$}
+\author{Sum-of-Subset research project}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We exclude cardinality 97 and extend the independently audited chain to
+$71\le N\le96$. The proof retains the coarse counting spine of the
+preceding simplification, transports positive low holes to 14, and merges
+412 retained oriented high-hole states into 17 endpoint groups.
+The reflection in the active-center estimate is fixed by an actual
+contributor; choosing the numerically stronger orientation is invalid.
+Only 12 structural leaf groups need nested envelopes. Seventeen integer
+instances require 35 proved binary disjunctions, each with at least one
+immediately contradictory child. The resulting 23,303 integer leaf
+systems are certified by 156 fresh integer vectors: 2,085 symbolic
+interval checks and 52 tree-leaf checks. Every integer model was also
+checked separately. The stronger archived bound 84 remains outside the
+complete independent audit; the present result advances the audited
+chain rather than surpassing that archived bound.
+\end{abstract}
+
+\section{Statement, foundation, and what changes}
+For a finite real set $A$, let
+$\FS(A)=\{\sum_{x\in X}x:X\subseteq A\}$, including zero from the empty
+subset, and let $4A=A+A+A+A$ allow repeated summands.
+Let $N$ be the largest possible cardinality under $\FS(A)\subseteq4A$.
+\begin{theorem}\label{thm:main}
+Every such set has at most 96 elements. Hence $71\le N\le96$.
+\end{theorem}
+The lower bound is the unchanged construction
+$[-31,31]\cap\mathbb Z\cup\{\pm93,\pm155,\pm217,\pm713\}$.
+The upper-bound foundation is the independently audited chain
+$115\to103\to100\to99\to98\to97$, with the latest endpoint and its
+simplification in \cite{previous,method}. We reuse its integralization,
+covering, peeling, inverse, nonprogression, effective-hole, and span lemmas.
+The archived report \cite{archive} provides the strategy of the three
+disjunctions below. We reconstruct their validity and generate fresh
+certificates; no archived endpoint certificate is read.
+
+A hypothetical size-97 set contains zero: adjoining zero otherwise gives
+a forbidden feasible size-98 set. This argument uses the preceding global
+upper bound; no hereditary feasibility assertion for arbitrary subsets
+is used. Integralize, remove the four outer elements on each side to
+obtain $D$, and peel twice to a core
+$E=P\cup\{0\}\cup(-Q)$. Write
+\begin{gather*}
+ d=|D|=89,\quad e=|E|=81,\quad m=a+b=80,\quad
+ a=|P|,\ b=|Q|,\quad I=(a-40)^2,\\
+ \Lambda=1+T_a+T_b=1641+I,\quad
+ \Omega=22d+97-\Lambda=414-I,\quad G=2d-12=166,
+\end{gather*}
+where $T_r=r(r+1)/2$.
+At this endpoint two empty covering units can leave positive low-hole
+loss 46, larger than the balanced ordinary-quantile threshold 45.
+Thus the previous ordinary-quantile shortcut must be replaced by core
+quantiles and, where necessary, proved disjunctions.
+
+\section{Lattice and scalar reduction}
+For a positive $r$-element set $X$, retain the definitions
+\[
+ \mu(X)=|\FS(X)|-1-T_r,\qquad
+ \rho(X)=\mu(X)+2-2\delta_0(X),
+\]
+where $\delta_0(X)$ counts those $x\in X$ for which $2x$ is absent from
+the restricted two-sum set of $X\cup\{0\}$.
+Set $\rho=\rho(P)+\rho(Q)$, $\mu=\mu(P)+\mu(Q)$, and
+$\kappa=|\FS(E)|-\Lambda-\mu$. The inherited nonnegative budget is
+\begin{equation}\label{eq:budget}
+ \rho+2\theta+c+\T=\Omega,\qquad
+ c=2|2D|+18d+85-|\FS(D)|,\qquad
+ \T=\kappa+\ell_1+\ell_2+g.
+\end{equation}
+The one-sided bootstrap is impossible since $1+T_{81}>24\cdot97+77$.
+The paired bootstrap gives $q^2\le2288$, with even $q$, hence $q\le46$
+and $a,b\ge17$. Nonnegative $\Omega$ leaves 41 oriented pairs,
+$a=20,\ldots,60$. For all of them,
+$T_{\min(a,b)}-2-\Omega>0$, with minimum 131. The simultaneous inverse
+lemma puts $P,Q$ on a common integer lattice, with side support holes
+$h_P,h_Q$ satisfying
+\begin{equation}\label{eq:holes}
+ h_P,h_Q\le\kappa,\quad z=h_P+h_Q-\kappa,
+ \quad0\le z\le\min(h_P,h_Q)\le\kappa,
+ \quad h_X<|\FS(X)|-1.
+\end{equation}
+
+The universal span lemma from \cite{previous} gives
+$\max X\le |X|+\rho(X)+h_X+2$ for $|X|\ge15$.
+Thus, with $R_p=\max P$ and $R_q=\max Q$,
+$R_p+R_q\le m+\rho+\kappa+z+4$.
+Before asserting integrality of the peeled layers, the inner comparison is
+\[
+ |\FS(D_1)|-2|\FS(E)|
+ \le C+2\rho-\mu+\kappa+2z+\ell_2,
+ \qquad C=2m+4e+14-\Lambda=-1143-I.
+\]
+For $z=0$, its right side is at most
+$C+2\Omega=-315-3I<0$.
+For $z>0$, both side supports are nonprogressions by \eqref{eq:holes},
+so $\rho\ge52$, $\mu\ge74$. The right side is at most
+$C+3\Omega-\rho-\mu\le-27-4I<0$.
+An off-lattice point would give two disjoint core-support translates;
+this contradiction integralizes the inner peeled layer. The outer-layer
+margin is
+\[
+ \Lambda-(4d-10+\Omega)=881+2I>0.
+\]
+The inherited overlap and defect lemmas now apply to the integral set $D$:
+\begin{equation}\label{eq:propagate}
+ w\le4z,\quad \T\ge\kappa+166-3z,\quad
+ \T\ge\max\{56,z,166-2z\}.
+\end{equation}
+Here $w$ counts the support holes of $D$.
+If $j$ covering units are empty, put $\delta=c-89j$.
+Combining the span lemma with \eqref{eq:budget}--\eqref{eq:propagate} gives
+\begin{equation}\label{eq:span}
+ R_p+R_q+\delta\le332-I-89j+4z.
+\end{equation}
+
+For low holes the scalar budgets are
+\begin{equation}\label{eq:low}
+ c\le\begin{cases}248-I,&z=0,\\196-I+2z,&1\le z\le14.\end{cases}
+\end{equation}
+Their maxima are 248 and 224, so $j\le2$.
+With one empty unit, $\delta\le159$ or $135$, both below $2\cdot85$.
+At most one retained center can therefore have loss at least 85.
+With two empty units, $\delta\le70$ or $46$, both below 85, so every
+retained center has more than four hull points. The scalar checker
+covers all 437 surviving oriented low-hole states.
+
+\section{Transport and high-hole grouping}
+\subsection{One monotone change of variables}
+Let $M_p=\max D$, $M_q=-\min D$, and let $S_p,S_q$ be its positive
+and negative-magnitude masses. For a retained positive center $v$,
+$l_v,u_v$ count points of $v+D$ below 1 and above $S_p$; reflection
+defines the negative-side quantities. Always
+\[
+ \sum_v(l_v+u_v)\le\delta,\qquad 0\le l_v+u_v\le88.
+\]
+Let $K=|2D|$. The cardinality identity gives
+\begin{equation}\label{eq:card}
+ S_p+S_q+\delta-2K\le1686-89j+4z.
+\end{equation}
+The mass bonuses are
+$\varepsilon_p=\sum P-T_a=\mu(P)+h_P$, and similarly for $q$.
+
+\begin{lemma}[Endpoint transport]\label{lem:transport}
+Suppose a group of states has common lower bounds
+$\mu(P)\ge u_p$, $\mu(Q)\ge u_q$ and $z\le Z$.
+Replace
+\[
+ S_p\longmapsto\widehat S_p=S_p+Z-z,\qquad
+ S_q\longmapsto\widehat S_q=S_q+Z-z.
+\]
+Its necessary linear rows remain valid at the endpoint $Z$, with mass
+bonuses $u_p+Z,u_q+Z$, a common upper bound on the group's loss budget,
+and the span and cardinality right sides evaluated at $Z$.
+\end{lemma}
+\begin{proof}
+Put $t=Z-z\ge0$. In a doubled mass row
+$2M_p+6R_p-2S_p+2z$, or an exposed mass row
+$\sum_{i=1}^4x_i-S_p+z$, the change in the left side is zero.
+Other mass and upper quantile left sides decrease by $t$.
+The left side of \eqref{eq:card}, after moving $4z$ to the left,
+decreases by $2t$; the span expression decreases by $4t$.
+For positive low holes the loss-cap expression $\delta-2z$ decreases
+by $2t$. For a high-hole group use the maximum of its scalar caps.
+All orders, envelope rows, lower quantiles, and losses are unchanged.
+Nonnegativity is preserved. These auxiliary masses need not arise from
+another actual set; they provide a necessary relaxation.
+\end{proof}
+For $1\le z\le14$, use $u_p=a-3$, $u_q=b-3$ and $Z=14$.
+Then $\varepsilon_p\ge a+11$, $\varepsilon_q\ge b+11$.
+The delivered low-hole models have no hole coordinate. With
+$B_0=248-89j-I$, their caps and spans become
+\[
+ \begin{array}{c|cc}
+ &\delta\text{ upper bound}&R_p+R_q+\delta\text{ upper bound}\\\hline
+ Z&B_0&84+B_0\\
+ P&B_0-24&140+B_0
+ \end{array}
+\]
+The $j=2$ core condition is selected from the original budget before
+transport; its validity does not depend on interpreting the transported
+mass as an actual sum.
+
+\subsection{Effective-hole bounds and the fixed orientation}
+For high holes, use the effective-hole witnesses already proved in
+\cite{previous}. For clarity, the exact witness test is as follows.
+Given $(r,C_*,\gamma)$, set
+\begin{gather*}
+ K_* =\max\{k\ge3:k(k-3)/2\le C_*+1\},\quad
+ D_*=C_*+K_*,\quad E_*=D_*+1,\\
+ M_* =\max\left\{2\gamma,1+\left\lfloor
+ \frac{1+\sqrt{9+8(E_*+6\gamma)}}2\right\rfloor\right\},
+ \quad J_* =\max\{K_*+1,2\gamma+5,M_*\}.
+\end{gather*}
+The three strict tests are
+\[
+ T_{M_*}-6\gamma>M_*+1+E_*,\quad
+ \gamma(r-J_*+1)>D_*,\quad T_{J_*-1}-1>D_*.
+\]
+A valid witness gives $\mu(X)\ge r+C_*+1$ when
+$2\gamma<h_X<|\FS(X)|-1$.
+Search $20\le r\le64$, $7\le\gamma\le20$, $0\le C_*\le600$,
+then for each $(r,z)$ choose the largest valid $C_*$ with $2\gamma<z$,
+breaking ties by smaller $\gamma$. Each used witness is checked again.
+This finite search makes no optimality claim about the witness parameters.
+
+Write $u_r=r+C_*+1$. The inherited flexible inverse, for $2\le\beta\le10$,
+is
+\[
+ v=\max(0,u_r-4\beta+2)=(\beta+1)q+s,
+ \quad L_\beta(r,u_r)=\min\{(\beta-1)(r-14),(\beta-1)q+\min(s,\beta-1)\}.
+\]
+Thus set
+$\rho_r^{\rm low}=\max\{r-14,u_r+2-2r,L_2(r,u_r),\ldots,L_{10}(r,u_r)\}$.
+Every high state satisfies
+\begin{equation}\label{eq:C}
+ c\le C_a(z):=414-I-\rho_a^{\rm low}-\rho_b^{\rm low}
+                         -\max\{56,z,166-2z\}.
+\end{equation}
+The loop $15\le z\le414-I$ is exhaustive because $z\le\T\le\Omega$.
+It leaves 2,200 nonnegative-budget oriented states, with $C_a(z)\le118<178$.
+At most one covering unit is empty.
+
+For an all-active configuration, reflect so that the first paired unit's
+actual contributor is positive, and \emph{then} define $a,b$.
+The inherited proof gives one of the two lower bounds
+\begin{align*}
+ F&\ge F_A(a,b)+\tfrac12(u_a+z)+u_b+z,\\
+ F&\ge F_B(a,b)+\tfrac23(u_a+z)+u_b+z,
+\end{align*}
+where
+\begin{gather*}
+ F=S_p+S_q+c-2(M_p+M_q+R_p+R_q)\le1728+4z,\\
+ F_A=\tfrac12T_a+T_b+6a+8b+85,\qquad
+ F_B=\tfrac23T_a+T_b+6a+(22b+236)/3.
+\end{gather*}
+Use the minimum of these two differences from $1728+4z$ in that fixed
+orientation. The proof of the active lemma uses nonemptiness to obtain
+the contributing slots and outer integrality; the hypothesis $c<d$ in
+its earlier application only served to force this nonemptiness.
+There is no further need for $c<d$ once all eighteen units are assumed active.
+
+The reflection is not free after $a$ has been assigned. In particular,
+at $(a,b,z)=(47,33,112)$ the valid minimum margin is $-1$, while the
+reflected minimum is 377. Taking the larger value would incorrectly
+remove a necessary model. The checker includes this exact counterexample
+as a negative control.
+In the fixed contributor orientation, 117 H0 states remain, with
+$a=40,\ldots,47$. There are 295 H1 states with $C_a(z)\ge89$;
+for them $\delta\le29<\min(a,b)+5$, so ordinary quantiles are valid.
+
+\subsection{Seventeen endpoint groups replace 412 states}
+Group states with the same $(a,j,u_a,u_b)$, let $Z$ be the largest
+hole count in a group, and let $C^{\max}$ be the largest $C_a(z)$ there.
+Lemma~\ref{lem:transport} gives one model with
+\[
+ \delta\le C^{\max}-89j,\quad
+ (\varepsilon_p,\varepsilon_q)\ge(u_a+Z,u_b+Z),\quad
+ R_p+R_q+\delta\le332-I-89j+4Z.
+\]
+Keep \eqref{eq:card} at $Z$. The complete endpoint table is:
+\begin{center}\small
+\begin{tabular}{rrrrrrr}
+\toprule
+$a$&$u_a$&$u_b$&H0: $Z$&H0: $C^{\max}$&H1: $Z$&H1: $C^{\max}$\\
+\midrule
+36&148&224&--&--&64&97\\
+37&156&213&--&--&74&107\\
+38&165&203&--&--&80&113\\
+39&174&193&--&--&84&117\\
+40&184&184&174&4&85&118\\
+41&193&174&173&14&84&117\\
+42&203&165&169&20&80&113\\
+43&213&156&163&23&74&107\\
+44&224&148&153&21&64&97\\
+45&234&139&142&17&--&--\\
+46&245&131&128&10&--&--\\
+47&256&123&112&0&--&--\\
+\bottomrule
+\end{tabular}
+\end{center}
+The scalar enumeration independently reconstructs membership of every
+group. A further exact row check verifies transport from every one of
+the 412 retained states to its endpoint. The row types are independent
+of the outer-center coefficients, so representative modes include both
+signs and every relevant row type.
+With four zero-empty modes and seventy one-empty modes, the high model
+count falls from $117\cdot4+295\cdot70=21118$ to
+$8\cdot4+9\cdot70=662$. All 662 endpoint models are excluded by the
+coarse model below; none needs a nested envelope or binary tree.
+
+\section{Models and exhaustive selective refinement}
+\subsection{Covering modes}
+For the outer magnitudes $p_1>\cdots>p_4>M_p$ and their negative
+reflection $q_1>\cdots>q_4>M_q$, define
+\[
+ \lambda_p=p_1-p_2-p_3-p_4,\quad
+ \alpha_p=p_2-p_3-p_4,\quad\beta_p=2p_2-p_1-p_3-p_4.
+\]
+The positive center list is
+\[
+ v^p=(\lambda_p+p_1,\ldots,\lambda_p+p_4,
+       \lambda_p-q_1,\ldots,\lambda_p-q_4,\alpha_p,\beta_p),
+\]
+with a reflected negative list. String labels \texttt{p0},\ldots,
+\texttt{q9} denote centers, not magnitude variables.
+Pair 1 is \texttt{p4,q4}. In branch A, $\beta_p+\beta_q\le0$ and
+pair 2 is \texttt{p9,q9}; in branch B, $\beta_p+\beta_q>0$ and pair 2
+is \texttt{p5,q5}. The other sixteen covering units are singles.
+
+Enumerate every $j$-element set of missing units. If pair 1 is present,
+reflect to choose its positive contributor. If pair 2 is present and
+nonsplitting, enumerate both contributor choices. In branch A, a missing
+single \texttt{p5} or \texttt{q5} can permit pair 2 to split. Drop its
+individual losses, enumerate an \emph{actually contributing} member
+$s=p,q$, and retain the necessary row $-\beta_s-M_s\le-1$.
+If pair 2 itself is missing there is no such member choice.
+The unchanged pairing argument in \cite{previous} proves completeness;
+there are 4, 70, 578 modes for $j=0,1,2$.
+The necessary row for a chosen member is never used as a sufficient
+condition for contribution.
+
+The low root families are:
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+Family&$j$&Integer $a$ range&Groups&Integer models\\
+\midrule
+Z0&0&25--55&4&124\\
+P0&0&26--54&4&116\\
+Z1&1&28--52&70&1750\\
+P1&1&29--51&70&1610\\
+Z2&2&32--48&578&9826\\
+P2&2&34--46&578&7514\\
+\bottomrule
+\end{tabular}
+\end{center}
+Together with H0 and H1 this gives 1,966 root groups and 21,602 integer
+root models. The checker constructs this universe independently of the
+certificate routing data.
+
+\subsection{Coarse and nested rows}
+All variables are nonnegative. Outer gaps are at least one for $j\le1$,
+by the inherited contributing-center integrality argument. For $j=2$
+use only weak outer order. Always $M_s\ge R_s+4$, $R_p\ge a$, $R_q\ge b$.
+The branch-B row is $-\beta_p-\beta_q\le-1$ for $j\le1$, and its weak
+relaxation $\le0$ for $j=2$.
+The mass rows, on each side, are
+\begin{align}
+ S_p&\ge T_a+\varepsilon_p+3R_p+6+M_p,\notag\\
+ S_p&\ge T_{a-1}+4R_p+6+M_p.\label{eq:mass}
+\end{align}
+The first row is multiplied by two in the implementation.
+Bonuses are zero for Z, $(a+11,b+11)$ for P, and $(u_a+Z,u_b+Z)$ for H.
+
+Every pair in $2D$, except pairs of two positive or two negative
+outliers, lies in $[-M_q-R_q,M_p+R_p]$. There are at most ten unordered
+repeated outlier pairs of each sign. Thus
+\begin{equation}\label{eq:coarse}
+ K\le M_p+M_q+R_p+R_q+21.
+\end{equation}
+Twice this row added to \eqref{eq:card} eliminates $K$:
+\begin{equation}\label{eq:spine}
+ S_p+S_q+\delta-2(M_p+M_q+R_p+R_q)
+ \le1728-89j+4Z,
+\end{equation}
+where $Z=0$ in Z, $Z=14$ in P, and $Z$ is the high endpoint in H.
+The loss sum, caps, joint span, orders, mass rows and quantiles complete
+the coarse model. Unlike the previous simplification, the loss cap and
+span rows are retained: some certificates at this endpoint use them.
+
+For a positive center the necessary endpoint rows are:
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+Type&Lower&Upper\\
+\midrule
+Global&$-v-l_v-M_p\le-89$&$v-u_v-S_p-M_q\le-88$\\
+Core&$-v-l_v-R_p\le-85$&$v-u_v-S_p-R_q\le-84$\\
+Ordinary&$-v-l_v\le-b-5$&$v-u_v-S_p\le-a-4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Global rows hold for every nonempty center by integer interval counting.
+Core rows hold if its hull count exceeds four, since only four elements
+on the relevant side are outside the core; use the core-gap count from
+\cite{previous}. Ordinary rows apply at the relevant in-hull endpoint.
+Use the reflected rows for negative centers. Individual slot caps are
+$\lambda_v\le84$ in a core case, and $\lambda_v\le88$ otherwise.
+
+Initially use global quantiles, except for H1 where ordinary rows have
+already been justified. If a two-empty root needs refinement, use core
+quantiles throughout, including P2. A one-empty low root can be refined
+exhaustively into: no loss $\ge85$, or each retained center in turn is
+the unique large-loss center. In the former case use core rows everywhere;
+in the latter impose $\lambda_v\ge85$, use global rows there, and core
+rows elsewhere. The large-center ranges are ZL: $32\le a\le48$ and
+PL: $33\le a\le47$, from \eqref{eq:low} and $\delta\ge85$.
+
+Only six roots need that split. They are Z1 branch A with pair 1 missing
+and either pair-2 contributor chosen, Z1/P1 branch A with pair 2 missing,
+and Z1/P1 branch A with single \texttt{p0} missing and the negative
+pair-2 contributor chosen. Each has 17 retained centers and 18 outcomes.
+All other one-empty roots are excluded without naming a large-loss center.
+
+Only twelve resulting structural groups need the nested model.
+Expose $x_0=R_p<x_1<x_2<x_3<x_4=M_p$ and its negative analogue $y_i$,
+with integral gaps at least one, and add the mass rows
+\[
+ S_p\ge T_a+\varepsilon_p+\sum_{i=1}^4x_i,\qquad
+ S_p\ge T_{a-1}+\sum_{i=0}^4x_i,
+\]
+with their reflections. For $t=1,2,3$, set $W_t=x_t+y_t$ and $s_t=2(4-t)$.
+The inherited interval-envelope proof gives
+\[
+ K\le2W_t+1+\binom{s_t+1}{2}
+ +\sum_{i=t+1}^4\left[
+ \min(W_t+1,x_i-x_{i-1})+\min(W_t+1,y_i-y_{i-1})\right].
+\]
+Indeed the inner hull's double sum has $2W_t+1$ positions, successive
+external translates add at most their gap or the hull length, and pairs
+among the remaining external points account for the binomial term.
+Linearize each minimum by a nonnegative variable bounded above by both
+arguments; an actual set chooses the minimum itself. Keep $K$,
+\eqref{eq:coarse}, and \eqref{eq:card} in this model. Levels 0 and 4 are
+unnecessary. Two extra nonnegative loss coordinates are reserved for
+the sole-member disjunction below.
+
+\section{Three disjunctions, including transported upper endpoints}
+The disjunctions are necessary for actual configurations. They need not
+partition every point of a relaxed real polyhedron. Each child is checked;
+no child is discarded on the basis of a numerical solver status.
+Every retained contributing center is integral: a contributing point
+belongs both to a translate of integral $D$ and to the integral target
+support. The original masses, $z$, and the chosen endpoints $Z$ are
+integers, so the transported masses are integers as well. These facts
+justify the unit gaps below for actual configurations, even though the
+linear relaxations allow real coordinates.
+
+\begin{lemma}[Ordinary endpoint or outside endpoint]\label{lem:ordinary}
+For a retained positive center $v$, with $S_p$ either the actual or a
+transported larger mass, the following disjunctions hold:
+\begin{align*}
+ -v-l_v\le-b-5\quad&\text{or}\quad(l_v\ge b+5\ \text{and}\ v\le-1),\\
+ v-u_v-S_p\le-a-4\quad&\text{or}\quad(u_v\ge a+5\ \text{and}\ v\ge S_p+1).
+\end{align*}
+Their reflections hold on the negative side.
+\end{lemma}
+\begin{proof}
+If $v\ge0$, at most $v$ of the $b+5$ nonpositive elements of $D$ can
+remain above the lower endpoint, giving the first ordinary row.
+Otherwise the integral center satisfies $v\le-1$ and all these elements
+are lost. At the upper end, when $v\le S_p$, at most $S_p-v$ positive
+integers can fit below the endpoint, so the upper ordinary row holds.
+When $v>S_p$, integrality gives $v\ge S_p+1$; zero and all $a+4$
+positive points are lost.
+For transported masses, interpret the count in the enlarged hull.
+The recorded upper loss from the original hull is at least the new
+upper loss, so the ordinary bound remains valid. If $v>S_p$ for the
+enlarged hull, it is also beyond the original endpoint, so at least
+$a+5$ original points are lost. One must select the alternative using
+the enlarged endpoint, not carry an old outside assertion through the
+transport without checking it.
+\end{proof}
+
+\begin{lemma}[Inner extreme or endpoint loss]\label{lem:inner}
+For $i=1,2,3,4$, the same center satisfies
+\[
+ l_v\ge i\quad\text{or}\quad v\ge y_{5-i}+1,
+ \qquad
+ u_v\ge i\quad\text{or}\quad v\le S_p-x_{5-i}.
+\]
+\end{lemma}
+\begin{proof}
+If fewer than $i$ points are lost at the lower end, at least one of the
+$i$ largest negative magnitudes lies above it. The smallest of those
+$i$ is $y_{5-i}$, yielding $v-y_{5-i}\ge1$.
+If fewer than $i$ are lost above the original upper endpoint, at least
+one of the $i$ largest positive points lies below it, giving
+$v+x_{5-i}\le S_p^{\rm original}\le S_p$.
+The loss counts are integers, so these two alternatives are exhaustive.
+\end{proof}
+
+\begin{lemma}[Both members or the selected sole member]\label{lem:pair}
+In a two-empty mode with a potentially split pair 2, let $s$ be the
+member chosen from the actual contributors, and let $t$ be the other
+side. Either $\beta_t+M_t\ge1$, or there exist hull losses $l_*,u_*\ge0$
+for the selected member satisfying
+\begin{gather*}
+ \sum_{v\text{ retained}}(l_v+u_v)+l_*+u_*\le\delta,\\
+ -\beta_s-l_*-R_s\le-85,\qquad
+ \beta_s-u_*-S_s-R_t\le-84.
+\end{gather*}
+\end{lemma}
+\begin{proof}
+If the other member contributes, the first necessary inequality holds.
+Otherwise the selected member is the sole contributor. Its unit's
+capacity loss is at least its individual hull loss, so the strengthened
+loss sum holds. That member has at least $89-\delta>4$ hull points,
+since the two-empty budgets are at most 70 and 46. Its core quantiles
+follow. Enlarging the upper mass only weakens its upper row. The
+selection of $s$ from actual contributors, rather than from a merely
+necessary inequality, is essential to the sole-member conclusion.
+\end{proof}
+
+All seventeen integer instances that use a tree appear below.
+A range in a cell means each integer separately; the displayed node
+counts correspond to those integers in order. All are in branch A.
+A large center is present only in ZL and PL and is always \texttt{p8}.
+\begin{center}\small
+\begin{tabular}{lllll}
+\toprule
+Family&Missing units&Choice or actual member&$a$&Internal nodes\\
+\midrule
+ZL&\texttt{p0}&negative contributor&38,39&1,9\\
+PL&\texttt{p0}&negative contributor&37--40&1,1,1,1\\
+Z2&\texttt{p0,p8}&negative contributor&38,39,40&1,10,2\\
+Z2&\texttt{p0,q5}&negative actual member&40--42&1,1,1\\
+P2&\texttt{p0,p8}&negative contributor&37--40&1,1,1,1\\
+P2&\texttt{p0,q5}&negative actual member&40&1\\
+\bottomrule
+\end{tabular}
+\end{center}
+There are 35 internal nodes: 22 inner-extreme, nine ordinary/outside,
+and four both/sole-member splits. Every internal node has at least one
+terminal child; the longest remaining chain has ten splits. The 17
+trees have $17+35=52$ leaves. This structure is discovered numerically,
+but its exhaustiveness and every leaf contradiction are checked exactly.
+
+\section{Exact certificates, validation, and conclusion}
+For each structural group, all model coefficients are integers and the
+right side is an exact rational quadratic polynomial in $a$.
+Every stored row-weight vector $u$ consists of positive integers.
+For a model $Ax\le b(a)$, $x\ge0$, the checker requires
+\[
+ uA\ge0\quad\text{coordinatewise},\qquad
+ \max_{a\in[L,U]\cap\mathbb Z}ub(a)<0.
+\]
+The integer maximum uses endpoints and, for a concave quadratic, the
+floor and ceiling of its vertex when in range. Polynomials are built
+symbolically rather than inferred from samples. Trees occur only at
+explicit integer parameters and use exact integer row combinations.
+
+\begin{center}\small
+\begin{tabular}{lr}
+\toprule
+Proof component&Count\\
+\midrule
+Root groups / integer root models&1966 / 21602\\
+Direct coarse root groups&1900\\
+Two-empty coarse / nested root refinements&51 / 9\\
+One-empty roots requiring a loss split&6\\
+Coarse / nested outcomes of those loss splits&105 / 3\\
+Final structural groups / nested groups&2068 / 12\\
+Integer parameter models before binary trees&23268\\
+Tree roots / internal nodes / tree leaves&17 / 35 / 52\\
+Integer leaf systems after all refinements&23303\\
+Symbolic interval checks / tree-leaf checks&2085 / 52\\
+Fresh integer weight vectors&156\\
+Least normalized strict gap&$2/299$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The last integer-system count replaces each branched parameter by all
+its leaves, hence $23268+35=23303$. It should not be confused with the
+number of distinct matrix combinations: interval checking avoids their
+pointwise repetition. The separate high-state grouping replaces 21,118
+potential high models by 662 without omitting an actual state.
+
+The verifier independently constructs all roots, loss outcomes, and
+allowed disjunctions. It rejects a missing root or member choice, omitted
+large-loss positions, gaps and overlaps between intervals and tree
+parameters, missing children, repeated path splits, unknown disjunctions,
+invalid row weights, and unjustified model types. It checks high endpoint
+transport on all retained states. Verification uses only the Python
+standard library and explicit checks, which remain active under
+\texttt{-O}. The optional SciPy generator merely discovers candidates;
+only exact integer checks permit a certificate to be saved.
+
+The delivered \texttt{--exhaustive} run rebuilds all 23,268 integer
+parameter models, compares their rows with the symbolic formulas,
+verifies the assigned certificates and all tree leaves, and checks that
+each interval's worst gap matches the pointwise minimum. Its output
+agrees with the interval run except for the verification-mode label.
+Normal and \texttt{-O} outputs are byte-identical; fresh discovery
+reproduces the certificate file byte-for-byte; the preceding simplified
+upper-97 result is reproduced unchanged. Fifteen negative controls pass,
+including the false reflected-margin shortcut, the invalid P2 ordinary
+shortcut, and an attempt to certify size 96.
+Actual commands, run times, input hashes, regeneration logs, and complete
+results are in \texttt{results/2026-10-16/upper96/}.
+
+\Needspace{13\baselineskip}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The audited foundation excludes all cardinalities above 97. A hypothetical
+size-97 set contains zero and satisfies the lattice and scalar reduction.
+After the required contributor normalization, a high all-active state is
+either excluded by its valid oriented margin or assigned to an H0 group.
+All high one-empty states belong to H1. Low states belong to the six
+listed low families. Endpoint transport gives a necessary root model.
+
+A root is either directly contradictory or covered by an exhaustive
+loss refinement. Any remaining integer instance follows a satisfied
+child of each proved disjunction; the transported endpoint arguments
+ensure that such a child exists. Every resulting leaf has a strict
+nonnegative integer-row contradiction. No size-97 feasible set exists,
+so $N\le96$. The existing 71-element construction supplies the lower bound.
+\end{proof}
+
+\paragraph{The next endpoint is not certified.}
+For size 96, the balanced scalar values would be
+$d=88$, $\Omega=432$, $G=164$, so the zero-hole cover cap is 268.
+This reaches $3d=264$, permitting three empty units. With one empty
+unit the residual cap 180 also reaches $2(d-4)=168$, permitting two
+large-loss centers. The present root universe and unique-large-loss
+rule therefore do not directly continue to $N\le95$.
+These are necessary-budget obstacles, not feasible constructions.
+
+\Needspace{15\baselineskip}
+\paragraph{Reproduction.}
+From the repository root, with Python 3.10 or later:
+\begin{verbatim}
+python -I -S -B verification/upper96.py
+python -I -S -B verification/upper96.py --exhaustive
+\end{verbatim}
+The optional generator requires SciPy:
+\begin{verbatim}
+python experiments/generate_upper96_certificates.py
+\end{verbatim}
+The Windows entry \texttt{verify\_upper96\_windows.bat} runs the complete
+six-stage audited continuation from 115, using the simplified upper-97
+step before this final exclusion. Reports and earlier certificates are
+retained unchanged for comparison.
+
+\begin{thebibliography}{9}
+\bibitem{previous} Sum-of-Subset research project,
+\emph{A unified loss and hole proof from 98 to 97}, 16 October 2026.
+\href{https://github.com/iH-3/Sum-of-Subset/blob/main/reports/upper97_from98_20261016.pdf}{Repository report}.
+Includes references to the audited preceding structural lemmas.
+\bibitem{method} Sum-of-Subset research project,
+\emph{A shorter proof method for subset sums}, 16 October 2026.
+\href{https://github.com/iH-3/Sum-of-Subset/blob/main/reports/proof_method_20261016.pdf}{Repository report}.
+\bibitem{archive} Sum-of-Subset research project,
+\emph{Complete upper-86 report}, 5 October 2026, sections on the size-97
+exclusion and its disjunctions.
+\href{https://github.com/iH-3/Sum-of-Subset/blob/main/reports/upper86_complete_20261005.pdf}{Archived report}.
+The present finite certificate data were generated independently.
+\end{thebibliography}
+\end{document}

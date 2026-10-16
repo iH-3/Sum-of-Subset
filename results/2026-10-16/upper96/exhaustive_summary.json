@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "conclusion": "N <= 96, continuing the audited N <= 97 foundation",
+  "verification_mode": "interval-plus-exhaustive",
+  "scalar": {
+    "lattice_orientations": 41,
+    "inverse_min": 131,
+    "inner_zero_max": -315,
+    "inner_positive_max": -27,
+    "outer_min": 881,
+    "low_states": 437,
+    "high_states": 2200,
+    "high_c_max": 118,
+    "high_active_remaining": 117,
+    "high_empty_states": 295,
+    "high_merged_groups": 17
+  },
+  "high_transport": {
+    "groups": 17,
+    "states": 412,
+    "row_checks": 53911
+  },
+  "linear": {
+    "root_groups": 1966,
+    "root_systems": 21602,
+    "root_counts": {
+      "Z0": 124,
+      "P0": 116,
+      "Z1": 1750,
+      "P1": 1610,
+      "Z2": 9826,
+      "P2": 7514,
+      "H1": 630,
+      "H0": 32
+    },
+    "counts": {
+      "route/coarse": 1900,
+      "interval_checks": 2085,
+      "extremum_points": 5139,
+      "parameter_systems": 23268,
+      "leaf_groups": 2068,
+      "kind/coarse": 1900,
+      "route/split": 6,
+      "kind/loss": 105,
+      "kind/loss_nested": 3,
+      "tree_roots": 17,
+      "binary_splits": 35,
+      "tree_leaves": 52,
+      "route/core_nested": 9,
+      "kind/core_nested": 9,
+      "route/core": 51,
+      "kind/core": 51
+    },
+    "certified_systems": 23303,
+    "vectors": 156,
+    "maximum_tree_depth": 10,
+    "split_types": {
+      "inner": 22,
+      "ordinary": 9,
+      "pair": 4
+    },
+    "minimum_normalized_gap": "2/299"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_large_loss_choice",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "unjustified_core_quantiles",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_P2_ordinary_shortcut",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 47,
+      "z": 112,
+      "valid_margin": "-1",
+      "invalid_best_margin": "377"
+    }
+  }
+}
