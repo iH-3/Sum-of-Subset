@@ -1,0 +1,240 @@
+{
+  "status": "PASS",
+  "conclusion": "N <= 93, continuing the audited N <= 94 foundation",
+  "verification_mode": "interval-plus-exhaustive",
+  "scalar": {
+    "lattice_orientations": 44,
+    "inverse_min": 38,
+    "inner_low_max": -547,
+    "inner_high_max": -3,
+    "outer_min": 721,
+    "low_states": 420,
+    "high_states": 3896,
+    "high_c_max": 184,
+    "high_active_remaining": 1350,
+    "high_empty_states": 1746,
+    "high_two_empty_states": 82,
+    "high_merged_groups": 69
+  },
+  "nonap_finite_base": {
+    "total": 2723,
+    "nonfull": 1106,
+    "by_size": [
+      {
+        "size": 8,
+        "total": 164,
+        "nonfull": 88,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 9,
+        "total": 219,
+        "nonfull": 108,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 10,
+        "total": 285,
+        "nonfull": 130,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 11,
+        "total": 363,
+        "nonfull": 154,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 12,
+        "total": 454,
+        "nonfull": 180,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 13,
+        "total": 559,
+        "nonfull": 208,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      },
+      {
+        "size": 14,
+        "total": 679,
+        "nonfull": 238,
+        "min_rho_minus_size": -5,
+        "example_deleted": [
+          2
+        ]
+      }
+    ],
+    "enumeration_sha256": "f9256d38bf66251129b859efc33464615eefd288063d2b227fec3e5419ca4826",
+    "sharpness": [
+      {
+        "size": 17,
+        "rho": 12,
+        "mu": 14,
+        "defects": [
+          1,
+          18
+        ]
+      },
+      {
+        "size": 18,
+        "rho": 13,
+        "mu": 15,
+        "defects": [
+          1,
+          19
+        ]
+      },
+      {
+        "size": 21,
+        "rho": 16,
+        "mu": 18,
+        "defects": [
+          1,
+          22
+        ]
+      },
+      {
+        "size": 39,
+        "rho": 34,
+        "mu": 36,
+        "defects": [
+          1,
+          40
+        ]
+      },
+      {
+        "size": 78,
+        "rho": 73,
+        "mu": 75,
+        "defects": [
+          1,
+          79
+        ]
+      }
+    ]
+  },
+  "prefix_inverse": {
+    "integer_inverse_cases": 5409,
+    "strict_improvement_cases": 7307,
+    "example": {
+      "value": 111,
+      "route": "prefix",
+      "L": 20,
+      "beta": 8,
+      "M": 172,
+      "A": 141,
+      "B": 111,
+      "C": 112
+    },
+    "minimum_size": 17,
+    "beta_range": [
+      3,
+      10
+    ]
+  },
+  "high_grouping": {
+    "groups": 69,
+    "states": 3178,
+    "row_checks": 974444,
+    "method": "retain-common-hole-variable"
+  },
+  "linear": {
+    "root_groups": 11052,
+    "root_systems": 75948,
+    "root_counts": {
+      "Z0": 136,
+      "Z1": 2100,
+      "Z2": 13872,
+      "Z3": 41888,
+      "P0": 128,
+      "P1": 1820,
+      "P2": 9248,
+      "H1": 3220,
+      "H0": 68,
+      "H2": 3468
+    },
+    "counts": {
+      "route/coarse": 10958,
+      "interval_checks": 11090,
+      "extremum_points": 23917,
+      "parameter_systems": 75948,
+      "leaf_groups": 11052,
+      "kind/coarse": 10958,
+      "route/global_nested": 94,
+      "tree_roots": 284,
+      "binary_splits": 943,
+      "tree_leaves": 1227,
+      "kind/global_nested": 94
+    },
+    "certified_systems": 76891,
+    "vectors": 1539,
+    "maximum_tree_depth": 12,
+    "split_types": {
+      "core": 494,
+      "ordinary": 325,
+      "inner": 56,
+      "pair": 68
+    },
+    "minimum_normalized_gap": "1/196"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "missing_third_empty_unit",
+      "missing_high_two_empty_unit",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_two_empty_core_shortcut",
+      "invalid_one_large_shortcut",
+      "invalid_H1_core_shortcut",
+      "invalid_high_nested_leading",
+      "unproved_nonap_size16",
+      "false_r_minus4_bound",
+      "unproved_prefix_size16",
+      "nonminimal_integer_inverse",
+      "uncoupled_hole_and_cap_extrema",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 39,
+      "z": 133,
+      "valid_margin": "-1/2",
+      "invalid_best_margin": "51/2"
+    },
+    "uncoupled_extrema": {
+      "a": 36,
+      "b": 41,
+      "cmax": 177,
+      "zmax": 145,
+      "upper_c_plus_z": 231
+    }
+  }
+}

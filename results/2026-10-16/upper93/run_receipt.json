@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "finished_utc": "2026-10-16T13:06:07.913436+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "comparisons": {
+    "standard_equals_optimized": true,
+    "exhaustive_equals_standard_except_mode": true,
+    "regenerated_certificates_byte_identical": true,
+    "baseline94_byte_identical": true
+  },
+  "runs": [
+    {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper93.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper93/result.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 93.44,
+      "stdout_sha256": "ed1c374e071519b15a68f9ec9c9c7aa78986c682a3313d292d344fc34fa3bfaf"
+    },
+    {
+      "name": "exhaustive",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper93.py",
+        "--exhaustive",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper93/exhaustive.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 560.818,
+      "stdout_sha256": "d4713752460b56c8b55caf6b4f930ec42a08fe37af5f939aeadf35260e54f7c4"
+    },
+    {
+      "name": "regenerate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "experiments/generate_upper93_certificates.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper93/regenerated.json",
+        "--log",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper93/regeneration.log"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 509.591,
+      "stdout_sha256": "dda1fddba24217ca6e2e2c950a86bcf5b22359762d0dc0edca54052e9190699f"
+    },
+    {
+      "name": "optimized_python",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper93.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper93/optimized.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 99.879,
+      "stdout_sha256": "ed1c374e071519b15a68f9ec9c9c7aa78986c682a3313d292d344fc34fa3bfaf"
+    },
+    {
+      "name": "baseline_upper94",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper94.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper93/baseline94.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 57.02,
+      "stdout_sha256": "144af4991f129de4efcb9e8c9fe6bf3c9d885460587c849e8f0a76a05fc8e58c"
+    }
+  ],
+  "sha256": {
+    "verification/nonap_inverse.py": "07759d2c408ff81bb45c82e3c3aa044a53da8596a57b0512fd4b6440dcdea81b",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "verification/upper93.py": "b5516452b3dc3848762c0ab86a17211f79eb7049c8e89b19d43e8bd58f41e84e",
+    "experiments/generate_upper93_certificates.py": "2f4d8922829f6ab04e9f5732db5f7830eaa4821a743ea5060f213bdd0d452b34",
+    "data/upper93_certificates.json": "adf04b444bb7933986d127a0c2a7a586eca05c8840f96bbde831d4bda5fb23a9",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/results/2026-10-16/upper93/result.json": "55c110ac181aba58bbce2644de2cc3ade44d41a5fb07e2fa974e8efd512891e7",
+    "/workspace/scratch/7062d5fff520/Sum-of-Subset/.work/upper93/exhaustive.json": "28a268d1177daa2c0feafe4dc04f95e5fd74819c55c23f0f4c5615b1667ddffe",
+    "results/2026-10-16/upper94/result.json": "446e1b5586fcd68681f2444847d5571ca37e7326036688035950d50d0792ecbd"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "pages": 7,
+  "compiled_with": "pdfLaTeX",
+  "latex_warnings": false,
+  "overfull_or_underfull_boxes": false,
+  "visual_review": "All seven pages rendered and reviewed; final edits on pages 5-6 re-rendered and reviewed; equations and tables fit; reproduction commands and references share the final page; no clipping or overlap.",
+  "sha256": {
+    "reports/upper93_from94_20261016.tex": "b3da9f5390075fb975cd6a91018dd6b8ab4f6cf7a67577293c573aa788b529b6",
+    "reports/upper93_from94_20261016.pdf": "dd585b903234d292f88dfa6e15299810f2203d9522a8a7c90b66a0ea5a8d4959"
+  }
+}
