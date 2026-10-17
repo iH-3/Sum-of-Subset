@@ -1,0 +1,2708 @@
+{
+  "labels": 110,
+  "ordered_pairs": 1510,
+  "cover_relations": 180,
+  "edges": [
+    {
+      "lower": "C+12",
+      "upper": "C+11",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+13",
+      "upper": "C+12",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+14",
+      "upper": "C+13",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+15",
+      "upper": "C+16",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+16",
+      "upper": "C+17",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+17",
+      "upper": "C+18",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+18",
+      "upper": "C+14",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+22",
+      "upper": "C+12",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+23",
+      "upper": "C+13",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+23",
+      "upper": "C+22",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+24",
+      "upper": "C+14",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+24",
+      "upper": "C+23",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+25",
+      "upper": "C+15",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+25",
+      "upper": "C+26",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+26",
+      "upper": "C+16",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+26",
+      "upper": "C+27",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+27",
+      "upper": "C+17",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+27",
+      "upper": "C+28",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+28",
+      "upper": "C+18",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+28",
+      "upper": "C+24",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+33",
+      "upper": "C+23",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+34",
+      "upper": "C+24",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+34",
+      "upper": "C+33",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+35",
+      "upper": "C+25",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+35",
+      "upper": "C+36",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+36",
+      "upper": "C+26",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+36",
+      "upper": "C+37",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+37",
+      "upper": "C+27",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+37",
+      "upper": "C+38",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+38",
+      "upper": "C+28",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+38",
+      "upper": "C+34",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+44",
+      "upper": "C+34",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+45",
+      "upper": "C+35",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+45",
+      "upper": "C+46",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+46",
+      "upper": "C+36",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+46",
+      "upper": "C+47",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+47",
+      "upper": "C+37",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+47",
+      "upper": "C+48",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+48",
+      "upper": "C+38",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+48",
+      "upper": "C+44",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+55",
+      "upper": "C+56",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+56",
+      "upper": "C+57",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+56",
+      "upper": "C+66",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+57",
+      "upper": "C+58",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+57",
+      "upper": "C+67",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+58",
+      "upper": "C+45",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+58",
+      "upper": "C+68",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+66",
+      "upper": "C+67",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+67",
+      "upper": "C+68",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+67",
+      "upper": "C+77",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+68",
+      "upper": "C+46",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+68",
+      "upper": "C+78",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+77",
+      "upper": "C+78",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+78",
+      "upper": "C+47",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+78",
+      "upper": "C+88",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C+88",
+      "upper": "C+48",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-12",
+      "upper": "C-11",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-13",
+      "upper": "C-12",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-14",
+      "upper": "C-13",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-15",
+      "upper": "C-16",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-16",
+      "upper": "C-17",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-17",
+      "upper": "C-18",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-18",
+      "upper": "C-14",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-22",
+      "upper": "C-12",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-23",
+      "upper": "C-13",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-23",
+      "upper": "C-22",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-24",
+      "upper": "C-14",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-24",
+      "upper": "C-23",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-25",
+      "upper": "C-15",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-25",
+      "upper": "C-26",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-26",
+      "upper": "C-16",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-26",
+      "upper": "C-27",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-27",
+      "upper": "C-17",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-27",
+      "upper": "C-28",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-28",
+      "upper": "C-18",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-28",
+      "upper": "C-24",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-33",
+      "upper": "C-23",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-34",
+      "upper": "C-24",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-34",
+      "upper": "C-33",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-35",
+      "upper": "C-25",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-35",
+      "upper": "C-36",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-36",
+      "upper": "C-26",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-36",
+      "upper": "C-37",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-37",
+      "upper": "C-27",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-37",
+      "upper": "C-38",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-38",
+      "upper": "C-28",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-38",
+      "upper": "C-34",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-44",
+      "upper": "C-34",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-45",
+      "upper": "C-35",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-45",
+      "upper": "C-46",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-46",
+      "upper": "C-36",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-46",
+      "upper": "C-47",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-47",
+      "upper": "C-37",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-47",
+      "upper": "C-48",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-48",
+      "upper": "C-38",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-48",
+      "upper": "C-44",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-55",
+      "upper": "C-56",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-56",
+      "upper": "C-57",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-56",
+      "upper": "C-66",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-57",
+      "upper": "C-58",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-57",
+      "upper": "C-67",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-58",
+      "upper": "C-45",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-58",
+      "upper": "C-68",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-66",
+      "upper": "C-67",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-67",
+      "upper": "C-68",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-67",
+      "upper": "C-77",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-68",
+      "upper": "C-46",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-68",
+      "upper": "C-78",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-77",
+      "upper": "C-78",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-78",
+      "upper": "C-47",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-78",
+      "upper": "C-88",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "C-88",
+      "upper": "C-48",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+1",
+      "upper": "C+33",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+1",
+      "upper": "U+3",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+2",
+      "upper": "F+1",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+3",
+      "upper": "F+1",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+3",
+      "upper": "V+3",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+4",
+      "upper": "F+2",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+4",
+      "upper": "F+3",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F+5",
+      "upper": "F+4",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-1",
+      "upper": "C-33",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-1",
+      "upper": "U-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-2",
+      "upper": "F-1",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-3",
+      "upper": "F-1",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-3",
+      "upper": "V-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-4",
+      "upper": "F-2",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-4",
+      "upper": "F-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "F-5",
+      "upper": "F-4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+2",
+      "upper": "C+22",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+3",
+      "upper": "C+23",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+3",
+      "upper": "U+2",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+4",
+      "upper": "C+24",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+4",
+      "upper": "U+3",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+5",
+      "upper": "C+25",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+5",
+      "upper": "U+6",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+6",
+      "upper": "C+26",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+6",
+      "upper": "U+7",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+7",
+      "upper": "C+27",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+7",
+      "upper": "U+8",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+8",
+      "upper": "C+28",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U+8",
+      "upper": "U+4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-2",
+      "upper": "C-22",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-3",
+      "upper": "C-23",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-3",
+      "upper": "U-2",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-4",
+      "upper": "C-24",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-4",
+      "upper": "U-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-5",
+      "upper": "C-25",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-5",
+      "upper": "U-6",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-6",
+      "upper": "C-26",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-6",
+      "upper": "U-7",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-7",
+      "upper": "C-27",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-7",
+      "upper": "U-8",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-8",
+      "upper": "C-28",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "U-8",
+      "upper": "U-4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+2",
+      "upper": "U+2",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+3",
+      "upper": "U+3",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+3",
+      "upper": "V+2",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+4",
+      "upper": "U+4",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+4",
+      "upper": "V+3",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+5",
+      "upper": "U+5",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+5",
+      "upper": "V+6",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+6",
+      "upper": "U+6",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+6",
+      "upper": "V+7",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+7",
+      "upper": "U+7",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+7",
+      "upper": "V+8",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+8",
+      "upper": "U+8",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V+8",
+      "upper": "V+4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-2",
+      "upper": "U-2",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-3",
+      "upper": "U-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-3",
+      "upper": "V-2",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-4",
+      "upper": "U-4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-4",
+      "upper": "V-3",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-5",
+      "upper": "U-5",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-5",
+      "upper": "V-6",
+      "gap_difference": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-6",
+      "upper": "U-6",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-6",
+      "upper": "V-7",
+      "gap_difference": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-7",
+      "upper": "U-7",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-7",
+      "upper": "V-8",
+      "gap_difference": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-8",
+      "upper": "U-8",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "same_target": true
+    },
+    {
+      "lower": "V-8",
+      "upper": "V-4",
+      "gap_difference": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "same_target": true
+    }
+  ],
+  "rule": "score lower < score upper implies N_upper <= N_lower; on the same target H_lower <= H_upper"
+}

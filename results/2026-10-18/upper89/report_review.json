@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "reviewed_at": "2026-10-17T19:16:02.912169+00:00",
+  "pages": 6,
+  "all_pages_visually_reviewed": true,
+  "render_command": [
+    "pdftoppm",
+    "-r",
+    "110",
+    "-png",
+    "reports/upper89_from90_20261018.pdf",
+    ".work/upper89/review_done/page"
+  ],
+  "latex_warnings": [],
+  "checks": [
+    "all formulas and tables fit within margins",
+    "no overlapping or clipped text",
+    "all six pages inspected after final edits",
+    "all numerical macros resolved",
+    "references and reproduction commands are legible"
+  ],
+  "pdf": "reports/upper89_from90_20261018.pdf",
+  "pdf_sha256": "74eeb951eab0e0169c547f024e71a322293cea9880b19e13d0224edfb306c0e6",
+  "tex": "reports/upper89_from90_20261018.tex",
+  "tex_sha256": "51bb3f826b92b7e7f9946d2a15badc4407fb284d31ab6e57cc48c3652df0e7a9",
+  "page_png_sha256": {
+    "page-1.png": "510659e1f789c6df8e7cf421ecb94bb35326b4109f2c28783b2d62b54b097c52",
+    "page-2.png": "f5cab8444ae5661ca6e289d837e5aaee4a5c3bc573a42f23609507ecfe479a87",
+    "page-3.png": "afebd30db1a93132957a8868cf7d2a5c9ec55d1091beb44e180521ab9f3782b6",
+    "page-4.png": "cf9e43e653aa09efae399ba5c4358fb0a475a6b2257d32dfbbd44786135f2257",
+    "page-5.png": "cdb5f929a306a3e9af8c92757e7b395e3c8a1ce4ea0078cd591162b91b7c31c0",
+    "page-6.png": "d1a9650140826580bd2221a8617a629e0876424fbb3749cd3a2d43e944984385"
+  },
+  "final_edit_review": "After recording the batched exhaustive validation and incomplete uninterrupted attempt, page 6 was reinspected; pages 1 through 5 are byte-identical to already reviewed renders. Final page images were verified and atomically moved into the review directory."
+}

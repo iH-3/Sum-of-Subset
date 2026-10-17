@@ -1,0 +1,56 @@
+{
+  "usage": {
+    "full_translate": {
+      "vectors": 454,
+      "groups": 577
+    },
+    "empty_own_position": {
+      "vectors": 141,
+      "groups": 5755
+    },
+    "trimmed_sumset": {
+      "vectors": 384,
+      "groups": 467
+    },
+    "second_core_cutoff": {
+      "vectors": 7,
+      "groups": 5
+    },
+    "deeper_leading": {
+      "vectors": 0,
+      "groups": 0
+    },
+    "fixed_score_indicators": {
+      "vectors": 303,
+      "groups": 1
+    },
+    "fixed_score_order": {
+      "vectors": 110,
+      "groups": 1
+    },
+    "fixed_sign_clauses": {
+      "vectors": 108,
+      "groups": 1
+    },
+    "disjoint_score_events": {
+      "vectors": 0,
+      "groups": 0
+    },
+    "density_chord": {
+      "vectors": 47,
+      "groups": 3470
+    }
+  },
+  "retained_prefix": {
+    "groups": 9855,
+    "positive_vectors": 325
+  },
+  "split_types": {
+    "core": 25,
+    "fixed_high": 78,
+    "fixed_nonpositive": 194,
+    "inner": 34,
+    "ordinary": 8
+  },
+  "scope": "Positive multiplier use; prefix rows counted only in positive-hole models. General scalar lemmas are separately recorded."
+}

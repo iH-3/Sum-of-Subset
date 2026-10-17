@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "original_checker": "verification/upper89.py",
+  "batched_driver": "experiments/verify_upper89_sharded.py",
+  "original_checker_sha256": "37c96dcd478c5b41e74176d51745d6bae802cc574c6bd0f38cc285e022ca7e5f",
+  "batched_driver_sha256": "90b4004de5f470c457f0bf82466b3ae5065eb89523eca18b4a25d984e49ae25f",
+  "per_group_source_identical_after_parameterization": true,
+  "global_checks_moved_to_parent": [
+    "certificate format",
+    "complete reconstructed root universe",
+    "complete low-root cardinality totals",
+    "union of used vectors equals the complete certificate pool"
+  ],
+  "additional_parent_checks": [
+    "disjoint source-derived batch partitions",
+    "complete merged per-root equality with the standard check",
+    "complete merged statistics equality with the standard check",
+    "unchanged proof input and driver hashes"
+  ]
+}

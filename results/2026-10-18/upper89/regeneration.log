@@ -1,0 +1,342 @@
+{"roots": 100, "routing": {"coarse": 87, "global_nested": 13}, "certificate_searches": 66, "unsuccessful_searches": 13, "seconds": 6.42}
+{"roots": 200, "routing": {"coarse": 160, "global_nested": 40}, "certificate_searches": 130, "unsuccessful_searches": 40, "seconds": 10.53}
+{"roots": 300, "routing": {"coarse": 260, "global_nested": 40}, "certificate_searches": 139, "unsuccessful_searches": 40, "seconds": 11.62}
+{"roots": 400, "routing": {"coarse": 355, "global_nested": 45}, "certificate_searches": 179, "unsuccessful_searches": 45, "seconds": 15.38}
+{"roots": 500, "routing": {"coarse": 454, "global_nested": 46}, "certificate_searches": 191, "unsuccessful_searches": 46, "seconds": 16.62}
+{"roots": 600, "routing": {"coarse": 554, "global_nested": 46}, "certificate_searches": 197, "unsuccessful_searches": 46, "seconds": 17.46}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 36, "kind": "binary", "seconds": 18.27}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 37, "kind": "binary", "seconds": 18.36}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 35, "kind": "binary", "seconds": 18.45}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 34, "kind": "binary", "seconds": 18.56}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 33, "kind": "binary", "seconds": 18.67}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 32, "kind": "binary", "seconds": 18.77}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 31, "kind": "binary", "seconds": 19.09}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 30, "kind": "binary", "seconds": 19.18}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 29, "kind": "binary", "seconds": 19.26}
+{"tree_closed": "Z3:A:pair1,pair2,p0:-:-", "a": 28, "kind": "binary", "seconds": 19.36}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 36, "kind": "binary", "seconds": 19.96}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 37, "kind": "binary", "seconds": 20.06}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 38, "kind": "binary", "seconds": 20.23}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 39, "kind": "binary", "seconds": 20.39}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 40, "kind": "binary", "seconds": 20.54}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 41, "kind": "binary", "seconds": 20.66}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 42, "kind": "binary", "seconds": 20.95}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 43, "kind": "binary", "seconds": 21.04}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 44, "kind": "binary", "seconds": 21.13}
+{"tree_closed": "Z3:A:pair1,pair2,q0:-:-", "a": 45, "kind": "binary", "seconds": 21.22}
+{"roots": 700, "routing": {"coarse": 625, "global_nested": 75}, "certificate_searches": 321, "unsuccessful_searches": 95, "tree_nodes_visited": 24, "primal_searches": 124, "seconds": 23.47}
+{"roots": 800, "routing": {"coarse": 702, "global_nested": 98}, "certificate_searches": 358, "unsuccessful_searches": 118, "tree_nodes_visited": 24, "primal_searches": 124, "seconds": 25.54}
+{"roots": 900, "routing": {"coarse": 779, "global_nested": 121}, "certificate_searches": 399, "unsuccessful_searches": 141, "tree_nodes_visited": 24, "primal_searches": 124, "seconds": 27.85}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 39, "kind": "binary", "seconds": 28.39}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 40, "kind": "binary", "seconds": 28.48}
+{"tree_closed": "Z3:A:pair2,p0,q0:-:-", "a": 41, "kind": "binary", "seconds": 28.58}
+{"roots": 1000, "routing": {"coarse": 846, "global_nested": 154}, "certificate_searches": 471, "unsuccessful_searches": 177, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 30.23}
+{"roots": 1100, "routing": {"coarse": 914, "global_nested": 186}, "certificate_searches": 523, "unsuccessful_searches": 209, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 31.91}
+{"roots": 1200, "routing": {"coarse": 980, "global_nested": 220}, "certificate_searches": 571, "unsuccessful_searches": 243, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 33.58}
+{"roots": 1300, "routing": {"coarse": 1072, "global_nested": 228}, "certificate_searches": 584, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 34.23}
+{"roots": 1400, "routing": {"coarse": 1172, "global_nested": 228}, "certificate_searches": 584, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 34.64}
+{"roots": 1500, "routing": {"coarse": 1272, "global_nested": 228}, "certificate_searches": 585, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 35.1}
+{"roots": 1600, "routing": {"coarse": 1372, "global_nested": 228}, "certificate_searches": 586, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 35.58}
+{"roots": 1700, "routing": {"coarse": 1472, "global_nested": 228}, "certificate_searches": 594, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 36.44}
+{"roots": 1800, "routing": {"coarse": 1572, "global_nested": 228}, "certificate_searches": 595, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 36.98}
+{"roots": 1900, "routing": {"coarse": 1672, "global_nested": 228}, "certificate_searches": 596, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 37.52}
+{"roots": 2000, "routing": {"coarse": 1772, "global_nested": 228}, "certificate_searches": 596, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 37.94}
+{"roots": 2100, "routing": {"coarse": 1872, "global_nested": 228}, "certificate_searches": 600, "unsuccessful_searches": 251, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 38.8}
+{"roots": 2200, "routing": {"coarse": 1956, "global_nested": 244}, "certificate_searches": 643, "unsuccessful_searches": 267, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 41.95}
+{"roots": 2300, "routing": {"coarse": 2056, "global_nested": 244}, "certificate_searches": 650, "unsuccessful_searches": 267, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 42.86}
+{"roots": 2400, "routing": {"coarse": 2154, "global_nested": 246}, "certificate_searches": 660, "unsuccessful_searches": 269, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 43.96}
+{"roots": 2500, "routing": {"coarse": 2253, "global_nested": 247}, "certificate_searches": 662, "unsuccessful_searches": 270, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 44.45}
+{"roots": 2600, "routing": {"coarse": 2341, "global_nested": 259}, "certificate_searches": 677, "unsuccessful_searches": 282, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 45.16}
+{"roots": 2700, "routing": {"coarse": 2441, "global_nested": 259}, "certificate_searches": 678, "unsuccessful_searches": 282, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 45.62}
+{"roots": 2800, "routing": {"coarse": 2540, "global_nested": 260}, "certificate_searches": 686, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 46.41}
+{"roots": 2900, "routing": {"coarse": 2640, "global_nested": 260}, "certificate_searches": 686, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 46.79}
+{"roots": 3000, "routing": {"coarse": 2740, "global_nested": 260}, "certificate_searches": 686, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 47.19}
+{"roots": 3100, "routing": {"coarse": 2840, "global_nested": 260}, "certificate_searches": 686, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 47.59}
+{"roots": 3200, "routing": {"coarse": 2940, "global_nested": 260}, "certificate_searches": 689, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 48.15}
+{"roots": 3300, "routing": {"coarse": 3040, "global_nested": 260}, "certificate_searches": 690, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 48.63}
+{"roots": 3400, "routing": {"coarse": 3140, "global_nested": 260}, "certificate_searches": 690, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 49.03}
+{"roots": 3500, "routing": {"coarse": 3240, "global_nested": 260}, "certificate_searches": 690, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 49.44}
+{"roots": 3600, "routing": {"coarse": 3340, "global_nested": 260}, "certificate_searches": 690, "unsuccessful_searches": 283, "tree_nodes_visited": 27, "primal_searches": 133, "seconds": 49.86}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 36, "depth": 27, "certificate_searches": 742, "unsuccessful_searches": 289, "tree_nodes_visited": 100, "primal_searches": 916, "seconds": 79.21}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 36, "kind": "binary", "seconds": 85.37}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 37, "depth": 29, "certificate_searches": 801, "unsuccessful_searches": 290, "tree_nodes_visited": 200, "primal_searches": 1739, "seconds": 107.6}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 37, "kind": "binary", "seconds": 118.65}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 35, "depth": 26, "certificate_searches": 860, "unsuccessful_searches": 291, "tree_nodes_visited": 300, "primal_searches": 2550, "seconds": 135.72}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 35, "kind": "binary", "seconds": 136.82}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 38, "kind": "binary", "seconds": 154.83}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 34, "depth": 13, "certificate_searches": 919, "unsuccessful_searches": 293, "tree_nodes_visited": 400, "primal_searches": 3284, "seconds": 160.98}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 34, "kind": "binary", "seconds": 171.4}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 39, "depth": 10, "certificate_searches": 974, "unsuccessful_searches": 294, "tree_nodes_visited": 500, "primal_searches": 4079, "seconds": 187.91}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 39, "kind": "binary", "seconds": 188.32}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 33, "kind": "binary", "seconds": 196.05}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 40, "kind": "binary", "seconds": 204.1}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 32, "kind": "binary", "seconds": 214.56}
+{"search_root": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 41, "depth": 8, "certificate_searches": 1033, "unsuccessful_searches": 298, "tree_nodes_visited": 600, "primal_searches": 4883, "seconds": 218.4}
+{"tree_closed": "Z4:A:pair1,pair2,p0,q0:-:-", "a": 41, "kind": "binary", "seconds": 219.82}
+{"roots": 3700, "routing": {"coarse": 3429, "global_nested": 271}, "certificate_searches": 1081, "unsuccessful_searches": 304, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 221.67}
+{"roots": 3800, "routing": {"coarse": 3511, "global_nested": 289}, "certificate_searches": 1125, "unsuccessful_searches": 322, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 223.6}
+{"roots": 3900, "routing": {"coarse": 3605, "global_nested": 295}, "certificate_searches": 1147, "unsuccessful_searches": 328, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 224.99}
+{"roots": 4000, "routing": {"coarse": 3696, "global_nested": 304}, "certificate_searches": 1171, "unsuccessful_searches": 337, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 226.52}
+{"roots": 4100, "routing": {"coarse": 3796, "global_nested": 304}, "certificate_searches": 1174, "unsuccessful_searches": 337, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 227.4}
+{"roots": 4200, "routing": {"coarse": 3896, "global_nested": 304}, "certificate_searches": 1176, "unsuccessful_searches": 337, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 228.21}
+{"roots": 4300, "routing": {"coarse": 3996, "global_nested": 304}, "certificate_searches": 1176, "unsuccessful_searches": 337, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 228.93}
+{"roots": 4400, "routing": {"coarse": 4095, "global_nested": 305}, "certificate_searches": 1194, "unsuccessful_searches": 338, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 230.31}
+{"roots": 4500, "routing": {"coarse": 4189, "global_nested": 311}, "certificate_searches": 1222, "unsuccessful_searches": 344, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 232.08}
+{"roots": 4600, "routing": {"coarse": 4284, "global_nested": 316}, "certificate_searches": 1237, "unsuccessful_searches": 349, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 233.32}
+{"roots": 4700, "routing": {"coarse": 4384, "global_nested": 316}, "certificate_searches": 1243, "unsuccessful_searches": 349, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 234.86}
+{"roots": 4800, "routing": {"coarse": 4484, "global_nested": 316}, "certificate_searches": 1255, "unsuccessful_searches": 349, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 236.6}
+{"roots": 4900, "routing": {"coarse": 4580, "global_nested": 320}, "certificate_searches": 1269, "unsuccessful_searches": 353, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 238.34}
+{"roots": 5000, "routing": {"coarse": 4658, "global_nested": 342}, "certificate_searches": 1316, "unsuccessful_searches": 375, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 241.96}
+{"roots": 5100, "routing": {"coarse": 4758, "global_nested": 342}, "certificate_searches": 1325, "unsuccessful_searches": 375, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 243.87}
+{"roots": 5200, "routing": {"coarse": 4858, "global_nested": 342}, "certificate_searches": 1330, "unsuccessful_searches": 375, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 245.07}
+{"roots": 5300, "routing": {"coarse": 4958, "global_nested": 342}, "certificate_searches": 1337, "unsuccessful_searches": 375, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 246.42}
+{"roots": 5400, "routing": {"coarse": 5058, "global_nested": 342}, "certificate_searches": 1348, "unsuccessful_searches": 375, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 247.82}
+{"roots": 5500, "routing": {"coarse": 5156, "global_nested": 344}, "certificate_searches": 1360, "unsuccessful_searches": 377, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 249.3}
+{"roots": 5600, "routing": {"coarse": 5251, "global_nested": 349}, "certificate_searches": 1376, "unsuccessful_searches": 382, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 250.41}
+{"roots": 5700, "routing": {"coarse": 5347, "global_nested": 353}, "certificate_searches": 1385, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 251.39}
+{"roots": 5800, "routing": {"coarse": 5447, "global_nested": 353}, "certificate_searches": 1388, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 252.14}
+{"roots": 5900, "routing": {"coarse": 5547, "global_nested": 353}, "certificate_searches": 1395, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 253.18}
+{"roots": 6000, "routing": {"coarse": 5647, "global_nested": 353}, "certificate_searches": 1403, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 254.29}
+{"roots": 6100, "routing": {"coarse": 5747, "global_nested": 353}, "certificate_searches": 1404, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 255.21}
+{"roots": 6200, "routing": {"coarse": 5847, "global_nested": 353}, "certificate_searches": 1407, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 256.12}
+{"roots": 6300, "routing": {"coarse": 5947, "global_nested": 353}, "certificate_searches": 1417, "unsuccessful_searches": 386, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 257.2}
+{"roots": 6400, "routing": {"coarse": 6046, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 258.62}
+{"roots": 6500, "routing": {"coarse": 6146, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 259.68}
+{"roots": 6600, "routing": {"coarse": 6246, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 261.15}
+{"roots": 6700, "routing": {"coarse": 6346, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 262.76}
+{"roots": 6800, "routing": {"coarse": 6446, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 264.02}
+{"roots": 6900, "routing": {"coarse": 6546, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 265.2}
+{"roots": 7000, "routing": {"coarse": 6646, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 266.31}
+{"roots": 7100, "routing": {"coarse": 6746, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 267.42}
+{"roots": 7200, "routing": {"coarse": 6846, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 268.6}
+{"roots": 7300, "routing": {"coarse": 6946, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 269.61}
+{"roots": 7400, "routing": {"coarse": 7046, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 270.67}
+{"roots": 7500, "routing": {"coarse": 7146, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 271.59}
+{"roots": 7600, "routing": {"coarse": 7246, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 272.45}
+{"roots": 7700, "routing": {"coarse": 7346, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 273.42}
+{"roots": 7800, "routing": {"coarse": 7446, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 274.49}
+{"roots": 7900, "routing": {"coarse": 7546, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 275.51}
+{"roots": 8000, "routing": {"coarse": 7646, "global_nested": 354}, "certificate_searches": 1427, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 276.41}
+{"roots": 8100, "routing": {"coarse": 7746, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 277.58}
+{"roots": 8200, "routing": {"coarse": 7846, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 278.83}
+{"roots": 8300, "routing": {"coarse": 7946, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 279.97}
+{"roots": 8400, "routing": {"coarse": 8046, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 281.03}
+{"roots": 8500, "routing": {"coarse": 8146, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 282.2}
+{"roots": 8600, "routing": {"coarse": 8246, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 283.26}
+{"roots": 8700, "routing": {"coarse": 8346, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 284.31}
+{"roots": 8800, "routing": {"coarse": 8446, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 285.38}
+{"roots": 8900, "routing": {"coarse": 8546, "global_nested": 354}, "certificate_searches": 1428, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 286.36}
+{"roots": 9000, "routing": {"coarse": 8646, "global_nested": 354}, "certificate_searches": 1432, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 287.63}
+{"roots": 9100, "routing": {"coarse": 8746, "global_nested": 354}, "certificate_searches": 1450, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 289.19}
+{"roots": 9200, "routing": {"coarse": 8846, "global_nested": 354}, "certificate_searches": 1469, "unsuccessful_searches": 387, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 290.64}
+{"roots": 9300, "routing": {"coarse": 8944, "global_nested": 356}, "certificate_searches": 1487, "unsuccessful_searches": 389, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 291.99}
+{"roots": 9400, "routing": {"coarse": 9043, "global_nested": 357}, "certificate_searches": 1496, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 293.02}
+{"roots": 9500, "routing": {"coarse": 9143, "global_nested": 357}, "certificate_searches": 1500, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 294.02}
+{"roots": 9600, "routing": {"coarse": 9243, "global_nested": 357}, "certificate_searches": 1500, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 294.73}
+{"roots": 9700, "routing": {"coarse": 9343, "global_nested": 357}, "certificate_searches": 1501, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 295.39}
+{"roots": 9800, "routing": {"coarse": 9443, "global_nested": 357}, "certificate_searches": 1505, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 296.18}
+{"roots": 9900, "routing": {"coarse": 9543, "global_nested": 357}, "certificate_searches": 1510, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 297.13}
+{"roots": 10000, "routing": {"coarse": 9643, "global_nested": 357}, "certificate_searches": 1514, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 298.14}
+{"roots": 10100, "routing": {"coarse": 9743, "global_nested": 357}, "certificate_searches": 1518, "unsuccessful_searches": 390, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 299.21}
+{"roots": 10200, "routing": {"coarse": 9842, "global_nested": 358}, "certificate_searches": 1522, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 300.11}
+{"roots": 10300, "routing": {"coarse": 9942, "global_nested": 358}, "certificate_searches": 1525, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 300.97}
+{"roots": 10400, "routing": {"coarse": 10042, "global_nested": 358}, "certificate_searches": 1538, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 302.24}
+{"roots": 10500, "routing": {"coarse": 10142, "global_nested": 358}, "certificate_searches": 1545, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 303.38}
+{"roots": 10600, "routing": {"coarse": 10242, "global_nested": 358}, "certificate_searches": 1545, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 304.11}
+{"roots": 10700, "routing": {"coarse": 10342, "global_nested": 358}, "certificate_searches": 1545, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 305.14}
+{"roots": 10800, "routing": {"coarse": 10442, "global_nested": 358}, "certificate_searches": 1545, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 306.2}
+{"roots": 10900, "routing": {"coarse": 10542, "global_nested": 358}, "certificate_searches": 1549, "unsuccessful_searches": 391, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 307.59}
+{"roots": 11000, "routing": {"coarse": 10641, "global_nested": 359}, "certificate_searches": 1562, "unsuccessful_searches": 392, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 309.05}
+{"roots": 11100, "routing": {"coarse": 10740, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 310.19}
+{"roots": 11200, "routing": {"coarse": 10840, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 310.89}
+{"roots": 11300, "routing": {"coarse": 10940, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 311.75}
+{"roots": 11400, "routing": {"coarse": 11040, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 312.59}
+{"roots": 11500, "routing": {"coarse": 11140, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 313.54}
+{"roots": 11600, "routing": {"coarse": 11240, "global_nested": 360}, "certificate_searches": 1572, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 314.38}
+{"roots": 11700, "routing": {"coarse": 11340, "global_nested": 360}, "certificate_searches": 1575, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 315.3}
+{"roots": 11800, "routing": {"coarse": 11440, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 318.36}
+{"roots": 11900, "routing": {"coarse": 11540, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 319.38}
+{"roots": 12000, "routing": {"coarse": 11640, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 320.35}
+{"roots": 12100, "routing": {"coarse": 11740, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 321.42}
+{"roots": 12200, "routing": {"coarse": 11840, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 322.72}
+{"roots": 12300, "routing": {"coarse": 11940, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 323.89}
+{"roots": 12400, "routing": {"coarse": 12040, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 324.98}
+{"roots": 12500, "routing": {"coarse": 12140, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 325.99}
+{"roots": 12600, "routing": {"coarse": 12240, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 327.28}
+{"roots": 12700, "routing": {"coarse": 12340, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 328.31}
+{"roots": 12800, "routing": {"coarse": 12440, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 329.45}
+{"roots": 12900, "routing": {"coarse": 12540, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 330.41}
+{"roots": 13000, "routing": {"coarse": 12640, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 331.27}
+{"roots": 13200, "routing": {"coarse": 12840, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 335.25}
+{"roots": 13300, "routing": {"coarse": 12940, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 340.4}
+{"roots": 13400, "routing": {"coarse": 13040, "global_nested": 360}, "certificate_searches": 1584, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 341.5}
+{"roots": 13500, "routing": {"coarse": 13140, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 342.57}
+{"roots": 13600, "routing": {"coarse": 13240, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 343.62}
+{"roots": 13700, "routing": {"coarse": 13340, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 344.79}
+{"roots": 13800, "routing": {"coarse": 13440, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 345.98}
+{"roots": 13900, "routing": {"coarse": 13540, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 347.07}
+{"roots": 14000, "routing": {"coarse": 13640, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 348.28}
+{"roots": 14100, "routing": {"coarse": 13740, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 349.39}
+{"roots": 14200, "routing": {"coarse": 13840, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 350.35}
+{"roots": 14300, "routing": {"coarse": 13940, "global_nested": 360}, "certificate_searches": 1586, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 351.27}
+{"roots": 14400, "routing": {"coarse": 14040, "global_nested": 360}, "certificate_searches": 1588, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 352.29}
+{"roots": 14500, "routing": {"coarse": 14140, "global_nested": 360}, "certificate_searches": 1589, "unsuccessful_searches": 393, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 353.45}
+{"roots": 14600, "routing": {"coarse": 14237, "global_nested": 363}, "certificate_searches": 1622, "unsuccessful_searches": 396, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 358.96}
+{"roots": 14700, "routing": {"coarse": 14308, "global_nested": 392}, "certificate_searches": 1669, "unsuccessful_searches": 425, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 363.54}
+{"roots": 14800, "routing": {"coarse": 14408, "global_nested": 392}, "certificate_searches": 1674, "unsuccessful_searches": 425, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 367.02}
+{"roots": 14900, "routing": {"coarse": 14507, "global_nested": 393}, "certificate_searches": 1698, "unsuccessful_searches": 426, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 371.17}
+{"roots": 15000, "routing": {"coarse": 14606, "global_nested": 394}, "certificate_searches": 1715, "unsuccessful_searches": 427, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 374.87}
+{"roots": 15100, "routing": {"coarse": 14706, "global_nested": 394}, "certificate_searches": 1717, "unsuccessful_searches": 427, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 378.06}
+{"roots": 15200, "routing": {"coarse": 14800, "global_nested": 400}, "certificate_searches": 1744, "unsuccessful_searches": 433, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 382.47}
+{"roots": 15300, "routing": {"coarse": 14898, "global_nested": 402}, "certificate_searches": 1764, "unsuccessful_searches": 435, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 390.26}
+{"roots": 15400, "routing": {"coarse": 14994, "global_nested": 406}, "certificate_searches": 1788, "unsuccessful_searches": 439, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 395.53}
+{"roots": 15500, "routing": {"coarse": 15090, "global_nested": 410}, "certificate_searches": 1815, "unsuccessful_searches": 443, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 399.3}
+{"roots": 15600, "routing": {"coarse": 15188, "global_nested": 412}, "certificate_searches": 1836, "unsuccessful_searches": 445, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 402.13}
+{"roots": 15700, "routing": {"coarse": 15288, "global_nested": 412}, "certificate_searches": 1843, "unsuccessful_searches": 445, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 404.34}
+{"roots": 15800, "routing": {"coarse": 15387, "global_nested": 413}, "certificate_searches": 1854, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 407.66}
+{"roots": 15900, "routing": {"coarse": 15487, "global_nested": 413}, "certificate_searches": 1854, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 410.68}
+{"roots": 16000, "routing": {"coarse": 15587, "global_nested": 413}, "certificate_searches": 1854, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 413.43}
+{"roots": 16100, "routing": {"coarse": 15687, "global_nested": 413}, "certificate_searches": 1859, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 416.47}
+{"roots": 16200, "routing": {"coarse": 15787, "global_nested": 413}, "certificate_searches": 1859, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 418.93}
+{"roots": 16300, "routing": {"coarse": 15887, "global_nested": 413}, "certificate_searches": 1862, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 421.99}
+{"roots": 16400, "routing": {"coarse": 15987, "global_nested": 413}, "certificate_searches": 1862, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 425.93}
+{"roots": 16500, "routing": {"coarse": 16087, "global_nested": 413}, "certificate_searches": 1862, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 429.12}
+{"roots": 16600, "routing": {"coarse": 16187, "global_nested": 413}, "certificate_searches": 1866, "unsuccessful_searches": 446, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 431.42}
+{"roots": 16700, "routing": {"coarse": 16286, "global_nested": 414}, "certificate_searches": 1892, "unsuccessful_searches": 447, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 434.97}
+{"roots": 16800, "routing": {"coarse": 16386, "global_nested": 414}, "certificate_searches": 1901, "unsuccessful_searches": 447, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 437.05}
+{"roots": 16900, "routing": {"coarse": 16485, "global_nested": 415}, "certificate_searches": 1910, "unsuccessful_searches": 448, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 439.16}
+{"roots": 17000, "routing": {"coarse": 16585, "global_nested": 415}, "certificate_searches": 1917, "unsuccessful_searches": 448, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 441.36}
+{"roots": 17100, "routing": {"coarse": 16683, "global_nested": 417}, "certificate_searches": 1932, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 443.58}
+{"roots": 17200, "routing": {"coarse": 16783, "global_nested": 417}, "certificate_searches": 1934, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 445.26}
+{"roots": 17300, "routing": {"coarse": 16883, "global_nested": 417}, "certificate_searches": 1944, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 447.31}
+{"roots": 17400, "routing": {"coarse": 16983, "global_nested": 417}, "certificate_searches": 1944, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 449.78}
+{"roots": 17500, "routing": {"coarse": 17083, "global_nested": 417}, "certificate_searches": 1944, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 451.72}
+{"roots": 17600, "routing": {"coarse": 17183, "global_nested": 417}, "certificate_searches": 1948, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 454.06}
+{"roots": 17700, "routing": {"coarse": 17283, "global_nested": 417}, "certificate_searches": 1948, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 456.14}
+{"roots": 17800, "routing": {"coarse": 17383, "global_nested": 417}, "certificate_searches": 1950, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 459.18}
+{"roots": 17900, "routing": {"coarse": 17483, "global_nested": 417}, "certificate_searches": 1950, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 461.92}
+{"roots": 18000, "routing": {"coarse": 17583, "global_nested": 417}, "certificate_searches": 1950, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 464.57}
+{"roots": 18100, "routing": {"coarse": 17683, "global_nested": 417}, "certificate_searches": 1955, "unsuccessful_searches": 450, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 467.12}
+{"roots": 18200, "routing": {"coarse": 17779, "global_nested": 421}, "certificate_searches": 1973, "unsuccessful_searches": 454, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 470.3}
+{"roots": 18300, "routing": {"coarse": 17861, "global_nested": 439}, "certificate_searches": 1996, "unsuccessful_searches": 472, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 473.6}
+{"roots": 18400, "routing": {"coarse": 17949, "global_nested": 451}, "certificate_searches": 2008, "unsuccessful_searches": 484, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 476.68}
+{"roots": 18500, "routing": {"coarse": 18049, "global_nested": 451}, "certificate_searches": 2008, "unsuccessful_searches": 484, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 479.85}
+{"roots": 18600, "routing": {"coarse": 18147, "global_nested": 453}, "certificate_searches": 2010, "unsuccessful_searches": 486, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 482.06}
+{"roots": 18700, "routing": {"coarse": 18247, "global_nested": 453}, "certificate_searches": 2010, "unsuccessful_searches": 486, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 484.61}
+{"roots": 18800, "routing": {"coarse": 18347, "global_nested": 453}, "certificate_searches": 2010, "unsuccessful_searches": 486, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 487.28}
+{"roots": 18900, "routing": {"coarse": 18439, "global_nested": 461}, "certificate_searches": 2018, "unsuccessful_searches": 494, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 489.72}
+{"roots": 19000, "routing": {"coarse": 18534, "global_nested": 466}, "certificate_searches": 2025, "unsuccessful_searches": 499, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 492.0}
+{"roots": 19100, "routing": {"coarse": 18628, "global_nested": 472}, "certificate_searches": 2034, "unsuccessful_searches": 505, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 500.33}
+{"roots": 19200, "routing": {"coarse": 18728, "global_nested": 472}, "certificate_searches": 2034, "unsuccessful_searches": 505, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 506.15}
+{"roots": 19300, "routing": {"coarse": 18826, "global_nested": 474}, "certificate_searches": 2036, "unsuccessful_searches": 507, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 508.09}
+{"roots": 19400, "routing": {"coarse": 18924, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 510.37}
+{"roots": 19500, "routing": {"coarse": 19024, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 512.98}
+{"roots": 19600, "routing": {"coarse": 19124, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 515.23}
+{"roots": 19700, "routing": {"coarse": 19224, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 517.5}
+{"roots": 19800, "routing": {"coarse": 19324, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 519.8}
+{"roots": 19900, "routing": {"coarse": 19424, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 525.52}
+{"roots": 20000, "routing": {"coarse": 19524, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 528.6}
+{"roots": 20100, "routing": {"coarse": 19624, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 531.0}
+{"roots": 20200, "routing": {"coarse": 19724, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 533.12}
+{"roots": 20300, "routing": {"coarse": 19824, "global_nested": 476}, "certificate_searches": 2039, "unsuccessful_searches": 509, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 535.0}
+{"roots": 20400, "routing": {"coarse": 19921, "global_nested": 479}, "certificate_searches": 2044, "unsuccessful_searches": 512, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 536.86}
+{"roots": 20500, "routing": {"coarse": 20021, "global_nested": 479}, "certificate_searches": 2044, "unsuccessful_searches": 512, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 538.32}
+{"roots": 20600, "routing": {"coarse": 20120, "global_nested": 480}, "certificate_searches": 2045, "unsuccessful_searches": 513, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 540.16}
+{"roots": 20700, "routing": {"coarse": 20220, "global_nested": 480}, "certificate_searches": 2045, "unsuccessful_searches": 513, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 542.11}
+{"roots": 20800, "routing": {"coarse": 20318, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 543.71}
+{"roots": 20900, "routing": {"coarse": 20418, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 545.2}
+{"roots": 21000, "routing": {"coarse": 20518, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 547.51}
+{"roots": 21100, "routing": {"coarse": 20618, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 549.39}
+{"roots": 21200, "routing": {"coarse": 20718, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 551.22}
+{"roots": 21300, "routing": {"coarse": 20818, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 552.99}
+{"roots": 21400, "routing": {"coarse": 20918, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 555.11}
+{"roots": 21500, "routing": {"coarse": 21018, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 557.4}
+{"roots": 21600, "routing": {"coarse": 21118, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 559.53}
+{"roots": 21700, "routing": {"coarse": 21218, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 561.35}
+{"roots": 21800, "routing": {"coarse": 21318, "global_nested": 482}, "certificate_searches": 2049, "unsuccessful_searches": 515, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 562.95}
+{"roots": 21900, "routing": {"coarse": 21409, "global_nested": 491}, "certificate_searches": 2063, "unsuccessful_searches": 524, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 567.02}
+{"roots": 22000, "routing": {"coarse": 21473, "global_nested": 527}, "certificate_searches": 2126, "unsuccessful_searches": 560, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 572.63}
+{"roots": 22100, "routing": {"coarse": 21573, "global_nested": 527}, "certificate_searches": 2135, "unsuccessful_searches": 560, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 579.21}
+{"roots": 22200, "routing": {"coarse": 21671, "global_nested": 529}, "certificate_searches": 2146, "unsuccessful_searches": 562, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 582.11}
+{"roots": 22300, "routing": {"coarse": 21769, "global_nested": 531}, "certificate_searches": 2150, "unsuccessful_searches": 564, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 584.67}
+{"roots": 22400, "routing": {"coarse": 21869, "global_nested": 531}, "certificate_searches": 2151, "unsuccessful_searches": 564, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 587.76}
+{"roots": 22500, "routing": {"coarse": 21962, "global_nested": 538}, "certificate_searches": 2165, "unsuccessful_searches": 571, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 591.62}
+{"roots": 22600, "routing": {"coarse": 22057, "global_nested": 543}, "certificate_searches": 2170, "unsuccessful_searches": 576, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 593.57}
+{"roots": 22700, "routing": {"coarse": 22154, "global_nested": 546}, "certificate_searches": 2174, "unsuccessful_searches": 579, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 595.57}
+{"roots": 22800, "routing": {"coarse": 22248, "global_nested": 552}, "certificate_searches": 2181, "unsuccessful_searches": 585, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 598.06}
+{"roots": 22900, "routing": {"coarse": 22345, "global_nested": 555}, "certificate_searches": 2185, "unsuccessful_searches": 588, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 600.98}
+{"roots": 23000, "routing": {"coarse": 22439, "global_nested": 561}, "certificate_searches": 2197, "unsuccessful_searches": 594, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 605.31}
+{"roots": 23100, "routing": {"coarse": 22532, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 608.2}
+{"roots": 23200, "routing": {"coarse": 22632, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 610.86}
+{"roots": 23300, "routing": {"coarse": 22732, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 613.36}
+{"roots": 23400, "routing": {"coarse": 22832, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 615.5}
+{"roots": 23500, "routing": {"coarse": 22932, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 617.8}
+{"roots": 23600, "routing": {"coarse": 23032, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 621.15}
+{"roots": 23700, "routing": {"coarse": 23132, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 624.05}
+{"roots": 23800, "routing": {"coarse": 23232, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 627.16}
+{"roots": 23900, "routing": {"coarse": 23332, "global_nested": 568}, "certificate_searches": 2212, "unsuccessful_searches": 601, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 631.34}
+{"roots": 24000, "routing": {"coarse": 23429, "global_nested": 571}, "certificate_searches": 2215, "unsuccessful_searches": 604, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 634.59}
+{"roots": 24100, "routing": {"coarse": 23529, "global_nested": 571}, "certificate_searches": 2215, "unsuccessful_searches": 604, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 637.36}
+{"roots": 24200, "routing": {"coarse": 23628, "global_nested": 572}, "certificate_searches": 2216, "unsuccessful_searches": 605, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 640.42}
+{"roots": 24300, "routing": {"coarse": 23728, "global_nested": 572}, "certificate_searches": 2216, "unsuccessful_searches": 605, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 644.34}
+{"roots": 24400, "routing": {"coarse": 23825, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 647.94}
+{"roots": 24500, "routing": {"coarse": 23925, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 651.05}
+{"roots": 24600, "routing": {"coarse": 24025, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 654.8}
+{"roots": 24700, "routing": {"coarse": 24125, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 658.94}
+{"roots": 24800, "routing": {"coarse": 24225, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 662.63}
+{"roots": 24900, "routing": {"coarse": 24325, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 665.71}
+{"roots": 25000, "routing": {"coarse": 24425, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 669.17}
+{"roots": 25100, "routing": {"coarse": 24525, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 673.6}
+{"roots": 25200, "routing": {"coarse": 24625, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 677.68}
+{"roots": 25300, "routing": {"coarse": 24725, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 681.65}
+{"roots": 25400, "routing": {"coarse": 24825, "global_nested": 575}, "certificate_searches": 2222, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 684.88}
+{"roots": 25500, "routing": {"coarse": 24925, "global_nested": 575}, "certificate_searches": 2237, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 699.85}
+{"roots": 25600, "routing": {"coarse": 25025, "global_nested": 575}, "certificate_searches": 2242, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 709.15}
+{"roots": 25700, "routing": {"coarse": 25125, "global_nested": 575}, "certificate_searches": 2254, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 716.89}
+{"roots": 25800, "routing": {"coarse": 25225, "global_nested": 575}, "certificate_searches": 2261, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 724.0}
+{"roots": 25900, "routing": {"coarse": 25325, "global_nested": 575}, "certificate_searches": 2261, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 730.05}
+{"roots": 26000, "routing": {"coarse": 25425, "global_nested": 575}, "certificate_searches": 2261, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 737.6}
+{"roots": 26100, "routing": {"coarse": 25525, "global_nested": 575}, "certificate_searches": 2261, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 743.86}
+{"roots": 26200, "routing": {"coarse": 25625, "global_nested": 575}, "certificate_searches": 2261, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 751.71}
+{"roots": 26300, "routing": {"coarse": 25725, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 758.97}
+{"roots": 26400, "routing": {"coarse": 25825, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 764.83}
+{"roots": 26500, "routing": {"coarse": 25925, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 771.71}
+{"roots": 26600, "routing": {"coarse": 26025, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 779.69}
+{"roots": 26700, "routing": {"coarse": 26125, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 786.6}
+{"roots": 26800, "routing": {"coarse": 26225, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 792.51}
+{"roots": 26900, "routing": {"coarse": 26325, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 800.06}
+{"roots": 27000, "routing": {"coarse": 26425, "global_nested": 575}, "certificate_searches": 2272, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 808.06}
+{"roots": 27100, "routing": {"coarse": 26525, "global_nested": 575}, "certificate_searches": 2274, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 820.48}
+{"roots": 27200, "routing": {"coarse": 26625, "global_nested": 575}, "certificate_searches": 2274, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 826.45}
+{"roots": 27300, "routing": {"coarse": 26725, "global_nested": 575}, "certificate_searches": 2274, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 833.26}
+{"roots": 27400, "routing": {"coarse": 26825, "global_nested": 575}, "certificate_searches": 2274, "unsuccessful_searches": 608, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 840.4}
+{"roots": 27500, "routing": {"coarse": 26924, "global_nested": 576}, "certificate_searches": 2282, "unsuccessful_searches": 609, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 847.63}
+{"roots": 27600, "routing": {"coarse": 27024, "global_nested": 576}, "certificate_searches": 2294, "unsuccessful_searches": 609, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 853.78}
+{"roots": 27700, "routing": {"coarse": 27124, "global_nested": 576}, "certificate_searches": 2294, "unsuccessful_searches": 609, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 860.68}
+{"roots": 27800, "routing": {"coarse": 27224, "global_nested": 576}, "certificate_searches": 2294, "unsuccessful_searches": 609, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 867.86}
+{"roots": 27900, "routing": {"coarse": 27324, "global_nested": 576}, "certificate_searches": 2294, "unsuccessful_searches": 609, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 875.55}
+{"roots": 28000, "routing": {"coarse": 27423, "global_nested": 577}, "certificate_searches": 2297, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 881.96}
+{"roots": 28100, "routing": {"coarse": 27523, "global_nested": 577}, "certificate_searches": 2297, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 889.7}
+{"roots": 28200, "routing": {"coarse": 27623, "global_nested": 577}, "certificate_searches": 2297, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 896.85}
+{"roots": 28300, "routing": {"coarse": 27723, "global_nested": 577}, "certificate_searches": 2297, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 906.69}
+{"roots": 28400, "routing": {"coarse": 27823, "global_nested": 577}, "certificate_searches": 2299, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 913.4}
+{"roots": 28500, "routing": {"coarse": 27923, "global_nested": 577}, "certificate_searches": 2299, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 919.57}
+{"roots": 28600, "routing": {"coarse": 28023, "global_nested": 577}, "certificate_searches": 2299, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 926.71}
+{"roots": 28700, "routing": {"coarse": 28123, "global_nested": 577}, "certificate_searches": 2299, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 934.95}
+{"roots": 28800, "routing": {"coarse": 28223, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 943.4}
+{"roots": 28900, "routing": {"coarse": 28323, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 951.43}
+{"roots": 29000, "routing": {"coarse": 28423, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 958.79}
+{"roots": 29100, "routing": {"coarse": 28523, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 967.11}
+{"roots": 29200, "routing": {"coarse": 28623, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 974.46}
+{"roots": 29300, "routing": {"coarse": 28723, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 980.61}
+{"roots": 29400, "routing": {"coarse": 28823, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 988.19}
+{"roots": 29500, "routing": {"coarse": 28923, "global_nested": 577}, "certificate_searches": 2301, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 996.0}
+{"roots": 29600, "routing": {"coarse": 29023, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1003.35}
+{"roots": 29700, "routing": {"coarse": 29123, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1010.68}
+{"roots": 29800, "routing": {"coarse": 29223, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1018.07}
+{"roots": 29900, "routing": {"coarse": 29323, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1024.91}
+{"roots": 30000, "routing": {"coarse": 29423, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1033.19}
+{"roots": 30100, "routing": {"coarse": 29523, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1040.08}
+{"roots": 30200, "routing": {"coarse": 29623, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1047.61}
+{"roots": 30300, "routing": {"coarse": 29723, "global_nested": 577}, "certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911, "seconds": 1055.04}
+{"status": "PASS", "root_groups": 30396, "root_systems": 440904, "root_counts": {"Z0": 152, "Z1": 2380, "Z2": 17340, "Z3": 65824, "Z4": 152320, "P0": 144, "P1": 2100, "P2": 13872, "P3": 53856, "Q0": 144, "Q1": 2100, "Q2": 13872, "Q3": 47872, "R0": 144, "R1": 2100, "R2": 13872, "R3": 47872, "H1": 4900, "H0": 40}, "counts": {"route/coarse": 29819, "interval_checks": 30449, "extremum_points": 98543, "parameter_systems": 440904, "leaf_groups": 30396, "kind/coarse": 29819, "route/global_nested": 577, "kind/global_nested": 577, "tree_roots": 33, "binary_splits": 339, "tree_leaves": 372}, "certified_systems": 441243, "vectors": 1534, "maximum_tree_depth": 33, "split_types": {"core": 25, "fixed_high": 78, "fixed_nonpositive": 194, "inner": 34, "ordinary": 8}, "minimum_normalized_gap": "1/748", "discovery": {"certificate_searches": 2302, "unsuccessful_searches": 610, "tree_nodes_visited": 609, "primal_searches": 4911}, "seconds": 1303.82}

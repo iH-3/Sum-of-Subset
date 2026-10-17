@@ -1,0 +1,17 @@
+{
+  "status": "INCOMPLETE",
+  "counted_as_pass": false,
+  "observed_at": "2026-10-17T19:11:24.791759+00:00",
+  "command": [
+    "python",
+    "-I",
+    "-S",
+    "-B",
+    "verification/upper89.py",
+    "--exhaustive",
+    "--output",
+    ".work/upper89/exhaustive.json"
+  ],
+  "observation": "The execution sessions were no longer available; no exhaustive output or completion receipt was produced, and the worker process was absent. No mathematical verification failure was reported. The exact cause is unknown.",
+  "replacement": "Complete numerical and symbolic row checks and integer certificates, partitioned into independent resumable batches by experiments/verify_upper89_sharded.py"
+}

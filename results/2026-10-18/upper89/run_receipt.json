@@ -1,0 +1,291 @@
+{
+  "status": "PASS",
+  "packaged_at": "2026-10-17T19:19:11.562553+00:00",
+  "base_commit": "eb8a9f0304338e9d41a0e773bad78d3e22933270",
+  "conclusion": "N <= 89, extending the audited N <= 90 foundation by excluding cardinality 90",
+  "scope": "The archived N <= 84 chain has not received a complete independent replay in this run. The checker certifies the finite reductions; general mathematical lemmas are proved in the report.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "generator": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    }
+  },
+  "runs": {
+    "standard": {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper89.py",
+        "--output",
+        ".work/upper89/standard.json"
+      ],
+      "started_at": "2026-10-17T18:41:33.004907+00:00",
+      "finished_at": "2026-10-17T18:45:06.760545+00:00",
+      "seconds": 213.756,
+      "exit_code": 0,
+      "stdout_sha256": "9c3eddda68821d1dffc782d8e2350bb857528b6cc081b28268940767274ee3a3"
+    },
+    "optimized": {
+      "name": "optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-O",
+        "verification/upper89.py",
+        "--output",
+        ".work/upper89/optimized.json"
+      ],
+      "started_at": "2026-10-17T18:45:06.836488+00:00",
+      "finished_at": "2026-10-17T18:48:13.164123+00:00",
+      "seconds": 186.328,
+      "exit_code": 0,
+      "stdout_sha256": "9c3eddda68821d1dffc782d8e2350bb857528b6cc081b28268940767274ee3a3"
+    },
+    "exhaustive": {
+      "name": "exhaustive",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "experiments/verify_upper89_sharded.py",
+        "--reference",
+        ".work/upper89/standard.json",
+        "--output",
+        ".work/upper89/exhaustive.json",
+        "--work-dir",
+        ".work/upper89/exhaustive_parts",
+        "--receipt",
+        "results/2026-10-18/upper89/exhaustive_shards.json",
+        "--jobs",
+        "8"
+      ],
+      "started_at": "2026-10-17T19:13:08.067064+00:00",
+      "finished_at": "2026-10-17T19:19:09.538301+00:00",
+      "seconds": 361.471,
+      "exit_code": 0,
+      "stdout_sha256": "a661e772c2233b2a4afb27e323dc7203cf575e3c3730a46ee28c643f1c4cb397"
+    },
+    "regeneration": {
+      "name": "regeneration",
+      "command": [
+        "python",
+        "-u",
+        "experiments/generate_upper89_certificates.py",
+        "--output",
+        ".work/upper89/regenerated_certificates.json",
+        "--log",
+        ".work/upper89/regeneration.log"
+      ],
+      "started_at": "2026-10-17T18:31:44.283269+00:00",
+      "finished_at": "2026-10-17T18:53:29.961067+00:00",
+      "seconds": 1305.678,
+      "exit_code": 0,
+      "stdout_sha256": "9e69fda7cdc4e2bc54e865b5cf6b586c051a2718122a4bac0e51c097ccfd4d7c"
+    },
+    "baseline": {
+      "name": "baseline",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper90.py",
+        "--output",
+        ".work/upper89/baseline.json"
+      ],
+      "started_at": "2026-10-17T18:04:12.137114+00:00",
+      "finished_at": "2026-10-17T18:07:09.590724+00:00",
+      "seconds": 177.454,
+      "exit_code": 0,
+      "stdout_sha256": "c081fcc18a774012f500830361535eb4209fa507a10c7cee2b28e9caf965198b"
+    },
+    "generation": {
+      "reproduction_command": [
+        "python",
+        "-u",
+        "experiments/generate_upper89_certificates.py",
+        "--output",
+        "data/upper89_certificates.json",
+        "--log",
+        ".work/upper89/generation_v8.log"
+      ],
+      "seconds": 1155.76,
+      "status": "PASS",
+      "log_sha256": "d01e6550ce63a51dc4f8be31eee49a52197c18c9de9bd02356e1261fb42bc090",
+      "timing_scope": "Internal generator timer; initial generation was not run through the receipt wrapper"
+    }
+  },
+  "comparisons": {
+    "optimized_output_byte_identical": true,
+    "exhaustive_output_identical_except_mode": true,
+    "independently_regenerated_certificate_byte_identical": true,
+    "upper90_output_byte_identical_to_prior_archive": true,
+    "archived_standard_output_round_trip_identical": true,
+    "proof_inputs_unchanged": true,
+    "report_matches_visual_review": true
+  },
+  "output_sha256": {
+    "standard": "ec324f7d21e8b3300228c40e1b086bae33b53a69a3bc080543b4c9c8f4e11fe9",
+    "optimized": "ec324f7d21e8b3300228c40e1b086bae33b53a69a3bc080543b4c9c8f4e11fe9",
+    "exhaustive": "dc93e6f00a882204ed5b924991d86a982f9f0498b3647a2dbaa81c3a57394a99",
+    "baseline": "67b17af29004555a290be1b39550d36266572f2fae6c3d95240a7ff16ced9799",
+    "certificates": "a8470cfbbd2ecdcc986c6f309215b5c2ac8cefe5c7a6531f837fc294d517a52f"
+  },
+  "proof_input_sha256": {
+    "verification/upper89.py": "37c96dcd478c5b41e74176d51745d6bae802cc574c6bd0f38cc285e022ca7e5f",
+    "verification/upper97.py": "9f288073c6c64c7ffeb2ff6c07fbae946c476073ad60e6b0521551145f667085",
+    "verification/upper98.py": "85dfaccfef108c7e73fa302f757390a675bd410767397d4ca0d2d4dc4748fef8",
+    "verification/upper99.py": "1f814cc616ad4c6e9bf6362056ee474d2fcf17e45c018a9f9c7dc4ef84348fbf",
+    "verification/upper100.py": "0f9ba1ba81c0785e16dcd9a1ea5a46168077eea7711b73755baf43ab813bb100",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "verification/nonap_inverse.py": "07759d2c408ff81bb45c82e3c3aa044a53da8596a57b0512fd4b6440dcdea81b",
+    "verification/nonap_hole_rho_schedule.py": "a1750c66fa8d72399421f0a83a66d467fdf1ad1d9d5161792e6e99f8071c3436",
+    "verification/nonap_hole_rho_full.py": "bd94f2b737e70d29754306dc88f5a0c04dbaef72fcad28819fe6afb28d221c1b",
+    "verification/integral_centers.py": "c8f9032e81f2dc0183cebe0ce61f31f9770b095cba292fd3b7de834642050cea",
+    "verification/fixed_scores.py": "a05eaf3c3db439c3dc04ba19430ba7b27218a59abf18c5b3f1413a65703a42db",
+    "verification/fixed_score_order.py": "7d06f28405abe6a4ac1742f7a9cfaa89e69ae6984da9a341be0486cf9f4a5107",
+    "verification/retained_prefix.py": "e477149977b8aa4c09ad8fee6a599b1b7d04783ea2489750477d3d0dcd88f608",
+    "verification/verify.py": "504f22582e0f5a3115b4dd853c63e8d824c481e4502a7408b121fed71f8fdcba",
+    "verification/exact.py": "8b9fc4160ccc1f4f2fea61637894755e0141ba750fc2d8bd4f705368b977f396",
+    "data/fixed_cover_certificate.json": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3",
+    "data/upper89_certificates.json": "a8470cfbbd2ecdcc986c6f309215b5c2ac8cefe5c7a6531f837fc294d517a52f"
+  },
+  "generator_sha256": "c8e7328f30c26f544de9c91eac9e9d483ede8404ec5feb135ef1b0ce11924359",
+  "report_sha256": {
+    "pdf": "74eeb951eab0e0169c547f024e71a322293cea9880b19e13d0224edfb306c0e6",
+    "tex": "51bb3f826b92b7e7f9946d2a15badc4407fb284d31ab6e57cc48c3652df0e7a9"
+  },
+  "exhaustive_execution": {
+    "method": "independent batches followed by exact per-root and aggregate comparison",
+    "batches": 8,
+    "receipt": "exhaustive_shards.json",
+    "receipt_sha256": "0af5e0e4477d14a46eff31949070ee2306db410703c506609e727e0edf80c8f3",
+    "interrupted_attempt": "interrupted_exhaustive.json"
+  },
+  "numerical_driver_sha256": "90b4004de5f470c457f0bf82466b3ae5065eb89523eca18b4a25d984e49ae25f",
+  "linear_summary": {
+    "root_groups": 30396,
+    "root_systems": 440904,
+    "root_counts": {
+      "Z0": 152,
+      "Z1": 2380,
+      "Z2": 17340,
+      "Z3": 65824,
+      "Z4": 152320,
+      "P0": 144,
+      "P1": 2100,
+      "P2": 13872,
+      "P3": 53856,
+      "Q0": 144,
+      "Q1": 2100,
+      "Q2": 13872,
+      "Q3": 47872,
+      "R0": 144,
+      "R1": 2100,
+      "R2": 13872,
+      "R3": 47872,
+      "H1": 4900,
+      "H0": 40
+    },
+    "counts": {
+      "route/coarse": 29819,
+      "interval_checks": 30449,
+      "extremum_points": 98543,
+      "parameter_systems": 440904,
+      "leaf_groups": 30396,
+      "kind/coarse": 29819,
+      "route/global_nested": 577,
+      "kind/global_nested": 577,
+      "tree_roots": 33,
+      "binary_splits": 339,
+      "tree_leaves": 372
+    },
+    "certified_systems": 441243,
+    "vectors": 1534,
+    "maximum_tree_depth": 33,
+    "split_types": {
+      "core": 25,
+      "fixed_high": 78,
+      "fixed_nonpositive": 194,
+      "inner": 34,
+      "ordinary": 8
+    },
+    "minimum_normalized_gap": "1/748"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "missing_third_empty_unit",
+      "missing_high_one_empty_unit",
+      "missing_positive_three_empty_unit",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_two_empty_core_shortcut",
+      "invalid_one_large_shortcut",
+      "raw_inverse_without_dichotomy",
+      "unproved_nonap_size16",
+      "false_r_minus4_bound",
+      "unproved_prefix_size16",
+      "nonminimal_integer_inverse",
+      "uncoupled_hole_and_cap_extrema",
+      "illegal_nonunit_division",
+      "universal_four_empty_integrality",
+      "missing_Z4",
+      "missing_Q3",
+      "missing_R3",
+      "uncharged_leading_quantile",
+      "unproved_hole_rho_size16",
+      "unproved_dense_prefix_threshold",
+      "unproved_anchor_size17",
+      "nonstrict_schedule_hole_threshold",
+      "incomplete_schedule",
+      "ap_escape_without_margin",
+      "false_accumulation",
+      "density_without_size_condition",
+      "invalid_band_endpoint",
+      "empty_own_rule_with_holes",
+      "double_count_charged_high_label",
+      "missing_fixed_nonpositive_group",
+      "clipped_bound_plus_member_loss",
+      "nonstrict_retention_budget",
+      "unproved_second_prefix_size16",
+      "lost_prefix_hole_factor",
+      "reversed_score_order",
+      "reversed_nonpositive_indicators",
+      "overlapping_high_and_nonpositive",
+      "dropped_mu_rho_compatibility",
+      "trimmed_increment_missing_one_pair",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 37,
+      "z": 117,
+      "valid_margin": "-3/2",
+      "invalid_best_margin": "47/2"
+    },
+    "uncoupled_extrema": {
+      "a": 33,
+      "b": 40,
+      "cmax": 83,
+      "zmax": 53,
+      "upper_c_plus_z": 135
+    }
+  }
+}

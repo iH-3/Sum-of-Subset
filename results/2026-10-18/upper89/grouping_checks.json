@@ -1,0 +1,16 @@
+{
+  "coarse": {
+    "groups": 80,
+    "states": 605,
+    "row_checks": 252399,
+    "method": "retain-common-hole-variable",
+    "model": "coarse"
+  },
+  "global_nested": {
+    "groups": 80,
+    "states": 605,
+    "row_checks": 487744,
+    "method": "retain-common-hole-variable",
+    "model": "global_nested"
+  }
+}

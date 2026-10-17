@@ -1,0 +1,170 @@
+{
+  "cases": 3311,
+  "improved": 2480,
+  "finite_sets": {
+    "cases": 2432,
+    "strict_hole_cases": 1102,
+    "seed": 20261018,
+    "scope": "deterministic finite sanity check, not a proof for arbitrary sets"
+  },
+  "previous": {
+    "parameter_rows": 22335,
+    "beta_max": 20,
+    "minimum_size": 17,
+    "full_prefix_base": {
+      "cases": 88392,
+      "beta_range": [
+        2,
+        6
+      ],
+      "size": "2*beta+4",
+      "deletions": "0..beta; maximum retained",
+      "status": "PASS"
+    },
+    "examples": [
+      {
+        "z": 19,
+        "r": 36,
+        "beta": 9,
+        "L": 22,
+        "anchored": true,
+        "A": 136,
+        "C1": 194,
+        "C2": 178,
+        "value": 136,
+        "route": "persistent-holes"
+      },
+      {
+        "z": 19,
+        "r": 40,
+        "beta": 9,
+        "L": 22,
+        "anchored": true,
+        "A": 168,
+        "C1": 190,
+        "C2": 174,
+        "value": 168,
+        "route": "persistent-holes"
+      },
+      {
+        "z": 19,
+        "r": 38,
+        "beta": 9,
+        "L": 22,
+        "anchored": true,
+        "A": 152,
+        "C1": 192,
+        "C2": 176,
+        "value": 152,
+        "route": "persistent-holes"
+      }
+    ],
+    "scope": "exact parameter checks; the general contradiction proof is in the report"
+  },
+  "examples": [
+    {
+      "query": [
+        37,
+        15
+      ],
+      "witness": {
+        "r": 37,
+        "z": 15,
+        "L": 19,
+        "value": 126,
+        "thresholds": [
+          6,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "accumulation": 126,
+        "escape": 133,
+        "route": "variable-threshold"
+      }
+    },
+    {
+      "query": [
+        37,
+        19
+      ],
+      "witness": {
+        "r": 37,
+        "z": 19,
+        "L": 20,
+        "value": 152,
+        "thresholds": [
+          5,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ],
+        "accumulation": 153,
+        "escape": 152,
+        "route": "variable-threshold"
+      }
+    },
+    {
+      "query": [
+        37,
+        215
+      ],
+      "witness": {
+        "r": 37,
+        "z": 33,
+        "L": 22,
+        "value": 193,
+        "thresholds": [
+          6,
+          9,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          15,
+          15,
+          16,
+          16
+        ],
+        "accumulation": 197,
+        "escape": 193,
+        "route": "variable-threshold"
+      }
+    }
+  ]
+}
