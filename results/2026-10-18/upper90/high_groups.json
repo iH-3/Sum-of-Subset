@@ -1,0 +1,3130 @@
+{
+  "groups": [
+    {
+      "key": "H1:30:101:192:90:159",
+      "a": 30,
+      "j": 1,
+      "up": 101,
+      "uq": 192,
+      "rp": 90,
+      "rq": 159,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 94,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 61,
+        "holes": {
+          "r": 30,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 90,
+          "C1": 122,
+          "C2": 110,
+          "value": 90,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 132,
+        "holes": {
+          "r": 44,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 159,
+          "C1": 165,
+          "C2": 159,
+          "value": 159,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:31:108:186:96:153",
+      "a": 31,
+      "j": 1,
+      "up": 108,
+      "uq": 186,
+      "rp": 96,
+      "rq": 153,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 107,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 66,
+        "holes": {
+          "r": 31,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 96,
+          "C1": 121,
+          "C2": 109,
+          "value": 96,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 128,
+        "holes": {
+          "r": 43,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 153,
+          "C1": 166,
+          "C2": 160,
+          "value": 153,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:32:116:178:102:147",
+      "a": 32,
+      "j": 1,
+      "up": 116,
+      "uq": 178,
+      "rp": 102,
+      "rq": 147,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 118,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 72,
+        "holes": {
+          "r": 32,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 102,
+          "C1": 120,
+          "C2": 108,
+          "value": 102,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 121,
+        "holes": {
+          "r": 42,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 147,
+          "C1": 167,
+          "C2": 161,
+          "value": 147,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:32:116:192:114:167",
+      "a": 32,
+      "j": 1,
+      "up": 116,
+      "uq": 192,
+      "rp": 114,
+      "rq": 167,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 90,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 72,
+        "holes": {
+          "r": 32,
+          "z": 17,
+          "L": 18,
+          "value": 114,
+          "thresholds": [
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 114,
+          "escape": 120,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 132,
+        "holes": {
+          "r": 42,
+          "z": 17,
+          "L": 21,
+          "value": 167,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 167,
+          "escape": 167,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:33:123:171:107:145",
+      "a": 33,
+      "j": 1,
+      "up": 123,
+      "uq": 171,
+      "rp": 107,
+      "rq": 145,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 124,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 78,
+        "holes": {
+          "r": 33,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 108,
+          "C1": 119,
+          "C2": 107,
+          "value": 107,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 115,
+        "holes": {
+          "r": 41,
+          "z": 15,
+          "L": 20,
+          "value": 145,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 145,
+          "escape": 148,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:33:123:183:119:161",
+      "a": 33,
+      "j": 1,
+      "up": 123,
+      "uq": 183,
+      "rp": 119,
+      "rq": 161,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 100,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 78,
+        "holes": {
+          "r": 33,
+          "z": 17,
+          "L": 18,
+          "value": 119,
+          "thresholds": [
+            5,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 120,
+          "escape": 119,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 125,
+        "holes": {
+          "r": 41,
+          "z": 17,
+          "L": 21,
+          "value": 161,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 161,
+          "escape": 168,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:34:131:169:112:140",
+      "a": 34,
+      "j": 1,
+      "up": 131,
+      "uq": 169,
+      "rp": 112,
+      "rq": 140,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 131,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 15,
+          "L": 18,
+          "value": 112,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 113,
+          "escape": 118,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 113,
+        "holes": {
+          "r": 40,
+          "beta": 7,
+          "L": 20,
+          "anchored": true,
+          "A": 140,
+          "C1": 149,
+          "C2": 141,
+          "value": 140,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:34:131:182:124:155",
+      "a": 34,
+      "j": 1,
+      "up": 131,
+      "uq": 182,
+      "rp": 124,
+      "rq": 155,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 108,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 17,
+          "L": 19,
+          "value": 124,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 124,
+          "escape": 136,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 124,
+        "holes": {
+          "r": 40,
+          "beta": 8,
+          "L": 21,
+          "anchored": true,
+          "A": 155,
+          "C1": 169,
+          "C2": 157,
+          "value": 155,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:34:131:184:135:169",
+      "a": 34,
+      "j": 1,
+      "up": 131,
+      "uq": 184,
+      "rp": 135,
+      "rq": 169,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 87,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 19,
+          "L": 19,
+          "value": 135,
+          "thresholds": [
+            5,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 135,
+          "escape": 136,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 126,
+        "holes": {
+          "r": 40,
+          "z": 19,
+          "L": 21,
+          "value": 169,
+          "thresholds": [
+            6,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 172,
+          "escape": 169,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:35:138:162:117:134",
+      "a": 35,
+      "j": 1,
+      "up": 138,
+      "uq": 162,
+      "rp": 117,
+      "rq": 134,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 137,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 15,
+          "L": 18,
+          "value": 117,
+          "thresholds": [
+            5,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 118,
+          "escape": 117,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 108,
+        "holes": {
+          "r": 39,
+          "beta": 7,
+          "L": 20,
+          "anchored": true,
+          "A": 134,
+          "C1": 150,
+          "C2": 142,
+          "value": 134,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:35:139:173:130:150",
+      "a": 35,
+      "j": 1,
+      "up": 139,
+      "uq": 173,
+      "rp": 130,
+      "rq": 150,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 112,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 17,
+          "L": 19,
+          "value": 130,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 130,
+          "escape": 135,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 117,
+        "holes": {
+          "r": 39,
+          "z": 17,
+          "L": 20,
+          "value": 150,
+          "thresholds": [
+            5,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 151,
+          "escape": 150,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:35:139:174:140:164",
+      "a": 35,
+      "j": 1,
+      "up": 139,
+      "uq": 174,
+      "rp": 140,
+      "rq": 164,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 92,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 19,
+          "L": 20,
+          "value": 140,
+          "thresholds": [
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 140,
+          "escape": 154,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 118,
+        "holes": {
+          "r": 39,
+          "z": 19,
+          "L": 21,
+          "value": 164,
+          "thresholds": [
+            7,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 165,
+          "escape": 170,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:36:148:165:184:207",
+      "a": 36,
+      "j": 0,
+      "up": 148,
+      "uq": 165,
+      "rp": 184,
+      "rq": 207,
+      "zmin": 120,
+      "zmax": 124,
+      "cmax": 4,
+      "z_values": [
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "rho_proof_p": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 33,
+          "L": 22,
+          "value": 184,
+          "thresholds": [
+            8,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16
+          ],
+          "accumulation": 184,
+          "escape": 194,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 35,
+          "L": 23,
+          "value": 207,
+          "thresholds": [
+            7,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17
+          ],
+          "accumulation": 207,
+          "escape": 214,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:36:146:155:121:131",
+      "a": 36,
+      "j": 1,
+      "up": 146,
+      "uq": 155,
+      "rp": 121,
+      "rq": 131,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 139,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 96,
+        "holes": {
+          "r": 36,
+          "beta": 7,
+          "L": 19,
+          "anchored": true,
+          "A": 121,
+          "C1": 134,
+          "C2": 124,
+          "value": 121,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 103,
+        "holes": {
+          "r": 38,
+          "z": 15,
+          "L": 19,
+          "value": 131,
+          "thresholds": [
+            5,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 131,
+          "escape": 132,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:36:148:165:134:145",
+      "a": 36,
+      "j": 1,
+      "up": 148,
+      "uq": 165,
+      "rp": 134,
+      "rq": 145,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 116,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 17,
+          "L": 19,
+          "value": 134,
+          "thresholds": [
+            5,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 136,
+          "escape": 134,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 17,
+          "L": 20,
+          "value": 145,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 145,
+          "escape": 151,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:36:148:165:146:158",
+      "a": 36,
+      "j": 1,
+      "up": 148,
+      "uq": 165,
+      "rp": 146,
+      "rq": 158,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 95,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 19,
+          "L": 20,
+          "value": 146,
+          "thresholds": [
+            6,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 146,
+          "escape": 153,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 19,
+          "L": 21,
+          "value": 158,
+          "thresholds": [
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 158,
+          "escape": 171,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:37:156:156:193:193",
+      "a": 37,
+      "j": 0,
+      "up": 156,
+      "uq": 156,
+      "rp": 193,
+      "rq": 193,
+      "zmin": 109,
+      "zmax": 130,
+      "cmax": 21,
+      "z_values": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "rho_proof_p": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 33,
+          "L": 22,
+          "value": 193,
+          "thresholds": [
+            6,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16
+          ],
+          "accumulation": 197,
+          "escape": 193,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 33,
+          "L": 22,
+          "value": 193,
+          "thresholds": [
+            6,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16
+          ],
+          "accumulation": 197,
+          "escape": 193,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:37:148:148:126:126",
+      "a": 37,
+      "j": 1,
+      "up": 148,
+      "uq": 148,
+      "rp": 126,
+      "rq": 126,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 140,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 98,
+        "holes": {
+          "r": 37,
+          "z": 15,
+          "L": 19,
+          "value": 126,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 126,
+          "escape": 133,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 98,
+        "holes": {
+          "r": 37,
+          "z": 15,
+          "L": 19,
+          "value": 126,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 126,
+          "escape": 133,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:37:156:156:139:139",
+      "a": 37,
+      "j": 1,
+      "up": 156,
+      "uq": 156,
+      "rp": 139,
+      "rq": 139,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 118,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 17,
+          "L": 20,
+          "value": 139,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 139,
+          "escape": 152,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 17,
+          "L": 20,
+          "value": 139,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 139,
+          "escape": 152,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:37:156:156:152:152",
+      "a": 37,
+      "j": 1,
+      "up": 156,
+      "uq": 156,
+      "rp": 152,
+      "rq": 152,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 96,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 19,
+          "L": 20,
+          "value": 152,
+          "thresholds": [
+            5,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 153,
+          "escape": 152,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 104,
+        "holes": {
+          "r": 37,
+          "z": 19,
+          "L": 20,
+          "value": 152,
+          "thresholds": [
+            5,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 153,
+          "escape": 152,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:38:165:148:207:184",
+      "a": 38,
+      "j": 0,
+      "up": 165,
+      "uq": 148,
+      "rp": 207,
+      "rq": 184,
+      "zmin": 100,
+      "zmax": 124,
+      "cmax": 24,
+      "z_values": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "rho_proof_p": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 35,
+          "L": 23,
+          "value": 207,
+          "thresholds": [
+            7,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17
+          ],
+          "accumulation": 207,
+          "escape": 214,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 33,
+          "L": 22,
+          "value": 184,
+          "thresholds": [
+            8,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16
+          ],
+          "accumulation": 184,
+          "escape": 194,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:38:155:146:131:121",
+      "a": 38,
+      "j": 1,
+      "up": 155,
+      "uq": 146,
+      "rp": 131,
+      "rq": 121,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 139,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 103,
+        "holes": {
+          "r": 38,
+          "z": 15,
+          "L": 19,
+          "value": 131,
+          "thresholds": [
+            5,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 131,
+          "escape": 132,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 96,
+        "holes": {
+          "r": 36,
+          "beta": 7,
+          "L": 19,
+          "anchored": true,
+          "A": 121,
+          "C1": 134,
+          "C2": 124,
+          "value": 121,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:38:165:148:145:134",
+      "a": 38,
+      "j": 1,
+      "up": 165,
+      "uq": 148,
+      "rp": 145,
+      "rq": 134,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 116,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 17,
+          "L": 20,
+          "value": 145,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 145,
+          "escape": 151,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 17,
+          "L": 19,
+          "value": 134,
+          "thresholds": [
+            5,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 136,
+          "escape": 134,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:38:165:148:158:146",
+      "a": 38,
+      "j": 1,
+      "up": 165,
+      "uq": 148,
+      "rp": 158,
+      "rq": 146,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 95,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 111,
+        "holes": {
+          "r": 38,
+          "z": 19,
+          "L": 21,
+          "value": 158,
+          "thresholds": [
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 158,
+          "escape": 171,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 97,
+        "holes": {
+          "r": 36,
+          "z": 19,
+          "L": 20,
+          "value": 146,
+          "thresholds": [
+            6,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 146,
+          "escape": 153,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:39:174:139:218:174",
+      "a": 39,
+      "j": 0,
+      "up": 174,
+      "uq": 139,
+      "rp": 218,
+      "rq": 174,
+      "zmin": 90,
+      "zmax": 120,
+      "cmax": 30,
+      "z_values": [
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "rho_proof_p": {
+        "prefix": 118,
+        "holes": {
+          "r": 39,
+          "z": 35,
+          "L": 24,
+          "value": 218,
+          "thresholds": [
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17
+          ],
+          "accumulation": 218,
+          "escape": 236,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 31,
+          "L": 21,
+          "value": 174,
+          "thresholds": [
+            6,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15
+          ],
+          "accumulation": 174,
+          "escape": 174,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:39:162:138:134:117",
+      "a": 39,
+      "j": 1,
+      "up": 162,
+      "uq": 138,
+      "rp": 134,
+      "rq": 117,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 137,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 108,
+        "holes": {
+          "r": 39,
+          "beta": 7,
+          "L": 20,
+          "anchored": true,
+          "A": 134,
+          "C1": 150,
+          "C2": 142,
+          "value": 134,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 15,
+          "L": 18,
+          "value": 117,
+          "thresholds": [
+            5,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 118,
+          "escape": 117,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:39:173:139:150:130",
+      "a": 39,
+      "j": 1,
+      "up": 173,
+      "uq": 139,
+      "rp": 150,
+      "rq": 130,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 112,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 117,
+        "holes": {
+          "r": 39,
+          "z": 17,
+          "L": 20,
+          "value": 150,
+          "thresholds": [
+            5,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 151,
+          "escape": 150,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 17,
+          "L": 19,
+          "value": 130,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 130,
+          "escape": 135,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:39:174:139:164:140",
+      "a": 39,
+      "j": 1,
+      "up": 174,
+      "uq": 139,
+      "rp": 164,
+      "rq": 140,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 92,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 118,
+        "holes": {
+          "r": 39,
+          "z": 19,
+          "L": 21,
+          "value": 164,
+          "thresholds": [
+            7,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 165,
+          "escape": 170,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 90,
+        "holes": {
+          "r": 35,
+          "z": 19,
+          "L": 20,
+          "value": 140,
+          "thresholds": [
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 140,
+          "escape": 154,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:40:184:131:232:162",
+      "a": 40,
+      "j": 0,
+      "up": 184,
+      "uq": 131,
+      "rp": 232,
+      "rq": 162,
+      "zmin": 82,
+      "zmax": 113,
+      "cmax": 31,
+      "z_values": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "rho_proof_p": {
+        "prefix": 126,
+        "holes": {
+          "r": 40,
+          "z": 37,
+          "L": 24,
+          "value": 232,
+          "thresholds": [
+            7,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18
+          ],
+          "accumulation": 232,
+          "escape": 235,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 31,
+          "L": 21,
+          "value": 162,
+          "thresholds": [
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15
+          ],
+          "accumulation": 162,
+          "escape": 175,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:40:169:131:140:112",
+      "a": 40,
+      "j": 1,
+      "up": 169,
+      "uq": 131,
+      "rp": 140,
+      "rq": 112,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 131,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 113,
+        "holes": {
+          "r": 40,
+          "beta": 7,
+          "L": 20,
+          "anchored": true,
+          "A": 140,
+          "C1": 149,
+          "C2": 141,
+          "value": 140,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 15,
+          "L": 18,
+          "value": 112,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 113,
+          "escape": 118,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:40:182:131:155:124",
+      "a": 40,
+      "j": 1,
+      "up": 182,
+      "uq": 131,
+      "rp": 155,
+      "rq": 124,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 108,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 124,
+        "holes": {
+          "r": 40,
+          "beta": 8,
+          "L": 21,
+          "anchored": true,
+          "A": 155,
+          "C1": 169,
+          "C2": 157,
+          "value": 155,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 17,
+          "L": 19,
+          "value": 124,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 124,
+          "escape": 136,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:40:184:131:169:135",
+      "a": 40,
+      "j": 1,
+      "up": 184,
+      "uq": 131,
+      "rp": 169,
+      "rq": 135,
+      "zmin": 19,
+      "zmax": 20,
+      "cmax": 87,
+      "z_values": [
+        19,
+        20
+      ],
+      "rho_proof_p": {
+        "prefix": 126,
+        "holes": {
+          "r": 40,
+          "z": 19,
+          "L": 21,
+          "value": 169,
+          "thresholds": [
+            6,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 172,
+          "escape": 169,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 84,
+        "holes": {
+          "r": 34,
+          "z": 19,
+          "L": 19,
+          "value": 135,
+          "thresholds": [
+            5,
+            8,
+            8,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9,
+            9
+          ],
+          "accumulation": 135,
+          "escape": 136,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:41:193:123:243:152",
+      "a": 41,
+      "j": 0,
+      "up": 193,
+      "uq": 123,
+      "rp": 243,
+      "rq": 152,
+      "zmin": 75,
+      "zmax": 105,
+      "cmax": 30,
+      "z_values": [
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "rho_proof_p": {
+        "prefix": 133,
+        "holes": {
+          "r": 41,
+          "z": 37,
+          "L": 25,
+          "value": 243,
+          "thresholds": [
+            9,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18
+          ],
+          "accumulation": 243,
+          "escape": 258,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 78,
+        "holes": {
+          "r": 33,
+          "z": 29,
+          "L": 20,
+          "value": 152,
+          "thresholds": [
+            6,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14
+          ],
+          "accumulation": 152,
+          "escape": 156,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:41:171:123:145:107",
+      "a": 41,
+      "j": 1,
+      "up": 171,
+      "uq": 123,
+      "rp": 145,
+      "rq": 107,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 124,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 115,
+        "holes": {
+          "r": 41,
+          "z": 15,
+          "L": 20,
+          "value": 145,
+          "thresholds": [
+            6,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ],
+          "accumulation": 145,
+          "escape": 148,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 78,
+        "holes": {
+          "r": 33,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 108,
+          "C1": 119,
+          "C2": 107,
+          "value": 107,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:41:183:123:161:119",
+      "a": 41,
+      "j": 1,
+      "up": 183,
+      "uq": 123,
+      "rp": 161,
+      "rq": 119,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 100,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 125,
+        "holes": {
+          "r": 41,
+          "z": 17,
+          "L": 21,
+          "value": 161,
+          "thresholds": [
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 161,
+          "escape": 168,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 78,
+        "holes": {
+          "r": 33,
+          "z": 17,
+          "L": 18,
+          "value": 119,
+          "thresholds": [
+            5,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 120,
+          "escape": 119,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:42:203:116:257:141",
+      "a": 42,
+      "j": 0,
+      "up": 203,
+      "uq": 116,
+      "rp": 257,
+      "rq": 141,
+      "zmin": 68,
+      "zmax": 93,
+      "cmax": 25,
+      "z_values": [
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "rho_proof_p": {
+        "prefix": 141,
+        "holes": {
+          "r": 42,
+          "z": 39,
+          "L": 25,
+          "value": 257,
+          "thresholds": [
+            7,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19
+          ],
+          "accumulation": 259,
+          "escape": 257,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 72,
+        "holes": {
+          "r": 32,
+          "z": 29,
+          "L": 20,
+          "value": 141,
+          "thresholds": [
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14
+          ],
+          "accumulation": 141,
+          "escape": 157,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:42:178:116:147:102",
+      "a": 42,
+      "j": 1,
+      "up": 178,
+      "uq": 116,
+      "rp": 147,
+      "rq": 102,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 118,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 121,
+        "holes": {
+          "r": 42,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 147,
+          "C1": 167,
+          "C2": 161,
+          "value": 147,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 72,
+        "holes": {
+          "r": 32,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 102,
+          "C1": 120,
+          "C2": 108,
+          "value": 102,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H1:42:192:116:167:114",
+      "a": 42,
+      "j": 1,
+      "up": 192,
+      "uq": 116,
+      "rp": 167,
+      "rq": 114,
+      "zmin": 17,
+      "zmax": 18,
+      "cmax": 90,
+      "z_values": [
+        17,
+        18
+      ],
+      "rho_proof_p": {
+        "prefix": 132,
+        "holes": {
+          "r": 42,
+          "z": 17,
+          "L": 21,
+          "value": 167,
+          "thresholds": [
+            6,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 167,
+          "escape": 167,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 72,
+        "holes": {
+          "r": 32,
+          "z": 17,
+          "L": 18,
+          "value": 114,
+          "thresholds": [
+            6,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "accumulation": 114,
+          "escape": 120,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H0:43:213:108:270:132",
+      "a": 43,
+      "j": 0,
+      "up": 213,
+      "uq": 108,
+      "rp": 270,
+      "rq": 132,
+      "zmin": 62,
+      "zmax": 78,
+      "cmax": 16,
+      "z_values": [
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "rho_proof_p": {
+        "prefix": 149,
+        "holes": {
+          "r": 43,
+          "z": 39,
+          "L": 26,
+          "value": 270,
+          "thresholds": [
+            9,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19
+          ],
+          "accumulation": 270,
+          "escape": 281,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 66,
+        "holes": {
+          "r": 31,
+          "z": 27,
+          "L": 19,
+          "value": 132,
+          "thresholds": [
+            6,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13
+          ],
+          "accumulation": 132,
+          "escape": 139,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:43:186:108:153:96",
+      "a": 43,
+      "j": 1,
+      "up": 186,
+      "uq": 108,
+      "rp": 153,
+      "rq": 96,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 107,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 128,
+        "holes": {
+          "r": 43,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 153,
+          "C1": 166,
+          "C2": 160,
+          "value": 153,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 66,
+        "holes": {
+          "r": 31,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 96,
+          "C1": 121,
+          "C2": 109,
+          "value": 96,
+          "route": "previous-persistent-holes"
+        }
+      }
+    },
+    {
+      "key": "H0:44:224:101:282:122",
+      "a": 44,
+      "j": 0,
+      "up": 224,
+      "uq": 101,
+      "rp": 282,
+      "rq": 122,
+      "zmin": 57,
+      "zmax": 63,
+      "cmax": 6,
+      "z_values": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "rho_proof_p": {
+        "prefix": 158,
+        "holes": {
+          "r": 44,
+          "z": 41,
+          "L": 27,
+          "value": 282,
+          "thresholds": [
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15,
+            16,
+            16,
+            17,
+            17,
+            18,
+            18,
+            19,
+            19,
+            20
+          ],
+          "accumulation": 282,
+          "escape": 306,
+          "route": "variable-threshold"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 61,
+        "holes": {
+          "r": 30,
+          "z": 27,
+          "L": 18,
+          "value": 122,
+          "thresholds": [
+            5,
+            7,
+            8,
+            8,
+            9,
+            9,
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13
+          ],
+          "accumulation": 124,
+          "escape": 122,
+          "route": "variable-threshold"
+        }
+      }
+    },
+    {
+      "key": "H1:44:192:101:159:90",
+      "a": 44,
+      "j": 1,
+      "up": 192,
+      "uq": 101,
+      "rp": 159,
+      "rq": 90,
+      "zmin": 15,
+      "zmax": 16,
+      "cmax": 94,
+      "z_values": [
+        15,
+        16
+      ],
+      "rho_proof_p": {
+        "prefix": 132,
+        "holes": {
+          "r": 44,
+          "beta": 7,
+          "L": 21,
+          "anchored": true,
+          "A": 159,
+          "C1": 165,
+          "C2": 159,
+          "value": 159,
+          "route": "previous-persistent-holes"
+        }
+      },
+      "rho_proof_q": {
+        "prefix": 61,
+        "holes": {
+          "r": 30,
+          "beta": 7,
+          "L": 18,
+          "anchored": true,
+          "A": 90,
+          "C1": 122,
+          "C2": 110,
+          "value": 90,
+          "route": "previous-persistent-holes"
+        }
+      }
+    }
+  ],
+  "source_row_checks": {
+    "coarse": {
+      "groups": 42,
+      "states": 262,
+      "row_checks": 109514,
+      "method": "retain-common-hole-variable",
+      "model": "coarse"
+    },
+    "global_nested": {
+      "groups": 42,
+      "states": 262,
+      "row_checks": 211432,
+      "method": "retain-common-hole-variable",
+      "model": "global_nested"
+    }
+  }
+}

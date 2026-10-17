@@ -1,0 +1,13 @@
+{
+  "sumsets": {
+    "cases": 8428,
+    "formula": "uv if p>=v or q>=u; otherwise pu+qv-pq",
+    "scope": "finite sanity check; general proof uses residue classes"
+  },
+  "gap_and_fiber": {
+    "gap_checks": 17479,
+    "unique_gap_checks": 250,
+    "two_fiber_checks": 4733,
+    "scope": "finite sanity checks; arbitrary-length proofs are in the report"
+  }
+}

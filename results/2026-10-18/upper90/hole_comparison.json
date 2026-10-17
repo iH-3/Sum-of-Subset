@@ -1,0 +1,23 @@
+{
+  "constant_threshold": {
+    "high_states": 3596,
+    "high_c_max": 176,
+    "all_active_remaining": 1628,
+    "one_empty_states": 1587,
+    "two_empty_states": 56,
+    "groups": 81,
+    "structural_groups": 7088,
+    "balanced_inner_bound": 3
+  },
+  "variable_threshold": {
+    "high_states": 1320,
+    "high_c_max": 140,
+    "all_active_remaining": 196,
+    "one_empty_states": 66,
+    "two_empty_states": 0,
+    "groups": 42,
+    "structural_groups": 2346,
+    "balanced_inner_bound": -95
+  },
+  "scope": "Same necessary post-lattice scalar relaxation. This comparison alone proves no endpoint exclusion."
+}

@@ -1,0 +1,39 @@
+{
+  "usage": {
+    "full_translate": {
+      "vectors": 254,
+      "groups": 519
+    },
+    "empty_own_position": {
+      "vectors": 95,
+      "groups": 5196
+    },
+    "trimmed_sumset": {
+      "vectors": 145,
+      "groups": 415
+    },
+    "second_core_cutoff": {
+      "vectors": 0,
+      "groups": 0
+    },
+    "deeper_leading": {
+      "vectors": 0,
+      "groups": 0
+    },
+    "fixed_score_indicators": {
+      "vectors": 106,
+      "groups": 1
+    },
+    "density_chord": {
+      "vectors": 32,
+      "groups": 2023
+    }
+  },
+  "split_types": {
+    "core": 18,
+    "fixed_nonpositive": 107,
+    "fixed_high": 13,
+    "inner": 13
+  },
+  "scope": "Positive multiplier use. General scalar lemmas are separately recorded."
+}

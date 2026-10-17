@@ -1,0 +1,266 @@
+{
+  "status": "PASS",
+  "packaged_at": "2026-10-17T15:42:05.445585+00:00",
+  "base_commit": "292b8ac7f328672ff77d158daba5f54c616458f3",
+  "conclusion": "N <= 90, extending the audited N <= 91 foundation by excluding cardinality 91",
+  "scope": "The archived N <= 84 chain has not received a complete independent replay in this run. The checker certifies the finite reductions; general mathematical lemmas are proved in the report.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "generator": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    }
+  },
+  "runs": {
+    "standard": {
+      "name": "standard",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper90.py",
+        "--output",
+        ".work/upper90/standard.json"
+      ],
+      "started_at": "2026-10-17T15:23:13.546286+00:00",
+      "finished_at": "2026-10-17T15:25:13.126280+00:00",
+      "seconds": 119.58,
+      "exit_code": 0,
+      "stdout_sha256": "c081fcc18a774012f500830361535eb4209fa507a10c7cee2b28e9caf965198b"
+    },
+    "optimized": {
+      "name": "optimized",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "-O",
+        "verification/upper90.py",
+        "--output",
+        ".work/upper90/optimized.json"
+      ],
+      "started_at": "2026-10-17T15:25:38.912771+00:00",
+      "finished_at": "2026-10-17T15:27:39.329221+00:00",
+      "seconds": 120.416,
+      "exit_code": 0,
+      "stdout_sha256": "c081fcc18a774012f500830361535eb4209fa507a10c7cee2b28e9caf965198b"
+    },
+    "exhaustive": {
+      "name": "exhaustive",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper90.py",
+        "--exhaustive",
+        "--output",
+        ".work/upper90/exhaustive.json"
+      ],
+      "started_at": "2026-10-17T15:23:13.550727+00:00",
+      "finished_at": "2026-10-17T15:41:34.857491+00:00",
+      "seconds": 1101.307,
+      "exit_code": 0,
+      "stdout_sha256": "96c6b81aa36375926acf27504025606e6004e4ee8c5248c08ce8dc01e09473b8"
+    },
+    "regeneration": {
+      "name": "regeneration",
+      "command": [
+        "python",
+        "-u",
+        "experiments/generate_upper90_certificates.py",
+        "--output",
+        ".work/upper90/regenerated_certificates.json",
+        "--log",
+        ".work/upper90/regeneration.log"
+      ],
+      "started_at": "2026-10-17T15:22:17.833969+00:00",
+      "finished_at": "2026-10-17T15:31:38.562755+00:00",
+      "seconds": 560.729,
+      "exit_code": 0,
+      "stdout_sha256": "48251b036fbdd3696b6f80b96a1f6d4c248c1b6cbad26ac17223073a91961230"
+    },
+    "baseline": {
+      "name": "baseline",
+      "command": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper91.py",
+        "--output",
+        ".work/upper90/baseline.json"
+      ],
+      "started_at": "2026-10-17T15:15:13.215080+00:00",
+      "finished_at": "2026-10-17T15:17:22.298574+00:00",
+      "seconds": 129.083,
+      "exit_code": 0,
+      "stdout_sha256": "4898ddb5fe6f9defdcb0d0c3e4e7d549030ea722f9de94761d75f1dfa667333d"
+    },
+    "generation": {
+      "reproduction_command": [
+        "python",
+        "-u",
+        "experiments/generate_upper90_certificates.py",
+        "--output",
+        "data/upper90_certificates.json",
+        "--log",
+        ".work/upper90/generation_v3.log"
+      ],
+      "seconds": 557.54,
+      "status": "PASS",
+      "log_sha256": "f7010258316c01566fd6f34f13e4330cd2cbf137d1d4f0184adcaa551f2a117e",
+      "timing_scope": "Internal generator timer; initial generation was not run through the receipt wrapper"
+    }
+  },
+  "comparisons": {
+    "optimized_output_byte_identical": true,
+    "exhaustive_output_identical_except_mode": true,
+    "independently_regenerated_certificate_byte_identical": true,
+    "upper91_output_byte_identical_to_prior_archive": true,
+    "archived_standard_output_round_trip_identical": true,
+    "proof_inputs_unchanged": true,
+    "report_matches_visual_review": true
+  },
+  "output_sha256": {
+    "standard": "67b17af29004555a290be1b39550d36266572f2fae6c3d95240a7ff16ced9799",
+    "optimized": "67b17af29004555a290be1b39550d36266572f2fae6c3d95240a7ff16ced9799",
+    "exhaustive": "652e88f9faebd164e8dee37ed02acd2fb3afe3f6d461105f83d03e024bdfb84c",
+    "baseline": "7bbd5f11a2133a8c0b02b3d9438cd68a5f330c8bb029478449c31bc2d74fac29",
+    "certificates": "f75a9ff570600ad73a6230322b6f6ddcbba62150a7f707ee88c0fedd74a38b9a"
+  },
+  "proof_input_sha256": {
+    "verification/upper90.py": "58dc7c2dcb405b2962720abb3467ecc7cbecfeb0045acc68269019d913ea9db3",
+    "verification/upper97.py": "9f288073c6c64c7ffeb2ff6c07fbae946c476073ad60e6b0521551145f667085",
+    "verification/upper98.py": "85dfaccfef108c7e73fa302f757390a675bd410767397d4ca0d2d4dc4748fef8",
+    "verification/upper99.py": "1f814cc616ad4c6e9bf6362056ee474d2fcf17e45c018a9f9c7dc4ef84348fbf",
+    "verification/upper100.py": "0f9ba1ba81c0785e16dcd9a1ea5a46168077eea7711b73755baf43ab813bb100",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "verification/nonap_inverse.py": "07759d2c408ff81bb45c82e3c3aa044a53da8596a57b0512fd4b6440dcdea81b",
+    "verification/nonap_hole_rho_schedule.py": "a1750c66fa8d72399421f0a83a66d467fdf1ad1d9d5161792e6e99f8071c3436",
+    "verification/nonap_hole_rho_full.py": "bd94f2b737e70d29754306dc88f5a0c04dbaef72fcad28819fe6afb28d221c1b",
+    "verification/integral_centers.py": "c8f9032e81f2dc0183cebe0ce61f31f9770b095cba292fd3b7de834642050cea",
+    "verification/fixed_scores.py": "a05eaf3c3db439c3dc04ba19430ba7b27218a59abf18c5b3f1413a65703a42db",
+    "verification/verify.py": "504f22582e0f5a3115b4dd853c63e8d824c481e4502a7408b121fed71f8fdcba",
+    "verification/exact.py": "8b9fc4160ccc1f4f2fea61637894755e0141ba750fc2d8bd4f705368b977f396",
+    "data/fixed_cover_certificate.json": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3",
+    "data/upper90_certificates.json": "f75a9ff570600ad73a6230322b6f6ddcbba62150a7f707ee88c0fedd74a38b9a"
+  },
+  "generator_sha256": "232556e0d669812ca75302016b569d5b8c892ca7cb983708f61142c58c06e118",
+  "report_sha256": {
+    "pdf": "e6ad5f659f9873a1582bae68cbe93421e3607e6c6af6d1e2b94918d3cebe628f",
+    "tex": "0ee8379eb406e05321c869b1545c64cedfae0d108b19a2e97ce1131dde0a66d7"
+  },
+  "linear_summary": {
+    "root_groups": 27802,
+    "root_systems": 371986,
+    "root_counts": {
+      "Z0": 148,
+      "Z1": 2310,
+      "Z2": 15606,
+      "Z3": 62832,
+      "Z4": 119680,
+      "P0": 140,
+      "P1": 2030,
+      "P2": 13294,
+      "P3": 44880,
+      "Q0": 140,
+      "Q1": 2030,
+      "Q2": 13294,
+      "Q3": 38896,
+      "R0": 140,
+      "R1": 2030,
+      "R2": 13294,
+      "R3": 38896,
+      "H1": 2310,
+      "H0": 36
+    },
+    "counts": {
+      "route/coarse": 27250,
+      "interval_checks": 27836,
+      "extremum_points": 80170,
+      "parameter_systems": 371986,
+      "leaf_groups": 27802,
+      "kind/coarse": 27250,
+      "route/global_nested": 552,
+      "kind/global_nested": 552,
+      "tree_roots": 25,
+      "binary_splits": 151,
+      "tree_leaves": 176
+    },
+    "certified_systems": 372137,
+    "vectors": 995,
+    "maximum_tree_depth": 29,
+    "split_types": {
+      "core": 18,
+      "fixed_nonpositive": 107,
+      "fixed_high": 13,
+      "inner": 13
+    },
+    "minimum_normalized_gap": "3/151"
+  },
+  "negative_controls": {
+    "rejected": [
+      "negative_weight",
+      "noncontradictory_weight",
+      "unknown_row",
+      "interior_vertex_failure",
+      "missing_root",
+      "missing_integer",
+      "missing_disjunction_child",
+      "repeated_disjunction",
+      "unproved_disjunction",
+      "missing_third_empty_unit",
+      "missing_high_one_empty_unit",
+      "missing_positive_three_empty_unit",
+      "missing_actual_contributor",
+      "unproved_next_cardinality",
+      "invalid_two_empty_core_shortcut",
+      "invalid_one_large_shortcut",
+      "raw_inverse_without_dichotomy",
+      "unproved_nonap_size16",
+      "false_r_minus4_bound",
+      "unproved_prefix_size16",
+      "nonminimal_integer_inverse",
+      "uncoupled_hole_and_cap_extrema",
+      "illegal_nonunit_division",
+      "universal_four_empty_integrality",
+      "missing_Z4",
+      "missing_Q3",
+      "missing_R3",
+      "uncharged_leading_quantile",
+      "unproved_hole_rho_size16",
+      "unproved_dense_prefix_threshold",
+      "unproved_anchor_size17",
+      "nonstrict_schedule_hole_threshold",
+      "incomplete_schedule",
+      "ap_escape_without_margin",
+      "false_accumulation",
+      "density_without_size_condition",
+      "invalid_band_endpoint",
+      "empty_own_rule_with_holes",
+      "double_count_charged_high_label",
+      "missing_fixed_nonpositive_group",
+      "clipped_bound_plus_member_loss",
+      "trimmed_increment_missing_one_pair",
+      "arbitrary_reflection_shortcut"
+    ],
+    "orientation_counterexample": {
+      "a": 38,
+      "z": 100,
+      "valid_margin": "-2",
+      "invalid_best_margin": "48"
+    },
+    "uncoupled_extrema": {
+      "a": 36,
+      "b": 38,
+      "cmax": 4,
+      "zmax": 124,
+      "upper_c_plus_z": 124
+    }
+  }
+}

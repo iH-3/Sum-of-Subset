@@ -1,0 +1,11 @@
+{
+  "original_output": "result.json",
+  "stored_output": "result.json.gz",
+  "format": "gzip",
+  "gzip_mtime": 0,
+  "original_bytes": 30123747,
+  "stored_bytes": 518698,
+  "original_sha256": "67b17af29004555a290be1b39550d36266572f2fae6c3d95240a7ff16ced9799",
+  "stored_sha256": "80417e087768602d4966d594312ab64f0deb20b319d39525088c057e66a578c9",
+  "round_trip_identical": true
+}

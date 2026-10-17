@@ -1,0 +1,644 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Variable-threshold hole bounds and the audited bound 90},pdfauthor={Sum-of-Subset research project}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\RootGroups}{27,802}
+\newcommand{\RootSystems}{371,986}
+\newcommand{\FinalSystems}{372,137}
+\newcommand{\Vectors}{995}
+\newcommand{\MinGap}{3/151}
+\newcommand{\NegativeControls}{43}
+\title{Subset Sums in a Fourfold Sumset\\\large Variable thresholds for persistent holes\\and the audited bound $N\le90$}
+\author{Sum-of-Subset research project}
+\date{18 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the independently audited bound $N\le91$ by excluding
+cardinality 91. A variable threshold at each prefix improves the
+persistent-hole argument: at size 37 and sufficiently many holes, its
+defect floor rises from 144 to 193. A two-stage lattice comparison uses
+the one-budget bound first and reserves the stronger hole witnesses for
+the remaining range. This closes the inner lattice gate without a new
+defect-sensitive span lemma. The inverse theorem is used only when both
+supports are non-progressions; progression summands are handled by an
+exact gap formula, including a two-residue exception. We then reconstruct
+the complete necessary covering models at the new endpoint. Exact integer
+certificates and a standard-library verifier accompany the report.
+The stronger archived bound 84 is not asserted to have received a
+complete independent replay.
+\end{abstract}
+
+\section{Result and the inherited reduction}
+For a finite real set $A$, $\FS(A)$ denotes all subset sums, including
+zero, and $4A=A+A+A+A$ allows repetitions. Let $N$ be the largest
+cardinality for which $\FS(A)\subseteq4A$.
+\begin{theorem}\label{main}
+Every feasible set has at most 90 elements. Hence $71\le N\le90$.
+\end{theorem}
+The lower construction remains
+$([-31,31]\cap\Z)\cup\{\pm93,\pm155,\pm217,\pm713\}$.
+The previous audited bound is 91 \cite{previous}. Thus it suffices to
+exclude size 91, and such a set must contain zero: otherwise adjoining
+zero preserves feasibility and gives 92 elements. We use the corrected
+integralization, covering, and peeling lemmas in \cite{foundation}.
+No inheritance of feasibility by arbitrary subsets is assumed.
+
+Write $T_r=r(r+1)/2$. For a positive $r$-set $X$, let
+\[
+ \mu(X)=|\FS(X)|-1-T_r,\qquad
+ \rho(X)=\mu(X)+2-2\delta_0(X),
+\]
+where $\delta_0$ counts $x$ for which $2x$ is absent from the restricted
+twofold sumset of $X\cup\{0\}$. We inherit $\rho\ge-8$ universally,
+$\rho\ge0$ for $r\ge14$, and $\rho\le\mu$ because the maximum is
+defective. Non-progression support has $\mu\ge r-3$; its defect is at
+least $r-14$ for $r\ge6$ and at least $r-5$ for $r\ge17$ \cite{sharp}.
+Let $f(r)$ denote the latter available floor.
+
+Remove four original extremes on each side to obtain $D$, and perform
+the two four-extreme peels $D\supset D_1\supset E$, where
+$E=P\cup\{0\}\cup(-Q)$. At the present endpoint,
+\[
+ d=83,\quad e=75,\quad a+b=m=74,\quad I=(a-37)^2,
+ \quad\Lambda=1+T_a+T_b=1407+I,\quad\Omega=516-I.
+\]
+The exact inherited budget is
+\begin{equation}\label{budget}
+ \rho+2\vartheta+c+\T=\Omega,\qquad
+ c=2|2D|+18d+85-|\FS(D)|,\qquad
+ \T=\kappa+\ell_1+\ell_2+g,
+\end{equation}
+where $\rho=\rho(P)+\rho(Q)$, $\mu=\mu(P)+\mu(Q)$, and
+$\kappa=|\FS(P)-\FS(Q)|-|\FS(P)|-|\FS(Q)|+1$.
+All displayed slacks other than $\rho$ are nonnegative.
+
+The deficient-sign check is $1+T_{75}=2851>24\cdot91+77=2261$.
+The paired bootstrap gives $q^2\le2648$ with even $q$, so $q\le50$
+and $a,b\ge12$. At a side of size 12 or 13, respectively,
+$\Omega=-109$ or $-60$, below the general lower bound $-8$ for the
+combined defect. These sizes are impossible. Both sides are now at
+least 14; nonnegative defect excludes size 14, where $\Omega=-13$.
+Thus $15\le a\le59$, giving 45 oriented lattice cases.
+
+\section{Variable thresholds for persistent holes}
+We first prove the new general estimate. It uses only inherited
+positive-side lemmas and the full-prefix central interval from
+\cite{previous}, itself a direct application of Lev's Theorem 1
+\cite{lev}. The latter states that an $i$-set in $[1,l]_{\Z}$ with
+$l\le3i/2-2$ fills all subset sums between $2l-2i+1$ and its
+complement about half the total. Consequently, if $Y$ has $i$ elements,
+$\max Y\le i+\beta$, and $i\ge2\beta+4$, then
+\begin{equation}\label{central}
+ \FS(Y)=[0,S]_{\Z}\setminus(H\cup(S-H)),\quad
+ H\subseteq[1,2\beta],\quad |H|\le\beta,\quad S=\sum Y.
+\end{equation}
+Indeed apply Lev with $l=i+\delta$, where $0\le\delta\le\beta$;
+each missing lower sum is a missing coefficient in $[1,2\delta]$.
+
+\begin{theorem}[A schedule of small-increment thresholds]\label{schedule}
+Let $X$ be a positive integer $r$-set with hull-hole count
+$z\le h_X<|\FS(X)|-1$. Choose integers $18\le L\le r$, $B\ge0$,
+and $\beta_i\ge2$ for $L\le i\le r$. Suppose
+\begin{align}
+ 2\beta_i&<z,& 2\beta_i+4&\le i,\label{local}\\
+ B&\le T_{L-1}-r-1,&
+ B&\le T_i+i-6\beta_i-r-7\quad(L\le i\le r),\label{escape}\\
+ B&\le L-6+\sum_{i=L}^r(\beta_i-1).&&\label{accumulate}
+\end{align}
+Then $\rho(X)\ge B$.
+\end{theorem}
+\begin{proof}
+Assume $\rho_r<B$. The strict upper hole condition forces $X$ to
+be primitive; a gcd at least two would create at least
+$|\FS(X)|-1$ holes. Its support is non-progression because $h_X>0$.
+For increasing prefixes $X_i$, put
+$y_i=|\FS(X_i)|-|\FS(X_{i-1})|-i\ge0$.
+We have $\rho_i\ge\rho_{i-1}+y_i-2$, and $y_i=0$ at $i\ge6$
+forces progression support.
+
+If the last progression prefix has size $t\ge L-1$, its next
+translate is disjoint: an on-lattice overlapping or abutting translate
+would preserve progression support. Thus $y_{t+1}\ge T_t-t$.
+All later prefixes are non-progressions, so their increments are at
+least one. Starting with $\rho_t\ge0$ gives
+$\rho_r\ge T_t-r-1\ge T_{L-1}-r-1\ge B$, a contradiction.
+Every prefix from $L-1$ onward is therefore non-progression, and
+$\rho_{L-1}\ge L-6$. If $y_i>\beta_i$ for every $i\ge L$,
+the recurrence and \eqref{accumulate} already imply $\rho_r\ge B$.
+
+Choose an $i\ge L$ with $1\le y_i\le\beta_i$.
+The inherited small-increment inverse applies since
+$i\ge2\beta_i+4\ge\beta_i+5$. It writes $X_i=tY$ with $Y$
+primitive, $|Y|=i$, and $\max Y\le i+\beta_i$. Here $t$ is an integer.
+If $t>1$, final primitivity forces a later first element off $t\Z$.
+Its translate is disjoint, and the preceding calculation gives
+$\rho_r\ge T_i-r-1\ge B$. Hence $t=1$ and \eqref{central} applies
+with the fixed threshold $\beta_i$ chosen at this prefix.
+
+Propagate its endpoint-hole description through later prefixes.
+Suppose it holds at size $v\ge i$, with total $S$, and the next
+element is $x$. If $x\ge S-4\beta_i$, the translate adds at least
+$S-6\beta_i$ new points above $S$: for $x\le S$ the last $x$
+positions lose at most $2\beta_i$ holes, while for $x>S$ the whole
+translate is new. Using $\rho_v\ge v-5$ and later increments
+at least one yields
+\[
+ \rho_r\ge S+v-6\beta_i-r-7
+ \ge T_i+i-6\beta_i-r-7\ge B.
+\]
+Thus $x<S-4\beta_i$. Also $x>2\beta_i$ by increasing order.
+The central intervals overlap or abut, the lower holes remain $H$,
+and complement symmetry supplies the upper holes. Induction gives
+$h_X\le2\beta_i<z$, the final contradiction.
+\end{proof}
+The threshold changes only in the search for the useful prefix.
+Once that prefix is selected, its own $\beta_i$ remains fixed during
+hole propagation. This distinction is essential.
+
+For a proposed $B$ and $L$, the largest permitted local thresholds are
+\begin{equation}\label{search}
+ \beta_i(B)=\min\left\{
+ \left\lfloor\frac{i-4}{2}\right\rfloor,
+ \left\lfloor\frac{z-1}{2}\right\rfloor,
+ \left\lfloor\frac{T_i+i-r-7-B}{6}\right\rfloor\right\}.
+\end{equation}
+The checker requires every threshold to be at least two and verifies
+\eqref{local}--\eqref{accumulate} exactly. Feasibility is monotone
+as $B$ decreases, so the optional witness search uses integer bisection.
+The theorem needs any valid schedule, not optimality of that search.
+The previous constant-threshold bound is retained if stronger.
+
+At $(r,z)=(37,215)$, take $L=22$, $B=193$, and
+\[
+ (\beta_{22},\ldots,\beta_{37})=
+ (6,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16).
+\]
+The AP escape bound is exactly 193, the accumulation is 197, and
+every local jump bound is at least 193. The previous bound was 144. The same schedule already works for $z\ge33$.
+At $z=15,19$, respectively, the new floors are 126 and 152,
+compared with 123 and 144. The helper
+\path{verification/nonap_hole_rho_schedule.py} records all schedules,
+checks 3,311 parameter queries (2,480 strictly improved), and retains
+the previous finite central-interval audit. A separate deterministic
+check computes actual supports and diagonal defects for 2,432 integer
+sets, including 1,102 with the required strict hole condition. These finite checks supplement the general proof above.
+
+\section{A complete progression-support repair}
+The raw sufficient inverse margin is now
+$J=T_{\min(a,b)}-2-\Omega$, with minimum $-49$.
+We use Stanchescu's Corollary 2 \cite{stanchescu} only under the
+sufficient strict condition
+$\kappa<\min(|\FS(P)|,|\FS(Q)|)-3$.
+If both supports are non-progressions, put $r=\min(a,b)$ and $t=74-r$.
+The smaller-support margin is at least
+\[
+ J+(r-3)+f(r)+f(t)\ge36,
+\]
+and the larger baseline margin $T_t-2-\Omega$ is at least 185.
+This gives a common core lattice, side holes $h_P,h_Q\le\kappa$,
+and strict side-hole bounds $h_X<|\FS(X)|-1$.
+Both positive sets are integral on this lattice.
+
+If a support is a progression, we instead use an elementary exact formula.
+For $W=\{w_1<\cdots<w_v\}\subset\Z$ and $J_u=[0,u-1]_{\Z}$,
+\begin{equation}\label{gap}
+ |W+J_u|=v+u-1+
+ \sum_{i=1}^{v-1}\min(w_{i+1}-w_i-1,u-1).
+\end{equation}
+Add the translated intervals in increasing order to prove this.
+For a progression of step $t$, apply the formula in each occupied
+residue class. If there are $s$ classes, the excess is at least
+$(s-1)(u-1)$.
+
+We also need a subset-sum observation. For positive
+$x_1<\cdots<x_b$, the largest consecutive gap in the support is
+$\max_i(x_i-\sum_{j<i}x_j)$. Indeed adding $[0,L-1]$ fills one
+interval precisely when $x_i\le L+\sum_{j<i}x_j$ for every $i$,
+by induction; a failed test leaves a gap that later positive elements
+cannot fill. If exactly one support gap has length at least $u$,
+a prefix gap attaining the maximum and its complement reflection
+must be the same gap. Their endpoints force $i=b$.
+The last coefficient dominates the previous total, and therefore
+\begin{equation}\label{dominant}
+ \mu(X)\ge2(1+T_{b-1})-1-T_b=T_{b-2}.
+\end{equation}
+
+Call the progression $U=t[0,u-1]$, and the other support $V$.
+If its side has at least 37 coefficients, then
+$u-1\ge T_{37}=703>\Omega$. Formula \eqref{gap} forces $V$
+into one residue class and forbids any gap of length at least $u$.
+On that lattice $h_U=0$, $h_V=\kappa$, and $z=0$.
+
+It remains that the progression side has $15\le a\le37$ coefficients,
+and the other side has $b=74-a\ge37$. Exact quadratic arithmetic gives
+\begin{equation}\label{apranges}
+ \Omega<2T_a,\qquad \Omega-T_a\le47,\qquad T_a+1>2b.
+\end{equation}
+There are at most two residue classes in $V$.
+In one class, there can be at most one gap of length at least $u$.
+Such a gap would give \eqref{dominant} and
+$\rho(Q)\ge T_{b-2}+2-2b\ge558>516$, impossible.
+So this case also gives $h_U=0,h_V=\kappa,z=0$.
+
+In two classes, one off-lattice coefficient would give two disjoint
+copies of a $(b-1)$-element subset-sum support and the same contradiction.
+There are at least two off-lattice coefficients. Their common nonzero
+residue must have order two, since their sum is also represented.
+Normalize the half-step so that $U=2[0,u-1]$ and $Q$ has at least
+two odd coefficients. Let $w$ be its least odd coefficient, and let
+$h_0,h_1$ be the two fiber hull-hole counts, measured with step two.
+No fiber gap reaches $u$ in its own coordinates: the baseline excess
+$u-1$ plus that gap would contradict \eqref{apranges}. Formula
+\eqref{gap} and complement symmetry give
+\begin{equation}\label{fibers}
+ \kappa=u-1+h_0+h_1,\quad h_U=u-1,\quad
+ h_Q=\kappa-u+w,\quad z=w-1.
+\end{equation}
+The $w-1$ term counts the integer positions outside the two fiber hulls.
+These identities hold whether the total of $Q$ is even or odd.
+
+We first show $w\le u$. If $w\ge u+1>2b$ and $s\ge2$ coefficients
+are odd, distinctness gives
+\[
+ \sum Q\ge(b-s)(b-s+1)+sw+s(s-1).
+\]
+This quadratic is increasing for $s\ge2$. Using \eqref{fibers},
+$|V|\ge b^2-3b+2u+6-\kappa$.
+But $\mu_Q+\kappa\le\Omega+2b-2$, by \eqref{budget} and
+$\rho_Q\ge\mu_Q+2-2b$, gives
+$|V|\le T_b+\Omega+2b-1-\kappa$.
+The lower minus upper margin is at least
+$(b^2-11b)/2+2(T_a+1)+7-\Omega>0$ in every case.
+Thus both side holes in \eqref{fibers} are at most $\kappa$.
+
+In fact $w\le13$. For odd $w\ge15$, minimizing the same mass
+quadratic over real $s$ gives
+\[
+ \sum Q-w-T_b\ge7b-289/8.
+\]
+On the other hand $\mu_Q+\kappa=\sum Q+u-w-T_b$ and
+\eqref{apranges} bound this expression above by $2b+44$,
+a contradiction for $b\ge37$. Therefore $z\le12$.
+
+The progression side satisfies $R_P\le2(a+\mu_P)$ by subtracting
+$2T_{a-1}$ from its total. The other side satisfies
+$R_Q\le b+\mu_Q+\kappa-T_a-\mu_P+12$ by subtracting $T_{b-1}$.
+Insert these bounds into the exact pre-lattice comparison, and use
+$\mu\le\rho+2m-4$ and $\rho+\kappa+\ell_2\le\Omega$:
+\[
+ |\FS(D_1)|-2|\FS(E)|
+ \le2543+2a-4T_a-2T_b\le-1157.
+\]
+The outer comparison has margin at least 569. Off-lattice points would
+give disjoint support translates, so $D_1,D$ lie on the half-step lattice.
+Only now may we use the sharp peeling bound
+$\T\ge\kappa+156-3z\ge T_a+120$, contradicting
+$\Omega-T_a\le47$. Its margin is at least 73.
+This excludes the two-residue exception without a circular use of
+post-lattice peeling.
+
+The progression cases left have $z=0$. The general span lemma
+$\max X\le |X|+\rho(X)+h_X+2$ for integer sets of size at least 15
+requires no strict side-hole condition \cite{previous}. It gives inner
+comparison $C+\Omega<0$ with $C=-945-I$, and the same outer comparison.
+After lattice propagation, $\kappa\le\Omega-156$, which gives
+$T_{\min(a,b)}-\kappa\ge109>0$. Strict side-hole bounds are now
+available in these cases as well.
+This progression repair rederives the analytic size-91 argument
+in the archive \cite{archive}; none of its endpoint certificate files
+is used here.
+
+\section{A two-stage lattice comparison}
+For the non-progression case the core is already normalized, so the
+new hole theorem is available before the peeled layers are integral.
+Write $s=|\FS(E)|$ and $z=h_P+h_Q-\kappa$, so that
+$0\le z\le\min(h_P,h_Q)$ and both strict side-hole bounds hold.
+The inherited inner comparisons are
+\begin{equation}\label{inner}
+ |\FS(D_1)|-2s\le
+ \min\{C+\Omega+\rho-\mu+2z,\ C+3\Omega-\rho-\mu\},
+ \quad C=-945-I.
+\end{equation}
+Since $\rho\le\mu$, the first is $-429-2I+2z<0$ whenever
+$z\le214+I$. In the remaining range $z\ge215+I$, first use the
+non-progression floors. Any unresolved orientation has $a,b\ge26$.
+For each side choose the best inherited effective-hole witness
+$\mu(X)\ge u_r=r+C_h+1$ with $2\beta<215+I$.
+Its two strict hypotheses are checked again by the verifier.
+Combine this with
+\[
+ \rho(X)\ge\max\{F(r,u_r),\mathcal R(r,215+I)\},
+\]
+where $F$ is the exact prefix inverse \cite{prefix} and
+$\mathcal R$ is the maximum of the old and new persistent-hole floors.
+All 45 oriented comparisons are strictly negative: the first-stage
+maximum is $-1$, and the remaining second-stage maximum is $-13$.
+At balance the previous constant-threshold bound left the comparison
+at $+3$. Now $u_{37}=156$ and $\mathcal R(37,215)=193$, giving
+$-945+3\cdot516-2(156+193)=-95$.
+
+The outer margin is
+$\Lambda-(4d-10+\Omega)=569+2I>0$.
+Thus both peeled layers lie on the core lattice.
+Hole propagation and sharp four-extreme peeling \cite{overlap} now give
+\begin{equation}\label{peeling}
+ w\le4z,\quad \T\ge\kappa+156-3z,\qquad
+ \T\ge\max(52,z,156-2z).
+\end{equation}
+No state with a side of size 15 or 16 survives these budgets, so
+all later inverse and hole-helper calls are within the range $r\ge17$.
+
+\section{Covering models at the new endpoint}
+We preserve the actual-set-to-model construction from \cite{previous}:
+the same eighteen ordinary units, first actual contributor orientation,
+split-pair choices, integer row-lattice witnesses, loss variables,
+subgroup overlap inequalities, six core cutoff positions, and 85 trimmed
+sumset rows. The possible empty-unit count is still at most four.
+All 10,880 four-empty modes are retained, including the 30 modes with
+only partial integer gap information. No rational division is used to
+infer an integer coordinate.
+
+The four low-hole families are
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+Family&$z$&$\rho_P+\rho_Q\ge$&$\mu(X)\ge$&$c+I\le$\\\midrule
+Z&0&0&0&360\\
+P&1--2&64&$r-3$&300\\
+Q&3--4&76&$r+6$&292\\
+R&5--14&97&$2r-5$&291\\\bottomrule
+\end{tabular}
+\end{center}
+The last three caps equal $360-\rho_{
+\mathrm{floor}}+2z_{
+\mathrm{endpoint}}$.
+The effective-hole rows and exact prefix inverse certify the Q and R
+defect floors for $17\le r\le57$. Each positive family transports
+$z$ to its own endpoint $Z$ and adds $Z-z$ to both mass coordinates.
+Every source row is checked for the required nonpositive change;
+the auxiliary masses need not describe another actual set.
+For empty count $j$, the low parameter interval is exactly the set of
+integers $a$ satisfying $(a-37)^2\le C_{
+\mathrm{family}}-83j$.
+These envelopes contain 369,640 integer low roots, including any
+already impossible scalar states; enlarging the necessary model domain
+is harmless.
+
+For $z\ge15$ the scalar enumeration leaves 1,320 states; $c\le140<2d$,
+so only $j=0,1$ occur. The all-active comparison leaves 196 states
+at $j=0$ and the empty-unit budget leaves 66 at $j=1$.
+They form 42 groups with fixed side sizes and support/defect floors.
+For comparison, the same post-lattice scalar relaxation with only the
+previous constant-threshold floor has 3,596 states, cap 176, and 56
+two-empty states; the variable thresholds reduce these to 1,320, 140,
+and zero. This comparison alone is not an endpoint exclusion.
+The same real variable $z$ is retained across each group's full interval.
+With $E_*=\Omega-\rho_p-\rho_q$ and $\delta=c-83j$, use all four caps
+\[
+ \delta\le c_{\max}-83j,\quad
+ \delta+z\le E_*-83j,\quad
+ \delta\le E_*-52-83j,\quad
+ \delta-2z\le E_*-156-83j.
+\]
+The verifier checks 109,514 coarse-source and 211,432 nested-source
+row implications, including every new full-translate row.
+It does not combine unrelated maxima of $c$ and $z$, nor choose the
+reflected all-active orientation independently of the actual contributor.
+
+For clarity, all dimension-dependent replacements in the inherited
+covering model are listed below. Put $K=|2D|$, let $R_s,C_s$ be the
+largest and second largest core magnitudes, and let $M_s$ be the
+largest magnitude in $D$.
+\begin{center}\small
+\begin{tabular}{lr}\toprule
+Quantity&New value\\\midrule
+Ordinary unit capacity $d$; core size $e$&83; 75\\
+Global quantile pair; core quantile pair&83/82; 79/78\\
+Ordinary quantile pair&opposite size $+5$ / own size $+4$\\
+Basic leading threshold $2d-1$&165\\
+Nested leading threshold $2d-9$&157\\
+Second-core leading threshold $2d-11$&155\\
+Core loss threshold $d-4$&79\\
+Span budget $R_p+R_q+\delta-4z$&$438-I-83j$\\
+Cardinality budget $S_p+S_q+\delta-2K-4z$&$1578-83j$\\\bottomrule
+\end{tabular}
+\end{center}
+Each threshold is applied to its own proved residual cap and charged
+leading side. The trimmed increment remains $83s-T_{s-1}$ for removing
+$s$ extreme elements. The coarse bound remains
+$K\le M_p+M_q+R_p+R_q+21$.
+For high groups, $140<155$ licenses the deeper leading quantiles;
+after one empty unit, $140-83=57<79$ licenses core quantiles.
+The actual selected cap, not these global maxima, determines each row.
+
+The coarse model is tried first. When needed, the nested model and
+the inherited exhaustive disjunctions are used: density, ordinary versus
+outside-center quantiles, core-loss alternatives, six inner positions,
+and both-or-sole contributors for a split pair. Every binary child must
+be present. No solver-selected cut is accepted unless reconstructed from
+one of these proved alternatives.
+
+\subsection{Using the location of an empty own translate}
+There is one additional low-hole refinement. At $z=0$, the target is
+the full interval $[1,S_p]_{\Z}$ on the positive side. Suppose an
+integer own center $u=c_p+p_{i+1}$ is empty, but a lower own center
+$v=c_p+p_{h+1}$, $h>i$, contributes. Then $u>v$ and $u>S_p$.
+Indeed $0<u\le S_p$ contributes through $u+0$. If $u\le0$, choose
+$d'\in D$ with $1\le v+d'\le S_p$. Then
+$1\le u+d'\le d'\le M_p\le S_p$, also a contribution.
+Thus the new necessary row is
+\[
+ -u+S_p\le-1.
+\]
+Reflection gives the negative-side row. We activate it only for
+zero-hole groups with a complete integer-center basis, an explicitly
+missing own single, and a retained lower own single.
+
+When $i=0$, the four original fixed labels
+$C^+_{1j}=c_p+p_1+p_j$ ($1\le j\le4$) all exceed $S_p$.
+They therefore contribute four additional fixed losses. The original
+fixed cover has 110 labels and 26 disjoint groups, each supplying a
+nonpositive label. These four high labels are positive, so they cannot
+be any of those nonpositive deletions; their losses are additional.
+The reflected four labels are separate labels. Counting labels rather
+than distinct values only enlarges the covering upper bound and is safe.
+
+Let $f$ be four times the number of sides meeting this largest-empty
+condition. Then both the ordinary loss sum and the combined subgroup
+loss sum are at most $\delta-f$. The same correction is made in the
+sole-contributor branch. It is one loss charged consistently in alternative
+necessary inequalities, not a sum of repeated gains. These deductions
+also rederive the applicable fixed-label argument in \cite{archive}.
+The verifier reconstructs the original 110-label/26-group cover and
+checks 10,430 small configurations, including 8,739 high-center tests
+and 22,952 high fixed-label tests. The arbitrary-size proof is the
+interval argument just given.
+
+\subsection{Full translates, a common deficit, and clipping}
+The nested model also uses all of $D$ in selected overlap comparisons,
+rederiving the full-translate argument in \cite{archive}. On the
+positive side let the leading component be $c_p+2D$, and select own
+components $c_p+p_i+D$ and cross components $c_p-q_j+D$.
+All these centers are integral in the modes where these rows are used.
+If $k$ own and $l$ cross components are selected, their total nominal
+capacity is $C=K+(k+l)d$. Let $p_*,q_*$ be their largest selected
+outer magnitudes when present. The union lies in $[L,U]_{\Z}$, with
+\[
+ L=c_p-\begin{cases}q_*+M_q,&l>0,\\2M_q,&l=0,\end{cases}
+ \qquad
+ U=c_p+\begin{cases}p_*+M_p,&k>0,\\2M_p,&k=0.\end{cases}
+\]
+For the actual target $F_p=\FS(D)\cap(0,\infty)$ and subgroup union
+$W$, put $G=C-|W\cap F_p|$. Every member loss $\lambda_v$ satisfies
+\[
+ G\ge C-(U-L+1)+\lambda_v,\qquad G\ge\sum_v\lambda_v.
+\]
+Indeed $C-|W\cap F_p|=(C-|W|)+|W\setminus F_p|$, and the outside
+union contains each member's outside set. Nonemptiness of a selected
+ordinary component further gives the clipped bounds
+\[
+ G\ge C-U,\qquad G\ge C-S_p+L-1,\qquad G\ge C-S_p.
+\]
+These are bounds for the actual target deficit; no selected member loss
+is added to a clipped bound.
+
+For each side, the larger family consists of the leading component,
+all retained own components, and retained unpaired cross components
+with labels 6 and 7 (outer indices 3 and 4). Its variable $\Gamma_p$
+is the actual capacity deficit of the whole family. For any selected
+subgroup, $\Gamma_p$ dominates its deficit plus the individual losses
+of members outside that subgroup. Taking suffixes of the own and cross
+lists gives all implemented mixed rows. The two larger families use
+disjoint component labels, so
+\[
+ \Gamma_p+\Gamma_q+\sum_{\text{unmatched }v}\lambda_v\le\delta-f.
+\]
+The earlier block inequalities remain separate necessary inequalities;
+their gains are not added to this new allocation. All-subset own-only
+rows analogously strengthen the earlier own-block variables. The
+49-set sanity audit checks 795 subgroup inequalities. Positive-hole
+mass transport preserves these rows because each mass coefficient is
+zero or negative.
+
+\subsection{Exact fixed-label indicators in the four-empty exception}
+Only the zero-hole four-empty mode with missing units
+\texttt{pair1,pair2,p0,q0} enables the fixed-score extension, in either
+structural branch. It already charges $f=8$. For each of the other
+102 original fixed labels $v$, introduce an auxiliary $H_v\in[0,1]$,
+realized as the indicator that the score exceeds its own target mass.
+For all 110 labels introduce $N_v\in[0,1]$, realized as the indicator
+that the score is nonpositive. Each of the 26 disjoint negative groups
+requires the sum of its $N_v$ to be at least one. Thus
+\[
+ F_{\rm extra}=\sum_{v\text{ not already charged}}H_v+
+               \sum_{v}N_v-26\ge0
+\]
+is an additional actual fixed loss. The eight already charged labels
+are omitted from the high sum. High and nonpositive events are disjoint,
+so this loss may be added to each complete deficit allocation.
+
+All score forms are integer combinations of the eight proved integral
+outer coordinates, and both masses are integral in these zero-hole
+groups. For a score $f_v$ with target mass $S$, the exhaustive splits are
+\[
+ (f_v\le S,\ H_v=0)\quad\text{or}\quad
+ (f_v\ge S+1,\ H_v=1),
+\]
+\[
+ (f_v\le0,\ N_v=1)\quad\text{or}\quad
+ (f_v\ge1,\ N_v=0).
+\]
+Their actual indicator realizations justify the necessary relaxations
+and both branches. Universally positive score forms, recognized by
+nonnegative coefficients in positive outer-gap coordinates, have
+$N_v=0$ directly. The eight charged high labels also have $N_v=0$.
+The helper \path{verification/fixed_scores.py} regenerates every form
+from the covering definitions, transforms each of the 26 group sums
+to gap coordinates, checks its nonpositive coefficients, and checks
+disjointness. Stored coefficient vectors alone are not trusted.
+
+\section{Exact certification and reproduction}
+The certificate bundle contains \Vectors{} distinct nonnegative integer
+multiplier vectors. It covers \RootGroups{} structural groups,
+\RootSystems{} integer roots, and \FinalSystems{} final leaf systems.
+Of the 27,802 groups, 27,250 close in the coarse model and 552 use
+the nested model. There are 27,836 symbolic interval checks, 80,170
+integer extremum evaluations, and 25 tree roots with 151 binary nodes
+and 176 tree leaves. The maximum tree depth is 29. The splits comprise
+18 core-loss, 13 inner-position, 13 high-score, and 107 nonpositive-score
+alternatives. The minimum normalized strict contradiction gap is $\MinGap$.
+For every leaf with variables $x\ge0$ and necessary rows $Ax\le b$,
+the checker verifies $w\ge0$, $wA\ge0$, and $wb<0$ using integers
+and exact rational arithmetic. The generator may use SciPy to discover
+$w$; no floating-point result is accepted as a proof.
+
+The checker reconstructs the whole root universe, each allowed
+disjunction, and all parameter intervals. Quadratic right sides are
+maximized at endpoints and the nearest integers to any interior vertex.
+The exhaustive option additionally instantiates every integer parameter
+and compares every row with its symbolic formula. The high-hole rows
+cover real intervals and hence all actual integer hole counts.
+Negative controls reject \NegativeControls{} deliberately malformed
+proof inputs, including missing roots, omitted children, invalid
+integer division, nonstrict schedule thresholds, and incomplete schedules.
+
+From the repository root:
+\begin{verbatim}
+python -I -S -B verification/upper90.py --output .work/upper90.json
+python -I -S -B verification/upper90.py --exhaustive \
+  --output .work/upper90-exhaustive.json
+python experiments/generate_upper90_certificates.py \
+  --output .work/upper90-regenerated.json
+\end{verbatim}
+Only the optional generator needs NumPy and SciPy. The Windows entry
+point is \path{verify_upper90_windows.bat}. Complete run receipts,
+source hashes, scalar witnesses, and compressed full output are under
+\path{results/2026-10-18/upper90/}. Ordinary and optimized-Python runs,
+full integer expansion, independent certificate regeneration, and the
+unchanged upper-91 baseline are recorded separately.
+
+The result is a continuation of the audited chain, not a claim that
+the archived bound 84 is false or has been completely rechecked.
+The arbitrary-set mathematical lemmas remain part of the proof;
+the program is an exact finite certificate checker, not a proof-assistant
+formalization of the entire argument.
+
+\begingroup\small
+\begin{thebibliography}{9}\setlength{\itemsep}{1pt}
+\bibitem{previous} Sum-of-Subset project,
+\emph{Anchored hole bounds and integer center bases, and the audited bound
+$N\le91$}, \path{reports/upper91_from92_20261017.tex}.
+\bibitem{foundation} Sum-of-Subset project,
+\emph{From the audited bound 115 to 103},
+\path{reports/upper103_from115_20261014.tex}.
+\bibitem{sharp} Sum-of-Subset project,
+\emph{Sharp non-progression defects and the audited bound 94},
+\path{reports/upper94_from95_20261016.tex}.
+\bibitem{prefix} Sum-of-Subset project,
+\emph{An integer prefix inverse and the audited bound 93},
+\path{reports/upper93_from94_20261016.tex}.
+\bibitem{overlap} Sum-of-Subset project,
+\emph{Sharp peeling and joint covering losses},
+\path{reports/upper95_from96_20261016.tex}.
+\bibitem{archive} Sum-of-Subset project,
+\emph{Complete report for the archived upper bound 86}, section
+``A common core lattice at size 91'',
+\path{reports/upper86_complete_20261005.tex}.
+\bibitem{lev} V.~F. Lev, \emph{On consecutive subset sums},
+Discrete Mathematics 187 (1998), 151--160, Theorem 1.
+\href{https://doi.org/10.1016/S0012-365X(98)80006-X}{doi:10.1016/S0012-365X(98)80006-X}.
+\bibitem{stanchescu} Y. Stanchescu,
+\emph{On addition of two distinct sets of integers},
+Acta Arithmetica 75 (1996), 191--194, Corollary 2.
+\href{https://doi.org/10.4064/aa-75-2-191-194}{doi:10.4064/aa-75-2-191-194}.
+\end{thebibliography}
+\endgroup
+\end{document}

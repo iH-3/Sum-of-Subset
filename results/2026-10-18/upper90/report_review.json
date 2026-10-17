@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "pdf": "reports/upper90_from91_20261018.pdf",
+  "tex": "reports/upper90_from91_20261018.tex",
+  "pages": 8,
+  "visually_reviewed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "typesetting_warnings": [],
+  "changes_after_visual_review": "Bibliography compacted on page 8; that page rerendered and reviewed.",
+  "pdf_sha256": "e6ad5f659f9873a1582bae68cbe93421e3607e6c6af6d1e2b94918d3cebe628f",
+  "tex_sha256": "0ee8379eb406e05321c869b1545c64cedfae0d108b19a2e97ce1131dde0a66d7"
+}
