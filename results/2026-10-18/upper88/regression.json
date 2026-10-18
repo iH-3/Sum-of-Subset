@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "compared_keys": [
+    "proof_checks",
+    "scalar_audit",
+    "summary"
+  ],
+  "differences": [],
+  "output_sha256": "87c921a445f84fadde1e0c31f5e771cbf033bfa0e3af33774cc39f5b7f6c4117"
+}

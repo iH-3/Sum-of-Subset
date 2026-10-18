@@ -1,0 +1,26 @@
+{
+  "status": "PASS_GEOMETRY_ONLY",
+  "cases": 240,
+  "seed": 2026101803,
+  "checks": {
+    "leading_core": 2880,
+    "whole_side": 1680,
+    "allocation": 240
+  },
+  "old_witness_violations": {
+    "leading_core_p3_leading": "72",
+    "leading_core_p3_own": "72",
+    "leading_core_q3_leading": "72",
+    "leading_core_q3_own": "72"
+  },
+  "negative_controls": [
+    "adding_both_outside_losses"
+  ],
+  "scope": "Finite actual-set checks supplement the general proof; no global upper bound follows from this run.",
+  "sha256": {
+    "experiments/verify_leading_core_geometry.py": "96035eab3fe45514afd41dc109e826d17fbe6186f12f5f4b9c78979ce4580c41",
+    "verification/leading_core_overlap.py": "307da269d3ce81611c20e65702e2230d6e7fae659cfc60f6651f5fe951e98820",
+    "verification/upper88_candidate.py": "17f56424c35bb5dc5c8cb0ab4e1a9ae60e548ad41674264513e1b129d6b11367",
+    "data/upper88_relaxation_witness.json": "935b770cf55bdf1a81e5c9d29228cc0baed83efd6bf9d863a07360a7fdaa8c2c"
+  }
+}

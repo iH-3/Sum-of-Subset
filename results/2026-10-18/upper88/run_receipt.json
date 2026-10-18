@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "name": "standard",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper88_endpoint.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-cover/.work/upper88_leading/standard.json"
+      ],
+      "started_at": "2026-10-18T03:08:03.066569+00:00",
+      "finished_at": "2026-10-18T03:23:13.105878+00:00",
+      "seconds": 910.0395757859951,
+      "exit_code": 0,
+      "log_sha256": "5455e32b2c61a4df16f11b086f1b8827d297a2ffc1408d16e781e47309657d4e",
+      "output_sha256": "199a27d4bb85b0e8f35a63f9455672362bafe146305b5047a54b6d44629a5870"
+    },
+    {
+      "name": "optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-I",
+        "-S",
+        "-B",
+        "verification/upper88_endpoint.py",
+        "--output",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-cover/.work/upper88_leading/optimized.json"
+      ],
+      "started_at": "2026-10-18T03:08:03.067163+00:00",
+      "finished_at": "2026-10-18T03:29:04.139500+00:00",
+      "seconds": 1261.072606354006,
+      "exit_code": 0,
+      "log_sha256": "5455e32b2c61a4df16f11b086f1b8827d297a2ffc1408d16e781e47309657d4e",
+      "output_sha256": "199a27d4bb85b0e8f35a63f9455672362bafe146305b5047a54b6d44629a5870"
+    }
+  ],
+  "standard_optimized_byte_identical": true,
+  "sha256": "199a27d4bb85b0e8f35a63f9455672362bafe146305b5047a54b6d44629a5870"
+}

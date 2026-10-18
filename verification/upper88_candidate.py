@@ -989,8 +989,10 @@ def extend_rows(rows,split,side,extra):
     return out
 
 
-def check_coverage(bundle,exhaustive=False,*,partial=False):
-    require(bundle.get('format')==FORMAT,'Unknown certificate format')
+def check_coverage(bundle,exhaustive=False,*,partial=False,model_builder=None,branch_builder=None,expected_format=None):
+    build=model_builder or model
+    split_catalogue=branch_builder or branches
+    require(bundle.get('format')==(expected_format or FORMAT),'Unknown certificate format')
     groups=list(roots());routing,pool=bundle['roots'],bundle['pool']
     universe={g['key'] for g in groups}
     require(bool(routing) and (set(routing)<=universe if partial else set(routing)==universe),'Missing or extra root')
@@ -1022,7 +1024,7 @@ def check_coverage(bundle,exhaustive=False,*,partial=False):
         return dict(split=split,children=kids)
     def leaf(g,node,allowed):
         require(set(node)=={'kind','segments','trees'} and node['kind'] in allowed,'Invalid leaf model')
-        kind=node['kind'];n,r=model(g,Quadratic(0,1),kind);covered=set();segments=[];tree_results={}
+        kind=node['kind'];n,r=build(g,Quadratic(0,1),kind);covered=set();segments=[];tree_results={}
         require(isinstance(node['segments'],list) and isinstance(node['trees'],dict),'Malformed leaf coverage')
         last=g['lo']-1
         for item in node['segments']:
@@ -1035,7 +1037,7 @@ def check_coverage(bundle,exhaustive=False,*,partial=False):
             if exhaustive:
                 point_gaps=[]
                 for a in range(lo,hi+1):
-                    nn,rr=model(g,a,kind)
+                    nn,rr=build(g,a,kind)
                     require(nn==n and set(rr)==set(r),'Symbolic/numeric matrix shape differs')
                     for label,(v,b) in r.items():
                         require(rr[label][0]==v and rr[label][1]==Quadratic.coerce(b).at(a),'Symbolic/numeric formula differs')
@@ -1046,12 +1048,12 @@ def check_coverage(bundle,exhaustive=False,*,partial=False):
             a=int(key);require(g['lo']<=a<=g['hi'] and a not in covered,'Duplicate or out-of-range tree')
             require(kind.endswith('_nested'),'Tree uses unsupported coarse coordinates')
             covered.add(a);counts['tree_roots']+=1
-            nn,rr=model(g,a,kind)
+            nn,rr=build(g,a,kind)
             if exhaustive:
                 require(nn==n and set(rr)==set(r),'Tree base matrix differs')
                 for label,(v,b) in r.items():
                     require(rr[label][0]==v and rr[label][1]==Quadratic.coerce(b).at(a),'Tree base formula differs')
-            tree_results[key]=tree_check(g,a,nn,rr,node_tree,branches(g,a,nn))
+            tree_results[key]=tree_check(g,a,nn,rr,node_tree,split_catalogue(g,a,nn))
         require(covered==set(range(g['lo'],g['hi']+1)),'Missing integer parameter')
         counts['parameter_systems']+=len(covered);counts['leaf_groups']+=1;counts['kind/'+kind]+=1
         return dict(kind=kind,lo=g['lo'],hi=g['hi'],policy=row_policy(g),variables=len(n),rows=len(r),segments=segments,trees=tree_results)

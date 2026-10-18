@@ -1,0 +1,22 @@
+{
+  "status": "PASS_LAYOUT",
+  "pages": 5,
+  "render_dpi": 105,
+  "all_pages_visually_inspected": true,
+  "unchanged_first_three_pages_pixel_identical": true,
+  "final_pages_four_and_five_visually_rechecked": true,
+  "issues": [],
+  "compiler": "pdfLaTeX; two final passes; no overfull/underfull/undefined warnings",
+  "sha256": {
+    "reports/upper88_leading_overlap_20261018.pdf": "83064555f76d89b966609c5766573f76b85de70327fd15c99b93cfe52497c4dd",
+    "reports/upper88_leading_overlap_20261018.tex": "3837a54226af0f0a7d835c1d1de6bc740183e61a8b5b6b83c497d443181ba4cb",
+    "reports/upper88_leading_statistics_20261018.tex": "62d0af1b9f6e881f05224725768354ff2370a761009d91b28d9a62681a7617aa"
+  },
+  "render_sha256": {
+    "1": "a4009e41c859a149c5e87c4f6a463a24d980e013cc1f6b2ab4dc2e7f042baeb5",
+    "2": "b0f90bb3fd774514f5611a058b6fc39da4cd754f67cd0546b3aaf094e7b17bde",
+    "3": "c6b74d3d398e018afe2b7288cb5ede368e52465e016bef18190ef776bf790776",
+    "4": "8ec473710d00fef34c2781befa92641cd7779ae1ed1e4a5c3ffc0ebc4353b949",
+    "5": "8761471abdc7d94a45727d16e1d1c01ab2e2a942310d17d307090d5921d3a2e2"
+  }
+}

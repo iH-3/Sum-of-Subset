@@ -1,0 +1,40 @@
+\begin{center}
+\begin{tabular}{lr}\toprule
+Verification quantity&Exact value\\\midrule
+Structural root groups&61,884\\
+Integer root systems&641,524\\
+Coarse / nested groups&60,766 / 1,118\\
+Integer certificate vectors&2,773\\
+Quadratic interval checks&61,980\\
+Checked extremum points&164,353\\
+Integer roots using binary trees&55\\
+Binary splits / tree leaves&95 / 150\\
+Maximum tree depth&10\\
+Final certified systems&641,619\\
+Minimum normalized strict gap&$11/1069$\\\bottomrule
+\end{tabular}
+\end{center}
+Every reconstructed root is covered, with no omitted integer parameter or
+disjunction child. The split types are 58 core-loss, 20 ordinary-position,
+6 outer-pair and 11 core-pair-order splits.
+The complete symbolic check and the full integer-matrix replay both
+passed. Standard and \texttt{-O} outputs are byte-identical; all 12
+negative controls rejected their invalid inputs.
+
+\begin{theorem}
+Every finite real set $A$ satisfying $\FS(A)\subseteq4A$ has
+$|A|\le88$. Consequently the independently closed range is
+\[
+ \boxed{71\le N\le88}.
+\]
+\end{theorem}
+\begin{proof}
+The preceding independently audited chain gives $|A|\le89$.
+A hypothetical 89-element set can be reduced as in Section 1 and realizes
+one of the completely reconstructed necessary models. The geometric
+lemmas above give the new rows simultaneously with the inherited rows.
+Every parameter and both children of every used disjunction are covered
+by exact nonnegative integer row combinations giving a strict
+contradiction. Thus size 89 is impossible. The established 71-element
+construction supplies the lower bound.
+\end{proof}

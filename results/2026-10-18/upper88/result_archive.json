@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "file": "result.json.gz",
+  "uncompressed_bytes": 70586775,
+  "compressed_bytes": 1311928,
+  "uncompressed_sha256": "abd26da7e9d4cc44af24f70357cf9cf1b96e17aa61c63860b8decb693b8587d3",
+  "compressed_sha256": "6a2fdf1533dbe801bedf4b7e8e13f2c33b49237f2ab7e71c97e2aa6aa8ee297a",
+  "source_inputs": 39,
+  "numeric_parts": 8,
+  "all_archives_decompressed_and_hash_checked": true
+}
