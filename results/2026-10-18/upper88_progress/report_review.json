@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "reviewed_at": "2026-10-18T00:54:01.026161+00:00",
+  "pages": 9,
+  "all_pages_visually_reviewed": true,
+  "render_command": [
+    "pdftoppm",
+    "-r",
+    "110",
+    "-png",
+    "reports/upper88_progress_20261018.pdf",
+    ".work/upper88/progress_review/page"
+  ],
+  "latex_warnings": [],
+  "checks": [
+    "all nine final pages visually inspected",
+    "no clipped or overlapping text",
+    "formulas and tables fit within margins",
+    "references resolve",
+    "matrix width signs are negative in the displayed normal form",
+    "global upper bound remains 89 in title context, abstract and conclusions",
+    "commands fit and are directly copyable"
+  ],
+  "pdf": "reports/upper88_progress_20261018.pdf",
+  "pdf_sha256": "01b11c030ce5f02746b14356a368bb7fa92147c1f7106a4c4f72c1c8119bf1f0",
+  "tex": "reports/upper88_progress_20261018.tex",
+  "tex_sha256": "eea001a9ac1e46c61ff47e6c494b26804f57f46ab4a1551efcf75809f67b11b2",
+  "page_png_sha256": {
+    "page-1.png": "28c6377ffaac3bce1020c3c822074289f314e8824bfb973e006f95f2dd95116a",
+    "page-2.png": "82876702271a53725a85b5b9ba1b94970500ae97f39b61b31a9d75d31d9e68d2",
+    "page-3.png": "6b1b0f6f819144314604c3347617f119d26234967174296b523a7bb48b6fa236",
+    "page-4.png": "580eab3e1f4bf9c1ea64011932b5f7ee1a8f7a40b2e2702c2d0299999fb638e4",
+    "page-5.png": "588459e67827733d49eee661424d55ee4bac49c7a74a649275ffc01c6becb228",
+    "page-6.png": "5048a868321623bd423bb1131fdaf018f7b1c093bc893ebfe8ec58192c095488",
+    "page-7.png": "46bca114268fe89ea95f6d7ae10c5fada4d309e8562f284b40b6a6d9230bffd6",
+    "page-8.png": "1e6828415ac113dd58c1ec9b5a69783e3c7ab1244aac436e63f7f958d4c541b7",
+    "page-9.png": "6735723a4373d2e0176379ffe0ba088c14225079b9b6f4cd5e94cfd109c43318"
+  }
+}

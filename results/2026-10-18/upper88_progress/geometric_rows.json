@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "cases": 150,
+  "seed": 2026101801,
+  "checks": {
+    "root_pair_rows": 9600,
+    "intersection_rows": 5384,
+    "absorption_count_rows": 4800,
+    "outer_pair_rows": 3600,
+    "two_way_quantile_rows": 25200,
+    "disjoint_allocations": 150
+  },
+  "scope": "Independent actual-set evaluation of emitted rows; supplemental to the general proofs",
+  "sha256": {
+    "verification/upper88_candidate.py": "79884908155e2abe091e5d7b815ce772fced6477f506ab48c35210d676dac38f",
+    "verification/ordinary_core_overlap.py": "e6ccac6cac3d6ed9ceef5a93f8b0e087aafceb70201b8d70b7970b8cc13a214d",
+    "verification/crossing_envelopes.py": "e98c4ad8ce712ecddf7134e07e4298e25beaf027a3ff1c81473aeebdbd19ace1",
+    "verification/fixed_scores.py": "a05eaf3c3db439c3dc04ba19430ba7b27218a59abf18c5b3f1413a65703a42db",
+    "verification/fixed_score_order.py": "7d06f28405abe6a4ac1742f7a9cfaa89e69ae6984da9a341be0486cf9f4a5107",
+    "experiments/verify_upper88_geometric_rows.py": "e87c7a1127cb28c80d280380a107b8d764ed339322fbbe67305990351d6ded55"
+  }
+}

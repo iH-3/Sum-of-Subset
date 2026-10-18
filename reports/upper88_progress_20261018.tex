@@ -1,0 +1,630 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\FS}{\operatorname{FS}}\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{proposition}[theorem]{Proposition}
+\title{Subset Sums in a Fourfold Sumset\\\large Progress toward cardinality 89:\\tighter budgets and an exact relaxation obstruction}
+\author{Sum-of-Subset research project}\date{18 October 2026}
+\begin{document}\maketitle
+\begin{abstract}
+The independently audited global bound remains $N\le89$.
+For a hypothetical 89-element configuration, we improve the low-hole R-band
+budget from $329-I$ to $313-I$, removing its entire four-empty family.
+Intrinsic normalization repairs sixteen failed sufficient inverse directions;
+early prefix retention avoids a circular use of lattice peeling.
+Further refinements count core overlap, absorbed peeled points and external
+pair labels in interval unions. The supplied partial certificates exclude
+3,651 structural groups, representing 95,443 integer root systems.
+However, an exact rational point satisfies all 1,619 root inequalities and
+one branch of every one of the 682 available dichotomies in an unresolved
+balanced mode. Thus the present relaxation cannot prove $N\le88$.
+The result is verified research progress, not a new global upper bound.
+\end{abstract}
+
+\section{Scope and endpoint constants}
+For a finite real set $A$, let $\FS(A)$ include the empty subset sum, and let
+$4A$ permit repeated summands. The quantity $N$ is the largest size with
+$\FS(A)\subseteq4A$. We continue the independently audited chain ending at
+$N\le89$ \cite{previous}; the lower construction has 71 elements. Any feasible
+89-element set contains zero, because adjoining it otherwise gives
+90 elements. Feasibility is not assumed to pass to arbitrary subsets.
+
+The corrected integralization and peeling reduction \cite{foundation,previous}
+give $D\supset D_1\supset E=P\cup\{0\}\cup(-Q)$, with
+\[
+ d=81,\quad e=73,\quad a+b=m=72,\quad I=(a-36)^2,
+ \quad\Lambda=1+T_a+T_b=1333+I,
+\]
+where $T_r=r(r+1)/2$. Set
+\[
+ \Omega=22d+97-\Lambda=546-I,\qquad
+ C=2m+4e+14-\Lambda=-883-I.
+\]
+For a positive $r$-set $X$, write
+$\mu_X=|\FS(X)|-1-T_r$ and $\rho_X=\mu_X+2-2\delta_0(X)$,
+where $\delta_0$ counts defective diagonals in the distinct-pair sumset of
+$X\cup\{0\}$. The maximum is defective, hence $\rho_X\le\mu_X$.
+The inherited bounds are $\rho_X\ge-8$ universally, $\rho_X\ge0$ for
+$r\ge14$, and, for non-progression support,
+\[
+ \mu_X\ge r-3,\qquad \rho_X\ge f(r),\qquad
+ f(r)=\begin{cases}r-14&14\le r<17,\\r-5&r\ge17.\end{cases}
+\]
+The exact budget is
+\begin{equation}\label{budget}
+ \rho_P+\rho_Q+2\vartheta+c+\T=\Omega,
+ \quad c=2|2D|+18d+85-|\FS(D)|,
+ \quad\T=\kappa+\ell_1+\ell_2+g,
+\end{equation}
+with $\kappa=|\FS(P)-\FS(Q)|-|\FS(P)|-|\FS(Q)|+1$.
+The slack quantities $\vartheta,c,\kappa,\ell_1,\ell_2,g$ are nonnegative. Only after proving the common lattice for
+$D_1,D$ may we use
+\begin{equation}\label{sharp}
+ w\le4z,\quad \T\ge\kappa+152-3z,\quad
+ \T\ge\max(51,z,152-2z),\qquad z=h_P+h_Q-\kappa.
+\end{equation}
+
+Here $w$ denotes the number of hull holes of $\FS(D)$. In particular, $z=0$ makes its two target sides complete integer intervals.
+
+\section{Primitive normalization repairs the inverse test}
+The deficient-sign check is $1+T_{73}=2702>24\cdot89+77=2213$.
+The paired bootstrap has $q^2\le2752$, even $q\le52$, and hence
+$a,b\ge10$. Sizes below 13 have $\Omega<-8$ and are impossible.
+For sizes $13,59$, $\Omega=17$. A non-progression larger side costs at
+least $54-8>17$. Otherwise its progression support forces one residue and
+no long gap, since $T_{59}>25$; then $z=0$. The inner comparison, with the
+mandatory small-prefix correction, is bounded by $C+3(\Omega+8)+16<0$;
+the outer comparison is also strict. Formula~\eqref{sharp} would give
+$\T\ge152>25$, a contradiction.
+
+For $a,b\ge14$, the larger-side strict inverse margin is at least 118.
+When both supports are non-progressions, the sufficient smaller-side test is
+\begin{equation}\label{strict}
+ \mu_P+\rho_P+\rho_Q>\Omega-T_a+2,
+ \qquad a\le b.
+\end{equation}
+Its floor margin can be as small as $-21$, and fails exactly for
+$20\le a\le27$. We treat actual failure of \eqref{strict}, not just failure
+of its conservative floor test.
+
+\begin{lemma}[Primitive form of the scheduled hole bound]\label{primitive}
+The variable-threshold persistent-hole theorem in \cite{schedule} remains
+valid for a primitive positive integer set without the upper hypothesis
+$h_X<|\FS(X)|-1$.
+\end{lemma}
+\begin{proof}
+That upper hypothesis is used only to deduce primitivity. With primitivity
+given, $h_X>0$ excludes progression support. For a proposed lower defect
+$B$, the same schedule checks the following inequalities:
+\begin{gather*}
+ 18\le L\le r,\quad 2\beta_i<z,\quad 2\beta_i+4\le i,\quad\beta_i\ge2,\\
+ B\le T_{L-1}-r-1,\quad B\le T_i+i-6\beta_i-r-7,
+ \quad B\le L-6+\sum_{i=L}^r(\beta_i-1).
+\end{gather*}
+Assuming $\rho_X<B$, the first escape excludes a late progression prefix;
+the recurrence $\rho_i\ge\rho_{i-1}+y_i-2$ then either gives the last
+inequality's contradiction or supplies a small-increment prefix.
+The small-increment inverse writes that prefix as $tY$, with
+$\max Y\le i+\beta_i$. A later first coefficient off $t\Z$ produces
+disjoint translates and violates the same escape bound. Primitivity gives
+$t=1$. The central interval theorem supplies only endpoint holes, at most
+$2\beta_i$ in total. The second escape excludes every later large jump;
+all subsequent central intervals join and preserve those endpoint holes.
+This contradicts $h_X\ge z>2\beta_i$. None of these steps uses an upper
+bound on $h_X$.
+\end{proof}
+
+If \eqref{strict} fails, put
+\[
+ R=\Omega-T_a+2-(a-3)-(a-5),\quad K=\Omega-62,
+ \quad U_{\min}=T_a+a-2,\quad U_{\max}=K+3,\quad V_{\min}=T_b+b-2.
+\]
+Then $\rho_Q\le R$, $\kappa\le K$, and
+$U_{\min}\le|\FS(P)|\le U_{\max}$, $|\FS(Q)|\ge V_{\min}$.
+Normalize the initially integralized $Q$ by its own gcd. Apply
+Lemma~\ref{primitive} with $z=7$, $L=18$, and constant threshold $\beta_i=3$:
+these schedules give $B=2b-22$, each a defect lower
+bound greater than $R$. Thus $h_Q\le H=6$ on this intrinsic lattice.
+The values of $R$ for $a=20,\ldots,27$ are
+$50,58,63,65,64,60,53,43$.
+
+Here is the complete alignment argument. Let $U=\FS(P)$, $V=\FS(Q)$,
+$u=|U|$, $v=|V|$, and $A,B$ their diameters. If $U$ occupied $s$ residue
+classes modulo this lattice, residue-wise sumset counting would give
+$\kappa\ge(s-1)(v-1)$. Since $V_{\min}-1-K>0$, there is only one
+class; zero belongs to it. Thus $P$ is also integral. If $A>B$, the two
+endpoint translates $V$ and $A+V$ are disjoint, forcing
+$v\le u-1+\kappa$, contrary to $V_{\min}-U_{\max}-K+1>0$.
+Hence $A\le B$. The two endpoint hulls cover the sum hull, so
+\[
+ |U+V|\ge A+B+1-2h_Q=A+v-h_Q,
+ \qquad h_P\le\kappa+H.
+\]
+The further margins $V_{\min}-K-H-2>0$ and $U_{\min}-H-2>0$
+give $\max(A,B)\le u+v-3$. Stanchescu's Theorem 4
+\cite{stanchescu} therefore gives the exact bounds
+$h_P,h_Q\le\kappa$. Its diameter hypothesis includes the equal-diameter
+case and requires no extra individual gcd assumption.
+The sum hull also gives $z\ge0$, while $z\le\min(h_P,h_Q)\le6$.
+
+The four minimum margins, in the order used above, are
+\[674,\qquad270,\qquad667,\qquad220.\]
+The pre-lattice inner bound is now
+$C+\Omega+2H<0$, and the outer margin is at least 473. Thus lattice
+propagation is complete before using \eqref{sharp}. It gives
+\[
+ \kappa\le\Omega-62-152+18<U_{\min}-1,
+\]
+with strict surplus at least 115. Consequently both side-hole bounds are
+strict, and both sides are primitive. This closes all 16 oriented repairs.
+The derivation uses the general short-diameter method recorded in the
+archived structural notes \cite{archive}; no archived endpoint certificate
+or unreviewed endpoint conclusion is imported.
+
+\section{Early retention closes the remaining lattice comparison}
+Write $F_0=|\FS(E)|$ and $F_1=|\FS(D_1)|$.
+For the actual strict-inverse branches, the common core lattice and strict
+side-hole bounds already hold. The inherited comparisons are
+\[
+ F_1-2F_0\le\min\{C+\Omega+\rho-\mu+2z,
+                         C+3\Omega-\rho-\mu\},
+ \quad\rho=\rho_P+\rho_Q,\quad\mu=\mu_P+\mu_Q.
+\]
+The first is at most $-337-2I+2z$, hence strict for $z\le168+I$.
+For $z\ge Z=169+I$, the basic defect and support floors settle most
+orientations. On every remaining side $X$ of size $r$, the pre-lattice
+budget itself gives
+\[
+ \rho_X\le B=\Omega-f(72-r)-Z<T_{r-1}-r-1.
+\]
+The exact verifier checks this strict escape for both sides in every
+remaining orientation. It uses neither $G=152$ nor a sharp peeling bound.
+
+The final prefix translates must intersect. Indeed disjointness would give
+$y_r\ge1+T_{r-1}-r$ and, from $\rho_{r-1}\ge0$,
+$\rho_r\ge T_{r-1}-r-1>B$. If $Y=X\setminus\{\max X\}$,
+intersecting hulls imply $h_X\le2h_Y$. Maximum removal therefore gives
+\[
+ \max X\le r+\rho_X+h_X+2-\rho_Y-h_Y
+          \le r+\rho_X+h_X/2+2.
+\]
+Insert this on both sides in the original inner comparison:
+\[
+ F_1-2F_0\le C+2\rho-\mu+z+\ell_2
+ \le C+\Omega+\rho-\mu\le-337-2I<0.
+\]
+The middle step uses $\rho+\kappa+\ell_2\le\Omega$ and $z\le\kappa$.
+This proves the missing integrality without a circular lattice assumption.
+For a side of size 14, use the universal prefix floor $-8$ and add 16
+to the conservative comparison; $C+3\Omega+16<0$ still holds.
+The outer margin is always $473+2I>0$.
+
+\section{Progression supports and small surviving sides}
+The progression-support repair of \cite{schedule,previous} is repeated
+with the new constants. An AP side of size at least 36 has support length
+at least $T_{36}=666>\Omega$. Residue counting and the exact formula
+\[
+ |W+[0,u-1]_{\Z}|=|W|+u-1+
+       \sum_i\min(w_{i+1}-w_i-1,u-1)
+\]
+force one lattice residue and no clipped gap, giving $z=0$.
+For a smaller AP side, $\Omega<2T_a$ and $\Omega-T_a\le102$.
+A unique clipped gap or a sole off-lattice coefficient makes the last
+support translates on the other side disjoint. Here the clipping or
+residue cost already gives $\kappa\ge T_a$; retaining it yields the
+strict contradiction
+\[
+ T_a+T_{b-2}+2-2b>\Omega.
+\]
+This extra $T_a$ must not be dropped at the balanced end of this argument.
+
+The remaining two-residue case has at least two off-lattice coefficients
+and residue order two. In half-step normalization $U=2[0,u-1]$, let
+$w$ be the least odd coefficient of $Q$. The inherited fiber identities are
+\[
+ \kappa=u-1+h_0+h_1,\quad h_P=u-1,\quad
+ h_Q=\kappa-u+w,\quad z=w-1,
+ \quad\mu_Q+\kappa=\sum Q+u-w-T_b.
+\]
+If there are $s\ge2$ odd coefficients, distinctness gives
+$\sum Q\ge(b-s)(b-s+1)+sw+s(s-1)$.
+The exact mass comparison first excludes $w>u$. If $w\ge15$, its quadratic
+minimum gives $\sum Q-w-T_b\ge7b-289/8$, whereas the budget gives
+at most $2b+99$. This is a strict contradiction throughout the relevant
+range. Thus $w\le13$ and $z\le12$.
+The pre-lattice inner comparison is
+\[
+ F_1-2F_0\le2483+2a-4T_a-2T_b\le-1021.
+\]
+The outer comparison is strict, so \eqref{sharp} now applies:
+$\T\ge T_a+116$ contradicts $\Omega-T_a\le102$, with surplus 14.
+Surviving AP cases have $z=0$; their side-hole bounds are strict after
+$\kappa\le\Omega-152$. Finally, for positive holes and a side below 17,
+apply the scheduled bound only to the larger side. The scalar budget
+excludes every such candidate. All surviving positive-hole sides have
+size at least 18.
+
+\section{Post-lattice retention and exclusion of a single hole}
+The prefix-retention lemma of \cite{previous} extends to $r-q\ge14$:
+under $\rho_X\le B<T_{r-q}-r-1$, each last $q$ prefix step intersects,
+primitivity and non-progression persist, and
+\[
+ h_{X_{r-j}}\ge2^{-j}h_X,\quad
+ \rho(X_{r-j})\ge f(r-j),\quad\mu(X_{r-j})\ge r-j-3.
+\]
+The same backwards proof works because the escape uses only the
+nonnegative prefix defect from size 14. At sizes 14--16 the sharp
+$r-j-5$ defect floor is replaced by the actual $f(r-j)$.
+The support-excess floor remains valid there. For the endpoint,
+$q=2$ is licensed at every surviving positive-hole state, with minimum
+surpluses 39 and 15 for the first and second steps. The smallest first
+prefix has size 17, so the span still uses the sharp first-prefix floor.
+
+\begin{lemma}\label{onehole}
+If an integer subset-sum support has exactly one hull hole, its final
+prefix translates are disjoint.
+\end{lemma}
+\begin{proof}
+Take the first coefficient $x$ that fails interval coverage, and let $L$
+be the total of its predecessors. Their support is $[0,L]$, and
+$x\ge L+2$. The missing value $L+1$ cannot be filled by later positive
+coefficients. Since complement symmetry fixes the unique hole, the final
+total is $2L+2$. Any later coefficient would exceed $x$ and make this total
+larger than $2L+2$. Thus $x$ is final, equals $L+2$, and its translate
+is disjoint from $[0,L]$.
+\end{proof}
+For $Y=X_{r-1}$, the second retained step intersects. Since $Y$ is
+primitive and non-progression, it has positive holes; Lemma~\ref{onehole}
+strengthens this to $h_Y\ge2$.
+
+Let $\delta=c-81j$ for $j$ empty ordinary units. The ordinary retained
+span and this additional two-hole floor give, respectively,
+\begin{align}
+ R_p+R_q+\delta-3z&\le410-I-81j,\label{spanhalf}\\
+ R_p+R_q+\delta-4z&\le406-I-81j.\label{span2}
+\end{align}
+Indeed maximum removal and the budget give
+$R_p+R_q+c\le470-I+4z-(\rho_{P'}+\rho_{Q'})-(h_{P'}+h_{Q'})$;
+the first subtraction is at least $m-12=60$, and the second is at least
+both $z$ and 4. The second row is new and is stronger when $z<4$.
+
+For one side, with coordinates $(R,x_1,x_2,x_3,M)$ and total mass $S$,
+the former half-hole mass rows are retained. Two additional necessary rows are
+\begin{align}
+ M+4R-S&\le-T_{r-1}-6-(r-4)-2,\\
+ R+x_1+x_2+x_3+M-S&\le-T_{r-1}-(r-4)-2.
+\end{align}
+Both follow from $\sum X_{r-1}=T_{r-1}+\mu_{r-1}+h_{r-1}$.
+The two-prefix mass row still uses $\mu_{r-2}\ge r-5$; at $r=18$
+this is a support-excess statement for size 16, not the unproved sharp
+defect statement for size 16.
+
+\section{Core overlap across the original covering groups}
+Two ordinary centers from different original groups can coincide or be very
+close.
+For example, the centers labelled $p5$ and $p8$ are equal when
+$p_1-q_2=2p_2$. Grouping only consecutive own or cross centers misses this
+possible repeated coverage.
+
+Here is a uniform bound which does not assume coincidence. Let two contributing
+ordinary centers $u,v$ belong to the same target side. Their full translates
+have size $d$, and their core translates have size $e$. Put
+$\lambda_u=|(u+D)\setminus F|$, $\lambda_v=|(v+D)\setminus F|$ for that
+target $F$. The two translated cores fit in an integer interval of at most
+$R_p+R_q+|u-v|+1$ points. Adding the $2(d-e)$ labelled tail points gives a
+container for both full translates. This container includes all the points
+counted by either member loss. Thus their common deficit satisfies
+\begin{equation}\label{corepair}
+ 2d-|((u+D)\cup(v+D))\cap F|
+ \ge 2e-R_p-R_q-|u-v|-1+\max(\lambda_u,\lambda_v).
+\end{equation}
+Here and below the union is intersected with $F$ as a whole.
+The centers are integral because each contributes to the integer target and
+$D$ is integral; no unproved integrality of all original outer elements is needed.
+
+Let $L_{\rm rest}$ be the sum of the other ordinary member losses and let
+$L_{\rm fixed}$ be the fixed-label loss already separately justified.
+By bounding the full covering union with this pair union and the other
+labelled sets, its remaining deficit obeys
+\[
+ \delta\ge 2e-R_p-R_q-|u-v|-1+
+          \max(\lambda_u,\lambda_v)+L_{\rm rest}+L_{\rm fixed}.
+\]
+Each model loss variable is at most its corresponding actual loss, so replacing
+actual losses by those variables preserves necessity. For every unordered
+pair on the same target side, write $u-v$ in the eight positive outer-gap
+coordinates. If all coefficients have one sign, that order is proved and
+the two member-loss rows are inserted directly in the root model. Otherwise
+the checker supplies both center orders $u-v\ge0$ and $u-v\le0$. In each branch it inserts the two rows choosing
+one member loss at a time. Their union is exhaustive even at equality.
+These pair bounds are alternatives; they are never summed as independent
+savings for overlapping pairs.
+In the matrix convention $Ax\le b$, the hull-width and distance coefficients
+are negative:
+\[
+ -R_p-R_q-|u-v|-\delta+L_{\rm rest}+\lambda_u
+ \le 1-2e-L_{\rm fixed}.
+\]
+This sign is also checked by evaluating the generated rows on actual sets.
+ The binary certificate tree selects a valid
+bound while preserving both order branches.
+
+\paragraph{Absorbing peeled points into the same container.}
+The pair estimate admits a further strengthening without adding score
+indicators. Orient the centers as $u>v$ and put $\Delta=u-v$.
+On the target side $s$, let $X_1<X_2<X_3<X_4$ be the four positive
+peeled coordinates outside the core, whose positive endpoint is $R_s$.
+If $X_k\le\Delta+R_s$, the first $k$ positive peeled points of $v+D$
+already lie inside the two-core hull. They should not be counted again
+among its $2(d-e)$ additional labelled points. The right side of
+\eqref{corepair} therefore increases by $k$. Similarly, if $Y_k\le
+\Delta+R_t$, the first $k$ negative peeled points of $u+D$ are already
+inside the hull, where $t$ is the opposite side.
+
+For each ordered pair and each such coordinate $X_k$, the verifier uses
+exactly the two alternatives
+\[
+ \Delta+R_s-X_k\ge0,\qquad \Delta+R_s-X_k\le-1.
+\]
+These are exhaustive because contributing centers and all peeled-layer
+coordinates are integers. In the first branch $X_k>R_s$ already implies
+$\Delta>0$, so both the orientation and the strengthened pair inequality
+are justified. The second branch makes no extra gain claim. The negative
+peeled coordinates use the same argument with $R_t$. Gains from different
+thresholds are not added; each accepted row is one complete container bound.
+The general proof is supplemented by 199,624 checks of these generated
+matrix rows on actual finite sets.
+
+\paragraph{Joint absorption and disjoint pairs.}
+The positive peeled points of the lower translate and the negative peeled
+points of the higher translate are distinct families of labels. Thus their
+absorption counts $A_+,A_-\in\{0,\ldots,4\}$ may be added within the
+same container estimate. Alternative thresholds for the same family provide
+a maximum count, not a sum. For the two distinguished pairs $(p5,p8)$ and
+$(q5,q8)$ in the exceptional A-mode, both center orders carry these two
+bounded counts. The threshold $\Delta+R_s-X_k\ge0$ forces $A_+\ge k$;
+its complement forces $A_+\le k-1$, and the negative family is analogous.
+
+Let $I_s$ be the actual intersection size inside the target interval for
+one of these pairs. Since its pair deficit equals $\lambda_u+\lambda_v+I_s$,
+\eqref{corepair} with both absorption counts gives
+\[
+ I_s\ge2e-R_p-R_q-|u-v|-1+A_++A_- -\min(\lambda_u,\lambda_v).
+\]
+Each member yields one necessary linear lower bound for $I_s$. In this
+zero-hole mode the lower and upper tail counts sum to the exact member loss.
+The two selected pairs use disjoint ordinary labels, so their intersections
+can both be charged:
+\[
+ \delta\ge L_{\rm fixed}+\sum_{\rm ordinary}\lambda_v+I_p+I_q.
+\]
+This follows by bounding the full union by the two pair unions and all
+remaining individual sets. It does not add deficits from overlapping pairs.
+Actual-set checks include 27,108 joint-absorption rows and 2,259 disjoint-pair
+allocations.
+
+\paragraph{Two-way extreme-point quantiles in the zero-hole band.}
+Write $Y^{(i)}$ for the $i$th largest negative magnitude and $X^{(i)}$
+for the $i$th largest positive coordinate of $D$. The nested coordinates
+provide these values for $1\le i\le6$. For a contributing center $c$ and
+target interval $[1,S]$, use the actual lower and upper tail counts $l,u$.
+The following are exact exhaustive alternatives:
+\begin{align*}
+ &(c-Y^{(i)}\le0,\ l\ge i)
+       &&\text{or }(c-Y^{(i)}\ge1,\ l\le i-1),\\
+ &(c+X^{(i)}-S\ge1,\ u\ge i)
+       &&\text{or }(c+X^{(i)}-S\le0,\ u\le i-1).
+\end{align*}
+For example, if $c-Y^{(i)}\ge1$, all but at most the $i-1$ smaller
+translated points are positive. This proves the first upper bound; the
+other three statements follow by the same ordering argument. All thresholds
+are integral. The old one-way alternatives had omitted the companion
+position condition and the opposite upper count bound. Adding both retains
+the same number of binary alternatives but excludes fictitious tail losses.
+These strengthened alternatives are used only when $z=0$, so no unproved
+exact-loss transport across positive-hole bands is required. Positive-hole
+models retain their earlier one-way disjunctions. There are 108,432 finite
+checks of the two-way statement on actual translated sets.
+
+\paragraph{Count only outer-pair labels outside the central two-sum hull.}
+Let the four positive peeled coordinates be $X_1<X_2<X_3<X_4=M_p$,
+and similarly $Y_1<Y_2<Y_3<Y_4=M_q$. Every sum in $2D$ outside
+\[
+ H=[-M_q-R_q,\ M_p+R_p]_{\Z}
+\]
+uses two positive peeled coordinates, or two negative peeled coordinates.
+Mixed-sign sums and any same-sign pair containing a core point lie in $H$.
+Let $J_p$ count the ten unordered positive pair labels $i\le j$ for which
+$X_i+X_j>M_p+R_p$, and define $J_q$ analogously. Labels may coincide;
+counting them separately is a valid upper bound. Thus
+\[
+ |2D|\le M_p+M_q+R_p+R_q+1+J_p+J_q,\qquad 4\le J_p,J_q\le10.
+\]
+The four labels containing $X_4$ or $Y_4$ always lie outside the respective
+endpoint. Only the six labels among the first three coordinates need tests.
+
+For $1\le i\le j\le3$, let $A_{ij}$ count pairs $(k,l)$ with
+$1\le k\le l\le3$, $k\le i$, $l\le j$, and let $B_{ij}$ count those
+with $k\ge i$, $l\ge j$. If $X_i+X_j\le M_p+R_p$, at least $A_{ij}$
+labels are inside, so $J_p\le10-A_{ij}$. Otherwise integrality gives
+$X_i+X_j\ge M_p+R_p+1$ and $J_p\ge4+B_{ij}$. These two branches are
+exhaustive; the negative side is identical. They use two bounded count
+variables and twelve binary thresholds in total. In particular, if
+$2X_3\le M_p+R_p$ and $2Y_3\le M_q+R_q$, the additive constant 21 in
+the old hull estimate becomes 9. A further 27,108 finite threshold checks
+and the corresponding actual two-sum sets supplement this general proof.
+
+\paragraph{Deduplicate external pair labels in an interval union.}
+The two exceptional four-empty modes also use six cuts
+$(i,h)\in\{(3,1),(1,3),(3,2),(2,3),(2,2),(3,3)\}$.
+Put $X_0=R_p$, $Y_0=R_q$ and use the four peeled coordinates as above.
+After retaining the hull $C=[-Y_h,X_i]_{\Z}$, the external points are
+$T=\{X_{i+1},\ldots,X_4,-Y_{h+1},\ldots,-Y_4\}$, of size $k=8-i-h$.
+All non-external-pair sums lie in
+\[
+ U=2C\ \cup\ \bigcup_{t\in T}(t+C).
+\]
+With $W=X_i+Y_h$, the integer interval union has size
+\[
+ |U|=2W+1+\sum_{j=i+1}^4\min(W+1,X_j-X_{j-1})
+             +\sum_{j=h+1}^4\min(W+1,Y_j-Y_{j-1}).
+\]
+Indeed the positive translated intervals extend the right end in increasing
+order, each adding the smaller of its shift and its length; the negative
+intervals do the same on the left. Their added parts are on opposite sides
+of the central interval. Consequently
+\[
+ |2D|\le |U|+\frac{k(k+1)}2-
+     \#\{\text{unordered external-pair labels whose sum belongs to }U\}.
+\]
+Every deducted label was counted once by the pair-label bound and already
+belongs to the interval union; coinciding labels cause no difficulty.
+
+Membership in each interval is two linear inequalities. The verifier
+reconstructs all 45 pair labels and 78 nontrivial integer membership guards;
+known signs are proved from positive nested gaps. A guard $f\ge0$ is
+encoded by the exhaustive alternatives $f\ge0$ and $f\le-1$.
+When both endpoint guards of any interval hold, its pair-membership variable
+is forced to one. The minimum terms in $|U|$ use auxiliary variables bounded
+above by both entries, with the actual minima providing a necessary model
+assignment. There are 10,800 actual-set checks of the complete envelope.
+For $(i,h)=(3,3)$, this removes the extra count for $M_p-M_q$ whenever
+that mixed sum already lies in $[-2Y_3,2X_3]$.
+
+\section{Covering domain and verification boundary}
+The model reconstructs all ordinary contributor modes and integer row-lattice
+witnesses from \cite{previous}. Quantile thresholds now are global $81/80$,
+core $77/76$, and leading $161$, $153$, $151$. A group's actual cap decides
+which rows are licensed; the high-hole cap 184 does not uniformly license
+the basic leading rows. The cardinality row has right side $1542-81j$.
+Low holes are partitioned as follows:
+\begin{center}\begin{tabular}{crrr}\toprule
+Band&$z$&combined defect floor&cap before $I+81j$\\\midrule
+Z&0&0&394\\
+P&1--2&62&336\\
+Q&3--4&74&328\\
+R&5--14&93&313\\\bottomrule
+\end{tabular}\end{center}
+The P and Q caps exceed $4d=324$, so both four-empty families must
+be retained. For R, keeping the same $z$ in the defect estimate proves
+\[
+ \rho_P+\rho_Q-2z\ge81\qquad(17\le a\le55,\ 5\le z\le14).
+\]
+The 390 integer cases each carry an effective-hole witness, an integer
+inverse witness and a scheduled-hole witness; use the largest proved side
+floor and then subtract this actual $2z$. Combining with
+$\T\ge152-2z$ yields $c\le394-I-81=313-I<4d$.
+Taking the defect minimum and hole maximum independently had only given
+$329-I$. The coupled comparison removes the entire R4 family before covering
+models are built. High-hole states allow two empty units; these are also
+present. Each low band transports $z$ to its upper endpoint while increasing
+both target masses by the same amount. Every model row is checked for
+preservation under that transport. High groups keep a common hole variable,
+with all three coupled budget caps, and every actual state's rows imply
+the target group's rows.
+
+The full-translate losses and inherited ordinary disjunctions remain as in
+\cite{previous}. The core-overlap rows, absorbed-tail dichotomies, two-way quantiles and
+two outer-pair count variables strengthen this endpoint model. The inherited
+110-score indicator extension, order rows and sign clauses are retained
+only in the two exceptional zero-hole four-empty modes; all of their
+hypotheses and complete score dichotomies remain as in \cite{previous}.
+The eight already justified high fixed-label losses
+remain charged where their hypotheses hold. Every tree has both children;
+only exact nonnegative integer multipliers with $wA\ge0$ and $wb<0$ certify
+a leaf. The standard-library checker reconstructs the complete root universe.
+Numerical optimization discovers weights but has no role in acceptance.
+
+\section{Exact obstruction and completed verification}
+The unresolved root is
+\path{Z4:A:pair1,pair2,p0,q0:-:-}, with $a=b=36$.
+The file \path{data/upper88_relaxation_witness.json} contains a rational
+assignment to all 450 model variables and a branch choice for every available
+dichotomy. The standard-library checker verifies nonnegativity, all 1,619
+root rows and all 1,420 rows in the 682 selected alternatives using
+\texttt{fractions.Fraction}. There is no floating-point tolerance.
+
+\begin{proposition}
+The current root relaxation and its listed dichotomies cannot exclude this
+root by any complete tree of their nonnegative linear certificates.
+\end{proposition}
+\begin{proof}
+The same rational point satisfies the root and at least one alternative of
+every listed dichotomy. Follow a satisfied child at each node of any complete
+finite tree. The point satisfies every inequality at the resulting leaf,
+so nonnegative linear combination cannot give a strict contradiction there.
+\end{proof}
+This point is a feasible point of a necessary relaxation. It is not asserted
+to represent an actual feasible set for the original subset-sum problem.
+Extending the same search cannot remove this obstruction; a new necessary
+constraint or a stronger mathematical reduction is needed.
+
+The full candidate universe has 61,884 groups and 641,524 integer systems.
+The supplied partial certificate covers 3,651 groups and 95,443 integer roots,
+leaving 58,233 groups outside this certificate. It uses 387 integer weight
+vectors, 3,703 symbolic intervals and 38 binary nodes; its 95,481 final leaf
+systems have minimum normalized strict gap $1/46$. There are 3,354 coarse
+and 297 nested groups, 30 tree roots, and maximum tree depth two.
+Every child of each included binary split is verified. The uncovered root
+is explicitly required to be absent from the partial certificate.
+
+The scalar audit checks 45 main lattice orientations, 16 intrinsic repairs,
+50 early retention cases with minimum strict surplus 135, and 5,876 later
+side/state prefix budgets. The two high-group row audits check 2,274,424
+implications. Eleven negative controls include treating a partial certificate
+as complete, omitting a witness branch, choosing a wrong branch, and altering
+a witness coordinate. A separate program evaluates the emitted geometric
+rows on 150 actual finite sets, checking 48,734 root-pair, intersection,
+absorption, outer-pair, quantile and disjoint-allocation statements.
+
+\paragraph{Execution record.}
+The standard and \texttt{-O} progress outputs are byte-identical.
+The complete numerical expansion of the supplied partial certificate is
+recorded separately in eight batches; it concerns only the 95,443 supplied
+integer roots, not the entire candidate universe. Final execution receipts,
+source hashes and compressed outputs are stored in
+\path{results/2026-10-18/upper88_progress/}.
+The upper-89 foundation replay is byte-identical to its previous archive.
+The archived upper bound 84 has not been independently replayed in full.
+The general arguments above are written mathematical proofs; finite checks
+supplement their review and are not proof-assistant formalization.
+
+An earlier exploratory model placed the hull-width coefficients on the
+wrong side of the pair inequality. That search was withdrawn before any
+certificate or upper-bound claim was published. The corrected signs are
+displayed above and checked directly on actual-set matrix assignments.
+The unsuccessful searches are not counted as successful proof runs.
+
+\paragraph{Reproduction.}
+From the repository root run
+{\footnotesize
+\begin{verbatim}
+python -I -S -B verification/upper88_progress.py --output .work/progress.json
+python -I -S -B experiments/verify_upper88_geometric_rows.py --output .work/rows.json
+\end{verbatim}
+}
+The first program reports \texttt{PASS\_PROGRESS\_ONLY}.
+It never asserts $N\le88$. Windows users may run
+\path{verify_upper88_progress_windows.bat}.
+The optional \path{experiments/search_upper88_candidate.py} needs NumPy and
+SciPy; all acceptance checks use only Python's standard library.
+Compile this report twice with XeLaTeX.
+
+\begin{thebibliography}{9}
+\bibitem{previous} Project report, \emph{Compatible defects, retained prefixes,
+and the audited bound 89}, \path{upper89_from90_20261018.tex}.
+\bibitem{schedule} Project report, \emph{Variable-threshold persistent holes},
+\path{upper90_from91_20261018.tex}, Sections 2--3.
+\bibitem{foundation} Project report, \emph{From 115 to 103},
+\path{upper103_from115_20261014.tex}.
+\bibitem{archive} Archived structural notes,
+\path{verification/upper84/progress85/inverse/proof85_inverse.md},
+Sections 3--4. Method source only; endpoint conclusion not imported.
+\bibitem{stanchescu} Y. Stanchescu, \emph{On addition of two distinct sets of
+integers}, Acta Arithmetica \textbf{75} (1996), 191--194,
+Theorem 4 and Corollary 2. \url{https://doi.org/10.4064/aa-75-2-191-194}.
+\end{thebibliography}
+\end{document}

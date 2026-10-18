@@ -1,0 +1,9 @@
+{
+  "format": "gzip",
+  "gzip_mtime": 0,
+  "original_bytes": 9368937,
+  "stored_bytes": 293253,
+  "original_sha256": "e627c9977dd1d079bed9b6717d6427d214fd9344387cce3a8221e2dc6f7284d9",
+  "stored_sha256": "a08b339b25e07f81a1f5328288212d92433a224979e9fff26b93b59924a81e80",
+  "round_trip_identical": true
+}

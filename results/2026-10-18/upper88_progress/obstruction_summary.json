@@ -1,0 +1,12 @@
+{
+  "status": "EXACT_RELAXATION_WITNESS",
+  "group": "Z4:A:pair1,pair2,p0,q0:-:-",
+  "a": 36,
+  "variables": 450,
+  "root_rows": 1619,
+  "disjunctions": 682,
+  "selected_branch_rows": 1420,
+  "all_arithmetic": "fractions.Fraction",
+  "implication": "The current relaxation and all listed dichotomies cannot exclude this root.",
+  "limitation": "This is not a feasible set or a counterexample to the original problem."
+}

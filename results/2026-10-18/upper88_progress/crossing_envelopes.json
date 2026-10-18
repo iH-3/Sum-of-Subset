@@ -1,0 +1,12 @@
+{
+  "cuts": 6,
+  "guards": 78,
+  "pair_labels": 45,
+  "cases": 1800,
+  "checks": 10800,
+  "inside": 33796,
+  "outside": 47204,
+  "strict_improvements": 10521,
+  "seed": 20261018,
+  "scope": "Finite sanity checks; general proof counts the labelled pairs outside the hull union"
+}

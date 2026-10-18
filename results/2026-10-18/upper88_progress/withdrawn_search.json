@@ -1,0 +1,5 @@
+{
+  "status": "WITHDRAWN",
+  "reason": "Incorrect signs for core hull width and center distance in matrix rows; set-level inequality itself is valid. Both computations interrupted, no certificate bundle accepted or published.",
+  "corrected_at": "2026-10-18T00:06:24.392466+00:00"
+}

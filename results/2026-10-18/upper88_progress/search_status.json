@@ -1,0 +1,10 @@
+{
+  "status": "INCOMPLETE",
+  "global_bound_changed": false,
+  "scope": "Exploratory search before final module renaming; its completed groups were independently checked by the released progress verifier.",
+  "exit_code": 1,
+  "seconds": 222.845,
+  "reason": "A feasible rational point survives all available dichotomies at the balanced Z4 A root.",
+  "exact_obstruction": "../../../data/upper88_relaxation_witness.json",
+  "not_counted_as_proof_success": true
+}

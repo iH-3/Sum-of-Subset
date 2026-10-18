@@ -1,0 +1,17 @@
+{
+  "core_pair_checks": 27108,
+  "matrix_row_checks": 27108,
+  "absorbed_tail_checks": 199624,
+  "two_way_quantile_checks": 108432,
+  "strict_overlap_examples": 45,
+  "seed": 20261018,
+  "outer_pair_hull_checks": 27108,
+  "joint_absorption_checks": 27108,
+  "disjoint_pair_checks": 2259,
+  "single_hole": {
+    "subsets": 65535,
+    "single_hole_sets": 12,
+    "positive_hole_overlaps": 51799
+  },
+  "scope": "Finite sanity checks supplement the arbitrary-set container and single-hole proofs"
+}

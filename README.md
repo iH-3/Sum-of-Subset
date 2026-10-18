@@ -15,6 +15,8 @@
 
 ## 先读什么
 
+- **[89元端点进展报告 PDF](reports/upper88_progress_20261018.pdf) · [LaTeX 源码](reports/upper88_progress_20261018.tex)**：R段局部预算由`329−I`收紧到`313−I`，排除整个R4家族；3,651个结构组已有精确部分证书。剩余平衡模式有满足全部1,619行及682个二分的有理松弛见证，故本轮**全局上界仍为89，未证明88**。
+
 - **[90→89 续研报告 PDF](reports/upper89_from90_20261018.pdf) · [LaTeX 源码](reports/upper89_from90_20261018.tex)**：缺陷相容性简化格化，前两层前缀保留加强跨度与质量行，评分顺序及46条符号约束补强固定损失；1,534组整数证书覆盖441,243个最终叶系统。
 - **[91→90 续研报告 PDF](reports/upper90_from91_20261018.pdf) · [LaTeX 源码](reports/upper90_from91_20261018.tex)**：变阈值前缀递推、分阶段格化、完整平移的共同损失和固定项指标；995组整数证书覆盖372,137个最终叶系统，全部逐点核验通过。
 - **[92→91 续研报告 PDF](reports/upper91_from92_20261017.pdf) · [LaTeX 源码](reports/upper91_from92_20261017.tex)**：9页；加强持续空洞递推、等差／非等差分支、整数中心基与删去极值后的双和集截断。4,130组整数证书覆盖274,476个最终叶系统，全部逐点核验通过。
@@ -320,3 +322,20 @@ pdflatex -output-directory reports reports/upper95_from96_20261016.tex
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=reports reports/upper89_from90_20261018.tex
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=reports reports/upper89_from90_20261018.tex
 ```
+
+## 2026-10-18：89元端点的局部改进与精确障碍
+
+本轮优化了格化顺序：在较大侧自己的本原格上修复16个失败逆定理方向，先证明前缀平移相交，再使用格上剥离预算。保留同一个空洞参数的390项见证给出`ρP+ρQ−2z≥81`，将R段预算从`329−I`改进到`313−I<4d`，提前排除整个四空单元R4家族。
+
+覆盖方法新增核心重叠、剥离点吸收、零空洞的双向分位约束、两重和集的区间外计数及区间并集去重。两个特殊零空洞模式仍保留原有固定评分约束。
+
+[进展验证器](verification/upper88_progress.py)检查387组整数权重，排除3,651个结构组、95,443个整数根系统；38个二分节点产生95,481个最终叶系统。8批逐整数展开与符号区间结果一致，普通及`-O`输出逐字节一致。另有48,734项检查将生成的几何矩阵直接代入实际集合。
+
+**这些是部分证书。** 完整候选域有61,884组、641,524个整数根系统，仍有58,233组不在该证书中。尤其，[精确松弛见证](data/upper88_relaxation_witness.json)在`a=b=36`满足450个变量的非负性、1,619条根行及682个二分中的一个子分支。因此，继续搜索同一套约束不能排除该模式，需要新的必要条件。这不是原问题的可行集合或反例；全局范围继续保持`71≤N≤89`。
+
+```bash
+python -I -S -B verification/upper88_progress.py --output .work/upper88-progress.json
+python -I -S -B experiments/verify_upper88_geometric_rows.py --output .work/upper88-geometric-rows.json
+```
+
+Windows可运行`verify_upper88_progress_windows.bat`。结果标记为`PASS_PROGRESS_ONLY`，不会把部分覆盖记为全局证明。完整数据、负面控制、逐批输出和执行回执见[results/2026-10-18/upper88_progress](results/2026-10-18/upper88_progress/)。
