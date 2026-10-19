@@ -1,0 +1,73 @@
+{
+  "schema": "upper84-adoption-results-v1",
+  "baseline_commit": "0a06472312397b0ab61b4aebd297d74b519b0567",
+  "previous_independently_reviewed_upper": 85,
+  "new_independently_reviewed_upper": 84,
+  "lower_bound": 71,
+  "exact_maximum_known": false,
+  "retained_archive_upper": 84,
+  "archive85_endpoint_independently_adopted": true,
+  "proof_improvements": {
+    "source_cap_before": 165,
+    "source_cap_after": 162,
+    "source_cap_sharp": true,
+    "zero_missing": "w>=2M+10>=2|D|+8",
+    "d77_small_hole_slack": "w<=161 => c>=77",
+    "adaptive_terminal_before": "107-w",
+    "adaptive_terminal_after": "112-w",
+    "necessary_even_holes_before": 60,
+    "necessary_even_holes_after": 64,
+    "alpha_7315_enumeration_required": false,
+    "alpha_removal_depths": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "alpha_minimum_margin": 16,
+    "Z2_minimum_margin": 56,
+    "P4_cross_minimum_margin": 6
+  },
+  "complete_runs": [
+    {
+      "name": "full",
+      "seconds": 31.093,
+      "optimization": 0,
+      "legacy_suites_passed": 11,
+      "retained_counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      },
+      "legacy_assertions_enabled": true
+    },
+    {
+      "name": "optimized",
+      "seconds": 29.942,
+      "optimization": 1,
+      "legacy_suites_passed": 11,
+      "retained_counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      },
+      "legacy_assertions_enabled": true
+    }
+  ],
+  "source_files": 106,
+  "source_manifest_sha256": "a6c4fffd9cbd5a80afcd2df41452ceab2c786d898042797b3da388d3f82a588f",
+  "new_finite_checks": {
+    "actual_source_family": 28900,
+    "seven_label_membership": 48,
+    "no_empty_substitutions": 729,
+    "first_gap_patterns": 35,
+    "first_gap_scalar_states": 56662,
+    "supplementary_one_side_states": 80601,
+    "negative_controls_rejected": 7
+  },
+  "complete_written_strata": 13,
+  "result_scope": "文字证明与完整有限回放共同支持85元排除。不同检查域的计数不能相加成实际集合数。源回归族和单侧参数回归不替代无界证明；旧7315枚举已不再是alpha分支的必要依赖。",
+  "full_theorem_formally_verified": false,
+  "report_pdf_sha256": "97b3604ee741db4461deb2ce1fab61c196f82ddfaec7473cc8cd2fc7124bb501",
+  "report_tex_sha256": "b365bf4fa1d888ecceee82f0008c1467604def4d83301046b2083780e89d1932"
+}

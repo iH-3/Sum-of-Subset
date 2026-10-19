@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "finite_checks_passed": 11,
+  "finite_checks_requested": 11,
+  "full_retained_replay": true,
+  "proof_scope": "Written conditional exclusion of every actual 85-point configuration under the original general mathematical inputs. The verifier replays explicitly listed finite consequences, not the infinite inputs or the full actual-set geometric arguments.",
+  "results": [
+    {
+      "name": "ap_bootstrap",
+      "returncode": 0,
+      "seconds": 0.0191
+    },
+    {
+      "name": "inverse_and_boundaries",
+      "returncode": 0,
+      "seconds": 0.0233
+    },
+    {
+      "name": "highhole_localization",
+      "returncode": 0,
+      "seconds": 0.0233
+    },
+    {
+      "name": "source_fringe",
+      "returncode": 0,
+      "seconds": 0.0508
+    },
+    {
+      "name": "zero_endpoint_cards",
+      "returncode": 0,
+      "seconds": 0.0676
+    },
+    {
+      "name": "p2_activity_and_forests",
+      "returncode": 0,
+      "seconds": 0.023
+    },
+    {
+      "name": "dense_seed_6188",
+      "returncode": 0,
+      "seconds": 0.0662
+    },
+    {
+      "name": "p3_terminal",
+      "returncode": 0,
+      "seconds": 0.0203
+    },
+    {
+      "name": "p4_cards",
+      "returncode": 0,
+      "seconds": 0.0313
+    },
+    {
+      "name": "p4_cross",
+      "returncode": 0,
+      "seconds": 0.0298
+    },
+    {
+      "name": "retained_upper85_full",
+      "returncode": 0,
+      "seconds": 29.4139
+    }
+  ]
+}

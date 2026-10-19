@@ -1,0 +1,43 @@
+{
+  "schema": "upper84-pdf-review-v1",
+  "pdf": "reports/upper84_adoption_20261019.pdf",
+  "pdf_sha256": "97b3604ee741db4461deb2ce1fab61c196f82ddfaec7473cc8cd2fc7124bb501",
+  "tex_sha256": "b365bf4fa1d888ecceee82f0008c1467604def4d83301046b2083780e89d1932",
+  "pages": 7,
+  "compiler": "XeLaTeX; two successful final passes",
+  "compiler_warnings": 0,
+  "font": "Noto Sans CJK SC embedded; Microsoft YaHei fallback in source",
+  "review": "全部7页渲染并视觉审阅；修正中央区间多余逗号、fringe计数与核心集合的符号复用，并补充三点截断的实际跨度推导后，重新审阅受影响页。公式、表格、中文与长路径可读，无裁切。",
+  "rendered_pages": [
+    {
+      "page": 1,
+      "png_sha256": "e53918435d33f4d96469ae9820dfe6d51efedf217b87ef70db4750de141b8293"
+    },
+    {
+      "page": 2,
+      "png_sha256": "c2951d6e4ce85625e8464a76e1efb0752b68edd2dc4d5b734b77e7ce063e48a4"
+    },
+    {
+      "page": 3,
+      "png_sha256": "4b9e2236fabf5800a39646adf0ea9f6c9b50e1640c7a3f1f23cf11b85ae2292b"
+    },
+    {
+      "page": 4,
+      "png_sha256": "57c340ef57c8c0e415c368d35f7a257eb927edbf1061be0919f447e7f37ec564"
+    },
+    {
+      "page": 5,
+      "png_sha256": "5ab9a97cccec52ac0a43cac4467fe5f1a746baffdd5baba4de292177838badba"
+    },
+    {
+      "page": 6,
+      "png_sha256": "b053a25ecdb574dea4cd263d1574ee4bf24c18380c8ea70c149785d001217901"
+    },
+    {
+      "page": 7,
+      "png_sha256": "ea722cdd668779a881cb517b5ada3070800bf8616b4c22273fd38fc405dafd9f"
+    }
+  ],
+  "windows_actual_execution": false,
+  "windows_launcher": "5项静态检查通过；Linux中文和空格路径完整回放通过。"
+}

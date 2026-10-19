@@ -1,0 +1,42 @@
+{
+  "status": "PASS_NEGATIVE_CONTROLS",
+  "mutations_rejected": 7,
+  "records": [
+    {
+      "id": "source_cap_161",
+      "status": "REJECTED",
+      "reason": "source cap case: at least three central reinsertion labels"
+    },
+    {
+      "id": "A_hole_offset_11",
+      "status": "REJECTED",
+      "reason": "A sharp hole bound"
+    },
+    {
+      "id": "terminal_114",
+      "status": "REJECTED",
+      "reason": "adaptive bound before even rounding"
+    },
+    {
+      "id": "alpha_margin_17",
+      "status": "REJECTED",
+      "reason": "alpha analytic margin"
+    },
+    {
+      "id": "changed_source_identity",
+      "status": "REJECTED",
+      "reason": "source mismatch: experiments/check_upper84_controls.py"
+    },
+    {
+      "id": "new_geometry_omitted",
+      "status": "REJECTED",
+      "reason": "new geometry omitted"
+    },
+    {
+      "id": "legacy_module_omitted",
+      "status": "REJECTED",
+      "reason": "legacy source omitted"
+    }
+  ],
+  "source_sha256": "f170ecddc92db28fa538f541e42ec16fcd5e87988bd5122d9e866bbe0174e5b4"
+}

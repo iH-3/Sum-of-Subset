@@ -1,0 +1,437 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\IfFontExistsTF{Noto Sans CJK SC}{\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]}{\setmainfont{Microsoft YaHei}[AutoFakeBold=2,AutoFakeSlant=0.15]}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\setmonofont{lmmono10-regular.otf}[Scale=0.9]
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newcommand{\A}{A_*}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\emergencystretch}{2em}
+\linespread{1.07}
+\raggedbottom
+\title{独立闭合上界 84\\\large 尖锐源包络、三点截断与大小 85 的完整接入}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+接续提交 \texttt{0a06472} 已独立核查的上界 85，本轮完成大小 85 的结构归约、
+13 类实际情形与全部必要有限依赖的核查，得到 $71\le N\le84$。
+扣除已计入中央区间的重新插入配对标签，将通用源参数界 $\Theta\le165$ 加强为
+尖锐界 $\Theta\le162$，并给出实际 77 点源的等号例子。
+精确空隙标签计数将全非空覆盖的空洞代价加强到 $w\ge2|D|+8$。
+单空单元终端从 $107-w$ 加强到 $112-w$；最后一个零洞分支的 7315 状态枚举，
+由两个一元不等式及每侧至多删除三点的实际子核心替代，统一矛盾余量至少 16。
+新增验证器与完整归档套件均重新运行；程序只认证声明的有限命题，文字论证承担一般适用性。
+\end{abstract}
+
+\section{结论、先行上界与证据边界}
+对有限实数集 $A$，令 $\FS(A)$ 包含空集和，$4A$ 允许重复元素。
+记满足 $\FS(A)\subseteq4A$ 的最大可能基数为 $N$。
+\begin{theorem}
+接续已核查的上界 85，有
+\[\boxed{71\le N\le84.}\]
+\end{theorem}
+\begin{proof}
+只需排除大小恰为 85 的反例。若它不含零，加入零得到 86 点反例，违背前序上界。
+为每个子集和选定一个四项表示，并指定零坐标，得到有限齐次整数线性方程组。
+其有理核点在实核中稠密；选取足够接近原配置的有理核点保持全部严格次序，清分母后
+得到 85 个互异整数。这是存在性归约，不假设原实数坐标本身共格，也不使用任意子集可行性。
+第 \ref{sec:structure} 节的结构核查及第 \ref{sec:cases} 节的穷尽分类排除这个整数反例。
+71 点构造保持为 $([-31,31]\cap\Z)\cup\{\pm93,\pm155,\pm217,\pm713\}$，
+完整套件再次核对其 3349 个子集和值的四项表示。
+\end{proof}
+
+本报告与固定的归档原证明共同组成接入论证：
+\begin{itemize}
+\item 前序独立上界及一般基础：\path{reports/upper85_adoption_20261019.tex}。
+\item 本次大小 85 的完整原证明：\path{verification/upper84/proof/report.tex}，
+及 \path{verification/upper84/progress85/} 内的结构、逆定理、零洞、正洞和高洞证明。
+\item 原四极值覆盖、固定标签和预算：
+\path{verification/upper84/audit/verification_program/proof/report.tex}。
+\end{itemize}
+归档中“先行上界 86 的证明未随附件给出”的历史限制，现在由已发布的独立链补足。
+归档字节保持不变，本报告明确替换其哪些步骤。此次独立范围与归档 84 一致；精确最大值仍未知。
+
+\section{尖锐的源包络：从 165 到 162}\label{sec:source}
+结构归约后 $|D|=77$，内核 $E=P_s\cup\{0\}\cup(-P_t)$ 有 69 点。
+设 $r_s+r_t=68$，$R_v=\max P_v$，$R=R_s+R_t\ge68$。
+每侧四个源尾点为
+\[R_v+a_v, R_v+b_v, R_v+c_v, R_v+e_v,
+\qquad 1\le a_v<b_v<c_v<e_v.\]
+令 $K=|D+D|$、$U=a_s+b_s+a_t+b_t$、$C=c_s+c_t$、
+$j_v=e_v-c_v$、$J=j_s+j_t$。与覆盖的空单元数 $j$ 区别，$j_v$ 只表示尾间隙。
+定义整数源参数
+\[\Theta=2K-4R-U-2C-J.\]
+令 $\pi_v$ 为前三个偏移的不同二项和中大于 $c_v$ 的个数，
+$B_v$ 为四个偏移的不同二项和中大于 $e_v$ 的个数，$u_v=a_v+b_v$。
+已核对的四偏移引理及小三元组表给出
+\begin{equation}\label{eq:fringe}
+2\pi_v\le u_v+4-(u_v\bmod2),\quad
+\pi_v+B_v-u_v\le5,\quad \pi_v\le u_v.
+\end{equation}
+最后一条在 $u_v\ge6$ 由 $\pi_v\le6$ 立即成立；$u_v=3,4,5$ 分别有
+$\pi_v\le3,4,4$，且 $c_v\ge2b_v$ 后恒为 3。
+第二条的无界证明保留：$u_v\ge9$ 用四元组界；$u_v\le8$ 分为
+$c_v<2b_v$ 与恒定尾部，两个特殊三元组 $(1,3,4),(2,4,5)$ 在 $e_v\ge2c_v$ 后均有 $B_v=4$。
+
+删去两侧最大值后，旧源有 75 点。先计中央整数区间
+\[\mathcal I=[-2R_t-c_t,2R_s+c_s]\]
+的全部 $2R+C+1$ 个位置，再计至多 $\pi_s+\pi_t$ 个例外。
+重新插入两个最大值共增加至多 153 个形式配对标签。
+若其中 $h$ 个已落在 $\mathcal I$ 内，它们不能再次增加这个上界。因此
+\[
+K\le2R+C+154+\pi_s+\pi_t-h,\qquad
+K\le2R+C+J+1+B_s+B_t.
+\]
+中央区间无需已被旧二项和填满；这里从开始就计入了它的全部整数位置。
+平均上述两界得
+\begin{equation}\label{eq:average}
+\Theta\le155-h+(\pi_s+B_s-u_s)+(\pi_t+B_t-u_t).
+\end{equation}
+
+\begin{lemma}\label{lem:162}
+上述每个实际整数源都满足 $\Theta\le162$，且常数 162 可取到。
+\end{lemma}
+\begin{proof}
+反设整数 $\Theta\ge163$。在删两最大值的界中先取 $h=0$，再用
+\eqref{eq:fringe}，得到 $J\le316-\Theta\le153$。
+考察七个不同的重新插入标签：正最大值与负侧三个旧尾点配对、反射的三个配对，
+以及正负两最大值的配对。令
+\[
+n_s=\#\{x\in\{a_t,b_t,c_t\}:j_s\le R+x\},\qquad
+n_t=\#\{x\in\{a_s,b_s,c_s\}:j_t\le R+x\}.
+\]
+前六标签在 $\mathcal I$ 内的个数恰为 $n_s+n_t$。
+最后一个在区间内当且仅当
+\[j_s-j_t\le R+c_t,\qquad j_t-j_s\le R+c_s.\]
+若它不在区间内，不妨 $j_s\ge j_t+R+c_t+1$。
+于是 $2j_t\le152-R-c_t\le81$，故 $j_t\le40<R+a_s$，反射的三个旧尾配对全部在内。
+此时 $h\ge3$，\eqref{eq:average} 直接给 $\Theta\le162$。
+
+因此可设最大值配对在区间内。若 $n_s+n_t\ge2$，仍有 $h\ge3$。
+只剩下两种情形：
+\begin{itemize}
+\item $n_s=n_t=0$。这时 $j_s\ge R+c_t+1$、$j_t\ge R+c_s+1$，
+故 $c_s+c_t\le15$。两侧均有 $j_v>c_v$，因而 $e_v>2c_v$、$B_v=4$。
+由 $\pi_v\le u_v$，两项 fringe 超额之和至多 8；$h\ge1$ 给 $\Theta\le155-1+8=162$。
+\item $n_s+n_t=1$。不妨 $n_s=1,n_t=0$。
+于是 $j_s\ge R+b_t+1$、$j_t\ge R+c_s+1$，故 $c_s+b_t\le15$、$c_s\le13$。
+又 $j_s\ge71>c_s$，所以 $B_s=4$。本侧超额至多 4，另一侧至多 5；
+$h\ge2$ 给 $\Theta\le155-2+9=162$。
+\end{itemize}
+所有情形均矛盾。
+
+等号取 $E=[-34,34]\cap\Z$，$D=([-37,37]\cap\Z)\cup\{-112,112\}$。
+两侧偏移为 $(1,2,3,78)$，$R=68,U=6,C=6,J=150$，并且
+\[D+D=([-149,149]\cap\Z)\cup\{-224,224\},\qquad K=301.\]
+直接代入给 $\Theta=162$。这证明源包络的尖锐性，不声称这个源能扩充为可行的 85 点集合。
+\end{proof}
+
+记 $T_r=r(r+1)/2$，$\tau=\sum P_s+\sum P_t-T_{r_s}-T_{r_t}$。
+实际覆盖中 $I=(r_s-34)^2$、$\A=I+\tau+\delta$，且
+$\Theta=77j-280-w+\A$。因此统一加强为
+\begin{equation}\label{eq:budget}
+\boxed{I+\tau+\delta\le442-77j+w.}
+\end{equation}
+例如零洞 $Z_2,Z_3,Z_4,Z_5$ 的上预算分别为 $288,211,134,57$。
+原各分类使用的较弱预算仍成立；原单最大值结论 $e_v\ge\max(4,\Theta-89)$ 保留，
+在 $Z_5$ 中仍为 $e_v\ge\A+16$。
+
+\section{全非空覆盖与单空单元的加强}\label{sec:gaps}
+仍使用原 18 个普通整单元及两种配对，空单元指其全部实际目标贡献为空。
+设 $M=\max D-\min D$，外侧大小 $v_1>v_2>v_3>v_4>M_v$，
+$d_v=v_1-v_2,h_v=v_2-v_3,g_v=v_3-v_4,X_v=v_4-M_v$，$t_v=d_v-M$。
+原中心记号 $O,H,\alpha,\beta,C4,C5,C7$ 不变。
+两侧目标为 $F_v=\FS(D_v)\cap(0,\infty)$，其中 $D_s=D,D_t=-D$；
+$S_v$ 为其最大值，$\eta_v=S_v-|F_v|$，$w=\eta_s+\eta_t$。
+原松弛为 $c=2K+18|D|+85-|\FS(D)|$。
+
+\subsection*{精确固定标签只计一次}
+归档 \path{progress85/common/raw_gap_inventory.md} 的逐标签证明已核对。
+第一空隙 $(H_v+M_v,O_v-M_o)$ 最多有 11 个固定标签：五个间距 $d_v$ 的链各取至多一项，
+另有两个可同时出现的内部标签和四个跨侧标签。$C44,F5$ 不能同时出现的论证使用第一空隙的下端保护。
+beta 活动的第二空隙最多有 8 个标签；两个空隙之并最多有 15 个。
+后一计数按 $v_3<d_v$、$d_v\le v_3\le2d_v$、$v_3>2d_v$ 三段，内部至多 7 个，跨侧至多 8 个。
+标签数不要求数值互异，重合只会降低覆盖能力。
+在对应活动前提已保护空隙处，得到
+\[
+t_v\le12+\eta_v,\qquad
+t_v\le9+\eta_v\ (\beta_v,H_v\text{ 活动}),\qquad
+2t_v\le17+\eta_v\ (\beta_v,O_v\text{ 活动}).
+\]
+两个空隙共用同一批空洞与固定标签；不能把 15 改成两个独立预算。
+
+\begin{lemma}\label{lem:noempty}
+对整数源的原实际四极值覆盖，若 18 个普通单元全部贡献，则
+\[w\ge2M+10\ge2|D|+8.\]
+故 $|D|=77,w\le161$ 时至少一单元为空，原覆盖松弛 $c\ge77$。
+\end{lemma}
+\begin{proof}
+四个同侧中心全活动，其整数线性组合恢复 $\lambda_v$ 和全部外侧点，
+故 $X_v,g_v,h_v,d_v$ 为正整数。前序报告中由实际活动直接展开的三个不等式仍为
+\[
+\begin{aligned}
+C5_v:&\quad t_v\ge2X_v+X_o+g_s+g_t+h_o+1,\\
+C7_v:&\quad t_v\ge2X_v+X_o+g_v+1,\\
+C4_v:&\quad t_v\ge2X_v+X_o+g_s+g_t+h_o+d_o+1.
+\end{aligned}
+\]
+A 型中选实际 beta 贡献者 $s$；两侧 $C5$ 均活动。
+恒等式 $C4_s+\beta_s+C5_t=-2s_3-2s_4-t_2-t_3-t_4$ 排除同侧 $C4_s$ 活动，
+故第一对由 $t$ 贡献。于是 $t_s\ge7$，且 beta 与 $C4_t$ 给
+$t_t\ge2M+2t_s+2X_s+2X_t+g_s+g_t+2\ge2M+22$。
+第一空隙给 $\eta_t\ge2M+10$。
+B 型两 beta 都活动；若第一对由 $s$ 贡献，$C7_t$ 给 $t_t\ge5$，
+同样得到 $t_s\ge2M+18$，双空隙给 $\eta_s\ge4M+19\ge2M+10$。
+最后 $M\ge|D|-1$，空整单元损失完整容量 $|D|$。证明无需核心分别本原或主导活动。
+\end{proof}
+
+\subsection*{同一个实际子核心的两种截断}
+在原 $P_1/H_1$ 终端形状中，唯一空单元为一侧 $O$，A 型 beta 的唯一贡献者为另一侧 $u$；
+外侧整性及共同条带已证明，$w$ 偶且 $\eta_u=w/2$。
+侧大小为 $16$ 至 $52$，首缺失值 $m\le8$。保留低于 $m$ 的实际点，
+其余从 $m+1$ 连续填充，记基线跨度 $B$、质量超额 $b$、实际额外质量 $\sigma$ 和径向超额 $\xi=R-B$。
+保留的首洞证明给 $I+b-5B\ge-282$；$I+\tau\le395$ 排除 $m\ge9$，
+低点每侧至多 3 个。高秩偏差递增，故 $\sigma\le52\xi$。
+
+每侧删除最大的 $t=5$ 或 $6$ 点，得到同一个实际 $Q_t$ 服务于全部六条边，
+\[
+|Q_t|=69-2t,\qquad
+f_t=137-2t-B+(\xi-\sigma)/t.
+\]
+原两目标的树 $L_v-V_v-U_v$ 及边 $L_v-C7_v$，仅以 $L_u$ 为根。
+不重复计费的预算消元给
+\[
+2t_u\ge461-12t-5B+I+b+(1+6/t)\xi+(1-6/t)\sigma-w.
+\]
+$t=6$ 给 $107+2\xi-w$，$t=5$ 给 $119+(11\xi-\sigma)/5-w$。
+当 $\xi\ge2$ 时前者至少 $111-w$；当 $\xi=0,1$ 时后者至少 $554/5-w>110-w$。
+因为 $2t_u+w$ 为偶整数，所以
+\begin{equation}\label{eq:112}
+\boxed{112-w\le2t_u\le17+w/2,\qquad w\ge64.}
+\end{equation}
+原终端为 $107-w$ 及 $w\ge60$。这里先取得严格实数下界，再使用偶性，不能提前取整。
+
+\section{最后一个零洞分支：以解析式替代 7315 状态}\label{sec:alpha}
+考虑 $Z_5$ 的 A0 双空对、额外空 $\alpha_s$ 情形。
+原实际活动、固定标签和正常端点论证继续沿用：先由核命中得到初始信用 14，
+再通过 32 类上尾证明信用 27，随后才能证明端点正常。
+进一步推出 $1\le C5_s<t_4$、$1\le\alpha_t,C5_t<s_4$，
+LOW 标签增加后最终有 21 个 HIGH、47 个 LOW、触及 26 个原基线组，信用为 42。
+这一步绝不提前假设端点正常；其完整标签与角色见
+\path{progress85/foundations/z5_alpha_final85.md}。
+
+写 $R_v=r_v+\xi_v$，$0\le\xi_v\le\tau_v$。
+对每侧定义
+\[
+p_v=\min\left(\xi_v,\ \min_{1\le j\le3}\left\{j+\left\lfloor\frac{\tau_v-\xi_v}{j}\right\rfloor\right\}\right).
+\]
+将本侧点写成 $x_i=i+d_i$，其中 $0\le d_1\le\cdots\le d_{r_v}=\xi_v$。
+删除最大的 $j\ge1$ 点时，$j d_{r_v-j}\le\tau_v-\xi_v$，所以保留侧的跨度至多
+$r_v-j+\lfloor(\tau_v-\xi_v)/j\rfloor$。选择取到最小值的实际截断，
+零截断表示保留全侧。合成一个含零的实际子核心 $Q$，对整数 $x\ge0$ 有
+\[q=|Q|\ge63,\qquad |Q\cap(Q+x)|\ge F-x,\qquad F=69-p_s-p_t.\]
+这是保持基数和跨度的同一次选择，不将不同截断的重叠相加。
+
+令 $L(p)=\max(0,p-1,2p-4,3p-9)$。
+由定义，$\xi_v\ge p_v$，$\tau_v-\xi_v\ge L(p_v)$。
+因此有两个无界解析估计
+\[
+4\tau_s-2\xi_s-11p_s\ge4L(p_s)-9p_s\ge-21,\qquad
+4\tau_t-11p_t\ge4L(p_t)-7p_t\ge-13.
+\]
+只需检查 $p=0,\ldots,5$ 的六行；当 $p\ge6$ 时 $L(p)=3p-9$，
+两个表达式成为 $3p-36$、$5p-36$，均递增。
+\begin{center}\small
+\begin{tabular}{c|rrrrrr}
+\toprule $p$&0&1&2&3&4&5\\\midrule
+$L(p)$&0&0&1&2&4&6\\
+$4L(p)-9p$&0&-9&-14&-19&-20&-21\\
+$4L(p)-7p$&0&-7&-10&-13&-12&-11\\\bottomrule
+\end{tabular}
+\end{center}
+所以不需要总质量上限或任何 7315 元状态清单，就有
+\begin{equation}\label{eq:851}
+4\tau-2\xi_s+2q+11F\ge2\cdot63+11\cdot69-21-13=851.
+\end{equation}
+
+原实际分组仍是：$\{\alpha_t,C5_t\}$、$\{H_s,U_s,V_s\}$、
+两对 $\{U_t,V_t\},\{C6_s,C7_s\}$，以及未使用的 $C5_s,H_t$ 原生损失。
+每组只占原保留整单元的容量；另用同一 $Q$ 的加权星形不等式作正线性组合，得到
+\[
+2M_t+2q+11F\le2R+827+2r_t-\delta+5(\delta-42).
+\]
+代入 $e_t\ge I+\tau+\delta+16$、$R=68+\xi_s+\xi_t$，再用新的
+$I+\tau+\delta\le57$，将迫使
+\[4I+4\tau-2\xi_s+2q+11F\le835,\]
+与 \eqref{eq:851} 矛盾，余量至少 16。
+若仅保留旧上预算 60，这个三点截断证明仍有余量 10。
+原四点截断、$q\ge61$ 和 7315 状态的最小余量 6 不再是此分支的必要证明依赖。
+
+\section{大小 85 的结构接入}\label{sec:structure}
+完整推导见 \path{progress85/foundations/structure85_ap_bootstrap.md}、
+\path{progress85/inverse/proof85_inverse.md} 及整合清单。
+本轮核对的是实际集合的适用性与先后顺序，不是仅检查其标题或哈希。
+
+\begin{enumerate}
+\item 在固定 $|D|=77$ 前，缺失一侧的安全上界为 $24\cdot85+77=2117$，
+小于单侧 70 点下界 2416。以后剥离中若一侧消失，下界 2347 大于上界 1925。
+未配对数 $q$ 为偶且 $q^2\le2936$，故至少保留 7 对相反点。
+先用 $\rho_s\ge-8,\rho_t\ge0$，得到小侧至少 10。
+\item 标量反射只在此处取 $a=34-k,b=34+k$、$I=k^2$。
+$\Lambda=1191+I,\Omega=600-I$。10、11、12 边界分别用 AP、严格逆定理和
+有效洞见证 $(56,5,132)$；最大值删除所需的小侧 $+16$ 修正保持。
+12 边界最后是 $\rho_Q\ge125>124$。
+\item 大侧 AP 由剩余类与无裁剪空隙给共同格。仅小侧 AP 的两剩余类先证明其阶为 2，
+再用实际奇偶生成元质量推出最小奇生成元 $\le15$，从而 $z\le14$；
+没有在质量论证之前使用 $h_Q\le\kappa$。
+整性和两层相交后，非本原与半步长分别给 $c\le59,61<77$，$w\le56$，
+由引理 \ref{lem:noempty} 统一排除。AP 的 13、14 边界同样闭合。
+\item 双非 AP 的充分严格逆检验只有 $k=0,1,2$ 自动成立。
+实际失败的 $k=3,\ldots,20$ 用 18 个新端点修复；其中 $k=10,13,14$ 必须使用
+非 AP 前缀的加强起点，不能沿用较弱的 14 阶起点。
+严格排离格和端点桥后，通过短直径定理得到精确 $h_P,h_Q\le\kappa$，
+不提前假设另一侧本原。
+\item $a=13$ 的失败分支用 $(55,2,52)$ 得 $h_Q\le4$，最终 $185>159$。
+成功分支先以 $\kappa\le110$ 和带修正的 $-811<0$ 完成格化，
+然后由 $z\ge17$ 用 $(55,4,119)$ 得 $\rho_Q\ge113$，最终 $160>159$。
+两分支必须分别处理。
+\item 未修复严格逆分支只有 $z\ge83+I$ 需进一步证明末步相交。
+$k\ge16$ 先排除；余下 32 个定向分支有 18 个直接矛盾，14 个用加强前缀端点修复。
+得到实际末步相交后，最大值删除留下至少一半的洞，内层比较变为 $-165-2I<0$。
+外层比较用 $1191>4\cdot77-10+600$。
+\item 此后才使用整数源的 $G=144$、$w\le4z$ 与
+\[c+\rho+\T\le600-I,\qquad \T\ge\max(48,z,144-2z,\kappa+144-3z).\]
+修复分支若小侧非本原，$c\le28,w\le64$，由新全非空引理排除。
+14 边界的严格分支用 $(54,6,168)$，或 $c\le31,w\le48$，完整排除。
+\end{enumerate}
+最终确立 $15\le r_s,r_t\le53$、两侧各自本原、共同格和两层实际相交。
+正核心洞时有 $\mu\ge62,\tau\ge62+2z$。
+活动分类中物理符号不再因侧大小重新命名；所有者必须是实际贡献者。
+
+\section{全部情形及进一步简化}\label{sec:cases}
+令 $j$ 为实际空普通整单元数，$\delta=c-77j\ge0$。
+零核心洞 $z=0$ 分 $Z_0,\ldots,Z_5$；正低洞 $1\le z\le14$ 分 $P_0,\ldots,P_5$；
+$z\ge15$ 为 $H$。更大的低洞空单元数由预算排除。
+完整原论证按上文列出的 13 类逐一核对；以下索引记录具体接入与替换。
+
+\begin{longtable}{p{.08\linewidth}p{.85\linewidth}}
+\toprule 情形&本轮核对与收尾\\\midrule\endfirsthead
+\toprule 情形&本轮核对与收尾\\\midrule\endhead
+$Z_0,P_0$&共同整数源成立后，$w\le56<162$，引理 \ref{lem:noempty} 排除 $j=0$。\\
+$Z_1$&保留原一空单元整性、唯一空 O、对侧 beta 形状及同一子核心六边森林；
+下界 $2t_u\ge73+I$ 与新双空隙 $2t_u\le17$ 矛盾。\\
+$Z_2$&核对双上帽、HIGH $C7$ 原生损失和四张 beta/O 卡，保留三种真实缺失形式。
+加强后的最终六边矛盾见下文，余量至少 56。\\
+$Z_3$&A0 核对五个加权端点的全部轻重位置；唯一重 alpha 的 11 个 LOW 标签触及 9 组，
+与 8 个 HIGH 合为信用 10，紧邻终端 $792>791$。
+A1 用物理侧 7 单元与主导的实际并集，四个端点位置上界最大 338，而下界 394。\\
+$Z_4$&核对 A-E/A-H/B 的完整保留表、F/O/S/E 各卡的端点归属，
+以及两个 beta 都缺失时的额外排除 $1192>1063$。
+S 卡保留修正后的 $-3\delta/4$。
+双空对不指定所有者，原信用 18、删除两最大值的 67 点源排除四种 H 核命中状态。\\
+$Z_5$&先核命中，再外侧整性和完整 A0/A1/B 分类。
+A0 十三张保留第一对卡、双空对 H/C5 卡、alpha 卡均接入；alpha 卡改用第 \ref{sec:alpha} 节解析证法。
+分裂 beta 始终只计整个配对容量。
+A1 最后 $C5_t$ 先证明 beta 截断，再由 32 类尾型删至 26、22 类，得到
+$\tau+\delta\ge62$，与新上界 $57-I$ 矛盾。\\
+$P_1$&核对四个内层实际发生项的全部子集位移及共同条带、双上帽排除和唯一 O 形状。
+$w\le14$ 与新终端 $w\ge64$ 矛盾。\\
+$P_2$&先完成共同条带、整性和首洞分类；利用尖锐空隙简化 $C7$ 及 beta/O 两处收尾，
+最后得到 $100+I+\xi\le3w/2\le21$，见下文。\\
+$P_3$&完整重算 $\binom{17}{12}=6188$ 个种子并核对无限传播；从 $z\le10$ 降到 8，
+首洞 $m\le3$ 时再降到 6。整性、A0/A1 穷尽及 $m=1,2,3,4$ 全部端点收尾接入。
+特别核对 clip 72、最多一个重端点、物理唯一 1 的两个所有者方向，保留修正后的全部常数。\\
+$P_4$&七个种子先给六种洞型；信用 8 排除四种高质量洞型，仅留首洞 1、2。
+整性、CORE8、A0/A1/B 所有者规则均在正常端点之前确立。
+接入对侧／同侧所有者、T5 和 A0 三卡；首洞 1 的交叉卡现由 $\Theta\le162$ 直接给余量 6，
+不再讨论端点 164、165 的 fringe 修补。\\
+$P_5$&共同条带给 $w\le z$。源预算变为 $I+\tau+\delta\le57+w$，
+与 $\tau\ge62+2z$ 直接矛盾，无需外侧整性。\\
+$H$&配对的 $(\mu,\rho)$ 两个下界都保留，先完成整个高洞域的共同条带。
+$j\ge2$ 源预算排除；$j=0$ 用新全非空引理；$j=1$ 只余 $z=16,18,20$，由新终端排除。\\
+\bottomrule
+\end{longtable}
+
+\subsection*{零洞两空单元的强终端}
+保留原分类后，选取实现 $f=\max(69-\xi,57-(\tau-\xi)/6)$ 的同一实际子核心，服务于两侧六边。
+至少一侧有上帽，精确空隙给 $t_u\le12$；实际 $\alpha_o,C5_u$ 给
+$t_u\ge2X+G+2$，故 $2X+G\le10$。于是
+\[
+\A\ge I+\tau+6f-10\ge I+\max(414-5\xi,342+\xi)-10\ge344+I.
+\]
+两个仿射式在 $\xi=12$ 相交，最小值 354。新源预算 $\A\le288$ 给至少 56 的矛盾余量；
+旧收尾的余量仅为 2。
+
+\subsection*{正洞两空单元的短路径}
+保留原条带与整性证明，并暂用较弱但有效的 $\A\le291+w\le305$。
+若 $C7_v$ 为空，原 HIGH 损失给 $\delta\ge4r_v+96$。
+首洞至少 2 时 $\tau\ge85$，故 $\A\ge313$ 已矛盾。
+首洞 1 时写 $\tau=68+\sigma$，得到 $(r_v-32)^2+\sigma\le w-5\le9$。
+两侧各含连续前缀 $2,\ldots,21$，其余核心点至多 49；种子质量 230 的双洞支持持续。
+于是 $z=w=2$，但右侧 $w-5<0$，仍矛盾。原四个额外固定信用及最后 fringe 等号分析均可省去。
+
+之后沿原根森林把首洞降到 1，cap 侧保留 V。
+若 beta 和 O 同侧活动，根森林与新双空隙给
+$82+4I+\sigma\le5w\le70$，直接矛盾，不再单独处理 $w=14$。
+同样只剩三种实际缺失形式，$2X+G\le10+w/2$。
+六点截断给 $2X+G\ge330-\sigma+\xi-\delta$，而新源预算为
+$I+\sigma+\delta\le220+w$，合并得到 $100+I+\xi\le3w/2\le21$。
+
+\subsection*{高洞先局部化，再用新引理收尾}
+在四段 $z=15{:}16,17{:}20,21{:}48,\ge49$，原配对下界依次为
+\[(\mu,\rho)\ge(426,294),(470,338),(514,382),(554,422).\]
+必须保留 $\mu$ 信息，不能仅由 $\rho\le\mu$ 倒推出它。
+核心中央宽度减最大源系数的余量分别至少 $195,315,363$，尾段至少 $93+7I+6c$；
+两侧质量超过边界空洞数的余量为 $171,199,131,120$。
+故同一条带传播过全部八个源尾点，得 $w\le z$、偶性与 $\eta_v=w/2$。
+这些传播条件仅使用局部化之前的预算，没有循环。
+
+$j\ge2$ 时 $I+\tau+\delta\le288+w$ 与 $\tau\ge\rho+2z$ 矛盾。
+$j=0$ 时新源预算给 $I+c+\rho+z\le442$：尾段至少 $422+49>442$；
+其余 $w\le48<162$，由引理 \ref{lem:noempty} 排除。
+$j=1$ 时原实际双上帽论证留下唯一 O、对侧 beta 的终端形状，
+源预算仅允许偶数 $z=16,18,20$，由 \eqref{eq:112} 的 $w\ge64$ 排除。
+
+\section{有限验证、复现与交付}\label{sec:verification}
+新的入口固定 106 个源文件，复制到全新临时目录，执行归档完整套件与新增检查，
+结束时再次核对源字节、11 个顶层套件、17 个新模块（含 7 个聚合子模块），
+及继承的 140 个唯一检查编号。运行记录作为输出，不作为通过依据。
+归档中的一般定理、源到模型的实际蕴涵和无界归纳均由文字证明承担。
+
+两次完整回放均为 11/11 顶层套件通过，继承检查均为 140 PASS、0 FAIL、0 SKIP。
+去除环境与计时字段后，逐项数学记录一致；新增几何结果逐字节一致。
+新增程序检查三类中央标签扣除的算术证书、七标签的真实区间归属、
+28,900 个实际源的回归族及等号集合；该有限族不充当无界包络的证明。
+首洞枚举有 35 个低前缀模式、56,662 个必要标量状态，取偶数前最小值为 111。
+三点截断的不等式以六行及正斜率尾部给出无界证明，另核对 80,601 个单侧参数作为回归。
+7 项故意抬高的证书界或删改的源清单全部被拒绝。旧 7315 状态检查仍完整重放作为额外交叉检查。
+
+在仓库根目录运行：
+\begin{verbatim}
+python -I -S -B verification/upper84_adoption.py --output .work/upper84.json
+python -I -S -B -O verification/upper84_adoption.py --output .work/upper84_O.json
+python -I -S -B experiments/check_upper84_controls.py --output .work/controls84.json
+\end{verbatim}
+仅需要 Python 3.10+ 标准库。\texttt{-O} 启动时，旧模块仍强制保留断言；新增检查使用显式判定。
+Windows 启动器为 \path{verify_upper84_windows.bat}。
+本轮实际运行环境为 Linux，另检查带空格和中文的隔离路径；不声称实际运行过 Windows。
+本报告使用 XeLaTeX，优先 Noto Sans CJK SC，缺失时回退 Microsoft YaHei。
+
+实际运行回执、逐项覆盖、哈希、完整日志与 PDF 审阅记录位于
+\path{results/2026-10-19/upper84/}。
+有限 PASS 不等于证明助手的形式化认证。
+下一步是研究大小 84 的排除；仅调整这里的常数不能自动得到上界 83。
+\end{document}

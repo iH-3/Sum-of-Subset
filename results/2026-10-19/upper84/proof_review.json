@@ -1,0 +1,247 @@
+{
+  "schema": "upper84-written-proof-review-v1",
+  "status": "WRITTEN_APPLICABILITY_REVIEW_COMPLETED",
+  "meaning": "人工数学审阅的索引与替换关系，供读者沿报告核对；不是程序生成的形式证明证书。",
+  "adoption_report": "reports/upper84_adoption_20261019.tex",
+  "adoption_report_sha256": "b365bf4fa1d888ecceee82f0008c1467604def4d83301046b2083780e89d1932",
+  "prior_independent_report": "reports/upper85_adoption_20261019.tex",
+  "prior_review": "results/2026-10-19/upper85/proof_review.json",
+  "original_compilation": "verification/upper84/proof/report.tex",
+  "original_compilation_scope": "原汇编的核心章节已通过下列分拆原证明核对；不声称对汇编重复的每一行另作第二遍审查。",
+  "sources": [
+    {
+      "path": "verification/upper84/progress85/common_notes.md",
+      "sha256": "4dd7d10be5dbb0bdc1dc3a74d25761e60324b4b84ad4ff4f6572a3d662e32c44"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/structure85_ap_bootstrap.md",
+      "sha256": "3cd74a1a84d70dfcbbb6d0037ff6f5193e47b7794dc6c3bc5d401edb51401d77"
+    },
+    {
+      "path": "verification/upper84/progress85/inverse/proof85_inverse.md",
+      "sha256": "2f2b3043c21df3730eec56a71206aca11487934f5b98814f84068ec7f21d484a"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/structure85_integration_checklist.md",
+      "sha256": "c0cd94bb44ce84b7db387c5fd7425e72219fe256a36ee038a46c27bbfd0b25a2"
+    },
+    {
+      "path": "verification/upper84/progress85/common/raw_gap_inventory.md",
+      "sha256": "014e4037fb779acc39de514ec860daef1a098354cd497a9bb29e50bee0358e30"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/source_triple_fringe85.md",
+      "sha256": "c4c7aa0a3c107337828cf0eca45e06f4de688725b987b39b49d9ae1f7d2b365d"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/highhole_localization85.md",
+      "sha256": "c78a52f918d4b3b94f0587ef92309da7e91d5c7791346b1bce6997881702b88e"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_reduction.md",
+      "sha256": "880f6153e2c5b5332e67c214bf81372463af0895193c836ab9f05f152efc1f18"
+    },
+    {
+      "path": "verification/upper84/progress85/common/z3a1_side_union.md",
+      "sha256": "b9625e225f205f0ac1f83ffac3277fd219200a020e00563a7ccb99e9e884e8b0"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_z4_z5_cards.md",
+      "sha256": "6a7ff353d48966a9eba6fd7870cee5d5c1970e5bc3aaaeab50c3924b80e2f079"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_z5_a1_b.md",
+      "sha256": "54dfc2cb169a62ce614be2ddd139c102aca6fd1e8b68b68a68f91c8d77fbc7cb"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/z5_alpha_final85.md",
+      "sha256": "9cc0d4d7c460b1fcb7828ecc2ad857654540870299487b6df46aa5a6a42750be"
+    },
+    {
+      "path": "verification/upper84/progress85/scalar/z5_c5t_cutoff_audit.md",
+      "sha256": "2140cfdbfec80a873c6a425fbb45b5aa6167d76608218faa37e3a5976d3a49f9"
+    },
+    {
+      "path": "verification/upper84/progress85/scalar/z4_ownerless_certificate.tex",
+      "sha256": "9a8d27cf369dc16ea1fb7676687963df75ae8c1da7dfd525b50cceae89667c89"
+    },
+    {
+      "path": "verification/upper84/progress85/p2/proof85_p2.md",
+      "sha256": "2a8b033f3ff6ca24e307af61ae8de15514b27ed80222c79a342abc4257157cb4"
+    },
+    {
+      "path": "verification/upper84/progress85/positive/fresh_positive_notes.md",
+      "sha256": "b9919fbac9a3c4afd68e7bba3e997be7e1e8905e447f010209ad746d5c3b3fd7"
+    },
+    {
+      "path": "verification/upper84/progress85/positive/p3_terminal.md",
+      "sha256": "ef803bb72f27e280e61f4c8a4a77184432f8b5e1cfa07bed171a635074b01a5c"
+    },
+    {
+      "path": "verification/upper84/progress85/positive/p4_fresh.md",
+      "sha256": "fc2b5ea6affd01143495d21dbb0a10877f41083e5480cf07bd2cae69a81e7cd4"
+    },
+    {
+      "path": "verification/upper84/progress85/scalar/p4_cross_certificate.tex",
+      "sha256": "c73783ec6fc8ad9c0299c41ba34d3da4e38ac39674129615f5e6cb5f9382c419"
+    },
+    {
+      "path": "verification/upper84/progress85/scalar/z4_cards_independent_audit.md",
+      "sha256": "f7307fd88582f9fc4058f1ba6a0061ceb6f61ee6a3f36d135f3e436eee549c6a"
+    },
+    {
+      "path": "verification/upper84/progress85/common/p4_independent_review.md",
+      "sha256": "20205d79e53fdaaa1073e3995c8449a596b6fd808ded18b0e317e36dbf874a2a"
+    },
+    {
+      "path": "verification/upper84/progress85/review/zero_terminal_audit.md",
+      "sha256": "ddceb392fa8b16ded11a917e79221f14b0860e8259acbedb2911ccc187215e2d"
+    },
+    {
+      "path": "verification/upper84/progress85/review/source_and_p3_audit.md",
+      "sha256": "32e9378f06b7e59c8c39a536420937b556930f36768691a50c4d4fe2ed53e410"
+    }
+  ],
+  "general_inputs": "此前独立链已审查的一般定理、格化和无限稠密洞输入继续沿用；本轮核对大小85的参数、实际集合适用性和先后顺序。",
+  "structure": [
+    "先做单侧2117<2416、相反点q偶且q^2<=2936和剥离后的1925<2347，最终才固定77点源。",
+    "小侧10/11/12边界保留最大值删除的+16；(56,5,132)见证给125>124。",
+    "AP共同格与小侧AP阶2分支：奇质量先给生成元<=15，再给z<=14；c<=59/61、w<=56以新全非空引理排除。",
+    "双非AP严格逆不足k3..20共18端点，k10/13/14用加强前缀；不提前假设另一侧本原。",
+    "13边界失败分支(55,2,52)给185>159；成功分支先-811格化再(55,4,119)给160>159。",
+    "高z末步32方向：18直接、14加强前缀；k>=16预算先排。内层-165-2I<0，外层1191>4*77-10+600。",
+    "共同整数源之后才用G144和w<=4z；非本原c<=28,w<=64，以及14边界(54,6,168)或c<=31,w<=48。",
+    "最终15..53的两侧本原69点核心；分类保持物理所有者，不按大小随意重新命名。"
+  ],
+  "new_proofs": [
+    "Theta<=162：删最大值的153配对标签中，扣掉七个实际标签已在中央区间内者；三种解析情形穷尽。77点实际源取得等号。",
+    "全非空=>w>=2M+10>=2d+8：守护空隙的11/8/15固定标签按并集只计一次。",
+    "同一实际Q的5/6点截断保留sigma<=52xi，再用偶性得112-w；必要偶数w由60升至64。",
+    "每侧只需0..3点实际截断；六个p值与正斜率尾给无界-21/-13界，q>=63与新A<=57给至少16余量。",
+    "Z2余量2到56；P2 C7和beta/O直接排除；P4交叉无端点fringe修补。"
+  ],
+  "strata": [
+    {
+      "case": "Z0",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_reduction.md"
+      ],
+      "review": "共同整数格之后使用全非空引理，无需两侧本原性的额外前提。",
+      "terminal": "w=0 与 w>=162 矛盾。"
+    },
+    {
+      "case": "Z1",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_reduction.md"
+      ],
+      "review": "唯一空 O、实际 beta 贡献者、整性、同一子核心六边森林。",
+      "terminal": "2t>=73+I 与 2t<=17 矛盾。"
+    },
+    {
+      "case": "Z2",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_reduction.md"
+      ],
+      "review": "双上帽、HIGH C7 原生损失、四张 beta/O 卡及三种真实缺失形式。",
+      "terminal": "A>=344+I 与 A<=288，余量至少56。"
+    },
+    {
+      "case": "Z3",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_reduction.md",
+        "verification/upper84/progress85/common/z3a1_side_union.md"
+      ],
+      "review": "五端点轻重位置、信用10；A1 固定物理侧的实际并集。",
+      "terminal": "A0:792>791；A1:394>338。"
+    },
+    {
+      "case": "Z4",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_z4_z5_cards.md",
+        "verification/upper84/progress85/scalar/z4_ownerless_certificate.tex",
+        "verification/upper84/progress85/scalar/z4_cards_independent_audit.md"
+      ],
+      "review": "完整 A-E/A-H/B 保留表、所有端点归属、修正的 -3delta/4；无所有者的四个 H 状态。",
+      "terminal": "保留信用18与删除双最大值后的67点源证书；两 beta 都缺失时1192>1063。"
+    },
+    {
+      "case": "Z5",
+      "sources": [
+        "verification/upper84/progress85/zero/zero85_z4_z5_cards.md",
+        "verification/upper84/progress85/zero/zero85_z5_a1_b.md",
+        "verification/upper84/progress85/foundations/z5_alpha_final85.md",
+        "verification/upper84/progress85/scalar/z5_c5t_cutoff_audit.md"
+      ],
+      "review": "A0十三卡及反射、双空对三卡；先核命中后外侧整性，先14/27信用再正常端点，最终42；分裂beta只计整个配对。",
+      "terminal": "alpha以无界三点截断给851>835；C5尾型依法32到26到22，tau+delta>=62>57-I。"
+    },
+    {
+      "case": "P0",
+      "sources": [
+        "verification/upper84/progress85/positive/fresh_positive_notes.md"
+      ],
+      "review": "w<=4z<=56 后使用全非空引理。",
+      "terminal": "w<=56<162。"
+    },
+    {
+      "case": "P1",
+      "sources": [
+        "verification/upper84/progress85/positive/fresh_positive_notes.md"
+      ],
+      "review": "四个内层实际发生项的全部子集位移、共同条带、外侧整性、双上帽与唯一O。",
+      "terminal": "112-w<=2t<=17+w/2 迫使偶数w>=64，与w<=14矛盾。"
+    },
+    {
+      "case": "P2",
+      "sources": [
+        "verification/upper84/progress85/p2/proof85_p2.md"
+      ],
+      "review": "条带/整性/首洞分类沿用；C7排除、beta/O和最后六边以新空隙与源预算缩短。",
+      "terminal": "C7首洞1由前缀2..21传播到w=2而w-5<0；beta/O:82>70；最后100+I+xi<=21。"
+    },
+    {
+      "case": "P3",
+      "sources": [
+        "verification/upper84/progress85/positive/p3_terminal.md",
+        "verification/upper84/progress85/review/source_and_p3_audit.md"
+      ],
+      "review": "6188种子及无限传播，z10到8到6，m1..4；clip72、最多一个重端点、物理唯一1的双方所有者。",
+      "terminal": "保留所有校正后的 A0/A1 终端；不把有限种子穷举当作无限传播证明。"
+    },
+    {
+      "case": "P4",
+      "sources": [
+        "verification/upper84/progress85/positive/p4_fresh.md",
+        "verification/upper84/progress85/scalar/p4_cross_certificate.tex",
+        "verification/upper84/progress85/common/p4_independent_review.md"
+      ],
+      "review": "七种子六洞型、信用8、m1/m2、整性/CORE8在正常端点之前；A0/A1/B所有者与三卡。",
+      "terminal": "m1 A0交叉剩余>=492-3Theta>=6，无需164/165 fringe补丁。"
+    },
+    {
+      "case": "P5",
+      "sources": [
+        "verification/upper84/progress85/positive/fresh_positive_notes.md"
+      ],
+      "review": "共同条带与源预算，不预设外侧整性。",
+      "terminal": "tau>=62+2z 与 I+tau+delta<=57+w,w<=z 矛盾。"
+    },
+    {
+      "case": "H",
+      "sources": [
+        "verification/upper84/progress85/foundations/highhole_localization85.md",
+        "verification/upper84/progress85/positive/fresh_positive_notes.md"
+      ],
+      "review": "四段配对(mu,rho)下界；先整个高洞域局部化，无循环，保留mu而非反推。",
+      "terminal": "j>=2预算排除；j0尾段422+49>442否则w<=48<162；j1只余z16/18/20，与w>=64矛盾。"
+    }
+  ],
+  "removed_proof_dependencies": [
+    "Z5 alpha 7315状态枚举（仍回放作回归）",
+    "P2 C7额外四固定信用与fringe等号分支",
+    "P2 beta/O 单独w14分支",
+    "P4首洞1交叉Theta164/165 fringe端点修补"
+  ],
+  "full_theorem_formally_verified": false,
+  "archive85_endpoint_independently_adopted": true
+}

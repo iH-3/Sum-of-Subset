@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "complete_replays": 2,
+  "retained_mathematical_results_equal": true,
+  "legacy_suite_results_equal": true,
+  "geometry_byte_identical": true,
+  "ignored_metadata_keys": [
+    "elapsed_seconds",
+    "platform",
+    "python",
+    "seconds",
+    "timestamp_utc"
+  ],
+  "geometry_sha256": "3042f18ce16ce44348f109ee0d8966e802351a431074cae840b45299d39cd95f",
+  "normalized_retained_sha256": "059db7d3edda7396ddcd44e234f72928d2eb2cdfa194b6cda7f0ff209f97082d",
+  "unicode_and_space_path_full_replay": "PASS",
+  "legacy_assertions_enabled_in_both_modes": true,
+  "windows_static_checks": 5,
+  "windows_actually_executed": false,
+  "fresh_generated_result_files": [
+    {
+      "path": "source/verification/upper84/progress85/common/check_z3a1_side_union_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "1605023c9719763481e5be71df116a16a2bcf2ea53ec35dadf973a3804dfecd1",
+      "optimized_sha256": "1605023c9719763481e5be71df116a16a2bcf2ea53ec35dadf973a3804dfecd1"
+    },
+    {
+      "path": "source/verification/upper84/progress85/foundations/source_triple_fringe85_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "d0e9e84aca50c4b78a9220cd604c6bea9d64b218e9176b32588bd8720a2fc8dd",
+      "optimized_sha256": "d0e9e84aca50c4b78a9220cd604c6bea9d64b218e9176b32588bd8720a2fc8dd"
+    },
+    {
+      "path": "source/verification/upper84/progress85/foundations/z5_alpha_final85_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "47193ed6552e7c2d5a0217e04ea9146263c51b42be1e0b4281068af674311819",
+      "optimized_sha256": "47193ed6552e7c2d5a0217e04ea9146263c51b42be1e0b4281068af674311819"
+    },
+    {
+      "path": "source/verification/upper84/progress85/foundations/zero_audit85_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "17591d419106ccd3af7ddcd96dd1d76393f7f42a6745e96da50dcbf9b310370b",
+      "optimized_sha256": "17591d419106ccd3af7ddcd96dd1d76393f7f42a6745e96da50dcbf9b310370b"
+    },
+    {
+      "path": "source/verification/upper84/progress85/scalar/check_p4_cross_certificate_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "440f84bfaf73e04832328dea9a6534b76cbd83fa4ab8d6965a5c6e33956d4df4",
+      "optimized_sha256": "440f84bfaf73e04832328dea9a6534b76cbd83fa4ab8d6965a5c6e33956d4df4"
+    },
+    {
+      "path": "source/verification/upper84/progress85/scalar/check_z4_ownerless_certificate_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "18811a1fdb7b7b1cf1d6e873122ccfa8a166fcce5dae6abda490779f3f79258f",
+      "optimized_sha256": "18811a1fdb7b7b1cf1d6e873122ccfa8a166fcce5dae6abda490779f3f79258f"
+    },
+    {
+      "path": "source/verification/upper84/progress85/scalar/check_z5_c5t_cutoff_audit_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "88e960502cff3f6a76c4247911d66814572da550b66135995eba177fd572995e",
+      "optimized_sha256": "88e960502cff3f6a76c4247911d66814572da550b66135995eba177fd572995e"
+    },
+    {
+      "path": "source/verification/upper84/progress85/zero/check_zero_cards85_results.json",
+      "mathematical_results_equal": true,
+      "byte_identical": true,
+      "full_sha256": "554b3fc3d9e5fbb223a247b6f7f86d26de1899d1f3552a523c0ae1f0cc713299",
+      "optimized_sha256": "554b3fc3d9e5fbb223a247b6f7f86d26de1899d1f3552a523c0ae1f0cc713299"
+    }
+  ]
+}
