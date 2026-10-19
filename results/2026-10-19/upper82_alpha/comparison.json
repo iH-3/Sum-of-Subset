@@ -1,0 +1,13 @@
+{
+  "certificate_sha256": "dd5d23767d4af7bf2e1ae3f4c87ba6f5148ad1b28fe2ca6d97d90ee5d8b9e446",
+  "global_upper82_proved": false,
+  "global_upper_bound": 83,
+  "normal_optimized_byte_identical": true,
+  "output_sha256": "593d5389dbd73d1a04238838453ed34f933f181d99894574bb7ebc624adefeab",
+  "pdf_pages": 5,
+  "pdf_visual_review": "all five rendered pages checked; no overflow or undefined references",
+  "prior_c5t_source_hashes_unchanged": 24,
+  "prior_complete83_source_hashes_unchanged": 139,
+  "replay_sha256": "cca6c206c3c4c5510168aa9883264ad0863e69676ae8d668e2b2adfb17708d4a",
+  "source_manifest_sha256": "9fa5c419bce8a185646a95bd0311886f18e864453671d2185b8897885fe5cb7c"
+}
