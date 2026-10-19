@@ -1,0 +1,40 @@
+{
+  "schema": "upper83-progress-summary-v1",
+  "date": "2026-10-19",
+  "status": "PASS_PROGRESS_ONLY",
+  "current_proved_range": [
+    71,
+    84
+  ],
+  "candidate_upper": 83,
+  "candidate_proved": false,
+  "source_bounds": {
+    "theta": "2d+8, d>=21",
+    "theta_plus_B": "2d+18, d>=31 and both core sides>=4"
+  },
+  "weighted_core_lower": "13|E|-25",
+  "size85_alpha_margin": {
+    "before": 16,
+    "after": 57
+  },
+  "size84_zero_target_hole_remaining_j_under_stated_representation": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "actual_source_regressions": 81000,
+  "actual_one_side_cores": 6399,
+  "actual_intersections": 4014,
+  "ordinary_optimized_byte_identical": true,
+  "negative_controls_rejected": 6,
+  "baseline_suites_passed": 11,
+  "baseline_checks": {
+    "PASS": 140,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "source_files_pinned": 10,
+  "source_manifest_sha256": "98fb889096c45a0391ca5e260d5abdb760470822e25824cce50d7be8cd132b61",
+  "full_theorem_formally_verified": false
+}

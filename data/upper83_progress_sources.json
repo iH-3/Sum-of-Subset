@@ -1,0 +1,47 @@
+{
+  "schema": "upper83-progress-sources-v1",
+  "baseline_commit": "87e961221303cb43ed55410cba935c6346459001",
+  "scope": "Executable source, fixed-label catalogue and written dependencies for the new progress report. This is not a manifest certifying a complete size84 exclusion.",
+  "files": [
+    {
+      "path": "verification/upper83_progress.py",
+      "sha256": "368d50801bb8d49f566914549d7061fb1e12e70430d134cb63bf458578eb5836"
+    },
+    {
+      "path": "data/fixed_cover_certificate.json",
+      "sha256": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3"
+    },
+    {
+      "path": "reports/upper84_adoption_20261019.tex",
+      "sha256": "b365bf4fa1d888ecceee82f0008c1467604def4d83301046b2083780e89d1932"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/source_triple_fringe85.md",
+      "sha256": "c4c7aa0a3c107337828cf0eca45e06f4de688725b987b39b49d9ae1f7d2b365d"
+    },
+    {
+      "path": "verification/upper84/progress85/common/raw_gap_inventory.md",
+      "sha256": "014e4037fb779acc39de514ec860daef1a098354cd497a9bb29e50bee0358e30"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/z5_alpha_final85.md",
+      "sha256": "9cc0d4d7c460b1fcb7828ecc2ad857654540870299487b6df46aa5a6a42750be"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_reduction.md",
+      "sha256": "880f6153e2c5b5332e67c214bf81372463af0895193c836ab9f05f152efc1f18"
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/proof/report.tex",
+      "sha256": "c771ff79b1683e3a618826a3a1eead6e77eaafde82101937d8b8e73b062b9c33"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/structure85_integration_checklist.md",
+      "sha256": "c0cd94bb44ce84b7db387c5fd7425e72219fe256a36ee038a46c27bbfd0b25a2"
+    },
+    {
+      "path": "verify_upper83_progress_windows.bat",
+      "sha256": "f01f30e2297c21ac3fe36c783255d0ba91a40d306f98e9efad1e0ecd5830e240"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "schema": "upper83-progress-execution-manifest-v1",
+  "archive": "execution_logs.zip",
+  "archive_sha256": "c62e0bba298171cbaf998dbb4281684249a8d47ab7c2d25f74499325e9060da6",
+  "entries": [
+    {
+      "path": "baseline/launcher.log",
+      "bytes": 66,
+      "crc32": "6bed8192",
+      "sha256": "5c3986e0c4b36c3b108fd0e504f11b8d0de47e5f434b5703abe975b5ec304b81"
+    },
+    {
+      "path": "baseline/replay.json",
+      "bytes": 4667,
+      "crc32": "bed7c9ff",
+      "sha256": "580c42b851704db3ecfb809ec8085fa6caf0f0f33632f97e935a1286a2e66460"
+    },
+    {
+      "path": "baseline/work/geometry.json",
+      "bytes": 2549,
+      "crc32": "79ba88f8",
+      "sha256": "3042f18ce16ce44348f109ee0d8966e802351a431074cae840b45299d39cd95f"
+    },
+    {
+      "path": "baseline/work/legacy_full.log",
+      "bytes": 365,
+      "crc32": "225522a5",
+      "sha256": "b14918b8bb97be6bcd86cbe284263e4a31b34da5065d900beece54f9d772e8fe"
+    },
+    {
+      "path": "baseline/work/new_geometry.log",
+      "bytes": 25,
+      "crc32": "6e5db877",
+      "sha256": "bd2cc8d863d1042a2039f3d27b4a1d91c6994e0eb91c9347074bb33007258458"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/common/check_z3a1_side_union_results.json",
+      "bytes": 664,
+      "crc32": "bb0474cf",
+      "sha256": "1605023c9719763481e5be71df116a16a2bcf2ea53ec35dadf973a3804dfecd1"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/foundations/source_triple_fringe85_results.json",
+      "bytes": 2920,
+      "crc32": "5355ccc5",
+      "sha256": "d0e9e84aca50c4b78a9220cd604c6bea9d64b218e9176b32588bd8720a2fc8dd"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/foundations/z5_alpha_final85_results.json",
+      "bytes": 2020,
+      "crc32": "3d6a31d7",
+      "sha256": "47193ed6552e7c2d5a0217e04ea9146263c51b42be1e0b4281068af674311819"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/foundations/zero_audit85_results.json",
+      "bytes": 8497,
+      "crc32": "d7500747",
+      "sha256": "17591d419106ccd3af7ddcd96dd1d76393f7f42a6745e96da50dcbf9b310370b"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/scalar/check_p4_cross_certificate_results.json",
+      "bytes": 1042,
+      "crc32": "7e44d1fc",
+      "sha256": "440f84bfaf73e04832328dea9a6534b76cbd83fa4ab8d6965a5c6e33956d4df4"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/scalar/check_z4_ownerless_certificate_results.json",
+      "bytes": 612,
+      "crc32": "c7ce7a9d",
+      "sha256": "18811a1fdb7b7b1cf1d6e873122ccfa8a166fcce5dae6abda490779f3f79258f"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/scalar/check_z5_c5t_cutoff_audit_results.json",
+      "bytes": 534,
+      "crc32": "dc3b6ec7",
+      "sha256": "88e960502cff3f6a76c4247911d66814572da550b66135995eba177fd572995e"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/progress85/zero/check_zero_cards85_results.json",
+      "bytes": 3332,
+      "crc32": "01e190f0",
+      "sha256": "554b3fc3d9e5fbb223a247b6f7f86d26de1899d1f3552a523c0ae1f0cc713299"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/ap_bootstrap.txt",
+      "bytes": 5946,
+      "crc32": "28de20eb",
+      "sha256": "c8d6c9fc0b8d6df2ddf9335645c2be48fd7536f0093d016d7093a4a302449e28"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/dense_seed_6188.txt",
+      "bytes": 49,
+      "crc32": "db92d82c",
+      "sha256": "912c75249ca9b88bf0f08a54e850884e84b4c7b17676a6b81d0658a473b96839"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/highhole_localization.txt",
+      "bytes": 750,
+      "crc32": "38693719",
+      "sha256": "030fe02ea1b02921cd2098847b0c306f048c9915ba30daca2dd5c7da2e0ae5f4"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/inverse_and_boundaries.txt",
+      "bytes": 1751,
+      "crc32": "bc09bee5",
+      "sha256": "75d950b2c2f420416d48962394f0a458cb2cb668f3f39e700760e7fbe1936c78"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/p2_activity_and_forests.txt",
+      "bytes": 678,
+      "crc32": "d455a4ff",
+      "sha256": "84633454d25afc03441b282334b738938ac6c7b158c98691b2d82fa392411457"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/p3_terminal.txt",
+      "bytes": 748,
+      "crc32": "26dacf58",
+      "sha256": "724ab10e792e4244a2c720523cb531ebbdd385cb247fd43ee2bc423fde3ad322"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/p4_cards.txt",
+      "bytes": 361,
+      "crc32": "4eeaf406",
+      "sha256": "f8200699796e8636d6f59935815954e12429da42c7bfffad637bae261c8ff0cc"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/p4_cross.txt",
+      "bytes": 1042,
+      "crc32": "7e44d1fc",
+      "sha256": "440f84bfaf73e04832328dea9a6534b76cbd83fa4ab8d6965a5c6e33956d4df4"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/retained_full/coverage.json",
+      "bytes": 360816,
+      "crc32": "5341b16a",
+      "sha256": "79566762530bd2186ddf9b9e4742906ddd86eac2fb4cc661c88b843bcffd5688"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/retained_full/verification_log.txt",
+      "bytes": 13819,
+      "crc32": "75cb114c",
+      "sha256": "cf5c0ff72864f3a457582b2a9b86fea12a90697a4e3c148fa4469e955ce879f9"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/retained_upper85_full.txt",
+      "bytes": 13819,
+      "crc32": "75cb114c",
+      "sha256": "cf5c0ff72864f3a457582b2a9b86fea12a90697a4e3c148fa4469e955ce879f9"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/source_fringe.txt",
+      "bytes": 183,
+      "crc32": "3367f972",
+      "sha256": "352dbe7a228d744c55f29b1b7cc65dd369b8111bd5134fa05c226445e3deec2b"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/summary.json",
+      "bytes": 1434,
+      "crc32": "b682b8d4",
+      "sha256": "b2d6c16f9ecc14c2f4777470df86e1f197724a947171258eda64b8aa6262d713"
+    },
+    {
+      "path": "baseline/work/source/verification/upper84/verification_results/zero_endpoint_cards.txt",
+      "bytes": 336,
+      "crc32": "29751fb9",
+      "sha256": "7a1b8b9b64ac6fb3feb2a2839802b88a0502bd962d8905514a04b9891aaf66c0"
+    },
+    {
+      "path": "progress/optimized.json",
+      "bytes": 21397,
+      "crc32": "dc2a8687",
+      "sha256": "af629bebdbd016ccdb3e28b07d80e27ed228946de50dc08111c70b81a409b13a"
+    },
+    {
+      "path": "progress/optimized.log",
+      "bytes": 95,
+      "crc32": "b1cb4054",
+      "sha256": "d66c9a0b1f6192963a31a5a51d2affbd125195852189d824dadfc7acd7c35217"
+    },
+    {
+      "path": "progress/ordinary.json",
+      "bytes": 21397,
+      "crc32": "dc2a8687",
+      "sha256": "af629bebdbd016ccdb3e28b07d80e27ed228946de50dc08111c70b81a409b13a"
+    },
+    {
+      "path": "progress/ordinary.log",
+      "bytes": 95,
+      "crc32": "b1cb4054",
+      "sha256": "d66c9a0b1f6192963a31a5a51d2affbd125195852189d824dadfc7acd7c35217"
+    },
+    {
+      "path": "report/build1.log",
+      "bytes": 4672,
+      "crc32": "75099d97",
+      "sha256": "1e718e69b476cfe11d97fe809c1baa43bfcadbef756f60f262dfc44beeab8358"
+    },
+    {
+      "path": "report/build2.log",
+      "bytes": 4672,
+      "crc32": "75099d97",
+      "sha256": "1e718e69b476cfe11d97fe809c1baa43bfcadbef756f60f262dfc44beeab8358"
+    },
+    {
+      "path": "report/fonts.txt",
+      "bytes": 1319,
+      "crc32": "2afe7031",
+      "sha256": "b32911274727cf7c8bab4121fbef403d10bbfec268695412b9e2a1b8b53147ca"
+    },
+    {
+      "path": "report/pdfinfo.txt",
+      "bytes": 434,
+      "crc32": "fb032053",
+      "sha256": "2557195eb3b3c50f7d66ce27f62aea1d0e94d896350e665398160e6c13f1effd"
+    },
+    {
+      "path": "report/render.log",
+      "bytes": 0,
+      "crc32": "00000000",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "Fresh run outputs and build logs; pinned copied source files and historical receipts excluded."
+}

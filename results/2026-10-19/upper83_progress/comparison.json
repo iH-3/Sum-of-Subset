@@ -1,0 +1,17 @@
+{
+  "schema": "upper83-progress-comparison-v1",
+  "ordinary_command": "python -I -S -B verification/upper83_progress.py --output .work/upper83_progress.json",
+  "optimized_command": "python -I -S -B -O verification/upper83_progress.py --output .work/upper83_progress_O.json",
+  "byte_identical": true,
+  "ordinary_sha256": "af629bebdbd016ccdb3e28b07d80e27ed228946de50dc08111c70b81a409b13a",
+  "optimized_sha256": "af629bebdbd016ccdb3e28b07d80e27ed228946de50dc08111c70b81a409b13a",
+  "windows_execution_performed": false,
+  "windows_review": "Static launcher review only; no Windows runtime is available in this run.",
+  "windows_static_checks": {
+    "changes_to_launcher_directory": true,
+    "prefers_python3_launcher": true,
+    "python_fallback_present": true,
+    "both_branches_propagate_exit_status": true,
+    "output_path_is_repository_relative": true
+  }
+}

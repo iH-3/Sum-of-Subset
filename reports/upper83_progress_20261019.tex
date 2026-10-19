@@ -1,0 +1,395 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\IfFontExistsTF{Noto Sans CJK SC}{\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]}{\setmainfont{Microsoft YaHei}[AutoFakeBold=2,AutoFakeSlant=0.15]}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\setmonofont{lmmono10-regular.otf}[Scale=0.9]
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\A}{A_*}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.14}
+\linespread{1.07}
+\raggedbottom
+\title{耦合源包络与加权截断\\\large 上界 84 的证明加强及大小 84 的部分排除}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+接续提交 \texttt{87e9612}，本轮给出两个可取等的通用源界
+$\Theta\le2d+8$、$\Theta+B_s+B_t\le2d+18$。
+第二式保留源参数与四尾例外数的联系，避免分别取最坏值造成的十单位损失。
+再以实际秩偏差选择同一个截断子核心，证明尖锐不等式
+$4\tau-2\xi_s+2|Q|+11F\ge13|E|-25$。
+这把已闭合大小 85 的 alpha 分支的矛盾余量从 16 提高到 57。
+对下一端点大小 84，重新计算预算；排除零目标洞下的零、一、六空单元及更多空单元，
+留下二至五空单元继续处理。全局上界仍为 84；大小 84 的完整结构与剩余情形尚未闭合，
+本文不声称 $N\le83$。附有无优化器依赖的验证程序、精确等号例子和防止误报新上界的控制。
+\end{abstract}
+
+\section{当前结论与本轮范围}
+有限实数集 $A$ 满足 $\FS(A)\subseteq4A$，其中子集和包含零、四重和允许重复元素。
+前序独立证明已经给出
+\[\boxed{71\le N\le84.}\]
+大小 85 的完整接入及一般资源规则见
+\path{reports/upper84_adoption_20261019.tex}。
+本轮优化其中的源包络和最后一个零洞分支，并开始大小 84 的新证明。
+若存在 84 点反例，它必含零，否则加入零得到 85 点反例；选定所有四项表示、
+在相应整数线性方程组的有理核中逼近并清分母，仍可把存在性归约为互异整数配置。
+这一归约不替代后续的共同尺度、两层相交与洞数控制。
+
+所有新增无界不等式都在正文证明。程序只重放其中的有限证书、实际集合交叉检查和反例控制。
+原基础证明文件保持不变，固定源及审阅对应见
+\path{data/upper83_progress_sources.json} 和
+\path{results/2026-10-19/upper83_progress/}。
+
+\section{两个尖锐的通用源界}\label{sec:source}
+令整数源 $D$ 有 $d$ 点，内核
+$E=P_s\cup\{0\}\cup(-P_t)$ 有 $d-8$ 点，
+$r_s+r_t=d-9$。记 $R_v=\max P_v$、$R=R_s+R_t\ge d-9$。
+每侧四个尾点为 $R_v+a_v,R_v+b_v,R_v+c_v,R_v+e_v$，
+其中 $1\le a_v<b_v<c_v<e_v$。
+令
+\[
+u_v=a_v+b_v,\quad U=u_s+u_t,\quad C=c_s+c_t,\quad
+j_v=e_v-c_v,\quad J=j_s+j_t,
+\]
+\[
+K=|D+D|,\qquad \Theta=2K-4R-U-2C-J.
+\]
+$j_v$ 是尾间隙；后文空普通单元总数另记为 $j$。
+以 $\pi_v$ 表示三尾偏移的二项和中大于 $c_v$ 的不同值个数，
+以 $B_v$ 表示四尾偏移的二项和中大于 $e_v$ 的不同值个数。
+已核对的初等尾部引理为
+\begin{equation}\label{eq:fringe}
+2\pi_v\le u_v+4-(u_v\bmod2),\quad
+2B_v\le u_v+8-(u_v\bmod2),\quad
+\pi_v+B_v-u_v\le5,\quad\pi_v\le u_v.
+\end{equation}
+前述三条的完整小情形和无界尾部证明见
+\path{verification/upper84/progress85/foundations/source_triple_fringe85.md}。
+最后一条在 $u_v\ge6$ 用 $\pi_v\le6$；$u_v=3,4,5$ 的上界为 $3,4,4$，
+且 $c_v\ge2b_v$ 后 $\pi_v=3$。
+
+删去两最大值后，先计整个中央整数区间
+$\mathcal I=[-2R_t-c_t,2R_s+c_s]$，再计 $\pi_s+\pi_t$ 个例外。
+重新插入最多 $2d-1$ 个形式配对；令其中落在 $\mathcal I$ 内的标签数为 $h$。
+这些标签已被区间计数覆盖，故
+\begin{align}
+K&\le2R+C+2d+\pi_s+\pi_t-h,\label{eq:removed}\\
+K&\le2R+C+J+1+B_s+B_t.\label{eq:full}
+\end{align}
+不要求中央区间已由旧二项和填满。平均两式得到
+\begin{equation}\label{eq:average}
+\Theta\le2d+1-h+\sum_v(\pi_v+B_v-u_v).
+\end{equation}
+另有 $\Theta\le4d+8-J$ 和 $\Theta\le J+18$。
+
+\begin{theorem}\label{thm:theta}
+若 $d\ge21$，则 $\Theta\le2d+8$，且常数可取到。
+\end{theorem}
+\begin{proof}
+反设整数 $\Theta\ge2d+9$，则 $J\le2d-1$。
+在重新插入标签中选正最大值与负侧三个旧尾点、反射的三个配对，以及两最大值的配对。
+前两组在 $\mathcal I$ 内的数量为
+\[
+n_s=\#\{x\in\{a_t,b_t,c_t\}:j_s\le R+x\},\qquad
+n_t=\#\{x\in\{a_s,b_s,c_s\}:j_t\le R+x\}.
+\]
+最后一个在内当且仅当 $j_s-j_t\le R+c_t$ 且 $j_t-j_s\le R+c_s$。
+若不在内，例如 $j_s\ge j_t+R+c_t+1$，则
+$j_t\le\lfloor(d+4)/2\rfloor<d-8\le R+a_s$，所以至少三个标签在内。
+此时 \eqref{eq:average} 给上界 $2d+8$。
+
+若最大值配对在内且 $n_s+n_t\ge2$，结论相同。
+若 $n_s=n_t=0$，则 $c_s+c_t\le15$；$j_v>c_v$，两侧 $B_v=4$，
+于是超额和至多 8，$h\ge1$ 给上界 $2d+8$。
+若 $n_s+n_t=1$，不妨 $n_s=1$，则 $c_s+b_t\le15$，$c_s\le13<j_s$。
+本侧 $B_s=4$、超额至多 4，另一侧至多 5，$h\ge2$ 再给上界 $2d+8$。
+
+等号取稠密内核 $[-r_t,r_s]\cap\Z$，两侧偏移 $(1,2,3,d+1)$。
+平移后源为 $[0,p-1]\cap\Z\cup\{-p,2p-1\}$，$p=d-2$。
+其二项和为 $[-p,3p-2]\cap\Z$ 加两个孤立点 $-2p,4p-2$，所以
+$K=4d-7$，直接代入得 $\Theta=2d+8$。
+\end{proof}
+
+\begin{theorem}\label{thm:joint}
+若 $d\ge31$ 且 $r_s,r_t\ge4$，则
+\[\boxed{\Theta+B_s+B_t\le2d+18.}\]
+此界同样可取到；它比把 $\Theta\le2d+8$ 与 $B_s+B_t\le20$ 独立相加节省 10。
+\end{theorem}
+\begin{proof}
+记 $H_v=\pi_v+2B_v-u_v$。由 \eqref{eq:average}，
+\[\Theta+B_s+B_t\le2d+1-h+H_s+H_t.\]
+总有 $H_v\le14$。若 $H_v>10$，则 $u_v\le15$；而 $j_v\ge b_v$ 时只有
+四个涉及最大偏移的和及可能的 $2c_v$ 超过 $e_v$，故 $B_v\le5$，
+结合 $\pi_v\le u_v$ 反而给 $H_v\le10$。
+所以 $j_v<b_v\le14$，即 $j_v\le13$。
+
+最大值 $R_v+e_v$ 与对侧旧核心点 $-y$ 的配对在中央区间内，当且仅当
+$j_v\le R_v+y$；对侧三个旧尾点也全在内。
+因此这组中央标签至少有
+\[
+r_o+3-\max(0,12-R_v)\ge\min(r_o+3,d-18)\ge7
+\]
+个。只有一侧 $H>10$ 时，$H_s+H_t\le24,h\ge7$，已给所需上界；
+两侧都大于 10 时，两组旧点配对互异，$h\ge14$，结论更强。
+
+余下 $H_s,H_t\le10$。反设 $\Theta+B_s+B_t\ge2d+19$，
+因 $B_s+B_t\le20$，有 $\Theta\ge2d-1$、$J\le2d+9$。
+若最大值配对不在中央区间，较小尾间隙至多
+$\lfloor(d+14)/2\rfloor<d-8$，故 $h\ge3$，矛盾。
+若它在内且 $n_s+n_t\ge2$，也有 $h\ge3$。
+若 $n_s=n_t=0$，则 $c_s+c_t\le25$，两侧 $j_v>c_v$，
+所以 $B_v=4,H_v\le8$，总界至多 $2d+16$。
+若恰有一个旧尾配对在内，不妨 $n_s=1$，则 $c_s+b_t\le25$，
+$c_s\le23<j_s$，故 $H_s\le8$，总界至多 $2d+17$。
+各情形均矛盾。
+
+等号仍取稠密内核，两侧偏移改成 $(1,2,d-1,2d-5)$。
+令 $q=d-4$，平移后的源为
+\[D'=[0,q-1]\cap\Z\ \cup\{-2q-1,-q-1,2q,3q\}.\]
+其二项和为 $[-2q-2,4q]\cap\Z$ 加四个孤立点
+$-4q-2,-3q-2,5q,6q$，所以 $K=6d-17$。
+此时 $\Theta=2d+8$、$B_s=B_t=5$，取得等号。
+这些仅是实际源的等号配置，不是满足原约束的大集合 $A$。
+\end{proof}
+
+\section{保留实际基数的加权截断}\label{sec:kernel}
+将每侧核心写成 $x_i=i+d_i$，其中
+$0\le d_1\le\cdots\le d_r=\xi$，$\tau=\sum_i d_i$，并令 $d_0=0$。
+每侧至少三点，允许删除最大的 $j=0,1,2,3$ 点。
+两侧共同选取后，记实际保留集为 $Q$、$m=|E|$，则
+\[
+q=|Q|=m-j_s-j_t,\qquad
+F=m-(j_s+d_{r_s-j_s})-(j_t+d_{r_t-j_t}).
+\]
+对每个整数 $x\ge0$，由区间并集计数有 $|Q\cap(Q+x)|\ge F-x$。
+这里保持 $q$ 和 $F$ 的同一次选择。要最大化 $2q+11F$，应每侧最小化
+\[k_v=\min_{0\le j\le3}\{13j+11d_{r_v-j}\},\]
+而非仅最小化跨度损失。因此 $2q+11F=13m-k_s-k_t$。
+
+\begin{theorem}\label{thm:weighted}
+上述选择给出尖锐的无界不等式
+\[\boxed{4\tau-2\xi_s+2q+11F\ge13m-25.}\]
+\end{theorem}
+\begin{proof}
+由 $k\le13j+11d_{r-j}$，对 $j=0,1,2,3$ 有
+\[d_{r-j}\ge\max\left(0,\left\lceil\frac{k-13j}{11}\right\rceil\right).
+\]
+故对 $a=2,4$，
+\[
+a\xi+4(\tau-\xi)-k\ge
+\Phi_a(k):=a\left\lceil\frac{k}{11}\right\rceil+
+4\sum_{j=1}^3\max\left(0,\left\lceil\frac{k-13j}{11}\right\rceil\right)-k.
+\]
+这是尾秩质量的必要条件，不对 $\tau$ 设置截止值。
+当 $k\ge39$ 时 $\Phi_a(k+11)=\Phi_a(k)+a+1$；所以只需 $k=0,\ldots,49$。
+各段精确最小值为
+\begin{center}
+\begin{tabular}{c|rrrr}
+\toprule $k$&$0{:}12$&$13{:}25$&$26{:}38$&$39{:}49$\\\midrule
+$\Phi_2(k)$&$-9$&$-14$&$-15$&$-12$\\
+$\Phi_4(k)$&$-7$&$-10$&$-9$&$-4$\\\bottomrule
+\end{tabular}
+\end{center}
+从而 $4\tau_s-2\xi_s-k_s\ge-15$、$4\tau_t-k_t\ge-10$，相加即得结论。
+等号可由真实核心取得：$s$ 侧末三秩偏差为 $(1,2,3)$，$t$ 侧末两秩为 $(1,2)$，
+其他偏差为零。此时 $\tau=9,\xi_s=3,\xi_t=2,k_s=33,k_t=22$，两侧都可选零截断。
+\end{proof}
+
+这一方法可直接生成其他权重的有限证书。若目标权重为 $\alpha q+\beta F$，
+截断深度为 $h$，则成本为 $(\alpha+\beta)j+\beta d_{r-j}$。
+对质量权重 $a\xi+b(\tau-\xi)$，相应下界为
+\[
+a\left\lceil\frac{k}{\beta}\right\rceil+
+b\sum_{j=1}^h\max\left(0,\left\lceil\frac{k-(\alpha+\beta)j}{\beta}\right\rceil\right)-k.
+\]
+整数非负权重、$\beta>0$ 且 $a+bh\ge\beta$ 时，尾部每移动 $\beta$ 的增量非负，
+所以有限段 $0\le k<h(\alpha+\beta)+\beta$ 足够。程序明确检查这个尾部门槛。
+
+\section{已闭合 alpha 分支的余量从 16 到 57}\label{sec:alpha}
+本节保留大小 85 的完整活动与信用证明：先核命中、信用 14，再由上尾得到 27，
+随后证明端点正常，最后信用为 42。未把这个前提序列直接移植到大小 84。
+其原文为 \path{verification/upper84/progress85/foundations/z5_alpha_final85.md}。
+
+在已许可的十一单元分组和同一 $Q$ 的加权星形不等式中，保留实际
+$B=B_s+B_t$，使用 $K\le M+R+1+B$，而非先替成 $K\le M+R+21$。
+原传输式精确变为
+\begin{equation}\label{eq:transport}
+2M_t+2q+11F\le2R+(9d+94+2B)+2r_t-\delta+5(\delta-42).
+\end{equation}
+常数可直接核对：源质量为 $2K+13d+84-\delta$，
+完整目标的下、上秩端点常数为 $d-4-r_v$ 和 $S_v+r_o-(d-5)$。
+先减去一个 $C5_s$ 下端点及 $2\alpha_t+C5_t$ 的下端点，
+再用 $K\le M+R+1+B$，得到 $9d+94+2B$；分组与星形的损失系数仍合为 5。
+
+写 $\Theta=H+I+\tau+\delta$，并令 $p_v=u_v\bmod2$、$p=p_s+p_t$。
+单最大值包络的一般形式为
+$e_t\ge\Theta-d-12$：它由
+$\Theta+j_t-j_s\le2d+14-p$、$J\ge\Theta-18+p$ 及 $c_t+p_t\ge4$ 得到。
+把 $M_t=r_t+\xi_t+e_t$、$R=d-9+\xi_s+\xi_t$ 代入 \eqref{eq:transport}，得
+\begin{equation}\label{eq:master}
+4I+4\tau-2\xi_s+2q+11F\le13d-110-4H+2(\Theta+B).
+\end{equation}
+大小 85 时 $d=77,H=105,m=69$，新耦合源界给右侧
+$471+2\cdot172=815$。定理 \ref{thm:weighted} 给左侧至少
+$13\cdot69-25=872$。因此
+\[\boxed{872>815,\qquad\text{矛盾余量至少 }57.}\]
+前序的 851 与 835 已足以闭合；此次分别加强 21 与 20，共增加 41 的余量。
+没有再次引入 7315 状态的质量截止枚举。
+
+\section{大小 84 的新预算及已排除分支}\label{sec:84}
+在四外侧点及四内尾点每侧均存在的共同整数源表示中，
+$d=76,|E|=68,r_s+r_t=67$。令
+\[
+I=(r_s-33)(r_s-34)\ge0,\quad
+\tau=\sum P_s+\sum P_t-T_{r_s}-T_{r_t}\ge0.
+\]
+令 $D_s=D,D_t=-D$，$S_v$ 为 $D_v$ 的正元素总和，
+$F_v=\FS(D_v)\cap(0,\infty)$，$w=\sum_v(S_v-|F_v|)$。
+覆盖松弛为 $c=2K+18d+85-|\FS(D)|$；普通空单元数为 $j$，$\delta=c-76j\ge0$。
+原固定项容量始终是 84，不能误改为 $n-1=83$。
+源质量与覆盖给
+\[
+S=1156+I+\tau+4R+U+2C+J=2K+1452-76j+w-\delta.
+\]
+所以
+\begin{equation}\label{eq:84budget}
+\Theta=76j-296-w+\A,\qquad
+\boxed{\A:=I+\tau+\delta\le456-76j+w.}
+\end{equation}
+在 $w=0$ 时，$j=0,\ldots,6$ 的上预算分别是
+$456,380,304,228,152,76,0$。旧大小 85 的五空单元预算只有 57。
+
+\subsection*{零空单元}
+前序通用实际活动引理 $j=0\Rightarrow w\ge2|D|+8$ 不依赖大小 85。
+在这里给出 $w\ge160$，直接排除 $w=0,j=0$。
+
+\subsection*{一空单元}
+使用原普通中心记号 $O,H,U,V,\alpha,\beta,C4,C5,C6,C7$，
+令 $M=M_s+M_t$、$t_v=d_v-M$、$X=X_s+X_t$、$G=g_s+g_t$。
+一般一洞整数线性恒等式恢复全部外侧整性；每侧至少一个 $C6,C7$ 活动，
+故 $t_v\ge5$、$d_v\ge M+5\ge80$。
+若第一对为空，可取一个实际 beta 贡献者及对侧实际 $C5$，
+其恒等式迫使对侧 $t>M$，与仍活动的 $O$ 的守护空隙上界 $t\le12$ 矛盾。
+若第一对由 $v$ 贡献，则 $t_v>d_o\ge80$，故唯一空单元只能是 $O_v$。
+同侧 $H_v$ 仍活动；若 beta 也活动，第二守护空隙给 $t_v\le9$，再次矛盾。
+故同侧 beta 不贡献，分支 B 也因此排除；
+A 型的对侧 $u$ 同时保留 beta、$H$、$O$，于是 $2t_u\le17$。
+
+其余全部 $\alpha,C5,U,V,C7$ 保留，原六边森林
+$L_v-V_v-U_v$ 与 $L_v-C7_v$ 取 $L_u$ 为根。
+先选同一个实际子核心，令
+\[\xi=R-67,\qquad f=\max\{68-\xi,56-(\tau-\xi)/6\}.
+\]
+源预算 $I\le380$ 已保证两侧至少 14 点，六点截断存在。
+由 \eqref{eq:removed} 及 $U\ge6$，
+$K-M\ge R+\Theta-2d-6=R-378+I+\tau+\delta$。
+根损失与两条实际活动式给
+\[
+\begin{aligned}
+2t_u&\ge K-M-\delta+6f+2\\
+&\ge I+\max(99-5\xi+\tau,27+2\xi)\\
+&\ge I+\max(99-4\xi,27+2\xi)\ge51+I.
+\end{aligned}
+\]
+两仿射式在 $\xi=12$ 相交，故 $51+I\le2t_u\le17$ 矛盾。
+这里的森林和守护空隙是原一般资源论证；数值常数已按 76 点源重新计算。
+
+\subsection*{新出现的六空单元等号情形}
+由 \eqref{eq:84budget}，$w=0,j=6$ 强迫 $I=\tau=\delta=0$、$\Theta=160$。
+因此 $r_s,r_t=33,34$、$R=67$，且两 leading 的全部 $K$ 点都必须在各自目标中，
+否则总容量已经损失而 $\delta=0$ 不允许。
+设其中心为 $\lambda_v=v_1-v_2-v_3-v_4$，则
+$\lambda_v\ge2M_o+1$。
+
+尾部界给 $J\ge142$、$U+J\le168$、$C\ge6$。
+由于 $M=67+C+J$、$S=S_s+S_t=1424+U+2C+J$，
+\[
+8M+4-S=-884+6C+7J-U
+\ge-1052+6C+8J\ge120.
+\]
+另一方面固定标签
+\[
+C14_v=\lambda_v+v_1+v_4
+=2\lambda_v+v_2+v_3+2v_4>4M+2.
+\]
+于是 $C14_s+C14_t>S_s+S_t$，至少一侧 $C14_v>S_v$。
+同侧 $C11,C12,C13,C14$ 四标签全部 HIGH，并且都不在原 26 个基线负和组中。
+固定容量至少额外损失 4，得到 $\delta\ge4$，矛盾。
+$j\ge7$ 则由 \eqref{eq:84budget} 直接排除。
+
+所以在已说明的零目标洞源表示内，只有
+\[\boxed{j=2,3,4,5}\]
+仍需处理。若已有正核心洞结构及 $\tau\ge61+2z,w\le4z$，
+则 $1\le z\le14$ 下 $j\ge6$ 同样立即矛盾；本文不预设这个结构已对所有大小 84 配置成立。
+
+\newpage
+\section{剩余障碍与不能简化的常数}\label{sec:limits}
+对二空单元，若已经得到原三种缺失形式的活动条件，即全部
+$\alpha,C5,U,V,C7$ 保留且至少一侧上帽存在，尖锐空隙给 $2X+G\le10$。
+同一六边子核心给
+\[
+\A\ge I+\tau+6f-10
+\ge I+\max(408-5\xi,336+\xi)-10\ge338+I>304.
+\]
+因此这个\emph{终端}已排除，余量至少 34。但到达三种缺失形式的分类尚未闭合：
+例如旧 $C4_v$ 活动推出 $C5_v$ 活动的 HIGH 反证，在新参数下只给
+$\delta\ge6r_v+105$。取 $r_v=30,I=12,\tau=0$，只迫使 $\A\ge297$，
+不足以超过新上限 304。这个数值例子是局部松弛见证，不是实际反例集合。
+
+即使乐观地假设大小 84 的 alpha 分支也已获得正常端点和信用 42，
+\eqref{eq:master} 中 $d=76,H=84$，右侧仍为 $542+2\cdot170=882$；
+尖锐截断下界是 $13\cdot68-25=859$，尚差 23。
+松弛参数
+\[
+(r_s,r_t)=(33,34),\quad(\tau_s,\tau_t)=(6,3),\quad
+(\xi_s,\xi_t)=(3,2),\quad\delta=67,\quad\Theta=160,\quad B=10
+\]
+满足这些标量必要条件，并给 $q=68,F=63$ 和左侧 859。
+核心本身可实现，但本文不声称这些核心与指定的 $\Theta,B$ 能由同一源实现。
+因此下一步应保留\emph{同一实际源}的核心偏差与尾部例外数联系，或取得额外的合法损失；
+不能把相互独立的最坏常数继续拼接成新上界。
+
+另外，在仅假定八个外侧正数各侧严格递减时，固定项常数 84 已尖锐。
+原 110 标签的 26 个互不重叠负和组给上界 84。
+以外侧间隙坐标
+\[g^{(0)}=(24,36,1,1,132,4,5,1),\qquad
+g_i=10^{12}g_i^{(0)}+17^i\quad(i=0,\ldots,7)
+\]
+构造外侧数，每侧由间隙的后缀和恢复。
+精确代入全部原标签恰有 84 个不同的正值，没有零值。
+这个例子只认证外侧顺序模型，没有提供满足全部源约束的原问题反例，
+但严格排除了无条件把固定容量 84 改成 83 的路线。
+
+\section{验证范围与复现}\label{sec:verify}
+\path{verification/upper83_progress.py} 仅依赖 Python 3.10+ 标准库，所有判定在
+\texttt{-O} 下保留。它重建固定标签与 26 组，检查两个尖锐源例子、
+源回归族、加权截断的有限阈值及正增量尾部，直接核对实际子核心的平移交集，
+并保留大小 84 的局部松弛障碍。
+探索时用优化器找到了固定标签的一个初始间隙向量；发布的证明与检查只用精确整数代入，
+不依赖求解器给出的最优性声明。有限源采样也不替代第 \ref{sec:source} 节的无界证明。
+
+在仓库根目录运行：
+\begin{verbatim}
+python -I -S -B verification/upper83_progress.py --output .work/progress83.json
+python -I -S -B -O verification/upper83_progress.py --output .work/progress83_O.json
+\end{verbatim}
+两次运行结果逐字节一致；新检查包含 81,000 个源回归配置、6,399 个实际单侧核心、
+4,014 项平移交集核对，六项故意加强结论或跳过门槛的控制全部被拒绝。
+原上界 84 的完整入口再次通过 11 个套件、140 项检查，无失败或跳过。
+验证状态明确为 \texttt{PASS\_PROGRESS\_ONLY}，不把部分分支排除标为全局上界 83。
+本文与前序报告使用 XeLaTeX，优先 Noto Sans CJK SC，缺失时回退 Microsoft YaHei；
+Windows 启动器为 \path{verify_upper83_progress_windows.bat}；只做静态检查，
+Windows 未实际执行，源码不需要第三方 Python 包。
+\end{document}

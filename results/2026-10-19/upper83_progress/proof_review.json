@@ -1,0 +1,49 @@
+{
+  "schema": "upper83-progress-proof-review-v1",
+  "review_type": "Written mathematical review plus exact executable checks; no proof-assistant formalization.",
+  "baseline_commit": "87e961221303cb43ed55410cba935c6346459001",
+  "source_manifest": "data/upper83_progress_sources.json",
+  "lemmas": [
+    {
+      "id": "general_theta",
+      "claim": "Theta <= 2d+8",
+      "hypotheses": "Integer source D, |D|=d>=21, eight tails beyond two nonempty core sides and zero, as defined in report section 2.",
+      "proof": "Count central reinsertion labels in three cases under the contradiction hypothesis.",
+      "sharpness": "Dense core, offsets (1,2,3,d+1); K=4d-7."
+    },
+    {
+      "id": "coupled_source",
+      "claim": "Theta+B_s+B_t <= 2d+18",
+      "hypotheses": "Same source, d>=31 and both core sides have at least four points.",
+      "proof": "Large one-side fringe forces seven central labels; the remaining cases use the maximal cross pair and six old-tail pairs.",
+      "sharpness": "Dense core, offsets (1,2,d-1,2d-5); K=6d-17, B_s+B_t=10."
+    },
+    {
+      "id": "weighted_actual_rank",
+      "claim": "4tau-2xi_s+2|Q|+11F >= 13|E|-25",
+      "hypotheses": "Integer two-sided core, at least three positive magnitudes per side; the same actual Q is selected by minimizing 13j+11d_(r-j), j=0..3.",
+      "proof": "Inverse rank thresholds k=0..49 and exact periodic increments 3 and 5 for the infinite tails.",
+      "sharpness": "Last deviations (1,2,3) on side s and (1,2) on side t."
+    },
+    {
+      "id": "size85_alpha",
+      "claim": "872 > 815, contradiction margin 57 (previously 16).",
+      "hypotheses": "Retains the existing size85 normality and credit progression 14 -> 27 -> normality -> 42.",
+      "proof": "Retain actual B in K<=M+R+1+B and combine the coupled source inequality with the weighted actual-rank lower bound."
+    },
+    {
+      "id": "size84_partial",
+      "claim": "In the stated integer source representation and with zero target holes, j=0,1,6 and j>=7 are excluded.",
+      "hypotheses": "This does not establish that all size84 configurations possess the required structural representation.",
+      "proof": "General no-empty lemma; one-empty forest bound 51>17; six-empty equality budget and at least four extra HIGH fixed labels; negative budgets for j>=7."
+    },
+    {
+      "id": "fixed_allowance_sharp",
+      "claim": "The unconditional fixed-label capacity 84 cannot be changed to 83 using only strict outer orders.",
+      "hypotheses": "Only the eight outer magnitudes and their strict orders; does not assume the full source/target constraints.",
+      "proof": "26 disjoint strictly negative groups prove the upper; exact perturbed gap witness gives 84 distinct positive labels."
+    }
+  ],
+  "sampling_scope": "The sample families check implementations and sharpness; the written central-label argument proves universality.",
+  "full_theorem_formally_verified": false
+}

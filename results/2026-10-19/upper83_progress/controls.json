@@ -1,0 +1,36 @@
+{
+  "schema": "upper83-progress-controls-v1",
+  "records": [
+    {
+      "id": "source_offset_7",
+      "status": "REJECTED",
+      "reason": "theta three cases"
+    },
+    {
+      "id": "joint_offset_17",
+      "status": "REJECTED",
+      "reason": "joint: large H cases"
+    },
+    {
+      "id": "weighted_penalty_24",
+      "status": "REJECTED",
+      "reason": "claimed joint penalty"
+    },
+    {
+      "id": "fixed_allowance_83",
+      "status": "REJECTED",
+      "reason": "claimed unconditional fixed allowance"
+    },
+    {
+      "id": "partial_progress_as_upper83",
+      "status": "REJECTED",
+      "reason": "the size84 exclusion is incomplete; N<=83 is not proved"
+    },
+    {
+      "id": "kernel_without_tail_gate",
+      "status": "REJECTED",
+      "reason": "kernel requires a nonnegative infinite-tail increment"
+    }
+  ],
+  "all_rejected": true
+}

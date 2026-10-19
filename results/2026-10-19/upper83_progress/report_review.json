@@ -1,0 +1,18 @@
+{
+  "schema": "upper83-progress-report-review-v1",
+  "tex": {
+    "path": "reports/upper83_progress_20261019.tex",
+    "sha256": "a395ea1b22b863a57a0c6d26bd4e5a4da6652437f34571d550f35e4c4b608102"
+  },
+  "pdf": {
+    "path": "reports/upper83_progress_20261019.pdf",
+    "sha256": "2d54a2a0035123aa14cb923145810130b28ff96bf63f850931ce404eaa9d81ec",
+    "pages": 6,
+    "page_size": "A4"
+  },
+  "compiler": "XeLaTeX, two passes",
+  "compiler_warnings": [],
+  "fonts_embedded": true,
+  "visual_review": "All six rendered pages inspected; final changed pages 4-6 re-inspected. Equations, Chinese text, code and page breaks fit within the layout.",
+  "scope_review": "Abstract, section 1, section 6, verification status and repository summaries explicitly retain upper84 and deny a completed upper83 proof."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "upper83-remaining-obligations-v1",
+  "candidate_upper": 83,
+  "candidate_proved": false,
+  "required_gates": [
+    "Complete the common-scale, intersection and hole structural reduction at size84.",
+    "Close all zero-target-hole cases with j=2,3,4,5; only some terminal shapes are currently excluded.",
+    "Complete all positive-core-hole and higher-hole cases at size84.",
+    "Derive any alpha normality and credit assumptions from size84 actual activity before using them.",
+    "Close the alpha 23-unit scalar gap, potentially by coupling core deviations and fringes in the same actual source or by proving extra fixed losses."
+  ],
+  "conditional_Z2": {
+    "required_A": 338,
+    "available_A": 304,
+    "margin": 34,
+    "classification_complete": false
+  },
+  "earlier_activity_obstruction": {
+    "r_s": 30,
+    "r_t": 37,
+    "I": 12,
+    "tau": 0,
+    "delta": 285,
+    "A": 297,
+    "cap": 304
+  },
+  "earlier_activity_scope": "A local necessary-row witness, not a feasible original set A.",
+  "alpha_relaxation_witness": {
+    "r_s": 33,
+    "r_t": 34,
+    "I": 0,
+    "tau_s": 6,
+    "tau_t": 3,
+    "xi_s": 3,
+    "xi_t": 2,
+    "delta": 67,
+    "theta": 160,
+    "B": 10,
+    "e_t": 72,
+    "q": 68,
+    "F": 63,
+    "lhs": 859,
+    "upper": 882,
+    "scope": "Necessary scalar rows only; no actual source simultaneously realizing theta and B is asserted."
+  },
+  "fixed_allowance_witness_scope": "Only the eight strictly ordered positive outer magnitudes are constrained. This is not a feasible A or an endpoint counterexample."
+}
