@@ -1,0 +1,416 @@
+{
+  "status": "PASS_COMPLETE_ENDPOINT_FINITE_REPLAY",
+  "mathematical_adoption": "reports/upper87_adoption_20261019.tex",
+  "prior_independent_upper_bound": 88,
+  "conditional_result": 87,
+  "proof_assistant_formalization": false,
+  "execution": "Fresh parallel composition of all documented ranges and all supplemental stages",
+  "archive_sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "payload_manifest_sha256": "9e3631ce91c9ab07caba32b8ed55c3b0c011870ebf6a5b887206ecd3cab86c75",
+  "extracted_files": 987,
+  "original_roots": 1128280,
+  "ordinary_leaves": 1127649,
+  "supplemental_parents": 631,
+  "supplemental_children": 743,
+  "supplemental_splits": 4352,
+  "supplemental_leaves": 5095,
+  "total_leaves": 1132744,
+  "ranges": [
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 140949,
+        "supplemental": 86
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 1,
+      "original_roots": 1128280,
+      "range_start": 0,
+      "range_stop_exclusive": 141035,
+      "seconds": 555.457360629,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 141035
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 4,
+      "original_roots": 1128280,
+      "range_start": 141035,
+      "range_stop_exclusive": 282070,
+      "seconds": 398.72940130999996,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 141025,
+        "supplemental": 10
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 1,
+      "original_roots": 1128280,
+      "range_start": 282070,
+      "range_stop_exclusive": 423105,
+      "seconds": 381.32688409799994,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 141007,
+        "supplemental": 28
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 1,
+      "original_roots": 1128280,
+      "range_start": 423105,
+      "range_stop_exclusive": 564140,
+      "seconds": 458.8305004489998,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 140917,
+        "supplemental": 118
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 2,
+      "original_roots": 1128280,
+      "range_start": 564140,
+      "range_stop_exclusive": 705175,
+      "seconds": 488.635990281,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 141022,
+        "supplemental": 13
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 2,
+      "original_roots": 1128280,
+      "range_start": 705175,
+      "range_stop_exclusive": 846210,
+      "seconds": 416.72404375300016,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 140837,
+        "supplemental": 198
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 1,
+      "original_roots": 1128280,
+      "range_start": 846210,
+      "range_stop_exclusive": 987245,
+      "seconds": 497.293007923,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    },
+    {
+      "canonical_manifest_sha256": "f200a594328b26a42a4b60cda0e7e0728eaa52961b3b75e91c6a7e7c307a1006",
+      "checked_counts": {
+        "certified": 140857,
+        "supplemental": 178
+      },
+      "compact_sha256": "6666c5d8469eee59d4cce7491b324d1899c259b03e95eb0fcde67046ff7d8fbb",
+      "complete_size88_exclusion": false,
+      "full_ordinary_replay": false,
+      "minimum_contradiction": 3,
+      "original_roots": 1128280,
+      "range_start": 987245,
+      "range_stop_exclusive": 1128280,
+      "seconds": 477.5689544470001,
+      "source_bundle_sha256": "632fbb5b14f8c1f32f9d229997045ba0285b97b1948e6c41fe90a415011f834e",
+      "verified": true
+    }
+  ],
+  "negative_controls": [
+    "missing_range",
+    "duplicate_range"
+  ],
+  "source_sha256": {
+    "verification/upper87.py": "14e5c7e09b0ae2ea90b3b7399fd3de2f91208e56848abf114abf69ab1d34817e",
+    "verification/upper87_geometry.py": "f54d7f224af0269215c0a35dd79edba00e6fda4b0ea43d0a09c67736d3d0843f"
+  },
+  "initial_integrity": {
+    "name": "initial_integrity",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-I",
+      "-E",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/verify_integrity.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.312,
+    "log_sha256": "4387032cd8ca3451d4aa3aa1c86b9973f595a008f7246a333a61c96dfa48ebd6",
+    "marker": "PASS 984 frozen payload files",
+    "marker_present": true
+  },
+  "final_integrity": {
+    "name": "final_integrity",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-I",
+      "-E",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/verify_integrity.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.263,
+    "log_sha256": "4387032cd8ca3451d4aa3aa1c86b9973f595a008f7246a333a61c96dfa48ebd6",
+    "marker": "PASS 984 frozen payload files",
+    "marker_present": true
+  },
+  "records": [
+    {
+      "name": "ordinary_0",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "0",
+        "--stop",
+        "141035"
+      ],
+      "returncode": 0,
+      "seconds": 555.532,
+      "log_sha256": "df4c73508924cd51de021d8e9fde03275d06ef87a5cde246cda4db8b58dcfae8",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_1",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "141035",
+        "--stop",
+        "282070"
+      ],
+      "returncode": 0,
+      "seconds": 398.798,
+      "log_sha256": "22a7b83906ec52e49f4f316caa0c8898a4bc8c44603880fe05662b1faaedba21",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_2",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "282070",
+        "--stop",
+        "423105"
+      ],
+      "returncode": 0,
+      "seconds": 381.402,
+      "log_sha256": "63c9a1dfa9c0342fa351a20d9425a9fb763fc8bee00064814114b21d135dab12",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_3",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "423105",
+        "--stop",
+        "564140"
+      ],
+      "returncode": 0,
+      "seconds": 458.905,
+      "log_sha256": "f1e4194a0c266ba812bb26b76044648c2c11b97b9418c648bfe6725aaa65ffb0",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_4",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "564140",
+        "--stop",
+        "705175"
+      ],
+      "returncode": 0,
+      "seconds": 488.751,
+      "log_sha256": "97fe622553564c317fc0b5f66e2ebe520385a458cd320d4dfe0195a93fcf73cf",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_5",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "705175",
+        "--stop",
+        "846210"
+      ],
+      "returncode": 0,
+      "seconds": 416.809,
+      "log_sha256": "8958fcd590c947b15b18a017596c7ff6d67ad7b8aad7a4a71a41d6fe128434a6",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_6",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "846210",
+        "--stop",
+        "987245"
+      ],
+      "returncode": 0,
+      "seconds": 497.4,
+      "log_sha256": "e43dd758e58d5aec4874ccea4b1c626f00daff86261c9ecc56fe17a5a3ca3969",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_7",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/frozen_runner.py",
+        "verify_compact_ordinary.py",
+        "--start",
+        "987245",
+        "--stop",
+        "1128280"
+      ],
+      "returncode": 0,
+      "seconds": 477.644,
+      "log_sha256": "7b3de37861706f569b555f3dca693b8886bad4a757f5b97f85a7a12d0364fa2d",
+      "marker": null,
+      "marker_present": true
+    },
+    {
+      "name": "supplements",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-E",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/.work/upper87_replay/exact87/verify_exact87.py",
+        "--supplements-and-union-only"
+      ],
+      "returncode": 0,
+      "seconds": 227.179,
+      "log_sha256": "2e809685966c54521387521b2eb9721a9534dc8d402a50360a444677f1a0f867",
+      "marker": "PARTIAL ONLY:",
+      "marker_present": true
+    }
+  ],
+  "seconds": 556.933
+}

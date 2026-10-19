@@ -1,0 +1,93 @@
+{
+  "status": "PASS_FINITE_SCALAR_AND_GEOMETRY_CHECKS",
+  "source_sha256": "f54d7f224af0269215c0a35dd79edba00e6fda4b0ea43d0a09c67736d3d0843f",
+  "scalar": {
+    "side_pairs": 21,
+    "inverse_repairs": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "ap_minima": [
+      "79",
+      "1003",
+      "271/8",
+      "955",
+      "28"
+    ],
+    "mode_counts": [
+      4,
+      70,
+      578,
+      2992,
+      10880,
+      29512
+    ],
+    "low_counts": [
+      {
+        "j": 0,
+        "zero": 160,
+        "positive": 160
+      },
+      {
+        "j": 1,
+        "zero": 2520,
+        "positive": 2520
+      },
+      {
+        "j": 2,
+        "zero": 18496,
+        "positive": 17340
+      },
+      {
+        "j": 3,
+        "zero": 77792,
+        "positive": 71808
+      },
+      {
+        "j": 4,
+        "zero": 217600,
+        "positive": 195840
+      },
+      {
+        "j": 5,
+        "zero": 177072,
+        "positive": 0
+      }
+    ],
+    "loss_cover_caps": [
+      70,
+      76,
+      80,
+      82,
+      82,
+      80,
+      76,
+      70
+    ],
+    "required_loss_cover_children": 92
+  },
+  "geometry": {
+    "seed": 2026101901,
+    "sets": 240,
+    "dense_identities": 240,
+    "strict_dense_examples": 150,
+    "raw_overlaps": 2880,
+    "star_rows": 12960,
+    "allocation_rows": 480,
+    "exhaustive_pointwise_checks": 16384,
+    "negative_controls": [
+      "adding_two_outside_losses_rejected"
+    ]
+  },
+  "scope": "Finite checks supplement the general proof; no endpoint exclusion alone"
+}

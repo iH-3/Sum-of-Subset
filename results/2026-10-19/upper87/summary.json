@@ -1,0 +1,31 @@
+{
+  "status": "PASS_COMPLETE_ENDPOINT_FINITE_REPLAY",
+  "prior_independent_upper_bound": 88,
+  "conditional_result": 87,
+  "original_roots": 1128280,
+  "ordinary_leaves": 1127649,
+  "supplemental_parents": 631,
+  "supplemental_children": 743,
+  "supplemental_splits": 4352,
+  "supplemental_leaves": 5095,
+  "total_leaves": 1132744,
+  "seconds": 556.933,
+  "archive_sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "payload_manifest_sha256": "9e3631ce91c9ab07caba32b8ed55c3b0c011870ebf6a5b887206ecd3cab86c75",
+  "independent_bound_after_mathematical_adoption": 87,
+  "lower_bound": 71,
+  "new_certificate_discovery": false,
+  "archived_endpoint_certificates_reused": true,
+  "all_ordinary_ranges_exit_zero": true,
+  "all_supplement_stages_exit_zero": true,
+  "source_integrity_before_after": true,
+  "adopted_source_files_checked": 38,
+  "geometry_standard_optimized_byte_equal": true,
+  "geometry_output_sha256": "0ff9a914d98c11e0a9dceba5c4dde0b4e99362c7dcdf6711fe19d534081b1b08",
+  "negative_arithmetic_and_guard_controls": 11,
+  "range_composition_negative_controls": [
+    "missing_range",
+    "duplicate_range"
+  ],
+  "formalization": false
+}

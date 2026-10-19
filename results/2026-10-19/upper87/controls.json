@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "negative_controls": [
+    "negative_multiplier",
+    "floating_multiplier",
+    "boolean_multiplier",
+    "duplicate_label",
+    "empty_certificate",
+    "unknown_current_row",
+    "negative_combined_coefficient",
+    "nonstrict_rhs",
+    "floating_matrix",
+    "floating_rhs",
+    "optimized_public_entry_rejected"
+  ],
+  "optimized_guard": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-O",
+      "-I",
+      "-S",
+      "-B",
+      "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/verification/upper87.py"
+    ],
+    "returncode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/verification/upper87.py\", line 191, in <module>\n    main()\n  File \"/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/verification/upper87.py\", line 173, in main\n    require(__debug__, 'Run without -O: archived assertion checks must remain enabled')\n  File \"/workspace/scratch/7062d5fff520/Sum-of-Subset-upper87/verification/upper87.py\", line 31, in require\n    raise ValueError(message)\nValueError: Run without -O: archived assertion checks must remain enabled\n"
+  },
+  "arithmetic_source_sha256": "c2ebe9dc385c0e84237cd57a51fc7ce11efffd886b60a618e8003fa129ec3a42",
+  "source_sha256": "7f99a522b66e531117c29441d29d6e64d1009cbf948e989171c64bd61fd973b9"
+}

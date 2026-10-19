@@ -1,0 +1,223 @@
+{
+  "format": "upper87-mathematical-adoption-v1",
+  "prior_independent_commit": "a1ee83441caa8db4dbb6614f3464990217a38a30",
+  "prior_independent_upper_bound": 88,
+  "target_excluded_cardinality": 88,
+  "resulting_bound": 87,
+  "archive_sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "payload_manifest_sha256": "9e3631ce91c9ab07caba32b8ed55c3b0c011870ebf6a5b887206ecd3cab86c75",
+  "archived_proof_sha256": "2854bd7300298bd68af44d640645944435a4de77ce922fbdaa7b404414a35fc3",
+  "archived_proof_sections": [
+    "u86:sec:lattice88",
+    "u86:sec:upper87"
+  ],
+  "families": [
+    {
+      "family": "structure",
+      "report_section": "2",
+      "sources": [
+        {
+          "path": "structural/lattice88/check88.py",
+          "sha256": "217d9f3d489138d6c6ec2a3e45079eb6c2d260c99a342c56e4834459fe920036"
+        },
+        {
+          "path": "structural/lattice88/proof88.md",
+          "sha256": "5a3d892d042554d749f36fa39604a9f1679bed3f197c0bee2384af09789f75e9"
+        }
+      ]
+    },
+    {
+      "family": "classification",
+      "report_section": "4",
+      "sources": [
+        {
+          "path": "structural/classification88/independent_coverage88.py",
+          "sha256": "6e0e613922f268d1666e110974db6d84441e000cc4503a138e284c80fbb0e52d"
+        },
+        {
+          "path": "bundle/root_manifest88.py",
+          "sha256": "a41c8e96915c9ba6f9a2d32a8a8911a2e40dec40338c0888134fa838b7f6c393"
+        },
+        {
+          "path": "bundle/root_models.py",
+          "sha256": "47d76d3eb9f52f401463957cc5d454546bf167b6092c1b02ee28f7959a46189a"
+        },
+        {
+          "path": "bundle/high.py",
+          "sha256": "d48b95aac58376518c9b865f4be3e12f5403d67ef19d58b1198e8585ca959421"
+        },
+        {
+          "path": "bundle/high_states.py",
+          "sha256": "206fbfcf6224b7d3a5de43f4c879f2ac96ac4e0914ccbd4ce38667bc071e7df9"
+        }
+      ]
+    },
+    {
+      "family": "contributor_lattice",
+      "report_section": "4.1",
+      "sources": [
+        {
+          "path": "structural/three_missing_integrality/verify.py",
+          "sha256": "b708e427f4cea7b3fb584e7054910b1d0ed084780a12246300f8c488c43bd409"
+        },
+        {
+          "path": "verify_prerequisites.py",
+          "sha256": "90b7df9e30836e86e0aa5799d1896c7a5bf3ef6af8fdd428f9365e7fd5cf2e59"
+        },
+        {
+          "path": "components/branch68_candidate_v1/regenerate_branch88.py",
+          "sha256": "41a8c2a31e0b3a3310f151bddbe29bf460a7a9e0e74c5b07685099b1d4890dff"
+        }
+      ]
+    },
+    {
+      "family": "basic_rows",
+      "report_section": "3.2",
+      "sources": [
+        {
+          "path": "bundle/upper99_model.py",
+          "sha256": "a5dd83cb3083afae5a343bb15c69bc9c06394d7a45eab22ac073cbc6ff8082a0"
+        },
+        {
+          "path": "bundle/upper97_model.py",
+          "sha256": "a09c642e51086b1b3bce8ab5886cc1ea387ce607ad765781610b9278a85699b0"
+        },
+        {
+          "path": "bundle/upper96_model.py",
+          "sha256": "4afb8752a19cbc612977e8d7cee98fb3a8b6b9b55af750a11f31eb6fb07ff475"
+        },
+        {
+          "path": "bundle/upper95_explore.py",
+          "sha256": "1c370fdb9dc088c76ea7a2ad4ac0ad4883c3c48e24b6875edaf8cb2484734f49"
+        },
+        {
+          "path": "bundle/model.py",
+          "sha256": "442b024d556b0c4d07c55c2b89a211a25a152eb881b6b579725f066f4ee602d0"
+        },
+        {
+          "path": "bundle/low_model88.py",
+          "sha256": "f6baaebc638a1e8e4dfb61491dd2dc47abc7ea0f0c252ccdcefedc315e5ad002"
+        },
+        {
+          "path": "bundle/models88.py",
+          "sha256": "0e9e4d4923a9f53a217c5677a60597b3523aa8825b527d1f3e0c449f44898be4"
+        }
+      ]
+    },
+    {
+      "family": "containers_and_groups",
+      "report_section": "3",
+      "sources": [
+        {
+          "path": "bundle/extra_cuts.py",
+          "sha256": "d1f174fdab38e7d3b3efd40a40c5e775fcca686813d9c916a0dfd9eda52c4b37"
+        },
+        {
+          "path": "bundle/overlap_cuts.py",
+          "sha256": "06f2a6235c6f05e33e2d7d4bbf0ab722720501b9b8b93b93a8c097ab8bc2a371"
+        },
+        {
+          "path": "bundle/group_cuts.py",
+          "sha256": "cf50580a37de05207e2c7ba028290ff513f36a87bbf99c921b90e6fe41b642a9"
+        },
+        {
+          "path": "bundle/leading_overlap.py",
+          "sha256": "8a1130af22cbb90279a0236ef8b23013e44de177b0a230abe7259cda7b23e1b7"
+        },
+        {
+          "path": "bundle/fullD_geometry.py",
+          "sha256": "5645e2d3f83b865545f0c298f68900f4b6bb3335811c8d2f914b04ed8d9f7483"
+        },
+        {
+          "path": "bundle/edge_core_overlap.py",
+          "sha256": "a8a7befbb2c666699714eaff04a188078efe3efd6e76f4f2945222bf67bbc18c"
+        }
+      ]
+    },
+    {
+      "family": "dense_star_and_loss_cover",
+      "report_section": "3.1,4.3",
+      "sources": [
+        {
+          "path": "components/loss_cover8_candidate_v1/dense_pure88.py",
+          "sha256": "a6cc6b852bf2fa582420bd212f4db93f876dca5a6a05d08be99b30fec2a460a8"
+        },
+        {
+          "path": "components/loss_cover8_candidate_v1/nonempty_pure88.py",
+          "sha256": "51e9d17fa5b98373160d0eccf83b18b80195189a03147663eaf648e4a4aac128"
+        },
+        {
+          "path": "components/loss_cover8_candidate_v1/losscover_pure88.py",
+          "sha256": "de2747b9347710a06eb025864b5c6782baada577feaec5afd99bf05e86d5e187"
+        },
+        {
+          "path": "components/loss_cover8_candidate_v1/quantile_pure88.py",
+          "sha256": "8aab9d42c5eea7e1c4ccafba183cb0342d44e722160399409b72be5559a2c5b5"
+        }
+      ]
+    },
+    {
+      "family": "positive_defect_and_hole_cover",
+      "report_section": "4.3",
+      "sources": [
+        {
+          "path": "components/small_hole14_candidate_v1/small_holes_pure88.py",
+          "sha256": "7aea9870161f0cc276d59c316137e66ceab2cc950ec519802699d39c177fd5e2"
+        },
+        {
+          "path": "components/small_hole14_candidate_v1/raw_positive88.py",
+          "sha256": "c3e16eedac05e298221d59a5a35ff1dc477f7c14ae9cc23b5031a05fa899a28b"
+        }
+      ]
+    },
+    {
+      "family": "fixed_scores_and_binary_branches",
+      "report_section": "4.4",
+      "sources": [
+        {
+          "path": "components/branch68_candidate_v1/catalog88.py",
+          "sha256": "1d0495b23a2e73833dc451369eef21d277147c7f339d2597b669fc082a853062"
+        },
+        {
+          "path": "components/loss_cover8_candidate_v1/fixed88_pure.py",
+          "sha256": "902ae3b951e1f97594154ae529e3857b9fce74bb27ac923ff169f5131ff0f487"
+        }
+      ]
+    },
+    {
+      "family": "integer_arithmetic_and_union",
+      "report_section": "5",
+      "sources": [
+        {
+          "path": "ordinary_verifier.py",
+          "sha256": "c2ebe9dc385c0e84237cd57a51fc7ce11efffd886b60a618e8003fa129ec3a42"
+        },
+        {
+          "path": "compact_format.py",
+          "sha256": "93789a67490f0531ac935f0d6e6b5a2940e55b259bc65160c3cf80bc7ad7d6bb"
+        },
+        {
+          "path": "verify_compact_ordinary.py",
+          "sha256": "555cca5380543e2ec63dcf777d3f2694dd067a818c5629981b3c37774da14059"
+        },
+        {
+          "path": "verify_compact_partition.py",
+          "sha256": "a2f7cc22fad53ead95aef32c90e1582bd6e1c118047f6dddbaf0dacb605bb28e"
+        },
+        {
+          "path": "verify_integrity.py",
+          "sha256": "3c68b7696225da3966a2e12be95f22cc28572b1b18e5930d7007ac2118308bef"
+        },
+        {
+          "path": "verify_exact87.py",
+          "sha256": "8dbf0a976a1f3af7f46c304d3770ed63d3de82911d7a26734578a66f53863f61"
+        },
+        {
+          "path": "verify_supplement_types.py",
+          "sha256": "432757c47478c138928cb7275e42a96d6b5ed1e4b565ebe79502d4f9769cca78"
+        }
+      ]
+    }
+  ],
+  "scope": "Human mathematical adoption plus fresh exact finite replay; not a proof-assistant formalization or a numerical improvement over archived 84"
+}

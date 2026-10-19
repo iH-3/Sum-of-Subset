@@ -1,0 +1,15 @@
+{
+  "pages": 7,
+  "all_pages_visually_reviewed": true,
+  "final_changed_pages_reviewed": [
+    6,
+    7
+  ],
+  "compiler": "XeLaTeX, two final passes",
+  "latex_warnings": false,
+  "pdf_sha256": "23f013f335fb245ffa8317a7c5876e5fa032587e188617778e4e572e5dc1d97f",
+  "pdf_bytes": 164986,
+  "tex_sha256": "5a13147c07b7e03067e01f604031bbf4e6ab030aa8644933535e589ab07b8607",
+  "statistics_tex_sha256": "ed9cac0a253f33b272290d31dc18160f221fbc4754090981d20ab75e991b9a1c",
+  "render_note": "An initial truncated page-3 PNG was rejected and regenerated; all final PNGs were validated before visual review."
+}

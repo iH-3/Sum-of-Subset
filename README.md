@@ -9,13 +9,15 @@
 
 时，`|A|` 的最大值。空集和为 0，右侧允许重复使用同一个元素。
 
-**精确最大值尚未确定。目前已独立核查闭合的范围为 71 ≤ N ≤ 88。** 2026-10-16 的多轮续研先排除 103、102、101，再排除 100、99、98、97、96、95、94、93，接续 2026-10-14 已完成的 115→103 论证；2026-10-17 再排除92元端点；2026-10-18 先后排除91、90、89元端点。归档证明链记载更强的 **71 ≤ N ≤ 84**，但其完整独立复核尚未完成；本次 88 是独立审查与证明方法的进展，不是对归档 84 的数值改进。
+**精确最大值尚未确定。目前已独立核查闭合的范围为 71 ≤ N ≤ 87。** 2026-10-16 的多轮续研先排除 103、102、101，再排除 100、99、98、97、96、95、94、93，接续 2026-10-14 已完成的 115→103 论证；2026-10-17 再排除92元端点；2026-10-18 先后排除91、90、89元端点，2026-10-19 接入并完整核验88元端点。归档证明链记载更强的 **71 ≤ N ≤ 84**，但其完整独立复核尚未完成；本次 87 是独立审查与证明方法的进展，不是对归档 84 的数值改进。
 
 **证明基础：** 已确认构造、新报告和旧基础上界 `N ≤ 115`；旧剥离证明的一处剩余类表述已修正，修正不改变引理结论。新的 115→103 报告沿用该修正，逐项证明所需的后续结构引理。先前审查记录见 [审查报告与勘误](reports/proof_review_20261014.md)。
 
 ## 先读什么
 
-- **[89→88 续研报告 PDF](reports/upper88_leading_overlap_20261018.pdf) · [LaTeX 源码](reports/upper88_leading_overlap_20261018.tex)**：重新提炼首项双和集与自身平移的核心重叠，旧松弛见证被四条新行各以 72 的违差排除。2,773 组整数权重覆盖全部 61,884 个结构组、641,619 个最终系统；仅 55 个整数根使用 95 个二分节点。独立闭合上界现为 **88**。程序与回执见 [upper88_endpoint.py](verification/upper88_endpoint.py) 和 [验证结果](results/2026-10-18/upper88/)。
+- **[88→87 接入报告 PDF](reports/upper87_adoption_20261019.pdf) · [LaTeX 源码](reports/upper87_adoption_20261019.tex)**：统一实际缺额与星形重叠，用同一个稠密子核心同时加强多个叶；核对 88 元格化、五空单元和全部行族，将归档端点接到新的独立链。复用归档整数证书并重新核验全部 **1,128,280 个原始根、1,132,744 个叶反证**，独立闭合上界推进到 **87**。没有重新发现这些归档证书。[标准库验证入口](verification/upper87.py)、[直接集合检查](verification/upper87_geometry.py)、[源码接入清单](data/upper87_adoption_sources.json)和[本次运行回执](results/2026-10-19/upper87/)。
+
+- **[89→88 续研报告 PDF](reports/upper88_leading_overlap_20261018.pdf) · [LaTeX 源码](reports/upper88_leading_overlap_20261018.tex)**：重新提炼首项双和集与自身平移的核心重叠，旧松弛见证被四条新行各以 72 的违差排除。2,773 组整数权重覆盖全部 61,884 个结构组、641,619 个最终系统；仅 55 个整数根使用 95 个二分节点。该轮将独立闭合上界推进到 **88**。程序与回执见 [upper88_endpoint.py](verification/upper88_endpoint.py) 和 [验证结果](results/2026-10-18/upper88/)。
 
 - **[2026-10-18 先前系统审查](reports/proof_audit_20261018.md) · [PDF](reports/proof_audit_20261018.pdf)**：未发现新的致命证明错误；当时独立闭合范围为 `71≤N≤89`。重新核对原始定理、格化与资源预算，34 次标准/优化运行、89 上界全部整数系统、84/85 完整有限套件以及 86 归档的 19 阶段组合重放均已完成。报告明确列出 84 的完整独立数学认证仍缺少的逐项对应工作；[回执与日志](results/2026-10-18/proof_audit/)另附。
 
@@ -63,7 +65,8 @@
 | **续研上界 `N ≤ 91`** | 排除92元端点；44个格化方向通过，条件逆定理修复14个原余量不足的方向。全部三空单元恢复整性，四空单元保留30种部分整性例外；4,130组整数证书覆盖274,476个最终叶系统 |
 | **续研上界 `N ≤ 90`** | 排除91元端点；45个格化方向通过。变阈值空洞界将同一端点的高空洞预算176降至140，995组整数证书覆盖372,137个最终叶系统；完整逐点核验通过 |
 | **续研上界 `N ≤ 89`** | 排除90元端点；46个格化方向通过，前两层前缀保留加强跨度与质量，固定评分顺序及46条符号约束闭合困难分支；1,534组整数证书覆盖441,243个最终叶系统，完整逐点核验通过 |
-| **最新续研上界 `N ≤ 88`** | 排除89元端点；首项—自身平移核心重叠与整侧亏损补强覆盖。2,773组整数证书覆盖61,884个结构组、641,524个整数根及641,619个最终系统；最小规范化余量 `11/1069` |
+| **最新独立上界 `N ≤ 87`** | 88元格化及模型行族完成接入；冻结整数证书重新验证全部1,128,280个原始根和1,132,744个叶反证，九类补充与普通根精确互补 |
+| **此前续研上界 `N ≤ 88`** | 排除89元端点；首项—自身平移核心重叠与整侧亏损补强覆盖。2,773组整数证书覆盖61,884个结构组、641,524个整数根及641,619个最终系统；最小规范化余量 `11/1069` |
 | 既有证明链 `N ≤ 84` | 完整原报告与程序已保留；2026-10-18 重跑 84/85 全部有限套件及 86 的 19 阶段与附加前提；一般数学归约的完整独立认证仍未完成 |
 | 固定构造族 `A_m` | 当且仅当 `1 ≤ m ≤ 31` 可行，证明覆盖所有整数参数 |
 | 显式整数化 | 若有 n 元实数解，则有坐标绝对值至多 `floor(sqrt((n+16)^(n+1)))` 的 n 元整数解 |
@@ -108,7 +111,11 @@ python -I -S -B verification/upper91.py --output .work/upper91.json
 python -I -S -B verification/upper90.py --output .work/upper90.json
 # 90→89 续研
 python -I -S -B verification/upper89.py --output .work/upper89.json
-# 最新 89→88 续研
+# 最新 88→87：接入冻结端点，完整重放（不要加 -O）
+python -I -S -B verification/upper87.py --jobs 4 --output .work/upper87.json
+python -I -S -B verification/upper87_geometry.py --output .work/upper87_geometry.json
+
+# 此前 89→88 续研
 python -I -S -B verification/upper88_endpoint.py --output .work/upper88_endpoint.json
 # 可单独检查完整前缀空洞引理的参数见证与边界实例
 python -I -S -B verification/nonap_hole_rho_full.py
@@ -120,7 +127,7 @@ python -I -S -B verification/nonap_sharp.py
 python -I -S -B verification/upper88_endpoint.py --exhaustive --output .work/upper88_exhaustive.json
 ```
 
-Windows 可将 `python` 换成 `py -3`。双击 `verify_upper88_windows.bat` 检查115→103→100→99→98→97→96→95→94→93→92→91→90→89→88十四段有限续研。双击 `verify_windows.bat` 检查构造与基础有限证书。此前各段的 Windows 入口仍保留。
+Windows 可将 `python` 换成 `py -3`。双击 `verify_upper87_windows.bat` 检查新的88元端点及几何行；它以前述独立上界88为数学前提。双击 `verify_upper88_windows.bat` 检查115→103→100→99→98→97→96→95→94→93→92→91→90→89→88十四段有限续研。双击 `verify_windows.bat` 检查构造与基础有限证书。此前各段的 Windows 入口仍保留。
 
 校验自己的集合时，可以传入整数或有理数字符串，例如 `--elements -1/3 0 1/3`。也可使用 `--input candidate.json`，文件格式为 `{"A":[-1,0,1]}`。重复元素和浮点输入会被拒绝；触发资源上限时会报“无法得出结论”，不会误报不可行。
 
@@ -346,3 +353,12 @@ python -I -S -B experiments/verify_upper88_geometric_rows.py --output .work/uppe
 ```
 
 Windows可运行`verify_upper88_progress_windows.bat`。结果标记为`PASS_PROGRESS_ONLY`，不会把部分覆盖记为全局证明。完整数据、负面控制、逐批输出和执行回执见[results/2026-10-18/upper88_progress](results/2026-10-18/upper88_progress/)。
+
+
+编译 88→87 中文报告（需 Noto Sans CJK SC 或 Windows 的 Microsoft YaHei）：
+
+```bash
+cd reports
+xelatex -interaction=nonstopmode -halt-on-error upper87_adoption_20261019.tex
+xelatex -interaction=nonstopmode -halt-on-error upper87_adoption_20261019.tex
+```
