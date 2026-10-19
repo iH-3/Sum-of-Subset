@@ -1,0 +1,8 @@
+{
+  "status": "PASS_LEMMA_CHECKS_ONLY",
+  "intersections": 716103,
+  "compression_replays": 7220,
+  "checked_inward_moves": 21756,
+  "formula": "|E intersection (E+x)| >= |E|-x-floor(tau/x)",
+  "global_upper_bound_certified": false
+}

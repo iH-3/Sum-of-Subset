@@ -1,0 +1,1 @@
+PASS_CONDITIONAL_ALPHA_SIZE83_FINITE_CERTIFICATES {'states': 3157, 'stages': {'order_B': 765, 'order_C': 697, 'order_D': 635, 'terminal': 1060}, 'integer_certificates': 376, 'selected_forests': 60, 'minimum_integer_contradiction': 1, 'replay_sha256': 'cca6c206c3c4c5510168aa9883264ad0863e69676ae8d668e2b2adfb17708d4a'}

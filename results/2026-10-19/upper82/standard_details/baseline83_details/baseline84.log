@@ -1,0 +1,3 @@
+RUN legacy_full
+RUN new_geometry
+PASS_ALL_REQUESTED_FINITE_CHECKS

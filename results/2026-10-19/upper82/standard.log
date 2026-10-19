@@ -1,0 +1,31 @@
+RUN baseline83
+PASS baseline83
+RUN alpha
+PASS alpha
+PASS coverage
+RUN structure
+PASS structure
+RUN geometry
+PASS geometry
+RUN compression
+PASS compression
+RUN native_j1 3300
+PASS native_j1 3300
+RUN native_j2 8712
+PASS native_j2 8712
+RUN native_j3 17745
+PASS native_j3 21481
+RUN native_j4 31684
+PASS native_j4 34678
+RUN native_j5 40980
+PASS native_j5 63256
+RUN native_j6 9060
+PASS native_j6 13680
+RUN ownerless 306
+PASS ownerless 4467
+RUN endpoint_leaves 77
+PASS endpoint_leaves 4600
+RUN low_c 4488
+PASS low_c 4488
+PASS controls
+PASS_COMPLETE_FINITE_REPLAY 26f60d5bd2a50a9ce50c95e9a7fce58a43713edc83b18b08e5a81e40e619b599

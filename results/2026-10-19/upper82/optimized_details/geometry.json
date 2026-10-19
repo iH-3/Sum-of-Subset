@@ -1,0 +1,183 @@
+{
+  "status": "PASS_GEOMETRY_FINITE_CHECKS_ONLY",
+  "global_upper_bound_certified": false,
+  "generic_gap_integer_combinations": 136,
+  "minimum_integer_gap_margin": 2,
+  "remaining_fixed_labels": {
+    "full": [
+      "C+15",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2",
+      "U+3",
+      "V+2"
+    ],
+    "core_initial": [
+      "C+15",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2",
+      "U+3",
+      "U+4",
+      "V+2"
+    ],
+    "core_final": [
+      "C+15",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2"
+    ]
+  },
+  "ownerless_guards": [
+    {
+      "w": 0,
+      "strict_margins": [
+        39,
+        99,
+        58,
+        59,
+        66
+      ]
+    },
+    {
+      "w": 2,
+      "strict_margins": [
+        36,
+        96,
+        55,
+        56,
+        64
+      ]
+    },
+    {
+      "w": 4,
+      "strict_margins": [
+        33,
+        93,
+        52,
+        53,
+        62
+      ]
+    },
+    {
+      "w": 6,
+      "strict_margins": [
+        30,
+        90,
+        49,
+        50,
+        60
+      ]
+    },
+    {
+      "w": 8,
+      "strict_margins": [
+        27,
+        87,
+        46,
+        47,
+        58
+      ]
+    },
+    {
+      "w": 10,
+      "strict_margins": [
+        24,
+        84,
+        43,
+        44,
+        56
+      ]
+    },
+    {
+      "w": 12,
+      "strict_margins": [
+        21,
+        81,
+        40,
+        41,
+        54
+      ]
+    },
+    {
+      "w": 14,
+      "strict_margins": [
+        18,
+        78,
+        37,
+        38,
+        52
+      ]
+    }
+  ],
+  "residue_grid": 42,
+  "residue_patterns": 24,
+  "minor_values": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "activity_counts": [
+    {
+      "j": 1,
+      "integer": 22,
+      "partial": 0
+    },
+    {
+      "j": 2,
+      "integer": 66,
+      "partial": 0
+    },
+    {
+      "j": 3,
+      "integer": 156,
+      "partial": 0
+    },
+    {
+      "j": 4,
+      "integer": 327,
+      "partial": 30
+    },
+    {
+      "j": 5,
+      "integer": 610,
+      "partial": 210
+    },
+    {
+      "j": 6,
+      "integer": 1036,
+      "partial": 776
+    }
+  ],
+  "no_empty_missing_pairs": [
+    [
+      "C5s",
+      "Ps"
+    ],
+    [
+      "C5t",
+      "Pt"
+    ],
+    [
+      "Ps",
+      "betat"
+    ],
+    [
+      "Pt",
+      "betas"
+    ]
+  ]
+}

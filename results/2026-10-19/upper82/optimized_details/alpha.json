@@ -1,0 +1,313 @@
+{
+  "arithmetic": {
+    "concave_envelope_segments": 5126,
+    "equality_quartets": [
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        1,
+        3,
+        5,
+        6
+      ]
+    ],
+    "initial_gap_floor": 26,
+    "physical_capacities": [
+      534,
+      609
+    ],
+    "sharp_source": {
+      "B": 8,
+      "K": 293,
+      "d": 75,
+      "joint": 166,
+      "theta": 158
+    },
+    "source_span_bounds": {
+      "credit27": "L>=A+56",
+      "credit31_or_more": "L>=A+57"
+    },
+    "tail_strict_lower": 79,
+    "terminal_bootstrap_states": 530
+  },
+  "catalogue": {
+    "LOW_identities": {
+      "C+25": [
+        0,
+        -2,
+        0,
+        -1,
+        0,
+        0,
+        1,
+        -1
+      ],
+      "C+35": [
+        0,
+        -2,
+        0,
+        -1,
+        -1,
+        0,
+        1,
+        -1
+      ],
+      "C+45": [
+        0,
+        -2,
+        -1,
+        -1,
+        -1,
+        0,
+        1,
+        -1
+      ],
+      "C-25": [
+        -2,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        1
+      ],
+      "C-35": [
+        -2,
+        -1,
+        -1,
+        0,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "C-45": [
+        -2,
+        -1,
+        -1,
+        -1,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "V-3": [
+        -1,
+        -1,
+        -1,
+        0,
+        -1,
+        1,
+        0,
+        -1
+      ],
+      "V-4": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        1,
+        0,
+        -1
+      ]
+    },
+    "coordinate_order": [
+      "a",
+      "b",
+      "gs",
+      "gt",
+      "hs",
+      "B",
+      "C",
+      "D"
+    ],
+    "excluded_by_cones": 459,
+    "formal_multisets": 495,
+    "ledger": [
+      {
+        "credit": 14,
+        "high": 8,
+        "low": 29,
+        "name": "initial",
+        "touched": 23
+      },
+      {
+        "credit": 27,
+        "high": 21,
+        "low": 29,
+        "name": "tail_before_normality",
+        "touched": 23
+      },
+      {
+        "credit": 31,
+        "high": 21,
+        "low": 35,
+        "name": "B_below_a",
+        "touched": 25
+      },
+      {
+        "credit": 35,
+        "high": 21,
+        "low": 39,
+        "name": "C_below_b",
+        "touched": 25
+      },
+      {
+        "credit": 38,
+        "high": 21,
+        "low": 42,
+        "name": "D_below_a",
+        "touched": 25
+      },
+      {
+        "credit": 42,
+        "high": 21,
+        "low": 47,
+        "name": "complete_LOW",
+        "touched": 26
+      }
+    ],
+    "tail_fixed_labels": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+15",
+      "C+16",
+      "C+17",
+      "C+18",
+      "C+22",
+      "C+23",
+      "C+24",
+      "C+25",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2",
+      "U+3",
+      "U+4",
+      "U+5",
+      "U+6",
+      "U+7",
+      "U+8",
+      "V+2",
+      "V+3",
+      "V+4",
+      "V+5",
+      "V+6",
+      "V+7",
+      "V+8"
+    ],
+    "tail_native_families": 4
+  },
+  "core_lemmas": {
+    "actual_intersections": 1802,
+    "actual_one_side_cores": 923,
+    "actual_unions": 252,
+    "sharp_kernel_minima": [
+      -6,
+      -16
+    ],
+    "strict_boundary_counterexample": {
+      "E": [
+        -3,
+        -1,
+        0,
+        1
+      ],
+      "intersection": 2,
+      "invalid_lower": 3,
+      "shift": 1,
+      "tau": 1
+    }
+  },
+  "endpoints": {
+    "order_statistics": 35622,
+    "strict_error_improvements": 22793,
+    "witness": {
+      "core": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        62
+      ],
+      "lower_clip": 31,
+      "new_error": 0,
+      "old_error": 29
+    }
+  },
+  "finite": {
+    "integer_certificates": 376,
+    "minimum_integer_contradiction": 1,
+    "replay_sha256": "cca6c206c3c4c5510168aa9883264ad0863e69676ae8d668e2b2adfb17708d4a",
+    "selected_forests": 60,
+    "stages": {
+      "order_B": 765,
+      "order_C": 697,
+      "order_D": 635,
+      "terminal": 1060
+    },
+    "states": 3157
+  },
+  "forests": {
+    "edge_subsets": [
+      64,
+      128
+    ],
+    "pointwise_checks": 81920,
+    "roots_per_component": 1
+  },
+  "global_upper82_proved": false,
+  "global_upper_bound": 83,
+  "negative_controls": [
+    "missing terminal orientation",
+    "wrong mass slice",
+    "negative inequality weight",
+    "negative summed coefficient",
+    "zero contradiction",
+    "two roots in a single edge component",
+    "full-core strength on the unbootstrapped extra edge",
+    "claim global82 from local exclusions"
+  ],
+  "scope": "Exact Branch-A holes {P,Bpair,Os,Ot,alphas}; common integer source; complete targets",
+  "source_files": 22,
+  "status": "PASS_CONDITIONAL_ALPHA_SIZE83_FINITE_CERTIFICATES"
+}

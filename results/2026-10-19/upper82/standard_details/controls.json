@@ -1,0 +1,18 @@
+{
+  "rejected": [
+    "missing native root",
+    "missing complementary endpoint branch",
+    "missing ownerless status",
+    "undispatched fixed core mass",
+    "negative inequality multiplier",
+    "negative residual coefficient",
+    "zero contradiction margin",
+    "unproved fixed-label credit",
+    "invalid endpoint majorant",
+    "modified pinned source",
+    "leading upper endpoint RHS minus one",
+    "replace positive hole count by six"
+  ],
+  "exact_parameter_rows": 24,
+  "leading_upper_boundary": 1
+}

@@ -1,0 +1,753 @@
+{
+  "status": "PASS",
+  "inverse_rows": [
+    {
+      "k": 2,
+      "a": 31,
+      "b": 36,
+      "R": 58,
+      "beta": 4,
+      "q": 14,
+      "j": 17,
+      "zcap": 8,
+      "margins": [
+        8,
+        4,
+        58,
+        51
+      ],
+      "diameter": [
+        150,
+        114,
+        131,
+        515
+      ],
+      "layer": -121,
+      "nonprimitive_cap": -95
+    },
+    {
+      "k": 3,
+      "a": 30,
+      "b": 37,
+      "R": 85,
+      "beta": 5,
+      "q": 14,
+      "j": 16,
+      "zcap": 10,
+      "margins": [
+        7,
+        1,
+        13,
+        2
+      ],
+      "diameter": [
+        194,
+        150,
+        171,
+        481
+      ],
+      "layer": -129,
+      "nonprimitive_cap": -63
+    },
+    {
+      "k": 4,
+      "a": 29,
+      "b": 38,
+      "R": 109,
+      "beta": 7,
+      "q": 14,
+      "j": 20,
+      "zcap": 14,
+      "margins": [
+        35,
+        1,
+        62,
+        36
+      ],
+      "diameter": [
+        241,
+        181,
+        210,
+        446
+      ],
+      "layer": -137,
+      "nonprimitive_cap": -28
+    },
+    {
+      "k": 5,
+      "a": 28,
+      "b": 39,
+      "R": 130,
+      "beta": 8,
+      "q": 14,
+      "j": 21,
+      "zcap": 16,
+      "margins": [
+        45,
+        0,
+        61,
+        29
+      ],
+      "diameter": [
+        291,
+        223,
+        256,
+        414
+      ],
+      "layer": -153,
+      "nonprimitive_cap": -2
+    },
+    {
+      "k": 6,
+      "a": 27,
+      "b": 40,
+      "R": 148,
+      "beta": 8,
+      "q": 21,
+      "j": 22,
+      "zcap": 16,
+      "margins": [
+        1,
+        1,
+        64,
+        32
+      ],
+      "diameter": [
+        344,
+        276,
+        309,
+        385
+      ],
+      "layer": -177,
+      "nonprimitive_cap": 15
+    },
+    {
+      "k": 7,
+      "a": 26,
+      "b": 41,
+      "R": 163,
+      "beta": 9,
+      "q": 20,
+      "j": 23,
+      "zcap": 18,
+      "margins": [
+        11,
+        0,
+        71,
+        33
+      ],
+      "diameter": [
+        400,
+        324,
+        361,
+        355
+      ],
+      "layer": -201,
+      "nonprimitive_cap": 35
+    },
+    {
+      "k": 8,
+      "a": 25,
+      "b": 42,
+      "R": 175,
+      "beta": 9,
+      "q": 21,
+      "j": 23,
+      "zcap": 18,
+      "margins": [
+        9,
+        0,
+        58,
+        21
+      ],
+      "diameter": [
+        459,
+        383,
+        420,
+        328
+      ],
+      "layer": -233,
+      "nonprimitive_cap": 46
+    },
+    {
+      "k": 9,
+      "a": 24,
+      "b": 43,
+      "R": 184,
+      "beta": 9,
+      "q": 21,
+      "j": 23,
+      "zcap": 18,
+      "margins": [
+        8,
+        0,
+        48,
+        12
+      ],
+      "diameter": [
+        521,
+        445,
+        482,
+        302
+      ],
+      "layer": -269,
+      "nonprimitive_cap": 54
+    },
+    {
+      "k": 10,
+      "a": 23,
+      "b": 44,
+      "R": 190,
+      "beta": 9,
+      "q": 22,
+      "j": 23,
+      "zcap": 18,
+      "margins": [
+        3,
+        0,
+        41,
+        6
+      ],
+      "diameter": [
+        586,
+        510,
+        547,
+        277
+      ],
+      "layer": -309,
+      "nonprimitive_cap": 59
+    },
+    {
+      "k": 11,
+      "a": 22,
+      "b": 45,
+      "R": 193,
+      "beta": 9,
+      "q": 22,
+      "j": 24,
+      "zcap": 18,
+      "margins": [
+        8,
+        1,
+        61,
+        26
+      ],
+      "diameter": [
+        654,
+        578,
+        615,
+        253
+      ],
+      "layer": -353,
+      "nonprimitive_cap": 61
+    },
+    {
+      "k": 12,
+      "a": 21,
+      "b": 46,
+      "R": 193,
+      "beta": 9,
+      "q": 22,
+      "j": 25,
+      "zcap": 18,
+      "margins": [
+        16,
+        2,
+        85,
+        50
+      ],
+      "diameter": [
+        725,
+        649,
+        686,
+        230
+      ],
+      "layer": -401,
+      "nonprimitive_cap": 60
+    },
+    {
+      "k": 13,
+      "a": 20,
+      "b": 47,
+      "R": 199,
+      "beta": 9,
+      "q": 22,
+      "j": 25,
+      "zcap": 18,
+      "margins": [
+        18,
+        2,
+        78,
+        44
+      ],
+      "diameter": [
+        790,
+        714,
+        751,
+        208
+      ],
+      "layer": -453,
+      "nonprimitive_cap": 65
+    },
+    {
+      "k": 14,
+      "a": 19,
+      "b": 48,
+      "R": 193,
+      "beta": 8,
+      "q": 22,
+      "j": 23,
+      "zcap": 16,
+      "margins": [
+        6,
+        2,
+        34,
+        9
+      ],
+      "diameter": [
+        867,
+        799,
+        832,
+        189
+      ],
+      "layer": -513,
+      "nonprimitive_cap": 52
+    },
+    {
+      "k": 15,
+      "a": 18,
+      "b": 49,
+      "R": 184,
+      "beta": 8,
+      "q": 14,
+      "j": 23,
+      "zcap": 16,
+      "margins": [
+        61,
+        2,
+        42,
+        18
+      ],
+      "diameter": [
+        947,
+        879,
+        912,
+        169
+      ],
+      "layer": -573,
+      "nonprimitive_cap": 42
+    },
+    {
+      "k": 16,
+      "a": 17,
+      "b": 50,
+      "R": 172,
+      "beta": 7,
+      "q": 14,
+      "j": 22,
+      "zcap": 14,
+      "margins": [
+        44,
+        3,
+        30,
+        14
+      ],
+      "diameter": [
+        1030,
+        970,
+        999,
+        152
+      ],
+      "layer": -641,
+      "nonprimitive_cap": 23
+    },
+    {
+      "k": 17,
+      "a": 16,
+      "b": 51,
+      "R": 157,
+      "beta": 6,
+      "q": 20,
+      "j": 24,
+      "zcap": 12,
+      "margins": [
+        4,
+        7,
+        91,
+        80
+      ],
+      "diameter": [
+        1116,
+        1064,
+        1089,
+        136
+      ],
+      "layer": -713,
+      "nonprimitive_cap": 1
+    },
+    {
+      "k": 18,
+      "a": 15,
+      "b": 52,
+      "R": 139,
+      "beta": 5,
+      "q": 21,
+      "j": 22,
+      "zcap": 10,
+      "margins": [
+        1,
+        7,
+        61,
+        59
+      ],
+      "diameter": [
+        1205,
+        1161,
+        1182,
+        121
+      ],
+      "layer": -789,
+      "nonprimitive_cap": -24
+    },
+    {
+      "k": 19,
+      "a": 14,
+      "b": 53,
+      "R": 118,
+      "beta": 5,
+      "q": 14,
+      "j": 24,
+      "zcap": 10,
+      "margins": [
+        38,
+        9,
+        128,
+        125
+      ],
+      "diameter": [
+        1297,
+        1253,
+        1274,
+        105
+      ],
+      "layer": -849,
+      "nonprimitive_cap": -46
+    },
+    {
+      "k": 20,
+      "a": 13,
+      "b": 54,
+      "R": 94,
+      "beta": 4,
+      "q": 14,
+      "j": 23,
+      "zcap": 8,
+      "margins": [
+        26,
+        10,
+        127,
+        132
+      ],
+      "diameter": [
+        1392,
+        1356,
+        1373,
+        92
+      ],
+      "layer": -933,
+      "nonprimitive_cap": -77
+    },
+    {
+      "k": 21,
+      "a": 12,
+      "b": 55,
+      "R": 73,
+      "beta": 3,
+      "q": 14,
+      "j": 19,
+      "zcap": 6,
+      "margins": [
+        9,
+        8,
+        61,
+        77
+      ],
+      "diameter": [
+        1484,
+        1456,
+        1469,
+        80
+      ],
+      "layer": -1021,
+      "nonprimitive_cap": -105
+    }
+  ],
+  "pre_G_overlap_minimum": 77,
+  "AP": [
+    {
+      "a": 12,
+      "b": 55,
+      "odd_tail_margin": 253,
+      "halfstep_cap": -64,
+      "nonprimitive_cap": -62
+    },
+    {
+      "a": 13,
+      "b": 54,
+      "odd_tail_margin": 223,
+      "halfstep_cap": -40,
+      "nonprimitive_cap": -39
+    },
+    {
+      "a": 14,
+      "b": 53,
+      "odd_tail_margin": 192,
+      "halfstep_cap": -15,
+      "nonprimitive_cap": -15
+    },
+    {
+      "a": 15,
+      "b": 52,
+      "odd_tail_margin": 162,
+      "halfstep_cap": 9,
+      "nonprimitive_cap": 8
+    },
+    {
+      "a": 16,
+      "b": 51,
+      "odd_tail_margin": 135,
+      "halfstep_cap": 30,
+      "nonprimitive_cap": 28
+    },
+    {
+      "a": 17,
+      "b": 50,
+      "odd_tail_margin": 111,
+      "halfstep_cap": 48,
+      "nonprimitive_cap": 45
+    },
+    {
+      "a": 18,
+      "b": 49,
+      "odd_tail_margin": 90,
+      "halfstep_cap": 63,
+      "nonprimitive_cap": 59
+    },
+    {
+      "a": 19,
+      "b": 48,
+      "odd_tail_margin": 72,
+      "halfstep_cap": 75,
+      "nonprimitive_cap": 70
+    },
+    {
+      "a": 20,
+      "b": 47,
+      "odd_tail_margin": 57,
+      "halfstep_cap": 84,
+      "nonprimitive_cap": 78
+    },
+    {
+      "a": 21,
+      "b": 46,
+      "odd_tail_margin": 45,
+      "halfstep_cap": 90,
+      "nonprimitive_cap": 83
+    },
+    {
+      "a": 22,
+      "b": 45,
+      "odd_tail_margin": 36,
+      "halfstep_cap": 93,
+      "nonprimitive_cap": 85
+    },
+    {
+      "a": 23,
+      "b": 44,
+      "odd_tail_margin": 30,
+      "halfstep_cap": 93,
+      "nonprimitive_cap": 84
+    },
+    {
+      "a": 24,
+      "b": 43,
+      "odd_tail_margin": 27,
+      "halfstep_cap": 90,
+      "nonprimitive_cap": 80
+    },
+    {
+      "a": 25,
+      "b": 42,
+      "odd_tail_margin": 27,
+      "halfstep_cap": 84,
+      "nonprimitive_cap": 73
+    },
+    {
+      "a": 26,
+      "b": 41,
+      "odd_tail_margin": 30,
+      "halfstep_cap": 75,
+      "nonprimitive_cap": 63
+    },
+    {
+      "a": 27,
+      "b": 40,
+      "odd_tail_margin": 36,
+      "halfstep_cap": 63,
+      "nonprimitive_cap": 50
+    },
+    {
+      "a": 28,
+      "b": 39,
+      "odd_tail_margin": 45,
+      "halfstep_cap": 48,
+      "nonprimitive_cap": 34
+    },
+    {
+      "a": 29,
+      "b": 38,
+      "odd_tail_margin": 57,
+      "halfstep_cap": 30,
+      "nonprimitive_cap": 15
+    },
+    {
+      "a": 30,
+      "b": 37,
+      "odd_tail_margin": 72,
+      "halfstep_cap": 9,
+      "nonprimitive_cap": -7
+    },
+    {
+      "a": 31,
+      "b": 36,
+      "odd_tail_margin": 90,
+      "halfstep_cap": -15,
+      "nonprimitive_cap": -32
+    },
+    {
+      "a": 32,
+      "b": 35,
+      "odd_tail_margin": 111,
+      "halfstep_cap": -42,
+      "nonprimitive_cap": -60
+    },
+    {
+      "a": 33,
+      "b": 34,
+      "odd_tail_margin": 135,
+      "halfstep_cap": -72,
+      "nonprimitive_cap": -91
+    }
+  ],
+  "effective": [
+    {
+      "r": 56,
+      "beta": 5,
+      "C": 132,
+      "J": 20,
+      "margins": [
+        36,
+        40
+      ],
+      "mu": 189
+    },
+    {
+      "r": 55,
+      "beta": 4,
+      "C": 119,
+      "J": 19,
+      "margins": [
+        12,
+        34
+      ],
+      "mu": 175
+    },
+    {
+      "r": 54,
+      "beta": 6,
+      "C": 168,
+      "J": 22,
+      "margins": [
+        11,
+        43
+      ],
+      "mu": 223
+    }
+  ],
+  "profile_replay": {
+    "thresholds": [
+      15,
+      17,
+      21,
+      49
+    ],
+    "r_domain": [
+      15,
+      54
+    ],
+    "stats": {
+      "claims": 160,
+      "branches": 5200,
+      "immediate": 1929,
+      "upgrades": 95701,
+      "future_pairs": 1461470,
+      "bounded_new_upgrades": 27058,
+      "max_rounds": 10
+    },
+    "mutations_rejected": [
+      "missing AP branch",
+      "mandatory initial AP cost removed",
+      "unsupported upgrade",
+      "terminal contradiction removed",
+      "false mu",
+      "boolean in place of integer",
+      "unchanged synchronous round",
+      "beta9 invalid relaxed threshold",
+      "NEW-vector self-justification",
+      "missing claim",
+      "false rho output"
+    ],
+    "strict_boundary_controls": 4,
+    "all_upper_budgets_use": "OLD vector",
+    "mathematical_scope": "Complete supplied proof traces for the 160 H claims, not profile discovery or maximization"
+  },
+  "high_hole_bands": [
+    {
+      "z": [
+        15,
+        16
+      ],
+      "mu": 418,
+      "rho": 288,
+      "I_plus_c_cap": 214,
+      "H_cap": 246,
+      "core_margin": 139,
+      "width_margin": "107"
+    },
+    {
+      "z": [
+        17,
+        20
+      ],
+      "mu": 461,
+      "rho": 331,
+      "I_plus_c_cap": 179,
+      "H_cap": 219,
+      "core_margin": 166,
+      "width_margin": "224"
+    },
+    {
+      "z": [
+        21,
+        48
+      ],
+      "mu": 503,
+      "rho": 373,
+      "I_plus_c_cap": 191,
+      "H_cap": 289,
+      "core_margin": 96,
+      "width_margin": "266"
+    }
+  ],
+  "tail_core_margin": 56
+}

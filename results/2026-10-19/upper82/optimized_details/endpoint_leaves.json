@@ -1,0 +1,21 @@
+{
+  "status": "PASS_EXACT_PACKETS_ONLY",
+  "global_upper_bound_certified": false,
+  "records": 77,
+  "integer_combinations": 4600,
+  "credit_histogram": {
+    "0": 7,
+    "32": 1,
+    "33": 11,
+    "34": 4,
+    "35": 7,
+    "37": 2,
+    "39": 2,
+    "40": 4,
+    "41": 29,
+    "42": 6,
+    "43": 2,
+    "44": 2
+  },
+  "planes": 540
+}

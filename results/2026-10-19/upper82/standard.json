@@ -1,0 +1,131 @@
+{
+  "schema": "upper82-global-replay-v1",
+  "status": "PASS_COMPLETE_FINITE_REPLAY",
+  "written_upper_bound": 82,
+  "formal_proof_assistant_verified": false,
+  "scope": "Exact finite dependencies and complete state dispatch; unbounded actual-set applicability is supplied by the companion proof.",
+  "optimization": 0,
+  "timestamp_utc": "2026-10-19T17:06:23.947781+00:00",
+  "seconds": 378.521,
+  "source_files": 174,
+  "source_manifest_sha256": "9c7e20c5b5366f1308e8def57ff330ea3b8c9802b0100eb0aca648e4ce88f594",
+  "finite_digest": "26f60d5bd2a50a9ce50c95e9a7fce58a43713edc83b18b08e5a81e40e619b599",
+  "prior_finite_digests": {
+    "baseline83": "8b596938271699291a50fbbe4a6ef27ac84e46acb826d7ee9b0dd99541507fba",
+    "alpha": "cca6c206c3c4c5510168aa9883264ad0863e69676ae8d668e2b2adfb17708d4a"
+  },
+  "coverage": {
+    "status": "PASS_COMPLETE_DISPATCH",
+    "main_roots": 111629,
+    "by_j": {
+      "1": 3300,
+      "2": 8712,
+      "3": 17784,
+      "4": 31773,
+      "5": 41000,
+      "6": 9060
+    },
+    "direct_integer_proof_roots": 111481,
+    "endpoint_tree_roots": 39,
+    "endpoint_branch_roots": 38,
+    "endpoint_tree_nodes": 115,
+    "endpoint_split_nodes": 38,
+    "endpoint_leaves": 77,
+    "ownerless": {
+      "source_roots": 89,
+      "retained_statuses": 306,
+      "budget_pruned_statuses": 1118
+    },
+    "pinned_alpha_roots": 20,
+    "low_c_bridge_roots": 4488,
+    "written_preconditions": "Common integer source, structural reductions, raw gap and forest licenses are proved in the pinned report."
+  },
+  "integer_combinations": 158662,
+  "controls": {
+    "rejected": [
+      "missing native root",
+      "missing complementary endpoint branch",
+      "missing ownerless status",
+      "undispatched fixed core mass",
+      "negative inequality multiplier",
+      "negative residual coefficient",
+      "zero contradiction margin",
+      "unproved fixed-label credit",
+      "invalid endpoint majorant",
+      "modified pinned source",
+      "leading upper endpoint RHS minus one",
+      "replace positive hole count by six"
+    ],
+    "exact_parameter_rows": 24,
+    "leading_upper_boundary": 1
+  },
+  "tasks": [
+    {
+      "name": "baseline83",
+      "seconds": 55.243,
+      "log_sha256": "f9b2a9f5050b3d64cfb97eda59a8d203b9f49e161ff8d94ca2b64b29e40f7e74"
+    },
+    {
+      "name": "alpha",
+      "seconds": 6.142,
+      "log_sha256": "60ddce3aa16c3dd0eb14c5c022d07261a6c0194f8344f46a57e28c88e82fac66"
+    },
+    {
+      "name": "coverage",
+      "seconds": 3.75
+    },
+    {
+      "name": "structure",
+      "seconds": 8.668
+    },
+    {
+      "name": "geometry",
+      "seconds": 2.32
+    },
+    {
+      "name": "compression",
+      "seconds": 1.029
+    },
+    {
+      "name": "native_j1",
+      "seconds": 8.383
+    },
+    {
+      "name": "native_j2",
+      "seconds": 20.28
+    },
+    {
+      "name": "native_j3",
+      "seconds": 42.952
+    },
+    {
+      "name": "native_j4",
+      "seconds": 74.192
+    },
+    {
+      "name": "native_j5",
+      "seconds": 107.268
+    },
+    {
+      "name": "native_j6",
+      "seconds": 18.565
+    },
+    {
+      "name": "ownerless",
+      "seconds": 4.084
+    },
+    {
+      "name": "endpoint_leaves",
+      "seconds": 4.097
+    },
+    {
+      "name": "low_c",
+      "seconds": 10.967
+    },
+    {
+      "name": "controls",
+      "seconds": 9.81
+    }
+  ],
+  "detail_directory": "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper82/results/2026-10-19/upper82/standard_details"
+}

@@ -32,7 +32,7 @@ def validate(data=None):
         p=Path(entry['path'])
         need(not p.is_absolute() and '..' not in p.parts and entry['path'] not in paths,'source path')
         paths.add(entry['path']);need(sha(ROOT/p)==entry['sha256'],'source mismatch '+str(p))
-    local={str(p.relative_to(ROOT)) for p in Path(__file__).parent.glob('*.py')}
+    local={p.relative_to(ROOT).as_posix() for p in Path(__file__).parent.glob('*.py')}
     need(local<=paths,'new verifier omitted from source pins')
     for name in ('upper84_adoption','upper83_progress','upper83_fullrank','upper83_tail'):
         rel='data/'+name+'_sources.json'

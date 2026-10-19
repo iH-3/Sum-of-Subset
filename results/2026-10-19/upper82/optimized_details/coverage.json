@@ -1,0 +1,26 @@
+{
+  "status": "PASS_COMPLETE_DISPATCH",
+  "main_roots": 111629,
+  "by_j": {
+    "1": 3300,
+    "2": 8712,
+    "3": 17784,
+    "4": 31773,
+    "5": 41000,
+    "6": 9060
+  },
+  "direct_integer_proof_roots": 111481,
+  "endpoint_tree_roots": 39,
+  "endpoint_branch_roots": 38,
+  "endpoint_tree_nodes": 115,
+  "endpoint_split_nodes": 38,
+  "endpoint_leaves": 77,
+  "ownerless": {
+    "source_roots": 89,
+    "retained_statuses": 306,
+    "budget_pruned_statuses": 1118
+  },
+  "pinned_alpha_roots": 20,
+  "low_c_bridge_roots": 4488,
+  "written_preconditions": "Common integer source, structural reductions, raw gap and forest licenses are proved in the pinned report."
+}
