@@ -1,0 +1,73 @@
+{
+  "schema": "upper85-adoption-results-v1",
+  "baseline_commit": "f1110021aaa2e55cec1e33acefe271ecf8dde73f",
+  "previous_independently_reviewed_upper": 86,
+  "new_independently_reviewed_upper": 85,
+  "lower_bound": 71,
+  "exact_maximum_known": false,
+  "retained_archive_upper": 84,
+  "archive85_endpoint_independently_adopted": false,
+  "proof_improvements": {
+    "zero_missing": "w >= 2|D|-36",
+    "d78_small_hole_slack": "w <= 119 => c >= 78",
+    "old_structural_systems_replaced": 152,
+    "nonprimitive_equality_exceptions_removed": 2,
+    "adaptive_terminal_before": "131-w",
+    "adaptive_terminal_after": "136-w",
+    "required_even_holes_before": 50,
+    "required_even_holes_after": 54
+  },
+  "complete_runs": [
+    {
+      "name": "full",
+      "seconds": 32.493,
+      "optimization": 0,
+      "counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "optimized",
+      "seconds": 32.592,
+      "optimization": 1,
+      "counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "unicode",
+      "seconds": 30.256,
+      "optimization": 0,
+      "counts": {
+        "PASS": 140,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    }
+  ],
+  "source_files": 55,
+  "source_manifest_sha256": "2d298dca53bc07cec0879f7d218a58b326bc7c7d10b87e16a9283dd8d28d8b67",
+  "new_finite_checks": {
+    "activity_assignments": 2097152,
+    "conditioned_modes": {
+      "Z3_P3": 4,
+      "Z4": 45,
+      "Z5_A0": 32,
+      "P4": 29
+    },
+    "first_gap_low_patterns": 23,
+    "first_gap_scalar_states": 45776,
+    "forests": 38,
+    "pointwise_rooted_states": 9728,
+    "negative_controls_rejected": 6
+  },
+  "complete_written_strata": 13,
+  "result_scope": "文字证明与有限验证共同支持 86 元端点排除。各计数的数学域不同，不可合计为实际集合数。旧 152 系统作为回归额外重放，已不再是新结构证明的必要证书依赖。",
+  "full_theorem_formally_verified": false,
+  "report_pdf_sha256": "d68309e282155c36e55ca150f6bd990e87ef951da785fc818a568d3483c50f14",
+  "report_tex_sha256": "c1cb91bd209a3fb5e6bc5e57f1512c885dd8f2141a09e9a9e33dd15335d8f63f"
+}

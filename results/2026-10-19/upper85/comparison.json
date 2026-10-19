@@ -1,0 +1,22 @@
+{
+  "schema": "upper85-replay-comparison-v1",
+  "modes": [
+    "full",
+    "optimized",
+    "unicode"
+  ],
+  "coverage_mathematical_records_equal": true,
+  "ignored_coverage_keys": [
+    "elapsed_seconds",
+    "platform",
+    "python",
+    "seconds",
+    "timestamp_utc"
+  ],
+  "normalized_coverage_sha256": "059db7d3edda7396ddcd44e234f72928d2eb2cdfa194b6cda7f0ff209f97082d",
+  "geometry_byte_identical": true,
+  "geometry_sha256": "07edc941c5d06a04976bfbfa73fa829af2a543adb23c085a011b2d2092daa25b",
+  "windows_launcher_static_checks": 5,
+  "windows_executed": false,
+  "space_and_chinese_path_full_replay": "PASS"
+}

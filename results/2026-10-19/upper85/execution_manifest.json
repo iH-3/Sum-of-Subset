@@ -1,0 +1,93 @@
+{
+  "schema": "upper85-execution-archive-v1",
+  "archive": "execution_logs.zip",
+  "archive_sha256": "3da0131cab9b13c5c058256cb5c7530b30e6d5f9a7d1533122a01968e920976d",
+  "entries": [
+    {
+      "path": "full/full_suite.log",
+      "bytes": 13819,
+      "sha256": "cea67bceda084a669784dbe64941e979a8d07035c7e69bd2666d7800a511de47"
+    },
+    {
+      "path": "full/new_geometry.log",
+      "bytes": 45,
+      "sha256": "803453c8bfd5ba287bcd3328af8d7f0daefb2db5b4567c9f98503113fee623f1"
+    },
+    {
+      "path": "full/geometry.json",
+      "bytes": 3582,
+      "sha256": "07edc941c5d06a04976bfbfa73fa829af2a543adb23c085a011b2d2092daa25b"
+    },
+    {
+      "path": "full/full/coverage.json",
+      "bytes": 360791,
+      "sha256": "b8ebd08ac8725ecd261f8fb9fe4f5446ed4f671fdfbe91f79737dc972154dd72"
+    },
+    {
+      "path": "full/full/verification_log.txt",
+      "bytes": 13819,
+      "sha256": "cea67bceda084a669784dbe64941e979a8d07035c7e69bd2666d7800a511de47"
+    },
+    {
+      "path": "optimized/full_suite.log",
+      "bytes": 13818,
+      "sha256": "f1de649333666f94f5ce55ce4aab14bfb9c9908c17ca906e31cd7f6f3da76549"
+    },
+    {
+      "path": "optimized/new_geometry.log",
+      "bytes": 45,
+      "sha256": "803453c8bfd5ba287bcd3328af8d7f0daefb2db5b4567c9f98503113fee623f1"
+    },
+    {
+      "path": "optimized/geometry.json",
+      "bytes": 3582,
+      "sha256": "07edc941c5d06a04976bfbfa73fa829af2a543adb23c085a011b2d2092daa25b"
+    },
+    {
+      "path": "optimized/full/coverage.json",
+      "bytes": 360793,
+      "sha256": "2a9456dcd52d53a6907ac504907752b77c8c1edf6592521d3cdd8f5db00ead1e"
+    },
+    {
+      "path": "optimized/full/verification_log.txt",
+      "bytes": 13818,
+      "sha256": "f1de649333666f94f5ce55ce4aab14bfb9c9908c17ca906e31cd7f6f3da76549"
+    },
+    {
+      "path": "unicode/full_suite.log",
+      "bytes": 13819,
+      "sha256": "540ebc09a6e7ae9a69728247475d68b1f4818eae378da37f3b365d56497cb5fa"
+    },
+    {
+      "path": "unicode/new_geometry.log",
+      "bytes": 45,
+      "sha256": "803453c8bfd5ba287bcd3328af8d7f0daefb2db5b4567c9f98503113fee623f1"
+    },
+    {
+      "path": "unicode/geometry.json",
+      "bytes": 3582,
+      "sha256": "07edc941c5d06a04976bfbfa73fa829af2a543adb23c085a011b2d2092daa25b"
+    },
+    {
+      "path": "unicode/full/coverage.json",
+      "bytes": 360813,
+      "sha256": "3705883b15395ed9554eea9ae80e596f9ed43f41d44caf3c081b39d9ee8990f6"
+    },
+    {
+      "path": "unicode/full/verification_log.txt",
+      "bytes": 13819,
+      "sha256": "540ebc09a6e7ae9a69728247475d68b1f4818eae378da37f3b365d56497cb5fa"
+    },
+    {
+      "path": "pdf/build1.log",
+      "bytes": 4616,
+      "sha256": "16209079a6dd3f64811ef0d15d3609070794646adaafa57dc1b4da80b03a10d8"
+    },
+    {
+      "path": "pdf/build2.log",
+      "bytes": 4616,
+      "sha256": "16209079a6dd3f64811ef0d15d3609070794646adaafa57dc1b4da80b03a10d8"
+    }
+  ],
+  "zip_crc_and_sha256_readback": "PASS"
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "upper85-written-proof-review-v1",
+  "status": "WRITTEN_APPLICABILITY_REVIEW_COMPLETED",
+  "meaning": "审阅索引，供读者沿报告核对；不是由程序生成的形式证明证书。",
+  "retained_report": "verification/upper84/audit/verification_program/proof/report.tex",
+  "retained_report_sha256": "c771ff79b1683e3a618826a3a1eead6e77eaafde82101937d8b8e73b062b9c33",
+  "retained_report_lines": 5864,
+  "adoption_report": "reports/upper85_adoption_20261019.tex",
+  "adoption_report_sha256": "c1cb91bd209a3fb5e6bc5e57f1512c885dd8f2141a09e9a9e33dd15335d8f63f",
+  "structure": [
+    "先用符号与相反点计数限制基数，不提前使用本原或整数格的空洞结论。",
+    "11、12、13、14 小侧边界；AP 共同格、半步长传播；17 个双非 AP 逆定理不足方向。",
+    "四个端点桥保持 [h+1,L-h-1] 的正确闭端点；13 个稠密修复方向保持实际格尺度。",
+    "内外层严格比较后才使用 D 整性、w<=4z 和 T 的下界。",
+    "新全非空引理统一替换 72+72+8 个例外证书；本原性两个等号分支用 c>=78 排除。",
+    "共同尺度上得到 15..54 的两侧本原核心，才进入全部 13 个实际情形。"
+  ],
+  "new_proofs": [
+    "j=0 => w>=2M-34>=2d-36；不要求核心两侧本原或主导组件活动。",
+    "同一实际子核心用于全部六边；在删除深度 5、6 中选择，保留 xi 和 sigma，再使用偶性得到 136-w。",
+    "逐点森林精确式 edges+b-r=e+b-q；目标外计费条件 e+b<=q。"
+  ],
+  "finite_to_infinite": [
+    "稠密洞边界基例、删最大值归纳、相邻区间端点均核对。",
+    "同步轮次读取同一个旧预算向量；按 beta 分开使用 beta+5 与 2beta+5 门槛。",
+    "直接缺陷尾秩先建立尺度 1，再保持端点洞；没有用目标结论提前排除离格。"
+  ],
+  "strata": [
+    {
+      "case": "Z0",
+      "source_label": "sec:z0p0",
+      "review": "替换零缺失的终端。",
+      "terminal": "新引理 w>=120 与 w=0 矛盾。"
+    },
+    {
+      "case": "Z1",
+      "source_label": "sec:z1",
+      "review": "核对活动、整性、唯一空 O 与对侧 beta 形状及六边根森林。",
+      "terminal": "2t>=72+I 与 2t<=57 矛盾。"
+    },
+    {
+      "case": "Z2",
+      "source_label": "sec:Z2",
+      "review": "核对不同时成立的双上帽、V/C7 四叶、三种缺失形式。",
+      "terminal": "tau+delta>=294+R-69 与 <=281-I 矛盾。"
+    },
+    {
+      "case": "Z3",
+      "source_label": "sec:Z3",
+      "review": "核对 A0/A1 全部分支、五端点和权重 2 的重裁剪归属。",
+      "terminal": "两个多项式最小值 641、665；保留端点误差。"
+    },
+    {
+      "case": "Z4",
+      "source_label": "sec:Z4",
+      "review": "核对 45 个条件保留模式、F/O/S/E 卡及无所有者终端。",
+      "terminal": "终端 4e<=50 与 e=18 矛盾。"
+    },
+    {
+      "case": "Z5",
+      "source_label": "sec:z5",
+      "review": "核对 A0 十三张卡及反射、双空对三卡及反射、A1 与严格 B。",
+      "terminal": "紧邻 alpha 情形右侧 1927、左侧至少 1938；C5 固定项使用修正后的常数 7。"
+    },
+    {
+      "case": "P0",
+      "source_label": "sec:z0p0",
+      "review": "替换正低洞零缺失的终端。",
+      "terminal": "新引理 w>=120 与 w<=56 矛盾。"
+    },
+    {
+      "case": "P1",
+      "source_label": "sec:p1",
+      "review": "核对所有子集位移带来的共同条带、唯一空 O 和首洞 m<=7。",
+      "terminal": "以新 136-w 终端替代 131-w；w>=54 与 w<=14 矛盾。"
+    },
+    {
+      "case": "P2",
+      "source_label": "sec:p2",
+      "review": "核对首洞 1..5、两个 m=1 形式、完整中心活动与六边森林。",
+      "terminal": "70+I+xi<=3w/2<=21 矛盾。"
+    },
+    {
+      "case": "P3",
+      "source_label": "sec:p3",
+      "review": "核对中央区间与 Lev 条件、首洞 1..4、A0/A1 的所有轻重端点。",
+      "terminal": "m=4 先由 delta<=3<e 排除；保留 A0 的 1055>1050 和 A1 m=3 的最小值 748。"
+    },
+    {
+      "case": "P4",
+      "source_label": "sec:p4",
+      "review": "核对七种种子、z=w=2、CORE8 与外侧整性、29 个条件保留模式。",
+      "terminal": "A1/B 所有者障碍和 A0 三类；紧邻情形含四个端点误差后余量 7/2。"
+    },
+    {
+      "case": "P5",
+      "source_label": "sec:p5",
+      "review": "核对两层剥离的共同条带和粗源质量式；不预设外侧整性。",
+      "terminal": "tau>=63+2z、w<=z 与 I+tau+delta<=56+w 矛盾。"
+    },
+    {
+      "case": "H",
+      "source_label": "sec:h",
+      "review": "核对有限到无限缺陷输入、c<=154、共同条带，保留 H1 形状归约。",
+      "terminal": "H0 由 I+c+rho+z<=437 与新零缺失引理排除；H1 新终端 w>=54 与 w<=16 矛盾。"
+    }
+  ],
+  "external_theorems": "沿用此前已审查的准确条件和原文出处；本轮未声称重新证明这些一般定理。",
+  "full_theorem_formally_verified": false,
+  "archive84_status": "大小 85 的独立接入仍未完成。"
+}

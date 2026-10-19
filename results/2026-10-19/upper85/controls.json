@@ -1,0 +1,37 @@
+{
+  "status": "PASS_NEGATIVE_CONTROLS",
+  "mutations_rejected": 6,
+  "records": [
+    {
+      "id": "A_holes_overstated",
+      "status": "REJECTED",
+      "reason": "A hole lower bound"
+    },
+    {
+      "id": "B_holes_overstated",
+      "status": "REJECTED",
+      "reason": "B hole lower bound"
+    },
+    {
+      "id": "even_rounding_premature",
+      "status": "REJECTED",
+      "reason": "new universal terminal bound"
+    },
+    {
+      "id": "Z5_card_omitted",
+      "status": "REJECTED",
+      "reason": "Z5 thirteen-card coverage"
+    },
+    {
+      "id": "source_byte_identity",
+      "status": "REJECTED",
+      "reason": "source mismatch: reports/upper86_adoption_20261019.tex"
+    },
+    {
+      "id": "new_checks_omitted",
+      "status": "REJECTED",
+      "reason": "new mathematical checks omitted"
+    }
+  ],
+  "source_sha256": "579fd7889c3356f4cf77f33402e0c34bf76dad700a1eca9f94b4c48396e02421"
+}

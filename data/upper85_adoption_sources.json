@@ -1,0 +1,426 @@
+{
+  "schema": "upper85-adoption-sources-v1",
+  "base_commit": "f1110021aaa2e55cec1e33acefe271ecf8dde73f",
+  "predecessor_bound": 86,
+  "adopted_bound": 85,
+  "files": [
+    {
+      "path": "reports/upper86_adoption_20261019.tex",
+      "sha256": "7f5787b1797b7b4355b9b45a2acad6f21f1ed8bb1ff7d0735a1e5e0b1ae9881e",
+      "bytes": 25873
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/COVERAGE_MAP.json",
+      "sha256": "1b910e47d3e9d61d77ca34bb1a9d1a2c9c2d4111c5f30b054fb31c56d39c6397",
+      "bytes": 12876
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/README.md",
+      "sha256": "06fa4cf6ab3a5caf8aab28e0ceca2f8815ff9c1580270aa0f4215479c23f9b71",
+      "bytes": 9472
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/SOURCE_MAP.json",
+      "sha256": "260e7b2486a208550ac0b9359287b4c9820870bdcc5312e27ab42e05490336cb",
+      "bytes": 9247
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/TEST_REPORT.json",
+      "sha256": "563dae9f56f699c67b4ad95b6447b10b068cdf40d7c71fb22ae5b7ad99c23823",
+      "bytes": 3106
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/chapter_checks.py",
+      "sha256": "08268003c0adffad1c236dae6b8e626d708938e7fabab66b429b2226605b23ad",
+      "bytes": 17317
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/chapter_expected.py",
+      "sha256": "05c2a72ccae0098ee78b577ecbae0239cf0dfe6305685c1c18af36c212fd7119",
+      "bytes": 1279
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/checks.py",
+      "sha256": "3c089305c1587a970d1d254bf828337a2ef8a2c93c66b1010a42c91fce7addc0",
+      "bytes": 20606
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/arithmetic.json",
+      "sha256": "39c860de947313c7b98e791451b873f28cd27c2cdbc3caeaa9f64bae7222417f",
+      "bytes": 47609
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/chapter_provenance.json",
+      "sha256": "85d4a32add733509b18e262c572521e39baa4f7b426f211f567a7645523933a1",
+      "bytes": 1065
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/fixed_cover_certificate.json",
+      "sha256": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3",
+      "bytes": 5562
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/p3_appendix.json",
+      "sha256": "d1422829cbb22eca84c378a92e1bf874f847dc3d0ae4332097e47c2cf9d191f3",
+      "bytes": 30958
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/p4_seeds.json",
+      "sha256": "134e96069fba5e7192e8be06eb50c2559963e261817eb26e3c9b054364b8cd3d",
+      "bytes": 3384
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/data/z5_appendix.json",
+      "sha256": "b6559d6b3b38c2ecde0c04ba4590ca35071fe4143f3ec97473563176adec4cca",
+      "bytes": 22490
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/exact_math.py",
+      "sha256": "859fbd8b4ce621c78bc44a08f62df08925442fa3bcae485b5e5238a8d14a536a",
+      "bytes": 6403
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/expected_cases.py",
+      "sha256": "041d153668cb1237cc5789b855ebe7cdf95073d56a6687819846638170bce522",
+      "bytes": 2202
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/COVERAGE.json",
+      "sha256": "043250c9961c528cca8cf0f8b8c74cbb5a1dafb55da848108eaf52729134b8bf",
+      "bytes": 5861
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/README.md",
+      "sha256": "dac07a2eeb50520560c9a950b81acf4bef33ef1e50eb41db58a6aa3ea82ddc75",
+      "bytes": 7862
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/SOURCE_MAP.json",
+      "sha256": "6d15b4a2b1a968c9c47589ee275f932d98e1c9896e36cc2fff168ba0482c580d",
+      "bytes": 9406
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/TEST_REPORT.json",
+      "sha256": "ea2b62802cf2033a2cb2150dc91f9fce4cb74921a8bce7ed618cae79c1a6b0df",
+      "bytes": 4779
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/__init__.py",
+      "sha256": "55dce049cc534d13f70c67b5158c1ec6d117d43d97ac13baecc1626b07b1dcab",
+      "bytes": 17969
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/__init__.py",
+      "sha256": "dcab38d68862858abee7dd40f209ca31fdb62ab0124d53188bdf3017a7fe05c9",
+      "bytes": 67
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/common.py",
+      "sha256": "6483487ff38c7c46e06b0063e2bcc88c01cd7672c0159b8d4b8594ada37a2269",
+      "bytes": 963
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/data/certificate.json",
+      "sha256": "791603197db36f7dfdb66a6eab15f11bef34537622aa9af57b99d2e6b586690e",
+      "bytes": 1051004
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/data/profiles.json",
+      "sha256": "a12bc3a8102821cb3c02a56f03cff4973f65cb9ade8a50093e588d9f2f9a4f96",
+      "bytes": 17350
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/dense.py",
+      "sha256": "cc1b4e74ccddbcdd2bd0da0fdf5a33079fc16fc428c1e1d163b178ea4d0aa733",
+      "bytes": 4175
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/h15.py",
+      "sha256": "abea1e41768323a778f0a7e7cdf91f0dac9a7f99b9b22892890b5f628a660728",
+      "bytes": 6522
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/dense/profiles.py",
+      "sha256": "41aaee1cb049b9c2925508105ebfc365a12a873746b39148afbccee79e01991e",
+      "bytes": 4634
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/proof/STRUCTURAL86.md",
+      "sha256": "2c4b258fddaaa508b1354cdc13266d8ff7b00ab3bf2a330f898b03da0afb6099",
+      "bytes": 29171
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/proof/dense_holes_direct_defects.tex",
+      "sha256": "8e4818a4b302c85baa6adc3f247146a7d31889c5d44c62d9a8c44b0690203c92",
+      "bytes": 27576
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/proof/endpoint_bridge_correction.txt",
+      "sha256": "189ce8316072d544dbb9562164e9ace83ed1b16e013cf0b49a62654cd41f2091",
+      "bytes": 2771
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/ap_exception86/check86_elementary.py",
+      "sha256": "69087b9ce6c284421b13b9f1ef02a68937f77fdd995752d83c1af930f886d52a",
+      "bytes": 3642
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/ap_exception86/conditional_exception86.md",
+      "sha256": "48900969a4c4c26ec9f6bae832b22457e0bcb865db27c1387571559b00dcfc28",
+      "bytes": 12094
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/check_bootstrap_ap86.py",
+      "sha256": "9437c530f072104e3175c094725383b7742d24a5a0c9b0c90464b27d5f52089e",
+      "bytes": 5089
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/foundations/budget_and_sharp_defect_source.tex",
+      "sha256": "25b65826d9b81d3c600e1e2ec712360dd908b6cba5413846a3b98f952c486d56",
+      "bytes": 8684
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/foundations/general_lemmas_source.tex",
+      "sha256": "848b40e0dd78a6d5353cddb3128d0ce2b3d4bcef00f4e69295d197931e6c4c5b",
+      "bytes": 33941
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/foundations/lattice_lemmas.md",
+      "sha256": "7495138ef80c8b88fe60c42130da6dbe0744263ea83cc7963f80c4bbe8bc4b96",
+      "bytes": 1509
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/foundations/nonap_defect.md",
+      "sha256": "fbde07b6ed9331444f191f34ef4dce8c5098b60256f8936f92b328b527d4f199",
+      "bytes": 3545
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/foundations/verify_small_deleted.py",
+      "sha256": "a33288447f4fcc09e8b8b04a1bcfb3eed270d45c4d4e3c1895ab08c7e1bc5a7b",
+      "bytes": 1136
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inputs/four_integer_vectors.json",
+      "sha256": "adc810cc208c4f5b04fcbb5abb8706a187e98ef13049ad860833661dc4f0390e",
+      "bytes": 3055
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inputs/vector_manifest.json",
+      "sha256": "10bf12459ea6408cc743791497e65aacbcaf26149f86790930fffbecb44d1ed9",
+      "bytes": 275
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inverse86/arithmetic_tables.md",
+      "sha256": "000404c3e50acd675c75b60c348ed45691a06418599d0b88df6e1dce5d5cb7b0",
+      "bytes": 7079
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inverse86/check_inverse86.py",
+      "sha256": "12910795e060c537ed4ac5a49dd5c31aca96f81f3b412ce67998a91274a7dd11",
+      "bytes": 8372
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inverse86/proof_inverse86.md",
+      "sha256": "da98be61b5586f197303855e58c0769c49e7db734852f8f53bef69c5c42c1f15",
+      "bytes": 14306
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/foundations/source/structural/inverse86/source_pins.json",
+      "sha256": "8cf73c2c29789a0bf81941bb0de8b5a66f0a510cbbf0a63c8e3bc42793041ea2",
+      "bytes": 578
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/proof/SOURCE_GUIDE.md",
+      "sha256": "5b8d1b02c9239621cf0aa50ff745395c0d25403ed0916320ea887c5c123deade",
+      "bytes": 2057
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/proof/report.tex",
+      "sha256": "c771ff79b1683e3a618826a3a1eead6e77eaafde82101937d8b8e73b062b9c33",
+      "bytes": 294863
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/run_windows.bat",
+      "sha256": "aa1fbce92269b58ce0873601a6a8a2bff3d05941f28c266c54a8a3eeca43735d",
+      "bytes": 499
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/sample_results/full/coverage.json",
+      "sha256": "a83f553f2e3ee78a6205b59aefdadd109bb62358ed4d97acb1d85109a0a63d82",
+      "bytes": 360803
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/sample_results/full/verification_log.txt",
+      "sha256": "4f024dad80f1ba14ed3faa2f87b57f452e87137d0a7a4c901a076b49020a4510",
+      "bytes": 13819
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/verify.py",
+      "sha256": "5c97267627fa3fe2821f266f17ab44a4cee6feb78f5b38fe57bc1c720f76884c",
+      "bytes": 11424
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/verify_full.bat",
+      "sha256": "aa1fbce92269b58ce0873601a6a8a2bff3d05941f28c266c54a8a3eeca43735d",
+      "bytes": 499
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/verify_quick.bat",
+      "sha256": "6cae13b29dffd714c939ce4da451416a469630cd75df8b75ae10b93f3519b39e",
+      "bytes": 501
+    },
+    {
+      "path": "verification/upper85.py",
+      "sha256": "0ae6eb116cad5df41d15acbfeb9ee4724a899d0331d81f6e1f6017d85cabff93",
+      "bytes": 5388
+    },
+    {
+      "path": "verification/upper85_geometry.py",
+      "sha256": "95e89939c8949126a97375320bb47b8d0dd0c4d1da278b31195975a552faa03e",
+      "bytes": 16271
+    }
+  ],
+  "required_suite_check_ids": [
+    "ARITHMETIC-INVENTORY",
+    "C04-cover-capacity",
+    "C04-imbalance",
+    "C04-source-mass-general",
+    "C08-lambda",
+    "C09-alpha-C5",
+    "C09-beta",
+    "C12-PARTITION",
+    "CERT-P4-A0-tight-margin",
+    "F-COVER-FIXED",
+    "F-COVER-NEGATIVE",
+    "F3_NONAP_2340",
+    "F4_BOOTSTRAP_AP",
+    "F4_FIXED_WITNESSES",
+    "F4_INVERSE",
+    "F6_DENSE_BASES",
+    "F6_H_BANDS",
+    "F6_H_PROFILES",
+    "F6_RESTRICTED_DIRECT",
+    "G-ENDPOINT-RANKS",
+    "G-FIRSTGAP",
+    "G-FOREST",
+    "H-deficit-threshold",
+    "H-j-bound",
+    "H0-final",
+    "H1-final",
+    "H1-not-O",
+    "INPUT-DATA",
+    "LOWER71",
+    "NEGATIVE-CONTROLS",
+    "P1-baseline-cubic-difference",
+    "P1-both-caps",
+    "P1-final",
+    "P2-final",
+    "P3-A0-m1-heavy1",
+    "P3-A0-m1-heavy2",
+    "P3-A0-m1-light",
+    "P3-A0-m2-heavy1",
+    "P3-A0-m2-heavy2",
+    "P3-A0-m2-light",
+    "P3-A0-m3",
+    "P3-A1-m1-heavy",
+    "P3-A1-m1-light",
+    "P3-A1-m2-heavy-opposite",
+    "P3-A1-m2-heavy-owner",
+    "P3-A1-m2-light-opposite",
+    "P3-A1-m2-light-owner",
+    "P3-APPENDIX-ALGEBRA",
+    "P3-APPENDIX-NEGATIVE",
+    "P3-SEEDS",
+    "P3-m4-both-schemas",
+    "P4-A0-alpha-empty",
+    "P4-A0-alpha-retained-m1",
+    "P4-A0-alpha-retained-m2",
+    "P4-A0-pair-empty",
+    "P4-PROPAGATION-SEEDS",
+    "P4-T5-m1",
+    "P4-T5-m2",
+    "P4-opposite-m1",
+    "P4-opposite-m2",
+    "P4-radial-final",
+    "P4-same-m1",
+    "P4-same-m2",
+    "P5-final",
+    "Q-I",
+    "Q-P3-3I",
+    "Q-P3-4I",
+    "Q-P3-5I",
+    "Q-P3-A0-m3",
+    "Q-P3-A1-heavy-opposite",
+    "Q-P3-A1-heavy-owner",
+    "Q-P3-A1-m2-opposite",
+    "Q-P3-A1-m2-owner",
+    "Q-P3-boundary143",
+    "Q-P4-A0-m1",
+    "Q-P4-A0-m2-before-minus1",
+    "Q-P4-same-owner",
+    "Q-Z2-3r",
+    "Q-Z2-4r",
+    "Q-Z2-6r",
+    "Q-Z3-A0",
+    "Q-Z3-A1",
+    "Q-Z4-5I",
+    "Q-Z4-HIGH-beta",
+    "Q-Z4-fivehalves",
+    "Q-Z4-ninequarters",
+    "Z0P0-pair1-owner-beta",
+    "Z0P0-pair1-owner-opposite",
+    "Z1-final",
+    "Z1-pair1-missing",
+    "Z2-double-cap-generic",
+    "Z2-double-cap-one-hole",
+    "Z2-double-cap-other-C7",
+    "Z2-double-cap-own-C7",
+    "Z2-final",
+    "Z3-A0-alpha-heavy-other",
+    "Z3-A0-alpha-heavy-same",
+    "Z3-A0-alpha-heavy0",
+    "Z3-A0-light0",
+    "Z3-A0-light1",
+    "Z3-A0-light2",
+    "Z3-A1-heavy-s",
+    "Z3-A1-heavy-ss",
+    "Z3-A1-heavy-st",
+    "Z3-A1-heavy-t",
+    "Z3-A1-light-high-A",
+    "Z3-A1-light-low-A",
+    "Z4-HIGH-beta-opposite-helper",
+    "Z4-card-EC5-heavy-s",
+    "Z4-card-EC5-heavy-t",
+    "Z4-card-EC5-light",
+    "Z4-card-EH-heavy",
+    "Z4-card-EH-light",
+    "Z4-card-Ealpha-opposite-heavy1",
+    "Z4-card-Ealpha-opposite-heavy2",
+    "Z4-card-Ealpha-opposite-light",
+    "Z4-card-Ealpha-owner-heavy-o",
+    "Z4-card-Ealpha-owner-heavy-u",
+    "Z4-card-Ealpha-owner-light",
+    "Z4-card-F-heavy1",
+    "Z4-card-F-heavy2",
+    "Z4-card-F-light",
+    "Z4-card-O-heavy-s",
+    "Z4-card-O-heavy-t",
+    "Z4-card-O-light-high",
+    "Z4-card-O-light-low",
+    "Z4-card-S-heavy",
+    "Z4-card-S-light",
+    "Z4-final-both-core-heavy",
+    "Z4-final-both-core-light",
+    "Z4-final-both-no-core",
+    "Z4-final-one-no-core",
+    "Z5-APPENDIX-ALGEBRA",
+    "Z5-APPENDIX-NEGATIVE",
+    "Z5-B-alpha-retained",
+    "Z5-E-star",
+    "Z5-ENDPOINT-CARDS",
+    "Z5-FIXED-LEDGERS",
+    "Z5-pair-empty-C5",
+    "Z5-pair-empty-alpha"
+  ],
+  "scope": "Source identity and complete check inventory; hashes are not mathematical evidence."
+}

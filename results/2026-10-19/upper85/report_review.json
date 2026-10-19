@@ -1,0 +1,13 @@
+{
+  "schema": "upper85-pdf-review-v1",
+  "pdf": "reports/upper85_adoption_20261019.pdf",
+  "pdf_sha256": "d68309e282155c36e55ca150f6bd990e87ef951da785fc818a568d3483c50f14",
+  "tex_sha256": "c1cb91bd209a3fb5e6bc5e57f1512c885dd8f2141a09e9a9e33dd15335d8f63f",
+  "pages": 8,
+  "compiler": "XeLaTeX; two successful passes",
+  "font": "Noto Sans CJK SC; Microsoft YaHei fallback in source",
+  "compiler_warnings": 0,
+  "review": "全部 8 页已渲染并视觉审阅；最后的复现段修订后重新检查第 8 页。公式、跨页表、中文和路径均可读，无裁切；第 6、7 节另起页避免孤立末页。",
+  "windows_actual_execution": false,
+  "windows_launcher": "静态检查通过；Linux 带空格和中文的隔离路径完整回放通过。"
+}

@@ -1,0 +1,258 @@
+{
+  "schema": "upper85-full-replay-v1",
+  "status": "PASS_ALL_REQUESTED_FINITE_CHECKS",
+  "timestamp_utc": "2026-10-19T07:36:11.310276+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "optimization": 0,
+  "seconds": 30.256,
+  "work_dir": "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq",
+  "tasks": [
+    {
+      "name": "full_suite",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import runpy,sys; sys.path.insert(0,sys.argv.pop(1)); sys.argv=sys.argv[1:]; runpy.run_path(sys.argv[0],run_name='__main__')",
+        "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq/source/verification/upper84/audit/verification_program",
+        "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq/source/verification/upper84/audit/verification_program/verify.py",
+        "--full",
+        "--output-dir",
+        "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq/full"
+      ],
+      "exit_code": 0,
+      "seconds": 28.625,
+      "log_sha256": "540ebc09a6e7ae9a69728247475d68b1f4818eae378da37f3b365d56497cb5fa"
+    },
+    {
+      "name": "new_geometry",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq/source/verification/upper85_geometry.py",
+        "--output",
+        "/tmp/sum-upper85-20261019/中文 results/upper85-f0atsidq/geometry.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.608,
+      "log_sha256": "803453c8bfd5ba287bcd3328af8d7f0daefb2db5b4567c9f98503113fee623f1"
+    }
+  ],
+  "source_files": 55,
+  "source_manifest_sha256": "2d298dca53bc07cec0879f7d218a58b326bc7c7d10b87e16a9283dd8d28d8b67",
+  "suite_counts": {
+    "PASS": 140,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "geometry": {
+    "status": "PASS_NEW_ANALYTIC_LEMMAS_AND_CLASSIFICATIONS",
+    "zero_missing": {
+      "affine_substitutions": 729,
+      "branch_A": "w >= 2M-34",
+      "branch_B": "w >= 4M-21",
+      "universal": "j=0 => w >= 2d-36",
+      "d78_threshold": 120,
+      "structural_families": [
+        [
+          "nonprimitive",
+          7,
+          7,
+          0
+        ],
+        [
+          "half_step",
+          7,
+          6,
+          48
+        ],
+        [
+          "nonprimitive",
+          8,
+          18,
+          0
+        ],
+        [
+          "half_step",
+          8,
+          16,
+          48
+        ],
+        [
+          "nonprimitive",
+          9,
+          26,
+          0
+        ],
+        [
+          "half_step",
+          9,
+          23,
+          48
+        ],
+        [
+          "nonprimitive",
+          10,
+          31,
+          0
+        ],
+        [
+          "half_step",
+          10,
+          27,
+          48
+        ],
+        [
+          "nonprimitive",
+          11,
+          33,
+          0
+        ],
+        [
+          "half_step",
+          11,
+          28,
+          48
+        ],
+        [
+          "nonprimitive",
+          12,
+          32,
+          0
+        ],
+        [
+          "half_step",
+          12,
+          26,
+          48
+        ],
+        [
+          "nonprimitive",
+          13,
+          28,
+          0
+        ],
+        [
+          "half_step",
+          13,
+          21,
+          48
+        ],
+        [
+          "nonprimitive",
+          14,
+          21,
+          0
+        ],
+        [
+          "half_step",
+          14,
+          13,
+          48
+        ],
+        [
+          "nonprimitive",
+          15,
+          11,
+          0
+        ],
+        [
+          "half_step",
+          15,
+          2,
+          48
+        ],
+        [
+          "boundary14",
+          20,
+          21,
+          0
+        ]
+      ],
+      "old_weighted_systems_replaced": 152,
+      "hypotheses": "Integral D; actual original 18-unit cover; all units active. No primitivity or leading activity."
+    },
+    "adaptive": {
+      "low_patterns": 23,
+      "relaxed_scalar_cases": 45776,
+      "minimum_before_even_rounding": "135",
+      "witness": [
+        1,
+        [],
+        [],
+        34,
+        35,
+        62,
+        2
+      ],
+      "small_xi_minimum": "674/5",
+      "old_terminal": "131-w <= 2t",
+      "new_terminal": "136-w <= 2t",
+      "old_necessary_even_w": 50,
+      "new_necessary_even_w": 54,
+      "hypotheses": "Same j=1 terminal form, first gap m<=7, r in 17..52, common strip, w even."
+    },
+    "forest": {
+      "forests": 38,
+      "pointwise_rooted_cases": 9728,
+      "exact_criterion": "empty_vertices + selected_roots <= active_components"
+    },
+    "activity": {
+      "component_assignments": 2097152,
+      "accepted_by_domain": {
+        "Z5_A0": 32,
+        "Z4": 45,
+        "P4": 29,
+        "Z3_P3": 4
+      },
+      "cards": {
+        "Z3_P3": {
+          "A0": 2,
+          "A1": 2
+        },
+        "Z4": {
+          "A-E": 19,
+          "A-H": 20,
+          "B": 6
+        },
+        "Z5_A0": {
+          "card-10": 2,
+          "card-6": 2,
+          "card-1": 2,
+          "pair-empty": 6,
+          "card-5": 2,
+          "card-8": 2,
+          "card-9": 2,
+          "card-7": 2,
+          "card-12": 2,
+          "card-11": 2,
+          "card-13": 2,
+          "card-3": 2,
+          "card-4": 2,
+          "card-2": 2
+        },
+        "P4": {
+          "A0-alpha-empty": 2,
+          "A0-opposite-alpha": 8,
+          "A-opposite": 8,
+          "A-same": 2,
+          "A0-pair-empty": 1,
+          "A1-empty-pair": 2,
+          "B-same": 2,
+          "B-opposite": 4
+        }
+      },
+      "scope": "Boolean consequences of explicitly stated analytic activity lemmas; not enumeration of real sets."
+    },
+    "source_sha256": "95e89939c8949126a97375320bb47b8d0dd0c4d1da278b31195975a552faa03e",
+    "full_theorem_formally_verified": false
+  },
+  "full_theorem_formally_verified": false,
+  "mathematical_scope": "Complete stated finite checks. General theorems, source geometry, and exhaustive analytic reductions are written proofs in the adoption report and pinned sources.",
+  "old_152_systems": "Replayed as a regression check; the new no-empty-unit lemma removes this certificate dependency from the structural proof."
+}
