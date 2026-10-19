@@ -1,0 +1,245 @@
+{
+  "arithmetic": {
+    "physical_capacities": [
+      609,
+      534
+    ],
+    "rank_mass_pairs": 1007,
+    "target_span_margin": 141
+  },
+  "core_lemmas": {
+    "actual_intersections": 1802,
+    "actual_one_side_cores": 923,
+    "actual_unions": 252,
+    "sharp_kernel_minima": [
+      -6,
+      -16
+    ],
+    "strict_boundary_counterexample": {
+      "E": [
+        -3,
+        -1,
+        0,
+        1
+      ],
+      "intersection": 2,
+      "invalid_lower": 3,
+      "shift": 1,
+      "tau": 1
+    }
+  },
+  "endpoints": {
+    "order_statistics": 35622,
+    "strict_error_improvements": 22793,
+    "witness": {
+      "core": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        62
+      ],
+      "lower_clip": 31,
+      "new_error": 0,
+      "old_error": 29
+    }
+  },
+  "finite": {
+    "integer_certificates": 275,
+    "minimum_integer_contradiction": 1,
+    "replay_sha256": "3d7afa93b50d2da67200fb1e3c3a7b08c532feaa7e9ef904073eaaaba7bb9b3e",
+    "stages": {
+      "bootstrap": 1780,
+      "cutoff": 2463,
+      "terminal": 2463
+    },
+    "states": 6706
+  },
+  "forests": {
+    "combined_subforests": 1024,
+    "edge_subsets_per_side": 32,
+    "pointwise_checks": 4096
+  },
+  "global_upper82_proved": false,
+  "global_upper_bound": 83,
+  "ledger": {
+    "LOW": [
+      "C+55",
+      "C+56",
+      "C+57",
+      "C+58",
+      "C-55",
+      "C-56",
+      "C-57",
+      "C-58",
+      "C-66",
+      "C-67",
+      "C-68"
+    ],
+    "credits": [
+      13,
+      18
+    ],
+    "final_fixed_capacity": 66,
+    "initial_HIGH": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+22",
+      "C+23",
+      "C+24",
+      "C-11",
+      "C-12",
+      "C-13",
+      "C-14"
+    ],
+    "new_HIGH": [
+      "C+33",
+      "U+2",
+      "U+3",
+      "U+4",
+      "V+2"
+    ],
+    "touched_groups": 9
+  },
+  "negative_controls": [
+    "omit a finite state",
+    "wrong physical rank",
+    "negative inequality multiplier",
+    "negative variable coefficient",
+    "nonnegative right side",
+    "use strict long-gap bound at equality",
+    "claim global82 from one local family"
+  ],
+  "scope": "The exact C5t family with common integer source and complete targets",
+  "source_files": 24,
+  "status": "PASS_CONDITIONAL_C5T_SIZE83_FINITE_CERTIFICATES",
+  "tail_inventory": {
+    "already_HIGH_removed": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+22",
+      "C+23",
+      "C+24"
+    ],
+    "below_threshold_removed": [
+      "U+5",
+      "U+6",
+      "U+7",
+      "U+8"
+    ],
+    "beta_removed": [
+      "V+3",
+      "V+4",
+      "V+5",
+      "V+6",
+      "V+7",
+      "V+8"
+    ],
+    "cross_pairs": [
+      [
+        "C+15",
+        "C+25"
+      ],
+      [
+        "C+16",
+        "C+26"
+      ],
+      [
+        "C+17",
+        "C+27"
+      ],
+      [
+        "C+18",
+        "C+28"
+      ]
+    ],
+    "excluded_by_nonnegative_cones": 459,
+    "fixed_tail": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+15",
+      "C+16",
+      "C+17",
+      "C+18",
+      "C+22",
+      "C+23",
+      "C+24",
+      "C+25",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2",
+      "U+3",
+      "U+4",
+      "U+5",
+      "U+6",
+      "U+7",
+      "U+8",
+      "V+2",
+      "V+3",
+      "V+4",
+      "V+5",
+      "V+6",
+      "V+7",
+      "V+8"
+    ],
+    "formal_multisets": 495,
+    "native_families": 4,
+    "new_HIGH_removed": [
+      "C+33",
+      "U+2",
+      "U+3",
+      "U+4",
+      "V+2"
+    ],
+    "slot_counts": [
+      32,
+      26,
+      19,
+      14,
+      10,
+      6
+    ],
+    "unpaired_tail": [
+      "C+34",
+      "C+44"
+    ]
+  }
+}

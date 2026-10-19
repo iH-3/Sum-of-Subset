@@ -1,0 +1,103 @@
+{
+  "schema": "upper82-c5t-sources-v1",
+  "base_commit": "c5640cc4775b3a91216825e8e7e9a73adbab5c66",
+  "global_upper_bound": 83,
+  "files": [
+    {
+      "path": "data/fixed_cover_certificate.json",
+      "sha256": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3"
+    },
+    {
+      "path": "data/upper82_c5t_certificates.json",
+      "sha256": "1186196fddcd11b9456d2fc3300342d4b83bb05a6d380753e53f8ab0d7ce16e5"
+    },
+    {
+      "path": "data/upper83_fullrank_sources.json",
+      "sha256": "52927a9c9344bccbdbd9142f28988fce002e67a5cf20ca5a5268016370080f0c"
+    },
+    {
+      "path": "data/upper83_tail_sources.json",
+      "sha256": "6d111a75537ce4d00360bfe6390f975a2e4848cfe6c529fe370381fa29a63e0c"
+    },
+    {
+      "path": "reports/upper82_c5t_20261019.tex",
+      "sha256": "a4bf54bf3269ad9570e2fa1215863ee4b3c22e9933af1787d005052989803b31"
+    },
+    {
+      "path": "reports/upper83_fullrank_20261019.tex",
+      "sha256": "176dc91a5e512bb29c6c5cd965b5effcffb17cacd4c82a2a59f621625d0c2f84"
+    },
+    {
+      "path": "reports/upper83_progress_20261019.tex",
+      "sha256": "a395ea1b22b863a57a0c6d26bd4e5a4da6652437f34571d550f35e4c4b608102"
+    },
+    {
+      "path": "reports/upper83_tail_20261019.tex",
+      "sha256": "4a4a8214872fdf6c5bd4b3d000606889c71d51648924da299aca0d8d1f3817d2"
+    },
+    {
+      "path": "verification/upper82_work/README.md",
+      "sha256": "c8e8a20465b5347477c223367cfe037a1641ea1eb87d0e7eab3b5df720c87a82"
+    },
+    {
+      "path": "verification/upper82_work/certificates.py",
+      "sha256": "503cabd353efe197ab392b3531800bca99b23dcd7eb5d5511f7f36c45b2fcf6b"
+    },
+    {
+      "path": "verification/upper82_work/check.py",
+      "sha256": "c0bc110d9b439d4ac8c580e4600ce46b5e5295c4fdc04498b8ae83f775da0052"
+    },
+    {
+      "path": "verification/upper82_work/discover.py",
+      "sha256": "579604ec5b2b89dc1343e98750563cb34b1b2e345ea7ffd31c159d6f197c03c0"
+    },
+    {
+      "path": "verification/upper82_work/model.py",
+      "sha256": "9ce4050b5d2151c27ebd7105f5dd79305ef6b3e6540a736cd0873c43dcfb0869"
+    },
+    {
+      "path": "verification/upper83_fullrank/check.py",
+      "sha256": "9d25183389ef1de3b58dabce3aadb87e2f854c1951daae62300ba049734367a0"
+    },
+    {
+      "path": "verification/upper83_progress.py",
+      "sha256": "368d50801bb8d49f566914549d7061fb1e12e70430d134cb63bf458578eb5836"
+    },
+    {
+      "path": "verification/upper83_tail.py",
+      "sha256": "4f99a910dc02ca829922866488709dc509763436776be99fa1c05b002b8ff7c5"
+    },
+    {
+      "path": "verification/upper84/audit/verification_program/proof/report.tex",
+      "sha256": "c771ff79b1683e3a618826a3a1eead6e77eaafde82101937d8b8e73b062b9c33"
+    },
+    {
+      "path": "verification/upper84/progress85/common/raw_gap_inventory.md",
+      "sha256": "014e4037fb779acc39de514ec860daef1a098354cd497a9bb29e50bee0358e30"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/source_triple_fringe85.md",
+      "sha256": "c4c7aa0a3c107337828cf0eca45e06f4de688725b987b39b49d9ae1f7d2b365d"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_z4_z5_cards.md",
+      "sha256": "6a7ff353d48966a9eba6fd7870cee5d5c1970e5bc3aaaeab50c3924b80e2f079"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_z5_a1_b.md",
+      "sha256": "54dfc2cb169a62ce614be2ddd139c102aca6fd1e8b68b68a68f91c8d77fbc7cb"
+    },
+    {
+      "path": "verify_upper82_c5t_windows.bat",
+      "sha256": "41f7e6c18642d00d1e89a98cf4c7453cb062b9ab10ee947e3f363703f0844302"
+    },
+    {
+      "path": "verify_upper83_fullrank_windows.bat",
+      "sha256": "64ad576910375cba6a84f9f1ac0f6fb78042dbc4788ee2dfda3ab1104c061b80"
+    },
+    {
+      "path": "verify_upper83_tail_windows.bat",
+      "sha256": "3fa292f25f029da8274526adfc79af3ef417d5739ca587c722914314323dc089"
+    }
+  ]
+}

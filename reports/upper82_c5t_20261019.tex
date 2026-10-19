@@ -1,0 +1,322 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,fontspec}
+\IfFontExistsTF{Noto Sans CJK SC}{\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]}
+{\IfFontExistsTF{Microsoft YaHei}{\setmainfont{Microsoft YaHei}}{\setmainfont{FandolSong-Regular}}}
+\setmonofont{Latin Modern Mono}[Scale=0.88]
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathsf T}
+\newcommand{\A}{A_*}
+\setlength{\emergencystretch}{2em}
+\linespread{1.06}
+\title{以实际截失秩控制端点误差\\\large 大小 83 的五空 C5t 族排除与整数证书}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+接续已发布提交 \texttt{c5640cc}，其全局范围为 $71\le N\le83$。
+本文把最大秩偏差的统一端点估计替换为随实际截失数变化的质量上界，
+并用同一实际核心的十边森林先证明间距严格超过总偏差，再使用完整核心。
+在共同整数源、完整目标区间及精确整单元孔集
+$\{O_s,H_s,O_t,P,C5_t\}$ 的条件下，排除大小 83。
+全程只需初始固定扣减 13 与 19 个尾槽，无须旧证明的扣减 18、六尾槽终端。
+有限线性反证以整数权重保存，验证器不调用优化器。
+本报告未排除全部其他 83 元情形，\textbf{不宣称全局上界 82}。
+\end{abstract}
+
+\section{结论的范围与参数}
+原问题是有限实数集 $A$ 满足 $\operatorname{FS}(A)\subseteq4A$ 时的最大大小。
+子集和包括空集和，四项和允许重复。
+\begin{theorem}\label{thm:local}
+不存在具有如下四极值源表示的 83 元可行集：共同整数源 $D$ 有 75 点，
+两侧各四个更外层点；两物理目标均为完整整数区间；覆盖采用分支 A，
+18 个普通整单元中恰好 $O_s,H_s,O_t,P,C5_t$ 为空，其余均贡献。
+其中 $P$ 是 $C4_s,C4_t$ 的整个配对单元，另一整配对为两侧 beta。
+\end{theorem}
+这是给定源表示的局部排除，不把共同尺度、完整目标或五孔分类作为已经完成的
+大小 83 全局结构归约。所有证书均只覆盖此定理的条件域。
+
+记核心
+$E=P_s\cup\{0\}\cup(-P_t)$，$|E|=67$，$r_s+r_t=66$。
+按升序写 $P_v=\{i+d_{v,i}:1\le i\le r_v\}$，其中 $d_{v,i}\ge0$ 不减。
+设
+\[
+ \tau_v=\sum_i d_{v,i},\quad\xi_v=d_{v,r_v},\quad R_v=r_v+\xi_v,
+ \quad I=(r_s-33)^2,\quad \T_r=r(r+1)/2.
+\]
+四个源尾点偏移满足 $1\le a_v<b_v<c_v<e_v$，最大值 $M_v=R_v+e_v$。
+无下标的 $\tau,\xi,R,M$ 表示两侧和。$S_v$ 是 $D_v$ 的正点总和，
+$D_s=D,D_t=-D$；目标为 $[1,S_v]\cap\Z$。
+源质量恒等式为
+\[
+ S_v=\T_{r_v}+\tau_v+4R_v+a_v+b_v+c_v+e_v.
+\]
+四个更外层幅度 $v_1>v_2>v_3>v_4>M_v$，设
+\[
+ X_v=v_4-M_v,\quad g_v=v_3-v_4,\quad h_v=v_2-v_3,
+ \quad d_v=v_1-v_2,\quad\lambda_v=d_v-2v_4-g_v.
+\]
+普通中心为
+\begin{align*}
+ V_v&=d_v-v_4-g_v,& U_v&=d_v-v_4,&H_v&=U_v+h_v,\\
+ O_v&=H_v+d_v,&\alpha_v&=h_v-v_4,&\beta_v&=\alpha_v-d_v,\\
+ C7_v&=\lambda_v-o_4,&C6_v&=C7_v-g_o,&C5_v&=C6_v-h_o,\\
+ P_v^{\mathrm{ctr}}&=C5_v-d_o.&&&&
+\end{align*}
+这里 $P_v^{\mathrm{ctr}}$ 与核心集合 $P_v$ 不同；程序将前者命名为 \texttt{Ps,Pt}。
+
+\section{重新计算源界并许可实际资源}
+令 $K=|D+D|$。110 个固定形式及 26 个不交负和组给固定容量 84。
+定义总缺额 $\delta\ge0$，则
+\[
+ S_s+S_t=2K+13\cdot75+84-\delta=2K+1059-\delta.
+\]
+设 $\A=I+\tau+\delta$，$U=a_s+b_s+a_t+b_t$，$C=c_s+c_t$，
+$L=e_s+e_t$。质量恒等式给
+\[
+ \Theta=2K-4R-U-C-L=63+\A.
+\]
+沿用前轮报告中\emph{与基数无关}的源包络，代入 $d=75$ 得
+\begin{gather}
+ \Theta\le158,\quad \Theta+B_s+B_t\le168,\quad \A\le95,\label{eq:source}\\
+ L\ge\A+55,\qquad \max(4,\A-24)\le e_v\le258-\A,\label{eq:peel}\\
+ K\le M+R+1+B_s+B_t,\quad K\le2R+C+162.\label{eq:K}
+\end{gather}
+先由 $\Theta\le158$ 得 $I\le95$，因而 $24\le r_s,r_t\le42$；
+随后才应用要求两侧核心至少四点的耦合界。
+$B_v$ 是四偏移二项和超过 $e_v$ 的不同值数，满足
+\[
+4\le B_v\le10,\quad2B_v\le a_v+b_v+8,\quad
+2B_v\le a_v+b_v+c_v+3.
+\]
+这些是实际源计数，未用连续变量替代其必要整数关系的方向。
+程序允许实数 $B_v$，只扩大必要系统。式 \eqref{eq:peel} 来自通用形式
+$L\ge\Theta-8$、$e_v\ge\Theta-d-12$、$e_v\le4d+21-\Theta$。
+式 \eqref{eq:K} 的第二项为 $2R+C+2d+12$。
+相关通用证明见前轮
+\path{reports/upper83_progress_20261019.tex} 与
+\path{reports/upper83_tail_20261019.tex} 的源界章节；未导入其大小 84 终端常数。
+
+由 $U,C\ge6$ 及 $L\ge\Theta-8$，
+$K\ge\Theta+2R+2$，故
+\[
+ K-\delta\ge197+I+\tau+2\xi>0.
+\]
+两首项都有命中，$\lambda_s,\lambda_t$ 整数。
+保留的 $U_s,V_s,\alpha_s$ 以及 $H_t,U_t,V_t$ 依次恢复所有外点整性。
+首项凸包与原生损失 $\ell_v$ 给
+\begin{equation}
+ d_v\ge K+g_v+2X_v-\ell_v.\label{eq:leading}
+\end{equation}
+
+两侧目标长于源跨度：用 $\xi_v\le\tau_v$ 和 \eqref{eq:peel}，
+\[
+ S_v-M\ge\T_{r_v}+4r_v+I-318+\delta\ge141+\delta>0.
+\]
+最后的整数二次式最小值为 459。因此每个整数中心在
+$[1-M_v,S_v+M_o]$ 内必贡献，空中心只可能 LOW $\le-M_v$ 或
+HIGH $\ge S_v+M_o+1$。
+
+先不指定 beta 的贡献侧。完整核心截断引理可选择同一实际 $Q$，
+使 $\tau+4F\ge256$。两侧 $V,U,C7,C6$ 的四边森林给
+\[
+ 2(X_t+g_t)\ge4F-\delta\ge161+I.
+\]
+若 $\beta_t$ 贡献，保留 $H_t$ 的基数无关八标签空隙界给 $d_t-M\le9$；
+保留 $C7_t$ 却给 $d_t-M\ge2X_t+X_s+g_t+1>9$，矛盾。
+故 beta 整配对只能由 $\beta_s$ 贡献。至此，十三个真正原生资源为
+\begin{gather*}
+ U_s,V_s,\alpha_s,\beta_s,C5_s,C6_s,C7_s,\\
+ H_t,U_t,V_t,\alpha_t,C6_t,C7_t.
+\end{gather*}
+各有容量 75，损失 $\Gamma_Z=75-|(Z+D_v)\cap[1,S_v]|$，满足 $0\le\Gamma_Z\le74$。
+八标签原始目录见
+\path{verification/upper84/progress85/common/raw_gap_inventory.md}。
+
+活动次序给 $O_s,O_t,H_s$ HIGH，$P_s^{\mathrm{ctr}},P_t^{\mathrm{ctr}},C5_t,\beta_t$ LOW。
+
+固定目录中 HIGH 为两侧 $C11,C12,C13,C14$ 及 $s$ 侧 $C22,C23,C24$，共 11 个；
+LOW 为两侧 $C55,C56,C57,C58$ 及 $t$ 侧 $C66,C67,C68$，共 11 个。
+LOW 只触及九个基准组，HIGH 不破坏未触及组的负见证，所以相容额外扣减为
+\begin{equation}
+ e=11+11-9=13,\qquad\varepsilon=\delta-13,\qquad
+ I+\tau+\varepsilon\le82.\label{eq:budget}
+\end{equation}
+每一条不等式内，实际不交资源组的损失与未用原生损失之和均至多 $\varepsilon$。
+不同不等式可以分别使用这一预算；不把同一资源重复算作独立收益。
+
+\section{按截失秩计算端点误差}
+设 $l_Z,u_Z$ 为实际下、上截失数，则 $l_Z+u_Z\le\Gamma_Z$。
+旧的轻截断端点使用统一误差 $\xi_v$。本轮保留 $l_Z$ 对误差的影响。
+\begin{lemma}\label{lem:rank}
+对 $0\le k\le70$，定义
+\[
+ b_v(k)=\begin{cases}
+ 0,&k\le70-r_v,\\
+ \left\lfloor\dfrac{\tau_v}{71-k}\right\rfloor,&71-r_v\le k\le70.
+ \end{cases}
+\]
+若 $l_Z\le70$，则 $Z\ge71-r_v-l_Z-b_v(l_Z)$；
+若 $u_Z\le70$，则 $Z\le S_v+r_o-70+u_Z+b_o(u_Z)$。
+\end{lemma}
+\begin{proof}
+在源升序表中，前四个是负侧尾点，其后是负核心、零、正核心、四个正尾点。
+第 $k+1$ 个点若尚未进入正核心，用严格次序即可，误差为零。
+若在正核心，其秩为 $i=k-r_o-4$，而
+$(r_v-i+1)d_{v,i}=(71-k)d_{v,i}\le\tau_v$。
+第一个保留点必须命中，给出下端式；反射得到上端式。
+\end{proof}
+实际 $\tau_v\le\tau$，故以 $\tau$ 代替 $\tau_v$ 仍是合法弱化。
+对每个固定 $r_v,\tau$，程序枚举合法 $k$，取点
+$(k,b_v(k))$ 的上凹包。每条边延长所得仿射函数均是整个离散域的上界。
+将它代入引理 \ref{lem:rank}，可得到有\emph{整数系数}的线性端点行。
+例如上界 $b_v(k)\le(pk+q)/a$ 给
+\[
+ aZ+(a+p)l_Z\ge a(71-r_v)-q.
+\]
+这保留了“较大误差必须同时支付较大截失”的约束。
+不允许给多个零截失端点分别使用一个独立的大误差。
+
+若截失 $k\ge71$，取四个有序源尾点的安全误差 $\xi_v+e_v-4$。
+该端点消耗至少 71 个原生损失单位。由 \eqref{eq:budget}，至多一个端点为重截断；
+其余所有截失数都至多 $11-I-\tau$。程序显式列出无重截断和全部 $13\cdot2$ 个可能位置，
+没有把重截断直接删去。
+
+\section{同一核心的森林与长位移自举}
+选择使两侧截断代价 $j+d_{r-j}$ 最小的实际子核心 $Q$。
+记 $F=67-\phi_s-\phi_t$。前轮已证明的逆阶梯计算给
+\begin{gather*}
+\tau+F\ge67,\quad\tau+2F\ge132,\quad\tau+3F\ge195,\\
+\tau+4F\ge256,\quad\tau+6F\ge372,
+\quad2\tau-2\xi+7F\ge437,\\
+ F\ge67-\xi,\quad F\ge65-\tau+\xi,
+ \quad2F\ge126-\tau+\xi.
+\end{gather*}
+这些同时对同一个所选 $Q$ 成立，并非分别优化多个不能共用的支撑。
+
+两物理侧的实际森林分别为
+\[
+ L_s-V_s-U_s,\quad L_s-C7_s-C6_s-C5_s;
+\qquad L_t-V_t-U_t-H_t,\quad L_t-C7_t-C6_t.
+\]
+共十条边，间距 $X_s,X_t,g_s,g_t,h_t$ 各出现两次。
+首项中的两个极端核心副本分别位于源两端，因 $M>R$ 而分离。
+对任一边子集 $J$，逐点森林计数给
+\begin{equation}
+ |J|F-\sum_{a\in J}\operatorname{gap}(a)+\ell_s+\ell_t
+ +\sum_{Z\text{ 未被 }J\text{ 使用}}\Gamma_Z\le\varepsilon.
+ \label{eq:forest}
+\end{equation}
+证明只用森林在一个点上满足“边数至多非空顶点数减一”。目标外的点可再支付首项原生损失；
+未使用资源的损失仍可返还。程序生成全部 $2^{10}$ 个子森林，逐项检查最终使用的整数线性组合。
+
+特别地，每个五种间距 $x$ 都有 $2x\ge2F-\varepsilon$。
+若 $4\tau<132+3I$，使用 $\tau+6F\ge372$ 得
+\[
+ x\ge21+I/2+\tau/3>\tau-1.
+\]
+整性给 $x\ge\tau$。完整核心的边界安全交叠
+$|E\cap(E+x)|\ge67-x-2$ 随后把它加强为
+\[
+ 2x\ge130-\varepsilon\ge48+I+\tau>2\tau.
+\]
+最后一个严格号由上述 $\tau$ 范围保证。因此所有五种间距均严格大于 $\tau$。
+重截断时 $\tau\le11-I$，自动属于这一范围。
+严格长位移引理此时给 $|E\cap(E+x)|\ge67-x$，所以可以在全部森林中同时取
+\begin{equation}Q=E,\qquad F=67.\label{eq:full}
+\end{equation}
+边界 $x=\tau$ 不能直接使用严格长位移式；上述两步自举特意保留了这一区别。
+
+\section{截断、十九尾槽与剩余有限域}
+令 $t_0=d_s-X_s$。由 \eqref{eq:leading}，$d_s-g_s-X_s>0$。
+先在尚未使用尾部结论的必要系统中加入相反条件
+\[
+ \beta_s+s_3\ge t_0.
+\]
+第一阶段整数证书排除全部该系统，得到严格 beta 截止
+$\beta_s+s_3<t_0$。该阶段只使用前四节的源、端点和实际资源森林。
+没有循环调用尾部上界。
+
+对 $u>t_0$ 的四项表示，旧报告中与基数无关的 495 个多重集分类仍适用：
+只有 32 个固定类型和 $O,H,\alpha,\beta$ 四个原生族可能进入上尾。
+$O,H$ 为空；beta 截止删掉 beta 原生族及六个 $V3,\ldots,V8$；
+再删去已知 HIGH 的七项 $C11,C12,C13,C14,C22,C23,C24$。
+因此保留 alpha 原生族及至多 19 个固定尾槽，得到
+\begin{equation}
+ S_s\le d_s-X_s+94-\Gamma_{\alpha_s}.
+ \label{eq:tail}
+\end{equation}
+若 $S_s\le t_0$，此式自动成立，因为 $\Gamma_\alpha\le74$；
+否则直接按完整尾区间的点数计数。
+
+对余下 $4\tau\ge132+3I$ 的域，第二阶段分别加入
+$X_s\le\tau,X_t\le\tau,g_s\le\tau,g_t\le\tau,h_t\le\tau$，
+每次只加入一个。整数证书将五种反面情况全部排除。
+因而完整核心式 \eqref{eq:full} 对全部参数成立。
+第三阶段在式 \eqref{eq:tail} 和 $F=67$ 下排除所有必要系统。
+这完成定理 \ref{thm:local}，无须先证明中心正常，也无须将十九尾槽再降至六槽。
+
+每个必要系统还保留实际物理侧容量
+\[
+ S_s\le K+609-13,\qquad S_t\le K+534-13,
+\]
+这是另一侧分别含六、七个原生资源时的总亏损计数，不是资源图像不交的假设。
+程序变量全部非负；保留中心本身用上述线性表达式表示，可为负值。
+
+\section{证书、复核方式与未完成事项}
+有限域由验证器自行生成：
+\[
+ 24\le r_s\le42,\qquad0\le\tau\le82-(r_s-33)^2,
+\]
+并在允许时枚举一个重截断的位置。$r_t=66-r_s$，两种物理方向均保留。
+每个系统的行数、端点上凹包及全部子森林均从源代码重建。
+证书只保存整数权重：不等式权重非负，恒等式权重可带符号。
+逐项相加后，各变量的系数均非负，右端严格为负，故与变量非负矛盾。
+每一个有限状态都必须恰好出现一次；遗漏、重复及错误重截断位置均会被拒绝。
+本次共 6706 个系统：截断阶段 2463 个、间距自举阶段 1780 个、最终阶段 2463 个，
+由 275 组整数权重覆盖。
+
+可选生成器使用 SciPy 搜索权重，随后立即转成整数并精确验收。
+交付验证器只使用 Python 标准库，不读取浮点求解结果，不依赖会被优化模式删除的断言。
+它还复核实际整数源的秩端点、所有离散上凹包、原固定目录和四项上尾分类，
+并运行故意错误的证书与覆盖控制。
+
+\begin{verbatim}
+python -I -S -B verification/upper82_work/check.py \
+  --output .work/upper82_c5t.json
+python -I -S -B -O verification/upper82_work/check.py \
+  --output .work/upper82_c5t_O.json
+\end{verbatim}
+Windows 入口为 \path{verify_upper82_c5t_windows.bat}；
+报告使用 XeLaTeX，字体依次回退到 Noto、微软雅黑、Fandol。
+证书与逐项回执见
+\path{data/upper82_c5t_certificates.json} 和
+\path{results/2026-10-19/upper82_c5t/}。
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule & 前轮确切 C5t 族 & 本轮确切 C5t 族\\\midrule
+排除的集合大小 &84&83\\
+源预算 $I+\tau+\delta$ &76&95\\
+所需固定扣减 &18&13\\
+所需固定尾槽 &6&19\\
+端点误差 &统一最大偏差&按截失秩的质量上界\\
+最终支撑 &删一核心&完整核心\\\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{全局状态仍为 $71\le N\le83$。}
+要得到 $N\le82$，还需重证大小 83 的完整结构与局部化、所有正洞情形、
+其余零洞分支，尤其新的六空预算 $\A\le20$、三/四空的交叉 HIGH 例外及五空 alpha 族。
+这些内容不在本报告证书的覆盖域内。程序 PASS 认证的是上述整数线性反证，
+从原集合到必要行的一般数学适用性由正文证明承担。
+\end{document}
