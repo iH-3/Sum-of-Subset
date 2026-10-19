@@ -1,0 +1,29 @@
+{
+  "status": "PASS_GUARDS_AND_OPTIMIZATION_INVARIANCE",
+  "guards": [
+    {
+      "name": "optimized_entry",
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "02466d4e4b4e7c062ce6117b71d8eb89dd9340fa3891b47e3bf8f421dc92546b"
+    },
+    {
+      "name": "reused_directory",
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "c9e203956d10a024ac287fe768ad1b0548c5403c540662d361dfa6da41bbe987"
+    },
+    {
+      "name": "invalid_jobs",
+      "rejected": true,
+      "returncode": 1,
+      "stderr_sha256": "a0e57947d70036ee59431c1a0ba9ab9e2281b363f03dfde317af4f69fa252866"
+    }
+  ],
+  "geometry_negative_controls": [
+    "negative_weight",
+    "missing_budget",
+    "nonnegative_rhs_at_32"
+  ],
+  "geometry_sha256": "9e7443bb73c2c07b566fb4c3c75c1ead1aacff432de4cb00e1b8676d6eb13c1d"
+}

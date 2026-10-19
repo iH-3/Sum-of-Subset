@@ -1,0 +1,766 @@
+{
+  "schema": "upper86-mathematical-adoption-source-links-v1",
+  "archive_sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "portable_manifest_sha256": "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+  "prior_independent_commit": "4ca433585fc4aea034d4aa0e8ead6ff4986b4f8a",
+  "prior_bound": 87,
+  "adopted_size": 87,
+  "resulting_bound": 86,
+  "new_proofs": {
+    "zero_hole_slack": "c >= 32 under integral D, a+b=70, a,b>=15 and proved w<=4z with z=0",
+    "density_envelope": "Maximum of 2|F|-diam(F), 0 in F subset D, attained by two independent full prefixes"
+  },
+  "scope": "Source links support the written row-family adoption. Hashes establish identity, not mathematical validity. All other frozen files are pinned by the portable/full manifests.",
+  "files": [
+    {
+      "category": "endpoint_control_and_current_matrix_arithmetic",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/controller.py",
+      "bytes": 22211,
+      "sha256": "789b3d2003a0b720bcc4515909b61cc988d7df76c046fa5d74b44de75b5cf2de"
+    },
+    {
+      "category": "endpoint_control_and_current_matrix_arithmetic",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/compact_integration_v1/verify_compact.py",
+      "bytes": 6984,
+      "sha256": "ae468cd7a93c350e1efa8ada769db49f8079e19b82806d753915202d1c7ae99e"
+    },
+    {
+      "category": "endpoint_control_and_current_matrix_arithmetic",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/compact_integration_v1/verify_support.py",
+      "bytes": 15803,
+      "sha256": "c2ebe9dc385c0e84237cd57a51fc7ce11efffd886b60a618e8003fa129ec3a42"
+    },
+    {
+      "category": "endpoint_control_and_current_matrix_arithmetic",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/portable_manifest.json",
+      "bytes": 1102577,
+      "sha256": "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/edge_core_overlap.py",
+      "bytes": 3137,
+      "sha256": "a8a7befbb2c666699714eaff04a188078efe3efd6e76f4f2945222bf67bbc18c"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/extra_cuts.py",
+      "bytes": 2787,
+      "sha256": "d1f174fdab38e7d3b3efd40a40c5e775fcca686813d9c916a0dfd9eda52c4b37"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/fullD_geometry.py",
+      "bytes": 5969,
+      "sha256": "5645e2d3f83b865545f0c298f68900f4b6bb3335811c8d2f914b04ed8d9f7483"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/gates87.py",
+      "bytes": 2146,
+      "sha256": "b258e414d4f3ac91ceec4824161659dbf5319aa87392355b44cc5f4d43f6831f"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/group_cuts.py",
+      "bytes": 2420,
+      "sha256": "cf50580a37de05207e2c7ba028290ff513f36a87bbf99c921b90e6fe41b642a9"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/high.py",
+      "bytes": 3245,
+      "sha256": "d4092cb3bf82b71f517cbe9cf64661df836ceb87f344f16f86cc0e754c3eb631"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/high_states.py",
+      "bytes": 1671,
+      "sha256": "206fbfcf6224b7d3a5de43f4c879f2ac96ac4e0914ccbd4ce38667bc071e7df9"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/leading_overlap.py",
+      "bytes": 2293,
+      "sha256": "8a1130af22cbb90279a0236ef8b23013e44de177b0a230abe7259cda7b23e1b7"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/low_model87.py",
+      "bytes": 1147,
+      "sha256": "8c7226e9e622359fb3c91886879a13c8ba4a73167b91ef95854e2929008d05e1"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/model.py",
+      "bytes": 4734,
+      "sha256": "442b024d556b0c4d07c55c2b89a211a25a152eb881b6b579725f066f4ee602d0"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/models87.py",
+      "bytes": 1478,
+      "sha256": "d3a7f08ee1a6a521496a461ec49b9a6a0cdb3175ef76126048e68b139c5203f4"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/overlap_cuts.py",
+      "bytes": 2623,
+      "sha256": "06f2a6235c6f05e33e2d7d4bbf0ab722720501b9b8b93b93a8c097ab8bc2a371"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/parameters87.py",
+      "bytes": 758,
+      "sha256": "c416c38f37ba9980ac3cd80ac6b67aa89d03e41dd0f721ccd9ad12a8b1618610"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/root_manifest87.py",
+      "bytes": 908,
+      "sha256": "f89e00cd00cee45eef9acbfe64f857570a42440c7f6197bb7b7081f13d783d08"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/root_models.py",
+      "bytes": 1846,
+      "sha256": "5662a68316e638f7959d5345967a9364f355fcb81f7c3309c3c940acbf836c52"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/upper95_explore.py",
+      "bytes": 2843,
+      "sha256": "1c370fdb9dc088c76ea7a2ad4ac0ad4883c3c48e24b6875edaf8cb2484734f49"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/upper96_model.py",
+      "bytes": 8757,
+      "sha256": "4afb8752a19cbc612977e8d7cee98fb3a8b6b9b55af750a11f31eb6fb07ff475"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/upper97_model.py",
+      "bytes": 5821,
+      "sha256": "a09c642e51086b1b3bce8ab5886cc1ea387ce607ad765781610b9278a85699b0"
+    },
+    {
+      "category": "ordinary_model_rows_and_canonical_descriptors",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/certified_scanner/bundles/n87-adopted-recency-v1/upper99_model.py",
+      "bytes": 6988,
+      "sha256": "a5dd83cb3083afae5a343bb15c69bc9c06394d7a45eab22ac073cbc6ff8082a0"
+    },
+    {
+      "category": "lattice_and_analytic_exception",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/lattice87/check87_candidate.py",
+      "bytes": 3558,
+      "sha256": "ce5860465ba90f32d9f65095ef5375798a5232fcb21c924e8301fbcd91e18cdf"
+    },
+    {
+      "category": "lattice_and_analytic_exception",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/lattice87/exception_elementary.py",
+      "bytes": 2310,
+      "sha256": "98fb52376036ea4a3839b21605b6de5ad2cdf046b2aaa51fbb8f067725c63997"
+    },
+    {
+      "category": "lattice_and_analytic_exception",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/lattice87/verify_exception_elementary.py",
+      "bytes": 1398,
+      "sha256": "3d54b8df61458da2a1acc1632b20563cbfcd9aa6ee9a9170a10c86720264b099"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch24p3_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch24p3_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch24p3_candidate_v1/verify_branch87_exact.py",
+      "bytes": 12278,
+      "sha256": "fb759d18f61a9430386b94a4a31452727d00ef32efd5e5a24b3a6c4acab45045"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch27_candidate_v1/regenerate_branch87.py",
+      "bytes": 5999,
+      "sha256": "af5c772a8ff2c18d42b0fc626b536d97715a70f87e5b9d2f205872143f2aea90"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch27_candidate_v1/verify_branch87_exact.py",
+      "bytes": 10252,
+      "sha256": "2c4c9ab17fcf833ab602a8c0b4b265321b077013dd4fe25f2dfd49a9bbb7c5ec"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch42z5_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch42z5_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch42z5_candidate_v1/verify_branch87_exact.py",
+      "bytes": 12284,
+      "sha256": "279205132952d77fe8e78d47a543d0edc92d9def8233c6e7e14d48c42731c3a0"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch77_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch77_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/branch77_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13460,
+      "sha256": "000826a999e64fc57993c3efc3685f6122010e188875572af743a526bf5466be"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high107_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high107_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high107_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13294,
+      "sha256": "78b47a276a18dec66c0f4e91ae8a01e61b7b3eb383759e0e79ac009775954fe7"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high28_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high28_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high28_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13175,
+      "sha256": "0f5f182e345635d7873696f6b62161bab60fcd847c521d07351f6748757e5428"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high3_mass_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high3_mass_candidate_v1/regenerate_branch87.py",
+      "bytes": 6796,
+      "sha256": "afa28808cd22755c41b769c4e1186588e53a4273ba985601da5626f39936ebdf"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high3_mass_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13761,
+      "sha256": "499c683aaf43d5309a7f01cf45b21fc8274159aaa3018c56f9da83a64017c9b7"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high85_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high85_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high85_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13292,
+      "sha256": "214e1a0a68bd4bab5279d37bf2c93775ff07e98acdd64b65809863f2f147f61d"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high9_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high9_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high9_candidate_v1/verify_branch87_exact.py",
+      "bytes": 12540,
+      "sha256": "de1b76ca523f07722077c280ad185f5c8d0e3a5a9136daccda63a1c5bf90d82f"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/composition_pure.py",
+      "bytes": 3250,
+      "sha256": "1169ce383ff3f3dcae1b591b60e79927e003a988c7451c1c4baad7187af98bda"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/math87_pure.py",
+      "bytes": 1996,
+      "sha256": "86f9effe5e98df469a79751d3cc937d57c258f512e5fafc123964c8d0694089a"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/regenerate_branch87.py",
+      "bytes": 7362,
+      "sha256": "2c2f00ae388cb15bc4fcbc96f066ec626dc2fe2112a344e7bdd57ad12ec621ef"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/verify_branch87_exact.py",
+      "bytes": 12360,
+      "sha256": "95366fce58808cf2d08e23e9ceafbde8c82a320a0f3c3c8fcd97e81f2f3e0811"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact8_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact8_candidate_v1/math87_pure.py",
+      "bytes": 1996,
+      "sha256": "86f9effe5e98df469a79751d3cc937d57c258f512e5fafc123964c8d0694089a"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact8_candidate_v1/regenerate_branch87.py",
+      "bytes": 7605,
+      "sha256": "b4b2352b6a68a25c19ba0bbac280bf41f9afa14e57dcde4ac41d027d135b1a96"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact8_candidate_v1/verify_branch87_exact.py",
+      "bytes": 12096,
+      "sha256": "54eb78c909ac1a51d3a9a528ec8da9722f7198486e6aea4a496da758ec9f6c51"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high121_recovered_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high121_recovered_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high121_recovered_v1/verify_branch87_exact.py",
+      "bytes": 13485,
+      "sha256": "1bfb86eb13bceee21a7dbbc9eef2a9281d48a0948b117f4267158e508b22b40d"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high150_geometry_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high150_geometry_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high150_geometry_v1/verify_branch87_exact.py",
+      "bytes": 13487,
+      "sha256": "467e017ef9e3063ecb5b10e6a52fa1b849fcdc73b9d346ba920ab2c7a096ea7b"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high1_mass_recovered_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high1_mass_recovered_v1/regenerate_branch87.py",
+      "bytes": 6796,
+      "sha256": "afa28808cd22755c41b769c4e1186588e53a4273ba985601da5626f39936ebdf"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high1_mass_recovered_v1/verify_branch87_exact.py",
+      "bytes": 13708,
+      "sha256": "12f0c50bebf36effb6a951e335fea63fcdca802567ef67b154296d448c7fe0a1"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_final_mass_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_final_mass_v1/regenerate_branch87.py",
+      "bytes": 6796,
+      "sha256": "afa28808cd22755c41b769c4e1186588e53a4273ba985601da5626f39936ebdf"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_final_mass_v1/verify_branch87_exact.py",
+      "bytes": 13708,
+      "sha256": "82cd49496a74b6f1a5b9041d52603302b3a8e08209c4bff50e3d7d5a6ceb5fbd"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_mass_recovered_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_mass_recovered_v1/regenerate_branch87.py",
+      "bytes": 6796,
+      "sha256": "afa28808cd22755c41b769c4e1186588e53a4273ba985601da5626f39936ebdf"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_mass_recovered_v1/verify_branch87_exact.py",
+      "bytes": 13710,
+      "sha256": "6aca55e3a3a360800c20e4be4787d2091b64067af3788c9017876855d570646b"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_new_mass_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_new_mass_v1/regenerate_branch87.py",
+      "bytes": 6796,
+      "sha256": "afa28808cd22755c41b769c4e1186588e53a4273ba985601da5626f39936ebdf"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high2_new_mass_v1/verify_branch87_exact.py",
+      "bytes": 13710,
+      "sha256": "094900db5ef69bc06891eb28525bea5c0b22393b71f1e375ba362c0dd36b55ce"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high86_geometry_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high86_geometry_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high86_geometry_v1/verify_branch87_exact.py",
+      "bytes": 13483,
+      "sha256": "b2efccd248b511566f827b17c6dcf4f0daf9853ee08a09ba4ec1b27d6f06eb46"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high9_dense_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high9_dense_v1/regenerate_branch87.py",
+      "bytes": 7125,
+      "sha256": "612712e1ca41d466cc51e2f2cb548d3c286b39b3a18bc3e6640a0fe62e2d9080"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_recovery_20261003_v1/high9_dense_v1/verify_branch87_exact.py",
+      "bytes": 14213,
+      "sha256": "75df60fcac19b0adb5c61cf3604692bbc4d7f47fbb842c9a112d9df90724f876"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/loss_cover11_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/loss_cover11_candidate_v1/regenerate_branch87.py",
+      "bytes": 7718,
+      "sha256": "e8bb871b7d66783be136c80c29576304220c3fd768968674ecd39faad4959c29"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/loss_cover11_candidate_v1/verify_forest87_exact.py",
+      "bytes": 5122,
+      "sha256": "968448638bb90573295ff675edb80dffff3ba5dd1e6320f9ba09d82e7b9a09f2"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive59_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive59_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive59_candidate_v1/verify_branch87_exact.py",
+      "bytes": 13301,
+      "sha256": "01178f98fd4e36d5d791f332e9d3422d67200a539c18341aaaa5a16d52ec7435"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive_small11_candidate_v1/catalog87.py",
+      "bytes": 3233,
+      "sha256": "363ff18c22680119dd61da52bf206341abc08873644a20bb82610a6fe8aac91c"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive_small11_candidate_v1/regenerate_branch87.py",
+      "bytes": 6366,
+      "sha256": "1fbfeb98f959cdd6a3a50347be65efd79f9a5b64dbc4a4f1b8701934eec4a4b6"
+    },
+    {
+      "category": "selected_component_reconstruction",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/positive_small11_candidate_v1/verify_small11_exact.py",
+      "bytes": 5190,
+      "sha256": "ddc02c67e902b5dccc2244823390578dc44319e1e97496a90ad96228f7b6270c"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/bounds.py.txt",
+      "bytes": 1028,
+      "sha256": "787dc150c57a22b73def11b442f36e94ec31c854a973104c21126b4cba1905c4"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/branch87.py.txt",
+      "bytes": 3051,
+      "sha256": "99dba7cdc48101fd8856d835b23e118d6e484f04d4fc5630a60749e1529e3aeb"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/branch87_engine.py.txt",
+      "bytes": 9726,
+      "sha256": "0d653a30efe2bf51037e6e4ff8feff8a6667528f91bbc13f3ac22d806da80bb8"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/combined87.py.txt",
+      "bytes": 2394,
+      "sha256": "b0f3002e3d001cb981c688f7419f22ddb46d5553fc65694264122d529620ddac"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/combined_inverse87.py.txt",
+      "bytes": 1282,
+      "sha256": "f78e7826f97d14551640306581bd5116e1edf48cd1961558c7e5caa85aa3a89f"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/dense_star_overlap.py.txt",
+      "bytes": 1479,
+      "sha256": "a6cc6b852bf2fa582420bd212f4db93f876dca5a6a05d08be99b30fec2a460a8"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/high_core_mass87_v1.py.txt",
+      "bytes": 845,
+      "sha256": "cd6e1ef40379c8592241b7c52718db13048aa97e28f15e772d4bcccaaf84f9cd"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/high_dense_holes87_v1.py.txt",
+      "bytes": 932,
+      "sha256": "7b6af209089a9844768b8a41857bb6251bc77e1f43a614b47117cddac0a0f3c0"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/high_odd_pivot87_v1.py.txt",
+      "bytes": 1098,
+      "sha256": "d3298a145daeac3519aa75ee867da2edc8458aba41daaf23a0fd2c5709044690"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/high_stanchescu_geometry87_v1.py.txt",
+      "bytes": 1262,
+      "sha256": "cf47bb3950284d83e738b1e9b1b44868c3b8000cc5352e4b1a734c061d083125"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/high_star87_v1.py.txt",
+      "bytes": 1195,
+      "sha256": "42c73d7ab0b27f550fa9d7e980e24cbc4c79e361b5e1fd67caf57c87dcbb4258"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/mass_star87.py.txt",
+      "bytes": 692,
+      "sha256": "ac316f5911afe2a39bfe7169fb9bfe0c59eb4a048e4c94dc2638cccbf796ace7"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/nonempty_quantile87.py.txt",
+      "bytes": 1435,
+      "sha256": "97f797b32b0780c8ac9503333e08bcbe90b3e303c2463095a2015d6576a6bda4"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/structural87.py.txt",
+      "bytes": 2717,
+      "sha256": "87bbac3d6c74523b4810530d3a10cf3d897b5989dad085247cb81a10ee30225a"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/structural_ap87.py.txt",
+      "bytes": 1489,
+      "sha256": "555b853f15734b97ed328bd85f9457f90fc655deb3f393e331e9fc54eee3645e"
+    },
+    {
+      "category": "last_two_actual_scalar_and_density_layers",
+      "archive_path": "payload/subset_sum_verification/proofs/exact86/data/endpoint87/high_last10_math_v2/exact2_candidate_v1/discovery/structural_caps87.py.txt",
+      "bytes": 2152,
+      "sha256": "73627ceab00a3e79d4a11b1666608cb9fc71a282df61ffc0d1b004aee2531578"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "check_apfree_extensions.py",
+      "bytes": 2757,
+      "sha256": "a98a131330e62f802bd02daadb6bed14af9e55c2730144eb4c1a63f7d087b509"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "check_replay_guards.py",
+      "bytes": 3137,
+      "sha256": "0cf4d47cd6f1f212ae5ed1dcdd715b068b6e50ceefba4a38b14cd4e90f133d2b"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/check_ap_exception_symbolic.py",
+      "bytes": 6127,
+      "sha256": "b376e5029bab375c3f67980be5b92863806b2a08dda6e3eae91fb53c9e0353ed"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/check_canonical_coverage.py",
+      "bytes": 6749,
+      "sha256": "84a7a79970a282b794673ee48d2a43d978d1c65318d9d9d68b04205dfac61005"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/check_independent_applicability.py",
+      "bytes": 7173,
+      "sha256": "4bb325dceb4cdc0eae954590ebf4bfeb0598c7fe0504139edd310efdfad9405f"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/check_selected_forests.py",
+      "bytes": 15682,
+      "sha256": "245d809d2138e3b6a438c74f79c9474e1014d23d1e95b7eaedc206d2602e04f4"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/verify_foundations_independent.py",
+      "bytes": 3600,
+      "sha256": "3f61cf2806163161af63f3b3d96d2133f0c53469a6c391dc90ba79254d0566f6"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/verify_front.py",
+      "bytes": 3836,
+      "sha256": "2eff6a7d5ff06d13f3778f5271e2898f435ee8f4c9bca2442510a2a8c169441c"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/verify_uniform_four_margins.py",
+      "bytes": 1464,
+      "sha256": "519d4bdfea05bda60de5db62e220b6ce2a1925a8a59bb1cd88b71ac35888e05b"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "independent_checks/verify_universal_lattice.py",
+      "bytes": 1609,
+      "sha256": "04afb615ba52f6218d977414e12d0a87633208d0f9b48350465a967ce4ef0726"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "payload/subset_sum_verification/report/verify_report86_arithmetic.py",
+      "bytes": 4319,
+      "sha256": "34cf4dab2285cecc65bf889e0782b5f5ca5f4743cc81b3d323a869e6129807d5"
+    },
+    {
+      "category": "independent_finite_prerequisites",
+      "archive_path": "replay_auxiliary.py",
+      "bytes": 2281,
+      "sha256": "58d39d3f60058f97edc987e36b35c470089c4e40683f1dcf530fc0430a6d6516"
+    },
+    {
+      "category": "apfree_base_and_search",
+      "archive_path": "payload/subset_sum_verification/proofs/exact92/verify_apfree_blocks.py",
+      "bytes": 993,
+      "sha256": "82dc11e2f5254c0282503a0b8d47d3ea7ec004857bdea46e524a5099a5344dbc"
+    },
+    {
+      "category": "apfree_base_and_search",
+      "archive_path": "payload/subset_sum_verification/proofs/exact92/verify_bounded_ap.py",
+      "bytes": 1304,
+      "sha256": "5dd7de02ac6f8b9ad192fa2aa68a176bac10d24ea2f4aeb393921f9e7427f88a"
+    },
+    {
+      "category": "written_universal_reductions",
+      "archive_path": "proof/complete_upper86_proof.tex",
+      "bytes": 469753,
+      "sha256": "2854bd7300298bd68af44d640645944435a4de77ce922fbdaa7b404414a35fc3"
+    }
+  ]
+}

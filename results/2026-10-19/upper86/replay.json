@@ -1,0 +1,1353 @@
+{
+  "status": "PASS_COMPLETE_ENDPOINT_FINITE_REPLAY",
+  "mathematical_adoption": "reports/upper86_adoption_20261019.tex",
+  "prior_independent_upper_bound": 87,
+  "conditional_result": 86,
+  "proof_assistant_formalization": false,
+  "archive_sha256": "390d390c1172471ff97f04113d54937de2ae070cabcb272f5529f08a19a069df",
+  "portable_manifest_sha256": "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+  "extracted_files": 5287,
+  "source_sha256": {
+    "verification/upper86.py": "d3421f246045cfaa078f683e0fd82915a356b5262cfe5dabe9c809f3f6e26b19",
+    "verification/upper86_geometry.py": "d7a57e831a418f72fe517aefe0a65d7bf4e68f40a8740237432c36f7e8c2b744"
+  },
+  "counts": {
+    "original_roots": 1615300,
+    "ordinary_leaves": 1614434,
+    "supplemental_parents": 866,
+    "supplemental_children": 1042,
+    "supplemental_splits": 10163,
+    "supplemental_leaves": 11205,
+    "total_leaves": 1625639
+  },
+  "union": {
+    "bundle_sha256": "b92b88a7a25b77325a8067a518281b6f4f48755bace58babb8bc204ad19ed04b",
+    "canonical_manifest_sha256": "e37c66bdccd6240c3e119573e65ba840fbe0f517eed7108bdf915e499b6a4e66",
+    "compact_manifest_sha256": "0c77a44bb772e1dc98e2730028088cc93ac989bf61b6b61b1dfd5a10ef164fed",
+    "controller_sha256": "789b3d2003a0b720bcc4515909b61cc988d7df76c046fa5d74b44de75b5cf2de",
+    "counts": {
+      "components": [
+        {
+          "child_models": 27,
+          "leaves": 71,
+          "nodes": 115,
+          "package": "endpoint87/branch27_candidate_v1",
+          "parents": 27,
+          "splits": 44
+        },
+        {
+          "child_models": 77,
+          "leaves": 305,
+          "nodes": 533,
+          "package": "endpoint87/branch77_candidate_v1",
+          "parents": 77,
+          "splits": 228
+        },
+        {
+          "child_models": 42,
+          "leaves": 749,
+          "nodes": 1456,
+          "package": "endpoint87/branch42z5_candidate_v1",
+          "parents": 42,
+          "splits": 707
+        },
+        {
+          "child_models": 165,
+          "leaves": 2786,
+          "nodes": 5407,
+          "package": "endpoint87/loss_cover11_candidate_v1",
+          "parents": 11,
+          "splits": 2621
+        },
+        {
+          "child_models": 24,
+          "leaves": 93,
+          "nodes": 162,
+          "package": "endpoint87/branch24p3_candidate_v1",
+          "parents": 24,
+          "splits": 69
+        },
+        {
+          "child_models": 59,
+          "leaves": 818,
+          "nodes": 1577,
+          "package": "endpoint87/positive59_candidate_v1",
+          "parents": 59,
+          "splits": 759
+        },
+        {
+          "child_models": 33,
+          "leaves": 2992,
+          "nodes": 5951,
+          "package": "endpoint87/positive_small11_candidate_v1",
+          "parents": 11,
+          "splits": 2959
+        },
+        {
+          "child_models": 9,
+          "leaves": 19,
+          "nodes": 29,
+          "package": "endpoint87/high9_candidate_v1",
+          "parents": 9,
+          "splits": 10
+        },
+        {
+          "child_models": 28,
+          "leaves": 114,
+          "nodes": 200,
+          "package": "endpoint87/high28_candidate_v1",
+          "parents": 28,
+          "splits": 86
+        },
+        {
+          "child_models": 85,
+          "leaves": 228,
+          "nodes": 371,
+          "package": "endpoint87/high85_candidate_v1",
+          "parents": 85,
+          "splits": 143
+        },
+        {
+          "child_models": 3,
+          "leaves": 93,
+          "nodes": 183,
+          "package": "endpoint87/high3_mass_candidate_v1",
+          "parents": 3,
+          "splits": 90
+        },
+        {
+          "child_models": 107,
+          "leaves": 381,
+          "nodes": 655,
+          "package": "endpoint87/high107_candidate_v1",
+          "parents": 107,
+          "splits": 274
+        },
+        {
+          "child_models": 121,
+          "leaves": 463,
+          "nodes": 805,
+          "package": "endpoint87/high_recovery_20261003_v1/high121_recovered_v1",
+          "parents": 121,
+          "splits": 342
+        },
+        {
+          "child_models": 1,
+          "leaves": 16,
+          "nodes": 31,
+          "package": "endpoint87/high_recovery_20261003_v1/high1_mass_recovered_v1",
+          "parents": 1,
+          "splits": 15
+        },
+        {
+          "child_models": 2,
+          "leaves": 53,
+          "nodes": 104,
+          "package": "endpoint87/high_recovery_20261003_v1/high2_mass_recovered_v1",
+          "parents": 2,
+          "splits": 51
+        },
+        {
+          "child_models": 86,
+          "leaves": 398,
+          "nodes": 710,
+          "package": "endpoint87/high_recovery_20261003_v1/high86_geometry_v1",
+          "parents": 86,
+          "splits": 312
+        },
+        {
+          "child_models": 9,
+          "leaves": 260,
+          "nodes": 511,
+          "package": "endpoint87/high_recovery_20261003_v1/high9_dense_v1",
+          "parents": 9,
+          "splits": 251
+        },
+        {
+          "child_models": 2,
+          "leaves": 51,
+          "nodes": 100,
+          "package": "endpoint87/high_recovery_20261003_v1/high2_new_mass_v1",
+          "parents": 2,
+          "splits": 49
+        },
+        {
+          "child_models": 150,
+          "leaves": 794,
+          "nodes": 1438,
+          "package": "endpoint87/high_recovery_20261003_v1/high150_geometry_v1",
+          "parents": 150,
+          "splits": 644
+        },
+        {
+          "child_models": 2,
+          "leaves": 30,
+          "nodes": 58,
+          "package": "endpoint87/high_recovery_20261003_v1/high2_final_mass_v1",
+          "parents": 2,
+          "splits": 28
+        },
+        {
+          "child_models": 8,
+          "leaves": 396,
+          "nodes": 784,
+          "package": "endpoint87/high_last10_math_v2/exact8_candidate_v1",
+          "parents": 8,
+          "splits": 388
+        },
+        {
+          "child_models": 2,
+          "leaves": 95,
+          "nodes": 188,
+          "package": "endpoint87/high_last10_math_v2/exact2_candidate_v1",
+          "parents": 2,
+          "splits": 93
+        }
+      ],
+      "ordinary_leaves": 1614434,
+      "original_roots": 1615300,
+      "supplemental_children": 1042,
+      "supplemental_leaves": 11205,
+      "supplemental_parents": 866,
+      "supplemental_splits": 10163,
+      "total_leaves": 1625639
+    },
+    "fresh_complete_ordinary_arithmetic": true,
+    "one_continuous_compact_run": false,
+    "ordinary_ranges": [
+      {
+        "receipt_sha256": "0bdbcd9ae56c6a37895ae81ab77aa708cb5c49790fcd9fbae9abedd7d437ec46",
+        "start": 0,
+        "stop": 201912
+      },
+      {
+        "receipt_sha256": "f26e215ece2965fc48c71e1c7fe57a719d19abd7c609789a615dcabd0de193cf",
+        "start": 201912,
+        "stop": 403825
+      },
+      {
+        "receipt_sha256": "42db56f90a302f98de2ffb1ed0b23716dc68d31e93b41798507147b0e9f73134",
+        "start": 403825,
+        "stop": 605737
+      },
+      {
+        "receipt_sha256": "f5cb05abae3ff868e5a854349758dfb9affe54767ae59b10632ea370093dc658",
+        "start": 605737,
+        "stop": 807650
+      },
+      {
+        "receipt_sha256": "433b4cd1c84adac2767eaf2f70795d4e75bd88ff7c44dc912e044ce9e0e4fb41",
+        "start": 807650,
+        "stop": 1009562
+      },
+      {
+        "receipt_sha256": "a4bca8229dc5d93be4edddd6f9a741c0d48db636930b06d97fdc6f0c094295b7",
+        "start": 1009562,
+        "stop": 1211475
+      },
+      {
+        "receipt_sha256": "17fc44177bbb687a21ed3a2e013af93e1c6a7e2804f8145daab75a49a1b1a5bf",
+        "start": 1211475,
+        "stop": 1413387
+      },
+      {
+        "receipt_sha256": "6a025bb7b275cf02efeb09c545de11d43497d823563c127a60fb97d3ba221543",
+        "start": 1413387,
+        "stop": 1615300
+      }
+    ],
+    "portable_manifest_sha256": "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+    "root_interval": [
+      0,
+      1615300
+    ],
+    "schema": "n87-portable-complete-exact-union-v1",
+    "scope": "Fresh source-regenerated exact ordinary arithmetic over every canonical root, plus all 22 supplemental forests. Prior foundation and mathematical applicability remain separately documented dependencies.",
+    "supplements": [
+      {
+        "component_index": 0,
+        "receipt_sha256": "a15f9116612fd0be028a40eb25933d695f38476434ccb133a598efe9aeb649b9"
+      },
+      {
+        "component_index": 1,
+        "receipt_sha256": "48219a035f7bcb101b85993847b1e5d761cbf7c0d5c18e4d183fa2229adb6420"
+      },
+      {
+        "component_index": 2,
+        "receipt_sha256": "edd43a1aca98f7550f06a47e1b09e9034d5441c9900a10306b0f65b8649a0a52"
+      },
+      {
+        "component_index": 3,
+        "receipt_sha256": "6f52dc90d3da53f3a02f4a5e6ad0cf6511ee967af9a0dc637c84f3a6cd538b4b"
+      },
+      {
+        "component_index": 4,
+        "receipt_sha256": "c35785ff7bc86ef6ce358cf78837efb5c6a4d7cb1c90bad60fb851679ee84a24"
+      },
+      {
+        "component_index": 5,
+        "receipt_sha256": "7e53fab5b48e265010dcf7dd4a4d16e114983d9992341a732ededb090b99de38"
+      },
+      {
+        "component_index": 6,
+        "receipt_sha256": "7097058374e141f96354babf17dfbef12fc04fcc1e3de8e00dfdc3d5faeb517a"
+      },
+      {
+        "component_index": 7,
+        "receipt_sha256": "5e9ea5764e4afb7926502039a3086d4a466c6b6a8c258d23c435687ef8850417"
+      },
+      {
+        "component_index": 8,
+        "receipt_sha256": "b05dcff4f6bd9985c33e6c534e6d73f07d1ed3ab78ca1bd10167992e56329701"
+      },
+      {
+        "component_index": 9,
+        "receipt_sha256": "355af3f64f494c3fee0fbd4775c435d169bd3dfe74f8ae799d036d6c4499b056"
+      },
+      {
+        "component_index": 10,
+        "receipt_sha256": "b2d8efe9ffa57168e24b763cc389d4f49731389d448d0dc351849c99ef02de82"
+      },
+      {
+        "component_index": 11,
+        "receipt_sha256": "e52566b865b27325dc18ced3b0d70d45d5ccf898ca151c0e391da9656328ea32"
+      },
+      {
+        "component_index": 12,
+        "receipt_sha256": "8009dc9e646fe410a348271c6e40b89a553a6a2d1751979393774c6ea97e2f60"
+      },
+      {
+        "component_index": 13,
+        "receipt_sha256": "78e57f401127d2f56ce0af7d7617983bd38b637e049cba8e9f03e0b0c08bbd28"
+      },
+      {
+        "component_index": 14,
+        "receipt_sha256": "71dd99b958efefa40cd32cbc311e248943de42ddde9ede85bacb4c96ca5f330c"
+      },
+      {
+        "component_index": 15,
+        "receipt_sha256": "e0ad972b5e7e76cde88f1431960056b1b1b1088bf16db7fb001b6bc8e6c80462"
+      },
+      {
+        "component_index": 16,
+        "receipt_sha256": "fc62637ac49e677153169309ae4a50d60ad631174279a27605fd6c11b1db8c21"
+      },
+      {
+        "component_index": 17,
+        "receipt_sha256": "382cc470d1f4846f8c846470ff0954e86c74681ccf5b388f69c038d05088dc42"
+      },
+      {
+        "component_index": 18,
+        "receipt_sha256": "b1675d1d748618106e8403217baba84bb5e771aa93f05a7bb23ff97521e93ca9"
+      },
+      {
+        "component_index": 19,
+        "receipt_sha256": "267396d41e4d943213ece6507f83ada5987209a4bd6c351a7fec9d30cf3bce20"
+      },
+      {
+        "component_index": 20,
+        "receipt_sha256": "379ed0cde29e28e686eb207b73f36de7b32499ea1786bef42cb5f485db148305"
+      },
+      {
+        "component_index": 21,
+        "receipt_sha256": "f867dd9260323a15ddbef1408b622b328f8f02b1af52dfe68a431dbcc90f1508"
+      }
+    ],
+    "variable_domain": {
+      "type": "nonnegative_reals",
+      "variables": "all_matrix_columns"
+    },
+    "verified": true
+  },
+  "initial_integrity": {
+    "name": "initial_integrity",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/verify_complete_upper86.py",
+      "--integrity-only",
+      "--output-parent",
+      "/tmp/sum-upper86-20261019/initial"
+    ],
+    "returncode": 0,
+    "seconds": 1.571,
+    "log_sha256": "b8deb5db7c09d57bc309d59db60623f07d1a55e740ca37090b763d9b65f081b4",
+    "marker": "INTEGRITY ONLY PASSED.",
+    "marker_present": true
+  },
+  "final_integrity": {
+    "name": "final_integrity",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/verify_complete_upper86.py",
+      "--integrity-only",
+      "--output-parent",
+      "/tmp/sum-upper86-20261019/final"
+    ],
+    "returncode": 0,
+    "seconds": 1.526,
+    "log_sha256": "99f6a3cc3f3652c5ba0115b8a21a6cd601b4a7f9b3bb34e77f131b15f40b1da0",
+    "marker": "INTEGRITY ONLY PASSED.",
+    "marker_present": true
+  },
+  "assembly": {
+    "name": "assemble",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+      "--expected-manifest",
+      "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+      "assemble",
+      "--receipts",
+      "/tmp/sum-upper86-20261019/endpoint_receipts"
+    ],
+    "returncode": 0,
+    "seconds": 31.712,
+    "log_sha256": "f1ccec125c359215b00c4f54b631a10f71bd81343248253d06ea4373eae959c8",
+    "marker": "\"fresh_complete_ordinary_arithmetic\": true",
+    "marker_present": true
+  },
+  "records": [
+    {
+      "name": "apfree_35",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact92/verify_bounded_ap.py",
+        "35",
+        "13"
+      ],
+      "returncode": 0,
+      "seconds": 0.036,
+      "log_sha256": "faa77350781f2fca6c1699e309402b71994aca7b1696d8347697e61cd3932d1a",
+      "marker": "PASS r3(35)<=13",
+      "marker_present": true
+    },
+    {
+      "name": "apfree_39",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact92/verify_bounded_ap.py",
+        "39",
+        "14"
+      ],
+      "returncode": 0,
+      "seconds": 0.036,
+      "log_sha256": "7c70cbbf85be4a9a7f892b96754baef2a0eb22b81c92050842c958dd391b7da1",
+      "marker": "PASS r3(39)<=14",
+      "marker_present": true
+    },
+    {
+      "name": "apfree_50",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact92/verify_bounded_ap.py",
+        "50",
+        "16"
+      ],
+      "returncode": 0,
+      "seconds": 0.507,
+      "log_sha256": "9bc72381a51d4686e6020a098b0e09015cdd26afd2f27c1add8c416b8a63bab9",
+      "marker": "PASS r3(50)<=16",
+      "marker_present": true
+    },
+    {
+      "name": "apfree_70",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact92/verify_bounded_ap.py",
+        "70",
+        "20"
+      ],
+      "returncode": 0,
+      "seconds": 106.95,
+      "log_sha256": "628e02c4b444780a136e071e65c3a9faa82f4b36ba5a9768e002d4dcc4d310ed",
+      "marker": "PASS r3(70)<=20",
+      "marker_present": true
+    },
+    {
+      "name": "apfree_base",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact92/verify_apfree_blocks.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.762,
+      "log_sha256": "7bf7d69ac8eb62507292ca9ef8d0899575be7f2e9befacc821fc8b3e9c6ba95d",
+      "marker": "PASS: exact AP-free maxima through 30",
+      "marker_present": true
+    },
+    {
+      "name": "auxiliary",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/verify_complete_upper86.py",
+        "--auxiliary-only",
+        "--output-parent",
+        "/tmp/sum-upper86-20261019/auxiliary"
+      ],
+      "returncode": 0,
+      "seconds": 413.49,
+      "log_sha256": "622eaaea570105d816ce1e526a0a27edc5c3e33c110f0f650249fdb45f460447",
+      "marker": "PARTIAL AUXILIARY CHECKS PASSED.",
+      "marker_present": true
+    },
+    {
+      "name": "new_geometry",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/workspace/scratch/7062d5fff520/Sum-of-Subset-upper86/verification/upper86_geometry.py",
+        "--output",
+        "/tmp/sum-upper86-20261019/geometry.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.296,
+      "log_sha256": "03216db0607bf96741a0ded5d45c0da5afb9c515c59837e4c60c92be1596252a",
+      "marker": "PASS_STRENGTHENED_ANALYTIC_AND_GEOMETRY",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_0",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "0",
+        "--stop",
+        "201912",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 1008.437,
+      "log_sha256": "93c9fa55a836417672a73df0b17126a4597783d6a5142c15bf2738485bafe36b",
+      "marker": "PASS ordinary-0000000-0201912",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_1",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "201912",
+        "--stop",
+        "403825",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 743.02,
+      "log_sha256": "9df7a2fb5c207d188ceaadf16e316038021d7f617358ed0ac753a299e3a7dacc",
+      "marker": "PASS ordinary-0201912-0403825",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_2",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "403825",
+        "--stop",
+        "605737",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 694.026,
+      "log_sha256": "db1acfdb1606a82a16530dadc2b0491f9741bf1188e9b4c9a7491288f11b3512",
+      "marker": "PASS ordinary-0403825-0605737",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_3",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "605737",
+        "--stop",
+        "807650",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 958.485,
+      "log_sha256": "99fd1f83ba155f0faaae5b955b399356723ec34690327c329b1b241d66e2d0e0",
+      "marker": "PASS ordinary-0605737-0807650",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_4",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "807650",
+        "--stop",
+        "1009562",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 816.061,
+      "log_sha256": "1daa90fb689d961dff9552dc60f7f5c2dfb050295f5c9cbad59780d9cfcdb342",
+      "marker": "PASS ordinary-0807650-1009562",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_5",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "1009562",
+        "--stop",
+        "1211475",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 965.824,
+      "log_sha256": "fa7e4c821e4e82a79d979300cb5fe225cd3f7f4176dd144c294179f1253e6a25",
+      "marker": "PASS ordinary-1009562-1211475",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_6",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "1211475",
+        "--stop",
+        "1413387",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 902.973,
+      "log_sha256": "77f85efa443165508a0778b86759b8851699722f42f0b5970c80a3b892f850ba",
+      "marker": "PASS ordinary-1211475-1413387",
+      "marker_present": true
+    },
+    {
+      "name": "ordinary_7",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "1413387",
+        "--stop",
+        "1615300",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 841.095,
+      "log_sha256": "a6eeccd7cb0b8fd9e22c11659f9c37640b79fe797add72ec7d9730aec0ac383b",
+      "marker": "PASS ordinary-1413387-1615300",
+      "marker_present": true
+    },
+    {
+      "name": "report_arithmetic",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/report/verify_report86_arithmetic.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.014,
+      "log_sha256": "5ffae66c8e7bc991b3abdef025a7147e3599f9d74a4f40ed1a659dc3fe7a1d7d",
+      "marker": "PASS all 35 five-point profiles",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_00",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "0",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 50.372,
+      "log_sha256": "a7bdafd12dd86cde5a69b2288ead9e7644bdfa112cee0ce93b9f61650d58dbeb",
+      "marker": "PASS supplement-00",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_01",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "1",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 55.445,
+      "log_sha256": "8b472a6a8be6c0a5f1616b5c7da342f1aa62b2ad42ed8d48977d4619a40e404a",
+      "marker": "PASS supplement-01",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_02",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "2",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 54.801,
+      "log_sha256": "fa938ffdba3a2182030e93cb918d2899baac732844e34d2060894848aead7947",
+      "marker": "PASS supplement-02",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_03",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "3",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 88.997,
+      "log_sha256": "4e9926fd9b39831af1f0bf1644e64f5e327f32282097c00fbccb2d78260c94bf",
+      "marker": "PASS supplement-03",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_04",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "4",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 50.026,
+      "log_sha256": "e7a9af692b939c993267f57fd1cfe1cd0219dffffba370f882f06bb370321d1b",
+      "marker": "PASS supplement-04",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_05",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "5",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 50.94,
+      "log_sha256": "966473820d0b46aa17d6389f5025b38b72dbefdde432d2345b459fe10f87cc17",
+      "marker": "PASS supplement-05",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_06",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "6",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 52.636,
+      "log_sha256": "b37a1c40da8b4a3edb5d7f59ef2f81f8c39490ea2a975902da810c18e272ed08",
+      "marker": "PASS supplement-06",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_07",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "7",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 49.349,
+      "log_sha256": "62c02a09fbc65203a5b5712301c700b45ae8826d1e8f675406f6cf8b0cb18b55",
+      "marker": "PASS supplement-07",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_08",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "8",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 51.849,
+      "log_sha256": "9dd0772ae1eae8a38db41d92b333256880174df7c32277309dfb760844554f92",
+      "marker": "PASS supplement-08",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_09",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "9",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 58.857,
+      "log_sha256": "d69a5aff9aaf0898fbc22d709586cb35b1a70bd67168150a19acc02f816a4119",
+      "marker": "PASS supplement-09",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_10",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "10",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 47.201,
+      "log_sha256": "37498e9a9ef6261584d7cd84f52d0fcf83958f38cfde237d0299ec5399117d8f",
+      "marker": "PASS supplement-10",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_11",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "11",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 59.969,
+      "log_sha256": "d9b7322032b69c3c06dfea1f3c167f3f64d66245fba5e07a8f04d7e966de7050",
+      "marker": "PASS supplement-11",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_12",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "12",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 63.073,
+      "log_sha256": "1acee72789c3e6f6bae0ffe1b2cb91f03981e2d5814c4ff7954bd19aa3f22eb0",
+      "marker": "PASS supplement-12",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_13",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "13",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 46.881,
+      "log_sha256": "224239929fba8d407c5d7c5dfcd5a41579ac5477e9347dde6ac08c6e2e1f4e96",
+      "marker": "PASS supplement-13",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_14",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "14",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 46.373,
+      "log_sha256": "42ca67828103334b70a432e3a272e3a73aa776e81e3ecffe062563cec204f3be",
+      "marker": "PASS supplement-14",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_15",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "15",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 59.133,
+      "log_sha256": "99abe9598bf4d48666f0e32bd7537bd85d493734cac2401365a7bca3654943a5",
+      "marker": "PASS supplement-15",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_16",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "16",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 49.32,
+      "log_sha256": "36e1b55f766cfb06cf8ab660cd27961d0f712b7d8513bdcdbea2fa68a5d9a840",
+      "marker": "PASS supplement-16",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_17",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "17",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 47.791,
+      "log_sha256": "35f9bcf51bd53b164f47ac5f43562f8e552b4e365a73777ae72532646219112a",
+      "marker": "PASS supplement-17",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_18",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "18",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 61.473,
+      "log_sha256": "bf42e6c11a1ad4b601d767cd5320fe8e0cf8d45c35ddd9c50c80e94ae60d6553",
+      "marker": "PASS supplement-18",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_19",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "19",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 42.86,
+      "log_sha256": "5badd072c9c53f1be8e28ae7eb3061d092b695a5820c15ab2301a7009e895db7",
+      "marker": "PASS supplement-19",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_20",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "20",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 40.907,
+      "log_sha256": "e3bd9bcffc14fc714c39f5ffc4bd5e7282c09a57604e6c8198559db6b155b88b",
+      "marker": "PASS supplement-20",
+      "marker_present": true
+    },
+    {
+      "name": "supplement_21",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "supplement",
+        "--component",
+        "21",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/endpoint_receipts"
+      ],
+      "returncode": 0,
+      "seconds": 39.85,
+      "log_sha256": "c53903d3db339930f65578203a9dc96533cf9801e8d67681e4b925e2ca52d493",
+      "marker": "PASS supplement-21",
+      "marker_present": true
+    }
+  ],
+  "seconds": 1054.179
+}

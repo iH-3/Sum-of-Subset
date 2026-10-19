@@ -1,0 +1,52 @@
+{
+  "status": "PASS_STRENGTHENED_ANALYTIC_AND_GEOMETRY",
+  "source_sha256": "d7a57e831a418f72fe517aefe0a65d7bf4e68f40a8740237432c36f7e8c2b744",
+  "analytic": {
+    "checked_systems": 164,
+    "slack_lower_bound": 32,
+    "margins": {
+      "A0": 289,
+      "A1": 46,
+      "B0": 284,
+      "B1": 369
+    },
+    "A1_continuous_margin": "911/20",
+    "negative_controls": [
+      "negative_weight",
+      "missing_budget",
+      "nonnegative_rhs_at_32"
+    ]
+  },
+  "density": {
+    "sets": 1024,
+    "subset_comparisons": 59049,
+    "strict_trim_examples": 495,
+    "unbounded_gain_example": 25
+  },
+  "defects": {
+    "boundary_sets": 4095,
+    "five_point_profiles": [
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        5,
+        4,
+        2
+      ],
+      [
+        6,
+        10,
+        1
+      ],
+      [
+        7,
+        20,
+        1
+      ]
+    ]
+  },
+  "scope": "Exact finite checks; universal proofs and endpoint replay are separate obligations"
+}

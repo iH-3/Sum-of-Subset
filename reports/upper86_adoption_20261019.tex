@@ -1,0 +1,479 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\IfFontExistsTF{Noto Sans CJK SC}{\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]}{\setmainfont{Microsoft YaHei}[AutoFakeBold=2,AutoFakeSlant=0.15]}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\setmonofont{lmmono10-regular.otf}[Scale=0.9]
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\T}{\mathcal T}
+\newcommand{\Def}{\mathcal D}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\emergencystretch}{2em}
+\linespread{1.08}
+\raggedbottom
+\title{将独立核查上界推进至 86\\\large 小松弛解析加强、共同最优子核心与 87 元端点接入}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+本轮从已独立核查的 $N\le87$ 出发，核对归档的 87 元结构归约、全部必要行族和分支，
+重新运行其全部有限依赖与整数反证，得到 $71\le N\le86$。
+方法上，将零洞时原先用于排除 $c\le6$ 的四个解析组合加强为排除 $c\le31$，
+即 $c\ge32$；又以一个可取到的最大密度公式统一前缀扩张与极值删除，
+保证多个重叠约束由同一个实际子集同时实现。
+端点证书复用冻结归档，本轮没有重新发现这些证书。
+归档更强的 $N\le84$ 仍待剩余端点的一般数学接入；86 是独立核查链的进展。
+\end{abstract}
+
+\section{结论、规范化与依赖边界}
+研究有限实数集 $A$ 满足 $\FS(A)\subseteq4A$ 时的最大基数 $N$；
+子集和含空集和，四重和允许重复。
+\begin{theorem}
+接续提交 \texttt{4ca4335} 已独立闭合的上界 87，有
+\[\boxed{71\le N\le86.}\]
+\end{theorem}
+\begin{proof}
+若 87 元可行集不含零，则加入零仍可行，与上界 87 矛盾。
+因此可使用保留零、顺序、互异性及已选子集和表示的整数化。
+第 \ref{lattice} 节先证明共同格、$D$ 整性及本原性；
+第 \ref{models} 节给出实际集合到各必要模型与穷尽分支的对应。
+第 \ref{finite} 节完整重放全部精确反证，排除大小 87。
+下界沿用已经验证的
+$([-31,31]\cap\Z)\cup\{\pm93,\pm155,\pm217,\pm713\}$。
+\end{proof}
+不假定任意删去元素仍保持可行性。前序基础、覆盖的 18 个普通单元、固定项计费、
+四极值传播与有效洞引理沿用已独立审查的链及上一轮报告。
+本轮采用 \path{archive/upper86/} 内 \path{proofs/exact86/} 的大小 87 端点，
+并逐项核对原完整报告的 ``The common core lattice at size 87''、
+``The size 87 endpoint and selected actual-set refinements'' 与 AP 本原性附录。
+完整源码对应及哈希在 \path{data/upper86_adoption_sources.json}。
+这是一份依赖前序引理的接入报告，不是将全部基础重印一遍，也不是证明助手形式化。
+
+\section{新的解析加强：零洞覆盖松弛至少 32}\label{slack}
+记两次剥离后 $|D|=79$，$E=P\cup\{0\}\cup(-Q)$，
+$|E|=71$、$|P|=a$、$|Q|=b$，$a+b=70$。
+$M_p,M_q$ 是 $D$ 两端绝对值，$R_p,R_q$ 是核心最大值，
+$S_p,S_q$ 是 $D$ 两侧质量，$K=|D+D|$。
+本节假定 $a,b\ge15$、$D$ 已在共同核心格上整性化、$z=0$，并已证明传播 $w\le4z$；
+不预设两侧分别本原。
+
+\begin{lemma}\label{c32}
+在上述条件下，整数覆盖松弛 $c$ 满足 $c\ge32$。
+\end{lemma}
+\begin{proof}
+反设 $c\le E_0=31$。一个空普通单元要损失 79，故 18 个普通单元全部贡献。
+写外侧点 $p_1>\cdots>p_4>M_p$ 及 $q_1>\cdots>q_4>M_q$，并令
+$c_p=p_1-p_2-p_3-p_4$，$c_q$ 同理。
+四个同侧中心 $b_i=c_p+p_i$ 均贡献，故均为整数；
+$c_p=-b_1+b_2+b_3+b_4$ 说明所有 $p_i$ 为整数，反射后 $q_i$ 同样成立。
+这里不需要主导 $2D$ 平移贡献。
+
+令 $\alpha_p=p_2-p_3-p_4$、$\beta_p=2p_2-p_1-p_3-p_4$。
+正侧十个中心为
+\[
+ (\gamma_{p,i})_{i=0}^9=(c_p+p_1,\ldots,c_p+p_4,
+ c_p-q_1,\ldots,c_p-q_4,\alpha_p,\beta_p),
+\]
+负侧由交换 $p,q$ 后反射定义。
+A 型为 $\beta_p+\beta_q\le0$，第二对索引为 $j=9$；B 型则为 $j=5$。
+第一对索引 4 的中心和小于 $-(M_p+M_q)$，所以恰有一个贡献者。
+A 型中的 $p5,q5$ 均贡献；令 $V=p_3+p_4+q_3+q_4$，则
+\[
+ \beta_p+\beta_q=-(c_p-q_2+c_q-p_2)-2V
+ <M_p+M_q-2V<-(M_p+M_q).
+\]
+B 型第二对中心和为 $-(\beta_p+\beta_q)-2V<-(M_p+M_q)$。
+所以第二对也只有一个实际贡献者。
+反射使第一对的贡献者为 $\gamma_{p,4}$，记为 1；第二对选 $p$ 或 $q$，记为 2，
+由此得到 A0、A1、B0、B1 四种穷尽情况。反射可能交换 $a,b$，故此处不假定 $a\le b$。
+
+对每个选中的普通平移取实际下、上尾损失 $l_v,u_v$，主导损失记作 $L_p,L_q$；
+$\mathcal L=L_p+L_q+\sum_v(l_v+u_v)\le\delta=c$。
+前序全局分位引理给出下列行。所有独立坐标非负，中心只是线性形式。
+\begin{align*}
+\mathsf C &: \delta\le E_0,&
+\mathsf O_s &: M_s-s_4\le-1,&\mathsf D_s &:s_4-s_3\le-1,\\
+\mathsf H_s &:R_s-M_s\le-4,&
+\mathsf J_s &:-R_s\le-r_s,&\mathsf B &: \mathcal L-\delta\le0,\\
+\mathsf F_s &:2M_s+6R_s-2S_s\le-2T_{r_s}-12,&&&\\
+\mathsf Q &:S_p+S_q+\delta-2K\le1506,&
+\mathsf K &:K-2M_p-2M_q\le1,&&\\
+\mathsf L_v &:-v-l_v-M_s\le-79,&
+\mathsf U_v &:v-u_v-S_s-M_t\le-78.&&
+\end{align*}
+其中 $T_r=r(r+1)/2$，$t$ 为另一侧。质量行数清三个内剥点及核心；
+$\mathsf Q$ 来自 $18\cdot79+84=1506$ 及 $w=0$；$\mathsf K$ 是整数区间容器。
+
+四个组合的权重完整列如下，未出现的行权重为零：
+\begin{align*}
+\mathrm{A0}:~&\mathsf C+2\mathsf O_p+\mathsf L_1+\mathsf L_2
+ +2\mathsf O_q+\mathsf L_{q5}+\mathsf L_{q8}+\mathsf B;\\
+\mathrm{A1}:~&56\mathsf C+6\mathsf H_p+24\mathsf J_p+12\mathsf J_q
+ +3\mathsf F_p+2\mathsf F_q+14\mathsf Q+28\mathsf K\\
+ &+8\mathsf U_{p0}+74\mathsf D_p+152\mathsf O_p+70\mathsf L_{p8}
+ +16\mathsf L_1+26\mathsf L_2\\
+ &+10\mathsf U_{q0}+70\mathsf D_q+148\mathsf O_q+62\mathsf L_{q5}+70\mathsf B;\\
+\mathrm{B0}:~&11\mathsf C+12\mathsf H_p+12\mathsf H_q+12\mathsf J_p+18\mathsf J_q
+ +\mathsf F_q+4\mathsf Q+8\mathsf K\\
+ &+4\mathsf U_{p0}+19\mathsf D_p+46\mathsf O_p+4\mathsf L_{p9}
+ +12\mathsf L_1+2\mathsf U_{q0}\\
+ &+6\mathsf L_{q2}+32\mathsf D_q+74\mathsf O_q+9\mathsf L_{q6}
+ +15\mathsf L_{q7}+14\mathsf L_{q9}+15\mathsf B;\\
+\mathrm{B1}:~&\mathsf C+2\mathsf O_p+\mathsf L_{p9}+\mathsf L_1+\mathsf L_2
+ +\mathsf L_{q2}+3\mathsf O_q+\mathsf L_{q9}+\mathsf B.
+\end{align*}
+相加后的左侧分别为 $2p_3+2q_3$、$4p_3+8q_3$、$2p_3+4q_3$、
+$2p_3+2q_3$，加上非负损失余项。
+该余项由相应的 $1,70,15,1$ 倍 $\mathcal L$ 减去组合中出现的损失得到；
+每个被减损失互异且系数不超过上述倍数。右端分别为
+\begin{align*}
+ &E_0-320=-289,\\
+ &56E_0+5434-24a-12b-6T_a-4T_b
+   =-5(a-267/10)^2-911/20<0,\\
+ &11E_0+545-12a-18b-2T_b=46-b^2-7b\le-284,\\
+ &E_0-400=-369.
+\end{align*}
+因此每种情况均矛盾。$c$ 为整数，故 $c\ge32$。
+\end{proof}
+新程序独立构造上述行与中心，不导入旧模型；遍历 $15\le a\le55$ 的 164 个整数系统，
+逐系数核对符号结果，四型最小余量为 $289,46,284,369$。
+本结论不声称 32 最优：A1 在 $a=27,E_0=32$ 时右端为 10，这组权重不能再推进一步。
+
+\section{用一个最大密度子集统一重叠证明}\label{density}
+\begin{lemma}[可取到的密度公式]\label{envelope}
+若有限整数集 $D$ 含零，正点依次为 $p_1<\cdots<p_u$，负点绝对值依次为
+$q_1<\cdots<q_v$，约定 $p_0=q_0=0$，则
+\[
+ \max_{0\in F\subseteq D}\bigl(2|F|-\operatorname{diam}F\bigr)
+ =2+\max_{0\le i\le u}(2i-p_i)+\max_{0\le j\le v}(2j-q_j).
+\]
+\end{lemma}
+\begin{proof}
+固定子集的两个极值 $p_i,-q_j$，补入 $D\cap[-q_j,p_i]$ 中所有点只增加基数，
+不增加直径，所以最优子集在两侧都取前缀。
+对这样的子集目标正好等于 $2+(2i-p_i)+(2j-q_j)$，两侧可独立最大化。
+\end{proof}
+此公式同时允许保留全部核心、添加任意稠密剥离前缀或删除稀疏核心尾项。
+在现有证书只使用一个极值删除的场合，令正核心大小 $r$、质量 $C$、
+最大及次大点为 $R,U$。由 $C\ge R+U+T_{r-2}$，删除最大元的增益满足
+\[
+ R-U-2\ge2R-C+T_{r-2}-2.
+\]
+将两侧最优增益记为 $g_p,g_q$，选定的同一个 $F$ 满足
+\[
+ 2|F|-\operatorname{diam}F-1=2|E|-R_p-R_q-1+g_p+g_q.
+\]
+它同时支配旧前缀增益及单点删除增益。删除增益可超过 4，必须删除旧的 $g_s\le4$；
+归档中对应的质量裁剪层确实只删除这两条上界，并保留非负域。
+例如核心 $\{1,2,3,30\}$ 的删除增益为 25。
+
+对实际目标 $H$，沿用缺额 $\Def_H(J)=\sum_{i\in J}|A_i|-|(\bigcup_{i\in J}A_i)\cap H|$。
+对标签森林，逐点活动边数不超过活动标签数减一；在目标之外再加入一个所选成员指标仍不超支。
+因此实际缺额同时支配所有星形交集下界之和及任一单独成员的外部损失。
+主导集合 $c+2D$ 含 $c+M_p+F$，同侧叶 $c+p_i+D$ 含 $c+p_i+F$，故
+\[
+ |(c+2D)\cap(c+p_i+D)|
+ \ge2|E|-1-R_p-R_q-p_i+M_p+g_p+g_q.
+\]
+交叉叶改用 $-M_q+F$。所有叶使用同一 $F$，所有组变量取实际缺额。
+同一预算内标签容量只使用一次，且原始交集只再加一个外部损失；
+已经裁进目标的重叠不能再重复加该损失。
+本公式改善证明组织；本轮没有宣称因此减少归档树的节点数。
+
+\section{87 元共同格与本原性：严格的调用顺序}\label{lattice}
+先取 $a\le b$，令 $a=35-k,b=35+k,I=k^2$，则
+\[
+ \Lambda=1261+I,\quad\Omega=574-I,\quad C_0=-823-I.
+\]
+写 $\mu_X=|\FS(X)|-1-T_{|X|}$，$d_X$ 为 $\{0\}\cup X$ 中正侧对角缺陷数，
+$\rho_X=\mu_X+2-2d_X$；仍有 $\rho_X\le\mu_X$。
+预格化预算为
+\[
+ \rho_P+\rho_Q+\kappa+2\theta+c+\ell_1+\ell_2+g=\Omega.
+\]
+仅在 $D$ 整性和所需平移实际相交之后，才能记
+$\T=\kappa+\ell_1+\ell_2+g$ 并使用
+\begin{equation}\label{post}
+ \T\ge\kappa+148-3z,\qquad \T\ge\max(50,z,148-2z),\qquad w\le4z.
+\end{equation}
+
+\subsection{小侧边界与等差支持}
+缺号侧由 $1+T_{71}=2557>2165$ 排除；未配对数为偶数且平方不超过 2848，
+故至多 52，核心至少有九对相反点。以 $\rho_P\ge-8$ 先得到 $a\ge11$。
+\begin{center}\begin{tabular}{rrrrr}\toprule
+$a$&$b$&$\Omega$&原始 $\kappa$ 上限&修正内层比较\\\midrule
+11&59&$-2$&6&$-1373$\\12&58&45&53&$-1185$\\
+13&57&90&98&$-1005$\\14&56&133&133&$-849$\\\bottomrule
+\end{tabular}\end{center}
+对 11、12 直接用严格同时逆定理；13、14 若大侧非等差，则大侧缺陷至少 $b-5$，
+将逆定理预算降到 46、82；若为等差，则剩余类计数和间隙公式给出共同格、$z=0$。
+删除较小前缀时保留通用 $-8$，故内层比较多加 16；表中仍严格为负，外层也严格。
+先格化，再用 $\T\ge50$ 或等差时 $\T\ge148$ 排除前三行。
+$a=14$ 非等差时 $z\ge33$，有效洞见证 $(r,\beta,C_h)=(56,5,143)$
+给出 $\mu_Q\ge200$、$\rho_Q\ge134>133$。最终 $a,b\ge15$。
+
+大侧等差支持至少 631 点，而 $\kappa\le574$，直接给共同格和 $z=0$。
+若仅小侧等差，$\Omega<2T_a$，最多两个剩余类。
+单类长间隙或只有一个离格系数时，要同时保留 $\kappa\ge T_a$；
+$T_a+T_{b-2}+2-2b-\Omega\ge549$ 排除这些例外。
+双类由至少两个非零类系数强迫其阶为二，规范到半步格。
+若 $w_0$ 是最小奇系数，间隙公式给
+$h_P=u-1,h_Q=\kappa-u+w_0,z=w_0-1$。
+先以质量余量至少 943 排除 $w_0>u$，再以余量至少 $343/8$ 排除 $w_0\ge15$；
+故 $z\le12$，并已有两侧洞数不超过 $\kappa$。
+该分支的内层比较至多 $-891$，外层 $1261>880$，于是 $D$ 整性。
+式 \eqref{post} 加上大侧缺陷排除双类，只有 $k=11,12,z=12$ 可能等号；
+见证 $(\beta,C_h)=(2,33)$ 将大侧缺陷再提高 1，排除等号。
+
+\subsection{非等差逆定理不足的十四个方向}
+采用较弱但足够的 $n(r)=r-5$（$r\ge21$），$n(r)=r-14$（$15\le r\le20$）。
+小侧充分条件 $a-3+n(a)+n(b)>\Omega-T_a+2$ 恰可能在 $k=6,\ldots,19$ 失败。
+若实际失败，则定义
+\[
+ R_* =\Omega-T_a+2-(a-3)-n(a),\quad
+ K_* =\Omega-n(a)-n(b),\quad U_* =K_*+3,
+\]
+$V_*=T_b+b-2$，$U_0=T_a+a-2$。在 $Q$ 内禀本原格上使用有效洞引理：
+\begin{center}\small\begin{tabular}{r|rrrrrrrrrrrrr}\toprule
+$k$&7&8&9&10&11&12&13&14&15&16&17&18&19\\
+$\beta$&4&5&6&6&6&6&6&5&5&5&4&3&2\\
+$C_h$&88&108&132&133&137&143&149&132&136&139&118&95&66\\
+$R_*$&73&88&100&109&115&118&118&115&118&109&97&82&64\\\bottomrule
+\end{tabular}\end{center}
+这些见证的严格参数条件均重新核验。若 $h_Q>H=2\beta$，旧灵活逆界给出
+$\rho_Q>R_*$，故 $h_Q\le H\le12$。四个余量
+\[
+ V_*-1-K_*,\quad V_*-U_*-K_*+1,\quad
+ V_*-K_*-H-2,\quad U_0-H-2
+\]
+最小为 $477,11,468,144$。
+依次用于剩余类对齐、支持直径排序及两侧短直径条件；
+由端点容器先得 $h_P\le\kappa+H$，再用 Stanchescu 定理 4 得精确 $h_P,h_Q\le\kappa$。
+该短直径定理不要求预先知道两侧各自本原。
+
+$k=6$ 不能套直径排序，需单独处理。此时 $a=29,b=41,R_*=55$。
+最后一个超额增量至多 4 的前缀大小至少 $41-\lfloor55/3\rfloor=23$；
+计洞引理使其洞落在宽度 8 的两个端部，每端至多四洞。
+首个离格后项给缺陷至少 $T_{23}-41-1=234>55$，随后增量不能补回。
+同格后项若 $x\ge L-16$，至少新增 $L-24>t+58$ 个支持点，超出允许增量；
+故 $x\le L-17$，中央区间衔接，端部洞保持。
+最后 $V$ 含 $[9,\sum Q-9]$，总洞至多 8。
+剩余类计数对齐 $P$，中央区间给 $h_P\le\kappa+18$；
+$\kappa+18<v-19$、$\kappa+20\le v$、$u\ge10$ 保证短直径条件，再得精确洞界。
+
+\subsection{先恢复 D 整性，再证明两侧本原}
+普通内层比较为 $-249-2k^2+2z$；$z\le124+k^2$ 时足够。
+否则 $z\ge125+k^2$，预算排除 $k\ge14$。
+假如任一侧最后两个支持平移分离，缺陷至少 $T_{r-2}+2-2r$。
+加另一侧非等差下界及 $\kappa\ge z$ 得矛盾；小侧分离的 $k=4,\ldots,8$ 需补见证
+$(2,41),(3,53),(3,58),(3,54),(2,45)$，另一侧缺陷下界成为 $43,52,56,55,49$。
+全域最小严格余量为 1。于是实际支持相交，删最大元后的洞保留至少一半。
+改用一次总预算，内层比较成为 $-249-2k^2<0$；外层仍由 $1261>880$ 保证。
+这一步完成 $D$ 整性与传播的相交前提，之后才使用式 \eqref{post}。
+
+原严格逆分支的洞小于支持点数减一，直接排除非单位 gcd。
+稠密修复中 $Q$ 本原已由规范化保证；式 \eqref{post} 给
+$\kappa\le\Omega-(148-3H)-n(a)-n(b)<T_a$，表中最小余量 18，$k=6$ 余量 81，
+所以 $P$ 也本原。小侧等差定义单位格时另一侧由 $\kappa<T_b$ 本原。
+
+最后，大侧等差定义单位格且小侧假设非本原，会给 $\kappa\ge T_a$、$z=0$，从而
+\[
+ c\le\Omega-148-T_a
+ =\frac{145}{24}-\frac32(k-71/6)^2\le6.
+\]
+此时共同格、$D$ 整性、相交与传播均已证明，故可调用引理 \ref{c32} 的 $c\ge32$，矛盾。
+这取代了原来只排除 $c\le6$ 的弱版本，且不需按可能的 gcd 或侧大小再拆分。
+
+\section{必要模型、实际量与全部分支}\label{models}
+\subsection{通用行和严格门槛}
+记 $j$ 为空普通单元数，$\delta=c-79j$，$B_0=426-I-79j$。
+零洞满足 $\delta\le B_0$，所以 $j\le5$；正低洞 $1\le z\le14$ 有
+$\delta-2z\le B_0-n(a)-n(b)$，所以 $j\le4$。
+核心质量 $C_s=S_s-M_s-x_{s,1}-x_{s,2}-x_{s,3}$，
+$C_s\ge T_r+u_s+z$ 与 $x_{s,i}\ge R_s+i$ 共同给出
+\[
+ S_s\ge T_r+6+u_s+z+M_s+3R_s.
+\]
+同时保留 $R_p+R_q+\delta-4z\le74+B_0$ 以及精确恒等式
+\begin{equation}\label{converse}
+ \delta+S_p+S_q-2K=(18-j)79+84+w,\qquad0\le w\le4z.
+\end{equation}
+式 \eqref{converse} 的下界只是基数恒等式，不能注入固定项或重叠损失。
+
+实际目标为整数；保留中心贡献及 $D$ 整性使中心整性。
+恰有三个空单元的 2992 个模式，以及更少空单元的模式，均重新构造整数左逆 $WC=I_8$，无需主导贡献。
+四、五空单元只在各补充根实际中心有同样见证时恢复严格外间隙。
+主导、嵌套主导、核心、普通分位的许可条件分别为残余上限严格小于
+$157,149,75,\min(a,b)+5$。正低洞平衡三空上限恰为 157，不能当作严格小于。
+后来削减预算不能倒推原中心见证已含主导中心。
+其余完整 $D$ 包络、裁剪重叠、配对的实际贡献者、同侧合并、固定 110 标签及 26 个
+不交非正组的计费，采用前序已核查证明，重新核对本端点行生成和所有被选分支。
+
+\subsection{两类有限覆盖和新增质量层}
+选定 11 个零洞根均缺 \texttt{pair1,pair2,p0,q0}。
+外侧整性及保留较小同侧贡献者允许八项额外固定损失；14 个保留单元的损失满足
+$\sum L_u\le102-I<150$。故要么全都至多 74，要么恰一指定单元至少 75，
+其余单元损失至多 $27-I$，严格低于普通分位门槛。
+11 个根保留全部 $11\cdot15=165$ 个选择，未只挑成功分支。
+11 个正低洞根按 $[1,2],[3,4],[5,14]$ 全部三分，保留 33 个子模型。
+预算为 $\delta-2z\le50-I$，不再减旧端点的 18；残余上限为 $54-I,58-I,78-I$。
+17 个子模型直接排除，16 个用固定分数树，其中五个在 $[1,2]$ 加质量裁剪。
+所有情况仍保留式 \eqref{converse}。
+
+上核心质量界 $C_s\le rR_s-T_{r-1}$ 来自单位间隔，只需整数核心。
+裁剪层由第 \ref{density} 节共同子集实现。
+高洞稠密跨度使用 Lev 定理：当 $R\le\lfloor3r/2-2\rfloor=q$ 时，
+中央区间与缺生成元计数给 $h\le2(R-r)$。
+所以只有严格条件 $z_0>2(q-r)$ 才能添加 $R\ge q+1$。
+本轮核对了原定理，不额外添加 gcd 条件。
+
+\subsection{加强的非等差逆界与全 D 分支}
+设 $r\ge21$、$\FS(X)$ 非等差且 $\mu\ge u$。选 $21\le L\le r$，$M=T_L-r$。
+若 $\mu\le M$，从大小 $L$ 起所有前缀均非等差；否则首次由等差变为非等差时，
+不交的两次平移使增量至少 $1+T_L-r=M+1$。
+对 $3\le\beta\le L-5$，没有后续小增量时
+$\rho\ge A=r-5+(\beta-2)(r-L)$。
+若最后小增量在 $i\ge L$，令 $t=r-i$，则
+$d_X\le2\beta+t$ 且 $\rho\ge r-5+(\beta-2)t$；消去 $t$ 得
+\[
+ \rho\ge B=\max\left(r-5,
+ \left\lceil\frac{(\beta-2)(u-4\beta+2)+2(r-5)}\beta\right\rceil\right).
+\]
+若 $\mu\ge M+1$，用旧逆界 $C=\max(r-5,v_{\rm old}(r,M+1))$。
+所以 $\min(A,B,C)$ 总成立，再取这些参数的最大值仍成立。
+奇支点界 $d_X\le R-r+2$ 另给 $\rho\ge u+2r-2R-2$。
+各选用方式分别替换同一预算中的缺陷下界，不把多个完整预算相加重复计费。
+
+$D$ 含本原核心及零，所以 $\gcd(D-D)=1$。
+Stanchescu 推论 2 在相等直径参数为 1 时给出穷尽分支
+\[
+ \{K\le233,\ M_p+M_q-K\le-79\}\quad\text{或}\quad K\ge234.
+\]
+它作用于重复和集 $D+D$，高分支不附加小倍增直径限制。
+
+\subsection{最后两个根：缺陷位置与实际共同指标}
+规范根 1570114、1570147 均为 $a=b=35$，其变量取实际的
+$\mu_s,h_s,d_s,\rho_s,\kappa,\T,\theta$ 及 $D_0=\Delta(D)$。
+\[
+ \rho_s-\mu_s+2d_s=2,\quad h_s=C_s-T_r-\mu_s,\quad
+ \kappa=h_p+h_q-z,\quad \theta=d_p+d_q+8-D_0.
+\]
+核心有相反点，零非缺陷；加点不会产生旧核心缺陷，故 $\theta\ge0$。
+每个实际内剥点只取一个非缺陷指标 $\nu_{s,i}$，
+$\theta\ge\sum_{s,i}\nu_{s,i}$；多个中点见证不能重复收费。
+$\kappa\le574<T_{35}+\mu_s$ 证明严格洞界，故
+$C_s-2\mu_s\le2T_{35}-1$；还保留 $\T\ge\kappa$、式 \eqref{post} 及原始缺陷预算。
+奇支点平移给 $2\le D_0\le M_p+M_q-75$，且 $K\le3160$。
+
+对 $0,R$ 两端齐备的任意 $n$ 元整数集，缺陷点 $x\le R/2$ 的对称配对给
+$n\le R-x+1$，故 $x\le R-n+1$；反射后另一半满足 $x\ge n-1$。
+缺陷集没有非平凡三项等差数列，因而其大小至多 $2r_3(R-n+2)$。
+将其用于 $\{0\}\cup X_s$ 和平移后的 $D$，再用
+$7r_3(L)\le2L+30$，得到
+\[
+ 7d_s-2R_s\le25,\quad7d_s-4R_s\le57-4r,
+\]
+\[
+ 7D_0-2(M_p+M_q)\le32,\quad7D_0-4(M_p+M_q)\le68-4\cdot79.
+\]
+该仿射界的依赖是精确 $r_3(0),\ldots,r_3(30)$ 及
+\[
+ r_3(31)\le12,~r_3(35)\le13,~r_3(39)\le14,~r_3(40)\le15,
+ ~r_3(50)\le16,~r_3(58)\le19,~r_3(70)\le20.
+\]
+本轮全部从头运行；逐个最小可用点的包含／排除穷举穷尽所有集合，
+前推第三项禁用和已证区间分块容量使剪枝合法。
+70 个剩余长度的分块加上每个 70 块容量 20，给所有正长度的仿射界。
+
+对五个同侧整数点 $R<x_1<x_2<x_3<M$，宽度 $w=M-R$ 满足
+\[
+ w+\sum\nu_i\ge7,\quad w+2\sum\nu_i\ge8,\quad
+ \nu_i+x_{i+1}-x_{i-1}\ge3.
+\]
+宽度 4、5、6、7 时的 1、4、10、20 个配置分别至少有 3、2、1、1 个内点中点见证；
+宽度至少 8 时前两式直接成立，局部式由相邻跨度为 2 强制中点得到。
+选择树仅用核心跨度 77、79：$78=70+8$、$80=70+10$ 给缺陷上限 23、24，
+互补分支分别 $R_s\ge78,80$。六次这种二分和两次全 $D$ 倍增二分均保留两侧。
+其余仅使用已经证明的普通、内层和核心或大损失分支。
+所选树没有使用候选代码中可选的条件跨度、全 $D$ 有限跨度、任意整数形式或尾部裁剪分支。
+最后两根共 188 节点、93 二分、95 个精确叶，满足两个森林恒等式。
+
+\section{完整有限验证与可复现交付}\label{finite}
+高洞 $z\ge15$ 以 605 个严格有效洞见证确定超额下界及预算
+$c\le\Omega-v_p-v_q-\max(50,z,148-2z)$。
+独立重建全部 8890 个原始 $(k,z)$ 状态、11374 个保留 $(k,z,j)$ 状态及 277 个区间，
+最大 $c=354$；只按已证明的质量测试删去不可能的 $j=0$，平衡反射只发一次。
+\begin{center}\begin{tabular}{lrrrrrrr}\toprule
+家族&$j=0$&1&2&3&4&5&总计\\\midrule
+零洞&164&2590&19074&80784&228480&324632&655724\\
+正低洞&164&2590&17918&74800&184960&0&280432\\
+高洞&604&10780&69360&239360&359040&0&679144\\\bottomrule
+\end{tabular}\end{center}
+全部 $1\,615\,300$ 个描述逐个比对，普通精确反证为 $1\,614\,434$ 个，
+其余 866 个规范父根必须恰等于 22 个补充组件的两两不交并集。
+下面按固定组件顺序给出父根／子模型／二分／叶数；该表之外还重新检查实际 ID 集、
+每一个覆盖选择、两个子节点和当前矩阵，而不只比较总数。
+\begin{center}\small\begin{tabular}{rll|rll}\toprule
+编号&类别&父／子／二分／叶&编号&类别&父／子／二分／叶\\\midrule
+0&低洞几何&27/27/44/71&11&高洞几何&107/107/274/381\\
+1&低洞固定&77/77/228/305&12&恢复几何&121/121/342/463\\
+2&零洞五空&42/42/707/749&13&恢复质量&1/1/15/16\\
+3&零洞损失覆盖&11/165/2621/2786&14&恢复质量&2/2/51/53\\
+4&正洞三空&24/24/69/93&15&高洞几何&86/86/312/398\\
+5&正洞固定&59/59/759/818&16&稠密跨度&9/9/251/260\\
+6&正洞三段&11/33/2959/2992&17&新质量&2/2/49/51\\
+7&高洞几何&9/9/10/19&18&高洞几何&150/150/644/794\\
+8&高洞几何&28/28/86/114&19&最后质量&2/2/28/30\\
+9&高洞几何&85/85/143/228&20&逆界及奇支点&8/8/388/396\\
+10&核心质量&3/3/90/93&21&实际量及 AP 界&2/2/93/95\\\bottomrule
+\end{tabular}\end{center}
+因此补充部分有 1042 个子模型、10163 个二分和 11205 个叶；
+总精确叶数为
+\[
+ 1\,625\,639=1\,614\,434+11\,205
+ =1\,615\,300+176+10\,163.
+\]
+所有模型变量松弛为非负实数；分支中用到的整性由实际集合单独证明。
+每个叶只接受正整数权重 $y$，逐项验证 $yA\ge0$、$yb<0$；
+不以浮点求解器的不可行为证据。归档中的发现记录只作来源，不作成功依据。
+
+\input{upper86_run_statistics_20261019.tex}
+
+重现完整有限端点及全部新增、AP-free 基础依赖（Python 3.10 以上，仅标准库）：
+\begin{verbatim}
+python -I -S -B verification/upper86.py --jobs 8 \
+  --output results/local-upper86.json
+\end{verbatim}
+默认使用新建系统临时目录，检查全部 28 个归档分片及整个 ZIP 的 SHA-256，
+重建源文件，运行所有范围、所有补充组件、全部辅助依赖、AP-free 基表及界，最后核对并集与源清单。
+也可使用 \path{verify_upper86_windows.bat}。
+\path{verification/upper86_geometry.py} 独立检查新组合和直接集合例子，
+不能单独推出端点排除。该新程序在标准与 \texttt{-O} 模式输出一致；
+完整入口拒绝 \texttt{-O}，因为冻结依赖仍包含 \texttt{assert}。
+本轮成功回执和完整执行日志见 \path{results/2026-10-19/upper86/}。
+
+\begin{thebibliography}{9}
+\bibitem{prior} 本仓库，\emph{将独立核查上界推进至 87}，2026-10-19，
+\path{reports/upper87_adoption_20261019.tex}，提交 \texttt{4ca4335}。
+\bibitem{archive} 本仓库，\emph{Complete upper86 proof}，冻结于 2026-10-05，
+\path{reports/upper86_complete_20261005.tex}，大小 87 结构与端点章节、AP 本原性附录。
+\bibitem{stanch} Y.~Stanchescu, \emph{On addition of two distinct sets of integers},
+Acta Arithmetica 75 (1996), 191--194，定理 4、推论 2。
+\url{https://doi.org/10.4064/aa-75-2-191-194}。
+\bibitem{lev} V.~F.~Lev, \emph{On consecutive subset sums},
+Discrete Mathematics 187 (1998), 151--160，定理 1。
+\url{https://doi.org/10.1016/S0012-365X(98)80006-X}。
+\end{thebibliography}
+\end{document}

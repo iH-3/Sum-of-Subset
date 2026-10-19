@@ -1,0 +1,293 @@
+{
+  "schema": "upper86-complete-finite-verification-v1",
+  "started_utc": "2026-10-19T06:59:12.082926+00:00",
+  "output_directory": "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd",
+  "complete_finite_replay": false,
+  "analytic_proof_assistant_formalization": false,
+  "stages": [
+    {
+      "name": "auxiliary_lattice",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "lattice"
+      ],
+      "returncode": 0,
+      "seconds": 0.33030599799985794,
+      "log": "auxiliary_lattice.log",
+      "log_sha256": "a9f325312f8662d8e8079bbe9a0c9f449487f3211621b2c64df088a2aea9146e"
+    },
+    {
+      "name": "auxiliary_gates",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "gates"
+      ],
+      "returncode": 0,
+      "seconds": 186.9605561620001,
+      "log": "auxiliary_gates.log",
+      "log_sha256": "2bf5b5c4e89a52efc0d190013d201546d26e6895e13a22307e17fd06ae77d1e2"
+    },
+    {
+      "name": "auxiliary_boundaries",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/replay_auxiliary.py",
+        "boundaries"
+      ],
+      "returncode": 0,
+      "seconds": 0.16927139600011287,
+      "log": "auxiliary_boundaries.log",
+      "log_sha256": "53641b65ebe8375de605683bb3ec5f447c2a964caa8b14cce993a3059f5aff23"
+    },
+    {
+      "name": "auxiliary_apfree",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/check_apfree_extensions.py",
+        "--output",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/apfree_extensions.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.6860423049993187,
+      "log": "auxiliary_apfree.log",
+      "log_sha256": "08646a27eb7deafdc3dc1ecd3e1410673983762edce5ad97d382cd9fdfd252de"
+    },
+    {
+      "name": "verify_front",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_front.py",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/verify_front"
+      ],
+      "returncode": 0,
+      "seconds": 0.1596272279994082,
+      "log": "verify_front.log",
+      "log_sha256": "74aefc59eb4f9664086b303b208b8d69554492d11d23eac816bfae0efd8a1382"
+    },
+    {
+      "name": "verify_foundations_independent",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_foundations_independent.py",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/verify_foundations_independent"
+      ],
+      "returncode": 0,
+      "seconds": 0.0799293010004476,
+      "log": "verify_foundations_independent.log",
+      "log_sha256": "aedb5ecdbf183b09a8ddaddd79b44c8a43e80a44b806279dcea890df41048628"
+    },
+    {
+      "name": "verify_universal_lattice",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_universal_lattice.py",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/verify_universal_lattice"
+      ],
+      "returncode": 0,
+      "seconds": 0.026099737999174977,
+      "log": "verify_universal_lattice.log",
+      "log_sha256": "dc7a7f7623f3b8bae800b7092182540806e2ff68367498a4288d341111cfc6a1"
+    },
+    {
+      "name": "verify_uniform_four_margins",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/verify_uniform_four_margins.py",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/verify_uniform_four_margins"
+      ],
+      "returncode": 0,
+      "seconds": 0.02998665099948994,
+      "log": "verify_uniform_four_margins.log",
+      "log_sha256": "6f4e9316aa668ddee1505937ee6cfd5dc1e026eb09fce0c13c1b6cace0af4ed7"
+    },
+    {
+      "name": "check_ap_exception_symbolic",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/check_ap_exception_symbolic.py",
+        "--proof-root",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/check_ap_exception_symbolic"
+      ],
+      "returncode": 0,
+      "seconds": 0.048665917000107584,
+      "log": "check_ap_exception_symbolic.log",
+      "log_sha256": "e926f9065cad40d36ae95a662a290a034c1a7f0e1129c9d2ae810ddc00dc183b"
+    },
+    {
+      "name": "check_independent_applicability",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/check_independent_applicability.py",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/check_independent_applicability"
+      ],
+      "returncode": 0,
+      "seconds": 1.4680470610001066,
+      "log": "check_independent_applicability.log",
+      "log_sha256": "5e8ca87ad02f997b9c5d42449f3d96a68734e679ce985bb1619a7b6ef4f23f62"
+    },
+    {
+      "name": "check_canonical_coverage",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/check_canonical_coverage.py",
+        "--proof-root",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/check_canonical_coverage"
+      ],
+      "returncode": 0,
+      "seconds": 11.553883259999566,
+      "log": "check_canonical_coverage.log",
+      "log_sha256": "f1b5e656579c6acd83bf01601ff068d4de1015cd4c70e4ed2900f68f53feca2b"
+    },
+    {
+      "name": "check_selected_forests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/independent_checks/check_selected_forests.py",
+        "--proof-root",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86",
+        "--output-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/check_selected_forests"
+      ],
+      "returncode": 0,
+      "seconds": 45.62845750799988,
+      "log": "check_selected_forests.log",
+      "log_sha256": "fbda3ff9a007986d77b76edd2ebc02914bdc5d48aa76905f45923ca347682cb7"
+    },
+    {
+      "name": "partial_range_positive_control",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/payload/subset_sum_verification/proofs/exact86/controller.py",
+        "--expected-manifest",
+        "56ade7ee005f36b500f9b69deff830ae7222895778c1e05229ec229d2b343b37",
+        "range",
+        "--start",
+        "0",
+        "--stop",
+        "1000",
+        "--receipts",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/negative_control_partial_range"
+      ],
+      "returncode": 0,
+      "seconds": 56.59753444299986,
+      "log": "partial_range_positive_control.log",
+      "log_sha256": "a6c223f14e0c8598fc369fcfcd3013c1e3ac603312d72eb8594bb30c642a6fc1"
+    },
+    {
+      "name": "replay_guards",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "/tmp/sum-upper86-20261019/source/subset_sums_upper86_complete_verification_20261005/check_replay_guards.py",
+        "--receipt-dir",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/negative_control_partial_range",
+        "--output",
+        "/tmp/sum-upper86-20261019/auxiliary/20261019T065912Z_xl9yzxqd/replay_guards.json"
+      ],
+      "returncode": 0,
+      "seconds": 106.42153450299975,
+      "log": "replay_guards.log",
+      "log_sha256": "ea12a29b62a2c03a26b75e2ce2aa7db7eea7dfbebe35786811f897279cb33fd3"
+    }
+  ],
+  "complete_manifest_sha256": "5c3be0c63bff175f88a5c32f7d713e5df7fdee3fb8a01b8ac04a575e58b01a7b",
+  "manifested_files": 5286,
+  "mode": "auxiliary-only",
+  "returncode": 0,
+  "finished_utc": "2026-10-19T07:06:05.514780+00:00",
+  "seconds": 413.43187174800005
+}
