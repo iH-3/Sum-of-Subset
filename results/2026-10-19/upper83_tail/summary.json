@@ -1,0 +1,41 @@
+{
+  "status": "PASS_CONDITIONAL_GEOMETRIC_FAMILY",
+  "current_proved_range": [
+    71,
+    84
+  ],
+  "candidate_upper": 83,
+  "candidate_proved": false,
+  "family": "Branch A, common integral source D of size76, complete targets; exact whole holes Os,Hs,Ot,P,C5t. Beta sole ownership is derived.",
+  "tail_slots": {
+    "old_method": 22,
+    "new": 6
+  },
+  "fixed_credit": {
+    "old_method": 17,
+    "new": 18
+  },
+  "necessary_mass": {
+    "old_method": 61,
+    "new": 78,
+    "allowed": 76,
+    "new_margin": 2
+  },
+  "formal_inventory": 495,
+  "scalar_states": 341824,
+  "actual_checks": {
+    "generic_endpoint_checks": 5763,
+    "actual_forest_checks": 30,
+    "actual_tail_values": 200,
+    "pointwise_forest_masks": 256
+  },
+  "ordinary_optimized_identical": true,
+  "arithmetic_scope_controls": 6,
+  "source_controls": 12,
+  "baseline_suites": 11,
+  "baseline_checks": {
+    "PASS": 140,
+    "FAIL": 0,
+    "SKIP": 0
+  }
+}

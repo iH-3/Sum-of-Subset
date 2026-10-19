@@ -1,0 +1,98 @@
+{
+  "mathematical_statement_controls": [
+    {
+      "id": "omit_C33_but_claim_strict_contradiction",
+      "status": "REJECTED",
+      "reason": "76 is not greater than 76"
+    },
+    {
+      "id": "keep_seven_known_HIGH_slots",
+      "status": "REJECTED",
+      "reason": "retaining obsolete slots leaves only 71"
+    },
+    {
+      "id": "remove_both_members_of_cross_pair",
+      "status": "REJECTED",
+      "reason": "one member can still lie in a short interval"
+    },
+    {
+      "id": "pair_separation_without_width_guard",
+      "status": "REJECTED",
+      "reason": "equal endpoints can both lie in a closed interval"
+    },
+    {
+      "id": "lose_native_rebate",
+      "status": "REJECTED",
+      "reason": "dropping reserved losses does not certify the desired row"
+    },
+    {
+      "id": "claim_global83",
+      "status": "REJECTED",
+      "reason": "one geometric family does not complete the size84 exclusion"
+    }
+  ],
+  "source_identity_controls": [
+    {
+      "id": "source_byte_tamper",
+      "status": "REJECTED",
+      "reason": "source mismatch verification/upper83_tail.py"
+    },
+    {
+      "id": "omit_required_verification/upper83_tail.py",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_reports/upper83_tail_20261019.tex",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verify_upper83_tail_windows.bat",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verification/upper83_progress.py",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verification/upper83_fullrank/check.py",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_reports/upper83_progress_20261019.tex",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_reports/upper83_fullrank_20261019.tex",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_data/fixed_cover_certificate.json",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verification/upper84/progress85/foundations/source_triple_fringe85.md",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verification/upper84/progress85/common/raw_gap_inventory.md",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    },
+    {
+      "id": "omit_required_verification/upper84/progress85/zero/zero85_z5_a1_b.md",
+      "status": "REJECTED",
+      "reason": "required source omitted"
+    }
+  ],
+  "all_rejected": true,
+  "scope": "Arithmetic rejection controls are not counterexamples to feasible 84-point sets. Source tamper checks operate on temporary copies."
+}

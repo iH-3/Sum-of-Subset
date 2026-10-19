@@ -1,0 +1,35 @@
+{
+  "baseline_commit": "1fc0163384c534d3bd400f6ffbbfc24c5b4cac97",
+  "status": "CONDITIONAL_GEOMETRIC_FAMILY_WRITTEN_REVIEW",
+  "not_proof_assistant_verified": true,
+  "premises": [
+    "76-point common integral source with four inner tails per sign and four outer points per sign.",
+    "Complete targets [1,S_s] and [1,S_t] in the original four-extreme cover.",
+    "Branch A, with exact whole holes O_s,H_s,O_t,P,C5_t."
+  ],
+  "derived_in_order": [
+    "Source mass, A_*<=76, 25<=r_v<=42, both targets exceed full source span.",
+    "Leading and retained centers imply all outer magnitudes integral.",
+    "Raw guarded beta/H gap excludes beta_t; only then beta_s receives native capacity.",
+    "Empty-center directions imply11 HIGH and11 LOW, touching9 groups; compatible e13.",
+    "All retained native resources have core hits; light generic endpoints include outside-hull centers.",
+    "Physical target-t capacity plus a disjoint endpoint/gap grouping proves strict beta cutoff, margin336.",
+    "495-type symbolic inventory yields32 fixed and4 native tail types. Seven initial HIGH slots must be removed.",
+    "Four-edge fullrank forest proves C33 HIGH; full-or-trimone star proves four additional HIGH using only e13.",
+    "Five new HIGH labels give e18 and c14. Native rebates give A_*>=70.",
+    "Four U-cross labels below threshold, then four d-separated C-cross pairs occupy at most four slots.",
+    "Final c6/e18 gives tau+delta>=78+Gamma_alpha>76-I."
+  ],
+  "resource_checks": [
+    "Empty P has no owner.",
+    "beta whole-pair capacity not duplicated.",
+    "Endpoint rebates only on resources disjoint from their forest.",
+    "Four cross-pair compression is tail counting, not extra fixed credit.",
+    "No normal-endpoint assumption."
+  ],
+  "remaining": [
+    "Complete common-scale and size84 structural reduction.",
+    "All positive-target-hole cases.",
+    "All other zero-hole families and exhaustive actual activity/ownership dispatch."
+  ]
+}

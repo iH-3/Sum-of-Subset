@@ -1,0 +1,51 @@
+{
+  "schema": "upper83-tail-sources-v1",
+  "baseline_commit": "1fc0163384c534d3bd400f6ffbbfc24c5b4cac97",
+  "scope": "Complete geometric exclusion only for the stated common-source, complete-target C5t family; global upper remains84.",
+  "files": [
+    {
+      "path": "verification/upper83_tail.py",
+      "sha256": "4f99a910dc02ca829922866488709dc509763436776be99fa1c05b002b8ff7c5"
+    },
+    {
+      "path": "reports/upper83_tail_20261019.tex",
+      "sha256": "4a4a8214872fdf6c5bd4b3d000606889c71d51648924da299aca0d8d1f3817d2"
+    },
+    {
+      "path": "verify_upper83_tail_windows.bat",
+      "sha256": "3fa292f25f029da8274526adfc79af3ef417d5739ca587c722914314323dc089"
+    },
+    {
+      "path": "verification/upper83_progress.py",
+      "sha256": "368d50801bb8d49f566914549d7061fb1e12e70430d134cb63bf458578eb5836"
+    },
+    {
+      "path": "verification/upper83_fullrank/check.py",
+      "sha256": "9d25183389ef1de3b58dabce3aadb87e2f854c1951daae62300ba049734367a0"
+    },
+    {
+      "path": "reports/upper83_progress_20261019.tex",
+      "sha256": "a395ea1b22b863a57a0c6d26bd4e5a4da6652437f34571d550f35e4c4b608102"
+    },
+    {
+      "path": "reports/upper83_fullrank_20261019.tex",
+      "sha256": "176dc91a5e512bb29c6c5cd965b5effcffb17cacd4c82a2a59f621625d0c2f84"
+    },
+    {
+      "path": "data/fixed_cover_certificate.json",
+      "sha256": "77c08e5bfdc803bc17bcf04f915ff8fe1b9d3adb7ac3b69fe6dcdf303006b0b3"
+    },
+    {
+      "path": "verification/upper84/progress85/foundations/source_triple_fringe85.md",
+      "sha256": "c4c7aa0a3c107337828cf0eca45e06f4de688725b987b39b49d9ae1f7d2b365d"
+    },
+    {
+      "path": "verification/upper84/progress85/common/raw_gap_inventory.md",
+      "sha256": "014e4037fb779acc39de514ec860daef1a098354cd497a9bb29e50bee0358e30"
+    },
+    {
+      "path": "verification/upper84/progress85/zero/zero85_z5_a1_b.md",
+      "sha256": "54dfc2cb169a62ce614be2ddd139c102aca6fd1e8b68b68a68f91c8d77fbc7cb"
+    }
+  ]
+}

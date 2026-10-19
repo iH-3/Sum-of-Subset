@@ -1,0 +1,12 @@
+{
+  "pdf": "reports/upper83_tail_20261019.pdf",
+  "pdf_sha256": "e0c31acb84110333c1447ab5be535466016284c626b37c1a8f756019c1b52d8c",
+  "tex": "reports/upper83_tail_20261019.tex",
+  "tex_sha256": "4a4a8214872fdf6c5bd4b3d000606889c71d51648924da299aca0d8d1f3817d2",
+  "pages": 6,
+  "compiler": "XeLaTeX, two passes",
+  "warnings": [],
+  "fonts_embedded": true,
+  "visual_review": "All six rendered pages inspected; changed pages3-6 inspected again after final endpoint clarification and pagination. No clipping.",
+  "scope_review": "Report, checker, README and status all retain global upper84."
+}

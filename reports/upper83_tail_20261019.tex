@@ -1,0 +1,351 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]
+\setmonofont{lmmono10-regular.otf}[Scale=0.87]
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\A}{A_*}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\T}{\mathsf T}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.13}
+\linespread{1.05}
+\raggedbottom
+\title{删去重复尾部候选并闭合五空单元最后一族\\\large 大小 84 的条件几何排除与精确验证}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+接续提交 \texttt{1fc0163}。对共同整数源、完整目标区间以及分支 A 中
+恰好空去 $O_s,H_s,O_t,P,C5_t$ 的实际配置，重建全部四项表示的上尾目录。
+旧目录中有七个已知 HIGH 标签未被删去；再证明 $C33_s$ 为 HIGH，
+并用四对大间距标签各至多命中一次，把原方法的 22 个固定尾槽压缩为 6 个。
+相容固定扣减从 17 提高到 18。带原生损失返还的两星不等式最终给出
+$\tau+\delta\ge78$，而该族源预算要求 $\tau+\delta\le76-I$。
+本文因此闭合这一实际几何族，不依赖端点正常性，也不预设 beta 的唯一贡献侧。
+其他结构与分支尚未全部接入，故全局范围仍为 $71\le N\le84$，未证明 $N\le83$。
+\end{abstract}
+
+\section{定理的准确范围}
+原问题是确定满足 $\operatorname{FS}(A)\subseteq4A$ 的有限实数集最大大小 $N$；
+子集和包括空集和，四项和允许重复。本轮从已经核查的全局上界 84 继续研究。
+\begin{theorem}\label{thm:main}
+不存在满足以下条件的 84 点可行配置：
+共同整数源 $D$ 有 76 点，两侧各有四个更外层点；两物理目标区间完整；
+原四极值覆盖采用分支 A，18 个普通整单元中恰好
+\[\boxed{O_s,H_s,O_t,P,C5_t}\]
+为空，其他普通整单元均贡献。这里 $P$ 是两侧 $C4$ 的整个配对单元，
+不是一个被指定了所有者的组件。
+\end{theorem}
+共同源及完整目标是定理假设；它们尚未被证明覆盖每个 84 点反例。
+本定理只处理这一个确切的五空族，不将旧大小 85 的分类表直接用于大小 84。
+
+记 $D_s=D,D_t=-D$。其核心为
+$E=P_s^{\rm core}\cup\{0\}\cup(-P_t^{\rm core})$，$|E|=68$。
+写核心点 $x_i=i+d_i$，其中 $d_i$ 非负且不减；定义
+\[
+r_s+r_t=67,\quad \tau_v=\sum_i d_i,\quad\xi_v=d_{r_v},\quad
+R_v=r_v+\xi_v,\quad R=67+\xi.
+\]
+无下标的 $\tau,\xi$ 表示两侧和。每侧四个源尾点为
+$R_v+a_v,R_v+b_v,R_v+c_v,R_v+e_v$，偏移严格递增且为正整数。
+记 $M_v=R_v+e_v$，$L=e_s+e_t$，$M=M_s+M_t$。
+$S_v$ 是 $D_v$ 的全部正点之和，完整物理目标为 $[1,S_v]\cap\Z$。
+四个外点的正幅度记为 $v_1>v_2>v_3>v_4>M_v$。
+它们的整性将在第 3 节导出。
+
+令 $d_v=v_1-v_2,g_v=v_3-v_4,h_v=v_2-v_3,X_v=v_4-M_v$，
+并设 $a=s_4,b=t_4,G=g_s+g_t$。普通中心是
+\begin{align*}
+\lambda_v&=d_v-v_3-v_4,& U_v&=d_v-v_4,& V_v&=d_v-v_3,\\
+H_v&=d_v+h_v-v_4,&O_v&=H_v+d_v,&\alpha_v&=h_v-v_4,\\
+\beta_v&=h_v-d_v-v_4,& C i_v&=\lambda_v-o_{i-3}\quad(4\le i\le7).
+\end{align*}
+分支 A 指 $\beta_s+\beta_t\le0$：$P=\{C4_s,C4_t\}$ 与
+$B=\{\beta_s,\beta_t\}$ 各占一个容量 76 的整单元。
+其余 16 个普通单元是两侧的 $O,H,\alpha,U,V,C5,C6,C7$。
+两个首项资源 $L_v=\lambda_v+(D_v+D_v)$ 各有容量 $K=|D+D|$。
+保留的普通平移 $Z+D_v$ 有原生损失
+$\Gamma_Z=76-| (Z+D_v)\cap[1,S_v]|$。
+
+\section{源界与统一资源预算}
+110 个原固定形式标签具有 26 个不交负和组，故固定容量为 84。
+这个目录及其负和恒等式由已有 \path{verification/upper83_progress.py} 逐项重建。
+本族保留 13 个普通整单元，定义非负总缺额 $\delta$：
+\begin{equation}\label{eq:mass}
+S_s+S_t=2K+13\cdot76+84-\delta=2K+1072-\delta.
+\end{equation}
+将实际保留资源任意分成不交的组，对每组计算“原容量之和减目标内并集基数”。
+组损失与未使用的原生损失之和至多 $\delta-e$，其中 $e$ 是与 26 组相容的额外固定扣减。
+这是覆盖并集的直接计数；同一不等式内不重复分配一个资源。
+不同不等式可分别使用同一预算。
+空配对或尚未证明唯一贡献侧的配对不能拆成独立容量。
+
+设 $I=(r_s-33)(r_s-34)$，$\A=I+\tau+\delta$，
+$U=a_s+b_s+a_t+b_t$，$C=c_s+c_t$，$J=L-C$。
+源质量恒等式给
+\[
+S_s+S_t=1156+I+\tau+4R+U+C+L,\qquad
+\Theta=2K-4R-U-C-L=84+\A.
+\]
+前两轮的通用源定理给 $\Theta\le160$，因此
+\begin{equation}\label{eq:cap}
+\A\le76,\qquad25\le r_v\le42,\qquad \xi\le\tau.
+\end{equation}
+本证明使用下列已证明的源界：
+\begin{align}
+L&\ge\A+76;\quad \delta\ge10\Longrightarrow L\ge\A+78,\label{eq:L}\\
+e_v&\ge\max(4,\A-4),\qquad e_v\le241-\A,\label{eq:ev}\\
+K&\le M+R+21,\qquad K-\delta\ge218+I+\tau.\label{eq:K}
+\end{align}
+\eqref{eq:L} 的全部无限尾部与有限例外证明在
+\path{reports/upper83_fullrank_20261019.tex} 第 5 节。
+为避免把大小 85 的常数照搬，下面重算其余两行。
+
+令 $\pi_v$ 为三偏移二项和超出 $c_v$ 的不同值数，$B_v$ 为四偏移二项和超出 $e_v$ 的不同值数。
+通用尾部引理给
+$\pi_v+B_v-a_v-b_v\le5$、$2B_v-a_v-b_v\le8$。
+删去本侧最大值的包络为
+\[K\le2R+c_s+e_t+1+\pi_s+B_t+76.\]
+与全源包络 $\Theta\le J+2+2(B_s+B_t)-U$ 合用，得
+\[
+e_s\ge\Theta-78+c_s-\pi_s-B_s-2B_t+U
+\ge\Theta-88=\A-4.
+\]
+删去同侧两个最大值，重新插入至多 $2\cdot76-1$ 个标签，得
+$K\le2R+b_s+e_t+2\cdot76+13$。
+再与删去两侧最大值所得 $J+U\le4\cdot76+24-\Theta$ 合用，得
+$e_s\le4\cdot76+25-\Theta-U+b_s\le241-\A$；反射相同。
+全源中央区间及至多 20 个尾例外给 $K\le M+R+21$。
+最后由 $R\ge67,U,C\ge6,L\ge\A+76$ 及 \eqref{eq:mass}，
+实际上 $K-\delta\ge220+I+\tau$，故本文保守采用 218。
+
+另有两侧目标长于整个源跨度：
+\[
+S_v-M\ge\T_{r_v}+3R_v-R_o+6-e_o
+\ge325+75-118+6-241=47>0.
+\]
+这里 $\T_r=r(r+1)/2$，$R_o\le42+76=118$。
+
+\section{先恢复整性和唯一贡献侧，再取得扣减 13}
+首项损失至多 $\delta<K$，故两首项都有整数目标命中，$\lambda_s,\lambda_t\in\Z$。
+保留的 $U_s,V_s,\alpha_s$ 依次给 $s_3,s_4,s_2,s_1$ 整性；
+保留的 $H_t,U_t,V_t$ 同样给所有 $t_i$ 整性。
+于是 $X_v,g_v,h_v,d_v$ 均为正整数。
+
+对实际核心任意截断得到同一个 $Q$，记其交叠下界为
+$|Q\cap(Q+x)|\ge F-x$。前轮全秩引理保证可选实际 $Q$ 使
+\begin{equation}\label{eq:F}
+\tau+4F\ge4\cdot68-12=260.
+\end{equation}
+四条边的原资源森林
+\[L_v-V_v-U_v,\qquad L_o-C7_o-C6_o\]
+给 $2(X_v+g_v)\ge4F-\delta\ge184+I$，因此 $X_v+g_v\ge92$。
+若 $\beta_t$ 也贡献，保留的 $H_t$ 使原始第二空隙两端受目标保护。
+与基数无关的八标签空隙引理给 $d_t-M\le9$（使用较弱的 12 也足够）。
+而 $C7_t$ 的实际命中给
+\[d_t-M\ge2X_t+X_s+g_t+1\ge95.\]
+矛盾。空隙完整证明见
+\path{verification/upper84/progress85/common/raw_gap_inventory.md}。
+所以 $\beta_t$ 不贡献，保留的 $B$ 只能由 $\beta_s$ 贡献；从现在起才给它原生容量 76。
+
+由于 $S_v>M$，源点 $M_v,0,-M_o$ 的命中区间重叠。
+任一整数空中心 $Z$ 必满足 $Z\le-M_v$ 或 $Z\ge S_v+M_o+1$。
+$H_s$ 位于活跃 $U_s$ 之上，故为 HIGH；$O_s,O_t$ 同样为 HIGH。
+$C5_t$ 在活跃 $C6_t$ 下方，故为 LOW。
+空 $C4_s$ 位于活跃 $C5_s$ 下方；$C4_t=C5_t-d_s$，所以二者均 LOW。
+
+固定标签记为 $Cij_v=\lambda_v+b_i+b_j$，其中
+$(b_1,\ldots,b_8)=(v_1,v_2,v_3,v_4,-o_1,-o_2,-o_3,-o_4)$；
+$Ui_v=\alpha_v+b_i$、$Vi_v=\beta_v+b_i$（$2\le i\le8$）。
+初始 HIGH 是两侧 $C11,C12,C13,C14$ 以及 $s$ 侧 $C22,C23,C24$，共 11 个。
+初始 LOW 是两侧 $C55,C56,C57,C58$ 以及 $t$ 侧 $C66,C67,C68$，共 11 个。
+这些 LOW 只触及 9 个基准负和组；未触及组仍留有 HIGH 之外的负见证。
+所以相容额外扣减为
+\[e=11+11-9=13,\qquad\eps=\delta-13\le63.\]
+若 $\delta<13$ 已矛盾。否则每个保留普通平移至少有 13 个命中。
+因 $S_v$ 长于核心跨度，不含核心命中的平移至多命中一侧的四个尾点，
+故所有选用的保留中心均有核心命中。
+
+记实际下、上截失数为 $l_Z,u_Z$，则 $\Gamma_Z\ge l_Z+u_Z$。
+核心秩的位移至多 $\xi_v$；由于截失数不超过 $63<72$，有通用端点式
+\begin{equation}\label{eq:end}
+72-r_v-l_Z-\xi_v\le Z\le S_v+r_o-71+u_Z+\xi_o.
+\end{equation}
+具体地，将源升序排列，第 $l_Z+1$ 个点至多为
+$l_Z+r_v-71+\xi_v$：负侧四尾点用严格次序，负核心用 $x_i\ge i$，
+正核心用 $x_i\le i+\xi_v$；$l_Z<72$ 保证尚未进入正侧四尾点。
+第一个保留点命中给下端式，反射给上端式。这些式子不要求 $Z$ 自身位于目标区间。
+
+\section{严格 beta 截止与完整尾部目录}
+令 $z=C5_s,q=\alpha_t,\beta=\beta_s,t_0=d_s-X_s$。
+恒等式 $d_s=2(a+b)+G+z+q$ 给出：如果 $\beta+s_3\ge t_0$，则
+\[
+\alpha_s\ge3M_s+4M_t+2X_s+4X_t+g_s+2g_t+2z+2q.
+\]
+$t$ 物理侧有首项及六个原生普通资源 $H_t,\alpha_t,U_t,V_t,C6_t,C7_t$。
+它们组成一个组，故 $S_t\ge K+456-\eps$；由总质量得 $S_s\le K+616-e$。
+使用 \eqref{eq:end} 与 \eqref{eq:K}，上式因此要求
+\begin{equation}\label{eq:cutoff}
+2M_s+3M_t+2X_s+4X_t+g_s+2g_t
+\le R+412+r_t-e+E+2\xi_s+3\xi_t,
+\end{equation}
+其中 $E=2l_z+2l_q+u_{\alpha_s}$。
+四条普通间隙边 $(U_s,V_s),(C6_t,C7_t),(U_t,V_t),(C6_s,C7_s)$
+避开这三个端点资源。令各自组损失为 $\omega_1,\ldots,\omega_4$，
+$\Omega=(\omega_1+\omega_2)/2+\omega_3+\omega_4$，则
+\[g_s+2g_t\ge3f-\Omega,\qquad E+\Omega\le2\eps.\]
+每侧删四个核心点，实际支撑给 $f=60-(\tau-\xi)/4$。
+以权重 1、2 放在两首项的四个极端叶上，逐点森林计数给
+$2X_s+4X_t\ge6f-2\eps$。
+这里不是把两个分别耗尽预算的星不等式相加；是同一加权森林，最大边权为 2。
+由 $\delta\ge13$、\eqref{eq:L}、\eqref{eq:ev}，
+$2M_s+3M_t\ge2R+R_t+3\A+152$。
+代入 \eqref{eq:cutoff} 并约去 $R,r_t$ 得
+\[
+3\A+9f\le193-e+4\eps+\xi.
+\]
+用 $\A\le76$ 消去 $\delta$，必有
+\[271+4I+\tfrac74\tau+\tfrac54\xi+5e\le0,\]
+但 $e=13$ 时左侧至少 336。因此
+\begin{equation}\label{eq:beta}
+\boxed{\beta+s_3<t_0.}
+\end{equation}
+首项自身的凸包长度同时给
+$d_s\ge K+g_s+2X_s-\ell_s$，其中首项原生损失 $\ell_s\le\delta$。
+故 $d_s-g_s-X_s>0$、$t_0>0$。
+
+对 $u>t_0$，$u+s_1+s_2+s_3+s_4$ 的四项表示必须严格大于
+$2s_1+s_3+M_s$。若 $s_1,s_2$ 总共至多出现一次，和至多 $s_1+3s_3$；
+若恰好出现两次且不都是 $s_1$，和至多 $s_1+s_2+2s_3$。
+由上一段两种情况都不能达到阈值。
+两次都是 $s_1$ 时，另外两项必须来自 $s_3,s_4$，给 $C33,C34,C44$。
+出现三次时，有四个原生族 $O_s+D,H_s+D,\alpha_s+D,\beta_s+D$
+及 24 个外点固定类型；出现四次时有 5 个类型。
+全部 32 个固定标签为
+\begin{center}\small
+\begin{tabular}{llllll}
+$C13$&$C14$&$C15$&$C16$&$C17$&$C18$\\
+$C23$&$C24$&$C25$&$C26$&$C27$&$C28$\\
+$U3$&$U4$&$U5$&$U6$&$U7$&$U8$\\
+$V3$&$V4$&$V5$&$V6$&$V7$&$V8$\\
+$V2$&$U2$&$C22$&$C12$&$C11$&$C44$\\
+$C34$&$C33$&&&&
+\end{tabular}
+\end{center}
+此处均在 $s$ 侧。$O,H$ 的原生族为空；\eqref{eq:beta} 删去 beta 原生族及 $V3,\ldots,V8$。
+\emph{还必须删去已知 HIGH 的七项 $C11,C12,C13,C14,C22,C23,C24$。}
+因此只余 alpha 原生族与 19 个固定槽位：
+\begin{equation}\label{eq:tail19}
+S_s\le d_s-X_s+95-\Gamma_{\alpha_s}.
+\end{equation}
+若 $S_s\le t_0$ 该式自动成立；否则由尾区间基数计数得到。
+
+\section{再删五个 HIGH 标签：相容扣减 18}
+本节所有预算都仅使用已经证明的 $e=13$，没有循环依赖。
+由第 3 节四边森林及 \eqref{eq:F}，
+\[2(X_s+g_s)\ge260-\tau-(\delta-13)\ge197+I,\]
+整性给 $X_s+g_s\ge99$。
+由于 $C33_s=d_s+g_s$，\eqref{eq:tail19} 给
+\[C33_s-S_s\ge4+\Gamma_{\alpha_s}>0.\]
+这是原四 HIGH 论证之外新增加的第五项。
+
+beta 的核心命中给 $\beta\ge1-R_s$。恒等式
+$h_s=d_s+a+\beta$ 与 \eqref{eq:tail19} 给
+\[h_s-S_s\ge e_s+1+2X_s-95+\Gamma_{\alpha_s}.\]
+使用完整核心可取 $F_0=68-\xi$；两侧各删一个点可取 $F_1=66-\tau+\xi$。
+选较优者对应的同一个实际子核心，则 $2F\ge F_0+F_1=134-\tau$。
+两条星边 $L_s-V_s,L_t-C7_t$ 给 $2X_s\ge2F-\eps$，因此
+\[h_s-S_s\ge49+I+\Gamma_{\alpha_s}>0.\]
+从而 $U4=h_s,U3=h_s+g_s,U2=2h_s+g_s$ 都 HIGH。
+又 $h_s-d_s=a+\beta\ge e_s+X_s+1>0$，所以 $V2=2h_s+g_s-d_s$ 也 HIGH。
+这五项与初始 HIGH、LOW 都互异。现在共有 16 个 HIGH、11 个 LOW，
+LOW 仍只触及 9 个基准组，故
+\begin{equation}\label{eq:e18}
+e=16+11-9=18,\qquad\eps=\delta-18.
+\end{equation}
+如 $\delta<18$ 已矛盾。否则尾目录余 $c=14$ 个固定槽位。
+
+\section{带返还的尾界及四对标签压缩}
+\begin{lemma}\label{lem:tail}
+在上述保留资源与完整目标条件下，若 alpha 原生族及至多 $c$ 个固定槽位覆盖 $u>t_0$，
+且相容扣减为 $e$，则
+\[\boxed{\tau+\delta\ge66-c+e+\Gamma_{\alpha_s}.}\]
+\end{lemma}
+\begin{proof}
+尾部计数为 $S_s\le d_s-X_s+76+c-\Gamma_\alpha$。
+结合 $\alpha=d_s+\beta$、beta 下端和 alpha 上端的 \eqref{eq:end}，得到
+\[X_s\le c+\xi+l_\beta-l_\alpha.\]
+两星组 $\{L_s,V_s\},\{L_t,C7_t\}$ 避开 beta 与 alpha。
+用实际删一支撑 $F_1=66-\tau+\xi$，并返还两项原生损失，得到
+\[2X_s\ge2F_1-\eps+\Gamma_\beta+\Gamma_\alpha.\]
+合并得
+$2F_1-2c-2\xi-\eps+\Gamma_\beta+\Gamma_\alpha-2l_\beta+2l_\alpha\le0$。
+减去非负量
+\[(\eps-\Gamma_\beta-\Gamma_\alpha)+2(\Gamma_\beta-l_\beta)+2l_\alpha\]
+后，得 $2F_1-2c-2\xi-2\eps+2\Gamma_\alpha\le0$，即结论。
+全部损失来自原资源，未拆分任何仍需共享容量的配对。
+\end{proof}
+
+先用 $c=14,e=18$，有 $\tau+\delta\ge70+\Gamma_\alpha$，故 $\A\ge70$、$e_t\ge66$。
+alpha 上端与 $c=14$ 尾界另给
+\[\beta+X_s\le R_t+19-l_\alpha<M_t.\]
+因此四个 $U5,\ldots,U8=\alpha_s-t_i=d_s+\beta-t_i$ 均小于 $t_0$。
+尾槽减到 $c=10$，尾区间长度至多 $86-\Gamma_\alpha\le86$。
+
+尚存八个交叉标签组成四对
+\[(C15,C25),\ (C16,C26),\ (C17,C27),\ (C18,C28).\]
+每对差恰好 $d_s$，且由首项界 $d_s\ge K-\delta\ge218>86$。
+因此同一对在尾区间至多贡献一个点；八标签只需四个槽位。
+另外只余 $C34,C44$，所以最终 $c=6$。
+这一步是尾槽合并，不额外增加固定扣减 $e$。
+引理 \ref{lem:tail} 现在给
+\[\boxed{\tau+\delta\ge66-6+18+\Gamma_\alpha=78+\Gamma_\alpha,}\]
+与 $\tau+\delta\le76-I$ 矛盾，余量至少 2。定理 \ref{thm:main} 得证。
+
+\clearpage
+\section{验证范围与下一步}
+\begin{center}
+\begin{tabular}{lrr}
+\toprule 改进项 & 旧尾路径 & 本文\\\midrule
+beta 截止后的固定候选 &26&19\\
+最终相容固定扣减 &17&18\\
+最终固定尾槽 &22&6\\
+大小 84 的必要 $\tau+\delta$ 下界 &61&78\\
+允许上界 &76&76\\\bottomrule
+\end{tabular}
+\end{center}
+验证器独立重建 8 个外点和一个自由源项的 495 个四重多重集：
+459 种由非负符号锥排除，其余正好是 32 个固定类型与 4 个原生族。
+它核对固定标签和负和组的关联、尾槽递减 $32,26,19,14,10,6$、
+返还不等式的精确线性恒等式以及所有新常数。
+另有实际整数集合的端点、四项尾覆盖和原资源森林交叉检查。
+这些集合抽查不是对所有 84 点集合的穷尽；无限范围由正文论证承担。
+程序不使用浮点数、求解器或会被 \texttt{-O} 删除的断言。
+六项故意错误的算术／范围声明必须被拒绝，包含虚报全局上界 83 的控制。
+
+\begin{verbatim}
+python -I -S -B verification/upper83_tail.py --output .work/tail.json
+python -I -S -B -O verification/upper83_tail.py --output .work/tail_O.json
+\end{verbatim}
+Windows 入口为 \path{verify_upper83_tail_windows.bat}。
+源身份清单为 \path{data/upper83_tail_sources.json}；逐项输出、普通／优化一致性、
+原 84 基线回归与审阅记录位于 \path{results/2026-10-19/upper83_tail/}。
+新结果状态是 \texttt{PASS\_CONDITIONAL\_GEOMETRIC\_FAMILY}。
+
+此次不再留下这个确切 C5t 族的 15 单位缺口，且完整证明了该族所需的整性、
+beta 唯一贡献侧、空中心方向、核心命中及相容固定扣减。
+尚须完成大小 84 的共同尺度与结构、正目标洞情形、其他零洞情形的实际分类接入。
+因而全局声明继续保持 $71\le N\le84$。
+本文件没有把旧大小 85 的分支数量当成大小 84 的覆盖证明。
+\end{document}

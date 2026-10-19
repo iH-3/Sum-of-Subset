@@ -1,0 +1,9 @@
+{
+  "ordinary_command": "python -I -S -B verification/upper83_tail.py --output .work/upper83_tail.json",
+  "optimized_command": "python -I -S -B -O verification/upper83_tail.py --output .work/upper83_tail_O.json",
+  "byte_identical": true,
+  "ordinary_sha256": "6fb7b79c57efd5c09caa272321ab2cc62f7cf40d8948257df217d1ccc7e1d6e8",
+  "optimized_sha256": "6fb7b79c57efd5c09caa272321ab2cc62f7cf40d8948257df217d1ccc7e1d6e8",
+  "windows_executed": false,
+  "windows_scope": "Batch inspected statically; execution used Linux."
+}
