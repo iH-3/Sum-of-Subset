@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "identities": 16,
+  "ledgers": {
+    "P5_empty_P_credit": 12,
+    "ownerless_credit": 18
+  },
+  "retained_dispatch": {
+    "component_assignments": 2097152,
+    "accepted_by_domain": {
+      "Z5_A0": 32,
+      "Z4": 45,
+      "P4": 29,
+      "Z3_P3": 4
+    },
+    "cards": {
+      "Z3_P3": {
+        "A0": 2,
+        "A1": 2
+      },
+      "Z4": {
+        "A-E": 19,
+        "A-H": 20,
+        "B": 6
+      },
+      "Z5_A0": {
+        "card-10": 2,
+        "card-6": 2,
+        "card-1": 2,
+        "pair-empty": 6,
+        "card-5": 2,
+        "card-8": 2,
+        "card-9": 2,
+        "card-7": 2,
+        "card-12": 2,
+        "card-11": 2,
+        "card-13": 2,
+        "card-3": 2,
+        "card-4": 2,
+        "card-2": 2
+      },
+      "P4": {
+        "A0-alpha-empty": 2,
+        "A0-opposite-alpha": 8,
+        "A-opposite": 8,
+        "A-same": 2,
+        "A0-pair-empty": 1,
+        "A1-empty-pair": 2,
+        "B-same": 2,
+        "B-opposite": 4
+      }
+    },
+    "scope": "Boolean consequences of explicitly stated analytic activity lemmas; not enumeration of real sets."
+  },
+  "Z5": {
+    "assignments": 2097152,
+    "counts": {
+      "A0": 32,
+      "same": 6,
+      "empty_P": 10,
+      "opposite": 18,
+      "four": 2,
+      "split_beta": 2,
+      "branch_B": 32,
+      "four_B": 8
+    }
+  },
+  "pointwise_forests": {
+    "forests": 38,
+    "pointwise_rooted_cases": 9728,
+    "exact_criterion": "empty_vertices + selected_roots <= active_components"
+  }
+}

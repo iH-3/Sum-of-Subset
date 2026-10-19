@@ -1,0 +1,205 @@
+{
+  "schema": "upper83-tail-v1",
+  "status": "PASS_CONDITIONAL_GEOMETRIC_FAMILY",
+  "current_proved_global_upper": 84,
+  "candidate_proved": false,
+  "conditional_family": "Branch A, common integral source D of size76, complete targets; exact whole holes Os,Hs,Ot,P,C5t. Beta sole ownership is derived.",
+  "complete_size84_structure": false,
+  "all_zero_hole_cases_integrated": false,
+  "all_positive_hole_cases_integrated": false,
+  "ledger": {
+    "initial_HIGH": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+22",
+      "C+23",
+      "C+24",
+      "C-11",
+      "C-12",
+      "C-13",
+      "C-14"
+    ],
+    "LOW": [
+      "C+55",
+      "C+56",
+      "C+57",
+      "C+58",
+      "C-55",
+      "C-56",
+      "C-57",
+      "C-58",
+      "C-66",
+      "C-67",
+      "C-68"
+    ],
+    "touched_groups": 9,
+    "new_HIGH": [
+      "C+33",
+      "U+2",
+      "U+3",
+      "U+4",
+      "V+2"
+    ],
+    "credits": [
+      13,
+      18
+    ],
+    "final_fixed_capacity": 66
+  },
+  "inventory": {
+    "formal_multisets": 495,
+    "excluded_by_nonnegative_cones": 459,
+    "native_families": 4,
+    "fixed_tail": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+15",
+      "C+16",
+      "C+17",
+      "C+18",
+      "C+22",
+      "C+23",
+      "C+24",
+      "C+25",
+      "C+26",
+      "C+27",
+      "C+28",
+      "C+33",
+      "C+34",
+      "C+44",
+      "U+2",
+      "U+3",
+      "U+4",
+      "U+5",
+      "U+6",
+      "U+7",
+      "U+8",
+      "V+2",
+      "V+3",
+      "V+4",
+      "V+5",
+      "V+6",
+      "V+7",
+      "V+8"
+    ],
+    "already_HIGH_removed": [
+      "C+11",
+      "C+12",
+      "C+13",
+      "C+14",
+      "C+22",
+      "C+23",
+      "C+24"
+    ],
+    "beta_removed": [
+      "V+3",
+      "V+4",
+      "V+5",
+      "V+6",
+      "V+7",
+      "V+8"
+    ],
+    "new_HIGH_removed": [
+      "C+33",
+      "U+2",
+      "U+3",
+      "U+4",
+      "V+2"
+    ],
+    "below_threshold_removed": [
+      "U+5",
+      "U+6",
+      "U+7",
+      "U+8"
+    ],
+    "cross_pairs": [
+      [
+        "C+15",
+        "C+25"
+      ],
+      [
+        "C+16",
+        "C+26"
+      ],
+      [
+        "C+17",
+        "C+27"
+      ],
+      [
+        "C+18",
+        "C+28"
+      ]
+    ],
+    "unpaired_tail": [
+      "C+34",
+      "C+44"
+    ],
+    "slot_counts": [
+      32,
+      26,
+      19,
+      14,
+      10,
+      6
+    ]
+  },
+  "scalar": {
+    "cutoff_margin": 336,
+    "source_side_margin": 47,
+    "C33_HIGH_margin": 4,
+    "h_HIGH_margin": 49,
+    "intermediate_mass_required": 70,
+    "final_mass_required": 78,
+    "allowed_mass": 76,
+    "final_margin": 2,
+    "scalar_states": 341824,
+    "tail_star_lemma": "tau+delta >= m-2-c+e+Gamma_alpha",
+    "no_normality_assumption": true
+  },
+  "actual": {
+    "generic_endpoint_checks": 5763,
+    "actual_forest_checks": 30,
+    "actual_tail_values": 200,
+    "pointwise_forest_masks": 256
+  },
+  "controls": [
+    {
+      "id": "omit_C33_but_claim_strict_contradiction",
+      "status": "REJECTED",
+      "reason": "76 is not greater than 76"
+    },
+    {
+      "id": "keep_seven_known_HIGH_slots",
+      "status": "REJECTED",
+      "reason": "retaining obsolete slots leaves only 71"
+    },
+    {
+      "id": "remove_both_members_of_cross_pair",
+      "status": "REJECTED",
+      "reason": "one member can still lie in a short interval"
+    },
+    {
+      "id": "pair_separation_without_width_guard",
+      "status": "REJECTED",
+      "reason": "equal endpoints can both lie in a closed interval"
+    },
+    {
+      "id": "lose_native_rebate",
+      "status": "REJECTED",
+      "reason": "dropping reserved losses does not certify the desired row"
+    },
+    {
+      "id": "claim_global83",
+      "status": "REJECTED",
+      "reason": "one geometric family does not complete the size84 exclusion"
+    }
+  ],
+  "source_pins": {
+    "files": 11,
+    "manifest_sha256": "6d111a75537ce4d00360bfe6390f975a2e4848cfe6c529fe370381fa29a63e0c"
+  }
+}

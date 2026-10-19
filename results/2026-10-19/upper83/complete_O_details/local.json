@@ -1,0 +1,773 @@
+{
+  "status": "PASS_LOCAL_ARITHMETIC",
+  "global_upper83_proved": false,
+  "hypotheses": "See z5_alpha.md; common integral source and exact alpha-hole family",
+  "weighted": [
+    {
+      "weight": 2,
+      "minimum": 458,
+      "side_masses": [
+        6,
+        6
+      ]
+    },
+    {
+      "weight": 3,
+      "minimum": 466,
+      "side_masses": [
+        3,
+        3
+      ]
+    }
+  ],
+  "ledger": [
+    {
+      "name": "initial",
+      "high": 8,
+      "low": 29,
+      "touched": 23,
+      "credit": 14
+    },
+    {
+      "name": "tail_before_normality",
+      "high": 21,
+      "low": 29,
+      "touched": 23,
+      "credit": 27
+    },
+    {
+      "name": "B_below_a",
+      "high": 21,
+      "low": 35,
+      "touched": 25,
+      "credit": 31
+    },
+    {
+      "name": "C_below_b",
+      "high": 21,
+      "low": 39,
+      "touched": 25,
+      "credit": 35
+    },
+    {
+      "name": "D_below_a",
+      "high": 21,
+      "low": 42,
+      "touched": 25,
+      "credit": 38
+    },
+    {
+      "name": "complete_LOW",
+      "high": 21,
+      "low": 47,
+      "touched": 26,
+      "credit": 42
+    }
+  ],
+  "geometry": {
+    "states": 21825,
+    "B_margin": 15,
+    "D_margin": 4,
+    "terminal_margin": 2
+  },
+  "low_prefix": {
+    "patterns": 59049,
+    "at_least_four_lower_holes_minimum": 256,
+    "first_gap_at_least_six_minimum": 289,
+    "feasible_below_243": [
+      {
+        "holes": [
+          1
+        ],
+        "min_I_plus_tau": 67
+      },
+      {
+        "holes": [
+          1,
+          2
+        ],
+        "min_I_plus_tau": 134
+      },
+      {
+        "holes": [
+          1,
+          2,
+          3
+        ],
+        "min_I_plus_tau": 201
+      },
+      {
+        "holes": [
+          1,
+          2,
+          4
+        ],
+        "min_I_plus_tau": 199
+      },
+      {
+        "holes": [
+          1,
+          2,
+          5
+        ],
+        "min_I_plus_tau": 197
+      },
+      {
+        "holes": [
+          1,
+          2,
+          6
+        ],
+        "min_I_plus_tau": 229
+      },
+      {
+        "holes": [
+          1,
+          3
+        ],
+        "min_I_plus_tau": 132
+      },
+      {
+        "holes": [
+          1,
+          3,
+          4
+        ],
+        "min_I_plus_tau": 232
+      },
+      {
+        "holes": [
+          1,
+          3,
+          5
+        ],
+        "min_I_plus_tau": 195
+      },
+      {
+        "holes": [
+          1,
+          4
+        ],
+        "min_I_plus_tau": 164
+      },
+      {
+        "holes": [
+          1,
+          6
+        ],
+        "min_I_plus_tau": 225
+      },
+      {
+        "holes": [
+          2
+        ],
+        "min_I_plus_tau": 99
+      },
+      {
+        "holes": [
+          2,
+          3
+        ],
+        "min_I_plus_tau": 165
+      },
+      {
+        "holes": [
+          2,
+          3,
+          4
+        ],
+        "min_I_plus_tau": 231
+      },
+      {
+        "holes": [
+          2,
+          5
+        ],
+        "min_I_plus_tau": 227
+      },
+      {
+        "holes": [
+          3
+        ],
+        "min_I_plus_tau": 130
+      },
+      {
+        "holes": [
+          3,
+          4
+        ],
+        "min_I_plus_tau": 195
+      },
+      {
+        "holes": [
+          4
+        ],
+        "min_I_plus_tau": 196
+      },
+      {
+        "holes": [
+          5
+        ],
+        "min_I_plus_tau": 224
+      }
+    ],
+    "minima": [
+      {
+        "first_gap": 1,
+        "lower_holes": 1,
+        "min_I_plus_tau": 67
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 2,
+        "min_I_plus_tau": 132
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 3,
+        "min_I_plus_tau": 195
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 4,
+        "min_I_plus_tau": 256
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 5,
+        "min_I_plus_tau": 315
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 6,
+        "min_I_plus_tau": 386
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 7,
+        "min_I_plus_tau": 451
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 8,
+        "min_I_plus_tau": 522
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 9,
+        "min_I_plus_tau": 595
+      },
+      {
+        "first_gap": 1,
+        "lower_holes": 10,
+        "min_I_plus_tau": 670
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 1,
+        "min_I_plus_tau": 99
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 2,
+        "min_I_plus_tau": 165
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 3,
+        "min_I_plus_tau": 231
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 4,
+        "min_I_plus_tau": 297
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 5,
+        "min_I_plus_tau": 363
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 6,
+        "min_I_plus_tau": 429
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 7,
+        "min_I_plus_tau": 495
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 8,
+        "min_I_plus_tau": 561
+      },
+      {
+        "first_gap": 2,
+        "lower_holes": 9,
+        "min_I_plus_tau": 627
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 1,
+        "min_I_plus_tau": 130
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 2,
+        "min_I_plus_tau": 195
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 3,
+        "min_I_plus_tau": 260
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 4,
+        "min_I_plus_tau": 325
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 5,
+        "min_I_plus_tau": 390
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 6,
+        "min_I_plus_tau": 455
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 7,
+        "min_I_plus_tau": 520
+      },
+      {
+        "first_gap": 3,
+        "lower_holes": 8,
+        "min_I_plus_tau": 585
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 1,
+        "min_I_plus_tau": 196
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 2,
+        "min_I_plus_tau": 261
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 3,
+        "min_I_plus_tau": 326
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 4,
+        "min_I_plus_tau": 391
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 5,
+        "min_I_plus_tau": 456
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 6,
+        "min_I_plus_tau": 521
+      },
+      {
+        "first_gap": 4,
+        "lower_holes": 7,
+        "min_I_plus_tau": 586
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 1,
+        "min_I_plus_tau": 224
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 2,
+        "min_I_plus_tau": 288
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 3,
+        "min_I_plus_tau": 352
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 4,
+        "min_I_plus_tau": 416
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 5,
+        "min_I_plus_tau": 480
+      },
+      {
+        "first_gap": 5,
+        "lower_holes": 6,
+        "min_I_plus_tau": 544
+      },
+      {
+        "first_gap": 6,
+        "lower_holes": 1,
+        "min_I_plus_tau": 289
+      },
+      {
+        "first_gap": 6,
+        "lower_holes": 2,
+        "min_I_plus_tau": 353
+      },
+      {
+        "first_gap": 6,
+        "lower_holes": 3,
+        "min_I_plus_tau": 417
+      },
+      {
+        "first_gap": 6,
+        "lower_holes": 4,
+        "min_I_plus_tau": 481
+      },
+      {
+        "first_gap": 6,
+        "lower_holes": 5,
+        "min_I_plus_tau": 545
+      },
+      {
+        "first_gap": 7,
+        "lower_holes": 1,
+        "min_I_plus_tau": 315
+      },
+      {
+        "first_gap": 7,
+        "lower_holes": 2,
+        "min_I_plus_tau": 378
+      },
+      {
+        "first_gap": 7,
+        "lower_holes": 3,
+        "min_I_plus_tau": 441
+      },
+      {
+        "first_gap": 7,
+        "lower_holes": 4,
+        "min_I_plus_tau": 504
+      },
+      {
+        "first_gap": 8,
+        "lower_holes": 1,
+        "min_I_plus_tau": 379
+      },
+      {
+        "first_gap": 8,
+        "lower_holes": 2,
+        "min_I_plus_tau": 442
+      },
+      {
+        "first_gap": 8,
+        "lower_holes": 3,
+        "min_I_plus_tau": 505
+      },
+      {
+        "first_gap": 9,
+        "lower_holes": 1,
+        "min_I_plus_tau": 443
+      },
+      {
+        "first_gap": 9,
+        "lower_holes": 2,
+        "min_I_plus_tau": 506
+      },
+      {
+        "first_gap": 10,
+        "lower_holes": 1,
+        "min_I_plus_tau": 465
+      }
+    ]
+  },
+  "z5_transports": [
+    {
+      "card": "opposite",
+      "minimum": "811/2",
+      "witness": {
+        "r": 30,
+        "I": 12,
+        "A": 76,
+        "tau": 1,
+        "delta": 63,
+        "peels": [
+          296,
+          72,
+          80
+        ],
+        "radial": [
+          -10,
+          0,
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            -10,
+            1,
+            10
+          ]
+        ]
+      },
+      "states": 21672
+    },
+    {
+      "card": "same",
+      "minimum": "203/2",
+      "witness": {
+        "r": 27,
+        "I": 42,
+        "A": 76,
+        "tau": 7,
+        "delta": 27,
+        "peels": [
+          152,
+          72,
+          80
+        ],
+        "radial": [
+          -35,
+          6,
+          [
+            -30,
+            3,
+            24
+          ],
+          [
+            -5,
+            1,
+            8
+          ]
+        ]
+      },
+      "states": 21672
+    },
+    {
+      "card": "four",
+      "minimum": 258,
+      "witness": {
+        "r": 28,
+        "I": 30,
+        "A": 51,
+        "tau": 13,
+        "delta": 8,
+        "peels": [
+          141,
+          80,
+          47
+        ],
+        "radial": [
+          -67,
+          10,
+          [
+            -52,
+            4,
+            40
+          ],
+          [
+            -15,
+            2,
+            20
+          ]
+        ]
+      },
+      "states": 21672
+    },
+    {
+      "card": "highalpha",
+      "minimum": 230,
+      "witness": {
+        "r": 26,
+        "I": 56,
+        "A": 76,
+        "tau": 6,
+        "delta": 14,
+        "peels": [
+          144,
+          72,
+          80
+        ],
+        "radial": [
+          -23,
+          0,
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            -23,
+            5,
+            8
+          ]
+        ]
+      },
+      "states": 17304
+    },
+    {
+      "card": "C5s_or_Us",
+      "minimum": "91/2",
+      "witness": {
+        "r": 33,
+        "I": 0,
+        "A": 76,
+        "tau": 6,
+        "delta": 70,
+        "peels": [
+          304,
+          72,
+          80
+        ],
+        "radial": [
+          -52,
+          3,
+          [
+            -26,
+            2,
+            24
+          ],
+          [
+            -26,
+            2,
+            24
+          ]
+        ]
+      },
+      "states": 2211
+    },
+    {
+      "card": "Ht",
+      "minimum": "1105/2",
+      "witness": {
+        "r": 33,
+        "I": 0,
+        "A": 76,
+        "tau": 12,
+        "delta": 64,
+        "peels": [
+          528,
+          72,
+          80
+        ],
+        "radial": [
+          -114,
+          6,
+          [
+            -57,
+            3,
+            48
+          ],
+          [
+            -57,
+            3,
+            48
+          ]
+        ]
+      },
+      "states": 2211
+    },
+    {
+      "card": "alpha_t",
+      "minimum": 305,
+      "witness": {
+        "r": 33,
+        "I": 0,
+        "A": 76,
+        "tau": 6,
+        "delta": 70,
+        "peels": [
+          368,
+          72,
+          80
+        ],
+        "radial": [
+          -72,
+          3,
+          [
+            -36,
+            2,
+            30
+          ],
+          [
+            -36,
+            2,
+            30
+          ]
+        ]
+      },
+      "states": 2211
+    },
+    {
+      "card": "split_beta",
+      "minimum": "415",
+      "witness": {
+        "r": 31,
+        "I": 6,
+        "A": 76,
+        "tau": 2,
+        "delta": 68,
+        "peels": [
+          224,
+          80,
+          72
+        ],
+        "radial": [
+          -19,
+          1,
+          [
+            -12,
+            1,
+            12
+          ],
+          [
+            -7,
+            1,
+            12
+          ]
+        ]
+      },
+      "states": 17304
+    },
+    {
+      "card": "branch_B",
+      "minimum": 223,
+      "witness": {
+        "r": 28,
+        "I": 30,
+        "A": 76,
+        "tau": 7,
+        "delta": 39,
+        "peels": [
+          224,
+          80,
+          72
+        ],
+        "radial": [
+          -35,
+          6,
+          [
+            -30,
+            3,
+            27
+          ],
+          [
+            -5,
+            1,
+            9
+          ]
+        ]
+      },
+      "states": 21672
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS_IDENTICAL_FINITE_RESULTS",
+  "normal_optimization": 0,
+  "optimized_optimization": 1,
+  "finite_digest": "8b596938271699291a50fbbe4a6ef27ac84e46acb826d7ee9b0dd99541507fba",
+  "source_manifest_sha256": "e7ad8d4f7ef4a4f9e8dcc05aa52da84da703a9e39dfd1b6528ff847ac099bb32",
+  "source_files": 139,
+  "negative_controls": 7,
+  "PDF_pages": 29,
+  "PDF_layout": "all pages rendered; representative formula and appendix pages inspected; no overfull boxes or missing glyphs"
+}

@@ -1,0 +1,1848 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]
+\setmonofont{lmmono10-regular.otf}[Scale=0.85]
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,breaklines=true}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\FS}{\operatorname{FS}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\A}{A_*}
+\newcommand{\eps}{\varepsilon}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.12}
+\linespread{1.04}\raggedbottom
+\title{排除 84 元配置，将上界从 84 改进到 83\\\large 完整结构归约、实际资源证明与精确有限核验}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+从提交 \texttt{cf26c50} 已独立闭合的上界 84 出发，排除大小恰为 84 的可行集合，得到
+$71\le N\le83$。本次不再只给出条件标量系统：重新计算大小 84 的共同整数源归约，
+处理等差支撑的边界，给出全部高洞情形的区间延拓；低正洞统一局部化，随后按空覆盖单元数处理。
+主要新步骤是两空单元的统一证明、四空无所有者族的两次截断，以及五空 alpha 族
+先证明次序、后证明正常性的扣减链 $14\to27\to31\to35\to38\to42$。
+五空正洞只需微小剩余预算。报告明确区分无限集合论证、有限参数验证和组件分类。
+验证器使用 Python 标准库及整数或有理数运算；它不是形式化证明助手。
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{结论、前提与证明接口}
+\begin{theorem}\label{thm:main}
+若有限实数集 $A$ 满足 $\FS(A)\subseteq A+A+A+A$，则 $|A|\le83$。
+结合仓库已验证的 71 元构造，有 $\boxed{71\le N\le83}$。
+\end{theorem}
+子集和包括空集和，四项和允许重复。已有上界 84 作为归纳前提；若 84 元反例不含零，
+加入零会产生 85 元反例。因此可假设零属于反例。
+为每个子集和选定一个四项表示，这些表示构成有限个齐次整数线性方程。
+其有理核在实核中稠密，连同指定坐标为零的方程，可取保持所有严格次序及符号的有理解，
+再乘正公分母。因此只需排除一个含零的 84 元整数反例；并未断言每个原实数集本身有公度。
+
+本报告沿用已经逐项核查的通用引理：四极值覆盖与剥离、非等差缺陷递推、计数洞引理、
+有效洞引理、同时逆定理及短直径定理、整数四极值限制和集界、实际资源分组损失引理。
+依赖源文本包括旧完整报告的附录 D/E、\texttt{STRUCTURAL86.md} 所列通用定理，
+以及大小 85 的结构伴随证明；本次仅复用其通用论证，所有与基数有关的有限参数重新计算。
+完整路径及 SHA-256 见 \path{data/upper83_complete_sources.json}。
+旧上界 84 的 140 项有限义务由原完整入口重新运行；不能以旧 85 元分类表代替新 84 元分类。
+
+\subsection{记号与实际覆盖}
+去掉两侧各四个外点，得 $|D|=76$；再做两次两侧各两点的剥离，得
+\[
+ E=P_s\cup\{0\}\cup(-P_t),\quad |E|=68,\quad r_s+r_t=67.
+\]
+标量分析可反射为 $r_s=33-k,r_t=34+k$，但所有者证明始终保留物理符号。
+令 $T_r=r(r+1)/2$，$I=k(k+1)=(r_v-33)(r_v-34)$。
+核心点写成 $x_i=i+d_i$，$d_i\ge0$ 不减；定义
+\[
+ \tau_v=\sum d_i,\quad \xi_v=d_{r_v},\quad R_v=r_v+\xi_v,
+ \quad R=67+\xi,\quad 0\le\xi\le\tau.
+\]
+每侧四个源尾点为 $R_v+a_v,R_v+b_v,R_v+c_v,R_v+e_v$，偏移为严格递增正整数。
+令 $M_v=R_v+e_v$，$L=e_s+e_t$，$M=R+L$，$U=\sum_v(a_v+b_v)$，
+$C=c_s+c_t$，$J=L-C$。$S_v$ 是 $D_v$ 正点总和，其中 $D_s=D,D_t=-D$。
+外点为 $v_1>v_2>v_3>v_4>M_v$，定义
+\[
+ d_v=v_1-v_2,\ g_v=v_3-v_4,\ h_v=v_2-v_3,\ X_v=v_4-M_v,
+ \quad t_v=d_v-M,
+\]
+\[
+ \lambda_v=d_v-v_3-v_4,\quad
+ U_v=d_v-v_4,\ V_v=d_v-v_3,\ H_v=d_v+h_v-v_4,\ O_v=H_v+d_v,
+\]
+\[
+ \alpha_v=h_v-v_4,\quad\beta_v=\alpha_v-d_v,
+ \quad C_{iv}=\lambda_v-o_{i-3}\ (4\le i\le7).
+\]
+这里普通中心 $U_v$ 与源偏移和 $U$ 不同，固定标签 $U_i^v$ 又是另一对象。
+
+两个首项资源为 $\lambda_v+(D_v+D_v)$，容量 $K=|D+D|$。
+普通覆盖有 18 个整单元，每个容量 76：$C_4$ 始终配对；
+分支 A 在 $\beta_s+\beta_t\le0$ 时配对 beta，分支 B 配对 $C_5$。
+一个配对只拥有一次容量，只有实际唯一贡献侧才能按原生普通资源计损失。
+固定 110 个标签中的 26 个互不相交负和组给出固定容量 84。
+若有 $j$ 个空整单元，令 $c=76j+\delta$，则
+\begin{equation}\label{eq:source-mass}
+ S_s+S_t=2K+(18-j)76+84+w-\delta,\qquad \delta\ge0.
+\end{equation}
+$w$ 是 $\FS(D)$ 的整数凸包洞数；两物理目标的洞数之和是 $w$。
+对互不相交的实际资源组，其容量减去目标并集的损失之和不超过 $\delta$。
+相容额外固定扣减 $e$ 将预算降为 $\eps=\delta-e$。
+
+\section{共同格子与结构归约}
+定义
+\[
+ \mu_X=|\FS(X)|-1-T_{|X|},\quad
+ \rho_X=\mu_X+2-2\Delta_0(X),
+\]
+其中 $\Delta_0(X)$ 数 $X$ 中不能在 $X\cup\{0\}$ 中表示为不同元素和的对角点。
+令 $\kappa=|\FS(P_s)+\FS(P_t)|-|\FS(P_s)|-|\FS(P_t)|+1$。
+通用剥离恒等式在本基数成为
+\[
+ \Lambda=1157+I,\quad\Omega=612-I,
+ \quad\rho+\kappa+2\theta+c+\ell_1+\ell_2+g=\Omega.
+\]
+这里所有松弛非负，$\rho$ 在小边界允许已知下界 $-8$。
+两侧符号不能消失：初始单侧下界 $1+T_{68}=2347>2093$，
+后续下界 $1+T_{67}=2279>1901$。未配对点满足 $q^2\le2977$，奇数 $q\le53$，
+故至少七对相反点；$\Omega\ge-8$ 进一步给较小侧至少九点。
+
+获得共同核心格子以后、尚未使用整数四极值不等式之前，
+\[
+ |\FS(D_1)|-2|\FS(E)|\le-125-2I+2z,
+\]
+小侧不超过 14 时右侧加 16。负上界同时强制下一层同格和两极端平移相交。
+外层由 $\Lambda>294+\Omega-\rho$ 强制同样结论。
+完成这两步之后才能使用 $G=2\cdot76-10=142$，得到
+\begin{equation}\label{eq:structural}
+ \mathcal T\ge\max(48,z,142-2z),\quad
+ \mathcal T\ge\kappa+142-3z,\quad c+\rho+\mathcal T\le612-I,
+ \quad w\le4z.
+\end{equation}
+$h_s,h_t\le\kappa$，$z=h_s+h_t-\kappa\le\min(h_s,h_t)$。
+以下是完整归约的关键修复，详细参数和边界在附录 A。
+
+\begin{enumerate}
+\item 较大支撑为 AP、较小支撑非 AP 时，使用 $\rho_s\ge n(r_s)$ 后得到
+$\kappa<T_{r_t}$，强制单一剩余类和 $z=0$。两支撑都为 AP 时，
+较小侧 $a\le32$ 仍有 $\Omega-\rho_s<T_b$；仅 $a=33,b=34$ 需另论。
+此时互素内禀步长只有 $(1,1),(1,2),(2,1)$，不等步长导致 $z=0$、
+$\kappa\ge T_{33}$，由后述小 $c$ 引理排除。
+不能在所有不平衡两 AP 行直接声称 $\Omega<2T_a$。
+\item 仅较小支撑 AP 时，正确阈值是
+$\kappa\le\Omega-\rho_s-(b-5)<2T_a$。
+单一剩余类的截断长洞或唯一离格生成元代价超过预算。
+两剩余类是二阶剩余类；规范为偶数 AP 后，最小奇生成元 $W$ 的质量下界
+\[
+ \mu_t+\kappa\ge T_a+1+(b-t)(b-t+1)+tW+t(t-1)-W-T_b
+\]
+在 $W=19$ 已超过允许量，且对 $W$ 斜率 $t-1>0$。
+故 $W\le17,z\le16$，格化后 $c\le93<152,w\le64$。
+非本原单侧 AP 的相应界为 $c\le85<152$。
+\item 两支撑非 AP 时，较大侧严格逆条件自动成立；较小侧充分条件仅 $k=0,1$
+自动成立。实际不成立的 $k=2,\ldots,21$ 使用新计算的 20 个计数端点修复。
+每行核对起点、离格、后继区间拼接和短直径的严格余量；主范围修复后 $z\le18$。
+较小非本原侧给 $c\le65<76,w\le72$，由全非空引理排除。
+\item 实际严格逆条件成立时，$z\le62+I$ 已使内层比较严格；其余 $z\ge63+I$
+使用与基数无关的 $h\ge49$ 轮廓。若一侧最后两平移不交，其代价
+$T_{r-2}+2-2r$ 加另一侧轮廓与 $63+I$ 超过 $\Omega$，38 个定向行最小余量为 77。
+于是两侧末次平移都相交，最大元删除将内层比较加强为 $-125-2I<0$。
+这里未提前使用 $G=142$。
+\end{enumerate}
+$a=9,\ldots,14$ 的 AP、实际严格逆和端点修复边界全部由附录 A 分别排除。
+最终获得两侧本原的共同整数源，$15\le r_s,r_t\le52$。
+若 $z>0$，两侧支撑均非 AP，故
+\begin{equation}\label{eq:positivefloor}
+ \mu\ge61,\quad \tau=\mu+h_s+h_t\ge61+2z.
+\end{equation}
+
+\subsection{不需要本原性的低容量例外引理}
+通用守护空隙计数在全非空时给 $w\ge2M+10\ge160$。
+对上述 $c<152,w\le64$ 的结构例外，若 $j=0$ 即矛盾；若 $j=1$，$\delta\le75$。
+一个空整单元的原生中心恒等式确定整性，实际 $C_6$ 或 $C_7$ 给 $d_v\ge80$。
+原始帽形界 $t_v\le12+\eta_v\le76<80$、$2t_v\le17+\eta_v\le81$
+足以得到唯一所有者与六边森林。源界给 $\tau\le444$；
+全秩核中若 $\phi_s+\phi_t\ge42$，质量至少 $2T_{21}=462$，故 $F\ge27$。
+于是 $2X+G\ge6F-\delta\ge87$，但所有者恒等式给
+$2X+G\le(17+64)/2-2=38.5$。此处只用 $\eta_v\le w$，未提前假定对称洞数。
+
+\section{源包络、实际截断与区间延拓}
+令 $\A=I+\tau+\delta$。通用源定理给
+\[
+ \Theta=76j-296-w+\A\le160,\qquad\Theta+B_s+B_t\le170,
+\]
+其中 $B_v$ 是四个源偏移两两和超过最大偏移的实际不同值数。
+结合删除一或两个最大源点的包络，得到
+\begin{align}
+ \A&\le456-76j+w,& L&\ge\Theta-8,\\
+ J+U&\le328-\Theta,&J&\ge\Theta-18,\\
+ K&\ge\Theta+2R+2,&K-M&\ge R+76j-454-w+\A,\\
+ \max(4,\Theta-88)&\le e_v\le325-\Theta.&&
+\end{align}
+$j=5,w=0,\delta\ge10$ 时另有尖锐加强 $L\ge\A+78$。
+这些源结论在先前全秩报告中已有完整证明；本次用相同实际定义。
+
+对每一侧选择某个真实前缀，令
+\[
+ \phi_v=\min_j(j+d_{r_v-j}),\qquad F=68-\phi_s-\phi_t.
+\]
+所得同一个实际子核心 $Q$ 在整数位移 $x$ 下满足
+$|Q\cap(Q+x)|\ge F-x$。按所需的 $\beta F+q_0|Q|$ 选择一个优化前缀，
+而不能独立优化 $F$ 与 $|Q|$。逆阶梯质量公式给
+\[
+ \tau+F\ge68,\ \tau+2F\ge134,\ \tau+3F\ge198,
+ \quad\tau+4F\ge260,\quad\tau+6F\ge378,
+\]
+\[
+ 2\tau-2\xi+7F\ge444,\qquad2\tau+6F\ge396.
+\]
+森林按实际目标并集计损失；若一个分离臂中有空顶点，其容量为零。
+所有未使用的原生损失返还预算，绝不向空配对指定所有者。
+
+\subsection{所有高洞 $z\ge15$}
+令 $H=h_s+h_t=\kappa+z=\tau-\mu$，核心中央区间长度参数
+$W_0=1156+I+\mu-H$。只要两侧核心质量都大于 $H$，
+简单和集洞引理给中央区间 $[H,C_0-H]$，$C_0=1156+I+\tau$。
+新的外层恒等式和两最大元源包络给
+\[
+ M\le836+H+(\rho-\mu)/2+z-I-c,
+\]
+\begin{equation}
+ W_0-M\ge-904+4I+3c+\tfrac32(\mu+\rho)-3z.
+\end{equation}
+完全重放的通用稠密轮廓提供以下成对下界；$H$ 上界还应减 $I+c$。
+\begin{center}
+\begin{tabular}{rrrrrr}\toprule
+$z$&$\mu$&$\rho$&$I+c$ 上界&$H$ 上界&$W_0-M$ 下界\\\midrule
+15--16&418&288&214&246&107\\
+17--20&461&331&179&219&224\\
+21--48&503&373&191&289&266\\\bottomrule
+\end{tabular}
+\end{center}
+由 $\min_r(T_r+I)=385$，三段各侧核心质量超过 $H$ 的余量至少为139、166、96。
+在 $z\ge49$，$\mu\ge539,\rho\ge409$，$\kappa\le203-I-c$、
+$H\le406-2I-2c$，各侧质量余量至少56。
+若 $j\ge1$，$c\ge76$，宽度余量至少 $365+7I+6(c-76)>0$。
+若 $j=0$，原始 $w\ge2M+10$ 与 $w\le4z$ 给 $M\le401$，而 $W_0\ge1289$。
+因此八个源尾点逐个加入时，中央区间均能拼接；共同边界洞定理给偶数 $w\le z$。
+$j\ge1$ 时 $\A\le380+w$ 与 $\tau\ge418+2z$ 矛盾；
+$j=0,z\le48$ 与 $w\ge160$ 矛盾，尾段则由 $\tau\ge539+2z>456+w$ 排除。
+
+\subsection{低正洞的统一局部化}
+对 $1\le z\le14,j\ge1$，先只用 $w\le4z\le56$。
+$\min(T_r+I)=385$、$\max(r-I)=34$ 和 $\mu\ge61$ 给
+\[
+ C_v-H\ge76j-w-10+\delta>0,
+\]
+\[
+ W_0\ge822+76j-w+2I+\delta\ge842,
+ \quad M_v\le655-76j+w-I-\delta\le635.
+\]
+故同样逐个延拓八个源尾点，得到偶数 $w\le z\le14$、$\eta_s=\eta_t=w/2$，
+所有目标洞在末端边界条带。$j=0$ 和 $j\ge6$ 已分别由全非空界和正质量下界排除。
+
+\section{从活动判据到完整终端}
+零洞用 $Z_j$，低正洞用 $P_j$ 表示。
+守护空隙的三个实际帽形界为
+\[
+ O_v\text{ 活动}:t_v\le12+\eta_v,\quad
+ \beta_v,H_v\text{ 活动}:t_v\le9+\eta_v,\quad
+ \beta_v,O_v\text{ 活动}:2t_v\le17+\eta_v.
+\]
+它们只在已证明的正首项最大值或相应普通中心守护条件下使用。
+完整目标的整数活动区间为 $[1-M_v,S_v]$；正洞的相同区间由边界条带、
+至少 18 个相反核心像与至多七个目标洞证明。
+附录 B--H 逐一给出整性、活动链、资源名单与终端，以下突出新步骤。
+
+\subsection{一空、两空及六空}
+$Z_1,P_1$ 的实际所有者语法留下 beta、$H$、$O$ 同侧活动。
+带首项根损失的六边森林给
+\[
+ 2t_u\ge I+\max(99-5\xi+\tau,27+2\xi)-w\ge51+I-w,
+\]
+与 $2t_u\le17+w/2$ 矛盾，低正洞余量至少13。
+
+$Z_2$ 先补足可能空首项的情形：若一首项空，$\delta\ge K$ 与
+$K-\delta\ge I+\tau-8$ 强制 $I+\tau\le8$。
+剩余普通损失不超过8，整性恒等式使它们正常。
+空首项若 HIGH 至少两个普通资源各损失 $r_v+5>8$；若 LOW，
+跨侧链强制分支 B 恰好空 $C_{6v},C_{7v}$，正常 $V_v$ 给 $X_v\ge68$，
+相反活动 $C_7$ 与 $O$ 的帽形界矛盾。因此两首项都活动。
+
+$P_2$ 另有 $\tau-\xi\ge32$：第一个绝对核心子集和洞小于最大核心点 $\le352$。
+至少34点的一侧删去最大点后质量至少 $T_{33}=561$，其前缀仍缺这个洞。
+任意 $n$ 个不同正整数若子集和不是完整区间，其质量超出 $T_n$ 至少 $n-1$。
+用首次贪心失败及 $(n-k)(T_{k-1}+1)\ge n-1$ 即证。
+
+假定 beta、$O$ 同侧活动，另一个 $O$ 必空。按第二空单元是否为 $V_v,C_{7v},C_{7o}$
+分四类，实际有根森林及未用损失分别给
+\[
+ 2t_v\ge43-w+I+\xi;\quad
+ t_v\ge14-w+(\tau-\xi);\quad t_v\ge76-w;\quad t_v\ge126-w.
+\]
+第一式要求 $26\le3w/2\le21$；第二式在零洞至少14，在正洞至少32；
+后两式也均超过帽形上界。剩余只有 A 中
+$\{O_v,B\},\{O_s,O_t\},\{O_v,H_v\}$。
+全部 alpha、$C_5,U,V,C_7$ 保留，实际所有者给 $2X+G\le10+w/2$，
+六边森林给 $2X+G\ge6F-\delta$。因此
+\[
+ \A\ge368+I-w/2>304+w\ge\A,
+ \qquad64+I\le3w/2\le21
+\]
+矛盾。这统一闭合 $Z_2,P_2$。
+
+$Z_6$ 的源等号强制 $I=\tau=\delta=0$、$\Theta=160$。
+两个首项满容量，$\lambda_v\ge2M_o+1$。
+由 $J\ge142,U+J\le168,C\ge6$，有 $8M+4-S\ge120$。
+两侧固定 $C_{14}$ 之和超过 $8M+4>S$，至少一侧四个固定顶标签全 HIGH，
+产生正扣减，与 $\delta=0$ 矛盾。$j>6$ 的零洞预算直接为负。
+
+\subsection{三空与四空的实际接入}
+四顶尾部与四个完整核心星形给“两帽”必要条件
+\[
+ 4I+4\tau+\delta+228j\le538+6w.
+\]
+它排除三空的两帽。四空在整性之前已可由 $2Y>482$ 与 $Y\le190+3w\le202$ 排除两帽。
+随后两个见证的剩余类恒等式、四边下界 $248-\tau-\delta$、
+五边下界 $300-\tau-\delta$ 强制外点整性。
+特别是 HIGH 跨中心的计数要保留十个正正固定 HIGH 标签：三空 $C_5\Rightarrow C_6$
+要求 $\A\ge I+4r+105\ge235$；四空末链要求 $\A\ge I+2r+95\ge161$。
+这两行分别超过正洞预算234和156。
+
+$j\ge3$ 的正洞核心含 $[1,17]$ 中至少12个不同值：六个同时缺值至少花费270质量。
+6188个十二值种子的精确子集和检验给中央区间；其他核心点全部能顺序拼接。
+故低洞只在 $[1,10]$。每值重数为0、1、2的59049种模式完整枚举给：
+四个低洞成本至少256，三个至少195，第一个洞为2至少99。
+由此 $P_3:w\le6,\A\le234$，$P_4:w\le4,\A\le156$，
+$P_5:w=z=2,\tau=67+\sigma,I+\sigma+\delta\le11$。
+
+三空实际分类只有 A0、A1；A0 的五个实际端点产生十二个重截断模式，
+零洞最小余量65，正洞41。A1 的有根并集式给统一下界 $391.5$，
+四个端点模式的零洞上界至多356、正洞至多374。
+四空实际分类为 A-E、A-H、B。七个实际端点母式的最小余量为
+\begin{center}
+\begin{tabular}{lrrrrrrr}\toprule
+母式&F&S&E-H&E-alpha自&E-alpha对&E-C5&O\\\midrule
+零洞&306&81&253&163&204&295&123\\
+正洞&290&65&237&151&164&283&103\\\bottomrule
+\end{tabular}
+\end{center}
+所有由 $e+72h\le\A$ 允许的重截断标志均纳入，包括两个重端点。
+O 母式的常数994从原生端点恒等式和三条森林相加推导，未从旧基数外推。
+
+仅余四空无所有者族 $\{P,B,O_s,O_t\}$。固定标签与截断 $H$ 空隙给相容扣减18。
+若两个 $H$ 均命中核心、alpha 下截断均轻，两最大元截断给 $\xi\ge94+I$。
+于是剩余预算至多40；再改用每侧只删一个最大元的同一个 $Q$，
+其两 $H$ 都必须命中 $Q$。新空隙最多46个标签，使用较弱安全帽 $h_v\le R'+71$，
+最终给 $44+2I+12\xi\le8\tau$，与 $\tau\le134-I$ 相差至少 $100+22I$。
+一重 alpha、一个无核心命中的 $H$、两个都无命中的三种情形分别由
+$100+2I\le0$、$\tau\ge91+I>62-I$、$144>134$ 排除。
+正洞由五种可能低洞模式给 $\tau-\xi\ge65$，第一种情形已是
+$\xi\ge86+I$ 与 $\tau\le138-I$ 的矛盾；其余三种仍有严格余量。
+
+\subsection{五空的全部分支}
+先用首项和两个见证星形证明两个 $O$ 均空，beta 与 $H$ 不能同侧活动；
+随后证明整性、跨中心链和同侧链。每个配对的所有者必须来自实际贡献。
+零洞预算 $\A\le76$。A0 保留 $P$ 的十三种布局由十一张实际仿射端点卡覆盖，
+最小余量7；空 $P$ 的 $H/C_5$ 额外空单元给扣减13，
+由 $2\tau-2\xi+7F\ge444$ 得 $483>482$。
+
+alpha 额外空单元必须另证。初始扣减14并不意味着正常性。
+先以通用核心命中端点和完整尾部目录得到扣减27；再区分两个物理侧容量，
+在同一个实际加权截断上证明
+\[
+ |Q|+6F+3\tau-\xi\ge466,\qquad |Q|+6F+2\tau-\xi\ge458.
+\]
+第一物理侧给 $B\ge a$ 时上界559，而 $466+4\cdot27=574>559$，故 $B<a$、扣减31；
+固定前缀计数给 $C<b$、扣减35；第二物理侧给 $D\ge a$ 时
+$458+3\cdot35=563>559$，故 $D<a$、扣减38；再五个 LOW 标签给扣减42。
+此时才可证明所有保留中心正常。长位移交叠和实际源边缘项使最终运输式给
+\[
+ 884\le4I+4\tau-2\xi_s+884
+ \le542+2(\Theta+B_s+B_t)\le882,
+\]
+矛盾。把实际边缘项提前放松为20会丢失此矛盾。
+
+A1/B 的九个实际端点运输式分别有最小余量
+\[
+ 811/2,\ 203/2,\ 258,\ 230,\ 91/2,\ 1105/2,\ 305,\ 415,\ 223.
+\]
+唯一未由这些运输式覆盖的空 $P$、额外空 $C_{5t}$ 族，使用先前完整的尾部六槽证明，
+其相容扣减18给 $\tau+\delta\ge78>76-I$。该局部定理的整性、唯一 beta 贡献侧、
+标签符号和尾部覆盖均在原报告中已证明，本次保持其精确假设。
+
+正洞五空时 $\delta\le11$，先由 $K-M-\delta\ge58$ 排除 $O$ 与 beta/$H$ 活动。
+扣减8后剩余至多3，所有原生普通端点正常。A0 空 $P$ 或 split beta 被扣减13或14排除；
+A1 空 $P$ 的共同11个 HIGH 与18个 LOW 只触17个基线组，扣减12即矛盾。
+其余 A0 十一卡最小余量307，A1/B 四个母式余量分别761、326、501、461。
+至此零洞和正洞的全部五空情形闭合。
+
+\section{覆盖、验证边界与复现}
+按 $z=0$、$1\le z\le14$、$z\ge15$ 三段划分：最后一段整体排除；
+零洞由 $Z_0,\ldots,Z_6$ 及 $j>6$ 覆盖；低正洞由 $P_0,\ldots,P_5$ 及 $j\ge6$ 覆盖。
+结构中的低容量非本原、半步长例外在要求本原之前就已排除，因此无循环前提。
+对三/四空和五空，验证器各枚举两分支全部 $2^{20}$ 个组件指派，
+仅使用已在正文及附录证明的活动蕴含。五空合法指派分为
+A0 32、同侧6、空P 10、对侧18、四端点2、split beta 2、B 32、B四端点8。
+这证明有限布尔归类无遗漏；它不从有限采样推断实数集合的结构。
+
+在仓库根目录运行：
+\begin{verbatim}
+python -I -S -B verification/upper83_complete/check.py --output .work/upper83.json
+python -I -S -B -O verification/upper83_complete/check.py --output .work/upper83_O.json
+\end{verbatim}
+入口校验固定源摘要，重新运行原完整84基础、新结构、实际分类、低前缀、正洞、
+全秩和五空尾部检查，再核对覆盖及负面控制；不接受输入中的历史 PASS 字段代替计算。
+所需 Python 3.10+，无需第三方库、求解器或网络。
+写出证明是定理的数学依据；程序验证其有限依赖、整数参数、精确恒等式、完整指派和数值证书。
+程序通过不等于用形式化证明助手认证了所有无限论证。
+
+以下附录为与验证器同目录保存的逐项证明说明，包含全部本次新增推导。
+其中局部引理写明共同源和保留形式，是证明顺序中的接口；这些前提由正文的结构及分类提供。
+旧报告中的“尚未证明83”等历史状态不被改写，本报告在此前局部结果上完成总接入。
+\appendix
+\clearpage
+\hypertarget{size84-structural-reduction-and-all-high-hole-strata}{%
+\section{Size84 structural reduction and all high-hole
+strata}\label{size84-structural-reduction-and-all-high-hole-strata}}
+
+Base cf26c50. These arguments, the common source interface and all local
+terminals form the size84 exclusion in the companion report. General
+dependencies: size85 foundation lemmas, source Theta \textless= 2d + 8,
+all-rank kernel. Their proofs are cardinality independent; finite size85
+rows are NOT imported.
+
+\hypertarget{fresh-parameters-and-layer-identities}{%
+\subsection{Fresh parameters and layer
+identities}\label{fresh-parameters-and-layer-identities}}
+
+n84, d76, e68, m67, a = 33-k, b = 34 + k, I = k(k + 1). Lambda = 1157 +
+I; Omega = 612-I; C = 2m + 4e + 14-Lambda = -737-I. C + Omega = -125-2I.
+G = 142. T \textgreater= max(48, z, 142-2z), T \textgreater= kappa +
+142-3z. Unpaired bound2977, odd q \textless= 53, at least7 opposite
+pairs. Provisional deficient sign: 1 + T68 = 2347\textgreater24*84 + 77
+= 2093. Disappearing sign:1 + T67 = 2279\textgreater24*76 + 77 = 1901.
+Uniform rhoP \textgreater= -8, rhoQ \textgreater= 0 gives k \textless=
+24, a \textgreater= 9.
+
+Once common core lattice exists, exact pre-G D1 bound is -125-2I + 2z (
++ 16 for a \textless= 14). Outer comparison Lambda\textgreater294 +
+Omega-rho is strict even with rhoP = -8. For a, b \textgreater= 15,
+maximum removal R \textless= 71 + rho + kappa + z. Restrict R(E)
+\textless= 2R-1, giving fresh: F2-2F1 =
+-251-2I-c-rho-mu-2kappa-2theta-2ell2-2g; F1-2F0 \textless= -127-2I +
+rho-mu + 2z-c-2theta-ell1-g. After actual source layer overlap: C0-U0
+\textgreater= 126 + 2I + c-2z; C1-V0 \textgreater= 250 + 2I + c + mu +
+rho + 2z; c = 76j + delta. C0 = 1156 + I + tau.
+
+\hypertarget{small-boundaries}{%
+\subsection{Small boundaries}\label{small-boundaries}}
+
+A larger AP Q yields z0 and common lattice by residue counting; strict
+pre-layer comparisons then G142. At a9 Omega12, nonAP Q costs -8 +
+53\textgreater12, and AP costs T \textgreater= 142\textgreater20. At a10
+Omega60, nonAP Q has kappa \textless= 16\textless T10-1; strict inverse,
+T48 + 52-8\textgreater60. AP costs142\textgreater68. At a11 Omega106,
+nonAP Q has kappa \textless= 63\textless T11-1. Strict inverse, G142
+yields z \textgreater= 40. Reuse universal effective witness (r56,
+beta5, C132), hQ\textgreater10 = \textgreater muQ \textgreater= 189 =
+\textgreater rhoQ \textgreater= 125\textgreater106 + 8. AP
+costs142\textgreater114. At a12 Omega150: both nonAP, actual sufficient
+inverse failure gives rhoQ \textless= 73. Endpoint repair beta3, q14,
+j19, H6 (see check\_structure.py), obtains joint lattice. Pre-layer
+strict. Then T \textgreater= 142-12 and rho \textgreater= -8 + 50 imply
+cost172\textgreater150. In actual strict inverse branch kappa \textless=
+108, D1 \textless= -817. G142 gives z \textgreater= 17; effective (55,
+4, 119) = \textgreater rhoQ \textgreater= 113; T48 + 113-8 =
+153\textgreater150. AP branches handled by general AP argument below
+(their c caps are negative). At a13 Omega192: failed inverse R94 beta4,
+q14, j23, H8; cost c \textless= 192-48-(142-16) = 18\textless76, w
+\textless= 32, j0 obstruction. Strict inverse: if z \textgreater= 13,
+effective (54, 6, 168) givesrhoQ153 and48 + 153-1 = 200\textgreater192.
+Otherwise c \textless= 26\textless76, w48, j0. At a14 Omega232: failed
+inverse R118 beta5, q14, j24, H10 gives c \textless= 62\textless76, w40.
+Strict branch coarse pre-layer strict since kappa \textless= 184. If z
+\textgreater= 15, independently certified primitive r53 h15 profile
+gives rhoQ \textgreater= 269\textgreater232 (no D/G circularity).
+Otherwise c \textless= 70\textless76, w56. j0 in both. So surviving
+sizes15..52.
+
+\hypertarget{ap-branches-and-low-c-lemma}{%
+\subsection{AP branches and low-c
+lemma}\label{ap-branches-and-low-c-lemma}}
+
+Both-AP branches must be divided at a = 33. For12 \textless= a
+\textless= 32, kappa \textless= Omega-rhoP\textless T\_b, so residue
+counting on the larger AP gives one residue. The AP-plus-set formula
+then has no clipped gap: z = 0, hQ = 0, hP = kappa. This holds for any
+integer intrinsic step of P; no two-residue bound is needed here. A
+nonprimitive P is excluded by the low-c argument below. In the only
+remaining balanced case a33, b34, Omega612\textless2T33 = 1122. On the
+common rational scale let p, q be coprime intrinsic AP steps. The two
+residue counts force p, q \textless= 2, leaving(1, 1), (1, 2), (2, 1).
+Unequal steps have z0 and kappa equal to one AP support length minus1,
+hence at leastT33. Strict pre-G layers and G142 give c \textless=
+612-142-T33\textless152, w0, and the low-c lemma excludes them. Thus the
+surviving both-AP case has common unit step. When ONLY the smaller
+support is AP, the larger nonAP floor is rhoQ \textgreater= b-5. The
+correct bound is kappa \textless= Omega-rhoP-(b-5)\textless2T\_a,
+checked in every row12 \textless= a \textless= 33. This is the premise
+for its at-most-two residue alternatives, including the parity-fiber
+calculation below. When ONLY larger Q is AP, use rhoP \textgreater=
+n(a), so kappa \textless= Omega-n(a)\textless T\_b in every row. This
+licenses the claimed one-residue branch without the false balanced
+Omega\textless T\_b assertion. For a \textgreater= 12, one clipped
+residue or unique off-scale generator costs T\_a + T\_(b-2) + 2-2b +
+rhoP\textgreater Omega (rhoP -8 for12, -2 for13, 0 afterwards). Larger
+AP or one-residue unclipped smaller AP gives z0. Nonprimitive small side
+cap c \textless= Omega-142-T\_a-rhoP \textless= 85\textless152. Since
+w0, j0/j1 are impossible by already proved zero-hole lemmas; their use
+only needs common integral source, not individual primitivity.
+Two-residue smaller AP: normalize U = 2{[}0, u-1{]}, least odd W, t
+\textgreater= 2 odd Q generators. Exact mass floor muQ + kappa
+\textgreater= u + (b-t)(b-t + 1) + tW + t(t-1)-W-T\_b. Against Omega +
+2b-2-rhoP, finite minimization forces W \textless= 17, hence z = W-1
+\textless= 16 and W\textless u. Exact parity-fiber identity gives hP, hQ
+\textless= kappa. The general pre-G D1 comparison (-125-2I + 2z plus
+small16) is already strict; no special half-step layer constant is
+needed. G142 gives c \textless= 93\textless152, w \textless= 64. If
+c\textless152, either j0 (contradicts w \textgreater= 2d + 8 = 160) or
+j1 with delta \textless= 75. For j1, w \textless= 64, K \textgreater=
+2d-1 = 151 makes leading active. The original one-hole actual owner
+grammar (using raw first cap12 + eta \textless= 76, double17 + eta
+\textless= 81, and active C7 d \textgreater= M + 5 \textgreater= 80)
+gives the standard six-edge terminal and beta/O owner side. The raw caps
+remain sufficient at w64: single cap12 + eta could76 when eta \textless=
+w, so still \textless80; double \textless= 81 gives t \textless= 40.5.
+Thus same pair arguments hold. Source cap tau \textless= 380 + w
+\textless= 444. All-rank phi\_s + phi\_t cannot reach42 since min(Tp +
+Tq, p + q = 42) = 462\textgreater444, so F \textgreater= 27. Six-edge
+forest gives2X + G \textgreater= 162-delta \textgreater= 87. Owner
+identity and beta/O cap give2X + G \textless= (17 + w)/2-2 \textless=
+38.5 (use eta \textless= w; no localization needed). Contradiction. This
+excludes every half-step branch. IMPORTANT: use eta \textless= w, not
+w/2 before localization.
+
+\hypertarget{both-nonap-inverse-repairs}{%
+\subsection{Both nonAP inverse
+repairs}\label{both-nonap-inverse-repairs}}
+
+Actual sufficient test holds automatically on larger side. Small test
+floor succeeds k0, 1; failures k2..21 use endpoint choices specified and
+verified in check\_structure.py. Same proof as previous endpoint repair,
+but q can be any \textgreater= 20 satisfying Tq-b-1\textgreater R,
+allowing prefix floor n(q). Fresh main repaired rows k2..18 have H
+\textless= 18; diameter margins positive. Pre-G D1 strict. Repaired Q is
+primitive; if P nonprimitive its cap c \textless= 65\textless76, w
+\textless= 72\textless160, so j0 obstruction excludes. Thus P primitive.
+For STRICT inverse main branches, z \textless= 62 + I makes D1 strict.
+If z \textgreater= 63 + I, both cores individually primitive already
+(strict inverse hole bound). We can use the UNIVERSAL dense h49
+certificate BEFORE D-integrality; it does not depend on G142. If one
+final support splits disjointly, it costs rhoX \textgreater= T\_(r-2) +
+2-2r, while other hasrho \textgreater= profile49(s). Across all38
+oriented sizes15..52, cost + profile49(s) + (63 + I)-Omega \textgreater=
+77. Hence both final translates intersect. Maximum-removal hX/2
+sharpening gives D1 \textless= -125-2I\textless0. This replaces all
+large-hole endpoint repairs and is noncircular. Original source outer
+layer then aligns and intersects.
+
+\hypertarget{complete-high-hole-stratum}{%
+\subsection{Complete high-hole
+stratum}\label{complete-high-hole-stratum}}
+
+With sizes15..52 and primitive cores, paired universal floors over a +
+b67: h15: (mu, rho\_elementary) = (418, 288); h17: (461, 331); h21:(503,
+373); h49:(539, 409). Use independently verified profile table (all
+relevant r15..52 present). Two-max source gives J + U \textless= 624 +
+w-I-tau-c.~Outer layer gives2L \textless= 1530 + w-2I-2c-mu-rho-2z. Then
+M \textless= 836 + H + (rho-mu)/2 + z-I-c; core central width W0 = 1156
++ I + mu-H satisfies W0-M \textgreater= -904 + 4I + 3c + 3(mu +
+rho)/2-3z. Bands15..16, 17..20, 21..48 give positive margins107, 224,
+266. Their I + c caps214, 179, 191 and H caps246, 219, 289 give
+individual core mass minusH minima139, 166, 96. Tailz \textgreater= 49:
+kappa \textless= 203-I-c, H \textless= 406-2I-2c, I + c \textless= 154,
+so each coremass\textgreater H (compute minimum). If j \textgreater= 1,
+c \textgreater= 76, then z \textless= 127-I-(c-76), width margin
+\textgreater= 518 + 3c-3z \textgreater= 365 + 3I + 6(c-76)\textgreater0.
+If j0, use unlocalized universal raw bound w \textgreater= 2M + 10 and w
+\textless= 4z to getM \textless= 2z-5 \textless= 401; W0 \textgreater=
+mu + 2rho-68 + 3I + 2c \textgreater= 1289. Hence same strip propagates
+in all cases, w \textless= z and even. For j \textgreater= 1 source A
+\textless= 380 + w but tau \textgreater= 418 + 2z, contradiction
+(stronger in later bands). For j0 and z \textless= 48, w \textless= 48
+contradicts no-empty w \textgreater= 160; in tail tau \textgreater= 539
++ 2z and A \textless= 456 + w \textless= 456 + z contradict. All
+high-hole families gone without old first-gap H1 transport.
+
+\clearpage
+\hypertarget{low-hole-localization-and-the-one-hole-terminal}{%
+\section{Low-hole localization and the one-hole
+terminal}\label{low-hole-localization-and-the-one-hole-terminal}}
+
+The common integral primitive source and1 \textless= z \textless= 14 are
+hypotheses. The common source hypotheses are supplied by structure.md.
+
+\hypertarget{a-simpler-localization-valid-for-every-j-1}{%
+\subsection{A simpler localization, valid for every j \textgreater=
+1}\label{a-simpler-localization-valid-for-every-j-1}}
+
+Source bounds hold uniformly: A \textless= 456-76j + w, e\_v \textless=
+621-76j + w-A, w \textless= 4z \textless= 56. Positive cores have mu
+\textgreater= 61. Set H = tau-mu. Since min\_r(T\_r + I) = 385 and
+max\_r(r-I) = 34,
+
+\begin{verbatim}
+C_v-H>=76j-w-10+delta>=10+delta,
+W0=C0-2H>=822+76j-w+2I+delta,
+M_v=R_v+e_v<=655-76j+w-I-delta.
+\end{verbatim}
+
+At j1, w56, W0 \textgreater= 842 and every one of the eight peeled
+source entries is \textless= 635. Thus each translated central interval
+joins as each source entry is adjoined, without using a large coarse
+layer gap. All j \textgreater= 1 satisfy stronger bounds. The
+common-strip theorem gives w, z even, w \textless= z \textless= 14,
+equal target hole counts and boundary localization. This replaces the
+more complicated j \textgreater= 3 localization in positive.md and also
+supplies P1/P2.
+
+\hypertarget{p1-reuse-the-sharp-one-hole-terminal}{%
+\subsection{P1: reuse the sharp one-hole
+terminal}\label{p1-reuse-the-sharp-one-hole-terminal}}
+
+With one ordinary whole hole, the active own centres determine all outer
+coordinates integrally without requiring leading activity. Each sign has
+an active C6 or C7, so d\_v \textgreater= M + 5 \textgreater= 80;
+moreover its leading maximum is positive. Thus the leading
+cardinality/loss inequality and raw-gap lower guard are licensed even if
+its full leading resource has no target hit (its entire K loss is still
+in delta). Its shift is already integral.
+
+If P were empty, an actual beta contributor and the opposite C5 give
+t\_opposite\textgreater d\_beta \textgreater= 80, contradicting the
+active O cap \textless= 19. Thus P has a contributor v, forcing
+t\_v\textgreater d\_o \textgreater= 80 and making O\_v the unique hole.
+Its own beta cannot contribute, because H\_v is active and beta/H would
+give t\_v \textless= 16. Hence branch A has sole beta on u = o, with
+beta\_u, H\_u, O\_u active and all alpha, C5, U, V, C7 retained. The
+identical six-edge rooted proof from the zero-hole one-hole lemma gives
+
+\begin{verbatim}
+2t_u>=I+max(99-5xi+tau,27+2xi)-w>=51+I-w.
+\end{verbatim}
+
+The double raw cap gives2t\_u \textless= 17 + w/2. Their difference is
+at least34-3w/2 \textgreater= 13. This closes P1 without first-gap or
+two-cap subcases. Source bounds guarantee at least14 core entries on
+each side, so the actual six-rank trim used in the displayed max exists.
+
+\hypertarget{p2}{%
+\subsection{P2}\label{p2}}
+
+The former long first-gap route has been replaced by the shorter
+complete shared proof in z2\_p2.md. It uses a32-unit prefix defect and
+the same four beta/O cards as Z2. No eleven-value seed or P2 first-gap
+census is needed.
+
+\clearpage
+\hypertarget{a-shared-two-hole-proof-z2-and-p2-at-size84}{%
+\section{A shared two-hole proof: Z2 and P2 at
+size84}\label{a-shared-two-hole-proof-z2-and-p2-at-size84}}
+
+Common source hypotheses: d76, m68, r\_s + r\_t67, complete targets (Z2)
+or localized positive targets with even w \textless= 14 and eta\_v = w/2
+(P2). A = I + tau + delta \textless= 304 + w; R = 67 + xi; K-M
+\textgreater= R-302-w + A. The source max bounds are e\_v \textless= 469
++ w-A and M\_v \textless= 503 + w \textless= 517 after localization (the
+larger559 initial bound is also valid). Every integral ordinary centre
+in{[}1-M\_v, S\_v{]} is active; the P2 proof of this property is
+supplied below. For Z2 it follows simply from the actual source points0,
+M\_v and S\_v \textgreater= M\_v.
+
+\hypertarget{restore-leading-activity-in-z2}{%
+\subsection{Restore leading activity in
+Z2}\label{restore-leading-activity-in-z2}}
+
+If leading v is empty, delta \textgreater= K and the source inequality
+K-delta \textgreater= I + tau-8 gives I + tau \textless= 8, 31
+\textless= r\_v \textless= 36 and u = delta-K \textless= 8-I-tau. Both
+leadings cannot be empty because K \textgreater= 151\textgreater u. The
+opposite leading has an integral shift. If at least two of the opposite
+four own centres are holes, all four own centres on v are retained and
+determine integral v-coordinates. Otherwise three opposite own centres
+together with its integral leading shift determine all opposite
+coordinates. Then an active C6\_v or C7\_v gives integral lambda\_v; if
+both are holes all four own centres on v are retained. Thus lambda\_v is
+integral in all cases. The usual two-witness residue argument, now with
+both leading shifts integral, gives all outer coordinates integral; it
+does not need a hit in both leadings.
+
+Every other retained singleton has native loss \textless= u \textless=
+8, so is normal: a BAD centre has at most max(r\_s, r\_t) + 4 \textless=
+40 hits and loss \textgreater= 36. Since A \textgreater= K \textgreater=
+151, e\_v \textless= 318. Thus S\_v-2M\_v \textgreater= T31 + 2*31 +
+6-318 = 246\textgreater0. A leading centre in {[}1-2M\_v, S\_v{]} would
+hit via0 or2M\_v. If lambda\_v\textgreater S\_v, at least two of its
+four own centres remain retained and HIGH, each losing r\_v +
+5\textgreater u points. Hence lambda\_v \textless= -2M\_v.
+
+All four cross centres on v are then LOW. In A this removes three cross
+singletons, impossible. In B the two exact holes must be C6\_v, C7\_v;
+both paired resources have only the opposite contributor. All own
+centres are retained. Normal V\_v has V\_v \textgreater= 72-r\_v-u. But
+V\_v = lambda\_v + v4 \textless= X\_v-M\_v, so X\_v \textgreater= M\_v +
+72-r\_v-u \textgreater= 76-u \textgreater= 68. Active C7\_o gives t\_o
+\textgreater= 2X\_o + X\_v + g\_o + 1\textgreater69, contradicting
+active O\_o's cap12. Thus both Z2 leadings are active. The same residue
+argument proves outer integrality without any exceptional leading cases
+remaining.
+
+\hypertarget{p2-activity-and-a-minimal-positive-core-defect}{%
+\subsection{P2 activity and a minimal positive-core
+defect}\label{p2-activity-and-a-minimal-positive-core-defect}}
+
+The common low-hole localization gives A \textless= 318 and18 \textless=
+r\_v \textless= 49. K-delta \textgreater= -8-w + I + tau\textgreater0
+using tau \textgreater= 61 + 2z and w \textless= z. Thus both leading
+shifts are integral and the two-witness argument gives outer
+integrality. Source side floors R\_v \textgreater= r\_v + 1 and tau\_v
+\textgreater= r\_v-3 imply
+
+\begin{verbatim}
+S_v-H-R_o>=T_r+7r-606-2w+2I+2delta>=10+2delta>0.
+\end{verbatim}
+
+The quadratic minimum before subtracting606 + 2w is644. A target-hole
+centre has r\_o \textgreater= 18 distinct opposite-core images in the
+positive hull, more than eta\_v \textless= 7 missing targets. Nonholes
+use zero; nonpositive centres use M\_v below the boundary strip, since
+S\_v-M\_v \textgreater= C\_v\textgreater H. This proves the activity
+interval used above.
+
+Let f be the first missing absolute-core subset sum. The greedy rule
+gives f\textless max core \textless= 352, since r\_v-I \textless= 34 and
+I + tau \textless= 318. The side with at least34 core entries has a
+prefix obtained by deleting its maximum, of mass at least T33 = 561.
+That prefix still misses f, hence its subset sums are not a complete
+interval. For n distinct positive integers with an incomplete subset-sum
+interval, their mass excess over T\_n is at least n-1. Indeed, if the
+first greedy failure follows k entries, all n-k subsequent rank
+deviations are at least T\_(k-1) + 1 for k \textgreater= 1; their sum is
+at least n-1. For k0 the bound is n.~The elementary inequality
+(n-k)(T\_(k-1) + 1) \textgreater= n-1 holds for1 \textless=
+k\textless n, first at n = k + 1 and then increases in n.~Applied to
+this prefix, it proves
+
+\begin{verbatim}
+tau-xi>=32                       (positive case only).
+\end{verbatim}
+
+\hypertarget{no-two-caps}{%
+\subsection{No two caps}\label{no-two-caps}}
+
+The common four-top and star calculation gives 4I + 4tau + delta
+\textless= 82 + 6w if both cap predicates hold. For P2 this contradicts
+tau \textgreater= 61 + 2z, w \textless= z directly. For Z2 it gives tau
++ delta \textless= 82. If any C7\_v is active, the valid four-edge arm
+gives t\_v \textgreater= 249-tau-delta \textgreater= 167\textgreater12.
+If both C7's are empty, they are the exact holes and their lower C6's
+are retained. Both C7's are HIGH, so the leading losses total at least
+r\_s + r\_t + 160 = 227\textgreater82. Therefore no two caps exist in
+either case. At least one O is empty. Here a cap means active O or
+active beta, H.
+
+\hypertarget{four-exact-betao-exclusions}{%
+\subsection{Four exact beta/O
+exclusions}\label{four-exact-betao-exclusions}}
+
+Suppose beta\_v, O\_v are active. The sharp double cap says 2t\_v
+\textless= 17 + w/2; the opposite O is the first hole. Let W be the
+other whole hole. All listed native resources below are original,
+distinct retained resources; every leading is kept at its full K
+capacity. Roots explicitly retain their native loss in the forest.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  W is none of V\_v, C7\_v, C7\_o. Choose a full physical-v two-edge arm
+  and the first edge of the other, rooted at leading v. The unused C7\_v
+  has upper image t\_v-2X\_v-X\_o-g\_v \textless= t\_v-4, hence native
+  loss \textgreater= 80-t\_v. This quantity is \textless= 76 whenever
+  C7\_v is active; otherwise the assumed case is already impossible. The
+  rooted forest gives t\_v \textgreater= K-M + 3F-delta + 80-t\_v. Since
+  tau + 3F \textgreater= 198, this implies 2t\_v \textgreater= 43-w + I
+  + xi. It contradicts the double cap because 26 + I + xi \textless=
+  3w/2 \textless= 21 would be necessary.
+\item
+  W = V\_v. It is HIGH, since active leading implies
+  V\_v\textgreater1-M\_v. Active beta gives
+  alpha\_v\textgreater U\_v\textgreater V\_v. Thus the three retained
+  alpha\_v, H\_v, O\_v each lose at least r\_v + 5. Use shortcut edges
+  leading\_v--U\_v and leading\_o--C7\_o, root leading v, and the three
+  unused losses. The full-core overlap F0 = 68-xi gives t\_v
+  \textgreater= -84-w + I + tau-xi + 3r\_v \textgreater= 14-w +
+  (tau-xi). In Z2 this is \textgreater= 14\textgreater8.5. In P2 it is
+  \textgreater= 46-w \textgreater= 32\textgreater12 by the just-proved
+  defect32 lemma.
+\item
+  W = C7\_v. It is HIGH above retained C6\_v. Use the retained
+  three-edge forest leading\_v--V\_v and leading\_o--C7\_o--C6\_o, root
+  leading v. The three unused U\_v, H\_v, O\_v lose at least r\_v + 5
+  each. Hence t\_v \textgreater= -220-w + I + tau + xi + 3F + 3r\_v
+  \textgreater= 76-w\textgreater12, using tau + 3F \textgreater= 198 and
+  I + 3r\_v \textgreater= 98.
+\item
+  W = C7\_o. It is HIGH above C6\_o; its leading loses r\_o + 80 and the
+  three unused V\_o, U\_o, H\_o lose r\_o + 5 each. Use edges
+  leading\_v--V\_v and leading\_v--U\_v with both leading roots (the
+  opposite is isolated). The total gap is2X\_v + g\_v. The full-core row
+  gives t\_v \textgreater= -4-w + I + tau-xi + 4r\_o \textgreater=
+  126-w\textgreater12, since I + 4r\_o \textgreater= 130.
+\end{enumerate}
+
+Thus simultaneous beta and O activity is impossible. The one-empty arm
+rule is used only where it has at most one empty vertex per separated
+arm; no capacity is restored to such a vertex.
+
+\hypertarget{exhaustive-remaining-holes-and-a-common-terminal}{%
+\subsection{Exhaustive remaining holes and a common
+terminal}\label{exhaustive-remaining-holes-and-a-common-terminal}}
+
+If both O's are holes, all other whole units are retained; B would give
+both beta/H caps, so the branch is A and beta has a sole owner. If only
+O\_v is missing, beta\_o cannot contribute because O\_o is active. In B
+its singleton is the second hole, leaving beta\_v, H\_v active and two
+caps. In A, either the entire beta pair is the second hole or its sole
+contributor is v and H\_v must be the second hole. This exhausts exactly
+\{O\_v, Bpair\}, \{O\_s, O\_t\}, \{O\_v, H\_v\} in A. All alpha, C5, U,
+V, C7 singletons are retained. Choose the cap side u opposite the single
+missing O, or the sole beta owner if both O's are missing. Actual
+alpha\_o, C5\_u activity gives t\_u \textgreater= 2X + G + 2, hence2X +
+G \textless= 10 + w/2.
+
+The two six-edge retained trees on one F-optimal actual core give 2X + G
+\textgreater= 6F-delta. The universal full-rank kernel tau + 6F
+\textgreater= 378 then forces A \textgreater= 368 + I-w/2. Comparing A
+\textless= 304 + w yields
+
+\begin{verbatim}
+64+I<=3w/2<=21,
+\end{verbatim}
+
+a contradiction. At w0 the margin is64. This closes Z2 and P2 under
+their common-source hypotheses, without a first-gap table.
+
+\clearpage
+\hypertarget{positive-hole-activity-and-terminal-proofs}{%
+\section{Positive-hole activity and terminal
+proofs}\label{positive-hole-activity-and-terminal-proofs}}
+
+Common integral primitive source and 1 \textless= z \textless= 14 are
+supplied by structure.md. The uniform localization in
+localization\_p12.md gives even w \textless= z \textless= 14 and eta\_v
+= w/2 for every j \textgreater= 1. The exact finite replays are in
+check\_positive.py. P0 is excluded by the unlocalized no-empty bound;
+positive j \textgreater= 6 is impossible from A \textless= w \textless=
+56\textless tau.
+
+\hypertarget{one-dense-seed-and-a-ternary-prefix-census}{%
+\subsection{One dense seed and a ternary prefix
+census}\label{one-dense-seed-and-a-ternary-prefix-census}}
+
+After localization and j \textgreater= 3, A \textless= 242, C0
+\textless= 1398, r\_min \textgreater= 21, and each core entry \textless=
+276. Six values missing from both sides in{[}1, 17{]} cost tau
+\textgreater= 6*67 + 42-2*(12 + 13 + 14 + 15 + 16 + 17) =
+270\textgreater242. Thus at least twelve distinct values occur there.
+The retained exact6188-seed lemma gives {[}11, T\_B-11{]} in FS(B) and
+at most five lower holes. Adjoin the other labelled core occurrences in
+sorted order. For a current n \textgreater= 34, its total is at
+least2T17 = 306, so x \textless= 276 \textless= T-21. For n \textless=
+33 a failed join x\textgreater T-21 implies x \textgreater= 58 and at
+least34 remaining entries, forcing C0 \textgreater= 78 + 34*58 =
+2050\textgreater1398. Thus every join succeeds and all lower holes are
+in{[}1, 10{]}.
+
+The exact59049-pattern census enumerates multiplicities0, 1, 2 at 1,
+\ldots, 10, then fills the remaining67-count slots from11 upwards, at
+multiplicity at most2. It rigorously lower-bounds I + tau without
+requiring an assignment to physical sides. Four lower holes cost at
+least256; three cost at least195; the first gap2 costs at least99.
+Consequently:
+
+\begin{itemize}
+\tightlist
+\item
+  j3: z \textless= 6, w \textless= 6, A \textless= 234.
+\item
+  j4: z \textless= 4, w \textless= 4, A \textless= 156; possible
+  lower-hole sets are precisely a subset of \{ \{1\}, \{1, 2\}, \{1,
+  3\}, \{2\}, \{3\} \}.
+\item
+  j5: the only lower hole is1. Hence z = w = 2, all positive core
+  entries omit1, tau = 67 + sigma, and I + sigma + delta \textless= 11.
+\end{itemize}
+
+For j4, tau-xi \textgreater= 65. At first gap1 every rank deviation is
+\textgreater= 1, so removing the two maxima leaves at least65 mass. At
+first gap2 the low multiset is \{1\}; the other entries exceed2, giving
+an even larger bound. At first gap3 it is \{1, 1\}; the remaining
+entries exceed3, again giving at least65. This proves the bound directly
+for every listed profile.
+
+\hypertarget{activity-interval-j-3}{%
+\subsection{Activity interval (j \textgreater=
+3)}\label{activity-interval-j-3}}
+
+The bounds above give S\_v-H-R\_o \textgreater= T\_r + 5r-480 + 2I +
+2delta \textgreater= 113 + 2delta. Also S\_v-H-M\_v\textgreater0 from
+the source side mass. A target-hole centre in{[}S\_v-H, S\_v{]} has at
+least r\_o \textgreater= 21 distinct opposite-core images strictly
+inside the target hull, more than eta\_v \textless= 7 holes. Thus it is
+active. Other centres in{[}1, S\_v{]} use zero, and centres in
+{[}1-M\_v, 0{]} use M\_v in the complete lower target strip. Therefore
+every integral centre in{[}1-M\_v, S\_v{]} is active. An empty centre
+above an active one is HIGH\textgreater S\_v. This supplies the
+positive-case activity rules used by the zero-case classifiers without
+assuming complete targets.
+
+\hypertarget{fresh-two-cap-identity-and-j3j4-grammar}{%
+\subsection{Fresh two-cap identity and j3/j4
+grammar}\label{fresh-two-cap-identity-and-j3j4-grammar}}
+
+The four-top tail has at most4*(76 + 6) + 5 = 333 values per sign: d\_s
++ d\_t + G + delta-2K \textgreater= 786-76j. The four full-core stars
+give 2X + 4R + delta \textgreater= 540. With both caps t\_v \textless=
+12 + eta\_v, put Y = 2M-2K + 24 + w + delta. Then G + 2X \textless= Y, G
+\textgreater= 786-76j-Y, and Y \textless= 932-152j +
+3w-2R-2I-2tau-delta. Hence, whenever the stars are licensed,
+
+\begin{verbatim}
+4I+4tau+delta+228j<=538+6w.
+\end{verbatim}
+
+This excludes j3 for w \textless= 6. For j4, before integrality or the
+stars, the first two inequalities give2Y\textgreater482, but Y
+\textless= 190 + 3w \textless= 202, so two cap predicates are already
+impossible.
+
+The cardinality-independent residue classifier in Appendix D now works
+with fresh strict arm bounds. For j3 the two-witness argument
+immediately gives integrality. For j4, two nonintegral lower coordinates
+use four holes and leave both O active. With just one nonintegral lower
+coordinate of residue theta and top residue b, the five residues H, O,
+alpha, beta, C5\_opposite are b, b + theta, b-theta, b-2theta, -b. If b!
+= 0 the actual branch-A/B hole counts again leave both O active. If b =
+0 the exact holes are the two witnesses, O\_v, alpha\_v. The original
+four integral-gap aggregate edges give at least248-tau-delta
+\textgreater= 96-w \textgreater= 92; either active opposite O, C6 or
+beta, O, C7 contradicts caps \textless= 14. A nonintegral top pair after
+lower integrality costs four holes and the five-edge bound300-tau-delta
+\textgreater= 148-w \textgreater= 144 contradicts the retained opposite
+O, C6. Thus all outer coordinates are integral.
+
+The separated-arm pointwise rule allows one empty vertex per arm with
+zero capacity; failure to find an arm at j4 is exactly the four-hole
+witness configuration already excluded. Therefore active C6 forces t
+\textgreater= 301-tau-delta, and active C7 forces t \textgreater=
+249-tau-delta. At j3, w \textless= 6 these are at least67 and15; at j4,
+w \textless= 4 they are at least145 and93. They exclude O/C6, beta/H/C6
+and beta/O/C7 simultaneous activity.
+
+A HIGH cross makes leading loss at least r\_v + 80. At j3, empty C6
+above active C5 leaves at least three higher native resources, each
+losing r\_v + 5. The ten positive-positive fixed labels are HIGH and
+compatible with all baseline groups. Thus A \textgreater= I + 4r + 105
+\textgreater= 235, contradicting A \textless= 234. At j4 the C4 =
+\textgreater C5 and C5 = \textgreater C6 implications have A
+\textgreater= I + 3r + 90 \textgreater= 188\textgreater156. C6 =
+\textgreater C7 uses one higher resource and the ten HIGH labels: A
+\textgreater= I + 2r + 95 \textgreater= 161\textgreater156.
+
+The literal owner identities and hole counts therefore give the same
+complete j3 A0/A1 and j4 A-E/A-H/B tables as Appendix D. For j4's beta/O
+exclusion, the three-edge rooted arm when V\_v is retained gives t
+\textgreater= 119-w + I + xi; if V\_v is missing, its HIGH status and
+three unused higher native losses give t \textgreater= 68-w + I + 3r\_v.
+Both exceed the sharp double cap. Consequently both O are holes. The
+remaining two-beta-hole B alternative has necessary row 2T\_r + 9r + 4I
++ 7tau/4 + 2tau\_v \textless= 1104 + 4w \textless= 1120, while its
+integer quadratic minimum is1160. It follows from the actual HIGH-beta
+master2S\_v + K + 3g\_v + 6X\_v \textless= M\_o + 1147 + w + delta and
+the three-edge bound186-3tau/4-delta. The owner-side HIGH beta
+contradicts 2d\_v \textless= M\_o-1 and actual P activity
+d\_v\textgreater M. Thus neither extra beta-hole alternative is omitted.
+
+\hypertarget{j3-terminal-bridge}{%
+\subsection{j3 terminal bridge}\label{j3-terminal-bridge}}
+
+The A0 geometric master in z34\_cards.md only changes1026 to1026 + w.
+Use the relaxed common domain A \textless= 234, L \textgreater= max(8,
+A-82), max(4, A-162) \textless= e\_v \textless= 399-A, and keep the
+heavy thresholds70/72. The light-rank product276 still exceeds tau + eps
+\textless= 226. The exact twelve minima at w6 are 162, 224, 285, 330,
+126, 266, 422, 88, 158, 313, 41, 220, all positive.
+
+For A1, the same actual side-union argument gives47 + w in place of47.
+Its four Z upper bounds become212 + 3w, 288 + 3w, A + 52 + 2w, A + 128 +
+2w. Their largest value is374, below Z \textgreater= 391.5. Thus all j3
+positive-hole forms are excluded without individual first-gap terminal
+cards.
+
+\hypertarget{j4-terminal-bridge}{%
+\subsection{j4 terminal bridge}\label{j4-terminal-bridge}}
+
+Each of the seven Z4 actual masters in z34\_cards.md gains at most w on
+its right. Use A \textless= 156, L \textgreater= max(8, A-4), max(4,
+A-84) \textless= e\_v \textless= 321-A. Include every heavy flag allowed
+by e + 72h \textless= 156 (even two in Card O if needed). The seven
+finite minima are290, 65, 237, 151, 164, 283, 103, all positive.
+
+For the exact ownerless family use z4\_ownerless.md with target hole
+allowances. The initial four-arm bound is116 + I-w; hence X + g\_v
+\textgreater= 57. Use the stronger active-C5 identity to obtain
+d\_v-h\_v-X\_v \textgreater= X + G + h\_o-55-eta\_v\textgreater0 even at
+w4. Thus the ten-label gap yields h\_v \textless= M + 11 + eta\_v. The
+same e18 ledger works: V2\_s + V2\_t \textless= 20 + w-3X-G\textless0.
+The core gap has at most30 + eta\_v positions, so h\_v \textless= R + 31
++ eta\_v with a core hit, or h\_v \textless= R\_v + M\_o + 30 + eta\_v
+otherwise. Both H core-hit, light alphas imply xi \textgreater= 94 +
+I-2w \textgreater= 86 + I. But the positive profile has tau-xi
+\textgreater= 65 and tau \textless= 134 + w-I \textless= 138-I,
+contradiction. One heavy alpha gives100 + 2I \textless= 3w \textless=
+12. One H with no core hit gives tau \textgreater= 19 + u + I-2w
+\textgreater= 83 + I, while delta \textgreater= 90 gives tau \textless=
+66-I. Two non-core-hit H losses144 exceed eps \textless= 138. Thus the
+ownerless positive family is excluded as well.
+
+\hypertarget{j5-complete-terminal}{%
+\subsection{j5 complete terminal}\label{j5-complete-terminal}}
+
+The prefix census leaves just lower hole1. Thus z = w = 2, tau = 67 +
+sigma and I + sigma + delta \textless= 11. All core entries omit1: xi\_s
+= 1 + xi'\_s, xi\_t = 1 + xi'\_t, xi'\_s + xi'\_t \textless= sigma. In
+particular r\_s, r\_t are between31 and36. Before outer integrality,
+K-M-delta \textgreater= R-76 + I + tau \textgreater= 58. The leading
+inequality rules out active O and active beta/H because their raw caps
+are13 and10. The residue argument and literal owner identities of z5.md
+now apply. A HIGH cross loses r\_v + 80\textgreater delta leading
+points, supplying the same cross chains. Both O provide fixed credit8.
+Every retained singleton or actual sole pair is normal: a BAD centre
+loses at least72-max(r\_s, r\_t) \textgreater= 36, while eps \textless=
+3. In particular all own chains and actual endpoint lists are licensed.
+
+The source rows are freshly
+
+\begin{verbatim}
+S=2K+1074-delta, A=I+67+sigma+delta<=78,
+L>=A+74, max(4,A-6)<=e_v<=243-A.
+\end{verbatim}
+
+Do not import the zero-hole strengthened bound L \textgreater= A + 78.
+Use the actual full core q = 68, F = 68-xi\_s-xi\_t \textgreater= 63.
+For A0 with empty P, the fixed ledgers for H/C5 extras have credit13 and
+the alpha extra has credit14, each exceedingdelta11. Split beta has both
+H HIGH and credit14, also impossible.
+
+For A1 with empty P, the shared HIGH11 ledger from O\_s, O\_t, H\_s
+combines with these18 LOW labels: C55, C56, C57, C58 on both signs; V5,
+V6, V7, V8 on the inactive-beta sign t; F3, F4, F5 on both signs. They
+touch17 baseline groups, so credit = 11 + 18-17 = 12\textgreater delta.
+Pair1 is LOW, since a HIGH component would lose r\_v +
+80\textgreater delta leading points. Beta\_t is LOW because one of H\_t,
+alpha\_t is retained and normal. The F signs follow from
+d\_v\textgreater g\_v. These signs hold for every possible final
+companion hole. No inactive paired component is assigned native
+capacity.
+
+Retained-P A0 uses the same eleven exact affine cards as z5.md, with
+normal endpoint errors zero. Their full-core minima, in A--K order,
+are608, 452, 723, 428, 344, 504, 504, 307, 515, 597, 504. Card E uses
+credit11 from HIGH H\_t; others usecredit8. Card D uses both actual
+triples on this same full core, giving5q + 6F. For remaining A1/B, use
+opposite/same/four-endpoint/branch-B physical masters from z5.md with
+their right side increased by2. Even retaining their old nonnegative xi
+error allowances and omitting the nonnegative side-mass terms, the
+minima are 761, 326, 501, 461. check\_positive.py enumerates the entire
+integer domain I + sigma + delta \textless= 11, xi\_v \textgreater= 1,
+xi\_s + xi\_t \textless= 2 + sigma and the full peel polygon. This
+closes every P5 form.
+
+\clearpage
+\hypertarget{fresh-geometric-derivations-for-z3z4-terminal-cards}{%
+\section{Fresh geometric derivations for Z3/Z4 terminal
+cards}\label{fresh-geometric-derivations-for-z3z4-terminal-cards}}
+
+These are local terminals, assuming the actual retention forms and
+common integral source. The classifiers in positive.md, z5.md and
+check\_geometry.py provide the actual retention predicates separately
+from these scalar terminals.
+
+\hypertarget{z3-a0}{%
+\subsection{Z3 A0}\label{z3-a0}}
+
+S = 2K + 1224-delta, A \textless= 228, L \textgreater= A-76, max(4,
+A-156) \textless= e\_v \textless= 393-A. The five weighted endpoints are
+P\_s, 2alpha\_s, alpha\_t, C5\_t, H\_s. Their literal identity is H\_s =
+P\_s + 2alpha\_s + alpha\_t + C5\_t + 4(M + X) + 2G. The endpoint
+constant is5*72 + 71-3*67 = 230. The residual physical source mass is at
+least T\_r + 4r + tau\_t + 4xi\_t + 10. With K \textless= M + R + 21 and
+the six-edge retained forest, the exact master is
+
+\begin{verbatim}
+T_r+4r+tau_t+2L+4xi_t+12F<=1026-2e+delta+B_*.
+\end{verbatim}
+
+The common grouping rebates every endpoint's unused native loss except
+the algebraically doubled alpha\_s. Consequently B\_* = 2b\_alpha\_s +
+sum\_(other heavy Z)(b\_Z-k\_Z). Call other endpoints heavy at clip70;
+alpha\_s's flag a is reserved for a peeled clip \textgreater= 72. If a =
+0 its error \textless= xi\_s. All other light errors satisfy b
+\textless= k: outside-hull clips have24 \textless= k \textless= 69, and
+k(73-k) \textgreater= 276\textgreater220 \textgreater= tau + k. The
+next-rank inequality (72-k)b \textless= tau proves the claim. Normal
+endpoints have error0. Every heavy error is at most xi\_v + e\_v-4,
+including core ranks70, 71. When a = 1, alpha\_s \textless= 0 and the
+eleven LOW labels U5:8\_s, V5:8\_s, F3:5\_s touch nine groups. With the
+eight O HIGHs, this gives compatible e10. Otherwise use e8.
+
+Thus with n\_s in\{0, 1\}, n\_t in\{0, 1, 2, 3\},
+
+\begin{verbatim}
+B_*<=2xi_s+(2a+n_s)(e_s-4)+n_t(e_t-4)
+      +n_s xi_s+n_t xi_t-70(n_s+n_t),
+delta>=e+72a+70(n_s+n_t).
+\end{verbatim}
+
+These are precisely the twelve scalar systems exhaustively checked by
+the full-rank verifier, with minimum margin65. The actual five resources
+and the six-edge forest have been specified; no additional capacity is
+assigned to an inactive component.
+
+\hypertarget{z3-a1}{%
+\subsection{Z3 A1}\label{z3-a1}}
+
+The actual holes are O\_s, O\_t, H\_s; beta\_s and P\_t are sole
+resources. The same twelve HIGH labels as in the former physical-union
+proof give e12. Group leading s and its seven native resources: S\_s
+\textgreater= K + 532-eps. Lower P\_t and upper H\_t are the only
+endpoints. Let B = Gamma\_Pt + Gamma\_beta\_s and H = Gamma\_Ht
+\textless= 75. The ten-edge forest and the two X\_s star edges give, on
+one Q, Qgap + X\_s \textgreater= 6F-eps + B + H/2. The identity H\_t =
+H\_s + P\_t + 2s4 + t4 + g\_s + g\_t + h\_t and HIGH H\_s imply S\_t
+\textgreater= S\_s + M + M\_s + Qgap + X\_s + 77-Eclip-Eerr. As Eclip
+\textless= B + H, the source sum1224 gives exactly
+
+\begin{verbatim}
+M+M_s+6F-H/2<=47+2delta+Eerr.
+\end{verbatim}
+
+The four endpoint flags p, h have Eerr \textless= xi\_s + xi\_t +
+p(e\_t-4) + h(e\_s-4). Define Z = r\_s + 2I + 2tau + xi\_s + 6F-H/2. The
+source peel bounds give, respectively, Z \textless= 212, 288, A + 52
+\textless= 280, A + 128 \textless= 356. But2tau + 6F \textgreater= 396,
+r\_s + 2I \textgreater= 33 and H \textless= 75 give Z \textgreater=
+783/2 = 391.5. All endpoint positions are excluded with margin at
+least71/2.
+
+\hypertarget{z4-physical-capacities-and-masters}{%
+\subsection{Z4 physical capacities and
+masters}\label{z4-physical-capacities-and-masters}}
+
+S = 2K + 1148-delta, A \textless= 152, L \textgreater= A, max(4, A-80)
+\textless= e\_v \textless= 317-A. The generic rank constants are72-r\_v
+and S\_v + r\_o-71. A native clip\textless72 has error \textless= xi\_v;
+a heavier one has error \textless= xi\_v + e\_v-4 and costs at least72.
+All heavy flags allowed by e + 72h \textless= 152 must be included, in
+particular two flags when e8. No unproved assertion that at most one is
+heavy is used.
+
+The original endpoint/forest lists for F, S, EH, EA-own, EA-opp, EC5 are
+retained literally. Physical t with seven native resources gives S\_s
+\textless= K + 616-e; six gives S\_s \textless= K + 692-e. These are
+union-deficiency bounds, not claims that their images are disjoint.
+Direct substitution of the endpoint identities gives these fresh masters
+(E is the actual weighted error, N the listed endpoints' native loss):
+
+\begin{itemize}
+\tightlist
+\item
+  F: T\_r + 4r + tau\_t + 2L + 4xi\_t + 12F \textless= 950 + delta-2e +
+  E. The nominal constant is230. The six-edge forest avoids all five
+  endpoints and Eclip \textless= 2N. There may be one empty ordinary
+  vertex, charged by the separated-arm one-empty rule, with zero
+  capacity.
+\item
+  S: 2M + 9F + 4e + 2N \textless= 539 + 3delta + E. Nominal constant153;
+  physical t has six resources. The leading-t, six-edge and three-edge
+  forest budgets rebate all four endpoints.
+\item
+  EH: R + 2L + xi\_t + e\_t + 10F + 3e + N-h \textless= 412 + 2delta +
+  E, where h is the upper V\_s deficiency. Nominal constant225-r\_t;
+  physical t has seven resources. The six-edge forest avoids all
+  endpoints, while the four stars contain V\_s only. Drop N-h
+  \textgreater= 0.
+\item
+  EA-own: L + 2e\_t + 2xi\_t + 10F + 3e + N \textless= 415 + 2delta + E.
+  Use alpha\_s \textgreater= 1-a and physical t's seven resources. All
+  four endpoints avoid both the eight-edge and two-star systems.
+\item
+  EA-opp: R + 2L + xi\_s + e\_s + 11F + 3e \textless= 487 + 2delta + E.
+  Use alpha\_t \textgreater= 1-b; nominal constant159 + r\_t; physical t
+  has six resources. The six-/five-edge forests avoid all weighted
+  endpoints.
+\item
+  EC5: R + 2L + xi\_t + e\_t + 11F + 3e + N \textless= 488 + 2delta + E.
+  Nominal constant225-r\_t; physical t has six resources. Its
+  seven-/four-edge forests avoid the five endpoints.
+\end{itemize}
+
+Subtract baseline rank errors and each actual heavy increment e\_v-4.
+Use N \textgreater= 72h where it occurs. The resulting systems are
+exactly the six first Z4 cards in the full-rank verifier. Their margins
+are 306, 81, 253, 163, 204, 295.
+
+\hypertarget{z4-o-deriving-the-previously-conditional-constant994}{%
+\subsection{Z4 O: deriving the previously conditional
+constant994}\label{z4-o-deriving-the-previously-conditional-constant994}}
+
+Its predicate is both O and H\_s empty, beta\_s native and P\_t sole,
+all eight lower own/cross resources retained. The twelve HIGH labels
+give e12. Put B = Gamma\_beta\_s + Gamma\_Pt, H = Gamma\_Vt. The actual
+three forest rows are
+
+\begin{verbatim}
+X_s+g_s>=2F-(eps-B-H)/2,
+X_s>=F-(eps-B-H)/2,
+X_s+X_t>=2F-(eps-B)/2.
+\end{verbatim}
+
+Three, two and one copies give 6X\_s + X\_t + 3g\_s \textgreater=
+10F-3eps + 3B + 5H/2. The endpoint identity V\_t = 2d\_s + beta\_s +
+P\_t + 2a + b + g\_s, with twice leading s, has Eclip + 2ell\_s
+\textless= 2eps-(B + H). Consequently
+
+\begin{verbatim}
+S_s+3g_s+4X_s+2a+b
+<=1000+r_s+delta-2e-B-H+Eerr.
+\end{verbatim}
+
+Insert S\_s \textgreater= T\_r + tau\_s + 4R\_s + 6 + e\_s and the
+forest row. This yields
+
+\begin{verbatim}
+T_r+4r+5xi_s+tau_s+R+L+2e_s+10F+60+4B+7H/2
+<=994+4delta+Eerr.
+\end{verbatim}
+
+Thus994 is derived from the actual physical resources, rather than
+extrapolated from1006. Baseline Eerr \textless= 2xi\_s + xi\_t. A heavy
+beta\_s or P\_t costs4*72 = 288, a heavy upper V\_t costs(7/2)*72 = 252;
+subtract its source e\_v-4. This is exactly the seventh full-rank Z4
+system, with verified margin123.
+
+The exact ownerless family, to which none of these cards applies, has
+its separate proof in z4\_ownerless.md. The preceding activity lemmas
+and the independent component census supply the exhaustive size84
+classification; terminal arithmetic alone would not do so.
+
+\clearpage
+\hypertarget{size84-z4-ownerless-terminal}{%
+\section{Size84 Z4 ownerless
+terminal}\label{size84-z4-ownerless-terminal}}
+
+Hypotheses: common integral source, complete targets, exact holes \{P,
+Bpair, O\_s, O\_t\}, all fourteen singletons H, U, V, C5, C6, C7, alpha
+retained, and integral outer coordinates. A = I + tau + delta \textless=
+152, R = 67 + xi, L \textgreater= A, e\_v \textgreater= max(4, A-80),
+e\_v \textless= 317-A. Neither empty pair is assigned a contributor.
+
+\hypertarget{actual-fixed-credit-and-first-h-gaps}{%
+\subsection{Actual fixed credit and first H
+gaps}\label{actual-fixed-credit-and-first-h-gaps}}
+
+The eight O HIGH labels give eps8 = delta-8. The four-edge arm on an
+actual F-optimal core, with tau + 4F \textgreater= 260, gives 2X\_v +
+X\_o + g\_v \textgreater= 4F-eps8 \textgreater= 116 + I. Thus active
+C7\_v gives d\_v \textgreater= M + 117 + I and X + g\_v \textgreater=
+59. Active alpha gives h\_v \textgreater= X\_v + 1. The original raw55
+gap first gives h\_v \textless= M + 56= X + g\_v-55 \textgreater= 4.
+Consequently exactly the same ten fixed candidates can enter (U\_v +
+M\_v, H\_v-M\_o): C33, C34, C44, C15, C26, C27, C28, U2, U3, V2. Their
+complete sign audit in Appendix D is valid with these strict margins. It
+gives h\_v \textless= M + 11. Both empty paired centres are LOW. The
+thirty-two LOW labels listed in that appendix touch25 groups; one
+witness from each reflected pair V2, C35, C45 adds three LOWs in already
+touched groups. For V2 use20-3X-G\textless0 since3X + G \textgreater=
+232 + 2I. The untouched C25 group contributes another LOW witness. With
+eight HIGHs this gives44 misses against26 baseline groups: e = 18.
+
+The original core-gap list has37 candidates. Its initial bound h\_v
+\textless= R\_v + M\_o + 37 removes all alpha peel contributions because
+d\_v-h\_v-e\_v \textgreater= 80 + I\textgreater0. Also a-U3
+\textgreater= X + g\_o + h\_o-36\textgreater0, where a = U\_v + R\_v. It
+removes U3, U4, V2. The remaining30 candidates yield
+
+\begin{verbatim}
+h_v<=R+31 if H_v has a core hit,
+h_v<=R_v+M_o+30 otherwise.
+\end{verbatim}
+
+In the second case the72 source points at or above -R\_o miss above the
+complete target, so H\_v's native upper loss is at least72. The
+whole-side source bound also gives S\_v\textgreater M: directly S\_v-M
+\textgreater= T\_r + 4r-378 + I + delta \textgreater= 93 +
+delta\textgreater0. This licenses the interval/core-hit statements
+without hull gaps.
+
+Let N be the sum of the two alpha deficiencies, k their lower clips, ell
+the sum of the leading losses, and B the sum of the alpha rank errors.
+Then alpha\_s + alpha\_t \textgreater= 77-k-B, N \textgreater= k. Write
+eps = delta-18. For any actual common core with overlap f, the rooted
+stars give
+
+\begin{verbatim}
+2X_v>=2f+N+ell-eps,   2X>=4f+N+ell-eps.
+\end{verbatim}
+
+An unused H loss u can additionally be rebated from the second row. For
+light alpha clips (\textless72), B \textless= xi. At most one clip is
+heavy, since eps \textless= 134\textless144.
+
+\hypertarget{both-h-have-core-hits-both-alpha-clips-light}{%
+\subsection{Both H have core hits, both alpha clips
+light}\label{both-h-have-core-hits-both-alpha-clips-light}}
+
+The H caps and alpha endpoints give L + X \textless= R-15 + k + B.
+Combine the stars, L \textgreater= A, N \textgreater= k and k \textless=
+eps to obtain
+
+\begin{verbatim}
+4f+2I+2tau+36+ell<=104+4xi.
+\end{verbatim}
+
+Delete two maxima on each core side: q = 64, f2 = 64-(tau-xi)/2. Its
+substitution forces xi \textgreater= 94 + I. Thus tau \textgreater= 94 +
+I, delta \textless= 58-2I, eps \textless= 40-2I.
+
+Now delete just ONE maximum on each core side. Let the remaining maxima
+be P'\_v = r\_v-1 + zeta\_v. Put zeta = zeta\_s + zeta\_t \textless=
+tau-xi. This one actual Q has66 points, span R' = 65 + zeta, and overlap
+f' = 66-zeta. Every H has a Q hit: otherwise at most the ten removed
+source entries can hit, forcing native loss at least66\textgreater eps.
+Every alpha clip is \textless= 40\textless71. Its next rank is strictly
+below the core maximum, so its rank error is bounded by zeta\_v; hence B
+\textless= zeta.
+
+For completeness the Q-gap count is bounded independently. In (U\_v +
+P'\_v, H\_v-P'\_o), only five positive non-Q entries from each of U, V,
+alpha, five negative non-Q entries from H, and at most15 leading pair
+labels can enter. Cross translates lie wholly below U\_v. A leading pair
+above U\_v + P'\_v must use two of the five positive entries above
+P'\_v. The same eleven fixed labels from the original truncated gap list
+suffice: its exclusions use only P'\_v\textgreater0,
+d\_v\textgreater h\_v, d\_v-o2 + P'\_o\textgreater0 and the already
+established outer order. Thus there are at most15 + 5 + 15 + 11 = 46
+labels. In particular the deliberately weaker safe cap h\_v \textless=
+R' + 71 holds.
+
+The two new H caps and the improved alpha errors imply
+
+\begin{verbatim}
+L+X<=2R'-R+65+k+zeta.
+\end{verbatim}
+
+Use the same rooted stars on Q and eliminate N, k as before. This
+gives2I + 2tau + 2xi + 264 \textless= 220 + 10zeta, hence
+
+\begin{verbatim}
+44+2I+12xi<=8tau.
+\end{verbatim}
+
+But xi \textgreater= 94 + I and tau \textless= 134-I make the left side
+minus right side at least100 + 22I\textgreater0. This excludes the
+light/light case.
+
+\hypertarget{other-halpha-statuses}{%
+\subsection{Other H/alpha statuses}\label{other-halpha-statuses}}
+
+If both H have core hits and alpha\_v has clip k\_v \textgreater= 72,
+the opposite alpha endpoint and H cap give e\_o + X\_o \textless= 26 +
+xi\_v + k\_o + zeta\_o, with zeta\_o \textless= xi\_o. Use the
+individual rooted star on the one-trim support with f1 = 66-tau + xi, N
+\textgreater= k\_v + k\_o and k\_o \textless= eps-k\_v. Then
+
+\begin{verbatim}
+2e_o+260+ell<=2(tau+delta)<=2A-2I.
+\end{verbatim}
+
+Since e\_o \textgreater= A-80, this would give100 + 2I + ell \textless=
+0. The heavy alpha's unbounded peeled error was never estimated.
+
+If exactly one H has no core hit, its unused loss u \textgreater= 72
+leaves N \textless= eps-u \textless= 62, so both alpha clips are light.
+Its truncated cap and the other H cap give e\_v + X \textless= R-16 + k
++ B. Rebate u in the rooted stars, use k \textless= eps-u and f1 =
+66-tau + xi, obtaining
+
+\begin{verbatim}
+2e_v+198+2u+ell<=4tau+2delta.
+\end{verbatim}
+
+With e\_v \textgreater= A-80 this forces tau \textgreater= 19 + u + I
+\textgreater= 91 + I. But delta \textgreater= 18 + u \textgreater= 90
+gives tau \textless= 62-I, contradiction. If neither H has a core hit,
+their two losses144 exceed eps \textless= 134. All cases are excluded
+under the stated exact ownerless hypotheses.
+
+\clearpage
+\hypertarget{complete-local-z5-reduction-at-size84-common-source-assumed}{%
+\section{Complete local Z5 reduction at size84 (common source
+assumed)}\label{complete-local-z5-reduction-at-size84-common-source-assumed}}
+
+The common integral source, complete targets and j = 5 are hypotheses.
+The goal of this file is to close all actual Z5 geometries, not merely
+scalar rows. Source notation is that of z5\_alpha.md. Use
+
+\begin{verbatim}
+S=2K+1072-delta, A=I+tau+delta<=76,
+K-delta>=220+I+tau, K-M>=R-74+A,
+max(4,A-4)<=e_v<=241-A, L>=A+76,
+delta>=10 implies L>=A+78.
+\end{verbatim}
+
+Both leadings are active. The proof of S\_v\textgreater M in the
+preceding tail report applies to every j5 source: r\_v \textgreater= 25,
+R\_o \textless= 118, e\_o \textless= 241 give S\_v-M \textgreater= 325 +
+75-118 + 6-241 = 47. Hence empty integral ordinary centres are either
+LOW \textless= -M\_v or HIGH \textgreater= S\_v + M\_o + 1. A retained
+translate with no core hit has at most four hits. After the eight O
+credits each retained singleton, and each licensed sole pair, has at
+least8 hits. Thus all of them have core hits and generic native endpoint
+errors \textless= xi\_v (their clips are \textless= 68\textless72).
+
+\hypertarget{the-base-holes-before-outer-integrality}{%
+\subsection{The base holes before outer
+integrality}\label{the-base-holes-before-outer-integrality}}
+
+The sharp raw caps are t\_v \textless= 12 for active O\_v and t\_v
+\textless= 9 for active beta\_v, H\_v. Here t\_v = d\_v-M. Leading
+activity gives
+
+\begin{verbatim}
+t_v>=-7+I+tau+xi+2X_v+g_v.
+\end{verbatim}
+
+An active O therefore forces tau \textless= 19 and 2X\_v + g\_v
+\textless= 19-I-tau-xi. If U\_v or C6\_o were active, q = X\_v + g\_v
+would be integral. The two opposite leading/core shortcuts, including
+the one-empty form, give
+
+\begin{verbatim}
+2q>=2(68-xi)-delta>=60+I+tau-2xi>=60+I-tau>=41.
+\end{verbatim}
+
+This contradicts q \textless= 19. Similarly active V\_v or C7\_o makes q
+= X\_v integral and gives the same contradiction. Thus active O\_v
+forces the four distinct singleton holes U\_v, V\_v, C6\_o, C7\_o. Two
+active O's would force eight holes; so O\_o is empty. These are all five
+holes, leaving V\_o, C7\_v retained. The corresponding two stars give
+X\_o \textgreater= 21, whereas active C7\_v gives t\_v \textgreater=
+2X\_v + X\_o + g\_v + 1\textgreater22. This contradicts t\_v \textless=
+12. Both O's are empty.
+
+If beta\_v, H\_v are active, the same argument with tau \textless= 16
+forces four lower witness holes in addition to the two O holes. Thus
+they cannot both be active. No lower coordinate integrality was assumed
+in this argument: an active witness itself licenses the needed integer
+displacement.
+
+\hypertarget{integral-coordinates-and-the-literal-grammar}{%
+\subsection{Integral coordinates and the literal
+grammar}\label{integral-coordinates-and-the-literal-grammar}}
+
+The unchanged four-coordinate identities in Appendix E of the retained
+report now prove outer integrality. The needed numerical rules are
+checked here rather than imported from size85. An empty cross above an
+active cross is HIGH and makes the leading lose at least r\_v + 80,
+which exceeds delta \textless= 76. Thus P\_v active = \textgreater{}
+C5\_v = \textgreater{} C6\_v = \textgreater{} C7\_v. An empty integral
+own centre above a retained own centre is HIGH; any retained larger
+centre then loses72 points, more than epsilon \textless= 68. Thus
+missing V forces U, H missing; missing U forces H missing.
+
+Pair1 has a sole actual owner whenever retained, because P\_s + P\_t =
+-(s2 + s3 + s4 + t2 + t3 + t4)\textless-3M whereas active centres
+exceed-M\_v. The additional unchanged identities are
+
+\begin{verbatim}
+beta_s+beta_t+C5_s+C5_t=-2(s3+s4+t3+t4),
+P_s+beta_s+C5_t=-2s3-2s4-t2-t3-t4.
+\end{verbatim}
+
+They exclude the indicated simultaneous activities. In A0 the beta pair
+and both O's are holes. A nonintegral v3 forces U\_v, C6\_o holes, and a
+nonintegral v4 forces V\_v, C7\_o holes. The remaining active H\_v,
+alpha\_v and other lower own centre contradict respectively v3 =
+H\_v-V\_v-alpha\_v or v4 = H\_v-U\_v-alpha\_v. Nonintegral v2 would cost
+H\_v, alpha\_v, C5\_o. Thus all coordinates are integral. The chains
+retain V\_s, V\_t, C7\_s, C7\_t. If P is retained the thirteen exact A0
+templates are those listed in the full-rank checker (eleven endpoint
+cards with the three orientations of A). If P is empty, the final hole,
+up to reflection, is H\_s, alpha\_s or C5\_s.
+
+For split beta, the identities force exactly O\_s, O\_t, H\_s, H\_t,
+C5\_t as holes, with sole P owner s. The retained lower own centres and
+alphas prove integrality. The split-beta transport below excludes this
+geometry using only the whole beta capacity. For sole beta\_s, base
+holes are O\_s, H\_s, O\_t. A nonintegral lower coordinate again costs
+two extra holes. On t, H\_t, alpha\_t and the other lower own centre
+contradict it. On s, alpha\_s, beta\_s make d\_s, s3 + s4, s2 integral
+and contradict it. Nonintegral t2 costs three holes H\_t, alpha\_t,
+C5\_s. The chains retain the four extreme leaves. If P is empty, its
+final companion is precisely alpha\_s, H\_t, alpha\_t, C5\_s, C5\_t or
+U\_s. If P is retained, it is either opposite beta's owner, the same
+owner with alpha\_s retained, or the same owner with alpha\_s, C5\_t
+empty.
+
+In B, the strict beta-sum sign forces C5's pair retained with sole owner
+s. Any retained P has the same owner. The beta/H exclusions cost one
+hole on each sign in addition to the two O holes. The same two-witness
+identities and own/cross chains prove integrality and extreme-leaf
+retention. The remaining alternatives are alpha\_s retained, or alpha\_s
+the only extra hole; in the latter case P, alpha\_t and all eight lower
+own/cross resources are retained. No empty pair receives a nominal
+owner.
+
+\hypertarget{common-endpoint-and-forest-calculus}{%
+\subsection{Common endpoint and forest
+calculus}\label{common-endpoint-and-forest-calculus}}
+
+Write eps = delta-e. Every sole native resource has lower and upper
+bounds 72-r\_v-l-xi\_v and S\_v + r\_o-71 + u + xi\_o. Distinct original
+resource deficiencies, or deficiencies of disjoint actual groups, sum to
+\textless= eps. Native endpoint weights are recorded explicitly below.
+For one actual Q of size q and overlap F, weighted stars and ordinary
+gap pairs give
+
+\begin{verbatim}
+cX_s+dX_t >=(c+d)F-max(c,d)eps/2,
+cg_s+dg_t >=(c+d)F-max(c,d)eps/2.
+\end{verbatim}
+
+These are separate budget consequences. Every group pair has at most one
+empty member; the full intersection in that case is paid solely by the
+retained partner's off-target points. A retained own triple gives g + h
+\textgreater= q + F-Psi. It shares its actual deficiency with all of its
+subgroups. No subtree or subgroup is allocated twice.
+
+\hypertarget{a0}{%
+\subsection{A0}\label{a0}}
+
+Retained P uses the thirteen actual templates and eleven exact affine
+cards A--K in \texttt{upper83\_fullrank/check.py}. That checker
+reconstructs the endpoint identities at d76 and proves margins 321, 141,
+324, 59, 7, 167, 167, 25, 203, 257, 167. Their source, activity,
+core-hit and sole-ownership predicates have now been supplied above. For
+E the empty H\_t is HIGH above retained U\_t, providing credit11; the
+other cards use credit8. Card D uses both actual triples and one common
+support optimizing 5q + 6F.
+
+When both pairs are empty and the extra hole is H\_s or C5\_s, the
+initial fixed ledger gives credit13 (HIGH11/LOW22/touched20 or
+HIGH8/LOW25/touched20). It needs only LOW paired centres and the leading
+inequalities; it does not require normal endpoints. The empty pairs are
+LOW because retained H or alpha lies above each beta, and a HIGH cross
+would lose r\_v + 80 leading points. Put B = alpha\_t, D = C5\_t. The
+physical six-resource side gives S\_t \textless= K + 616-e. From H\_t =
+2(a + b) + G + alpha\_s + B + D, one generic lower endpoint and the
+actual B, D packing inequality give
+
+\begin{verbatim}
+M+2X+G+F <= R+484-e+u_Ht+l_alpha_s+2Gamma_BD+2xi.
+\end{verbatim}
+
+Rebate those three disjoint groups in the stars and ordinary pairs.
+Their maximum coefficient is two, so M + 7F \textless= R + 484-e + 2eps
++ 2xi. Using L \textgreater= A + 78 and A \textless= 76 yields
+
+\begin{verbatim}
+2I+2tau-2xi+7F+3e<=482.
+\end{verbatim}
+
+The full-rank kernel 2tau-2xi + 7F \textgreater= 444 makes the left side
+at least483. For the remaining alpha\_s hole, \texttt{z5\_alpha.md}
+proves the full ordered
+credit14-\textgreater27-\textgreater31-\textgreater35-\textgreater38-\textgreater42
+path and the final884\textgreater882 contradiction.
+
+\hypertarget{a1b-transports-reconstructed-at-d76}{%
+\subsection{A1/B transports reconstructed at
+d76}\label{a1b-transports-reconstructed-at-d76}}
+
+The fresh physical inequalities are listed first. Every centre identity
+below follows from a = M\_s + X\_s, b = M\_t + X\_t and the definitions;
+the endpoint lists specify the actual resource accounting.
+
+\begin{itemize}
+\tightlist
+\item
+  Opposite owners beta\_s, P\_t: use V\_t = 2d\_s + beta\_s + P\_t + 2a
+  + b + g\_s, upper V\_t, lower beta\_s, P\_t, and twice leading s. This
+  gives S\_s + 3g\_s + 4X\_s + 2a + b \textless= 924 + r\_s + delta-2e +
+  xi + xi\_s.
+\item
+  Same owners with alpha\_s retained: the beta-sum identity and
+  alpha\_t\textgreater-b give alpha\_s-P\_s\textgreater beta\_s + d\_t +
+  2a + b + G. The upper alpha\_s, lower P\_s, beta\_s and leading t give
+  S\_t + M\_s + 2X\_s + 3X\_t + g\_s + 2g\_t \textless= R + 1012-r\_t-e
+  + 2xi\_s + xi\_t.
+\item
+  Four endpoints: U\_s = P\_s + alpha\_t + C6\_t + 2a + 4b + 2G. The
+  upper U\_s and three lower endpoints give S\_t + 2M\_t + 2X\_s + 4X\_t
+  + 2G \textless= 2R + 894 + 2r\_t-e + xi\_s + 3xi\_t.
+\item
+  HIGH alpha\_s: use alpha\_s + C5\_t = d\_t-2(a + b)-G, d\_t =
+  H\_t-alpha\_t, and alpha\_s \textgreater= S\_s + R\_t + 1. The three
+  retained endpoints C5\_t, H\_t, alpha\_t give 2S\_s + 2X + G
+  \textless= 2R + 965-e + xi. Here e14 includes both O's, HIGH H\_s and
+  HIGH alpha\_s. The alpha HIGH guard follows from d\_s-R\_s
+  \textgreater= 220 + I + tau-R\_s\textgreater0 and the core hit of
+  beta\_s.
+\item
+  Empty P, extra C5\_s or U\_s: sum upper alpha\_s, H\_t minus lower
+  2beta\_s, alpha\_t, C5\_t. The literal expression is 2d\_s + 2a + 2b +
+  G. Twice leading s gives 2M + 6X\_s + 2X\_t + 3g\_s + g\_t \textless=
+  843 + delta-2e + 3xi.
+\item
+  Empty P, extra H\_t: upper alpha\_s, V\_t minus lower 2alpha\_t,
+  2C5\_s, 2beta\_s, C5\_t equals6a + 5b + 3g\_s + 2g\_t. Hence 4M\_s +
+  3M\_t + 6X\_s + 5X\_t + 3g\_s + 2g\_t \textless= 2R + 736 + r\_s +
+  delta-2e + 4xi + xi\_s.
+\item
+  Empty P, extra alpha\_t: upper alpha\_s, H\_t minus lower 2beta\_s,
+  C5\_t, 2C5\_s equals6a + 3b + 3G + 3h\_t. Hence 4M\_s + M\_t + 6X\_s +
+  3X\_t + 3G + 3h\_t \textless= 2R + 746 + 3r\_s + delta-2e + 5xi\_s +
+  2xi\_t. Use the H\_t, U\_t, V\_t triple, two g\_s pairs and separate
+  stars, obtaining3q + 15F-6eps for the gap terms.
+\item
+  Split beta: its entire hit count N has N \textgreater= 76-delta and
+  beta\_s + beta\_t \textgreater= N-M. Use upper alpha\_s, lower P\_s
+  and twice leading t in alpha\_s-P\_s = beta\_s + beta\_t + 2d\_t + 2a
+  + 2b + G. Conservatively, S\_t + M + 2X\_s + 6X\_t + g\_s + 3g\_t
+  \textless= 920 + 2delta + xi. Both H's are HIGH, so credit14 is
+  compatible. N is charged only to the one whole pair, never to either
+  component separately.
+\item
+  Branch B, alpha\_s retained: alpha\_s-C5\_s\textgreater d\_t + 2a + 2b
+  + G. Two endpoints and leading t give S\_t + M + 2X\_s + 4X\_t + g\_s
+  + 2g\_t\textless R + 1017-e + xi.
+\end{itemize}
+
+Replace each S\_v by T\_(r\_v) + tau\_v + 4R\_v + 6 + e\_v. The exact
+checker uses the full source peel polygon and all-rank inverse mass
+profiles; the minima of left minus right are respectively 811/2, 203/2,
+258, 230, 91/2, 1105/2, 305, 415, 223. The two endpoint sides retain
+physical names in these calculations; the scalar quadratic index ranges
+over both orientations.
+
+These nine exclusions route all non-tail A1/B alternatives. HIGH-alpha
+handles extra alpha\_s; the next three rows handle C5\_s/U\_s, H\_t,
+alpha\_t. The exact final empty-P C5\_t family is already fully proved
+and pinned by \texttt{reports/upper83\_tail\_20261019.tex} and
+\texttt{verification/upper83\_tail.py}. With P retained, use opposite
+owners, same owners with alpha\_s retained, or the four-endpoint row if
+alpha\_s is empty. Branch B uses its own row when alpha\_s is retained
+and the four-endpoint row otherwise. Together with A0 this closes every
+Z5 geometry under the stated common source hypotheses. The common-source
+and positive-hole obligations are discharged separately in structure.md
+and positive.md.
+
+\clearpage
+\hypertarget{size-84-z5-alpha-order-before-normality}{%
+\section{Size-84 Z5 alpha: order before
+normality}\label{size-84-z5-alpha-order-before-normality}}
+
+Local theorem, assuming the common integral source and the exact
+Branch-A whole holes \texttt{\{P,\ Bpair,\ O\_s,\ O\_t,\ alpha\_s\}}.
+This file does not assert the global classification. All thirteen other
+singleton resources are retained. Notation follows the full-rank report:
+d = 76, m = 68, r\_s + r\_t = 67, I = (r\_s-33)(r\_s-34), A = I + tau +
+delta \textless= 76, R = 67 + xi, M\_v = R\_v + e\_v, a = M\_s + X\_s, b
+= M\_t + X\_t, G = g\_s + g\_t. Write B = alpha\_t, C = C5\_s, D =
+C5\_t. In particular B is a centre here, not the empty beta pair or a
+source fringe count.
+
+\hypertarget{the-initial-tail-credit-does-not-need-normality}{%
+\subsection{The initial tail credit does not need
+normality}\label{the-initial-tail-credit-does-not-need-normality}}
+
+The generic Z5 core-hit argument gives each retained centre Z at least
+one core hit. The native rank endpoints are Z \textgreater=
+72-r\_v-l\_Z-xi\_v and Z \textless= S\_v + r\_o-71 + u\_Z + xi\_o
+whenever the selected native clip is below72. Also Z \textgreater=
+1-R\_v is always available from a core hit. The empty alpha\_s and both
+empty beta components are LOW. The original initial label inventory
+therefore gives credit14.
+
+With epsilon = delta-14, the full-rank stars and ordinary pairs give
+X\_v, g\_v \textgreater= F-epsilon/2. Since tau + 2F \textgreater= 134
+(min(T\_p-2p) = -1 on each side), X\_v, g\_v \textgreater= 36 + I/2,
+hence at least36. The retained \{H\_s, U\_s\} pair gives h\_s
+\textgreater= F-epsilon \textgreater= 6 + I, using tau + F \textgreater=
+68. LOW alpha\_s gives h\_s \textless= X\_s. K-delta \textgreater= 75 +
+I + tau gives d\_v \textgreater= 75 + I + tau + g\_v + 2X\_v.
+
+These inequalities license the complete32-type tail inventory from
+\texttt{upper84/audit/verification\_program/proof/report.tex} (the
+paragraph ``The alpha\_s hole: the fixed-credit argument''). Here are
+its size-specific strict checks. On s, six beta types lie below
+d\_s-X\_s. The remaining 26 types give S\_s \textless= d\_s + 26. The
+three labels C16\_s, C17\_s, C18\_s exceed that cap since C + s3 + h\_s
+\textgreater= 1 + e\_s + X\_s + g\_s + h\_s \textgreater=
+83\textgreater26. At d\_s + 1, d\_s + 2 every remaining type except the
+sole score O\_s-t1 is either \textless= d\_s or \textgreater= d\_s + 6;
+use h\_s \textgreater= 6, g\_s \textgreater= 36 and
+d\_s\textgreater g\_s + 2h\_s. Thus S\_s \textless= d\_s + 1. Above H\_s
++ M\_s the only possible types are d\_s-g\_s, d\_s, O\_s-t1; they cannot
+cover three consecutive integers. Therefore S\_s \textless= H\_s + M\_s
++ 2. On t, sixteen types lie below H\_t + M\_t and all nonfixed
+resources end there, so S\_t \textless= H\_t + M\_t + 16. X\_t
+\textgreater= 36 makes C22\_t, C23\_t, C24\_t HIGH; D + M\_t + 2X\_t +
+g\_t \textgreater= 1 + e\_t + 2X\_t + g\_t \textgreater=
+113\textgreater16 makes C16\_t, C17\_t, C18\_t HIGH. The s side gives
+the analogous six labels and C33\_s. Thus HIGH21, LOW29, touched23 gives
+credit27, before normality.
+
+\hypertarget{separate-the-two-order-tests}{%
+\subsection{Separate the two order
+tests}\label{separate-the-two-order-tests}}
+
+At credit e \textgreater= 27, epsilon = delta-e \textless= 49. All clips
+are below72, so generic errors \textless= xi\_v apply even to centres
+outside {[}1, S\_v{]}. The source lemma gives L \textgreater= A + 78
+since delta \textgreater= 27. Grouping whole actual targets gives S\_s
+\textless= K + 540-e and S\_t \textless= K + 616-e. Consequently the
+exact identities H\_s = a + 2b + G + h\_s + B + C and H\_t = a + 2b + G
++ h\_s + B + D imply
+
+\begin{verbatim}
+M_t+X_s+2X_t+G+h_s+B+C <= R+490+r_t-e+u_Hs+xi_t,
+M_t+X_s+2X_t+G+h_s+B+D <= R+566+r_s-e+u_Ht+xi_s.
+\end{verbatim}
+
+Choose ONE actual truncated core maximizing q + 6F. The weighted inverse
+staircase gives, throughout tau \textless= 49,
+
+\begin{verbatim}
+q+6F+3tau-xi >=466,
+q+6F+2tau-xi >=458.
+\end{verbatim}
+
+The checker reconstructs these minima using integer mass constraints.
+The actual triple \{H\_s, U\_s, V\_s\} and the two g\_t pairs give G +
+h\_s \textgreater= q + 2F-epsilon; stars give2X \textgreater=
+4F-epsilon.
+
+If B \textgreater= a, lower C generically in the FIRST physical row. As
+r\_s + r\_t = 67,
+
+\begin{verbatim}
+M+2X+G+h_s <= R+485-e+epsilon+xi.
+\end{verbatim}
+
+Combining the preceding bounds, L \textgreater= A + 78 and delta
+\textless= 76-I-tau gives
+
+\begin{verbatim}
+q+6F+3I+3tau-xi+4e <=559.
+\end{verbatim}
+
+At e = 27 its left side is at least466 + 108 = 574\textgreater559. Hence
+B\textless a. This conclusion uses the smaller physical-s capacity;
+replacing both physical rows by the larger one loses the required
+margin.
+
+The six new LOW labels U5\_t, U6\_t, U7\_t, U8\_t, V3\_t, V4\_t meet two
+new groups. For V3\_t, V4\_t use D \textgreater= 1-R\_t and
+b\textgreater R\_t; positivity of D is unnecessary. Credit is now31.
+
+Independently C\textless b. If C \textgreater= b, it is the smallest
+retained ordinary s centre and the leading starts at C + 2X\_t + B +
+g\_t\textgreater C. For the strict sign, already at credit27, 2X\_t +
+g\_t \textgreater= 127.5 whereas R\_t \textless= R \textless= 116, and B
+\textgreater= 1-R\_t. Thus {[}1, C-M\_t-1{]} is fixed-only. The same
+credit27 stars give X\_t \textgreater= 42.5, so it contains at least42
+integers. But the s-side fixed inventory has11 HIGH and18 LOW among55
+labels, leaving at most26. Contradiction. C\textless b gives C66\_s,
+C67\_s, C68\_s, C35\_s LOW; for C35\_s = C-D-2b-g\_t-h\_s use D
+\textgreater= 1-R\_t. No new group is touched. Credit is35.
+
+Finally suppose D \textgreater= a. Lower B generically in the SECOND
+physical row:
+
+\begin{verbatim}
+M+2X+G+h_s <= R+561-e+u_Ht+l_B+xi.
+\end{verbatim}
+
+Let N = Gamma\_Ht + Gamma\_B. The triple, g\_t pairs and stars used
+above avoid both resources, so their respective budgets may each be
+epsilon-N. As u\_Ht + l\_B \textless= N, this gives
+
+\begin{verbatim}
+L+q+6F <=561-e+2epsilon-N+xi <=561-e+2epsilon+xi,
+q+6F+2I+2tau-xi+3e <=559.
+\end{verbatim}
+
+At e35 the latter left side is at least458 + 105 = 563\textgreater559.
+Hence D\textless a. The three labels C66\_t, C67\_t, C68\_t add credit3,
+giving38. C25\_s, C25\_t, C35\_t, C45\_s, C45\_t add credit4, giving42.
+Their signs use C\textless b, D= 1-R\_s, D \textgreater= 1-R\_t, not
+positivity. The two C25 labels touch the sole remaining baseline group.
+
+\hypertarget{normality-and-terminal}{%
+\subsection{Normality and terminal}\label{normality-and-terminal}}
+
+Only now exclude BAD centres. Put r\_max = 34 + k, I = k(k + 1). A BAD
+retained singleton loses at least72-r\_max = 38-k, whereas epsilon
+\textless= 34-I-tau. Their difference is k\^{}2 + 4 + tau\textgreater0.
+Thus all retained singleton centres are normal.
+
+The exact transport of the full-rank report now applies with the actual
+source fringe count B\_fr = B\_s + B\_t:
+
+\begin{verbatim}
+2M_t+2q+11F <=2R+778+2B_fr+2r_t-delta+5(delta-42).
+\end{verbatim}
+
+For completeness its eleven distinct singleton groups are \{B, D\},
+\{H\_s, U\_s, V\_s\}, \{U\_t, V\_t\}, \{C6\_s, C7\_s\}, \{C\}, \{H\_t\};
+the separately valid weighted stars use the same actual core. The native
+losses are not counted as disjoint between these two separate
+inequalities. At credit42 all required gaps first satisfy \textgreater=
+tau. The boundary-safe complete-core intersection raises them to
+\textgreater tau. The complete-core long-gap intersection and
+three-translate union lemma therefore permits q = F = 68 simultaneously
+in those groups. Use e\_t \textgreater= Theta-d-12 and Theta = 84 + A,
+then retain the actual fringe in K \textless= M + R + 1 + B\_fr. The
+transport becomes
+
+\begin{verbatim}
+4I+4tau-2xi_s+13*68 <=542+2(Theta+B_fr)<=882.
+\end{verbatim}
+
+The left side is at least884, contradiction. Thus this exact local
+alpha-hole family is excluded, without an early normality assumption.
+
+\end{document}

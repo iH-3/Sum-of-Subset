@@ -1,0 +1,9 @@
+RUN baseline84
+RUN source_progress
+RUN fullrank
+RUN tail
+RUN local
+RUN structure
+RUN geometry
+RUN positive
+PASS_COMPLETE_FINITE_REPLAY 8b596938271699291a50fbbe4a6ef27ac84e46acb826d7ee9b0dd99541507fba
