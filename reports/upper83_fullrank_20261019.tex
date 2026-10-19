@@ -1,0 +1,435 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array,fontspec}
+\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=0.15]
+\setmonofont{lmmono10-regular.otf}[Scale=0.87]
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fancyvrb}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\A}{A_*}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\T}{\mathsf T}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.13}
+\linespread{1.05}
+\raggedbottom
+\title{全秩截断、长位移交叠与尾跨度加强\\\large 上界 84 之后的严格方法改进与条件性终端证书}
+\author{Sum-of-Subset 研究项目}
+\date{2026 年 10 月 19 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+接续提交 \texttt{d934bf3}。本轮以逆阶梯质量公式优化全部截断深度，
+证明长位移时完整核心交叠不需要径向空洞罚项，
+并把五空单元源的尾跨度下界从 $\A+76$ 加强到 $\A+78$（总缺额至少 10）。
+新的十标签 HIGH 计数修复一个旧活动判据的数值缺口。
+程序精确排除 12 个三空单元、7 类四空单元和 11 类五空单元条件标量系统；
+相应最小余量为 65、81、7。一个无所有者条件终端得到 $483>482$，
+信用 42 的 alpha 终端得到 $884>882$。
+这些是通用引理和明确前提下的排除；实际集合到全部分支的完整接入仍未完成。
+全局范围保持 $71\le N\le84$，本文没有证明 $N\le83$。
+\end{abstract}
+
+\section{结论边界与证明路径}
+原问题研究有限实数集 $A$ 满足 $\operatorname{FS}(A)\subseteq4A$ 时的最大大小 $N$。
+子集和含空集和，四项和允许重复。前序独立链已给出
+\[\boxed{71\le N\le84.}\]
+本轮不修改该结论。若要降至 83，需要对所有 84 点配置完成结构、格化、
+共同尺度、正目标洞与零目标洞的完整排除。
+本文的定理分为两层：第 2--5 节是附明示假设的通用解析引理；
+第 6--8 节是所列标量系统不可行的精确证书。
+后一层不能自行证明某个实际配置必进入该系统，也不能替代缺失的资源所有权或活动分类。
+
+全部新算术使用整数或有理数，没有浮点阈值和优化器依赖。
+同一证书中涉及基数与交叠时始终选取同一个实际子核心。
+未验证的全局接入由程序中的明确假值保留：
+\begin{verbatim}
+candidate_proved: false
+full_size84_structural_reduction_completed: false
+full_zero_hole_geometric_classification_certified: false
+\end{verbatim}
+前轮大小 84 的 $j=0,1,6$ 等条件性排除保留；
+本轮不把全部 $j=2,3,4,5$ 宣布为完整几何定理。
+
+\section{全秩截断及逆阶梯质量}
+令正侧核心 $P_v=\{x_1<\cdots<x_r\}\subset\Z_{>0}$，
+写成 $x_i=i+d_i$，其中 $0\le d_1\le\cdots\le d_r$，约定 $d_0=0$。
+记 $\tau_v=\sum_i d_i$、$\xi_v=d_r$。
+两侧核心为 $E=P_s\cup\{0\}\cup(-P_t)$，$m=|E|$。
+删去每侧最大的 $j_v$ 个点，得到实际集合 $Q$。令
+\[
+q=|Q|=m-j_s-j_t,\qquad
+F=m-\sum_{v=s,t}(j_v+d_{r_v-j_v}).
+\]
+其凸包有 $q+d_{r_s-j_s}+d_{r_t-j_t}$ 个整数位置，因此
+\begin{equation}\label{eq:intersection}
+|Q\cap(Q+x)|\ge F-x\qquad(x\in\Z_{\ge0}).
+\end{equation}
+即使右侧非正，此式仍成立；删空一侧时 $d_0=0$ 保持公式正确。
+
+\begin{theorem}\label{thm:phi}
+令 $\phi_v=\min_{0\le j\le r_v}\{j+d_{r_v-j}\}$。
+选择两侧达到该最小值的实际截断，有 $F=m-\phi_s-\phi_t$，并且
+\[
+\phi_v\le \min\left(\xi_v,\,
+1+\left\lfloor\frac{\sqrt{1+8(\tau_v-\xi_v)}-1}{2}\right\rfloor\right).
+\]
+当 $\tau_v=\xi_v=0$ 时右侧取零。
+\end{theorem}
+\begin{proof}
+若 $\phi_v\ge p\ge1$，则 $p\le r_v$，且对 $0\le j<p$，
+$d_{r_v-j}\ge p-j$。单独保留实际最大偏差 $\xi_v$，有
+\[\tau_v\ge \xi_v+\T_{p-1},\qquad \xi_v\ge p,
+\quad\T_k=k(k+1)/2.\]
+解这个整数二次条件即得结论。有限验证中允许不满足具体秩数上限的
+$(\tau_v,\xi_v)$ 只会扩大松弛域，不会误删反例。
+\end{proof}
+
+\begin{corollary}\label{cor:sharp}
+单侧成立两个尖锐不等式
+\[\tau_v-4\phi_v\ge-6,\qquad
+2\tau_v-2\xi_v-7\phi_v\ge-16.\]
+所以同一次实际截断满足
+\begin{equation}\label{eq:sharp7}
+\tau+4F\ge4m-12,\qquad
+2\tau-2\xi+7F\ge7m-32.
+\end{equation}
+\end{corollary}
+\begin{proof}
+固定 $p=\phi_v$。第一式至少为
+$\T_p-4p=p(p-7)/2\ge-6$；第二式至少为
+$2\T_{p-1}-7p=p^2-8p\ge-16$。
+实际核心 $\{2,4,6\}$ 与 $\{2,4,6,8\}$ 分别取等。
+两侧相加得到 \eqref{eq:sharp7}。
+\end{proof}
+
+更一般地，要最大化 $a q+bF$，应选择
+\[
+k_v=\min_{0\le j\le r_v}\{(a+b)j+b d_{r_v-j}\},\qquad
+ aq+bF=(a+b)m-k_s-k_t.
+\]
+对固定 $\tau_v,\xi_v$，实际 $k_v$ 必满足
+\begin{equation}\label{eq:weighted-inverse}
+k_v\le b\xi_v,\qquad
+\tau_v\ge\xi_v+
+\sum_{j\ge1}\max\left(0,\left\lceil\frac{k_v-(a+b)j}{b}\right\rceil\right).
+\end{equation}
+正项只有有限个。因为 $k_v\le(a+b)r_v$，实际核心的必要项不会越过最后一秩。
+程序取满足这些必要条件的最大整数 $k_v$，因此是安全的上包络。
+固定删除三点并非总能实现最优：在
+$P=\{1,2,3,4,10,11,12,13\}$ 中，$\phi=4$ 必须删除四点，
+而删除零至三点的最小代价为 5。
+
+\section{长位移消去径向空洞罚项}
+\begin{lemma}\label{lem:holes}
+若 $h\in[1,R_v]\cap\Z$ 不在 $P_v$ 中，则 $R_v-h\le\tau_v$。
+\end{lemma}
+\begin{proof}
+$\tau_v$ 恰等于对所有缺失整数 $h$ 求和的“$h$ 以上实际核心点数”。
+固定一个缺失位置 $h$，其本身贡献上方实际点数；每个更高缺失位置至少贡献 1，
+因为最大值 $R_v$ 实际存在。两者合计为 $R_v-h$。
+\end{proof}
+因此 $E$ 凸包中的空洞仅位于两端宽度分别为 $\tau_t,\tau_s$ 的带中。
+\begin{theorem}\label{thm:longgap}
+设 $\tau=\tau_s+\tau_t$。对整数 $x>\tau$，
+\[|E\cap(E+x)|\ge m-x.\]
+对 $x\ge\tau$，安全的边界版本为
+$|E\cap(E+x)|\ge m-x-2$。
+若整数中心 $z_1<\cdots<z_k$（$k\ge2$）的第一个和最后一个相邻间隔都大于 $\tau$，则
+\[\left|\bigcup_{i=1}^k(E+z_i)\right|\le m+z_k-z_1.\]
+\end{theorem}
+\begin{proof}
+令 $E$ 凸包大小为 $m+\xi$。在两个凸包的交集中，
+$E$ 的左端空洞和 $E+x$ 的右端空洞均已被排除；
+余下可能的缺失位置至多为 $\xi_s+\xi_t=\xi$。
+故交集至少有 $m+\xi-x-\xi=m-x$ 个点。
+$x=\tau$ 时两端最多各多留一个边界空洞，减去 2 即安全。
+当凸包交集为空时右侧非正，不需另加假设。
+
+对并集，第一份平移的全部左端空洞仍未被后来平移填补，
+最后一份的全部右端空洞也未被此前平移填补。
+总凸包中至少仍缺 $\xi$ 个位置，故并集至多为
+$m+\xi+z_k-z_1-\xi$。
+\end{proof}
+严格不等号不可省略：
+$E=\{-3,-1,0,1\}$ 的 $\tau=1$，但
+$|E\cap(E+1)|=2<4-1$。验证器明确保留此反例。
+若交叠损失和并集损失是同一实际资源预算的后果，
+这个引理允许用完整 $E$ 的 $m$ 代替 $m-\xi$，无需牺牲核心基数。
+
+\section{五空单元的两单位尾跨度加强}
+本节采用前轮已经明示的整数源表示，不断言每个 84 点集合已完成此归约。
+设 $d=76,m=68,r_s+r_t=67$，
+\[
+I=(r_s-33)(r_s-34),\quad R=67+\xi,\quad
+\A=I+\tau+\delta.
+\]
+每侧四个源尾点偏移为 $1\le a_v<b_v<c_v<e_v$，
+$L=e_s+e_t$。$B_v$ 为四偏移二项和中大于 $e_v$ 的不同值数。
+前轮源参数恒等式为
+\[\Theta=76j-296-w+\A,\qquad \Theta\le160,\quad
+\Theta+B_s+B_t\le170.\]
+零目标洞即 $w=0$；$j=5$ 时 $\Theta=84+\A$、$\A\le76$。
+全源中央区间和两侧例外给出
+\begin{equation}\label{eq:LQ}
+L\ge\Theta-2-Q_s-Q_t,\qquad Q_v=2B_v-a_v-b_v-c_v.
+\end{equation}
+
+\begin{lemma}\label{lem:quartet}
+$Q_v\le3$，等号仅为 $(a,b,c,e)=(1,2,4,5)$ 或 $(1,3,5,6)$。
+\end{lemma}
+\begin{proof}
+$B\le10$。若 $a+b+c\ge19$，则 $Q\le1$。
+若 $e\ge2c$，只有四个含 $e$ 的和超过 $e$，所以 $Q=8-a-b-c\le2$。
+余下 $a+b+c\le18,c<e<2c$ 是有限全集，程序逐个构造不同二项和，
+得到最大值 3 及所列两个等号例子。这一有限穷尽加两个无界尾部论证覆盖全部正整数偏移。
+\end{proof}
+
+\begin{theorem}\label{thm:L}
+在上述 $j=5,w=0$ 源表示中，若 $\delta\ge10$，则
+\[\boxed{L\ge\A+78.}\]
+\end{theorem}
+\begin{proof}
+先由 \eqref{eq:LQ} 得 $L\ge\A+76$。
+若两侧均有 $Q=3$，则 $L\le12$，矛盾。于是 $L\ge\A+77$。
+若取等，则必须 $\{Q_s,Q_t\}=\{3,2\}$。
+记小尾侧为 $b$，有 $e_b\le6$；另一侧 $e_a\ge\A+71$。
+$Q_a=2$ 给 $a_a+b_a+c_a=2B_a-2\le18$，故 $c_a\le15$。
+于是 $e_a>2c_a$、$B_a=4$、$(a_a,b_a,c_a)=(1,2,3)$。
+
+令实际源最大值为 $M_v=R_v+e_v$。不使用 $M_a$ 的二项和至多为 $2R_a+6$，
+使用 $M_a$ 的二项和至少为 $M_a-M_b$。
+所以中央区间内缺失
+$[2R_a+7,M_a-M_b-1]\cap\Z$，其长度至少
+\[
+L-12-R-7=\A+58-R
+=I+\delta-9+(\tau-\xi)\ge1.
+\]
+但 $L=\A+77$ 要求中央区间计数完全取等，不能缺失这些整数。
+因此 $L\ge\A+78$。这里 $\delta\ge10$ 是实际使用的条件，不能删去。
+\end{proof}
+
+一个条件性终端随之得到严格改进。
+若某实际配置已经合法导出信用 $e\ge13$ 及终端行
+\[
+2I+2\tau-2\xi+7F+3e\le482,
+\]
+则 \eqref{eq:sharp7} 给左侧至少 $7\cdot68-32+39=483$，矛盾。
+旧的 $L\ge\A+76$ 只给同一行右侧 484，不能排除它。
+本推论证明该行不可行；无所有者 H/C5 分类必须另行证明它确实给出该行。
+
+新的源界可取等：稠密核心 $[-34,33]\cap\Z$，两侧尾偏移均为 $(1,2,3,77)$。
+此时 $K=297,\Theta=160,I=\tau=0,\delta=\A=76,L=154=\A+78$。
+这是源与预算条件的等号例子，不是原问题的 84 点可行集合。
+
+\section{十个 HIGH 固定标签}
+固定目录共有 110 个形式标签，26 个两两不交的基准负和组，
+无条件正固定容量为 $110-26=84$。
+若物理侧 $v$ 的首项中心满足 $\lambda_v>S_v$，
+则该侧全部十个 $C^v_{ij}$（$1\le i\le j\le4$）为 HIGH，
+因为 $C^v_{ij}=\lambda_v+x_i+x_j>S_v$。
+它们仅与一个基准组相交；该组为包含 $C_{44}$ 的三元组。
+因组和严格为负，而 HIGH 标签为正，它仍至少有一个 HIGH 集以外的负见证。
+其余组也各有这样的负见证。因此固定命中容量至多
+\[110-26-10=74,\]
+即与原生损失相容的额外固定信用为 10。
+数值相等的形式标签只会降低实际容量，不会损坏此上界。
+
+这修复一个旧条件活动判据：若某 HIGH 交叉中心迫使首项损失至少 $r+80$，
+五个更高的保留单元各损失至少 $r+5$，则加入信用 10 后
+\[
+\A\ge (r-33)(r-34)+6r+115\ge307>304.
+\]
+省略十个固定标签时只得到最低值 297，不能在二空单元预算 304 下矛盾。
+本段没有凭空假定五个单元保留；保留关系是使用该判据时必须核对的前提。
+
+\section{三空单元的 12 个精确标量证书}\label{sec:z3}
+以下系统本身不可行；与实际分支的完整对应另列为待完成工作。
+取 $\A\le228$、$\A=I+\tau+\delta$、
+$I=(r-33)(r-34)$、$1\le r\le66$。
+两侧取第 2 节同一次实际截断，有 $F=68-\phi_s-\phi_t$。
+参数 $a\in\{0,1\},n_s\in\{0,1\},n_t\in\{0,1,2,3\}$ 表示指定端点的重剪裁类型；
+信用 $e=8+2a$，必需原生损失至少 $72a+70(n_s+n_t)$。
+条件尾部行是
+\[
+\max(4,\A-156)\le e_s,e_t\le393-\A,
+\quad e_s+e_t\ge\max(8,\A-76).
+\]
+要排除的端点主行是
+\begin{align*}
+\T_r+4r+\tau_t+2L+4\xi_t+12F
+ &\le1026-2e+\delta+B_*,\\
+B_*&\le2\xi_s+(2a+n_s)(e_s-4)+n_t(e_t-4)\\
+ &\quad+n_s\xi_s+n_t\xi_t-70(n_s+n_t).
+\end{align*}
+每一个有限枚举参数域都由上述源预算截断，未使用任意数值截止。
+对固定 $\tau_v$，枚举 $\xi_v=1,\ldots,\tau_v$（零质量单独取零），
+用逆阶梯上包络取最坏 $\phi_v$。
+再枚举质量分拆、$r,\A,\delta$。
+尾部是矩形交半平面的整数多边形；固定 $e_s$ 后，按 $e_t$ 系数符号取上下端点。
+所得主行左减右的最小值如下：
+\begin{center}\begin{tabular}{ccc|r@{\qquad}ccc|r}\toprule
+$a$&$n_s$&$n_t$&余量&$a$&$n_s$&$n_t$&余量\\\midrule
+0&0&0&180&0&0&1&242\\
+0&0&2&304&0&0&3&371\\
+0&1&0&150&0&1&1&290\\
+0&1&2&463&1&0&0&106\\
+1&0&1&178&1&0&2&363\\
+1&1&0&65&1&1&1&269\\\bottomrule
+\end{tabular}\end{center}
+其他类型因 $e+72a+70(n_s+n_t)>228$ 不可能。
+允许三个其他重端点是必要的：$8+3\cdot70=218\le228$，不能沿用“最多两个”的旧分类。
+
+\section{四空单元的七类条件系统}
+本节所有数字直接定义可复验的标量系统；程序的 PASS 不承担几何归约。
+令 $\A\le152$、$\A=I+\tau+\delta$，以及
+\[
+\max(4,\A-80)\le e_s,e_t\le317-\A,\qquad L\ge\max(8,\A).
+\]
+取指定的二进制重端点标志，个数为 $h$，每个至少损失 72；要求 $\delta\ge e+72h$。
+下表中端点列 $s^2$ 表示该标志对 $p_s$ 加 2，其余 $s,t$ 各加 1。
+设 $p_s,p_t$ 为选中标志的权重和。
+每张卡要求以下量不大于零：
+\begin{equation}\label{eq:z4-system}
+\begin{split}
+ &(u_s-p_s)e_s+(u_t-p_t)e_t+\beta F
+ +c_s\xi_s+c_t\xi_t+m_s\tau_s+m_t\tau_t\\
+ &\quad+C-d_\delta\delta+4(p_s+p_t)+72n h+E_h+P(r).
+\end{split}
+\end{equation}
+\begin{center}\small\begin{tabular}{lrrrrrrr}\toprule
+卡&$\beta$&$(c_s,c_t)$&$(u_s,u_t)$&$C$&$d_\delta$&$e$&$n$\\\midrule
+F&12&$(-3,1)$&$(2,2)$&$-934$&1&8&0\\
+S&9&$(0,0)$&$(2,2)$&$-361$&3&11&2\\
+EH&10&$(-1,-1)$&$(2,3)$&$-321$&2&8&0\\
+EA-own&10&$(-1,-1)$&$(1,3)$&$-391$&2&8&1\\
+EA-opp&11&$(-1,-1)$&$(3,2)$&$-396$&2&8&0\\
+EC5&11&$(-1,-1)$&$(2,3)$&$-397$&2&8&1\\
+O&10&$(4,0)$&$(3,1)$&$-867$&4&12&0\\\bottomrule
+\end{tabular}\end{center}
+\begin{center}\small\begin{tabular}{llclrr}\toprule
+卡&标志端点&$(m_s,m_t)$&$P(r)$&$E_h$&最小值\\\midrule
+F&$s,s^2,t,t,t$&$(0,1)$&$\T_r+4r$&0&306\\
+S&$s,s,t,t$&$(0,0)$&0&0&81\\
+EH&$s,s,t,t,t$&$(0,0)$&0&0&253\\
+EA-own&$s,t,t,t$&$(0,0)$&0&0&163\\
+EA-opp&$s,s^2,t,t$&$(0,0)$&0&0&204\\
+EC5&$s,s,t,t,t$&$(0,0)$&0&0&295\\
+O&$s,t,s$&$(1,0)$&$\T_r+4r$&见下&123\\\bottomrule
+\end{tabular}\end{center}
+O 卡的三个标志额外成本分别为 $288,288,252$，$E_h$ 为实际选中成本之和。
+F、O 枚举全部允许的 $r$；其余卡没有侧别二次项，取 $I=0$ 扩大预算域是安全的。
+包括信用 8 时可能的两个重端点，所有标志逐一检查。
+特别地，本节 O 卡的常数来自候选移植终端，本文仅认证其标量不可行性；
+在完整新证明中，必须重新证明其物理目标端点行，不能仅凭旧尺寸常数线性变化接受它。
+
+\section{五空单元条件卡与 alpha 终端}
+五空单元的共同标量条件为
+\[
+\A\le76,\quad \A=I+\tau+\delta,\quad
+\max(4,\A-4)\le e_s,e_t\le241-\A,\quad L\ge\A+76.
+\]
+本节 11 张卡采用实际端点的形式恒等式重建其仿射主体，而非只储存预期余量。
+令 $a=M_s+X_s,b=M_t+X_t,G=g_s+g_t$，使用
+\begin{align*}
+P_s&=d_s-d_t-2a-b-G-h_t,\\
+C_{5t}&=d_t-2b-a-G-h_s,&C_{6t}&=d_t-2b-a-G,\\
+C_{7t}&=d_t-2b-a-g_t,&U_v&=d_v-(M_v+X_v),\\
+V_v&=U_v-g_v,&H_v&=U_v+h_v,\qquad \alpha_v=h_v-(M_v+X_v).
+\end{align*}
+对下表上端点和减去加权下端点和，再减 $2(M_s+M_t)$，
+程序检查 $d_s,d_t$ 严格消去。
+其余主体逐项给出星形、间隔、质量和尾部的系数。
+需要的条件端点行是
+\[
+ Z\ge72-r_v-l_Z-\xi_v,\qquad
+ Z\le S_v+r_o-71+u_Z+\xi_o.
+\]
+还需所用的真实、保留、互异资源允许同一预算合并；空对的某个分量不能独立取得容量。
+这些是候选卡的几何前提，本程序没有自动认证它们。
+\begin{center}\small\begin{tabular}{cllr}\toprule
+卡&上端点&下端点（含权）&最小余量\\\midrule
+A&$V_s,V_t$&$P_s,2C_{5t},2\alpha_s,\alpha_t$&321\\
+B&$V_s,H_t$&$P_s,2C_{5t},2\alpha_s$&141\\
+C&$H_s,U_t$&$P_s,2C_{5t},3\alpha_s$&324\\
+D&$H_s,H_t$&$P_s,2C_{5t}$&59\\
+E&$H_s,U_t$&$P_s,2C_{5t},\alpha_t$&7\\
+F&$U_s,H_t$&$P_s,2C_{5t},2\alpha_t$&167\\
+G&$H_s,H_t$&$P_s,2C_{6t},2\alpha_t$&167\\
+H&$H_s,H_t$&$P_s,2C_{6t},\alpha_s$&25\\
+I&$H_s,U_t$&$P_s,2C_{6t},\alpha_s,\alpha_t$&203\\
+J&$H_s,H_t$&$P_s,2C_{7t},\alpha_s,2\alpha_t$&257\\
+K&$U_s,H_t$&$P_s,2C_{6t},2\alpha_t$&167\\\bottomrule
+\end{tabular}\end{center}
+一般信用为 8。E 卡须另有 $H_t$ 为 HIGH，增加 $C_{22},C_{23},C_{24}$ 三个固定标签，
+使用信用 11；仅信用 8 时最低值为 $-11$，不能报告通过。
+D 卡必须保留同一次截断中的 $5q+6F$，使用 \eqref{eq:weighted-inverse}，
+不能将基数与跨度分别优化。其余非负 $h$ 项可安全舍去。
+
+为完整定义所验标量系统，按下面的坐标顺序记录仿射系数：
+\[
+(M_s,M_t,X_s,X_t,g_s,g_t,h_s,h_t,d_s,d_t),\qquad
+(p,q,c_a,c_b,c_g,c_d,c_h,c_{h'},0,0).
+\]
+一般卡令 $\beta=c_a+c_b+c_g+c_d$、$a_q=0$，以及
+$\lambda=\max(c_a,c_b)/2+\max(c_g,c_d)/2+\max(\text{下端点权})$。
+D 卡改用 $\beta=c_a+c_b+6,a_q=5$，
+$\lambda=\max(c_a,c_b)/2+3+\max(\text{下端点权})$。
+令 $w_s,w_t$ 为本侧下端点权加对侧上端点个数，$C_{\rm ep}$ 为上述名义端点常数和。
+实际枚举的是下式被要求不大于零的系统：
+\begin{align*}
+ &p r_s+q r_t-134+p e_s+q e_t+a_q q_Q+\beta F\\
+ &\quad +(p-2-w_s)\xi_s+(q-2-w_t)\xi_t
+ -1114+C_{\rm ep}+(1-\lambda)\delta+\lambda e.
+\end{align*}
+此处 $q_Q=|Q|$，与侧系数 $q$ 不同。所有项在结果 JSON 中逐卡输出。
+
+\subsection*{信用 42 的 alpha 条件终端}
+假设已合法获得相容信用 42、所需正常端点、实际资源组和其运输不等式。
+此时 $\eps=\delta-42\le34-I-\tau$，$\tau\le34-I$。
+原始全核心交叠先给普通间隔至少 $68-\xi-\eps\ge\tau$，
+星形间隔至少 $68-\xi-\eps/2\ge\tau$。
+用定理 \ref{thm:longgap} 的边界版本再次加强：
+普通间隔至少 $66-\eps>\tau$，星形间隔至少 $66-\eps/2>\tau$。
+于是所有必需交叠和三平移并集可用完整核心 $q=F=68$。
+已有运输主行在这些前提下成为
+\[
+4I+4\tau-2\xi_s+13\cdot68
+\le542+2(\Theta+B_s+B_t)\le882.
+\]
+左侧至少 $884$，矛盾余量为 2。
+这解除前轮仅用截断所得的 23 单位标量缺口。
+\textbf{此结论没有反向证明信用 42 或正常端点已经取得。}
+从实际五空单元配置导出它们，尤其不能先假设正常性再据此累加信用，仍是接入审查的职责。
+
+\section{验证、反例控制与尚待完成的工作}
+入口及输出：
+\begin{verbatim}
+python -I -S -B verification/upper83_fullrank/check.py \
+  --output .work/fullrank.json
+python -I -S -B -O verification/upper83_fullrank/check.py \
+  --output .work/fullrank_O.json
+\end{verbatim}
+Windows 入口为 \path{verify_upper83_fullrank_windows.bat}。
+源哈希清单为 \path{data/upper83_fullrank_sources.json}；
+结果、日志和审阅记录位于 \path{results/2026-10-19/upper83_fullrank/}。
+程序对真实小核心检查交叠和并集，用反例防止把 $x>\tau$ 误写为 $x\ge\tau$，
+检查阶梯端点、尖锐常数、重端点覆盖、E 卡信用不足，以及不完整工作误报上界 83。
+它不把有限集合回归当成无界引理的证明；无界部分由正文给出。
+
+完整大小 84 排除仍需要：先完成共同整数源、两层结构和格化的全覆盖；
+完成正目标洞情形；将零洞所有保留形状逐一接到真实物理目标预算；
+特别是五空单元 A1 的最终 $C_{5t}$ 缺失分支，在新预算下旧最后一步不再足够。
+例如旧 trim-one 类型只迫使 $\tau+\delta\ge61$，
+而新源预算允许 $\tau+\delta\le76-I$，二者并不矛盾。
+保留这一失败终端比把旧常数机械移植成“83 已证”更可复核。
+本报告新增严格方法和条件证书，\textbf{全局上界仍为 84}。
+\end{document}

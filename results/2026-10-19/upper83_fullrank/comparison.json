@@ -1,0 +1,9 @@
+{
+  "ordinary_command": "python -I -S -B verification/upper83_fullrank/check.py --output .work/upper83_fullrank.json",
+  "optimized_command": "python -I -S -B -O verification/upper83_fullrank/check.py --output .work/upper83_fullrank_O.json",
+  "byte_identical": true,
+  "ordinary_sha256": "0a3f4117ebb6b268dfeda827363bb2ce63fd854fe0d4b8d1ab7c52d46dc922db",
+  "optimized_sha256": "0a3f4117ebb6b268dfeda827363bb2ce63fd854fe0d4b8d1ab7c52d46dc922db",
+  "windows_executed": false,
+  "windows_scope": "Batch launcher inspected statically; this run used Linux only."
+}

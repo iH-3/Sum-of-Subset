@@ -1,0 +1,57 @@
+{
+  "mathematical_controls": [
+    {
+      "id": "non_strict_long_gap",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: non_strict_long_gap"
+    },
+    {
+      "id": "staircase_missing_top_rank",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: staircase_missing_top_rank"
+    },
+    {
+      "id": "kernel_penalty_15",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: kernel_penalty_15"
+    },
+    {
+      "id": "eleven_HIGH_from_ten_labels",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: eleven_HIGH_from_ten_labels"
+    },
+    {
+      "id": "old_Z5_E_credit8_is_enough",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: old_Z5_E_credit8_is_enough"
+    },
+    {
+      "id": "omit_three_heavy_endpoints",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: omit_three_heavy_endpoints"
+    },
+    {
+      "id": "source_gap_at_delta9_is_strict",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: source_gap_at_delta9_is_strict"
+    },
+    {
+      "id": "claim_global83_without_structure",
+      "status": "REJECTED",
+      "reason": "rejected invalid assertion: claim_global83_without_structure"
+    }
+  ],
+  "source_identity_controls": [
+    {
+      "id": "source_byte_tamper",
+      "status": "REJECTED",
+      "reason": "changed source: verification/upper83_fullrank/check.py"
+    },
+    {
+      "id": "mandatory_checker_omitted",
+      "status": "REJECTED",
+      "reason": "mandatory sources"
+    }
+  ],
+  "all_rejected": true
+}

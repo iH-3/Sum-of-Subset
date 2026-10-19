@@ -1,0 +1,12 @@
+{
+  "pdf": "reports/upper83_fullrank_20261019.pdf",
+  "pdf_sha256": "10ddd7973aa49fef4074b0a9071a1c5e17d0aee399488a3f577954f89b99198a",
+  "tex": "reports/upper83_fullrank_20261019.tex",
+  "tex_sha256": "176dc91a5e512bb29c6c5cd965b5effcffb17cacd4c82a2a59f621625d0c2f84",
+  "pages": 7,
+  "compiler": "XeLaTeX two passes",
+  "warnings": [],
+  "fonts_embedded": true,
+  "visual_review": "All seven rendered pages inspected at final revision; no clipped tables, equations, text or page numbers.",
+  "scope_review": "Abstract, conclusion, verifier status and repository summaries all retain upper84 and deny a completed upper83 proof."
+}

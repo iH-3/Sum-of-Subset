@@ -1,0 +1,61 @@
+{
+  "status": "PASS_CONDITIONAL_PROGRESS_ONLY",
+  "current_proved_range": [
+    71,
+    84
+  ],
+  "candidate_upper": 83,
+  "candidate_proved": false,
+  "tail_L": {
+    "before": "A_*+76",
+    "after": "A_*+78",
+    "conditions": "d76 integer source, j5,w0,delta>=10",
+    "sharp": true
+  },
+  "conditional_card_minima": {
+    "z3": 65,
+    "z4": 81,
+    "z5_a0": 7,
+    "ownerless": 1,
+    "alpha_credit42": 2
+  },
+  "scalar_evaluations": {
+    "z3": 956622,
+    "z4": 565009,
+    "z5_a0": 236136
+  },
+  "scalar_evaluations_total": 1757767,
+  "not_actual_configuration_counts": true,
+  "actual_core_tests": {
+    "actual_one_side_cores": 923,
+    "actual_intersections": 1802,
+    "actual_unions": 252,
+    "sharp_kernel_minima": [
+      -6,
+      -16
+    ],
+    "strict_boundary_counterexample": {
+      "E": [
+        -3,
+        -1,
+        0,
+        1
+      ],
+      "tau": 1,
+      "shift": 1,
+      "intersection": 2,
+      "invalid_lower": 3
+    }
+  },
+  "ordinary_optimized_identical": true,
+  "negative_controls": 10,
+  "baseline_suites": 11,
+  "baseline_checks": {
+    "PASS": 140,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "source_files_pinned": 9,
+  "full_size84_structure_completed": false,
+  "complete_zero_hole_geometric_classification_certified": false
+}

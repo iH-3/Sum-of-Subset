@@ -1,0 +1,62 @@
+{
+  "baseline_commit": "d934bf32d724c731dc12b0ce481b6337a364db91",
+  "status": "PARTIAL_WRITTEN_AND_EXACT_REVIEW",
+  "not_proof_assistant_verified": true,
+  "universal_lemmas": [
+    {
+      "id": "fullrank",
+      "proof": "Inverse staircase tau>=xi+T_(phi-1); same actual Q optimizes all edges.",
+      "sharp_kernels": [
+        -6,
+        -16
+      ]
+    },
+    {
+      "id": "longgap",
+      "proof": "Every hull hole lies within its side mass of that endpoint; count excluded end holes in intersections/unions.",
+      "strict_shift_condition": "x>tau",
+      "equality_boundary_counterexample": {
+        "E": [
+          -3,
+          -1,
+          0,
+          1
+        ],
+        "tau": 1,
+        "shift": 1,
+        "intersection": 2,
+        "invalid_lower": 3
+      }
+    },
+    {
+      "id": "tail_L",
+      "proof": "Quartet Q<=3 plus equality classification; L=A+77 leaves a central hole when delta>=10.",
+      "sharp_source": {
+        "d": 76,
+        "K": 297,
+        "theta": 160,
+        "B": 8,
+        "joint": 168,
+        "A": 76,
+        "delta": 76,
+        "L": 154
+      }
+    },
+    {
+      "id": "HIGH10",
+      "proof": "Ten HIGH formal labels are disjoint from 26 selectable negative witnesses, even though C44 touches one baseline group."
+    }
+  ],
+  "conditional_systems": {
+    "z3": "All 12 scalar flags checked; this does not certify global geometry.",
+    "z4": "All seven scalar card families checked, including two-heavy flags. O physical master needs a fresh derivation.",
+    "z5": "Eleven A0 scalar cards, E requires credit 11. No A1/B completeness claim.",
+    "alpha": "Credit42, normal endpoints and transport are assumptions; program does not derive them."
+  },
+  "remaining": [
+    "Complete size84 structural/common-scale reduction.",
+    "Complete all positive-target-hole cases.",
+    "Certify all zero-hole actual ownership and geometric dispatch.",
+    "Close final Z5 A1 C5t-hole case; old trim-one threshold61 does not contradict cap76."
+  ]
+}
