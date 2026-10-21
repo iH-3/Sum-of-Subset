@@ -1,0 +1,1087 @@
+{
+  "status": "PASS_SIZE82_STRUCTURAL_ARITHMETIC",
+  "inverse": [
+    {
+      "a": 10,
+      "H": 6,
+      "nonprimitive_cap": -97,
+      "witness": {
+        "r": 55,
+        "R": 77,
+        "B": 78,
+        "H": 6,
+        "L": 18,
+        "thresholds": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "a": 11,
+      "H": 8,
+      "nonprimitive_cap": -58,
+      "witness": {
+        "r": 54,
+        "R": 109,
+        "B": 110,
+        "H": 8,
+        "L": 19,
+        "thresholds": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "a": 12,
+      "H": 10,
+      "nonprimitive_cap": -22,
+      "witness": {
+        "r": 53,
+        "R": 138,
+        "B": 139,
+        "H": 10,
+        "L": 21,
+        "thresholds": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "a": 13,
+      "H": 12,
+      "nonprimitive_cap": 4,
+      "witness": {
+        "r": 52,
+        "R": 157,
+        "B": 158,
+        "H": 12,
+        "L": 22,
+        "thresholds": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "a": 14,
+      "H": 14,
+      "nonprimitive_cap": 33,
+      "witness": {
+        "r": 51,
+        "R": 179,
+        "B": 180,
+        "H": 14,
+        "L": 23,
+        "thresholds": [
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      }
+    },
+    {
+      "a": 15,
+      "H": 16,
+      "nonprimitive_cap": 59,
+      "witness": {
+        "r": 50,
+        "R": 198,
+        "B": 199,
+        "H": 16,
+        "L": 23,
+        "thresholds": [
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "a": 16,
+      "H": 18,
+      "nonprimitive_cap": 82,
+      "witness": {
+        "r": 49,
+        "R": 214,
+        "B": 215,
+        "H": 18,
+        "L": 24,
+        "thresholds": [
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ]
+      }
+    },
+    {
+      "a": 17,
+      "H": 20,
+      "nonprimitive_cap": 93,
+      "witness": {
+        "r": 48,
+        "R": 218,
+        "B": 219,
+        "H": 20,
+        "L": 24,
+        "thresholds": [
+          8,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      }
+    },
+    {
+      "a": 18,
+      "H": 22,
+      "nonprimitive_cap": 110,
+      "witness": {
+        "r": 47,
+        "R": 228,
+        "B": 229,
+        "H": 22,
+        "L": 25,
+        "thresholds": [
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11
+        ]
+      }
+    },
+    {
+      "a": 19,
+      "H": 22,
+      "nonprimitive_cap": 118,
+      "witness": {
+        "r": 46,
+        "R": 235,
+        "B": 236,
+        "H": 22,
+        "L": 25,
+        "thresholds": [
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11
+        ]
+      }
+    },
+    {
+      "a": 20,
+      "H": 24,
+      "nonprimitive_cap": 129,
+      "witness": {
+        "r": 45,
+        "R": 239,
+        "B": 240,
+        "H": 24,
+        "L": 25,
+        "thresholds": [
+          9,
+          11,
+          11,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12
+        ]
+      }
+    },
+    {
+      "a": 21,
+      "H": 26,
+      "nonprimitive_cap": 137,
+      "witness": {
+        "r": 44,
+        "R": 240,
+        "B": 241,
+        "H": 26,
+        "L": 25,
+        "thresholds": [
+          9,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ]
+      }
+    },
+    {
+      "a": 22,
+      "H": 28,
+      "nonprimitive_cap": 142,
+      "witness": {
+        "r": 43,
+        "R": 238,
+        "B": 239,
+        "H": 28,
+        "L": 25,
+        "thresholds": [
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      }
+    },
+    {
+      "a": 23,
+      "H": 28,
+      "nonprimitive_cap": 138,
+      "witness": {
+        "r": 42,
+        "R": 233,
+        "B": 234,
+        "H": 28,
+        "L": 25,
+        "thresholds": [
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      }
+    },
+    {
+      "a": 24,
+      "H": 28,
+      "nonprimitive_cap": 131,
+      "witness": {
+        "r": 41,
+        "R": 225,
+        "B": 226,
+        "H": 28,
+        "L": 24,
+        "thresholds": [
+          8,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      }
+    },
+    {
+      "a": 25,
+      "H": 28,
+      "nonprimitive_cap": 121,
+      "witness": {
+        "r": 40,
+        "R": 214,
+        "B": 215,
+        "H": 28,
+        "L": 24,
+        "thresholds": [
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      }
+    },
+    {
+      "a": 26,
+      "H": 26,
+      "nonprimitive_cap": 102,
+      "witness": {
+        "r": 39,
+        "R": 200,
+        "B": 201,
+        "H": 26,
+        "L": 23,
+        "thresholds": [
+          8,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ]
+      }
+    },
+    {
+      "a": 27,
+      "H": 24,
+      "nonprimitive_cap": 80,
+      "witness": {
+        "r": 38,
+        "R": 183,
+        "B": 184,
+        "H": 24,
+        "L": 22,
+        "thresholds": [
+          7,
+          9,
+          10,
+          10,
+          11,
+          11,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12
+        ]
+      }
+    },
+    {
+      "a": 28,
+      "H": 22,
+      "nonprimitive_cap": 55,
+      "witness": {
+        "r": 37,
+        "R": 163,
+        "B": 164,
+        "H": 22,
+        "L": 21,
+        "thresholds": [
+          7,
+          9,
+          9,
+          10,
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11
+        ]
+      }
+    },
+    {
+      "a": 29,
+      "H": 18,
+      "nonprimitive_cap": 21,
+      "witness": {
+        "r": 36,
+        "R": 140,
+        "B": 141,
+        "H": 18,
+        "L": 20,
+        "thresholds": [
+          7,
+          8,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ]
+      }
+    },
+    {
+      "a": 30,
+      "H": 14,
+      "nonprimitive_cap": -16,
+      "witness": {
+        "r": 35,
+        "R": 114,
+        "B": 115,
+        "H": 14,
+        "L": 18,
+        "thresholds": [
+          5,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      }
+    },
+    {
+      "a": 31,
+      "H": 12,
+      "nonprimitive_cap": -50,
+      "witness": {
+        "r": 34,
+        "R": 85,
+        "B": 86,
+        "H": 12,
+        "L": 18,
+        "thresholds": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "a": 32,
+      "H": 8,
+      "nonprimitive_cap": -93,
+      "witness": {
+        "r": 33,
+        "R": 53,
+        "B": 54,
+        "H": 8,
+        "L": 18,
+        "thresholds": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    }
+  ],
+  "pre_G_AP_predecessors": [
+    [
+      28,
+      48
+    ],
+    [
+      29,
+      38
+    ]
+  ],
+  "small": [
+    {
+      "a": 11,
+      "H": 10,
+      "width": 1516,
+      "source_max": 764
+    },
+    {
+      "a": 12,
+      "H": 14,
+      "width": 1453,
+      "source_max": 977
+    },
+    {
+      "a": 13,
+      "H": 16,
+      "width": 1395,
+      "source_max": 1152
+    },
+    {
+      "a": 14,
+      "H": 20,
+      "width": 1334,
+      "source_max": 1341
+    }
+  ],
+  "AP": [
+    {
+      "a": 10,
+      "halfstep_cap": -52,
+      "one_class_nonprimitive_cap": -56
+    },
+    {
+      "a": 11,
+      "halfstep_cap": -18,
+      "one_class_nonprimitive_cap": -23
+    },
+    {
+      "a": 12,
+      "halfstep_cap": 13,
+      "one_class_nonprimitive_cap": 7
+    },
+    {
+      "a": 13,
+      "halfstep_cap": 35,
+      "one_class_nonprimitive_cap": 28
+    },
+    {
+      "a": 14,
+      "halfstep_cap": 58,
+      "one_class_nonprimitive_cap": 50
+    },
+    {
+      "a": 15,
+      "halfstep_cap": 80,
+      "one_class_nonprimitive_cap": 71
+    },
+    {
+      "a": 16,
+      "halfstep_cap": 99,
+      "one_class_nonprimitive_cap": 89
+    },
+    {
+      "a": 17,
+      "halfstep_cap": 115,
+      "one_class_nonprimitive_cap": 104
+    },
+    {
+      "a": 18,
+      "halfstep_cap": 128,
+      "one_class_nonprimitive_cap": 116
+    },
+    {
+      "a": 19,
+      "halfstep_cap": 138,
+      "one_class_nonprimitive_cap": 125
+    },
+    {
+      "a": 20,
+      "halfstep_cap": 145,
+      "one_class_nonprimitive_cap": 131
+    },
+    {
+      "a": 21,
+      "halfstep_cap": 149,
+      "one_class_nonprimitive_cap": 134
+    },
+    {
+      "a": 22,
+      "halfstep_cap": 150,
+      "one_class_nonprimitive_cap": 134
+    },
+    {
+      "a": 23,
+      "halfstep_cap": 148,
+      "one_class_nonprimitive_cap": 131
+    },
+    {
+      "a": 24,
+      "halfstep_cap": 143,
+      "one_class_nonprimitive_cap": 125
+    },
+    {
+      "a": 25,
+      "halfstep_cap": 135,
+      "one_class_nonprimitive_cap": 116
+    },
+    {
+      "a": 26,
+      "halfstep_cap": 124,
+      "one_class_nonprimitive_cap": 104
+    },
+    {
+      "a": 27,
+      "halfstep_cap": 110,
+      "one_class_nonprimitive_cap": 89
+    },
+    {
+      "a": 28,
+      "halfstep_cap": 93,
+      "one_class_nonprimitive_cap": 71
+    },
+    {
+      "a": 29,
+      "halfstep_cap": 73,
+      "one_class_nonprimitive_cap": 50
+    },
+    {
+      "a": 30,
+      "halfstep_cap": 50,
+      "one_class_nonprimitive_cap": 26
+    },
+    {
+      "a": 31,
+      "halfstep_cap": 24,
+      "one_class_nonprimitive_cap": -1
+    },
+    {
+      "a": 32,
+      "halfstep_cap": -5,
+      "one_class_nonprimitive_cap": -31
+    }
+  ],
+  "three_class_ranks": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "larger_AP_ranks": [
+    31,
+    32
+  ],
+  "high_hole_bands": [
+    {
+      "z": [
+        15,
+        16
+      ],
+      "mu": 402,
+      "rho": 276,
+      "width_margin": "157"
+    },
+    {
+      "z": [
+        17,
+        20
+      ],
+      "mu": 443,
+      "rho": 317,
+      "width_margin": "268"
+    },
+    {
+      "z": [
+        21,
+        48
+      ],
+      "mu": 481,
+      "rho": 355,
+      "width_margin": "298"
+    }
+  ],
+  "tail_source_margin": "42",
+  "profiles": {
+    "thresholds": [
+      15,
+      17,
+      21,
+      49
+    ],
+    "r_domain": [
+      15,
+      54
+    ],
+    "stats": {
+      "claims": 160,
+      "branches": 5200,
+      "immediate": 1929,
+      "upgrades": 95701,
+      "future_pairs": 1461470,
+      "bounded_new_upgrades": 27058,
+      "max_rounds": 10
+    },
+    "mutations_rejected": [
+      "missing AP branch",
+      "mandatory initial AP cost removed",
+      "unsupported upgrade",
+      "terminal contradiction removed",
+      "false mu",
+      "boolean in place of integer",
+      "unchanged synchronous round",
+      "beta9 invalid relaxed threshold",
+      "NEW-vector self-justification",
+      "missing claim",
+      "false rho output"
+    ],
+    "strict_boundary_controls": 4,
+    "all_upper_budgets_use": "OLD vector",
+    "mathematical_scope": "Complete supplied proof traces for the 160 H claims, not profile discovery or maximization"
+  }
+}

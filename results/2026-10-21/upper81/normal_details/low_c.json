@@ -1,0 +1,8 @@
+{
+  "status": "PASS_UNIFORM_LOW_SLACK",
+  "patterns": 22,
+  "F": 24,
+  "delta": 76,
+  "w": 28,
+  "minimum_integer_margin": 35
+}

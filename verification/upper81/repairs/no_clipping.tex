@@ -1,0 +1,88 @@
+\paragraph{补证：二阶循环分支须先排除纤维截断。}
+这里只使用格化前的预算，不使用 $G_0$、$z\le18$ 或待证的精确质量恒等式。
+设小侧支撑 $U=\operatorname{FS}(P)=2[0,u-1]_{\mathbb Z}$，
+大侧 $V=\operatorname{FS}(Q)$ 非等差，$|P|=a$、$|Q|=b=66-a$。
+本分支有至少两个奇数生成元。$a=8,9,10$ 时，
+$\kappa\le\Omega+8-(b-5)<T_a$ 已不容许两个剩余类，故这里只需 $11\le a\le33$。
+记
+\[
+ p_a=\begin{cases}-8,&a=11,12,\\-2,&a=13,\\0,&14\le a\le33,\end{cases}
+ \qquad \rho_P\ge p_a,\qquad u-1\ge T_a.
+\]
+其中 $a=13$ 的底数来自 P03 阈值证明表中的 $\Phi_{13}\le4$。
+由两个剩余类及原预算，独立地得到
+\[
+ \kappa\ge u-1\ge T_a,\qquad
+ \rho_Q\le R_a:=\Omega-T_a-p_a,\qquad \Omega=624-(33-a)^2. \tag{R1}
+\]
+
+先证明 $Q$ 在此整数单位中本原。因 $Q$ 有奇数，若 $g=\gcd(Q)>1$，则 $g\ge3$ 为奇数。
+$U$ 在模 $g$ 下占据 $\min(g,u)\ge3$ 个类；在每类分别作和集计数，得
+\[
+ \kappa\ge(\min(g,u)-1)(|V|-1)
+ \ge2(T_b+b-3)>\Omega-p_a.
+\]
+最后的严格余量在 $a=11,\ldots,33$ 上最小为 $558$。
+这与 $\kappa\le\Omega-p_a$ 矛盾；此处只用了 $\mu_Q\ge b-3$、$\rho_Q\ge0$ 和原预算。
+故 $g=1$。
+
+现在对 $Q$ 应用前述可变阈值端点引理，取统一半径 $H=32$。
+令 $B=R_a+1$，取满足 $18\le L\le b$ 且 $B\le T_{L-1}-b-1$ 的最小 $L$，并定义
+\[
+ \beta_i=\min\left(\left\lfloor\frac{i-4}{2}\right\rfloor,16,
+             \left\lfloor\frac{T_i+i-b-7-B}{6}\right\rfloor\right),
+ \qquad L\le i\le b. \tag{R2}
+\]
+全部 23 行均满足
+\[
+ \beta_i\ge2,\quad 2\beta_i+4\le i,\quad
+ B\le T_i+i-6\beta_i-b-7,\quad
+ B\le L-6+\sum_{i=L}^{b}(\beta_i-1). \tag{R3}
+\]
+下表列出参数与最后一个不等式的余量
+$m=L-6+\sum(\beta_i-1)-B$；其余条件由 (R2) 及上述 $L$ 的定义逐项核对。
+\begin{center}\small
+\begin{tabular}{rrrr@{\qquad}rrrr}
+\toprule
+$a$&$R_a$&$L$&$m$&$a$&$R_a$&$L$&$m$\\\midrule
+11&82&18&409&23&248&25&17\\
+12&113&19&356&24&243&25&8\\
+13&135&20&313&25&235&25&2\\
+14&158&22&266&26&224&24&4\\
+15&180&23&222&27&210&23&10\\
+16&199&23&186&28&193&23&14\\
+17&215&24&148&29&173&22&26\\
+18&228&25&114&30&150&20&44\\
+19&238&25&88&31&124&19&62\\
+20&245&25&65&32&95&18&82\\
+21&249&25&46&33&63&18&100\\
+22&250&25&30&&&&\\\bottomrule
+\end{tabular}
+\end{center}
+端点引理给出 $Q$ 在本原单位上的总洞数 $\mathfrak h_Q\le32$。
+该引理若写成 $Q=tY$、$Y$ 为本原整数集，则 $\gcd(Q)=1$ 强迫 $t=1$，
+所以洞数界正是在当前半步长单位中成立。
+
+为明确截断项，令 $W$ 为 $Q$ 的最小奇数，并把 $V$ 的两个奇偶纤维分别除以 2、平移为整数集。
+记各纤维中相邻点之间缺少的整数个数为 $g_{r,j}$，$r=0,1$，并置
+\[
+ C_{\mathrm{clip}}=\sum_{r,j}\max\{g_{r,j}-(u-1),0\}.
+\]
+在每个纤维逐次并入长 $u$ 的整数区间，精确给出
+\[
+ \kappa=u-1+\sum_{r,j}\min\{g_{r,j},u-1\}.
+\]
+最小奇数子集和为 $W$；对子集取补，两个奇偶纤维的端点外合计恰缺少 $W-1$ 个整数。
+因此
+\[
+ \mathfrak h_Q=W-1+\sum_{r,j}g_{r,j},\qquad
+ \mu_Q+\kappa=\sum Q+u-W-T_b-C_{\mathrm{clip}}. \tag{R4}
+\]
+每个 $g_{r,j}$ 都计数真实洞，故
+\[
+ g_{r,j}\le\mathfrak h_Q\le32<66\le T_a\le u-1.
+\]
+于是 $C_{\mathrm{clip}}=0$。这才允许使用不含截断项的质量恒等式。
+同时 $\mathfrak h_P=u-1$，故 $z=\mathfrak h_P+\mathfrak h_Q-\kappa=W-1$。
+这一步已在使用格化后预算和小松弛接口之前完成。
+

@@ -1,0 +1,18 @@
+{
+  "schema": "subset-sum-proof-repairs-v1",
+  "base_commit": "73911eedf061fa36abae8d409ab77fb21ac07ea3",
+  "repository_files": {
+    "data/upper82_global_sources.json": "9c7e20c5b5366f1308e8def57ff330ea3b8c9802b0100eb0aca648e4ce88f594",
+    "reports/upper94_from95_20261016.tex": "2e8f977a4da24aa404232b8637a89752a5010638e0f8495f94e1c6f032c66d9e",
+    "verification/nonap_sharp.py": "2875ce4338db5b5b0913951a9c3e6c47acdfb98a67e84ccec721da50346530b5",
+    "reports/proof_review_20261014.md": "b161a615c3cadf6d47320269a3907eef0336e126ae7b697ee8dfd14bfd215163",
+    "reports/upper86_complete_20261005.tex": "2854bd7300298bd68af44d640645944435a4de77ce922fbdaa7b404414a35fc3",
+    "verification/upper82_global/proof.md": "68423c8bad757435029eed9b878119de1f088511b43a44be98c9708107bffa86",
+    "verification/upper82_global/structure.py": "34fd775d19372381495fa4b6c18ab33ac2152091b9cd6986bbd71f0d89eb44d1"
+  },
+  "package_files": {
+    "check_repairs.py": "d1b4d9e800792aaf68704b5449e0f214e11d80427ed6a417fc9ecb447508c769",
+    "no_clipping.tex": "e84be07bc80a6797102e7ef354df28e82029a317459ba8dd13bafcb49de9c696",
+    "repair_note.tex": "77907848b403d328e5247cec597e408b1a9ea1eedbcc8f64c299c08b87b56502"
+  }
+}

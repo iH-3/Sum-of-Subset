@@ -1,0 +1,53 @@
+% XeLaTeX. Keep no_clipping.tex in the same directory.
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{fontspec,amsmath,amssymb,booktabs,longtable,array,xurl}
+\IfFontExistsTF{SimSun}{\setmainfont{SimSun}}{\setmainfont{Noto Sans CJK SC}}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{4em}
+\allowdisplaybreaks
+\title{Sum-of-Subset：局部证明修复}
+\author{}
+\date{2026 年 10 月 21 日}
+\begin{document}
+\maketitle
+本文对应精简整理稿 P33 的追加补证，记号同该章。
+基础快照为 \texttt{73911eedf061fa36abae8d409ab77fb21ac07ea3}。
+使用 P33 第 4.1 节的可变阈值端点引理：若非 AP 的 $r$ 元正侧满足 $\rho\le R$，
+且 $B=R+1$、$18\le L\le r$ 与整数阈值 $\beta_i\ge2$ 满足
+\[
+ B\le T_{L-1}-r-1,\quad 2\beta_i+4\le i,\quad
+ B\le T_i+i-6\beta_i-r-7,\quad
+ B\le L-6+\sum_{i=L}^r(\beta_i-1),
+\]
+则在该侧的本原整数单位中，总洞数至多 $2\max\beta_i$，所有洞均在两端相应半径内。
+该引理的前缀、首次离格和中央区间延拓证明保留在 P33；以下只补齐其使用顺序和具体参数。
+\input{no_clipping.tex}
+
+\paragraph{非 AP 尖锐界的依赖。}
+$r\ge17$ 时 $\rho(X)\ge r-5$ 的前提是 $\operatorname{FS}(X)$ 非等差。
+证明为 P12 第 2 节，即 \path{reports/upper94_from95_20261016.tex}。
+其中的有限删点区间基例由 \path{verification/nonap_sharp.py} 完整枚举 2,723 项。
+本次 \path{check_repairs.py} 将此项设为必检依赖，不能只固定旧的 $r\ge21$ 版本。
+
+\paragraph{剥离引理的统一表述。}
+令 $S=\operatorname{FS}(F')$、$t=\beta-\alpha>0$，$C$ 为 $S$ 占据的模 $t$ 类集合。
+必须使用平移后的 $Q=C+\alpha$。每个 $Q$ 中的类贡献至少原类点数加一，故
+$|(\alpha+S)\cup(\beta+S)|\ge|S|+|Q|$。
+设 $K$ 为 $R(F)$ 占据的类集合；$R(F)\subseteq[\alpha,\beta]$ 给 $|K|\ge|R(F)|-1$。
+再加入每个 $K\setminus Q$ 中的一点，得到
+\[
+ |\operatorname{FS}(F)|\ge|S|+|Q\cup K|\ge|S|+|R(F)|-1.
+\]
+此证明已在整理稿 P02 正文采用；出处为 \path{reports/proof_review_20261014.md}。
+
+\paragraph{核验范围。}
+检查器核对全部 23 行端点参数、2,723 个非 AP 基例、4,961 个纤维实例、3,797 个剥离实例，
+并拒绝缺失依赖、删去参数行和不合法阈值。使用 \texttt{--structure} 时还重跑原大小 83 的结构算术。
+有限实例检查是回归检验；一般集合的结论依据上述证明和所声明的通用引理。
+本修复不声称对其余完整证明链作新的独立审核。
+\end{document}

@@ -1,0 +1,36 @@
+RUN baseline82
+PASS baseline82
+RUN repairs
+PASS repairs
+RUN structure
+PASS structure
+RUN geometry
+PASS geometry
+RUN low_c
+PASS low_c
+RUN coverage
+REPLAY 500 / 4654 roots; 500 terminal certificates
+REPLAY 1000 / 4654 roots; 1000 terminal certificates
+REPLAY 1500 / 4654 roots; 1500 terminal certificates
+REPLAY 2000 / 4654 roots; 2000 terminal certificates
+REPLAY 2500 / 4654 roots; 2500 terminal certificates
+REPLAY 3000 / 4654 roots; 3000 terminal certificates
+REPLAY 3500 / 4654 roots; 3500 terminal certificates
+REPLAY 4000 / 4654 roots; 4000 terminal certificates
+REPLAY 4500 / 4654 roots; 4500 terminal certificates
+REPLAY 4643 / 4654 roots; 4643 terminal certificates
+REPLAY 4644 / 4654 roots; 4806 terminal certificates
+REPLAY 4645 / 4654 roots; 4827 terminal certificates
+REPLAY 4646 / 4654 roots; 4829 terminal certificates
+REPLAY 4647 / 4654 roots; 4830 terminal certificates
+REPLAY 4648 / 4654 roots; 4831 terminal certificates
+REPLAY 4649 / 4654 roots; 4842 terminal certificates
+REPLAY 4650 / 4654 roots; 4847 terminal certificates
+REPLAY 4651 / 4654 roots; 4848 terminal certificates
+REPLAY 4652 / 4654 roots; 4851 terminal certificates
+REPLAY 4653 / 4654 roots; 4852 terminal certificates
+REPLAY 4654 / 4654 roots; 4853 terminal certificates
+PASS coverage
+RUN controls
+PASS controls
+PASS_COMPLETE_FINITE_REPLAY 8594ce625131c7fb931d4c1e20f72050054e8b71269ff640dec03b6a49fe4160

@@ -1,0 +1,139 @@
+{
+  "status": "PASS_SIZE82_GEOMETRY",
+  "gap_certificates": 136,
+  "minimum_integer_margin": 2,
+  "ownerless_guards": [
+    {
+      "w": 0,
+      "mass_minus_four_phi": -12,
+      "strict_margins": [
+        18,
+        77,
+        37,
+        38
+      ]
+    },
+    {
+      "w": 2,
+      "mass_minus_four_phi": 4,
+      "strict_margins": [
+        31,
+        74,
+        34,
+        35
+      ]
+    },
+    {
+      "w": 4,
+      "mass_minus_four_phi": 7,
+      "strict_margins": [
+        31,
+        71,
+        31,
+        32
+      ]
+    },
+    {
+      "w": 6,
+      "mass_minus_four_phi": 8,
+      "strict_margins": [
+        29,
+        68,
+        28,
+        29
+      ]
+    },
+    {
+      "w": 8,
+      "mass_minus_four_phi": 11,
+      "strict_margins": [
+        29,
+        65,
+        25,
+        26
+      ]
+    },
+    {
+      "w": 10,
+      "mass_minus_four_phi": 13,
+      "strict_margins": [
+        28,
+        62,
+        22,
+        23
+      ]
+    },
+    {
+      "w": 12,
+      "mass_minus_four_phi": 15,
+      "strict_margins": [
+        27,
+        59,
+        19,
+        20
+      ]
+    },
+    {
+      "w": 14,
+      "mass_minus_four_phi": 18,
+      "strict_margins": [
+        27,
+        56,
+        16,
+        17
+      ]
+    }
+  ],
+  "activity_counts": [
+    [
+      22,
+      0
+    ],
+    [
+      66,
+      0
+    ],
+    [
+      156,
+      0
+    ],
+    [
+      327,
+      30
+    ],
+    [
+      610,
+      210
+    ],
+    [
+      1036,
+      776
+    ]
+  ],
+  "torus_minors": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "tail_formal_types": 495,
+  "tail_remaining": [
+    "C+11",
+    "C+12",
+    "C+13",
+    "C+14",
+    "C+15",
+    "C+16",
+    "C+17",
+    "C+18",
+    "C+22",
+    "C+23",
+    "C+24",
+    "C+33",
+    "C+34",
+    "C+44",
+    "U+2",
+    "V+2"
+  ],
+  "quartet_regression_cases": 4845
+}

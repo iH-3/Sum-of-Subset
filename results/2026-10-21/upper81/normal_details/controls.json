@@ -1,0 +1,15 @@
+{
+  "rejected": [
+    "missing root",
+    "repeated root",
+    "missing complementary branch",
+    "negative multiplier",
+    "negative residual",
+    "zero contradiction",
+    "unproved fixed credit",
+    "invalid endpoint plane",
+    "modified proof source",
+    "leading endpoint minus one"
+  ],
+  "leading_upper_boundary": 1
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "upper81-replay-v1",
+  "status": "PASS_COMPLETE_FINITE_REPLAY",
+  "written_upper_bound": 81,
+  "formal_proof_assistant_verified": false,
+  "finite_digest": "8594ce625131c7fb931d4c1e20f72050054e8b71269ff640dec03b6a49fe4160",
+  "baseline_finite_digest": "26f60d5bd2a50a9ce50c95e9a7fce58a43713edc83b18b08e5a81e40e619b599",
+  "source_manifest_sha256": "0ab7635ebcd76dff22aa21892103761849b5cb70cdc7c5b1ebe9516f6ee6d836",
+  "source_files": 198,
+  "optimization": 1,
+  "timestamp_utc": "2026-10-21T07:04:46.086077+00:00",
+  "seconds": 1256.433,
+  "coverage": {
+    "status": "PASS_ALL_SIZE82_TERMINALS",
+    "uniform_roots": 4654,
+    "parameter_roots": 121403,
+    "by_j": {
+      "1": {
+        "full": 22,
+        "partial": 0,
+        "parameter_roots": 3168
+      },
+      "2": {
+        "full": 66,
+        "partial": 0,
+        "parameter_roots": 8712
+      },
+      "3": {
+        "full": 156,
+        "partial": 0,
+        "parameter_roots": 17784
+      },
+      "4": {
+        "full": 327,
+        "partial": 30,
+        "parameter_roots": 32487
+      },
+      "5": {
+        "full": 610,
+        "partial": 210,
+        "parameter_roots": 48380
+      },
+      "6": {
+        "full": 1036,
+        "partial": 776,
+        "parameter_roots": 10872
+      }
+    },
+    "statistics": {
+      "steps": 15174,
+      "credit": 12720,
+      "leaves": 4853,
+      "direct_roots": 4642,
+      "branch_roots": 12,
+      "splits": 199
+    },
+    "certificate_digest": "ab5917560ca44e7af574a35a39535482dfe69644826baacba9022ecf9a20259d"
+  },
+  "controls": {
+    "rejected": [
+      "missing root",
+      "repeated root",
+      "missing complementary branch",
+      "negative multiplier",
+      "negative residual",
+      "zero contradiction",
+      "unproved fixed credit",
+      "invalid endpoint plane",
+      "modified proof source",
+      "leading endpoint minus one"
+    ],
+    "leading_upper_boundary": 1
+  },
+  "tasks": [
+    {
+      "name": "baseline82",
+      "seconds": 614.304
+    },
+    {
+      "name": "repairs",
+      "seconds": 0.935
+    },
+    {
+      "name": "structure",
+      "seconds": 14.007
+    },
+    {
+      "name": "geometry",
+      "seconds": 2.879
+    },
+    {
+      "name": "low_c",
+      "seconds": 0.06
+    },
+    {
+      "name": "coverage",
+      "seconds": 618.564
+    },
+    {
+      "name": "controls",
+      "seconds": 5.638
+    }
+  ]
+}
