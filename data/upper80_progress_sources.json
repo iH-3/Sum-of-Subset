@@ -1,0 +1,139 @@
+{
+  "schema": "upper80-progress-snapshot-v1",
+  "global_upper_bound_certified": false,
+  "base_commit": "c0f638e626151f3d8c45dc3e0275d69e494b93f0",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "067e8dccf032313d1633f113605542dc4eebf453e3c92da1b9a4f6ea71483532"
+    },
+    {
+      "path": "RESEARCH_STATUS.md",
+      "sha256": "b322702b124c09d1139bac147658e440e444bd37c0ca61f74d13e94e38a006a7"
+    },
+    {
+      "path": "data/upper80_partial_research.json.gz",
+      "sha256": "248d21c7b362ae5454db38eb57568828f5462359d7e036c054bbe2fb27e42f32"
+    },
+    {
+      "path": "data/upper80_profiles.json.gz",
+      "sha256": "d96a3ae719dbdc85ab67ec26086a61965d15d938dfb55b14f842a245eb819d12"
+    },
+    {
+      "path": "reports/upper80_progress_20261023.pdf",
+      "sha256": "aecf4dc3f3475e657a71c206b77d832fcb05921d95c56ddadcf23f7f95baa2bf"
+    },
+    {
+      "path": "reports/upper80_progress_20261023.tex",
+      "sha256": "f2840aee9d16d8dba249d3ed34f09c82b410a773ebbed16b51104bf1bfc74f90"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/baseline81.json",
+      "sha256": "5f19d026b3aa8608351f9c9b6c0831f26e5926eb57bd7cf6ef995f4311fd6842"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/baseline81.log",
+      "sha256": "ebc1316c0f0cdd8566e11ed0645924c604f19b83b661fc935dab7b77d89195ab"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/controls.json",
+      "sha256": "6bccc0353afa33c9305c6ab9b2c3ccfd414b420664d959b92ebff21357beb5ab"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/normal.json",
+      "sha256": "4b996a5f8a23687364a10fb78e8aba06a066b714fee19214ced35c2c3949d231"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/normal.log",
+      "sha256": "9c3c191c2480ad6be9ce29ee2691c0959a4dc79f70a02ccbd4c0e5cb7fd404a3"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/optimized.json",
+      "sha256": "4b996a5f8a23687364a10fb78e8aba06a066b714fee19214ced35c2c3949d231"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/optimized.log",
+      "sha256": "9c3c191c2480ad6be9ce29ee2691c0959a4dc79f70a02ccbd4c0e5cb7fd404a3"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/partial.json",
+      "sha256": "a78a7e202e66acce178cc322ca5512762a55b9ea29f87479390cd82ff8916c01"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/partial.log",
+      "sha256": "c5384618f42d621b1cc9f203f1d6263c759290e5c0d49d13363bd7a3addaf790"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/partial_optimized.json",
+      "sha256": "a78a7e202e66acce178cc322ca5512762a55b9ea29f87479390cd82ff8916c01"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/partial_optimized.log",
+      "sha256": "c5384618f42d621b1cc9f203f1d6263c759290e5c0d49d13363bd7a3addaf790"
+    },
+    {
+      "path": "results/2026-10-23/upper80_progress/summary.json",
+      "sha256": "e6c0bd49017077ea090bd876cbe18426692fea5ce69464c24e93e6f8807094d8"
+    },
+    {
+      "path": "verification/upper80/README.md",
+      "sha256": "751452fcffefcc7cea31ad567c9abbb52147ac5265dd3beedc674f2dd4b72c47"
+    },
+    {
+      "path": "verification/upper80/branch_discover.py",
+      "sha256": "794f7782cb66db20d204ed2f6030e23b233969b3c1a88fc000ebdd123ef6a825"
+    },
+    {
+      "path": "verification/upper80/check.py",
+      "sha256": "26c9ddb14bbe631e3f1fa8cd249be452d084a053dfdf0ffa4113659ec03a40d0"
+    },
+    {
+      "path": "verification/upper80/control_checks.py",
+      "sha256": "5fbd56e8f109f6d821cfb45618ef911cd4b19aca3be14afea7ce413c01477f45"
+    },
+    {
+      "path": "verification/upper80/density.py",
+      "sha256": "aa30ccaeb6455f0dd284f149af5a7122b6752efc592626031914cf4b89b604b4"
+    },
+    {
+      "path": "verification/upper80/discover.py",
+      "sha256": "63ab3f5def759595f50c36f6c44ee2cb9593dca6045f36f4c8fbab8394913b23"
+    },
+    {
+      "path": "verification/upper80/exact.py",
+      "sha256": "5cb39454d31a980e412f2da6bba3eea2855e7d29ba1e53cfea8edce1ec3d5641"
+    },
+    {
+      "path": "verification/upper80/fast_lp.py",
+      "sha256": "2b553caf7b43f4da8ce200ab11ad8126a1824cbcbc5565a2fd24bcf7c83f7ba3"
+    },
+    {
+      "path": "verification/upper80/low_c_discover.py",
+      "sha256": "37f4671ff4dfc1e3a0e9a3dae0ad06373b306649bdddfc86013a9b56f969a92b"
+    },
+    {
+      "path": "verification/upper80/model.py",
+      "sha256": "6a322af29b2c1af58e009749c11f19b0fe546341c9dc19bdfdc3cd9c828c01bf"
+    },
+    {
+      "path": "verification/upper80/parametric.py",
+      "sha256": "c7de45eabc5f673b486d1e3ac1cc3c50c84085268e7477b15b76f25b26ec4aee"
+    },
+    {
+      "path": "verification/upper80/profiles.py",
+      "sha256": "08c589645c8d2f55538e69010e329916d2a512a1e50dfa6618fa53c8a7c4e33b"
+    },
+    {
+      "path": "verification/upper80/replay_partial.py",
+      "sha256": "1148ff9ee2a99964892c0a66b6945f4ec984ef1191c2768a43ca6d4abb985147"
+    },
+    {
+      "path": "verification/upper80/research_checkpoint.md",
+      "sha256": "cc558f848c965985cfed948846d09aedac2afcb5b25d32d8e5b006207daf1ec7"
+    },
+    {
+      "path": "verification/upper80/source_bounds.py",
+      "sha256": "b6d601dec75ea8ea2577d327429c6c557e148b34257c967cfcd3a7e7dbe92582"
+    }
+  ]
+}

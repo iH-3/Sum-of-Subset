@@ -1,0 +1,57 @@
+{
+  "status": "PASS_PARTIAL_RESEARCH_REPLAY",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "uniform_roots": 4654,
+  "closed_roots": 4645,
+  "open_roots": 9,
+  "terminal_certificates": 4782,
+  "branch_splits": 137,
+  "open_inventory": [
+    {
+      "j": 4,
+      "pattern_index": 142,
+      "positive": false
+    },
+    {
+      "j": 4,
+      "pattern_index": 142,
+      "positive": true
+    },
+    {
+      "j": 5,
+      "pattern_index": 413,
+      "positive": false
+    },
+    {
+      "j": 5,
+      "pattern_index": 270,
+      "positive": false
+    },
+    {
+      "j": 5,
+      "pattern_index": 256,
+      "positive": false
+    },
+    {
+      "j": 5,
+      "pattern_index": 268,
+      "positive": false
+    },
+    {
+      "j": 5,
+      "pattern_index": 266,
+      "positive": false
+    },
+    {
+      "j": 5,
+      "pattern_index": 219,
+      "positive": false
+    },
+    {
+      "j": 6,
+      "pattern_index": 436,
+      "positive": false
+    }
+  ]
+}

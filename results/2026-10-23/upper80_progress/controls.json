@@ -1,0 +1,10 @@
+{
+  "status": "PASS_PARTIAL_NEGATIVE_CONTROLS",
+  "global_upper_bound_certified": false,
+  "rejected": [
+    "missing open root",
+    "missing complementary branch",
+    "negative Farkas multiplier",
+    "zero contradiction"
+  ]
+}

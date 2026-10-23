@@ -1,0 +1,216 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,fontspec,xcolor}
+\setmainfont{Noto Sans CJK SC}[AutoFakeBold=2,AutoFakeSlant=.15]
+\setmonofont{lmmono10-regular.otf}[Scale=.85]
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl,fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,breaklines=true}
+\newcommand{\FS}{\operatorname{FS}}\newcommand{\Z}{\mathbb Z}\newcommand{\T}{T}
+\newtheorem{theorem}{定理}\newtheorem{lemma}{引理}
+\setlength{\parindent}{1.5em}\setlength{\parskip}{.2em}\setlength{\emergencystretch}{3em}
+\renewcommand{\arraystretch}{1.15}\raggedbottom
+\title{向上界 80 推进：已完成的辅助改进\\\large 稠密子集和、极值删除与尖锐源和集上界}
+\author{Sum-of-Subset}\date{2026 年 10 月 23 日}
+\begin{document}\maketitle
+
+\noindent\textbf{结论范围。}目前已闭合的全局范围仍为 $71\le N\le81$。
+本文没有证明 $N\le80$。已完成的是下述独立辅助定理，以及前缀递推的精确算术检查。
+大小 81 的完整结构接入和若干有限根仍未闭合；程序明确返回
+\texttt{PASS\_AUXILIARY\_IMPROVEMENTS\_ONLY}。
+既有上界 81 的完整入口本轮重新通过，有限摘要与归档一致。
+
+\section{稠密子集和的适用范围扩大}
+记 $T_r=r(r+1)/2$；$\FS(X)$ 包含空集和。
+\begin{theorem}\label{thm:density}
+设 $X\subset\Z_{>0}$，$|X|=r$，$\max X=r+\beta$，其中
+$0\le\beta\le24$、$r\ge\beta+3$，并记 $S=\sum X$。则
+\[
+ [2\beta+1,S-2\beta-1]\cap\Z\subseteq\FS(X).
+\]
+所有洞都在 $[1,2\beta]$ 或其关于 $S/2$ 的反射内；每端至多 $\beta$ 个洞。
+\end{theorem}
+\begin{proof}
+先验证边界 $r=\beta+3$、$M=\max X=2\beta+3$。
+验证器先选定 $M$，再按递增顺序完整枚举其余 $r-1$ 个系数。
+令 $L=2\beta+1$。若某一已选前缀的和为 $s$，其子集和已经包含
+$[L,s-L]$，且 $s-2L+1\ge M$，那么加入任何余下系数 $x\le M$ 后，
+该区间及其平移重叠或相接，得到 $[L,s+x-L]$。
+因此这一节点下的\emph{全部}完成都有效，可以用二项式系数精确计数后剪枝。
+程序逐个 $\beta$ 检查完成总数恰为 $\binom{2\beta+2}{\beta+2}$。
+全部 25 个边界共代表 $163099562175850$ 个集合；这不是抽样。
+另以普通组合枚举独立检查 $\beta\le9$ 的 $227239$ 个边界，以及所需的
+$r=3,\ldots,8$ 小秩基例 $1728$ 个。
+
+现作联合归纳。删去最大值 $M=r+\beta$ 后得到 $Y$，其秩为 $r-1$，
+实际缺额 $d=\max Y-(r-1)$ 满足 $0\le d\le\beta$。
+若不是已经检查的边界，便有 $r-1\ge d+3$，可对 $Y$ 使用归纳假设。
+记其和为 $s$。只要 $s\ge M+4d+1$，两个中央区间相接，便给出所需结论。
+当 $\beta\ge9$ 时，只须检验第一秩 $r=\beta+4$ 的
+\[
+ T_{r-1}\ge r+5\beta+1;
+\]
+差值随 $r$ 每次增加 $r-1$，故以后均成立。
+当 $\beta\le8$ 且不在边界、小秩基例时，$r\ge9$、$\beta\le r-4$，从而
+\[
+ T_{r-1}-(M+4d+1)\ge\frac{r^2-13r+38}{2}\ge1.
+\]
+最后，$2\beta\le r+\beta$，且区间 $[1,r+\beta]$ 仅有 $\beta$ 个不属于 $X$
+的整数。低端洞必然也是这些缺失系数，故至多 $\beta$ 个；补集对称性处理高端。
+\end{proof}
+
+\begin{lemma}[晚跳代价]
+在定理的条件下，若正整数 $x\ge S-4\beta$，则
+\[
+ |\FS(X\cup\{x\})\setminus\FS(X)|\ge S-5\beta.
+\]
+这将原先用于递推的 $S-6\beta$ 加强为 $S-5\beta$。
+\end{lemma}
+\begin{proof}
+只计平移后严格超过 $S$ 的点。若 $x<S-2\beta$，其原像区间
+$(S-x,S]$ 不碰低端洞，至少有 $x-\beta\ge S-5\beta$ 个点。
+若 $S-2\beta\le x\le S$，至多损失两端共 $2\beta$ 个洞，至少新增
+$x-2\beta\ge S-4\beta$ 个点。若 $x>S$，所有平移点均为新点，至少有
+$S+1-2\beta$ 个。
+\end{proof}
+
+\section{删除核心极值后的源和集上界}
+设 $r_s+r_t=64$。两侧正核心为 $P_s,P_t$，各有 $r_v$ 个点，且
+\[
+ R_v=\max P_v=r_v+\xi_v,\qquad \sum P_v=T_{r_v}+\tau_v.
+\]
+每侧再加入四个点 $R_v+a_v,R_v+b_v,R_v+c_v,R_v+e_v$，其中
+$1\le a_v<b_v<c_v<e_v$。记所得 $r_v+4$ 点正侧源为 $D_v^+$，
+$M_v=R_v+e_v$，完整源为 $D=D_s^+\cup\{0\}\cup(-D_t^+)$，故 $|D|=73$。
+令
+\[
+ q_v=r_v-1+\tau_v-\xi_v,\quad
+ B_v^\star=\#\{(i,j):0\le i\le j\le4,\ p_{vi}+p_{vj}>M_v+q_v\},
+\]
+其中 $(p_{v0},\ldots,p_{v4})=(R_v,R_v+a_v,R_v+b_v,R_v+c_v,R_v+e_v)$。
+这里按无序\emph{指标对}计数，允许不同指标对产生相同的和。
+
+\begin{theorem}\label{thm:source}
+记 $M=M_s+M_t$、$\tau=\tau_s+\tau_t$、$\xi=\xi_s+\xi_t$，则
+\[
+ \boxed{\ |D+D|\le M+63+\tau-\xi+B_s^\star+B_t^\star\ }.
+\]
+若 30 个同侧指标对中已有 $u$ 对被证明不超过对应的 $M_v+q_v$，可用
+\[
+ |D+D|\le M+\tau-\xi+93-u.
+\]
+\end{theorem}
+\begin{proof}
+删去两侧核心最大值及其四个源尾点，剩余集合记为 $Q$。
+$P_v\setminus\{R_v\}$ 的秩是 $r_v-1$，质量超额为 $\tau_v-\xi_v$。
+对任意秩 $n$、质量超额 $t$ 的正整数集，最大值至多 $n+t$，故
+$Q\subseteq[-q_t,q_s]$。同时 $Q\subseteq[-M_t,M_s]$。
+任何至少有一个加数来自 $Q$ 的和，都在
+\[
+ [-M_t-q_t,M_s+q_s]
+\]
+内。剩下的和由十个已删点组成；异号和也在该区间内。
+只有同侧的五点两两和可能落在外面，它们的数量至多为 $B_s^\star+B_t^\star$。
+中央区间共有 $M+q_s+q_t+1=M+63+\tau-\xi$ 个整数，结论成立。
+\end{proof}
+
+每一个计数排除都可写成线性行：令 $o_0=0,o_1=a_v,o_2=b_v,o_3=c_v,o_4=e_v$，则
+\[
+ p_{vi}+p_{vj}\le M_v+q_v
+ \iff 1+2\xi_v-\tau_v+o_i+o_j-e_v\le0.
+\]
+研究用求解器只提出这些行的线性组合；精确重放器用整数权重检查。
+不得用浮点不可行状态替代证书。
+
+\paragraph{严格改进且可取等号的实例。}
+令
+\[
+ D=[-31,31]\cup\{\pm40,\pm41,\pm42,\pm43,\pm85\}.
+\]
+核心为 $[1,31]\cup\{40\}$，故 $r_v=32$、$\xi_v=\tau_v=8$、$q_v=31$，
+且 $B_v^\star=5$。定理给出 $|D+D|\le243$。
+实际上
+\[
+ D+D=[-116,116]\cup\{\pm125,\pm126,\pm127,\pm128,\pm170\},
+\]
+恰有 243 点。旧式的 $B_v$ 计数四个尾偏移的两两和中大于 $e_v$ 的不同值，本例每侧为 4。旧源外缘界 $M+R_s+R_t+1+B_s+B_t$ 在此给出
+$170+80+1+8=259$。因此本次辅助上界在此严格减少 16，且新值不能再减 1。
+此集合用于说明\emph{源引理}的尖锐性，不是原问题的 73 元可行构造。
+
+\section{用于交叠计数的三个通用事实}
+\begin{lemma}[严格直径条件]
+若整数集 $Q$ 有 $n$ 点，$x\in\Z_{>0}$ 且 $\operatorname{diam}Q<2x$，则
+$|Q\cap(Q+x)|\ge n-x$。
+\end{lemma}
+\begin{proof}
+模 $x$ 的每个剩余类至多有两个点；若有两个，它们的差恰为 $x$。
+交叠数等于 $n$ 减去非空剩余类数，后者至多为 $x$。
+严格条件不能放宽：$Q=\{0,2\},x=1$ 是等号直径的反例。
+\end{proof}
+
+\begin{lemma}[缺失探针的质量成本]
+若 $Y$ 是 $n$ 个不同正整数，$\sum Y=T_n+t$，而
+$u_1<\cdots<u_q\le n$ 均不在 $Y$，则
+\[
+ t\ge qn+T_q-\sum_{i=1}^q u_i.
+\]
+\end{lemma}
+\begin{proof}
+在禁止这些点的条件下，最小的 $n$ 个可用正整数，恰由
+$[1,n]\setminus\{u_1,\ldots,u_q\}$ 和 $n+1,\ldots,n+q$ 组成。
+求和即得。如果有多个候选探针，最便宜的 $q$ 个缺失位置是其中最大的 $q$ 个。
+只有严格小于这一成本，才能断言不可能全部缺失。
+\end{proof}
+
+特别地，$Y$ 必含 $[1,n-t]$ 中的所有正整数。
+对上述源每侧删去最大的 $q=1,2,3,4$ 点，写 $m=4-q$，留下的正侧秩和超额为
+\[
+ n_v=r_v+m,\qquad t_v=\tau_v+m\xi_v+\sum_{i=1}^m o_i-T_m.
+\]
+因此保留部分包含 $[-(n_t-t_t),n_s-t_s]$ 中的整数。
+对已删的正点 $p$，若 $p-x$ 在此区间，便得到交叠点 $p$；
+对已删的负点 $-b$，若 $x-b$ 在此区间，便得到交叠点 $x-b$。
+前者在被删外部，后者在保留部分，故两类互不重复；同一类也互异。
+\textbf{不同截断层的计数只取最大值，不能直接相加。}
+
+\section{同步前缀递推与验证范围}
+新密度范围和晚跳估计被接入既有同步前缀规则；每轮预算只读取上一轮向量。
+文件 \path{data/upper80_profiles.json.gz} 包含 $r=15,\ldots,55$ 及十个洞阈值的
+410 项记录，共 13530 个等差前缀分支、225375 次坐标加强。
+验证器独立重建每轮更新，不采信记录中的最终数值。
+沿用既有记号 $\mu_X=|\FS(X)|-1-T_{|X|}$、$\rho_X=\mu_X+2-2\Delta_0(X)$，其中 $\Delta_0(X)$ 计数那些 $x\in X$，其 $2x$ 不能表示为 $X\cup\{0\}$ 中两个不同元素之和。两侧秩和为 64 时，记录得到以下配对下界：
+\begin{center}\begin{tabular}{r|rrrrrrrrrr}\toprule
+洞阈值 &5&7&9&11&13&15&17&21&31&49\\\midrule
+$\mu$ 下界 &164&214&262&308&352&394&434&508&658&802\\
+$\rho$ 下界 &86&122&158&194&228&270&310&384&534&678\\\bottomrule
+\end{tabular}\end{center}
+这些数值仍须在各个实际结构分支中分别证明其前提后才能使用。
+算术重放通过，不等于大小 81 的所有格化、等差、小秩和端点接口均已接入。
+
+标准库入口是 \path{verification/upper80/check.py}。
+它检查定理 \ref{thm:density} 的有限基例、同步递推、直接集合回归和负面控制；
+输出明确带有 \texttt{global\_upper\_bound\_certified=false}。
+源集合测试包括 24228 个小范围穷举、5000 个固定种子的额外实例、
+100000 项外部点交叠检查，其中 31085 项出现非空交叠。
+这些实例用于防止实现回归；通用证明是前述解析论证，而非抽样结论。
+
+\section{尚未完成的全局义务}
+部分模型完整重放通过：4654 个候选根中有 4645 个闭合，合计 4782 份终端证书、137 次互补分支。额外闭合了此前开放的七个根，
+但仍有 9 个原始根未获完整闭合：$j=4$ 的两个根、$j=5$ 的六个根和 $j=6$ 的一个根。
+一个根下即使已有很多闭合叶，只要还存在未验证的补分支，就仍按开放处理。
+这些候选系统的等差侧边界、较大等差侧的反射和完整结构覆盖也尚需统一审阅。
+因此不能把闭合记录的比例当成证明完成度，不能发布 $N\le80$。
+
+继续工作的明确目标是：补齐结构许可；闭合全部开放根并检查分支覆盖；
+将发现阶段与独立精确验证分离；最后才更新主上界。
+研究原型和断点记录与已完成辅助验证分别标明状态。
+
+\begin{verbatim}
+python -I -S -B verification/upper80/check.py --output normal.json
+python -O -I -S -B verification/upper80/check.py --output optimized.json
+\end{verbatim}
+普通与优化模式须给出相同有限摘要。既有全局上界的入口仍是
+\path{verification/upper81/check.py}，其完整证明见
+\path{reports/upper81_complete_20261021.tex}。
+\end{document}

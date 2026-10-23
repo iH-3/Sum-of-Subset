@@ -15,6 +15,8 @@
 
 ## 先读什么
 
+- **[向上界 80 推进：辅助改进报告](reports/upper80_progress_20261023.pdf) · [LaTeX](reports/upper80_progress_20261023.tex)**：稠密子集和范围扩至 `β≤24`，晚跳代价由 `S−6β` 加强为 `S−5β`；证明新的尖锐源和集上界，73 点例子中将估计 `259→243`。普通与优化模式辅助验证一致。候选有限模型仍有 9 个开放根，结构接入也未完成；**全局仍为 `71≤N≤81`，未证明 80。** [验证和研究原型说明](verification/upper80/README.md)。
+
 - **[82→81 完整报告 PDF](reports/upper81_complete_20261021.pdf) · [LaTeX 源码](reports/upper81_complete_20261021.tex)**：23 行端点修复、等差及小侧边界、全部高洞与低洞归约；4,654 个统一参数根覆盖全部 121,403 个实际参数根，4,853 份主终端反证及 22 份小松弛接口证书全部闭合。**得到 71≤N≤81。** [标准库验证器](verification/upper81/check.py) · [运行说明](verification/upper81/README.md) · [证书数据](data/upper81_certificates.json.gz) · [源清单](data/upper81_sources.json) · [完整验证回执](results/2026-10-21/upper81/)。
 
 - **[83→82 完整报告 PDF](reports/upper82_complete_20261019.pdf) · [LaTeX 源码](reports/upper82_complete_20261019.tex)**：22个新逆修复行、等差与小侧边界、高洞排除和低洞局部化；完整生成111,629个主根状态，另核对4,488个不要求核心本原的小松弛接口系统。无所有者族从8个已证明HIGH标签出发，306个允许状态全部闭合；136条通用固定空隙证书可独立重放。**得到71≤N≤82。** [统一标准库验证器](verification/upper82_global/check.py) · [证明正文](verification/upper82_global/proof.md) · [运行说明](verification/upper82_global/README.md) · [源清单](data/upper82_global_sources.json) · [完整验证回执](results/2026-10-19/upper82/)。

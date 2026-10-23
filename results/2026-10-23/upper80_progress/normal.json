@@ -1,0 +1,408 @@
+{
+  "status": "PASS_AUXILIARY_IMPROVEMENTS_ONLY",
+  "global_upper_bound_certified": false,
+  "established_range": [
+    71,
+    81
+  ],
+  "target_upper_bound": 80,
+  "finite_digest": "5f869e92dbed65d68d03b011ed3379c13bee6d7710f6e63fa6acf36dba4b7921",
+  "checks": {
+    "density": {
+      "status": "PASS_DENSITY_BETA_0_TO_24",
+      "global_upper_bound_certified": false,
+      "beta_max": 24,
+      "rank_condition": "r >= beta+3",
+      "bases": [
+        {
+          "beta": 0,
+          "rank": 3,
+          "maximum": 3,
+          "sets": 1,
+          "nodes": 3,
+          "prunes": 1,
+          "leaves": 0
+        },
+        {
+          "beta": 1,
+          "rank": 4,
+          "maximum": 5,
+          "sets": 4,
+          "nodes": 10,
+          "prunes": 4,
+          "leaves": 0
+        },
+        {
+          "beta": 2,
+          "rank": 5,
+          "maximum": 7,
+          "sets": 15,
+          "nodes": 33,
+          "prunes": 15,
+          "leaves": 0
+        },
+        {
+          "beta": 3,
+          "rank": 6,
+          "maximum": 9,
+          "sets": 56,
+          "nodes": 94,
+          "prunes": 46,
+          "leaves": 0
+        },
+        {
+          "beta": 4,
+          "rank": 7,
+          "maximum": 11,
+          "sets": 210,
+          "nodes": 256,
+          "prunes": 130,
+          "leaves": 0
+        },
+        {
+          "beta": 5,
+          "rank": 8,
+          "maximum": 13,
+          "sets": 792,
+          "nodes": 624,
+          "prunes": 327,
+          "leaves": 0
+        },
+        {
+          "beta": 6,
+          "rank": 9,
+          "maximum": 15,
+          "sets": 3003,
+          "nodes": 1426,
+          "prunes": 779,
+          "leaves": 0
+        },
+        {
+          "beta": 7,
+          "rank": 10,
+          "maximum": 17,
+          "sets": 11440,
+          "nodes": 3168,
+          "prunes": 1777,
+          "leaves": 0
+        },
+        {
+          "beta": 8,
+          "rank": 11,
+          "maximum": 19,
+          "sets": 43758,
+          "nodes": 6617,
+          "prunes": 3814,
+          "leaves": 0
+        },
+        {
+          "beta": 9,
+          "rank": 12,
+          "maximum": 21,
+          "sets": 167960,
+          "nodes": 13253,
+          "prunes": 7840,
+          "leaves": 0
+        },
+        {
+          "beta": 10,
+          "rank": 13,
+          "maximum": 23,
+          "sets": 646646,
+          "nodes": 25634,
+          "prunes": 15520,
+          "leaves": 0
+        },
+        {
+          "beta": 11,
+          "rank": 14,
+          "maximum": 25,
+          "sets": 2496144,
+          "nodes": 48527,
+          "prunes": 29986,
+          "leaves": 0
+        },
+        {
+          "beta": 12,
+          "rank": 15,
+          "maximum": 27,
+          "sets": 9657700,
+          "nodes": 89018,
+          "prunes": 56156,
+          "leaves": 0
+        },
+        {
+          "beta": 13,
+          "rank": 16,
+          "maximum": 29,
+          "sets": 37442160,
+          "nodes": 159729,
+          "prunes": 102180,
+          "leaves": 0
+        },
+        {
+          "beta": 14,
+          "rank": 17,
+          "maximum": 31,
+          "sets": 145422675,
+          "nodes": 280540,
+          "prunes": 182071,
+          "leaves": 0
+        },
+        {
+          "beta": 15,
+          "rank": 18,
+          "maximum": 33,
+          "sets": 565722720,
+          "nodes": 484248,
+          "prunes": 319010,
+          "leaves": 0
+        },
+        {
+          "beta": 16,
+          "rank": 19,
+          "maximum": 35,
+          "sets": 2203961430,
+          "nodes": 818485,
+          "prunes": 545048,
+          "leaves": 0
+        },
+        {
+          "beta": 17,
+          "rank": 20,
+          "maximum": 37,
+          "sets": 8597496600,
+          "nodes": 1362973,
+          "prunes": 917240,
+          "leaves": 0
+        },
+        {
+          "beta": 18,
+          "rank": 21,
+          "maximum": 39,
+          "sets": 33578000610,
+          "nodes": 2243120,
+          "prunes": 1525248,
+          "leaves": 0
+        },
+        {
+          "beta": 19,
+          "rank": 22,
+          "maximum": 41,
+          "sets": 131282408400,
+          "nodes": 3623501,
+          "prunes": 2485045,
+          "leaves": 0
+        },
+        {
+          "beta": 20,
+          "rank": 23,
+          "maximum": 43,
+          "sets": 513791607420,
+          "nodes": 5803649,
+          "prunes": 4010115,
+          "leaves": 0
+        },
+        {
+          "beta": 21,
+          "rank": 24,
+          "maximum": 45,
+          "sets": 2012616400080,
+          "nodes": 9226455,
+          "prunes": 6418946,
+          "leaves": 0
+        },
+        {
+          "beta": 22,
+          "rank": 25,
+          "maximum": 47,
+          "sets": 7890371113950,
+          "nodes": 14364114,
+          "prunes": 10061218,
+          "leaves": 0
+        },
+        {
+          "beta": 23,
+          "rank": 26,
+          "maximum": 49,
+          "sets": 30957699535776,
+          "nodes": 22291284,
+          "prunes": 15692172,
+          "leaves": 0
+        },
+        {
+          "beta": 24,
+          "rank": 27,
+          "maximum": 51,
+          "sets": 121548660036300,
+          "nodes": 34310626,
+          "prunes": 24264451,
+          "leaves": 0
+        }
+      ],
+      "boundary_sets": 163099562175850,
+      "independent_sets": 227239,
+      "small_rank_sets": 1728,
+      "induction": [
+        {
+          "beta": 9,
+          "first_rank": 13,
+          "join_margin": 19
+        },
+        {
+          "beta": 10,
+          "first_rank": 14,
+          "join_margin": 26
+        },
+        {
+          "beta": 11,
+          "first_rank": 15,
+          "join_margin": 34
+        },
+        {
+          "beta": 12,
+          "first_rank": 16,
+          "join_margin": 43
+        },
+        {
+          "beta": 13,
+          "first_rank": 17,
+          "join_margin": 53
+        },
+        {
+          "beta": 14,
+          "first_rank": 18,
+          "join_margin": 64
+        },
+        {
+          "beta": 15,
+          "first_rank": 19,
+          "join_margin": 76
+        },
+        {
+          "beta": 16,
+          "first_rank": 20,
+          "join_margin": 89
+        },
+        {
+          "beta": 17,
+          "first_rank": 21,
+          "join_margin": 103
+        },
+        {
+          "beta": 18,
+          "first_rank": 22,
+          "join_margin": 118
+        },
+        {
+          "beta": 19,
+          "first_rank": 23,
+          "join_margin": 134
+        },
+        {
+          "beta": 20,
+          "first_rank": 24,
+          "join_margin": 151
+        },
+        {
+          "beta": 21,
+          "first_rank": 25,
+          "join_margin": 169
+        },
+        {
+          "beta": 22,
+          "first_rank": 26,
+          "join_margin": 188
+        },
+        {
+          "beta": 23,
+          "first_rank": 27,
+          "join_margin": 208
+        },
+        {
+          "beta": 24,
+          "first_rank": 28,
+          "join_margin": 229
+        }
+      ],
+      "negative_controls": 1
+    },
+    "profiles": {
+      "status": "PASS_DENSITY24_PROFILES",
+      "global_upper_bound_certified": false,
+      "claims": 410,
+      "branches": 13530,
+      "upgrades": 225375,
+      "paired": [
+        {
+          "h": 5,
+          "mu": 164,
+          "rho": 86
+        },
+        {
+          "h": 7,
+          "mu": 214,
+          "rho": 122
+        },
+        {
+          "h": 9,
+          "mu": 262,
+          "rho": 158
+        },
+        {
+          "h": 11,
+          "mu": 308,
+          "rho": 194
+        },
+        {
+          "h": 13,
+          "mu": 352,
+          "rho": 228
+        },
+        {
+          "h": 15,
+          "mu": 394,
+          "rho": 270
+        },
+        {
+          "h": 17,
+          "mu": 434,
+          "rho": 310
+        },
+        {
+          "h": 21,
+          "mu": 508,
+          "rho": 384
+        },
+        {
+          "h": 31,
+          "mu": 658,
+          "rho": 534
+        },
+        {
+          "h": 49,
+          "mu": 802,
+          "rho": 678
+        }
+      ],
+      "negative_controls": 1
+    },
+    "source_bounds": {
+      "status": "PASS_SOURCE_LEMMAS",
+      "global_upper_bound_certified": false,
+      "missing_probe_checks": 10296,
+      "diameter_checks": 6826,
+      "exhaustive_sources": 24228,
+      "seeded_sources": 5000,
+      "exterior_overlap_checks": 100000,
+      "nonempty_overlap_checks": 31085,
+      "sharp_example": {
+        "cardinality": 73,
+        "actual_sumset": 243,
+        "new_upper_bound": 243,
+        "old_upper_bound": 259
+      },
+      "negative_controls": 2
+    }
+  }
+}
