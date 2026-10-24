@@ -9,7 +9,9 @@ root `(6,436,0)`. Its `k=2..7` slices were already certified; they are reused
 without restarting their search. The source budget gives `k²≤58`, so `k≥8`
 is impossible. Together with the new unrestricted contradictions for `(5,256,0)`,
 `(5,266,0)`, `(5,268,0)` and `(5,270,0)`, this brings the current total to
-4,650 closed original roots and four open roots.
+4,650 closed original roots and four open roots at that checkpoint. The later
+extreme-gap continuation below closes `(5,413,0)` completely, bringing the
+current total to **4,651 closed and three open original roots**.
 
 ## Complete interval propagation
 
@@ -299,3 +301,100 @@ alternative 1 of the positive root also closed in a new 20-step record.
 The three-target enumeration for `(5,219,0)` is complete at depth 3:
 1,891 nodes, 421 closed leaves and 1,343 open leaves. Its open leaves are
 retained; that completed depth must not be restarted.
+
+## Empty extreme intervals and one-point window charges
+
+Let `Q` have maximum `M` and second-largest element at most `P`. In `qQ`,
+the largest sum is `qM`; every other sum is at most `(q−1)M+P`. Thus
+`[qM−(M−P−1),qM−1]` is empty. Reflection gives the analogous lower gap.
+For a source power `qD`, the gap length is exactly `e_v−c_v−1`. For a
+core power `qE`, the earlier predecessor estimate gives a gap length at
+least `2xi_v−tau_v`; a licensed first-gap shape adds its mandatory
+`r_v−2` prefix excess to that length. Negative lengths assert no hole.
+
+`core_gap.py` first applies this to existing complete-cover probes: a whole
+probe lying in an empty interval cannot be hit by that component. The first
+application to the four remaining strengthened domains made no deletion,
+and those finished attempts are retained.
+
+The window rule is stronger in two ways. It can discard a component when
+the entire window lies in an extreme gap. It can also charge a component
+only one point when the window lies above its nonextreme upper bound (or
+below its nonextreme lower bound): only the actual extreme can occur there.
+This latter charge also applies to unrefined `qD` components. One-point
+components cannot simultaneously be charged a clipped/full core capacity,
+act as absorbing hulls, or participate in full-set overlap rebates.
+
+Discovery forms new windows after removing these guaranteed holes from
+the numerical component envelopes. The two actual extreme points are kept
+in the candidate singleton inventory. Saved integer discovery points are
+reused as seeds; they are not solved again. Every final interval and
+one-point charge still requires its own exact affine guards.
+
+New controls check 1,600 actual empty extreme intervals (1,536 nonempty),
+4,472 whole target probes, and 1,600 present-extreme boundary controls.
+Four additional sharp actual windows check the one-point charge, and six
+malformed window inventories/capacity combinations are rejected.
+
+The new rule closes case 3, the final open alternative in the complete
+12-case target partition of `(5,413,0)`. Its 25-step continuation at credit53
+passed independent exact replay. Assembly checks all 12 original nodes and
+their exact conditional domains against the frozen parent; the other 11
+closed records are reused unchanged from the immutable verified frontier.
+`data/upper80_extreme_gap_closure_20261024.json.gz` contains the full closed
+record, its new replay receipt, the earlier receipts and record identities.
+`verify_extreme_gap.py --reuse-receipt` checks the packaging without repeating
+completed arithmetic; its default mode supports a fresh full exact replay.
+The remaining original roots are `(4,142,0)`, `(4,142,1)` and `(5,219,0)`.
+
+## Canonical mass after the physical first-gap translation
+
+Let the actual first-gap shape prescribe height `h` and a prefix with
+`t=0` or `t=1` points. Put `n=r−t`, `w=h−t`, and translate the remaining
+points down by `h` to form a positive `n`-point set `Y`. Directly from
+`phi(X)=min(r,min_i(x_i+r−2i))`,
+
+    phi(X) = min(n, w+phi(Y)),
+    tau(Y) = tau(X)−wn,    xi(Y) = xi(X)−w.
+
+For `t=0`, the term `n` is the sentinel; for `t=1`, the initial point 1
+gives that term. Thus, under the certified guard `phi(X)≤n−1`, the equality
+`phi(Y)=phi(X)−w` holds. Applying the canonical mass inequality to `Y`,
+and separately certifying `n≤H` and `xi(X)−w≤H`, gives the affine row
+
+    tau(X)−wn ≤ H (phi(X)−w).
+
+The physical shape and all three guards are mandatory. Omitting the
+nonsentinel guard is false, for example at `X={3},h=2,t=0`. Actual-set
+controls check 3,388 translated minimum identities, 1,124 nonsentinel mass
+inequalities, 800 physical-rank affine inequalities and five rejected
+recipes. The new rows are applied only to the surviving physical `h=1`
+domain; they do not constitute a closure by themselves.
+
+## Hull charges for the complete double-source union
+
+The set `2D` is the union of `2E`, eight translates `E+u` by source tails,
+and the 36 tail-pair types. Partition the nine core components into groups.
+For each group, certify a containing integer interval `[L,U]` and charge
+`U−L+1`. Every tail-pair point certified to belong to this interval may be
+absorbed without an additional charge, even if it is absent from the actual
+core components. Alternatively, a singleton core component may use its actual
+mass bound (`|E|=65` or the earlier `2E` capacity); such a component cannot
+absorb extra points. Charge one for each remaining tail-pair type.
+
+This is an upper cover of the entire union. Overlap between charged groups
+can only increase the estimate, so disjointness and actual intersection
+claims are unnecessary. The verifier requires every core component exactly
+once and every absorbed pair type at most once. All interval containment
+inequalities have exact certificates. Independent controls check 600
+capacities on 300 actual 73-point sources, 6,653 absorbed pair occurrences,
+and five invalid proof recipes. This rule is distinct from the earlier
+overlap-forest source-union attempt.
+
+For the saved `(5,219,0)` joint tree, the new credit51 premises can be
+imported while preserving its old row inventory. New verified facts are
+appended, and only branch-assumption row indices in old certificates are
+shifted by the number of appended rows. The 421 old closed leaves are
+retained and skipped; only open nodes are reconsidered under stronger
+premises. This preserves completed work without treating old open leaves
+as closed.

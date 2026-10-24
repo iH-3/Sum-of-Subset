@@ -1,0 +1,33 @@
+{
+  "status": "PASS_NEW_STRENGTHENED_PARTIAL_JOINT_TREE",
+  "closed": false,
+  "root": [
+    5,
+    219,
+    0
+  ],
+  "counts": [
+    1771,
+    581,
+    1071,
+    0
+  ],
+  "finished_depth": 3,
+  "strengthening": {
+    "old_checkpoint_sha256": "f143a61ed2ef6a24dc7050d3c8cb87574be6bddee725e673270777990fc5827a",
+    "source_checkpoint_sha256": "f64420ee14fa29ce69dbb54512bcebea5e82c19f804316d4f6bf997273876bd4",
+    "imported_facts": 255,
+    "appended_rows": 257,
+    "old_credit": 47,
+    "new_credit": 51,
+    "reused_closed_leaves": 421,
+    "strengthened_open_nodes": 1470
+  },
+  "replay": {
+    "steps": 6,
+    "credit": 51
+  },
+  "checkpoint_sha256": "0e8715d52343cd29b4964be386fa49b2d144342775162b080cfa10f8b61bedd9",
+  "seconds": 20.487759857998753,
+  "global_upper_bound_certified": false
+}

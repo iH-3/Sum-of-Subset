@@ -4,6 +4,26 @@
 records new mathematics and arithmetic to be integrated into a complete proof,
 only after all finite cases close and the interfaces below have been audited.
 
+Latest extreme-gap checkpoint: `(5,413,0)` is now completely closed. Case 3
+passed a new 25-step exact replay, and all 12 target alternatives were
+assembled with exact conditional-domain checks, reusing the other 11
+unchanged verified records. Total **4,651 closed / 3 open**. The remaining
+roots are `(4,142,0)`, `(4,142,1)` and `(5,219,0)`. The earlier joint tree
+for `(5,413,0)` is superseded and must not be resumed. See
+`verify_extreme_gap.py` and `data/upper80_extreme_gap_closure_20261024.json.gz`.
+The counts below describe earlier checkpoints.
+
+The later zero-root native propagation reached credit42 for `(4,142,0)`
+and credit51 for `(5,219,0)`. The latter's saved depth3 tree was strengthened
+by importing 255 new verified facts and the new credit, retaining 421 old
+closed leaves and shifting only their branch-row references. Its completed
+new layer has 1,771 nodes, 581 closed leaves and 1,071 open leaves; exact
+partial-tree replay passed. Do not repeat this finished layer. The positive
+`h=1` slice received the translated canonical mass rows and remains open
+at credit46. `source_hulls.py` supplies an additional complete `2D` capacity
+with interval hulls that can absorb certified pair points. The latest
+17 finished checkpoints are in `data/upper80_extreme_frontier_20261024.json.gz`.
+
 The later 2026-10-24 target-geometry continuation adds adaptive probe widths,
 sharp first-hole thresholds 95,124,187, and all 256 outer-subset translates
 against a complete 495-root/4845-leaf four-sum envelope. Its general arguments

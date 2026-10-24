@@ -781,11 +781,25 @@ def _replay(record,require_closed=True,return_state=False):
             import cg_cut
             m.need(j>=3 and 3 not in st.values(),'Integer CG domain')
             fact=cg_cut.derive(step['proof'],rows,eqs);rows.append(fact);facts.append(fact)
+        elif kind=='shifted_canonical_phi_mass':
+            import canonical_phi
+            m.need(j>=3 and 3 not in st.values(),'Shifted canonical integer core minimum scope')
+            fact,guards=canonical_phi.shifted_derive(step['side'],step['cap'],step['core_shape'],core_shape)
+            m.need(len(step['certificates'])==len(guards),'Shifted core mass cap licenses')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
         elif kind=='canonical_phi_mass':
             import canonical_phi
             m.need(j>=3 and 3 not in st.values(),'Canonical integer core minimum scope')
             fact,guards=canonical_phi.derive(step['side'],step['cap'])
             m.need(len(step['certificates'])==2,'Canonical core mass cap licenses')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
+        elif kind=='source_hull_capacity':
+            import source_hulls
+            m.need(j>=3 and 3 not in st.values(),'Integer source-hull capacity scope')
+            fact,guards=source_hulls.derive(step['proof'],core_shape)
+            m.need(len(step['certificates'])==len(guards),'Every source hull membership guard')
             for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
             rows.append(fact);facts.append(fact)
         elif kind=='source_union_capacity':
@@ -802,7 +816,7 @@ def _replay(record,require_closed=True,return_state=False):
             m.need(len(step['certificates'])==len(guards),'Every full-window guard certified')
             for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
             fact=(body,0,'complete four-sum window capacity');rows.append(fact);facts.append(fact)
-        elif kind in ('full_cover_probe','full_cover_extended_probe','full_cover_known_probe','full_cover_refine','full_cover_exclude','full_cover_modular_exclude','full_cover_subsume','full_cover_bound','full_cover_force','full_cover_final'):
+        elif kind in ('full_cover_probe','full_cover_extended_probe','full_cover_known_probe','full_cover_refine','full_cover_exclude','full_cover_gap_exclude','full_cover_modular_exclude','full_cover_subsume','full_cover_bound','full_cover_force','full_cover_final'):
             m.need(j>=3 and 3 not in st.values(),'Complete integer four-sum cover scope')
             if kind=='full_cover_extended_probe':
                 import full_window
@@ -847,6 +861,15 @@ def _replay(record,require_closed=True,return_state=False):
                     node=tuple(step['node']);m.need(node in nodes,'Live full target component')
                     guard=full_cover.exclusion(target,node,step['direction'],width);check(step['certificate'],rows,eqs,guard,strict=False)
                     fact=(guard,0,'proved full component exclusion');rows.append(fact);facts.append(fact);nodes.remove(node)
+                elif kind=='full_cover_gap_exclude':
+                    import core_gap
+                    node=tuple(step['node']);m.need(node in nodes,'Live component for extreme-gap exclusion')
+                    shape=step.get('core_shape');m.need(shape is None or type(shape) is int and shape==core_shape,'Licensed first-gap extreme interval')
+                    guards=core_gap.guards(target,node,width,step['side'],shape)
+                    m.need(len(step['certificates'])==2,'Both extreme-gap containment guards')
+                    for guard,cert in zip(guards,step['certificates']):
+                        check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved empty extreme-sum interval');rows.append(fact);facts.append(fact)
+                    nodes.remove(node);state['forced']=False
                 elif kind=='full_cover_modular_exclude':
                     import modular
                     node=tuple(step['node']);m.need(node in nodes and width==1,'Live singleton full target component')

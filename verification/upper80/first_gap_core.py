@@ -26,6 +26,11 @@ def removed_prefix_mass(case):
         body=m.add((1,body),(weight,{'ONE':30-prefix,'rank_k':sign}))
     return body
 
+def removed_side_prefix_mass(case,side):
+    m.need(type(case) is int and 0<=case<4 and side in 'st','One physical first-gap prefix')
+    h,ps,pt=CASES[case];prefix=ps if side=='s' else pt;weight=h-prefix
+    return {'ONE':weight*(30-prefix),'rank_k':weight*(-1 if side=='s' else 1)}
+
 def rows(case):
     m.need(type(case) is int and 0<=case<len(CASES),'Complete first-gap core case')
     h,ps,pt=CASES[case];answer=[]

@@ -1,5 +1,19 @@
 # Incremental research verification
 
+Latest: `gap_closure_receipt.json` certifies assembly of all 12 alternatives
+of `(5,413,0)`. Only its new final alternative was freshly replayed; the
+11 earlier closed records were matched to the immutable verified frontier.
+`gap_packet_receipt.json` checks the unchanged assembled packet. Total:
+4,651 original roots closed, three open; no global bound80 claim.
+
+`strengthened_joint_receipt.json` verifies the newly strengthened credit51
+tree for `(5,219,0)`: 1,771 nodes, 581 closed leaves, 1,071 open leaves.
+The 421 previously closed leaves were preserved; only open nodes received
+new discovery under 255 additional verified facts and improved credit.
+`extreme_frontier_receipt.json` identifies the frozen 17-checkpoint snapshot.
+
+The following paragraphs describe the earlier snapshots.
+
 The new k=0, k=1 and unrestricted (5,256,0), (5,266,0), (5,268,0), (5,270,0) records each passed exact replay
 before packaging. `closure_receipt.json` checks that their order-preserving
 record identities match those replays. It reuses the immutable, previously

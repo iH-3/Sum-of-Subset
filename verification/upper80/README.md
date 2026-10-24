@@ -1,6 +1,6 @@
 # 向上界 80 的研究：全局仍为 71≤N≤81
 
-Latest 2026-10-24 continuation: five more original roots closed; **4,650/4,654 closed, four open**. See `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
+Latest 2026-10-24 continuation: `(5,413,0)` also closed; **4,651/4,654 closed, three open**. See `verify_extreme_gap.py`, `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
 
 本目录同时保存已完成的辅助定理验证和未完成的研究原型。**它不是上界 80 的完整验证包。**
 
@@ -104,7 +104,9 @@ v2 存档保留模式键的顺序，因为证书按确定的行号引用不等�
 
 ### Resume the remaining research without restarting finished work
 
-`data/upper80_open_frontier_20261024.json.gz` stores the strongest retained
+`data/upper80_extreme_frontier_20261024.json.gz` stores the latest 17 finished
+checkpoints, including the credit51 joint tree. The immutable earlier
+`data/upper80_open_frontier_20261024.json.gz` retains the previous
 open checkpoints, exact closed conditional branches, and both finished joint
 partition trees in an order-preserving record pool. Its ledger lists work
 that must not be restarted. This is a research snapshot, not a global proof.
@@ -115,7 +117,8 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/continue_fr
 ```
 
 The continuation accepts both raw and pooled files. Available methods are
-`windows`, `integer_windows`, `native`, `source`, `canonical`, and `coverage`.
+`windows`, `integer_windows`, `gap_windows`, `integer_gap_windows`, `native`,
+`source`, `source_hulls`, `canonical`, `shifted_canonical`, `core_gaps`, and `coverage`.
 Use a new method only where the ledger and stronger premises justify it.
 Finished identical method checkpoints are skipped; MIP output is discovery
 only and can never certify a contradiction.
@@ -124,3 +127,13 @@ only and can never certify a contradiction.
 resumes the sibling `SOURCE_joint_resume.json.gz` tree, keeping every closed
 leaf and already tested node. Requests at a completed depth return immediately.
 The two completed depths are 3 for `(5,219,0)` and 4 for `(5,413,0)`.
+The latter root is now completely closed and its tree must not be resumed.
+
+To check the new closed root by its already saved exact replay receipts:
+
+```sh
+python verification/upper80/verify_extreme_gap.py --reuse-receipt
+```
+
+Without that option, the verifier performs a full fresh arithmetic replay;
+that is available for an independent reader, not needed to continue research.

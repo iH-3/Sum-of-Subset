@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_SOURCE_HULL_CAPACITIES", "actual_sources": 300, "capacities": 600, "sharp_cases": 0, "absorbed_pair_occurrences": 6653, "invalid_recipes_rejected": 5, "global_upper_bound_certified": false}

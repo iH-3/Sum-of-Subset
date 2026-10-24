@@ -7,14 +7,16 @@ from pathlib import Path
 import argparse,hashlib,json,time
 import fast_lp;fast_lp.install()
 from discover import Search
-import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm
+import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm,core_gap as cg,source_hulls as sh
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('source',type=Path);ap.add_argument('output',type=Path)
-    ap.add_argument('--method',choices=['windows','integer_windows','native','source','canonical','coverage'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');args=ap.parse_args()
-    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
+    ap.add_argument('--method',choices=['windows','integer_windows','gap_windows','integer_gap_windows','native','source','source_hulls','canonical','shifted_canonical','coverage','core_gaps'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');ap.add_argument('--seed-point',type=Path);args=ap.parse_args()
+    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),Path(cg.__file__),Path(sh.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
     digest=hashlib.sha256(b''.join(p.read_bytes() for p in modules)+json.dumps([args.method,args.broad]).encode()).hexdigest()
     data=pool.read_gzip(args.source);parent=data['record']
+    seed=pool.read_gzip(args.seed_point).get('point') if args.seed_point else None
+    if args.seed_point and seed is None:raise ValueError('Requested saved discovery point is absent')
     if args.output.exists():
         old=pool.read_gzip(args.output)
         if old.get('closed') or old.get('status')=='stalled' and old.get('method_digest')==digest:
@@ -23,6 +25,7 @@ def main():
     if data.get('closed'):raise ValueError('Do not search a closed source')
     s=Search(parent['st'],parent['j'],parent['positive'],parent.get('limits'),use_planes=True,parent=parent)
     s.omit_generated_rows=True;s.window_affine_only=not args.broad;s.max_full_probes=0
+    s.window_extreme_gaps=args.method in ('gap_windows','integer_gap_windows')
     if args.method=='native':s.full_cover_step=lambda point:(False,False)
     start=time.monotonic();last=[start,0];point=None;closed=False;new=False
     def save(status):
@@ -36,13 +39,16 @@ def main():
         return result
     s.lp=logged
     try:
-        if args.method=='native':closed=s.run()
+        if args.method=='native':
+            closed=s.run();point=getattr(s,'point',None)
         else:
             for cycle in range(args.cycles):
                 r=s.lp()
                 if r.status==2:s.final();closed=True;break
                 point=dict(zip(s.names,r.x))
-                if args.method=='integer_windows':
+                seeded=cycle==0 and seed is not None
+                if seeded:point=seed;print('REUSED_SAVED_DISCOVERY_POINT',flush=True)
+                if args.method in ('integer_windows','integer_gap_windows'):
                     import numpy as np
                     from scipy.optimize import milp,Bounds,LinearConstraint
                     s.matrices();keep=[i for i,(_,_,label) in enumerate(s.rows) if label not in ('integer CG consequence','complete target-cover consequence')]
@@ -52,13 +58,13 @@ def main():
                     if result.x is None:break
                     point=dict(zip(s.names,result.x));changed,finished=fw.discover(s,point)
                 elif args.method=='coverage':changed,finished=s.full_cover_step(point)
-                else:changed,finished={'windows':fw.discover,'source':su.discover,'canonical':cm.discover}[args.method](s,point)
+                else:changed,finished={'windows':fw.discover,'gap_windows':fw.discover,'source':su.discover,'source_hulls':sh.discover,'canonical':cm.discover,'shifted_canonical':cm.discover_shifted,'core_gaps':cg.discover}[args.method](s,point)
                 print('CYCLE',cycle,changed,finished,len(s.trace),flush=True)
                 if finished:
-                    if args.method!='coverage' or not changed:s.final()
+                    if args.method not in ('coverage','core_gaps') or not changed:s.final()
                     closed=True;break
-                new=changed;save('progress' if changed else 'stalled')
-                if not changed:break
+                new=changed;save('progress' if changed or seeded else 'stalled')
+                if not changed and not seeded:break
             else:save('budget_reached');return
         save('closed' if closed else 'stalled');print('RESULT',closed,len(s.trace),s.e,round(time.monotonic()-start,2),flush=True)
     except BaseException:save('interrupted');raise

@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_SHIFTED_CANONICAL_MASS", "identities": 3388, "inequalities": 1124, "sharp_cases": 88, "sentinel_cases": 2264, "affine_checks": 800, "invalid_recipes_rejected": 5, "global_upper_bound_certified": false}

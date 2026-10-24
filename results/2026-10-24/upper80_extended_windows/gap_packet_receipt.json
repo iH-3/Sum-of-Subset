@@ -1,0 +1,50 @@
+{
+  "status": "PASS_COMPLETE_EXTREME_GAP_ROOT",
+  "root": [
+    5,
+    413,
+    0
+  ],
+  "closed": true,
+  "original_roots_closed": 4651,
+  "original_roots_open": 3,
+  "remaining_roots": [
+    [
+      4,
+      142,
+      0
+    ],
+    [
+      4,
+      142,
+      1
+    ],
+    [
+      5,
+      219,
+      0
+    ]
+  ],
+  "replayed_complete_record": false,
+  "reused_closed_cases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "packet_sha256": "b69ab2f2cfd871bf20906f16c519b109fef77cb6bace9dd0fbc814a7a77b233a",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ]
+}

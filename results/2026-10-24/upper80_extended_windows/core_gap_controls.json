@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CORE_EXTREME_GAPS", "actual_sources": 100, "empty_intervals": 1600, "nonempty_intervals": 1536, "whole_probe_checks": 4472, "present_endpoint_controls": 1600, "invalid_recipes": 3, "global_upper_bound_certified": false}
