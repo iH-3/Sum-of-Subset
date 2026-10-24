@@ -8,12 +8,12 @@ from pathlib import Path
 import argparse,hashlib,json,time,gzip
 import fast_lp;fast_lp.install()
 from discover import Search
-import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm,core_gap as cg,source_hulls as sh,ownerless_hit as oh,source_envelope as se,tail_caps as tc
+import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm,core_gap as cg,source_hulls as sh,ownerless_hit as oh,source_envelope as se,tail_caps as tc,trimmed_source as tr,averaged_source as av,robust_source as rb,known_targets as kt
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('source',type=Path);ap.add_argument('output',type=Path)
-    ap.add_argument('--method',choices=['windows','integer_windows','gap_windows','integer_gap_windows','punctured_windows','integer_punctured_windows','canonical_gap_windows','tail_cap_windows','native','source','canonical_source','source_hulls','source_envelope','canonical','canonical_tail','shifted_canonical','ownerless','coverage','core_gaps'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');ap.add_argument('--seed-point',type=Path);args=ap.parse_args()
-    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),Path(cg.__file__),Path(sh.__file__),Path(oh.__file__),Path(se.__file__),Path(tc.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
+    ap.add_argument('--method',choices=['windows','integer_windows','gap_windows','integer_gap_windows','punctured_windows','integer_punctured_windows','canonical_gap_windows','tail_cap_windows','native','source','canonical_source','source_hulls','source_envelope','trimmed_source','averaged_source','robust_source','canonical','canonical_tail','shifted_canonical','ownerless','coverage','core_gaps','canonical_probe_gaps','known_targets'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');ap.add_argument('--seed-point',type=Path);args=ap.parse_args()
+    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),Path(cg.__file__),Path(sh.__file__),Path(oh.__file__),Path(se.__file__),Path(tc.__file__),Path(tr.__file__),Path(av.__file__),Path(rb.__file__),Path(kt.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
     digest=hashlib.sha256(b''.join(p.read_bytes() for p in modules)+json.dumps([args.method,args.broad]).encode()).hexdigest()
     old=None
     if args.output.exists():
@@ -34,10 +34,13 @@ def main():
     s.window_canonical_gaps=args.method in ('canonical_gap_windows','tail_cap_windows')
     s.window_tail_caps=args.method=='tail_cap_windows'
     s.source_canonical_gaps=args.method=='canonical_source'
+    s.probe_canonical_gaps=args.method=='canonical_probe_gaps'
     if args.method=='native':s.full_cover_step=lambda point:(False,False)
     start=time.monotonic();last=[start,0];point=None;closed=False;new=False
     def save(status):
-        pool.write_gzip(args.output,dict(record=s.record(),point=point,closed=closed,status=status,method=args.method,method_digest=digest))
+        data=dict(record=s.record(),point=point,closed=closed,status=status,method=args.method,method_digest=digest)
+        if getattr(s,'source_split_candidates',None):data['source_split_candidates']=s.source_split_candidates
+        pool.write_gzip(args.output,data)
     original=s.lp
     def logged(target=None):
         result=original(target)
@@ -66,10 +69,10 @@ def main():
                     if result.x is None:break
                     point=dict(zip(s.names,result.x));changed,finished=fw.discover(s,point)
                 elif args.method=='coverage':changed,finished=s.full_cover_step(point)
-                else:changed,finished={'windows':fw.discover,'gap_windows':fw.discover,'punctured_windows':fw.discover,'canonical_gap_windows':fw.discover,'tail_cap_windows':fw.discover,'source':su.discover,'canonical_source':su.discover,'source_hulls':sh.discover,'source_envelope':se.discover,'canonical':cm.discover,'canonical_tail':cm.discover_tail,'shifted_canonical':cm.discover_shifted,'ownerless':oh.discover,'core_gaps':cg.discover}[args.method](s,point)
+                else:changed,finished={'windows':fw.discover,'gap_windows':fw.discover,'punctured_windows':fw.discover,'canonical_gap_windows':fw.discover,'tail_cap_windows':fw.discover,'source':su.discover,'canonical_source':su.discover,'source_hulls':sh.discover,'source_envelope':se.discover,'trimmed_source':tr.discover,'averaged_source':av.discover,'robust_source':rb.discover,'canonical':cm.discover,'canonical_tail':cm.discover_tail,'shifted_canonical':cm.discover_shifted,'ownerless':oh.discover,'core_gaps':cg.discover,'canonical_probe_gaps':cg.discover,'known_targets':kt.discover}[args.method](s,point)
                 print('CYCLE',cycle,changed,finished,len(s.trace),flush=True)
                 if finished:
-                    if args.method not in ('coverage','core_gaps') or not changed:s.final()
+                    if args.method not in ('coverage','core_gaps','canonical_probe_gaps','known_targets') or not changed:s.final()
                     closed=True;break
                 new=changed;save('progress' if changed or seeded else 'stalled')
                 if not changed and not seeded:break

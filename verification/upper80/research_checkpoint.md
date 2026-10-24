@@ -1,5 +1,24 @@
 # Size-81 research checkpoint, updated 2026-10-24
 
+The later last-root continuation adds complete source covers after removing
+several core points, monotone suffix averages, and individually licensed
+hull membership. Their new actual-set controls pass. Whole-domain
+trimmed_source, robust_source and canonical_probe_gaps attempts finished
+OPEN; do not rerun these paths. The complete canonical four-case partition
+and the complementary source-hull partition are preserved separately.
+A new joint target tree starts from j4_zero_robust_source and preserves
+all closed nodes; only pending nodes of its unfinished depth may resume.
+known_targets adds distinct actual subset sums and propagates only the
+new probe. The two integer diagnostics remain feasible even after imposing
+the exact rank graph, so neither is a proof of infeasibility or a feasible
+set for the original problem.
+
+`reports/upper80_pre_G_dependency_audit_20261024.md` assembles the ordinary
+primitive non-AP inner lattice argument and the uniform outer comparison
+using the existing arithmetic receipt, without rerunning it. It explicitly
+keeps the inverse, AP/no-clipping and other adoption gates separate.
+
+
 Latest finite closure: `(5,219,0)` is completely closed by four complementary canonical-minimizer cases. Each leaf passed an independent exact replay; `verify_canonical_minimizer.py --reuse-receipts` passed the full integer-domain and identity checks. **4,653/4,654 original roots closed; only `(4,142,0)` remains.** The global bound is still81 and structural adoption is incomplete. All j5_219 searches and joint trees are now superseded; do not resume them.
 
 

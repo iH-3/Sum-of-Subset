@@ -1,0 +1,29 @@
+{
+  "status": "SAVED_INCREMENTAL_LAST_ROOT_FRONTIER",
+  "checkpoints": 34,
+  "finished_checkpoints": 24,
+  "unfinished_snapshots": [
+    {
+      "name": "j4_zero_robust_source_joint_resume",
+      "status": "progress"
+    },
+    {
+      "name": "j4_minimizer_cases/2_source_envelope",
+      "status": "budget_reached"
+    },
+    {
+      "name": "j4_minimizer_cases/3_native",
+      "status": "progress"
+    },
+    {
+      "name": "j4_case0_source_guard/1_tail_cap_windows",
+      "status": "progress"
+    }
+  ],
+  "pooled_records": 60,
+  "bytes": 3578432,
+  "sha256": "8b045665ee3bc1bdcccbb2741c0be0c35d62d57392fb5da39c3215947fe0da27",
+  "global_upper_bound_certified": false,
+  "independent_arithmetic_replay": false,
+  "superseded_budget_checkpoint": "j4_minimizer_cases/2_source_envelope"
+}

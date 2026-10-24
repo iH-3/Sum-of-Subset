@@ -443,7 +443,7 @@ class Search:
                 state['forced']=True;changed=True
         return changed,False
 
-    def full_cover_step(self,point):
+    def full_cover_step(self,point,probe_indices=None):
         if self.j<3 or 3 in self.st.values():return False,False
         import full_cover as fc
         from modular import INTEGER_NAMES
@@ -479,6 +479,7 @@ class Search:
                 self.full_probes.append(dict(target=target,mask=mask,width=width,margin=margin,nodes=fc.initial_nodes(),forced=False))
                 changed=True;break
         for pid,state in enumerate(self.full_probes):
+            if probe_indices is not None and pid not in probe_indices:continue
             nodes=state['nodes'];target=state['target'];width=state['width'];queue=sorted(nodes)
             from modular import Basis
             integer_basis=Basis(self.rows,self.eqs) if width==1 else None

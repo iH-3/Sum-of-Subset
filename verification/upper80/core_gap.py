@@ -37,9 +37,9 @@ def gap_interval(node,side,shape=None,prefix=0):
         loss=m.add((1,loss),(1,canonical_prefix(side,prefix,shape)))
     return (m.add((1,hi),(-1,loss)),m.add((1,hi),(-1,ONE))) if side=='s' else (m.add((1,lo),(1,ONE)),m.add((1,lo),(1,loss)))
 
-def guards(target,node,width,side,shape=None):
+def guards(target,node,width,side,shape=None,prefix=0):
     m.need(type(width) is int and width>=1,'Whole integer target probe')
-    lower,upper=gap_interval(node,side,shape)
+    lower,upper=gap_interval(node,side,shape,prefix)
     return [m.add((1,lower),(-1,target)),m.add((1,target),(width-1,ONE),(-1,upper))]
 
 def extreme_only_guard(lower,upper,node,side,shape=None,prefix=0):
@@ -61,7 +61,7 @@ def punctures(lower,upper,node,holes,shape=None,prefixes=None):
     return removed,conditions
 
 def discover(search,point):
-    import exact
+    import exact,math
     ev=lambda row:sum(v*point[k] for k,v in row.items())
     for pid,state in enumerate(search.full_probes):
         for node in sorted(state['nodes']):
@@ -69,7 +69,14 @@ def discover(search,point):
             if power<1:continue
             shape=getattr(search,'core_shape',None) if node[1]>=0 else None
             for side in 'st':
-                conditions=guards(state['target'],node,state['width'],side,shape)
+                prefix=0
+                if getattr(search,'probe_canonical_gaps',False) and node[1]>=0:
+                    w=0
+                    if shape is not None:
+                        from first_gap_core import CASES
+                        h,ps,pt=CASES[shape];w=h-(ps if side=='s' else pt)
+                    prefix=min(12,max(0,math.floor(point['phicore'+side]-w-2+1e-7)))
+                conditions=guards(state['target'],node,state['width'],side,shape,prefix)
                 if any(ev(g)>1e-7 for g in conditions):continue
                 certs=[]
                 for guard in conditions:
@@ -80,6 +87,7 @@ def discover(search,point):
                 if len(certs)<2:continue
                 for cert,guard in zip(certs,conditions):exact.check(cert,search.rows,search.eqs,guard,strict=False)
                 step=dict(kind='full_cover_gap_exclude',probe=pid,node=node,side=side,certificates=certs)
+                if prefix:step['prefix']=prefix
                 if shape is not None:step['core_shape']=shape
                 search.trace.append(step);search.rows.extend((g,0,'proved empty extreme-sum interval') for g in conditions)
                 state['nodes'].remove(node);state['forced']=False

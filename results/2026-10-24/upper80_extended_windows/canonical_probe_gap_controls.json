@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CANONICAL_PROBE_INTERFACE", "guard_domains": 40, "actual_empty_windows": 36, "invalid_prefixes_rejected": 3, "global_upper_bound_certified": false}

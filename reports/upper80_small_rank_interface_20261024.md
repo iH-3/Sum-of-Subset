@@ -2,8 +2,8 @@
 
 This note resolves the rank7/8 core cases and their two-stage source-lattice
 interface. It is not a complete size-81 structural adoption and does not
-certify the bound80. The larger-AP balanced case and other structural domains
-still require their complete adoption arguments.
+certify the bound80. The complete AP/no-clipping argument and other structural domains
+still require their full adoption arguments.
 
 Write `a+b=64`, `I=(32−a)^2`, `Omega=646−I`, and
 `U=FS(P)`, `V=FS(Q)`, including zero in each support. Let their cardinalities
@@ -112,7 +112,7 @@ For the rank-8 two-non-AP case, `rho+G>=−8+51+46=89>70`.
 The remaining adoption tasks include the larger-AP balanced reflection and
 the other structural domains listed in
 `verification/upper80/research_checkpoint.md`. Closing this boundary does not
-replace those arguments or the two still-open finite roots.
+replace those arguments or the sole still-open finite root.
 
 ## Balanced AP orientation: exact reflection
 

@@ -591,3 +591,106 @@ is repeated. The finite total is now4653/4654 with sole remaining original
 root `(4,142,0)`. All former j5_219 joint trees and partial partitions are
 superseded. Complete structural adoption and this last finite root remain
 necessary before claiming80.
+
+## Several removed core elements as bounded actual points
+
+The zero-hole continuation now also decomposesD by removingL=1..4 largest
+core elements on each side. The remaining setB has exactly65-2L elements;
+the other8+2L source elements remain individual actual points. Their
+coordinates may be enclosed by intervals without introducing new variables.
+Forj=1..4, canonical minimality gives
+
+    x_(r-j) >= r-j,     x_(r-j) >= r-2j+phi.
+
+For anyell=0..14, sum the lower defect floorsphi-q forq=1..ell, omittingq=j
+when present. IfQ denotes this affine sum, all remaining defects other than
+the maximumxi and the selected defect are nonnegative. Consequently
+
+    x_(r-j) <= r-j+tau-xi-Q,     x_(r-j) <= R-j.
+
+Every selected floor corresponds to an existing index because every core
+rank is at least15. Each endpoint choice is an unconditional bound, even
+when individual affine floors are negative. The indexj=L supplies a hull
+forB; smallerj describe the other removed core points. The maxima remain
+the exact pointsR_s and−R_t, and the original eight source tails are exact.
+
+The complete identity is
+
+    2D = 2B union (B+each removed/source-tail point) union (all point pairs).
+
+A B-translate has at most65-2L elements even if its shift is only enclosed
+by an interval. Each point pair has one value. A single mass charge may not
+absorb other components; alternatively, certified charged hulls can combine
+whole component intervals. AtL=4 this inventory has153 components. This
+proves the `trimmed_source.py` rule independently of a particular sample or
+solver point. The new controls check80 actual sources,9600 indexed bounds,
+320 complete decompositions,34400 component bounds and six invalid recipes.
+Twenty of the resulting complete capacities are sharp.
+
+
+## Monotone suffix averages and partial hull membership
+
+For an indexed core defect d_(r-j), the j nonmaximum defects at indices
+r-j,...,r-1 are all at least d_(r-j). The earlier ell defects at indices
+r-j-ell,...,r-j-1 have canonical floor sum
+
+    P = ell*phi - ell*(ell+2j+1)/2.
+
+Consequently j*d_(r-j) <= tau-xi-P. Here 1<=j<=4 and
+0<=ell<=14-j, so every index exists uniformly for r>=15. The new bound
+
+    x_(r-j) <= r-j+(tau-xi-P)/j
+
+can be combined with both earlier indexed upper bounds. All coordinates
+are scaled by12; 12/j is integral, so the resulting source capacities,
+containment guards and exact certificates have integer coefficients.
+The complete decomposition is unchanged, but its affine endpoints can
+be sharper. `averaged_source.py` implements this rule. New actual-set
+controls checked6000 indexed average bounds,240 complete decompositions,
+25800 component bounds and six invalid recipes;24 capacities were sharp.
+
+Every component in this source decomposition contains an actual sum:
+2B is nonempty, each B-translate is nonempty, and each pair gives one
+point. Thus a hull certified to contain at least one whole component is
+necessarily nonempty. The optional `nonempty_hulls` rule can omit the
+separate nonnegative-length guard. It cannot omit either endpoint
+containment guard or the complete component inventory.
+
+`robust_source.py` tests membership separately for each component of a
+candidate hull. It retains all successfully licensed components when their
+combined mass exceeds the hull charge, then handles every unlicensed
+component separately. This changes discovery, not the requirement that
+every component receive exactly one charge. Only violated complete
+capacity rows are retained. Its first unrestricted last-root attempt
+finished open without a new violated capacity; this finished path must
+not be rerun. The stronger average coordinates also produced no smaller
+numerical envelope at the four saved diagnostic points examined here.
+This does not invalidate the lemma, but supplies no reason to repeat an
+unchanged whole-domain search.
+
+A separate diagnostic decomposed every qE as qB plus the two removed
+actual core maxima at four saved points. It found exactly the same
+numerical target gaps as the existing extreme-gap envelope. No expensive
+sliced-core target search was launched on that evidence.
+
+
+## Exact target-probe continuation
+
+The canonical prefix already used for complete windows also applies to
+an existing exact target probe of any positive integer width: its whole
+interval must lie inside the guaranteed extreme gap. The new optional
+prefix field on `full_cover_gap_exclude` is checked by the same
+`canonical_prefix` formula. Absent fields retain the original order-zero
+meaning. The focused interface control checked40 domains,36 nonempty
+actual empty windows and three rejected prefix licenses. The first
+unrestricted `canonical_probe_gaps` continuation finished open and made
+no target-component deletion; do not repeat it unchanged.
+
+The `known_targets` continuation uses the already established complete
+family of ten disjoint source blocks and eight outer singleton blocks.
+It adds at most four new, distinct actual subset sums per run, with no
+interval-placement premise. Each call propagates only its newly added
+probe; earlier probes retain their exact saved exclusions. A later joint
+tree may combine their alternatives, but all alternatives must be covered.
+The exact rank-graph MILP diagnostic remains feasible and is recorded only
+as a source of discovery coordinates, not as a certificate or actual set.

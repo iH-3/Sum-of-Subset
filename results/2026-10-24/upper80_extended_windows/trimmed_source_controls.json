@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_TRIMMED_SOURCE", "actual_sources": 80, "indexed_core_bounds": 9600, "complete_decompositions": 320, "component_bounds": 34400, "sharp_capacities": 20, "invalid_recipes_rejected": 6, "global_upper_bound_certified": false}

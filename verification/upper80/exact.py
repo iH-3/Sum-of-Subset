@@ -805,6 +805,20 @@ def _replay(record,require_closed=True,return_state=False):
             m.need(len(step['certificates'])==2,'Canonical core mass cap licenses')
             for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
             rows.append(fact);facts.append(fact)
+        elif kind=='averaged_source_capacity':
+            import averaged_source
+            m.need(not positive and j>=3 and 3 not in st.values(),'Zero-hole averaged-source capacity scope')
+            fact,guards=averaged_source.derive(step['proof'])
+            m.need(len(step['certificates'])==len(guards),'Every averaged-source hull guard')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
+        elif kind=='trimmed_source_capacity':
+            import trimmed_source
+            m.need(not positive and j>=3 and 3 not in st.values(),'Zero-hole trimmed-source capacity scope')
+            fact,guards=trimmed_source.derive(step['proof'])
+            m.need(len(step['certificates'])==len(guards),'Every trimmed-source hull guard')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
         elif kind=='source_envelope_capacity':
             import source_envelope
             m.need(j>=3 and 3 not in st.values(),'Integer source-envelope capacity scope')
@@ -882,7 +896,7 @@ def _replay(record,require_closed=True,return_state=False):
                     import core_gap
                     node=tuple(step['node']);m.need(node in nodes,'Live component for extreme-gap exclusion')
                     shape=step.get('core_shape');m.need(shape is None or type(shape) is int and shape==core_shape,'Licensed first-gap extreme interval')
-                    guards=core_gap.guards(target,node,width,step['side'],shape)
+                    guards=core_gap.guards(target,node,width,step['side'],shape,step.get('prefix',0))
                     m.need(len(step['certificates'])==2,'Both extreme-gap containment guards')
                     for guard,cert in zip(guards,step['certificates']):
                         check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved empty extreme-sum interval');rows.append(fact);facts.append(fact)
