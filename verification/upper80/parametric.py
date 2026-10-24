@@ -19,6 +19,7 @@ SHARP_PLANES=False
 SIDE_PLANES=False
 TRIM_SOURCE=False
 POINT_OVERLAP=False
+FULL_EDGES=False
 CHECKED_PLANES=set()
 
 
@@ -134,6 +135,30 @@ def build(st,j,positive=False,e=0,limits=None,forest_masks=None):
         rows += [({name:-1},-lo,'parameter branch lower '+name),({name:1},hi,'parameter branch upper '+name)]
         if name=='rank_k':
             rows.append(({'rank_I':1,'rank_k':-lo-hi},-lo*hi,'parameter branch chord'))
+    for key,interval in (limits or {}).items():
+        if key.startswith('linear_cut:'):
+            import json
+            from modular import INTEGER_NAMES
+            row=json.loads(key.partition(':')[2]);lo,hi=interval
+            m.need(j>=3 and 3 not in st.values() and type(row) is dict and set(row)<=INTEGER_NAMES and all(type(v) is int for v in row.values()) and (lo,hi) in ((0,0),(1,1)),'Physical integer affine cut')
+            rows.append((row,0,'integer affine cut lower '+key) if lo==0 else ({k:-v for k,v in row.items()},-1,'integer affine cut upper '+key))
+        if not key.startswith('integer_cut:'):continue
+        from modular import INTEGER_NAMES
+        parts=key.split(':');m.need(len(parts)==3,'Integer cut syntax')
+        _,name,cut=parts;cut=int(cut);lo,hi=interval
+        m.need(j>=3 and 3 not in st.values() and name in INTEGER_NAMES and name!='ONE' and (lo,hi) in ((0,0),(1,1)),'Physical integer cut scope')
+        rows.append(({name:1},cut,'integer cut lower '+key) if lo==0 else ({name:-1},-cut-1,'integer cut upper '+key))
+    if 'tau_total' in (limits or {}):
+        import exact
+        lo,hi=limits['tau_total'];minimum,maximum=exact.integer_source_domain('tau_total',j,positive)
+        m.need(type(lo) is int and type(hi) is int and minimum<=lo<=hi<=maximum,'Total core excess branch')
+        rows.extend([({'ts':-1,'tt':-1},-lo,'total core excess lower'),({'ts':1,'tt':1},hi,'total core excess upper')])
+    for name in ('xs','xt','ts','tt','delta','K',*(a+b for a in 'abce' for b in 'st')):
+        if name not in (limits or {}):continue
+        import exact
+        lo,hi=limits[name];minimum,maximum=exact.integer_source_domain(name,j,positive)
+        m.need(type(lo) is int and type(hi) is int and minimum<=lo<=hi<=maximum,'Source integer branch')
+        rows.extend([({name:-1},-lo,'core integer branch lower '+name),({name:1},hi,'core integer branch upper '+name)])
     for side in 'st':
         name='B'+side
         if name not in (limits or {}):continue
@@ -161,6 +186,21 @@ def build(st,j,positive=False,e=0,limits=None,forest_masks=None):
         else:
             rows.append(({k:-v for k,v in difference.items()},-1,'ordinary order '+key))
             build.last_edges.append((b,a,difference))
+    if FULL_EDGES:
+        seen={frozenset((a,b)) for a,b,_ in build.last_edges}
+        for side,other in [('s','t'),('t','s')]:
+            chain=[name+side for name in m.CHAIN if st.get(name+side)==1]
+            for i,a in enumerate(chain):
+                for b in chain[i+1:]:
+                    if frozenset((a,b)) in seen:continue
+                    build.last_edges.append((a,b,m.add((1,build.last_Z[b]),(-1,build.last_Z[a]))));seen.add(frozenset((a,b)))
+            lam={'d'+side:1,'M'+side:-2,'X'+side:-2,'g'+side:-1}
+            for b in chain:
+                a='L'+side
+                if frozenset((a,b)) in seen:continue
+                if b[:-1] in ('V','U','H','O'):gap=m.add((1,build.last_Z[b]),(-1,lam),(-1,{'M'+side:1}))
+                else:gap=m.add((1,lam),(-1,{'M'+other:1}),(-1,build.last_Z[b]))
+                build.last_edges.append((a,b,gap));seen.add(frozenset((a,b)))
     if SOURCE_TAIL_RANKS:
         for side in 'st':
             for off,constant in [('c',-2),('b',0),('a',2)]:
@@ -223,6 +263,53 @@ def build(st,j,positive=False,e=0,limits=None,forest_masks=None):
         m.need(len(matches)==1,'Extended hit actual edge');body=exact.extended_guards(matches[0],int(q),tag)[int(index)]
         if interval[0]==0:rows.append((body,0,'extended hit branch inside '+key))
         else:rows.append(({k:-v for k,v in body.items()},-1,'extended hit branch outside '+key))
+    for key,interval in (limits or {}).items():
+        if not key.startswith('leading_hit:'):continue
+        import exact
+        parts=key.split(':');m.need(POINT_OVERLAP and len(parts) in (6,7) and tuple(interval) in ((0,0),(1,1)),'Leading hit branch syntax')
+        if len(parts)==6:_,tag,witness,a,b,index=parts;q=5
+        else:_,q,tag,witness,a,b,index=parts;m.need(q in ('1','2','3','4','5'),'Leading truncation');q=int(q)
+        m.need(index.isdigit(),'Leading hit guard index')
+        matches=[edge for edge in build.last_edges if edge[:2]==(a,b)]
+        m.need(len(matches)==1,'Leading hit actual edge');guards=exact.leading_point_guards(matches[0],tag,witness,q)
+        m.need(int(index)<len(guards),'Leading hit guard range');body=guards[int(index)]
+        if interval[0]==0:rows.append((body,0,'leading hit branch inside '+key))
+        else:rows.append(({k:-v for k,v in body.items()},-1,'leading hit branch outside '+key))
+    for key,interval in (limits or {}).items():
+        if not key.startswith('sumset_pair:'):continue
+        import exact
+        parts=key.split(':');m.need(POINT_OVERLAP and len(parts)==5 and tuple(interval) in ((0,0),(1,1)),'Source gap branch syntax')
+        _,gap,a,b,index=parts;m.need(index in ('0','1'),'Source gap guard index')
+        body=exact.sumset_gap_guards(gap,(a,b))[int(index)]
+        if interval[0]==0:rows.append((body,0,'source gap pair outside '+key))
+        else:rows.append(({k:-v for k,v in body.items()},-1,'source gap pair not outside '+key))
+    for key,interval in (limits or {}).items():
+        if not key.startswith('fixed_hit:'):continue
+        import exact
+        parts=key.split(':');m.need(POINT_OVERLAP and j>=3 and 3 not in st.values() and len(parts)==6 and tuple(interval) in ((0,0),(1,1)),'Fixed cover branch syntax')
+        _,label,resource,q,witness,index=parts;m.need(q in ('1','2','3','4','5') and index.isdigit(),'Fixed cover guard index')
+        guards=exact.fixed_cover_guards(label,resource,int(q),None if witness=='-' else witness,build.last_Z)
+        guards.append(m.add((1,{'ONE':1}),(-1,m.fixed_forms()[label])))
+        m.need(int(index)<len(guards),'Fixed cover guard range');body=guards[int(index)]
+        if interval[0]==0:rows.append((body,0,'fixed source cover branch inside '+key))
+        else:rows.append(({k:-v for k,v in body.items()},-1,'fixed source cover branch outside '+key))
+    for key,interval in (limits or {}).items():
+        if not key.startswith('fixed_probe_hit:'):continue
+        import exact
+        parts=key.split(':');m.need(POINT_OVERLAP and j>=3 and 3 not in st.values() and len(parts)==6 and tuple(interval) in ((0,0),(1,1)),'Fixed probe branch syntax')
+        _,first,second,resource,core_side,index=parts;m.need(index.isdigit() and st.get(resource)==1,'Fixed probe resource')
+        guards=exact.fixed_probe_pair_guards(first,second,resource,core_side,build.last_Z)
+        m.need(int(index)<len(guards),'Fixed probe guard range');body=guards[int(index)]
+        if interval[0]==0:rows.append((body,0,'fixed probe branch inside '+key))
+        else:rows.append(({k:-v for k,v in body.items()},-1,'fixed probe branch outside '+key))
+    for key,interval in (limits or {}).items():
+        if not key.startswith('coverage:'):continue
+        import cover_geometry as coverage
+        parts=key.split(':');m.need(POINT_OVERLAP and j>=3 and 3 not in st.values() and len(parts)==5 and tuple(interval) in ((0,0),(1,1)),'Target coverage branch syntax')
+        _,side,index,component,direction=parts;m.need(index.isdigit() and component.isdigit() and direction in ('0','1'),'Target coverage indices')
+        components=coverage.catalogue(st,build.last_Z,side);body=coverage.exclusion(components,int(index),int(component),int(direction),8 if positive else 1)
+        if interval[0]==0:rows.append((body,0,'target component excluded '+key))
+        else:rows.append(({k:-v for k,v in body.items()},-1,'target component not excluded '+key))
     if POINT_OVERLAP:eqs.append(({'ONE':1},1,'unit constant'))
     if TRIM_SOURCE:
         for q in (1,2,3):

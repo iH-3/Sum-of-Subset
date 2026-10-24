@@ -3,8 +3,25 @@
 from pathlib import Path
 import json,sys,time,math,hashlib,gzip
 import model as m
-from discover import Search
+from discover import Search,guard_key
 import exact
+
+_RECORD_POOL={}
+def intern_record(record):
+    """Share repeated checkpoint premises; this is discovery-only storage."""
+    parent=record.get('premise');parent_key=None
+    if parent is not None:parent_key,parent=intern_record(parent)
+    body={key:value for key,value in record.items() if key!='premise'}
+    key=hashlib.sha256(json.dumps([body,parent_key],sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    if key not in _RECORD_POOL:
+        if parent is not None:body['premise']=parent
+        _RECORD_POOL[key]=body
+    return key,_RECORD_POOL[key]
+
+def save_checkpoint(path,record,closed):
+    temporary=path.with_suffix(path.suffix+'.tmp')
+    temporary.write_bytes(gzip.compress(json.dumps(dict(closed=closed,record=record),separators=(',',':')).encode(),mtime=0))
+    temporary.replace(path)
 
 
 class Branch:
@@ -18,20 +35,25 @@ class Branch:
         self.count+=1;stamp=hashlib.sha256(json.dumps(limits,sort_keys=True).encode()).hexdigest()[:16]
         checkpoint=self.prefix_dir/(stamp+'.json.gz')
         if checkpoint.exists():
-            cached=json.loads(gzip.decompress(checkpoint.read_bytes()))
-            if cached['closed']:
-                rec=cached['record'];exact.replay(rec);i=len(self.leaves);self.leaves.append(rec);return {'leaf':i}
-            parent=cached['record']
+            try:cached=json.loads(gzip.decompress(checkpoint.read_bytes()))
+            except (EOFError,gzip.BadGzipFile,json.JSONDecodeError):
+                checkpoint.rename(checkpoint.with_suffix(checkpoint.suffix+'.unreadable'))
+                print('INCOMPLETE CHECKPOINT RETAINED',checkpoint.name,flush=True)
+            else:
+                cached['record']=intern_record(cached['record'])[1]
+                if cached['closed']:
+                    rec=cached['record'];exact.replay(rec);i=len(self.leaves);self.leaves.append(rec);return {'leaf':i}
+                parent=cached['record']
         s=Search(self.st,self.j,self.positive,limits,use_planes=True,parent=parent)
         numerical=None
         try:closed=s.run()
         except ValueError as exc:
-            checkpoint.write_bytes(gzip.compress(json.dumps(dict(closed=False,record=s.record()),separators=(',',':')).encode(),mtime=0))
+            save_checkpoint(checkpoint,s.record(),False)
             if 'Exact contradiction reconstruction failed' not in str(exc) and 'HiGHS' not in str(exc):raise
             # Infeasibility is not accepted without an exact certificate.
             # Partition an integer parameter and try both actual domains.
             closed=False;numerical=str(exc)
-        checkpoint.write_bytes(gzip.compress(json.dumps(dict(closed=closed,record=s.record()),separators=(',',':')).encode(),mtime=0))
+        save_checkpoint(checkpoint,s.record(),closed)
         if closed:
             rec=s.record();exact.replay(rec);i=len(self.leaves);self.leaves.append(rec)
             return {'leaf':i}
@@ -47,14 +69,104 @@ class Branch:
             left=dict(limits);left[name]=(lo,mid);right=dict(limits);right[name]=(mid+1,hi);premise=s.record()
             return dict(variable=name,threshold=mid,left=self.visit(left,depth+1,premise),right=self.visit(right,depth+1,premise))
         x=s.point;Z=m.build.last_Z;candidates=[]
+        known=set(s.known_nonpositive)|{guard_key(row) for row,rhs,_ in s.rows if rhs<=0}
+
+        for violation,guard in getattr(s,'union_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((4000+min(100,violation),name,0))
+        for violation,guard in getattr(s,'core_tail_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((4500+min(100,violation),name,0))
+
+        for violation,guard in getattr(s,'capacity_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((4300+min(100,violation),name,0))
+
+        if getattr(self,'integer_first',False) and self.j>=3 and 3 not in self.st.values():
+            for name in ('F','FD',*('GB'+str(i) for i in range(1,11)),'phicores','phicoret','phisources','phisourcet','ts','tt','xs','xt','as','bs','cs','es','at','bt','ct','et','Xs','Xt','gs','gt','hs','ht','ds','dt','K','delta'):
+                value=x[name];cut=math.floor(value)
+                key='integer_cut:'+name+':'+str(cut)
+                fraction=value-cut
+                if key not in limits and 1e-6<fraction<1-1e-6:candidates.append((3000+min(fraction,1-fraction),key,0))
+
+        if s.coverage_probes:
+            import cover_geometry as coverage
+            for probe_key,state in s.coverage_probes.items():
+                side,index=probe_key.split(':');index=int(index);components=coverage.catalogue(self.st,s.Z,side)
+                remaining=set(range(len(components)))-state['excluded']
+                if len(remaining)<=1:continue
+                for component in remaining:
+                    for direction in (0,1):
+                        guard=coverage.exclusion(components,index,component,direction,8 if self.positive else 1)
+                        name='coverage:'+side+':'+str(index)+':'+str(component)+':'+str(direction)
+                        if name in limits or guard_key(guard) in known:continue
+                        value=sum(c*x[k] for k,c in guard.items())
+                        if value<=1e-7:candidates.append((2200-10*len(remaining)+min(20,-value)/100,name,0))
+
+        if self.j==6:
+            lo,hi=limits.get('tau_total',exact.integer_source_domain('tau_total',self.j,self.positive))
+            if lo<hi:
+                value=x['ts']+x['tt']
+                mid=lo if hi-lo<=10 else min(hi-1,max(lo,int(math.floor(value+1e-7))))
+                candidates.append((1500,'tau_total',mid))
+
+        for name in ('xs','xt','ts','tt','delta','K',*(a+b for a in 'abce' for b in 'st')):
+            lo,hi=limits.get(name,exact.integer_source_domain(name,self.j,self.positive));value=x[name]
+            if lo<hi and abs(value-round(value))>1e-6:
+                candidates.append((1200 if name[0]=='x' else 1000 if name in ('ts','tt','delta','K') else 950,name,min(hi-1,max(lo,int(math.floor(value))))))
+
+        if self.j>=3 and 3 not in self.st.values():
+            forms=m.fixed_forms()
+            for label in sorted(set(forms)-s.low-s.high-s.covered):
+                side='s' if '+' in label else 't'
+                if sum(c*x[k] for k,c in forms[label].items())<1-1e-7:continue
+                for resource in [v for v in s.ret if v[-1]==side]+['L'+side]:
+                    for q in (2,4,5,3,1):
+                        for witness in ((None,) if resource[0]!='L' else exact.LEADING_WITNESSES):
+                            guards=exact.fixed_cover_guards(label,resource,q,witness,s.Z)
+                            guards.append(m.add((1,{'ONE':1}),(-1,forms[label])))
+                            values=[sum(c*x[k] for k,c in guard.items()) for guard in guards]
+                            if max(values)>1e-7:continue
+                            unknown=[i for i in range(len(guards)) if guard_key(guards[i]) not in known]
+                            for i in sorted(unknown,key=lambda i:values[i],reverse=True):
+                                name='fixed_hit:'+label+':'+resource+':'+str(q)+':'+(witness or '-')+':'+str(i)
+                                if name not in limits:candidates.append((1300-120*(len(unknown)-1)-min(100,-values[i])/100,name,0))
+                                break
+
+        if self.j>=3 and 3 not in self.st.values():
+            forms=m.fixed_forms();remaining=sorted(set(forms)-s.low-s.high-s.covered)
+            for ai,first in enumerate(remaining):
+                for second in remaining[ai+1:]:
+                    pair=(first,second)
+                    if pair in s.fixed_pairs or ('+' in first)!=('+' in second):continue
+                    if exact.credit(s.low,s.high,s.initial,s.covered,s.covered_positive,s.fixed_pairs|{pair})<=s.e:continue
+                    side='s' if '+' in first else 't'
+                    for resource in (v for v in s.ret if v[-1]==side):
+                        for core_side in 'st':
+                            a,b=first,second
+                            if (sum(c*x[k] for k,c in forms[a].items())>sum(c*x[k] for k,c in forms[b].items()))==(core_side==side):a,b=b,a
+                            guards=exact.fixed_probe_pair_guards(a,b,resource,core_side,s.Z)
+                            values=[sum(c*x[k] for k,c in guard.items()) for guard in guards]
+                            if max(values)>1e-7:continue
+                            unknown=[i for i in range(len(guards)) if guard_key(guards[i]) not in known]
+                            for i in sorted(unknown,key=lambda i:values[i],reverse=True):
+                                name='fixed_probe_hit:'+a+':'+b+':'+resource+':'+core_side+':'+str(i)
+                                if name not in limits:candidates.append((1350-120*(len(unknown)-1)-min(100,-values[i])/100,name,0))
+                                break
+
         for side in 'st':
             for first in ('alpha','beta'):
                 for second in m.CHAIN:
                     a,b=first+side,second+side;key='order:'+first+':'+second+':'+side
                     if self.st.get(a)!=1 or self.st.get(b)!=1 or key in limits:continue
                     if any({a,b}=={aa,bb} for aa,bb,gap in s.edges):continue
-                    difference=m.add((1,Z[a]),(-1,Z[b]));distance=abs(sum(c*x[k] for k,c in difference.items()))
-                    if distance<x['FD']-1e-6:candidates.append((100+x['FD']-distance,key,0))
+                    difference=m.add((1,Z[a]),(-1,Z[b]));signed=sum(c*x[k] for k,c in difference.items());distance=abs(signed)
+                    gap=difference if signed>=0 else {k:-v for k,v in difference.items()}
+                    potential=0
+                    for q in (2,4,3,1):
+                        potential=max(potential,sum(all(sum(c*x[k] for k,c in guard.items())<=1e-7 for guard in exact.extended_guards(gap,q,tag)) for tag in exact.extended_tags(q)))
+                    if potential>max(0,x['FD']-distance)+1e-7:candidates.append((1400+potential,key,0))
+                    elif distance<x['FD']-1e-6:candidates.append((100+x['FD']-distance,key,0))
         for side in 'st':
             name='B'+side;lo,hi=limits.get(name,(4,10))
             if lo<=4<hi and x[name]>4+1e-6 and x['e'+side]>2*x['c'+side]-1+1e-6:
@@ -83,16 +195,45 @@ class Branch:
                 key=(side,*pair);name='trim_pair:'+':'.join(key)
                 if key in s.trim_pairs or name in limits:continue
                 guard=exact.trim_pair_guard(side,pair);value=sum(c*x[k] for k,c in guard.items())
-                if value<=1e-7:candidates.append((1100+min(100,-value)/100,name,0))
+                if value<=1e-7 and guard_key(guard) not in known:candidates.append((1100+min(100,-value)/100,name,0))
+        for gap_key in exact.SUMSET_GAPS:
+            side,other,lower,upper,qs,qo=exact.sumset_gap_data(gap_key)
+            length=m.add((1,upper),(-1,lower),(-1,qs),(-1,qo),(-1,{'ONE':1}))
+            if sum(c*x[k] for k,c in length.items())<=0:continue
+            for pair in exact.sumset_gap_pairs(gap_key):
+                if pair in s.sumset_excluded.get(gap_key,set()):continue
+                for index,guard in enumerate(exact.sumset_gap_guards(gap_key,pair)):
+                    name='sumset_pair:'+gap_key+':'+':'.join(pair)+':'+str(index)
+                    if name in limits or guard_key(guard) in known:continue
+                    value=sum(c*x[k] for k,c in guard.items())
+                    if value<=1e-7:candidates.append((600+min(100,-value)/100,name,0))
         for edge,(a,b,gap) in enumerate(s.edges):
             distance=sum(c*x[k] for k,c in gap.items())
             if distance<1e-7:continue
+            if a in ('Ls','Lt'):
+                side,other,right,_=exact.leading_geometry((a,b,gap))
+                for q in (2,4,5,3,1):
+                    known_hits=s.leading_hits.get(edge,set()) if q==5 else s.leading_extended.get(edge,{}).get(q,set())
+                    for tag in exact.leading_tags(q):
+                        if tag[0]!=(other if right else side) or tag in known_hits:continue
+                        options=[]
+                        for witness in exact.LEADING_WITNESSES:
+                            guards=exact.leading_point_guards((a,b,gap),tag,witness,q)
+                            values=[sum(c*x[k] for k,c in guard.items()) for guard in guards]
+                            if max(values)>1e-7:continue
+                            for guard_index in sorted(range(len(guards)),key=lambda i:values[i],reverse=True):
+                                if guard_key(guards[guard_index]) in known:continue
+                                name='leading_hit:'+str(q)+':'+tag+':'+witness+':'+a+':'+b+':'+str(guard_index)
+                                if name in limits:continue
+                                options.append((500-min(100,-values[guard_index])/100,name,0));break
+                        if options:candidates.append(max(options))
             for q in (2,4,3,1):
                 for tag in exact.extended_tags(q):
                     if tag in s.extended_hits.get(edge,{}).get(q,set()):continue
                     guards=exact.extended_guards(gap,q,tag);values=[sum(c*x[k] for k,c in guard.items()) for guard in guards]
                     if max(values)>1e-7:continue
                     for guard_index in sorted(range(2),key=lambda i:values[i],reverse=True):
+                        if guard_key(guards[guard_index]) in known:continue
                         name='extended_hit:'+str(q)+':'+tag+':'+a+':'+b+':'+str(guard_index)
                         if name in limits:continue
                         candidates.append((90+q-min(20,-values[guard_index])/100,name,0));break
@@ -102,6 +243,7 @@ class Branch:
                 values=[sum(c*x[k] for k,c in guard.items()) for guard in guards]
                 if max(values)>1e-7:continue
                 for guard_index in sorted(range(2),key=lambda i:values[i],reverse=True):
+                    if guard_key(guards[guard_index]) in known:continue
                     name='hit:'+tag+':'+a+':'+b+':'+str(guard_index)
                     if name in limits:continue
                     candidates.append(((80 if tag[1]=='R' else 60)-min(20,-values[guard_index])/100,name,0));break
@@ -127,7 +269,7 @@ class Branch:
                 print('OPEN LEAF',self.j,depth,'credit',s.e,flush=True)
                 return {'open':i}
         _,name,mid=max(candidates)
-        default=(0,1) if name.startswith(('order:','compression:','diameter:','hit:','trim_pair:','extended_hit:')) else (4,10) if name in ('Bs','Bt') else (0,17) if name=='rank_k' else ((1,7) if self.positive else (0,0)) if name=='hole_W' else (0,72)
+        default=(0,1) if name.startswith(('linear_cut:','integer_cut:','order:','compression:','diameter:','hit:','trim_pair:','extended_hit:','leading_hit:','sumset_pair:','fixed_hit:','fixed_probe_hit:','coverage:')) else exact.integer_source_domain(name,self.j,self.positive) if exact.integer_source_domain(name,self.j,self.positive) is not None else (4,10) if name in ('Bs','Bt') else (0,17) if name=='rank_k' else ((1,7) if self.positive else (0,0)) if name=='hole_W' else (0,72)
         lo,hi=limits.get(name,default)
         print('split',self.count,depth,name,mid,'credit',s.e,'seconds',round(time.time()-self.start,1),flush=True)
         left=dict(limits);left[name]=(lo,mid);right=dict(limits);right[name]=(mid+1,hi)

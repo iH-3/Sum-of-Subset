@@ -4,14 +4,14 @@ from types import SimpleNamespace as NS
 import scipy.optimize._highspy._core as c
 
 def install():
- from discover import Search
+ from discover import Search,guard_key
  original=Search.lp
  def lp(self,target=None):
   n=len(self.names);cost=np.array([-target.get(k,0) for k in self.names],float) if target else np.zeros(n)
   def sparse(rr):
    index=[];value=[];start=[0];bounds=[];scales=[];columns={k:i for i,k in enumerate(self.names)}
    for row,b,label in rr:
-    scale=max(1,*[abs(v) for v in row.values()]);scales.append(scale);bounds.append(b/scale)
+    scale=max([1,*[abs(v) for v in row.values()]]);scales.append(scale);bounds.append(b/scale)
     for k,v in row.items():
      if v:index.append(columns[k]);value.append(v/scale)
     start.append(len(index))
@@ -37,6 +37,8 @@ def install():
              fun=float(cost@x),x=x,message=h.modelStatusToString(status),
              ineqlin=NS(marginals=rowdual[self._rpositions]),eqlin=NS(marginals=rowdual[self._epositions]),lower=NS(marginals=np.array(sol.col_dual,float)))
    if result.status!=0:return result
-   if not self.cut(dict(zip(self.names,x))):return result
+   if not self.cut(dict(zip(self.names,x))):
+    if target and result.fun>=-1e-8:self.known_nonpositive.add(guard_key(target))
+    return result
   raise ValueError('Persistent forest separation did not settle')
  Search.lp=lp

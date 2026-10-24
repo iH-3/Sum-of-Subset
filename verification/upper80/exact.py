@@ -1,10 +1,10 @@
 # RESEARCH PROTOTYPE: no global bound is certified by this file.
 """Standard-library integer certificates and rooted-forest reconstruction."""
-from collections import Counter
+from collections import Counter,OrderedDict
 from math import gcd
 import json
 import model as m
-PREMISE_CACHE={}
+PREMISE_CACHE=OrderedDict()
 
 
 def check(cert,rows,eqs,target=None,strict=True):
@@ -52,8 +52,83 @@ def forest(edges,ret,chosen,roots,e,constants=None,point_edges=None):
     return body,-e-sum(constants.values())-sum(point_edges.values()),'additional forest'
 
 
-def credit(low,high,initial=0):
-    return max(initial,len(low)+len(high)-sum(bool(set(group)&low) for group in m.GROUPS))
+def fixed_pair_guards(first,second,kind):
+    forms=m.fixed_forms();m.need(first in forms and second in forms and first!=second,'Fixed pair labels')
+    a,b=forms[first],forms[second];sa='s' if '+' in first else 't';sb='s' if '+' in second else 't'
+    if kind=='low':return [m.add((1,a),(1,b),(-1,{'ONE':1}))]
+    if kind=='high':return [m.add((1,{'S'+sa:1}),(1,{'S'+sb:1}),(1,{'ONE':1}),(-1,a),(-1,b))]
+    m.need(sa==sb,'Fixed pair same physical target')
+    if kind=='apart':return [m.add((1,{'S'+sa:1}),(-1,a),(1,b))]
+    m.need(kind=='equal','Fixed pair proof kind')
+    difference=m.add((1,a),(-1,b));return [difference,{k:-v for k,v in difference.items()}]
+
+def fixed_probe_pair_guards(first,second,resource,core_side,Z):
+    forms=m.fixed_forms();m.need(first in forms and second in forms and first!=second,'Fixed source probe pair')
+    side='s' if '+' in first else 't';m.need(('+' in second)==(side=='s') and resource in Z and resource[-1]==side and core_side in 'st','Fixed probe physical resource')
+    sign=1 if core_side==side else -1
+    probes=[m.add((sign,forms[label]),(-sign,Z[resource])) for label in (first,second)]
+    # The r-1 retained core points have excess tau-xi. Omitting both
+    # distinct probes in [1,r-1] costs 2(r-1)+3-probe1-probe2.
+    rank={'ONE':31,'rank_k':-1 if core_side=='s' else 1}
+    return [m.add((1,{'ONE':1}),(-1,forms[label])) for label in (first,second)]+[
+        m.add((1,{'ONE':1}),(-1,probes[0])),m.add((1,probes[1]),(-1,rank)),
+        m.add((1,{'ONE':1}),(1,probes[0]),(-1,probes[1])),
+        m.add((1,{'t'+core_side:1,'x'+core_side:-1,'ONE':-2}),(-2,rank),(1,probes[0]),(1,probes[1]))]
+
+def credit(low,high,initial=0,covered=(),covered_positive=(),pairs=()):
+    removed=set(low)|set(high)|set(covered);possible_low=set(low)|(set(covered)-set(covered_positive))
+    if not pairs:return max(initial,len(removed)-sum(bool(set(group)&possible_low) for group in m.GROUPS))
+    labels=sorted(set(m.fixed_forms())-removed);bits={label:1<<i for i,label in enumerate(labels)};constraints=[]
+    for group in m.GROUPS:
+        if set(group)&possible_low:continue
+        mask=sum(bits.get(label,0) for label in group)
+        if not mask:return max(initial,85)
+        constraints.append(mask)
+    for first,second in pairs:
+        m.need(first in m.LABELS and second in m.LABELS and first!=second,'Fixed conflict labels')
+        if first in bits and second in bits:constraints.append(bits[first]|bits[second])
+    return max(initial,len(removed)+_minimum_hitting(tuple(sorted(set(constraints))))-26)
+
+from functools import lru_cache
+@lru_cache(maxsize=200000)
+def _minimum_hitting(edges):
+    if not edges:return 0
+    # A smaller edge makes a containing edge redundant.
+    reduced=[]
+    for edge in sorted(edges,key=int.bit_count):
+        if not any(previous&edge==previous for previous in reduced):reduced.append(edge)
+    forced=0
+    for edge in reduced:
+        if edge.bit_count()==1:forced|=edge
+    if forced:return forced.bit_count()+_minimum_hitting(tuple(sorted(edge for edge in reduced if not edge&forced)))
+    # Disjoint incidence components have additive exact optima.
+    remaining=list(reduced);components=[]
+    while remaining:
+        component=[remaining.pop()];union=component[0]
+        while True:
+            attached=[edge for edge in remaining if edge&union]
+            if not attached:break
+            component.extend(attached)
+            for edge in attached:union|=edge
+            attached_set=set(attached);remaining=[edge for edge in remaining if edge not in attached_set]
+        components.append(tuple(sorted(component)))
+    if len(components)>1:return sum(_minimum_hitting(component) for component in components)
+    def lower_bound(items):
+        used=count=0
+        for edge in sorted(items,key=int.bit_count):
+            if not edge&used:used|=edge;count+=1
+        return count
+    chosen=min(reduced,key=int.bit_count);vertices=[]
+    while chosen:
+        bit=chosen&-chosen;chosen-=bit;vertices.append(bit)
+    vertices.sort(key=lambda bit:sum(bool(edge&bit) for edge in reduced),reverse=True)
+    best=len(reduced);floor=lower_bound(reduced)
+    for bit in vertices:
+        residual=tuple(sorted(edge for edge in reduced if not edge&bit))
+        if 1+lower_bound(residual)>=best:continue
+        best=min(best,1+_minimum_hitting(residual))
+        if best==floor:break
+    return best
 
 
 def credit_rows(ret,e):
@@ -144,6 +219,91 @@ def _point_pack(hits,groups):
 def point_overlap_count(hits,groups,extended=None):
     return max(_point_pack(tuple(sorted(hits)),tuple(sorted((tuple(tags),count) for tags,count in groups.items()))),max((len(tags) for tags in (extended or {}).values()),default=0))
 
+def leading_geometry(edge):
+    a,b,gap=edge
+    m.need(a in ('Ls','Lt') and b[-1]==a[-1] and b[:-1] in m.CHAIN,'Leading native edge')
+    side=a[-1];other='t' if side=='s' else 's';right=b[:-1] in ('V','U','H','O')
+    shift=m.add((1,{'M'+side:1}),(1,gap)) if right else m.add((-1,{'M'+other:1}),(-1,gap))
+    return side,other,right,shift
+
+def signed_source_point(tag,side):
+    if tag=='zero':return {}
+    m.need(tag in POINT_TAGS,'Known source point tag')
+    row={'R'+tag[0]:1}
+    if tag[1]!='R':row=m.add((1,row),(1,{tag[1]+tag[0]:1}))
+    return row if tag[0]==side else {k:-v for k,v in row.items()}
+
+def source_minus_prefix(side,q):
+    m.need(side in 'st' and type(q) is int and 1<=q<=5,'Leading retained source')
+    if q==5:return {'t'+side:1,'x'+side:-1,'rank_k':1 if side=='s' else -1,'ONE':-31}
+    m0=4-q
+    body={'ONE':-32-m0-m0*(m0+1)//2,'rank_k':1 if side=='s' else -1,'t'+side:1,'x'+side:m0}
+    for off in 'abc'[:m0]:body=m.add((1,body),(1,{off+side:1}))
+    return body
+
+def leading_tags(q):return POINT_TAGS if q==5 else extended_tags(q)
+
+LEADING_WITNESSES=('double_core','zero',*POINT_TAGS,*('merge_'+tag for tag in POINT_TAGS))
+
+def leading_point_guards(edge,tag,witness,q=5):
+    side,other,right,shift=leading_geometry(edge)
+    m.need(tag in leading_tags(q) and tag[0]==(other if right else side),'Leading exterior source point')
+    m.need(witness in LEADING_WITNESSES,'Leading sumset witness')
+    target=m.add((1,shift),(1,signed_source_point(tag,side)))
+    return double_source_guards(side,target,witness,q)
+
+def double_source_guards(side,target,witness,q):
+    m.need(side in 'st' and witness in LEADING_WITNESSES,'Double source interval witness')
+    other='t' if side=='s' else 's'
+    ns,no=source_minus_prefix(side,q),source_minus_prefix(other,q)
+    if witness.startswith('merge_'):
+        endpoint=witness[6:];physical=endpoint[0];opposite='t' if physical=='s' else 's'
+        nn,nopp=source_minus_prefix(physical,q),source_minus_prefix(opposite,q)
+        # Nonempty integer core interval, followed by all consecutive joins.
+        guards=[m.add((1,ns),(1,no))]
+        guards.append(m.add((1,{'R'+physical:1,'ONE':-1}),(2,nn),(1,nopp)))
+        last={}
+        for off in 'abce':
+            if endpoint[1]=='R':break
+            current={off+physical:1}
+            guards.append(m.add((1,current),(-1,last),(1,nn),(1,nopp),(1,{'ONE':-1})))
+            last=current
+            if off==endpoint[1]:break
+        p=signed_source_point(endpoint,side)
+        if physical==side:
+            guards.extend([m.add((-1,target),(2,no)),m.add((1,target),(-1,p),(1,ns))])
+        else:
+            guards.extend([m.add((-1,target),(1,p),(1,no)),m.add((1,target),(2,ns))])
+        return guards
+    scale=2 if witness=='double_core' else 1
+    if witness!='double_core':target=m.add((1,target),(-1,signed_source_point(witness,side)))
+    return [m.add((-1,target),(scale,no)),m.add((1,target),(scale,ns))]
+
+def fixed_cover_guards(label,resource,q,witness,Z):
+    forms=m.fixed_forms();m.need(label in forms,'Known fixed form')
+    side='s' if '+' in label else 't';other='t' if side=='s' else 's'
+    m.need(resource[-1]==side,'Fixed cover physical side')
+    if resource=='L'+side:
+        center={'d'+side:1,'M'+side:-2,'X'+side:-2,'g'+side:-1}
+        target=m.add((1,forms[label]),(-1,center))
+        return double_source_guards(side,target,witness,q)
+    m.need(resource in Z and witness is None,'Fixed ordinary cover resource')
+    target=m.add((1,forms[label]),(-1,Z[resource]))
+    return [m.add((-1,target),(1,source_minus_prefix(other,q))),
+            m.add((1,target),(1,source_minus_prefix(side,q)))]
+
+def edge_point_count(edge,hits,groups,extended,leading,leading_extended=None):
+    old=point_overlap_count(hits,groups,extended)
+    if not leading and not leading_extended:return old
+    side,other,right,_=leading_geometry(edge);core_side=side if right else other
+    core_hits={tag for tag in hits if tag[0]==core_side}
+    core_groups={tags:count for tags,count in groups.items() if all(tag[0]==core_side for tag in tags)}
+    result=max(old,len(leading)+point_overlap_count(core_hits,core_groups))
+    for q,tags in (leading_extended or {}).items():
+        core_count=sum(tag[0]==core_side for tag in extended.get(q,set()))
+        result=max(result,len(tags)+core_count)
+    return result
+
 def extended_tags(q):
     m.need(type(q) is int and 1<=q<=4,'Extended core trim count')
     return tuple(side+off for side in 'st' for off in 'abce'[4-q:])
@@ -173,6 +333,72 @@ def trim_pair_guard(side,pair):
 def trim_hull_row(count):
     m.need(type(count) is int and 0<=count<=30,'Trim-hull pair count')
     return ({'K':1,'Ms':-1,'Mt':-1,'ts':-1,'tt':-1,'xs':1,'xt':1},93-count,'trimmed core hull')
+
+SUMSET_GAPS=tuple(side+str(i) for side in 'stST' for i in range(4))
+
+def sumset_gap_data(key):
+    m.need(key in SUMSET_GAPS,'Source internal gap key')
+    side=key[0].lower();other='t' if side=='s' else 's';i=int(key[1]);offsets='Rabce'
+    def pt(off):return {'R'+side:1} if off=='R' else {'R'+side:1,off+side:1}
+    lower,upper=pt(offsets[i]),pt(offsets[i+1])
+    qs={'ONE':31,'rank_k':-1 if side=='s' else 1,'t'+side:1,'x'+side:-1}
+    qo={'ONE':31,'rank_k':-1 if other=='s' else 1,'t'+other:1,'x'+other:-1}
+    if key[0].isupper():qs={'R'+side:1,'ONE':-1};qo={'R'+other:1,'ONE':-1}
+    return side,other,lower,upper,qs,qo
+
+def sumset_gap_pairs(key):
+    side,other,*_=sumset_gap_data(key);tags=[side+x for x in 'Rabce'];opposite=[other+x for x in 'Rabce']
+    return tuple([(a,b) for i,a in enumerate(tags) for b in tags[i:]]+[(a,b) for a in tags for b in opposite])
+
+def sumset_gap_guards(key,pair):
+    m.need(tuple(pair) in sumset_gap_pairs(key),'Source gap pair label')
+    side,other,lower,upper,qs,qo=sumset_gap_data(key)
+    value=m.add(*[(1,signed_source_point(tag,side)) for tag in pair])
+    return [m.add((1,value),(-1,lower),(-1,qs)),m.add((1,upper),(-1,qo),(-1,value))]
+
+def sumset_pair_difference(key,first,second):
+    pairs=sumset_gap_pairs(key)
+    m.need(tuple(first) in pairs and tuple(second) in pairs and tuple(first)!=tuple(second),'Distinct source pair labels')
+    side=key[0].lower()
+    return m.add(*[(1,signed_source_point(tag,side)) for tag in first],
+                 *[(-1,signed_source_point(tag,side)) for tag in second])
+
+def sumset_gap_remaining(key,excluded,equalities=()):
+    pairs=sumset_gap_pairs(key);parent={pair:pair for pair in pairs}
+    def find(pair):
+        while parent[pair]!=pair:pair=parent[pair]
+        return pair
+    for first,second in equalities:
+        first,second=tuple(first),tuple(second)
+        m.need(first in parent and second in parent,'Source pair equality labels')
+        parent[find(first)]=find(second)
+    forbidden={find(tuple(pair)) for pair in excluded}
+    return len({find(pair) for pair in pairs}-forbidden)
+
+def sumset_gap_capacity(keys,excluded,outer_count,equalities=None):
+    m.need(len(keys)==len(set(keys)) and set(keys)<=set(SUMSET_GAPS),'Disjoint source gap capacity')
+    capped=bool(keys) and keys[0][0].isupper()
+    m.need(all(k[0].isupper()==capped for k in keys),'Single nonoverlapping source gap family')
+    row=({'K':1,'Ms':-1,'Mt':-1,'Rs':-1-len(keys),'Rt':-1-len(keys),'Bs':-1,'Bt':-1} if capped else
+         {'K':1,'Ms':-1,'Mt':-1,'ts':-1-len(keys),'tt':-1-len(keys),'xs':1+len(keys),'xt':1+len(keys)})
+    for key in keys:
+        side,other,lower,upper,qs,qo=sumset_gap_data(key)
+        row=m.add((1,row),(1,upper),(-1,lower))
+        m.need(set(excluded.get(key,set()))<=set(sumset_gap_pairs(key)),'Source gap exclusions scope')
+    rhs=1+39*len(keys) if capped else 93+103*len(keys)-outer_count
+    return row,rhs-sum(40-sumset_gap_remaining(key,excluded.get(key,set()),(equalities or {}).get(key,())) for key in keys),'source internal gaps'
+
+def integer_source_domain(name,j,positive):
+    if name in ('xs','xt','ts','tt','delta','tau_total'):return 0,496-73*j+(14 if positive else 0)
+    if name in tuple(a+b for a in 'abce' for b in 'st'):return 0,655-73*j+(14 if positive else 0)
+    if name=='K':return 145,4096
+    return None
+
+def core_mass_ceiling(limits):
+    lo,hi=(limits or {}).get('rank_k',(0,17))
+    m.need(type(lo) is int and type(hi) is int and 0<=lo<=hi<=17,'Core mass rank interval')
+    return [({'ts':1,'xs':-(32-lo)},0,'core maximum mass s'),
+            ({'tt':1,'xt':-(32+hi)},0,'core maximum mass t')]
 
 def diameter_source(source):
     if source=='core':return 65,{'Rs':1,'Rt':1}
@@ -266,7 +492,8 @@ def replay(record,require_closed=True,return_state=False):
     if not require_closed and return_state:
         import hashlib
         cache_key=hashlib.sha256(json.dumps(record,sort_keys=True,separators=(',',':')).encode()).hexdigest()
-        if cache_key in PREMISE_CACHE:return PREMISE_CACHE[cache_key]
+        if cache_key in PREMISE_CACHE:
+            PREMISE_CACHE.move_to_end(cache_key);return PREMISE_CACHE[cache_key]
     prior=inherited(record)
     p.USE_PLANES='planes' in record;p.PLANE_GENERATOR=None;p.PLANE_TABLE=record.get('planes',{})
     p.SOURCE_TAIL_RANKS=record.get('source_tail_ranks',False)
@@ -274,6 +501,7 @@ def replay(record,require_closed=True,return_state=False):
     p.SIDE_PLANES=record.get('side_planes',False)
     p.TRIM_SOURCE=record.get('trim_source',False)
     p.POINT_OVERLAP=record.get('point_overlap',False)
+    p.FULL_EDGES=record.get('full_edges',False)
     st=record['st'];j=record['j'];positive=record['positive'];initial=8 if m.is_ownerless(st) else 0
     e=prior['credit'] if prior else initial
     _,rows,eqs=p.build(st,j,positive,e,record.get('limits'))
@@ -284,9 +512,9 @@ def replay(record,require_closed=True,return_state=False):
         rows.append(({'d'+side:1,'X'+side:-2,'g'+side:-1},0,'missing leading hull below'))
         eqs.append(({'ell'+side:1,'K':-1},0,'missing leading full loss'))
     edges=p.build.last_edges;ret=p.build.last_retained;forms=m.fixed_forms()
-    low=set();high=set();closed=False;constants=dict(p.build.last_compression);tail_low={'s':set(),'t':set()};tail_counts={'s':0,'t':0};tail_pairs={'s':set(),'t':set()};facts=[];point_hits={};point_groups={};extended_hits={};trim_pairs=set()
+    low=set();high=set();covered=set();covered_positive=set();fixed_pairs=set();coverage_probes={};closed=False;constants=dict(p.build.last_compression);tail_low={'s':set(),'t':set()};tail_counts={'s':0,'t':0};tail_pairs={'s':set(),'t':set()};facts=[];point_hits={};point_groups={};extended_hits={};leading_hits={};leading_extended={};trim_pairs=set();sumset_excluded={};sumset_equalities={}
     if prior:
-        low=set(prior['low']);high=set(prior['high']);facts=list(prior['facts']);rows.extend(facts)
+        low=set(prior['low']);high=set(prior['high']);covered=set(prior.get('covered',[]));covered_positive=set(prior.get('covered_positive',[]));fixed_pairs={tuple(pair) for pair in prior.get('fixed_pairs',[])};facts=list(prior['facts']);rows.extend(facts)
         tail_low={s:set(prior['tail_low'][s]) for s in 'st'};tail_counts=dict(prior['tail_counts']);tail_pairs={s:set(prior['tail_pairs'][s]) for s in 'st'}
         for a,b,gap,value in prior['constants']:
             matches=[i for i,(aa,bb,gg) in enumerate(edges) if (a,b,gap)==(aa,bb,gg)]
@@ -307,16 +535,157 @@ def replay(record,require_closed=True,return_state=False):
             matches=[i for i,(aa,bb,gg) in enumerate(edges) if (a,b,gap)==(aa,bb,gg)]
             m.need(len(matches)==1,'Inherited extended overlap edge');extended_hits[matches[0]]={int(q):set(tags) for q,tags in groups}
 
+    if prior:
+        for a,b,gap,tags in prior.get('leading_hits',[]):
+            matches=[i for i,(aa,bb,gg) in enumerate(edges) if (a,b,gap)==(aa,bb,gg)]
+            m.need(len(matches)==1,'Inherited leading overlap edge');leading_hits[matches[0]]=set(tags)
+    if prior:
+        for a,b,gap,groups in prior.get('leading_extended',[]):
+            matches=[i for i,(aa,bb,gg) in enumerate(edges) if (a,b,gap)==(aa,bb,gg)]
+            m.need(len(matches)==1,'Inherited extended leading edge');leading_extended[matches[0]]={int(q):set(tags) for q,tags in groups}
+    if prior:sumset_excluded={key:set(tuple(pair) for pair in pairs) for key,pairs in prior.get('sumset_excluded',{}).items()}
+    if prior:coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()}
+    if prior:sumset_equalities={key:list(values) for key,values in prior.get('sumset_equalities',{}).items()}
+    core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
     for index,step in enumerate(record['trace']):
         kind=step['kind']
         m.need(not closed,'Steps after contradiction')
-        if kind=='forest':
+        if kind=='core_mass_ceiling':
+            extra=core_mass_ceiling(record.get('limits'));rows.extend(extra);facts.extend(extra)
+        elif kind=='integer_guard':
+            from modular import INTEGER_NAMES
+            guard=step['guard']
+            m.need(j>=3 and 3 not in st.values() and set(guard)<=INTEGER_NAMES and all(type(v) is int for v in guard.values()),'Rounded physical integer guard scope')
+            check(step['certificate'],rows,eqs,m.add((1,guard),(-1,{'ONE':1})),strict=True)
+            fact=(guard,0,'rounded integer guard');rows.append(fact);facts.append(fact)
+        elif kind=='joint_core_tail_capacity':
+            import known_union
+            m.need(j>=3 and 3 not in st.values() and step['credit']==e,'Joint core-tail integer scope and credit')
+            row=known_union.joint_tail_capacity(st,p.build.last_Z,core_tail_excluded,e);rows.append(row);facts.append(row)
+        elif kind in ('core_tail_license','core_tail_exclude','core_tail_capacity'):
+            import known_union
+            m.need(j>=3 and 3 not in st.values(),'Core-tail integer pattern scope');side=step['side']
+            end,guards,points=known_union.tail_catalogue(st,p.build.last_Z,side)
+            if kind=='core_tail_license':
+                m.need(side not in core_tail_excluded and len(step['certificates'])==len(guards),'New core-tail license')
+                for guard,cert in zip(guards,step['certificates']):
+                    check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved core-tail license');rows.append(fact);facts.append(fact)
+                core_tail_excluded[side]=set()
+            else:
+                m.need(side in core_tail_excluded,'Missing core-tail license')
+                if kind=='core_tail_exclude':
+                    i=step['index'];m.need(i not in core_tail_excluded[side],'New core-tail exclusion')
+                    guard=known_union.tail_exclusion(st,p.build.last_Z,side,i,step['direction'])
+                    check(step['certificate'],rows,eqs,guard,strict=False);fact=(guard,0,'proved core-tail exclusion');rows.append(fact);facts.append(fact);core_tail_excluded[side].add(i)
+                else:
+                    row=known_union.tail_capacity(st,p.build.last_Z,side,core_tail_excluded[side]);rows.append(row);facts.append(row)
+        elif kind=='cover_capacity':
+            import cover_capacity
+            m.need(j>=3 and 3 not in st.values() and step['credit']==e,'Cover capacity physical scope and credit')
+            row,guards=cover_capacity.derive(st,p.build.last_Z,step['recipe'],e)
+            m.need(len(guards)==len(step['certificates']),'Cover capacity guard certificates')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False)
+                fact=(guard,0,'proved cover capacity guard');rows.append(fact);facts.append(fact)
+            rows.append(row);facts.append(row)
+        elif kind=='known_union':
+            import known_union
+            m.need(j>=3 and 3 not in st.values() and step['credit']==e,'Known-union physical scope and credit')
+            row,guards=known_union.derive(st,p.build.last_Z,step['recipe'],e)
+            m.need(len(guards)==len(step['certificates']),'Known-union guard certificates')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False)
+                fact=(guard,0,'proved known-union guard');rows.append(fact);facts.append(fact)
+            rows.append(row);facts.append(row)
+        elif kind=='forest':
             m.need(step['e']==e,'Unproved forest credit')
             cc={int(i):v for i,v in step.get('constants',{}).items()}
             m.need(all(constants.get(i,0)>=v for i,v in cc.items()),'Unproved compression constant')
             pc={int(i):v for i,v in step.get('point_edges',{}).items()}
-            m.need(all(point_overlap_count(point_hits.get(i,set()),point_groups.get(i,{}),extended_hits.get(i,{}))>=v for i,v in pc.items()),'Unproved point overlap')
+            m.need(all(edge_point_count(edges[i],point_hits.get(i,set()),point_groups.get(i,{}),extended_hits.get(i,{}),leading_hits.get(i,set()),leading_extended.get(i,{}))>=v for i,v in pc.items()),'Unproved point overlap')
             rows.append(forest(edges,ret,step['edges'],step['roots'],e,cc,pc))
+        elif kind in ('coverage_probe','coverage_exclude','coverage_modular_exclude','coverage_force','coverage_final'):
+            import cover_geometry as coverage
+            m.need(j>=3 and 3 not in st.values(),'Bounded-hole integer target cover scope');width=8 if positive else 1
+            side,probe_index=step['side'],step['probe'];components=coverage.catalogue(st,p.build.last_Z,side);key=side+':'+str(probe_index)
+            if kind=='coverage_probe':
+                m.need(key not in coverage_probes,'New target probe')
+                guards=coverage.bracket(components,side,probe_index,width);m.need(len(step['certificates'])==2,'Target probe bracket')
+                for guard,cert in zip(guards,step['certificates']):
+                    check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved target probe bracket');rows.append(fact);facts.append(fact)
+                coverage_probes[key]=dict(excluded=set(),forced=False)
+            else:
+                m.need(key in coverage_probes,'Unlicensed target probe');state=coverage_probes[key]
+                if kind=='coverage_exclude':
+                    component=step['component'];m.need(component not in state['excluded'],'New cover exclusion')
+                    guard=coverage.exclusion(components,probe_index,component,step['direction'],width);check(step['certificate'],rows,eqs,guard,strict=False)
+                    fact=(guard,0,'proved target component exclusion');rows.append(fact);facts.append(fact);state['excluded'].add(component)
+                elif kind=='coverage_modular_exclude':
+                    import modular
+                    component=step['component']
+                    m.need(width==1 and type(component) is int and 0<=component<len(components) and component not in state['excluded'],'New zero-hole modular exclusion')
+                    _,lo,hi=components[component];m.need(lo==hi,'Modular exclusion singleton scope')
+                    target=m.add((1,lo),(-1,coverage.probe(components,probe_index)))
+                    modular.check(step['certificate'],rows,eqs,target);state['excluded'].add(component)
+                elif kind=='coverage_force':
+                    component=step['component'];m.need(set(range(len(components)))-state['excluded']=={component} and not state['forced'],'Unique remaining cover component')
+                    for guard in coverage.containment(components,probe_index,component,width):
+                        fact=(guard,0,'required target component');rows.append(fact);facts.append(fact)
+                    state['forced']=True
+                else:
+                    m.need(state['excluded']==set(range(len(components))),'Every cover component excluded');closed=True
+        elif kind=='fixed_probe_pair':
+            m.need(j>=3 and 3 not in st.values() and step['resource'] in ret,'Integer retained fixed probe pair')
+            first,second=step['first'],step['second'];pair=tuple(sorted((first,second)));m.need(pair not in fixed_pairs,'New fixed probe conflict')
+            guards=fixed_probe_pair_guards(first,second,step['resource'],step['core_side'],p.build.last_Z)
+            m.need(len(guards)==len(step['certificates']),'Fixed probe guard count')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved fixed probe conflict');rows.append(fact);facts.append(fact)
+            fixed_pairs.add(pair)
+        elif kind=='fixed_pair':
+            m.need(j>=3 and 3 not in st.values(),'Integer fixed conflict scope')
+            first,second=step['first'],step['second'];pair=tuple(sorted((first,second)));m.need(pair not in fixed_pairs,'New fixed conflict')
+            guards=fixed_pair_guards(first,second,step['mode']);m.need(len(guards)==len(step['certificates']),'Fixed conflict guard count')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved fixed conflict');rows.append(fact);facts.append(fact)
+            fixed_pairs.add(pair)
+        elif kind=='fixed_cover_positive':
+            label=step['label'];m.need(label in covered and label not in covered_positive,'Positive covered fixed label')
+            guard=m.add((1,{'ONE':1}),(-1,forms[label]));check(step['certificate'],rows,eqs,guard,strict=False)
+            fact=(guard,0,'proved covered fixed positive');rows.append(fact);facts.append(fact);covered_positive.add(label)
+        elif kind=='fixed_cover':
+            m.need(j>=3 and 3 not in st.values(),'Integer fixed cover scope')
+            label,resource=step['label'],step['resource'];m.need(label not in covered and (resource in ret or resource in ('Ls','Lt')),'New retained fixed cover')
+            guards=fixed_cover_guards(label,resource,step['q'],step.get('witness'),p.build.last_Z)
+            m.need(len(guards)==len(step['certificates']),'Fixed cover guard count')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved fixed source cover');rows.append(fact);facts.append(fact)
+            covered.add(label)
+        elif kind=='sumset_pair_equal':
+            key,first,second=step['gap'],step['first'],step['second']
+            difference=sumset_pair_difference(key,first,second);m.need(len(step['certificates'])==2,'Two source equality proofs')
+            for guard,cert in zip((difference,{k:-v for k,v in difference.items()}),step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved source pair equality');rows.append(fact);facts.append(fact)
+            sumset_equalities.setdefault(key,[]).append((tuple(first),tuple(second)))
+        elif kind=='sumset_gap_exclude':
+            m.need(record.get('sumset_gaps') and record.get('point_overlap'),'Source gap proof scope')
+            key,pair,index=step['gap'],tuple(step['pair']),step['guard']
+            m.need(type(index) is int and index in (0,1) and pair not in sumset_excluded.get(key,set()),'New source gap pair exclusion')
+            guard=sumset_gap_guards(key,pair)[index];check(step['certificate'],rows,eqs,guard,strict=False)
+            fact=(guard,0,'proved source gap pair outside');rows.append(fact);facts.append(fact)
+            sumset_excluded.setdefault(key,set()).add(pair)
+        elif kind=='sumset_gap_capacity':
+            m.need(record.get('sumset_gaps'),'Source gap capacity scope')
+            fact=sumset_gap_capacity(step['gaps'],sumset_excluded,len(trim_pairs),sumset_equalities);rows.append(fact);facts.append(fact)
+        elif kind=='leading_overlap_hit':
+            i,tag,witness,q=step['edge'],step['tag'],step['witness'],step.get('q',5)
+            m.need(record.get('leading_overlap') and record.get('point_overlap') and type(i) is int and 0<=i<len(edges),'Leading overlap scope')
+            known=leading_hits.setdefault(i,set()) if q==5 else leading_extended.setdefault(i,{}).setdefault(q,set())
+            m.need(tag not in known,'Repeated leading exterior point')
+            guards=leading_point_guards(edges[i],tag,witness,q);m.need(len(step['certificates'])==len(guards),'All leading containment guards')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved leading exterior hit');rows.append(fact);facts.append(fact)
+            known.add(tag)
         elif kind=='extended_overlap_hit':
             i,q,tag=step['edge'],step['q'],step['tag'];m.need(record.get('point_overlap') and type(i) is int and 0<=i<len(edges),'Extended overlap edge')
             guards=extended_guards(edges[i][2],q,tag);m.need(len(step['certificates'])==2,'Two extended interval guards')
@@ -404,7 +773,7 @@ def replay(record,require_closed=True,return_state=False):
                 check(step['certificate'],rows,eqs,target);high.add(label)
                 fact=(target,0 if 3 in st.values() else -1,'proved HIGH '+label);rows.append(fact);facts.append(fact)
         elif kind=='credit':
-            next_e=credit(low,high,initial)
+            next_e=credit(low,high,initial,covered,covered_positive,fixed_pairs)
             m.need(step['e']==next_e and next_e>e,'Unjustified fixed credit')
             e=next_e;rows.extend(credit_rows(ret,e))
         elif kind=='endpoint_credit':
@@ -416,10 +785,12 @@ def replay(record,require_closed=True,return_state=False):
             check(step['certificate'],rows,eqs);closed=True
     m.need(closed if require_closed else not closed,'No terminal contradiction' if require_closed else 'Closed inherited premise')
     if return_state:
-        state=dict(credit=e,low=low,high=high,facts=facts,tail_low=tail_low,tail_counts=tail_counts,tail_pairs=tail_pairs,
+        state=dict(credit=e,low=low,high=high,covered=covered,covered_positive=covered_positive,fixed_pairs=sorted(fixed_pairs),coverage_probes={key:dict(excluded=sorted(value['excluded']),forced=value['forced']) for key,value in coverage_probes.items()},core_tail_excluded={side:sorted(values) for side,values in core_tail_excluded.items()},facts=facts,tail_low=tail_low,tail_counts=tail_counts,tail_pairs=tail_pairs,
                    constants=[(*edges[i],value) for i,value in constants.items()],
                    point_hits=[(*edges[i],sorted(tags)) for i,tags in point_hits.items()],
-                   point_groups=[(*edges[i],[(tags,count) for tags,count in groups.items()]) for i,groups in point_groups.items()],trim_pairs=sorted(trim_pairs),extended_hits=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in extended_hits.items()])
-        if cache_key is not None:PREMISE_CACHE[cache_key]=state
+                   point_groups=[(*edges[i],[(tags,count) for tags,count in groups.items()]) for i,groups in point_groups.items()],trim_pairs=sorted(trim_pairs),sumset_excluded={key:sorted(pairs) for key,pairs in sumset_excluded.items()},sumset_equalities=sumset_equalities,leading_hits=[(*edges[i],sorted(tags)) for i,tags in leading_hits.items()],leading_extended=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in leading_extended.items()],extended_hits=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in extended_hits.items()])
+        if cache_key is not None:
+            PREMISE_CACHE[cache_key]=state;PREMISE_CACHE.move_to_end(cache_key)
+            if len(PREMISE_CACHE)>64:PREMISE_CACHE.popitem(last=False)
         return state
     return dict(steps=len(record['trace']),credit=e)

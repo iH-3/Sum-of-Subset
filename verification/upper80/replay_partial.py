@@ -30,7 +30,8 @@ def domain(name,root):
     if name=='rank_k':return 0,min(17,isqrt(496-73*root['j']-(60 if root['positive'] else 0)))
     if name=='hole_W':return (1,7) if root['positive'] else (0,0)
     if name in ('Bs','Bt'):return 4,10
-    if name.startswith(('order:','compression:','diameter:','hit:','extended_hit:','trim_pair:')):return 0,1
+    if exact.integer_source_domain(name,root['j'],root['positive']) is not None:return exact.integer_source_domain(name,root['j'],root['positive'])
+    if name.startswith(('linear_cut:','integer_cut:','order:','compression:','diameter:','hit:','extended_hit:','trim_pair:','leading_hit:','sumset_pair:','fixed_hit:','fixed_probe_hit:','coverage:')):return 0,1
     m.need(name[:1] in ('l','u') and root['st'].get(name[1:])==1,'Unknown integer branch domain')
     return 0,72
 

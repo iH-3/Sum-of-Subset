@@ -1,0 +1,31 @@
+"""Reject unsupported integer rounding and incomplete cover contradictions."""
+from pathlib import Path
+import copy,json,sys
+root=Path(__file__).resolve().parents[3];sys.path.insert(0,str(root/'verification/upper80'))
+import exact,model as m,parametric as p
+from endpoint_schedule import check as schedule_check,endpoint
+st=([*m.patterns(6),*m.partial_patterns(6)])[436]
+record=dict(st=st,j=6,positive=False,limits={},trace=[])
+exact.replay(record,require_closed=False)
+rejected=[]
+def reject(label,step):
+    rec=copy.deepcopy(record);rec['trace'].append(step)
+    try:exact.replay(rec,require_closed=False)
+    except (ValueError,TypeError,KeyError,IndexError):rejected.append(label)
+    else:raise ValueError('Accepted false trace: '+label)
+reject('unlicensed coverage final',dict(kind='coverage_final',side='s',probe=0))
+reject('unlicensed coverage force',dict(kind='coverage_force',side='s',probe=0,component=1))
+reject('unlicensed core-tail capacity',dict(kind='core_tail_capacity',side='s'))
+reject('unlicensed real variable rounding',dict(kind='integer_guard',guard={'unlicensed_real':1},certificate={'weights':[],'denominator':1}))
+reject('rounding without strict bound',dict(kind='integer_guard',guard={'ONE':1},certificate={'weights':[],'denominator':1}))
+reject('unsupported integral bound',dict(kind='integer_guard',guard={'xs':1},certificate={'weights':[],'denominator':1}))
+bad=copy.deepcopy(endpoint(35,100));bad['thresholds'][0]=1000
+try:schedule_check(bad)
+except ValueError:rejected.append('unlicensed endpoint threshold')
+else:raise ValueError('Accepted false endpoint threshold')
+cuts=0
+for value in range(-10,11):
+    for cut in range(-10,11):
+        if (value<=cut)+(value>=cut+1)!=1:raise ValueError('Noncomplementary integer split')
+        cuts+=1
+print(json.dumps(dict(status='PASS_NEW_TRACE_NEGATIVE_CONTROLS',rejected=rejected,integer_splits=cuts)))

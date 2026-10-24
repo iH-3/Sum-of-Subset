@@ -1,4 +1,4 @@
-# Size-81 research checkpoint, 2026-10-23
+# Size-81 research checkpoint, updated 2026-10-24
 
 **No global bound 80 is certified yet.** Main remains 71 <= N <= 81. This file
 records new mathematics and arithmetic to be integrated into a complete proof,
@@ -238,3 +238,298 @@ branch trees, and all nine explicit open-root states. Run replay_partial.py
 to check its arithmetic and complementary domains. It explicitly does NOT
 certify structural applicability or a new global bound. The current density,
 profile and source-bound results are independently checked by check.py.
+
+## 2026-10-24 continuation (work in progress, no new global bound)
+
+The source capacity now subtracts internal gaps. Remove the maximum of each
+core; the retained core Q is in [-q_t,q_s], with either
+q_v=r_v-1+tau_v-xi_v (mass family), or q_v=R_v-1 (maximum family).
+The peeled points on side v are p_0=R_v,p_1=R_v+a_v,...,p_4=M_v.
+For i=0..3, the open gap (p_i+q_v,p_(i+1)-q_o) can contain only sums of
+peeled points. Its integer length is G= p_(i+1)-p_i-q_v-q_o-1.
+There are at most 40 candidate index pairs: 15 same-sign pairs and 25 cross
+pairs. Certify a pair outside by sum<=lower or sum>=upper. If v pairs are
+excluded, missing positions are >=G-(40-v), even when this is negative.
+Different nonempty gaps on both sides are disjoint. Never mix the two
+families in one subtraction (they may overlap).
+
+For a subset A of mass-family gaps and u trimmed outer-pair exclusions:
+K-M-(1+|A|)tau+(1+|A|)xi+sum_A(pnext-p)
+ <=93+103|A|-u-sum_A(v).
+For maximum-family gaps combine with the original fringe row:
+K-M-(1+|A|)R-B_s-B_t+sum_A(pnext-p)
+ <=1+39|A|-sum_A(v).
+Known equal pair sums are merged into equivalence classes; a class is outside
+if any representative is certified outside. Replace 40-v by the number of
+remaining classes. The trace checks both directions of each equality.
+
+Example: positive source 1..32 plus 33,34,99,175; negative magnitudes 1..32
+plus 33,34,161,207. Actual |2D|=392; previous trimmed hull 456; mass gaps 393.
+2501 direct-set regression cases passed both gap families. These finite tests
+are controls, not the proof of the universal counting lemma above.
+
+Core mass ceiling tau_v <= r_v*xi_v follows because every ordered deviation
+is between 0 and xi_v. In a rank interval use the largest possible r_v on
+each side. This excludes spurious LP points with R_v=r_v but tau_v>0.
+Source variables xs,xt,ts,tt,delta,K and all eight tail offsets may now be
+branched as integers. The broad caps are tau,delta<=496-73j+14[positive],
+offsets<=655-73j+14[positive], K<=4096. The last follows conservatively from
+K<=2R+c_s+c_t+158 and the preceding caps for every j=1..6.
+
+Leading-source intersection: a known exterior ordinary-source preimage can
+also map into lambda+2D through any known p+I, 2I, or a consecutively joined
+chain of these intervals. Count these exterior preimages together with the
+old hits whose ordinary preimages lie in the retained core; the two classes
+are disjoint. Different truncation levels are maximized, not added. New
+leading guards, including a nonempty-interval guard for merged chains, have
+passed 6000 source/edge controls and 6000 merged/truncation controls.
+
+Fixed labels already contained in a retained ordinary Z+D or leading
+lambda+2D contribute no new points. Certify membership in a guaranteed
+integer interval using the same core and merged-interval witnesses. Apply
+only for j>=3 and the full integer pattern (no state 3). A covered label
+whose positivity is also proved cannot discharge a negative-sum group's
+mandatory nonpositive label. Without positivity, conservatively allow it
+to discharge that group. Count each removed label once.
+
+Fixed-label conflicts give additional capacity bounds. Two labels cannot
+both contribute distinct new values if their sum is <=1, their sum exceeds
+the sum of their target endpoints, their same-target distance is >=S, or
+they are equal in the same target. The latter needs two exact inequalities.
+After removing proved LOW/HIGH/covered labels, retain each negative group's
+mandatory deletion unless a possible LOW already removed discharges it.
+Add the conflict edges. An exact minimum hitting-set recurrence bounds the
+number of remaining distinct contributions. 480 small hypergraphs have
+been checked against exhaustive independent subset enumeration.
+
+A further fixed conflict comes from two ordinary-source probes. If the
+positive fixed forms f_1,f_2 give distinct ordered probes 1<=p_1<p_2<=r-1
+in one core side of the same retained translate, omitting both costs
+2(r-1)+3-p_1-p_2 in its maximum-removed excess tau-xi. Thus
+ tau-xi+p_1+p_2-2(r-1)-2 <=0
+forces at least one fixed form into that native source. Add a conflict edge,
+not two individually covered labels. All containment, positivity, ordering
+and mass guards are explicit exact certificate targets.
+
+Discovery now recovers endpoint hull planes from exact simplex determinants,
+discarding degenerate or non-supporting candidates and deduplicating rational
+planes. This reduced one endpoint family from 204 planes to 22 and a flat
+family from 135 to one. The replay still independently checks every selected
+majorant at every finite triangle vertex. No floating infeasibility is
+accepted as a certificate.
+
+Small-AP repair: exhaustive nondecreasing deviations of total <=2r-3 for
+r=2..14 (22101 sets, independent partition count) prove rho>=0 whenever
+FS(X) is an AP. Outside that range of total excess, Delta_0<=r proves the
+same inequality immediately. For a7,b57,Omega21, both nonAP are excluded by
+52-8>21. If the larger side is AP, kappa<=29<T57 forces the smaller support
+into its unit and forbids clipping; z=0. The pre-G comparison is strict,
+and G=136 contradicts Omega even with rho_small=-8. For a8,b56,Omega70,
+the larger-AP case is identical with kappa<=78<T56. In the smaller-AP / larger-
+nonAP case, rho_large>=51 gives kappa<=19<T8=36, hence one residue class,
+no clipping, z=0, and the same contradiction. The larger-AP-only a30/31
+cases have endpoint radii8/14 and strict post-G caps -90/-36. At balanced
+rank32 reflect so that the AP side is the smaller-side halfstep analysis;
+its refined cap is -9. These arguments still need integration with the
+complete structural proof and its independent numerical checks.
+
+Latest jobs/checkpoints live under .work/upper80/20261024. No new original
+root has yet been certified closed at the time of this checkpoint. A size6
+rank0 tree with fixed-cover splits reached credit58 (budget58); complementary
+branches are still being checked. The old packet remains 4645/4654 closed.
+
+Full native graph: the new `full_edges` record flag adds every pair of retained
+ordered chain translates and a leading-anchor edge to every retained chain
+translate. Original edges keep their indices; additional edges are appended.
+Every ordinary difference is positive by the native chain order. Leading
+left/right differences use the same extreme embedded D anchors as before.
+The exact forest lemma applies to any acyclic subset, so this needs no new
+union bound; it makes the existing point and compression witnesses available
+for nonadjacent translates. Older records reconstruct their original graph.
+
+### Explicit necessary target coverage (2026-10-24)
+
+`cover_geometry.py` constructs a deliberately enlarged, explicit union, independently
+of cardinality accounting. On physical side v subtract the sum of the four
+positive outer points v1>v2>v3>v4>M_v from 4A. Every positive remaining value
+belongs to lambda+2D_v, one of ten ordinary Z+D_v translates, or one of the
+55 fixed labels. Here lambda=v1-v2-v3-v4, alpha=v2-v3-v4,
+beta=2v2-v1-v3-v4. Proof by number of source terms:
+
+* Four or three source terms are strictly negative after the subtraction.
+* With two source terms, every outer pair except 2v1 is bounded above by
+  v1+v2, leaving 2M_v-v3-v4<0. The only surviving source resource is lambda+2D_v.
+* With one source term, at least two copies of v1 give the eight lambda+b_i
+  centres. With exactly one v1 only the pair 2v2 survives, giving alpha.
+  With no v1 only 3v2 survives, giving beta. The next possible outer sums
+  are strictly negative after adding M_v and subtracting the four extremes.
+* With zero source terms, at least two v1 give 36 C labels. Exactly one v1
+  and at least two v2 give seven U labels. With no v1 and at least three v2
+  there are seven V labels. The five remaining potentially positive maxima
+  are F1=v3-v4, F2=2v3-v2-v4, F3=v2+v3-v1-v4,
+  F4=2v3-v1-v4, F5=3v3-v1-v2-v4. Every next smaller pattern is nonpositive.
+
+Discarding ordinary translates whose full hull is LOW or HIGH is legitimate.
+Enlarge the core E to [-R_o,R_v]. Each retained ordinary translate is now
+one interval plus eight singleton tails. The leading resource is enlarged
+into nine intervals and 36 singleton pair sums. Include all 55 fixed labels.
+There are 154 components per side in the six-empty root. Direct comparison
+with the actual 4A (bitsets, not this catalogue) passed 240 physical targets
+and 30462 four-sum values. This is a regression control for the classification.
+
+A probe is the interval of integers starting one unit after a component's
+right endpoint. Its width is 1 in the zero-hole regime, and 8 in the positive
+regime because each physical target has at most seven holes. Prove its
+bracketing inside [1,S_v] by exact certificates. Every candidate component
+can be excluded only by proving its whole interval lies strictly before or
+after the probe. If every component is excluded, the target has too many
+holes: this is the new `coverage_final` combinatorial terminal. If precisely
+one component remains, it must intersect the probe, giving two new necessary
+linear rows (`coverage_force`). All guard branches are complementary integer
+inequalities; no numerical infeasibility or sampled gap is accepted as proof.
+
+Discovery only: use an existing uncovered probe before inventing more probes,
+and branch on an unproved exclusion. This prevents trying to certify hundreds
+of unrelated target points before resolving the first actual uncovered region.
+
+### Integer witnesses, exact rounding and modular exclusions
+
+In a full integer pattern, all twenty ordinary centres are integral. Thus
+g=U-V, h=H-U, d=O-H and p=h-alpha are integers, and X=p-M is integral.
+The source parameters, its mass, K, delta and all fixed forms are integral.
+This license is used only for j>=3 with no state3 in the pattern.
+
+The finite model also admits integral *witness variables* for an actual set:
+phi=min_t(t+d_(r-t)) and chi_b=min_t(bt+d_(r-t)) are minima of integer
+expressions. Therefore F=|E|-phi_Es-phi_Et, FD=|D|-phi_Ds-phi_Dt and
+GB_b=b|D|-chi_bs-chi_bt are integers. The ell, D, l and u variables are
+cardinalities of omitted points; LS and LT are the deficits between the
+nominal total resource cardinality and its actual native union. They too
+are integers. TD and TD1..3 are integer mass excesses. These choices satisfy
+the original necessary rows, so imposing their integrality loses no actual
+configuration. This is not an assumption that an arbitrary relaxed LP
+solution has integral coordinates.
+
+An `integer_guard` step proves g-1<0 by an ordinary exact Farkas certificate,
+checks that g has integer coefficients and only licensed integral variables,
+then appends g<=0. Generic `integer_cut:name:m` branches are the complementary
+conditions name<=m and name>=m+1; there is no arbitrary upper cutoff.
+Discovery optionally rounds bounds on F, FD, GB_b and the four phi variables.
+
+For a zero-hole target probe, a singleton component contributes only if its
+value equals the probe. `modular.py` may exclude this equality by an integer
+linear combination of exact model equalities, modulo an integer m>=2.
+An inequality pair may supply an extra equality only after both directions
+are certified. Normalization divides each equation by an exactly checked
+common divisor. Replay checks that every combined coefficient is divisible
+by m while its right side is not. This is impossible for integral variables.
+Singleton modular exclusions are not used for width-eight positive-hole
+probes. Standalone modular controls check 8400 targets against bounded
+integer enumeration and reject 6130 mutated certificates.
+
+`structure_arithmetic.py` now independently checks the rank tables, adaptive
+endpoint schedules, repaired high-kappa range, small ranks, AP ranges and
+high-hole bands recorded above. This remains conditional arithmetic, not a
+completed structural proof. The larger strict inverse inequality is used
+only after the high-kappa alternatives have been excluded; it is false as
+an unconditional statement at the balanced endpoint.
+
+Latest verified rank refinement of the open j6 root: k=3,4,5,6,7 each has an
+exact terminal certificate. The new joint top-core-tail row closes k=2 with
+three complementary splits and four terminal certificates. These are saved
+in data/upper80_refinements_20261024.json.gz and independently replayed by
+verify_refinements.py, including the exact branch-path domains. The k=0,1
+subdomains remain open. The original-root count is still nine.
+
+### Known native unions and the top-core tail (2026-10-24)
+
+For each side choose L_v either zero or r_v-1-tau_v+xi_v, licensing L_v>=0
+in the second case. The max-removed core has r_v-1 coefficients and excess
+tau_v-xi_v, hence contains [1,L_v]. Add its known maximum and four tails.
+The resulting B subset D has exactly L_s+L_t+11 points: its central interval
+and ten distinct exterior points are disjoint. Each ordinary translate
+contains Z+B, and the leading resource contains lambda+2B.
+
+`known_union.py` constructs all these explicit integer intervals and points.
+For lambda+2B, connected chains of component intervals certify a lower bound
+J_v on its cardinality. Consecutive components must join or abut and extend
+the right endpoint; different counted hulls are proved disjoint. For the
+union of all known resources inside [1,S_v], every component is either
+proved outside the target or assigned to a certified containing hull, whose
+length is nonnegative. This gives an upper bound U_v without requiring those
+upper hulls to be disjoint. Therefore the actual native loss is at least
+
+    sum_v [ J_v + n_v (L_s+L_t+11) - U_v ],
+
+where n_v is the number of retained ordinary translates on that side. To
+see this, the unknown remainder of the leading has at most K-J_v points,
+and each ordinary unknown remainder has 73-|B| points. After adding the
+fixed credit e, append this expression minus delta <= -e. No intersection
+is subtracted twice. If tau=0, B=D; the exact connected components recover
+the complete native union. Direct checks passed 300 physical sources, with
+equality in all 100 zero-excess cases. This includes higher multiplicities
+missed by the rooted-forest estimate.
+
+A simpler consequence applies whenever H_v is retained and O_v is absent.
+All retained ordinary centres are <=H_v, since alpha=H-d, beta=H-2d and
+the native chain is ordered. Put T_v=H_v+R_v and certify T_v>=0. Every
+ordinary source point except its four positive tails is <=T_v. If
+e_v-X_v-g_v-h_v<=0, the full leading resource also ends at or below T_v,
+because lambda+2M-T=e-X-g-h. Hence every represented target integer above
+T_v is one of the four positive tail points from each retained translate,
+or one of the 55 fixed forms. Prove a candidate <=T_v or >=S_v+1 to remove
+it. If q candidates remain, even counting duplicates separately is safe:
+
+    S_v - T_v - hole_W <= q.
+
+This does not require zero holes; at most hole_W target values can be absent.
+The trace licenses both inequalities first, records each candidate exclusion
+with an exact certificate, and only then uses the capacity row.
+
+If both sides are licensed, let q_src count only their remaining ordinary
+source-tail candidates. All fixed points which are already native-covered
+are accounted for there. The total number of new fixed values is <=84-e.
+Consequently the stronger joint row is
+
+    S_s+S_t-T_s-T_t-2 hole_W <= q_src+84-e.
+
+Negative S_v-T_v only weakens the left side, so no extra T_v<=S_v premise is
+needed. The actual-set control includes373 licensed single tails and119
+joint tails, as well as the300 known-union checks.
+
+Discovery-only diagnostic: an all-integer relaxed k=0 point with tau=0,
+K=279 and delta49 has the actual source tails (33,34,37,110) and
+(33,34,38,94). Its actual |2D| is275, the two native targets have55 and40
+missing values, and every in-target fixed value is already natively covered.
+This is not a solution of the original problem. It motivates the new union
+and top-core-tail rows; the numerical MIP result itself is never a proof.
+
+## Enlarged union capacity
+
+`cover_capacity.py` complements the preceding lower bounds on native loss.
+Enlarge the core to its full integer hull [-R_t,R_s], retaining the eight
+exterior source points. Ordinary resources are then one interval and eight
+points, and each leading resource is nine intervals and 36 pair points.
+These are precisely the native components of `cover_geometry.catalogue`.
+They contain every actual native point, even when the core has holes.
+
+To bound their union in [1,S_v], prove each component outside the target or
+assign it to a containing integer hull. Endpoint comparisons certify the
+containment; anchors at 1 or S_v use the target intersection. Every component
+is assigned exactly once. Each hull has nonnegative integer length, and the
+sum U_v of these lengths bounds the union whether or not hulls overlap.
+The previously proved credit e bounds all new fixed values by 84-e. Hence
+
+    S_s+S_t-2 hole_W-U_s-U_t <= 84-e.
+
+Alternatively include all fixed forms in a single side's component inventory;
+then S_v-hole_W-U_v <= 0, with no fixed credit needed. Finally remove the
+leading translation lambda and use its 45 components without target clipping:
+the same complete hull assignment proves K<=U for the actual source sumset
+2D. This combines holes from both sides in one bound. Source-sum recipes may
+neither discard components nor use target endpoints as hull anchors.
+
+Every comparison is independently replayed before its capacity row is added.
+Independent set controls passed 1200 capacity checks, including exact equality
+in 400 zero-excess cases and rejection of 1200 incomplete inventories. These
+controls supplement the general containing-hull proof, not replace it.

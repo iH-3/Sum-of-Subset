@@ -276,6 +276,7 @@ def base_build(st,j,r=32,tau=0,e=0,clip_limits=None,long_gaps=(),short_gaps=(),c
     base_build.last_long=long
     return names,rows,eqs
 
+@lru_cache(None)
 def fixed_forms():
     raw=[]
     for s in 'st':

@@ -15,6 +15,8 @@
 
 ## 先读什么
 
+- **[2026-10-24 续研状态](RESEARCH_STATUS.md)**：新增源并集、目标容量、整数同余与尾部计数；六空根的 `k=2..7` 子域及 88 个条件性小松弛接口已精确闭合。原始目录仍有 9 个开放根，**全局仍为 `71≤N≤81`**。[检查点与证明范围](verification/upper80/research_checkpoint.md)。
+
 - **[向上界 80 推进：辅助改进报告](reports/upper80_progress_20261023.pdf) · [LaTeX](reports/upper80_progress_20261023.tex)**：稠密子集和范围扩至 `β≤24`，晚跳代价由 `S−6β` 加强为 `S−5β`；证明新的尖锐源和集上界，73 点例子中将估计 `259→243`。普通与优化模式辅助验证一致。候选有限模型仍有 9 个开放根，结构接入也未完成；**全局仍为 `71≤N≤81`，未证明 80。** [验证和研究原型说明](verification/upper80/README.md)。
 
 - **[82→81 完整报告 PDF](reports/upper81_complete_20261021.pdf) · [LaTeX 源码](reports/upper81_complete_20261021.tex)**：23 行端点修复、等差及小侧边界、全部高洞与低洞归约；4,654 个统一参数根覆盖全部 121,403 个实际参数根，4,853 份主终端反证及 22 份小松弛接口证书全部闭合。**得到 71≤N≤81。** [标准库验证器](verification/upper81/check.py) · [运行说明](verification/upper81/README.md) · [证书数据](data/upper81_certificates.json.gz) · [源清单](data/upper81_sources.json) · [完整验证回执](results/2026-10-21/upper81/)。
@@ -111,14 +113,14 @@ A=[-31,31]\cap\mathbb Z\ \cup\ \{\pm93,\pm155,\pm217,\pm713\}.
 
 ## 最短验证入口
 
-最新完整83上界的有限依赖与新增检查：
+最新完整81上界的有限依赖与新增检查：
 
 ```sh
-python -I -S -B verification/upper83_complete/check.py --output .work/upper83.json
-python -I -S -B -O verification/upper83_complete/check.py --output .work/upper83_O.json
+python -I -S -B verification/upper81/check.py --output .work/upper81.json
+python -I -S -B -O verification/upper81/check.py --output .work/upper81_O.json
 ```
 
-Windows 可运行 `verify_upper83_windows.bat`。以下为保留的历史局部入口。
+Windows 可运行 `verification/upper81/run_windows.bat`。以下为保留的历史局部入口。
 
 本轮确切五空 C5t 族的条件几何排除（不认证全局上界83）：
 

@@ -25,28 +25,55 @@ def planes(rank,j,I,e,lo,hi,minimum_tau=0):
         if lo<=68-rank:return [(0,0,0,1,0)]
         return [(0,0,-1,69-lo,0)]
     hull=ConvexHull(np.array(points,float),qhull_options='QJ');answer=set()
-    for eq in hull.equations:
+    # Recover the exact supporting hyperplane from each simplex. Qhull's
+    # perturbed floating normals otherwise create hundreds of almost equal
+    # weak planes even when the exact upper face is simply error <= 0.
+    def determinant(matrix):
+        if len(matrix)==1:return matrix[0][0]
+        return sum((-1)**i*v*determinant([row[:i]+row[i+1:] for row in matrix[1:]])
+                   for i,v in enumerate(matrix[0]) if v)
+    for simplex,eq in zip(hull.simplices,hull.equations):
         if eq[3]<1e-7:continue
-        cs=[Fraction(float(v/eq[3])).limit_denominator(1000) for v in eq[:4]]
-        den=lcm(*(c.denominator for c in cs));cs=tuple(int(c*den) for c in cs)
-        rhs=max(sum(c*v for c,v in zip(cs,pt)) for pt in points)
-        coeff=tuple(c*rhs.denominator for c in cs)+(rhs.numerator,)
-        common=gcd(*coeff);answer.add(tuple(c//common for c in coeff))
+        matrix=[]
+        for index in simplex:
+            values=(*points[index],-1);den=lcm(*(Fraction(v).denominator for v in values))
+            matrix.append([int(v*den) for v in values])
+        coeff=[(-1)**i*determinant([row[:i]+row[i+1:] for row in matrix]) for i in range(5)]
+        if not coeff[3]:continue
+        if coeff[3]<0:coeff=[-c for c in coeff]
+        common=gcd(*coeff);coeff=tuple(c//common for c in coeff)
+        if any(sum(c*v for c,v in zip(coeff[:4],pt))>coeff[4] for pt in points):continue
+        answer.add(coeff)
     return sorted(answer)
+
+
+def guard_key(row):
+    pairs=sorted((k,int(v)) for k,v in row.items() if v)
+    factor=gcd(*(abs(v) for _,v in pairs)) if pairs else 1
+    return tuple((k,v//factor) for k,v in pairs)
 
 
 class Search:
     def __init__(self,st,j,positive=False,limits=None,use_planes=False,parent=None):
         self.st=st;self.j=j;self.positive=positive;self.limits=limits
         self.parent=parent
+        self.known_nonpositive=set()
+        self.guard_certificate_cache={};self.guard_failure_cache={}
         prior=exact.inherited(dict(st=st,j=j,positive=positive,limits=limits,premise=parent)) if parent else None
         self.initial=8 if m.is_ownerless(st) else 0
         self.e=prior['credit'] if prior else self.initial
-        self.use_planes=use_planes;p.USE_PLANES=use_planes;p.PLANE_GENERATOR=planes;p.SOURCE_TAIL_RANKS=True;p.SHARP_PLANES=True;p.SIDE_PLANES=True;p.TRIM_SOURCE=True;p.POINT_OVERLAP=True
+        self.use_planes=use_planes;p.USE_PLANES=use_planes;p.PLANE_GENERATOR=planes;p.SOURCE_TAIL_RANKS=True;p.SHARP_PLANES=True;p.SIDE_PLANES=True;p.TRIM_SOURCE=True;p.POINT_OVERLAP=True;p.FULL_EDGES=True
+        p.PLANE_TABLE=dict(p.PLANE_TABLE)
         p.USED_PLANES=set();self.plane_keys=p.USED_PLANES
         self.names,self.rows,self.eqs=p.build(st,j,positive,self.e,limits)
         self.edges=p.build.last_edges;self.ret=p.build.last_retained
-        self.trace=[];self.low=set();self.high=set();self.cuts=set();self.calls=0;self.constants=dict(p.build.last_compression);self.alpha_done=False;self.alpha_tail_done=False;self.ownerless_done=False;self.point_hits={};self.point_groups={};self.extended_hits={};self.trim_pairs=set(tuple(x) for x in prior.get('trim_pairs',[])) if prior else set()
+        self.trace=[];self.low=set();self.high=set();self.cuts=set();self.calls=0;self.constants=dict(p.build.last_compression);self.alpha_done=False;self.alpha_tail_done=False;self.ownerless_done=False;self.point_hits={};self.point_groups={};self.extended_hits={};self.leading_hits={};self.leading_extended={};self.sumset_excluded={key:set(tuple(pair) for pair in pairs) for key,pairs in prior.get('sumset_excluded',{}).items()} if prior else {};self.trim_pairs=set(tuple(x) for x in prior.get('trim_pairs',[])) if prior else set()
+        self.sumset_equalities={key:list(values) for key,values in prior.get('sumset_equalities',{}).items()} if prior else {}
+        self.covered=set(prior.get('covered',[])) if prior else set()
+        self.covered_positive=set(prior.get('covered_positive',[])) if prior else set()
+        self.fixed_pairs={tuple(pair) for pair in prior.get('fixed_pairs',[])} if prior else set()
+        self.coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()} if prior else {}
+        self.core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
         self.Z=p.build.last_Z;self.tail_low={'s':set(),'t':set()};self.tail_counts={'s':0,'t':0};self.tail_pairs={'s':set(),'t':set()}
         if prior:
             self.low=set(prior['low']);self.high=set(prior['high']);self.rows.extend(prior['facts'])
@@ -67,11 +94,20 @@ class Search:
             for a,b,gap,groups in prior.get('extended_hits',[]):
                 matches=[i for i,(aa,bb,gg) in enumerate(self.edges) if (a,b,gap)==(aa,bb,gg)]
                 m.need(len(matches)==1,'Inherited extended search edge');self.extended_hits[matches[0]]={int(q):set(tags) for q,tags in groups}
+        if prior:
+            for a,b,gap,tags in prior.get('leading_hits',[]):
+                matches=[i for i,(aa,bb,gg) in enumerate(self.edges) if (a,b,gap)==(aa,bb,gg)]
+                m.need(len(matches)==1,'Inherited leading search edge');self.leading_hits[matches[0]]=set(tags)
+        if prior:
+            for a,b,gap,groups in prior.get('leading_extended',[]):
+                matches=[i for i,(aa,bb,gg) in enumerate(self.edges) if (a,b,gap)==(aa,bb,gg)]
+                m.need(len(matches)==1,'Inherited extended leading search edge');self.leading_extended[matches[0]]={int(q):set(tags) for q,tags in groups}
         for side in 'st':
             lower=(limits or {}).get('B'+side,(4,10))[0]
             if lower>=5:
                 self.rows.extend(exact.quartet_rows(side,lower));self.trace.append(dict(kind='quartet_fringe',side=side,lower=lower))
 
+        self.rows.extend(exact.core_mass_ceiling(self.limits));self.trace.append(dict(kind='core_mass_ceiling'))
         self.rows.extend(exact.source_maximum_overlap_rows());self.trace.append(dict(kind='source_maximum_overlap'))
         self.rows.extend(exact.source_gap_inventory_rows());self.trace.append(dict(kind='source_gap_inventory'))
         self.rows.append(exact.trim_hull_row(len(self.trim_pairs)));self.trace.append(dict(kind='source_trim_hull'))
@@ -82,8 +118,8 @@ class Search:
         self.b=np.array([b for _,b,_ in self.rows],float)
         self.E=np.array([[row.get(k,0) for k in names] for row,_,_ in self.eqs],float)
         self.f=np.array([b for _,b,_ in self.eqs],float)
-        self.rsi=[max(1,*[abs(v) for v in row.values()]) for row,_,_ in self.rows]
-        self.esi=[max(1,*[abs(v) for v in row.values()]) for row,_,_ in self.eqs]
+        self.rsi=[max([1,*[abs(v) for v in row.values()]]) for row,_,_ in self.rows]
+        self.esi=[max([1,*[abs(v) for v in row.values()]]) for row,_,_ in self.eqs]
         self.rs=np.array(self.rsi,float);self.es=np.array(self.esi,float)
         self.A/=self.rs[:,None];self.b/=self.rs;self.E/=self.es[:,None];self.f/=self.es
 
@@ -158,7 +194,7 @@ class Search:
             while parent[v]!=v:v=parent[v]
             return v
         weights={i:max(x['FD'],self.constants.get(i,0))-sum(c*x[k] for k,c in gap.items()) for i,(_,_,gap) in enumerate(self.edges)}
-        counts={i:exact.point_overlap_count(self.point_hits.get(i,set()),self.point_groups.get(i,{}),self.extended_hits.get(i,{})) for i in weights}
+        counts={i:exact.edge_point_count(self.edges[i],self.point_hits.get(i,set()),self.point_groups.get(i,{}),self.extended_hits.get(i,{}),self.leading_hits.get(i,set()),self.leading_extended.get(i,{})) for i in weights}
         point_edges={i:counts[i] for i in weights if counts[i]>max(0,weights[i])+1e-7}
         cand=[(point_edges.get(i,weights[i]),i,a,b) for i,(a,b,gap) in enumerate(self.edges)]
         cand += [(x['D'+v],-1,'root',v) for v in self.ret]
@@ -172,10 +208,26 @@ class Search:
         chosen.sort();roots.sort();point_edges={i:n for i,n in point_edges.items() if i in chosen};constants={i:self.constants[i] for i in chosen if i not in point_edges and self.constants.get(i,0)>x['FD']+1e-7}
         key=(tuple(chosen),tuple(roots),self.e,tuple(sorted(constants.items())),tuple(sorted(point_edges.items())))
         row=exact.forest(self.edges,self.ret,chosen,roots,self.e,constants,point_edges)
-        if key in self.cuts or sum(c*x[k] for k,c in row[0].items())<=row[1]+1e-7:return False
+        if key in self.cuts or sum(c*x[k] for k,c in row[0].items())<=row[1]+1e-7:return self.sumset_gap_cut(x)
         self.rows.append(row);self.cuts.add(key)
         self.trace.append(dict(kind='forest',edges=chosen,roots=roots,e=self.e,constants=constants,point_edges=point_edges))
         return True
+
+    def sumset_gap_cut(self,x):
+        for capped in (False,True):
+            gaps=[]
+            for key in exact.SUMSET_GAPS:
+                if key[0].isupper()!=capped:continue
+                side,other,lower,upper,qs,qo=exact.sumset_gap_data(key)
+                length=m.add((1,upper),(-1,lower),(-1,qs),(-1,qo),(-1,{'ONE':1}))
+                rebate=sum(c*x[k] for k,c in length.items())-exact.sumset_gap_remaining(key,self.sumset_excluded.get(key,set()),self.sumset_equalities.get(key,()))
+                if rebate>1e-7:gaps.append(key)
+            if not gaps:continue
+            row=exact.sumset_gap_capacity(gaps,self.sumset_excluded,len(self.trim_pairs),self.sumset_equalities)
+            stamp=('sumset_gaps',tuple(gaps),len(self.trim_pairs),tuple(exact.sumset_gap_remaining(key,self.sumset_excluded.get(key,set()),self.sumset_equalities.get(key,())) for key in gaps))
+            if stamp in self.cuts or sum(c*x[k] for k,c in row[0].items())<=row[1]+1e-7:continue
+            self.rows.append(row);self.cuts.add(stamp);self.trace.append(dict(kind='sumset_gap_capacity',gaps=gaps));return True
+        return False
 
     def lp(self,target=None):
         for iteration in range(100):
@@ -183,7 +235,9 @@ class Search:
             c=np.array([-target.get(k,0) for k in self.names],float) if target else np.zeros(len(self.names))
             rr=linprog(c,A_ub=self.A,b_ub=self.b,A_eq=self.E,b_eq=self.f,bounds=(0,None),method='highs')
             if rr.status!=0:return rr
-            if not self.cut(dict(zip(self.names,rr.x))):return rr
+            if not self.cut(dict(zip(self.names,rr.x))):
+                if target and rr.fun>=-1e-8:self.known_nonpositive.add(guard_key(target))
+                return rr
         raise ValueError('Forest separation did not settle')
 
     def final(self):
@@ -224,31 +278,291 @@ class Search:
         if cert is None:raise ValueError('Exact contradiction reconstruction failed')
         self.trace.append(dict(kind='final',certificate=cert));return True
 
+    def guard_index(self):
+        if not hasattr(self,'_guard_seen'):
+            self._guard_seen=0;self._guard_epoch=0;self._guard_direct={}
+            self._guard_unit=next(i for i,(row,rhs,_) in enumerate(self.eqs) if {k:v for k,v in row.items() if v}=={'ONE':1} and rhs==1)
+            for i,(row,rhs,_) in enumerate(self.eqs):
+                affine=m.add((1,row),(-rhs,{'ONE':1}));factor=gcd(*(abs(v) for v in affine.values())) or 1
+                if not any(affine.values()):continue
+                for sign in (1,-1):
+                    key=guard_key({k:sign*v for k,v in affine.items()})
+                    self._guard_direct.setdefault(key,('e',i,sign,factor,rhs))
+        redundant={'proved core-tail license','proved core-tail exclusion','proved known-union guard','proved target probe bracket','proved target component exclusion','proved fixed conflict','proved fixed probe conflict',
+                   'proved fixed source cover','proved covered fixed positive','proved trimmed hull pair','proved source gap pair outside',
+                   'proved source pair equality','proved leading exterior hit','proved extended interval hit','proved point overlap interval'}
+        for i in range(self._guard_seen,len(self.rows)):
+            row,rhs,label=self.rows[i]
+            if label not in redundant and not label.startswith(('proved LOW ','proved tail LOW ','proved tail incompatible ')):self._guard_epoch+=1
+            affine=m.add((1,row),(-rhs,{'ONE':1}));factor=gcd(*(abs(v) for v in affine.values())) or 1
+            if any(affine.values()):self._guard_direct.setdefault(guard_key(affine),('r',i,1,factor,rhs))
+        self._guard_seen=len(self.rows)
+        return self._guard_epoch
+
+    def nonstrict_guard(self,guard):
+        key=tuple(sorted((k,v) for k,v in guard.items() if v));normalized=guard_key(guard)
+        if key in self.guard_certificate_cache:
+            self.known_nonpositive.add(normalized);return self.guard_certificate_cache[key],False
+        if all(v<=0 for v in guard.values()):
+            cert={'weights':[],'denominator':1};exact.check(cert,self.rows,self.eqs,guard,strict=False)
+            self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+        epoch=self.guard_index()
+        if normalized in self._guard_direct:
+            kind,i,sign,factor,rhs=self._guard_direct[normalized];target_factor=gcd(*(abs(v) for v in guard.values())) or 1
+            weights=[(kind,i,sign*target_factor)]
+            if rhs:weights.append(('e',self._guard_unit,-rhs*sign*target_factor))
+            cert={'weights':weights,'denominator':factor};exact.check(cert,self.rows,self.eqs,guard,strict=False)
+            self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+        if self.guard_failure_cache.get(key)==epoch:return None,False
+        rr=self.lp(guard)
+        if rr.status==2:return None,True
+        epoch=self.guard_index()
+        if rr.status==0 and -1+1e-7<rr.fun<-1e-7 and self.j>=3 and 3 not in self.st.values():
+            from modular import INTEGER_NAMES
+            if set(k for k,v in guard.items() if v)<=INTEGER_NAMES and all(type(v) is int for v in guard.values()):
+                from types import SimpleNamespace
+                marginal=np.array(rr.eqlin.marginals,copy=True)
+                marginal[self._guard_unit]+=self.esi[self._guard_unit]
+                shifted=SimpleNamespace(ineqlin=rr.ineqlin,eqlin=SimpleNamespace(marginals=marginal),lower=rr.lower)
+                strict_target=m.add((1,guard),(-1,{'ONE':1}))
+                strict_certificate=self.reconstruct(shifted,strict_target,strict=True)
+                if strict_certificate is not None:
+                    self.trace.append(dict(kind='integer_guard',guard=guard,certificate=strict_certificate))
+                    index=len(self.rows);self.rows.append((guard,0,'rounded integer guard'))
+                    cert={'weights':[('r',index,1)],'denominator':1}
+                    self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+        if rr.status!=0 or rr.fun<-1e-7:
+            self.guard_failure_cache[key]=epoch;return None,False
+        cert=self.reconstruct(rr,guard,strict=False)
+        if cert is not None:self.guard_certificate_cache[key]=cert
+        else:self.guard_failure_cache[key]=epoch
+        return cert,False
+
+    def coverage_gap(self,point):
+        if not self.coverage_probes:return False
+        import cover_geometry as coverage
+        width=8 if self.positive else 1;ev=lambda row:sum(c*point[k] for k,c in row.items())
+        for key in self.coverage_probes:
+            side,index=key.split(':');components=coverage.catalogue(self.st,self.Z,side);target=ev(coverage.probe(components,int(index)))
+            if all(max(ev(lo)-target-width+1,target-ev(hi),0)>1e-7 for _,lo,hi in components):return True
+        return False
+
+    def coverage_step(self,point):
+        if self.j<3 or 3 in self.st.values():return False,False
+        import cover_geometry as coverage
+        width=8 if self.positive else 1
+        catalogues={side:coverage.catalogue(self.st,self.Z,side) for side in 'st'}
+        ev=lambda row:sum(c*point[k] for k,c in row.items())
+        if len(self.coverage_probes)<64 and not self.coverage_gap(point):
+            candidates=[]
+            for side,components in catalogues.items():
+                for index,(name,lo,hi) in enumerate(components):
+                    key=side+':'+str(index)
+                    if key in self.coverage_probes:continue
+                    target=ev(coverage.probe(components,index))
+                    if not 1-1e-7<=target<=point['S'+side]-width+1+1e-7:continue
+                    distance=min(max(ev(a)-target-width+1,target-ev(b),0) for _,a,b in components)
+                    if distance>1e-7:candidates.append((distance,int(lo!=hi),side,index))
+            for _,_,side,index in sorted(candidates,reverse=True)[:6]:
+                guards=coverage.bracket(catalogues[side],side,index,width);certificates=[]
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:break
+                    certificates.append(cert)
+                if len(certificates)!=2:continue
+                self.trace.append(dict(kind='coverage_probe',side=side,probe=index,certificates=certificates))
+                for guard in guards:self.rows.append((guard,0,'proved target probe bracket'))
+                self.coverage_probes[side+':'+str(index)]=dict(excluded=set(),forced=False)
+                break
+        changed=False
+        from modular import Basis
+        integer_basis=Basis(self.rows,self.eqs) if width==1 else None
+        for key,state in self.coverage_probes.items():
+            side,index=key.split(':');index=int(index);components=catalogues[side]
+            for component in range(len(components)):
+                if component in state['excluded']:continue
+                _,lo,hi=components[component]
+                if integer_basis is not None and lo==hi:
+                    target=m.add((1,lo),(-1,coverage.probe(components,index)))
+                    certificate=integer_basis.exclude(target)
+                    if certificate is not None:
+                        import modular
+                        modular.check(certificate,self.rows,self.eqs,target)
+                        self.trace.append(dict(kind='coverage_modular_exclude',side=side,probe=index,component=component,certificate=certificate))
+                        state['excluded'].add(component);changed=True;continue
+                options=sorted((ev(coverage.exclusion(components,index,component,direction,width)),direction) for direction in (0,1))
+                for value,direction in options:
+                    if value>1e-7:continue
+                    guard=coverage.exclusion(components,index,component,direction,width);cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:continue
+                    self.trace.append(dict(kind='coverage_exclude',side=side,probe=index,component=component,direction=direction,certificate=cert))
+                    self.rows.append((guard,0,'proved target component exclusion'));state['excluded'].add(component);changed=True;break
+            remaining=set(range(len(components)))-state['excluded']
+            if not remaining:
+                self.trace.append(dict(kind='coverage_final',side=side,probe=index));return True,True
+            if len(remaining)==1 and not state['forced']:
+                component=next(iter(remaining));self.trace.append(dict(kind='coverage_force',side=side,probe=index,component=component))
+                for guard in coverage.containment(components,index,component,width):self.rows.append((guard,0,'required target component'))
+                state['forced']=True;changed=True
+        return changed,False
+
+    def integral_kernel_step(self,point):
+        if self.j<3 or 3 in self.st.values():return False,False
+        import math
+        names=['FD','F',*('GB'+str(i) for i in range(1,11)),*('phi'+source+side for source in ('core','source') for side in 'st')]
+        before=len(self.trace)
+        for name in names:
+            value=point[name];lower=math.floor(value);upper=lower+1
+            if min(value-lower,upper-value)<1e-6:continue
+            for guard in ({name:1,'ONE':-lower},{name:-1,'ONE':upper}):
+                _,infeasible=self.nonstrict_guard(guard)
+                if infeasible:return False,True
+                if len(self.trace)>before:return True,False
+        return False,False
+
+    def known_union_step(self,point):
+        self.union_failures=[]
+        if self.j<3 or 3 in self.st.values():return False,False
+        import known_union
+        proof=known_union.recipe(self.st,self.Z,point);row,guards=known_union.derive(self.st,self.Z,proof,self.e)
+        violation=sum(c*point[k] for k,c in row[0].items())-row[1]
+        if violation<=1e-7:return False,False
+        certificates=[]
+        for guard in guards:
+            cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:
+                self.union_failures=[(violation,guard)];return False,False
+            certificates.append(cert)
+        self.trace.append(dict(kind='known_union',credit=self.e,recipe=proof,certificates=certificates))
+        self.rows.extend((guard,0,'proved known-union guard') for guard in guards);self.rows.append(row)
+        return True,False
+
+    def cover_capacity_step(self,point):
+        self.capacity_failures=[]
+        if self.j<3 or 3 in self.st.values():return False,False
+        import cover_capacity
+        candidates=[]
+        for mode,side in [('sumset',None),('native',None),('full','s'),('full','t')]:
+            proof=cover_capacity.recipe(self.st,self.Z,point,mode,side)
+            row,guards=cover_capacity.derive(self.st,self.Z,proof,self.e)
+            violation=sum(c*point[k] for k,c in row[0].items())-row[1]
+            if violation>1e-7:candidates.append((violation,proof,row,guards))
+        for violation,proof,row,guards in sorted(candidates,key=lambda entry:entry[0],reverse=True):
+            first_failure=True
+            for attempt in range(512):
+                certificates=[];failed=None
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        if first_failure:self.capacity_failures.append((violation,guard));first_failure=False
+                        failed=guard;break
+                    certificates.append(cert)
+                if failed is None:
+                    self.trace.append(dict(kind='cover_capacity',credit=self.e,recipe=proof,certificates=certificates))
+                    self.rows.extend((guard,0,'proved cover capacity guard') for guard in guards);self.rows.append(row)
+                    return True,False
+                relaxed=cover_capacity.relax_guard(self.st,self.Z,proof,failed)
+                if relaxed is None or relaxed==proof:break
+                proof=relaxed;row,guards=cover_capacity.derive(self.st,self.Z,proof,self.e)
+                if sum(c*point[k] for k,c in row[0].items())<=row[1]+1e-7:break
+        return False,False
+
+    def core_tail_step(self,point):
+        self.core_tail_failures=[]
+        if self.j<3 or 3 in self.st.values():return False,False
+        import known_union
+        changed=False;ev=lambda row:sum(c*point[k] for k,c in row.items())
+        for side in 'st':
+            if self.st.get('H'+side)!=1 or self.st.get('O'+side)==1:continue
+            endpoint,guards,points=known_union.tail_catalogue(self.st,self.Z,side)
+            numerical=sum(ev(endpoint)+1e-7<ev(value)<point['S'+side]+1e-7 for _,value in points)
+            violation=point['S'+side]-ev(endpoint)-point['hole_W']-numerical
+            if side not in self.core_tail_excluded:
+                if violation<=1e-7:continue
+                certificates=[]
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        self.core_tail_failures.append((violation,guard));break
+                    certificates.append(cert)
+                if len(certificates)!=len(guards):continue
+                self.trace.append(dict(kind='core_tail_license',side=side,certificates=certificates))
+                self.rows.extend((guard,0,'proved core-tail license') for guard in guards)
+                self.core_tail_excluded[side]=set();changed=True
+            excluded=self.core_tail_excluded[side];before=len(excluded)
+            for index in range(len(points)):
+                if index in excluded:continue
+                for direction in sorted((0,1),key=lambda d:ev(known_union.tail_exclusion(self.st,self.Z,side,index,d))):
+                    guard=known_union.tail_exclusion(self.st,self.Z,side,index,direction)
+                    if ev(guard)>1e-7:continue
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        if violation>0:self.core_tail_failures.append((violation,guard))
+                        continue
+                    self.trace.append(dict(kind='core_tail_exclude',side=side,index=index,direction=direction,certificate=cert))
+                    self.rows.append((guard,0,'proved core-tail exclusion'));excluded.add(index);break
+            if len(excluded)>before or changed:
+                self.trace.append(dict(kind='core_tail_capacity',side=side));self.rows.append(known_union.tail_capacity(self.st,self.Z,side,excluded));changed=True
+        if set(self.core_tail_excluded)==set('st'):
+            row=known_union.joint_tail_capacity(self.st,self.Z,self.core_tail_excluded,self.e);stamp=(self.e,row[1])
+            if stamp!=getattr(self,'joint_core_tail_stamp',None):
+                self.trace.append(dict(kind='joint_core_tail_capacity',credit=self.e));self.rows.append(row);self.joint_core_tail_stamp=stamp;changed=True
+        return changed,False
+
     def run(self):
         forms=m.fixed_forms()
-        for cycle in range(63):
+        for cycle in range(512):
             rr=self.lp()
             if rr.status==2:return self.final()
             if rr.status!=0:raise ValueError(rr.message)
             point=dict(zip(self.names,rr.x));changed=False
+            strengthened,infeasible=self.integral_kernel_step(point)
+            if infeasible:return self.final()
+            if strengthened:continue
             for label,form in forms.items():
                 if label in self.low|self.high:continue
                 value=sum(c*point[k] for k,c in form.items())
-                if value<=1e-6:target=form;kind='low'
+                integer_scope=self.j>=3 and 3 not in self.st.values()
+                if value<(1-1e-7 if integer_scope else 1e-6):target=form;kind='low'
                 elif value>=point['Ss' if '+' in label else 'St']+1e-6:
                     target=m.add((-1,form),(1,m.var('Ss' if '+' in label else 'St')));kind='high'
                 else:continue
-                rr=self.lp(target)
-                if rr.status==2:return self.final()
-                if rr.status!=0:raise ValueError(rr.message)
-                if rr.fun < (-1e-7 if kind=='low' else 1e-7):continue
-                cert=self.reconstruct(rr,target,strict=kind=='high')
+                if kind=='low' or integer_scope:
+                    guard=target if kind=='low' else m.add((1,target),(1,{'ONE':1}))
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return self.final()
+                    if cert is not None and kind=='high':
+                        weights={(a,i):v for a,i,v in cert['weights']}
+                        unit=next(i for i,(row,rhs,_) in enumerate(self.eqs) if row=={'ONE':1} and rhs==1)
+                        weights['e',unit]=weights.get(('e',unit),0)-cert['denominator']
+                        cert={'weights':[(a,i,v) for (a,i),v in weights.items() if v],'denominator':cert['denominator']}
+                        exact.check(cert,self.rows,self.eqs,target,strict=True)
+                else:
+                    rr=self.lp(target)
+                    if rr.status==2:return self.final()
+                    if rr.status!=0:raise ValueError(rr.message)
+                    if rr.fun<1e-7:continue
+                    cert=self.reconstruct(rr,target,strict=True)
                 if cert is None:continue
                 self.trace.append(dict(kind=kind,label=label,certificate=cert))
                 (self.low if kind=='low' else self.high).add(label)
                 self.rows.append((target,0 if kind=='low' or 3 in self.st.values() else -1,'proved '+kind.upper()+' '+label))
                 changed=True
-            next_e=exact.credit(self.low,self.high,self.initial)
+            for label in sorted(self.covered-self.covered_positive):
+                guard=m.add((1,{'ONE':1}),(-1,forms[label]))
+                if sum(c*point[k] for k,c in guard.items())>1e-7:continue
+                cert,infeasible=self.nonstrict_guard(guard)
+                if infeasible:return self.final()
+                if cert is None:continue
+                self.trace.append(dict(kind='fixed_cover_positive',label=label,certificate=cert))
+                self.rows.append((guard,0,'proved covered fixed positive'));self.covered_positive.add(label);changed=True
+            next_e=exact.credit(self.low,self.high,self.initial,self.covered,self.covered_positive,self.fixed_pairs)
             if next_e>self.e:
                 self.e=next_e;self.trace.append(dict(kind='credit',e=self.e));self.rows.extend(exact.credit_rows(self.ret,self.e));changed=True
                 if self.use_planes:
@@ -284,14 +598,96 @@ class Search:
                 for label in sorted(exact.tail_labels(side)-(self.low|self.high|self.tail_low[side])):
                     target=m.add((1,forms[label]),(-1,end))
                     if sum(c*point[name] for name,c in target.items())>1e-6:continue
-                    rr=self.lp(target)
-                    if rr.status==2:return self.final()
-                    if rr.status!=0 or rr.fun<-1e-7:continue
-                    cert=self.reconstruct(rr,target,strict=False)
+                    cert,infeasible=self.nonstrict_guard(target)
+                    if infeasible:return self.final()
                     if cert is None:continue
                     self.trace.append(dict(kind='tail_low',side=side,label=label,certificate=cert))
                     self.tail_low[side].add(label);self.rows.append((target,0,'proved tail LOW '+label));changed=True
                 changed=tail_credit() or changed
+            if not changed:
+                extra,finished=self.core_tail_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.cover_capacity_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.known_union_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.coverage_step(point)
+                if finished:return True if extra else self.final()
+                changed=extra
+                if not changed and self.coverage_gap(point):
+                    current=self.lp()
+                    if current.status==2:return self.final()
+                    if current.status!=0:raise ValueError(current.message)
+                    point=dict(zip(self.names,current.x))
+                    if self.coverage_gap(point):self.point=point;return False
+            if not changed and self.j>=3 and 3 not in self.st.values():
+                remaining=sorted(set(forms)-self.low-self.high-self.covered)
+                for ai,first in enumerate(remaining):
+                    for second in remaining[ai+1:]:
+                        pair=(first,second)
+                        if pair in self.fixed_pairs:continue
+                        if exact.credit(self.low,self.high,self.initial,self.covered,self.covered_positive,self.fixed_pairs|{pair})<=self.e:continue
+                        options=[(first,second,'low'),(first,second,'high')]
+                        if ('+' in first)==('+' in second):options.extend([(first,second,'apart'),(second,first,'apart'),(first,second,'equal')])
+                        for a,b,mode in options:
+                            guards=exact.fixed_pair_guards(a,b,mode)
+                            if any(sum(c*point[k] for k,c in guard.items())>1e-7 for guard in guards):continue
+                            certificates=[]
+                            for guard in guards:
+                                cert,infeasible=self.nonstrict_guard(guard)
+                                if infeasible:return self.final()
+                                if cert is None:break
+                                certificates.append(cert)
+                            if len(certificates)!=len(guards):continue
+                            self.trace.append(dict(kind='fixed_pair',first=a,second=b,mode=mode,certificates=certificates))
+                            for guard in guards:self.rows.append((guard,0,'proved fixed conflict'))
+                            self.fixed_pairs.add(pair);changed=True;break
+                        if pair in self.fixed_pairs or ('+' in first)!=('+' in second):continue
+                        side='s' if '+' in first else 't';probe_options=[]
+                        for resource in (v for v in self.ret if v[-1]==side):
+                            for core_side in 'st':
+                                a,b=first,second
+                                if (sum(c*point[k] for k,c in forms[a].items())>sum(c*point[k] for k,c in forms[b].items()))==(core_side==side):a,b=b,a
+                                guards=exact.fixed_probe_pair_guards(a,b,resource,core_side,self.Z)
+                                if all(sum(c*point[k] for k,c in guard.items())<=1e-7 for guard in guards):probe_options.append((a,b,resource,core_side,guards))
+                        for a,b,resource,core_side,guards in probe_options:
+                            certificates=[]
+                            for guard in guards:
+                                cert,infeasible=self.nonstrict_guard(guard)
+                                if infeasible:return self.final()
+                                if cert is None:break
+                                certificates.append(cert)
+                            if len(certificates)!=len(guards):continue
+                            self.trace.append(dict(kind='fixed_probe_pair',first=a,second=b,resource=resource,core_side=core_side,certificates=certificates))
+                            for guard in guards:self.rows.append((guard,0,'proved fixed probe conflict'))
+                            self.fixed_pairs.add(pair);changed=True;break
+            if not changed and self.j>=3 and 3 not in self.st.values():
+                for label in sorted(set(forms)-self.low-self.high-self.covered):
+                    side='s' if '+' in label else 't';options=[]
+                    for resource in [v for v in self.ret if v[-1]==side]+['L'+side]:
+                        witnesses=(None,) if resource[0]!='L' else exact.LEADING_WITNESSES
+                        for q in (2,4,5,3,1):
+                            for witness in witnesses:
+                                guards=exact.fixed_cover_guards(label,resource,q,witness,self.Z)
+                                values=[sum(c*point[k] for k,c in guard.items()) for guard in guards]
+                                if max(values)<=1e-7:options.append((len(guards),max(values),resource,q,witness,guards))
+                    for _,_,resource,q,witness,guards in sorted(options,key=lambda item:item[:4]):
+                        certificates=[]
+                        for guard in guards:
+                            cert,infeasible=self.nonstrict_guard(guard)
+                            if infeasible:return self.final()
+                            if cert is None:break
+                            certificates.append(cert)
+                        if len(certificates)!=len(guards):continue
+                        self.trace.append(dict(kind='fixed_cover',label=label,resource=resource,q=q,witness=witness,certificates=certificates))
+                        for guard in guards:self.rows.append((guard,0,'proved fixed source cover'))
+                        self.covered.add(label);changed=True;break
             if not changed and self.use_planes:
                 from itertools import combinations
                 for side in 'st':
@@ -305,10 +701,8 @@ class Search:
                         if sum(c*point[k] for k,c in difference.items())<0:a,b=b,a;difference={k:-c for k,c in difference.items()}
                         target=m.add((1,m.var('S'+side)),(-1,end),(-1,difference))
                         if sum(c*point[k] for k,c in target.items())>1e-6:continue
-                        rr=self.lp(target)
-                        if rr.status==2:return self.final()
-                        if rr.status!=0 or rr.fun<-1e-7:continue
-                        cert=self.reconstruct(rr,target,strict=False)
+                        cert,infeasible=self.nonstrict_guard(target)
+                        if infeasible:return self.final()
                         if cert is None:continue
                         self.trace.append(dict(kind='tail_incompatible',side=side,larger=a,smaller=b,certificate=cert))
                         self.tail_pairs[side].add(pair);self.rows.append((target,0,'proved tail incompatible '+a+':'+b));changed=True
@@ -323,16 +717,80 @@ class Search:
                         if key in self.trim_pairs:continue
                         guard=exact.trim_pair_guard(side,pair)
                         if sum(c*point[k] for k,c in guard.items())>1e-7:continue
-                        rr=self.lp(guard)
-                        if rr.status==2:return self.final()
-                        if rr.status!=0 or rr.fun<-1e-7:continue
-                        cert=self.reconstruct(rr,guard,strict=False)
+                        cert,infeasible=self.nonstrict_guard(guard)
+                        if infeasible:return self.final()
                         if cert is None:continue
                         self.trace.append(dict(kind='trim_hull_pair',side=side,pair=pair,certificate=cert))
                         self.rows.append((guard,0,'proved trimmed hull pair'));self.trim_pairs.add(key)
                         self.rows.append(exact.trim_hull_row(len(self.trim_pairs)));changed=True
+            if not changed:
+                for key in exact.SUMSET_GAPS:
+                    _,_,lower,upper,qs,qo=exact.sumset_gap_data(key)
+                    length=m.add((1,upper),(-1,lower),(-1,qs),(-1,qo),(-1,{'ONE':1}))
+                    if sum(c*point[k] for k,c in length.items())<=1e-7:continue
+                    for pair in exact.sumset_gap_pairs(key):
+                        if pair in self.sumset_excluded.get(key,set()):continue
+                        guards=exact.sumset_gap_guards(key,pair)
+                        options=sorted((sum(c*point[k] for k,c in guard.items()),i,guard) for i,guard in enumerate(guards))
+                        for value,index,guard in options:
+                            if value>1e-7:continue
+                            cert,infeasible=self.nonstrict_guard(guard)
+                            if infeasible:return self.final()
+                            if cert is None:continue
+                            self.trace.append(dict(kind='sumset_gap_exclude',gap=key,pair=pair,guard=index,certificate=cert))
+                            self.rows.append((guard,0,'proved source gap pair outside'));self.sumset_excluded.setdefault(key,set()).add(pair);changed=True;break
+            if not changed:
+                for key in exact.SUMSET_GAPS:
+                    side,_,lower,upper,qs,qo=exact.sumset_gap_data(key)
+                    ev=lambda row:sum(c*point[k] for k,c in row.items())
+                    left,right=ev(lower)+ev(qs),ev(upper)-ev(qo)
+                    if right-left<=1:continue
+                    candidates=[]
+                    for pair in exact.sumset_gap_pairs(key):
+                        if pair in self.sumset_excluded.get(key,set()):continue
+                        value=sum(ev(exact.signed_source_point(tag,side)) for tag in pair)
+                        if left<value<right:candidates.append((value,pair))
+                    for ai,(value,first) in enumerate(candidates):
+                        for other,second in candidates[ai+1:]:
+                            if abs(value-other)>1e-7:continue
+                            equalities=self.sumset_equalities.get(key,[])
+                            if exact.sumset_gap_remaining(key,(),equalities)==exact.sumset_gap_remaining(key,(),[*equalities,(first,second)]):continue
+                            difference=exact.sumset_pair_difference(key,first,second);certificates=[]
+                            for guard in (difference,{k:-v for k,v in difference.items()}):
+                                cert,infeasible=self.nonstrict_guard(guard)
+                                if infeasible:return self.final()
+                                if cert is None:break
+                                certificates.append(cert)
+                            if len(certificates)!=2:continue
+                            self.trace.append(dict(kind='sumset_pair_equal',gap=key,first=first,second=second,certificates=certificates))
+                            for guard in (difference,{k:-v for k,v in difference.items()}):self.rows.append((guard,0,'proved source pair equality'))
+                            self.sumset_equalities.setdefault(key,[]).append((first,second));changed=True
             if not changed and not self.use_planes:
                 self.point=point;return False
+            if not changed:
+                for edge,actual in enumerate(self.edges):
+                    if actual[0] not in ('Ls','Lt'):continue
+                    side,other,right,_=exact.leading_geometry(actual)
+                    for q in (2,4,5,3,1):
+                        known=self.leading_hits.setdefault(edge,set()) if q==5 else self.leading_extended.setdefault(edge,{}).setdefault(q,set())
+                        for tag in exact.leading_tags(q):
+                            if tag[0]!=(other if right else side) or tag in known:continue
+                            candidates=[]
+                            for witness in exact.LEADING_WITNESSES:
+                                guards=exact.leading_point_guards(actual,tag,witness,q)
+                                values=[sum(c*point[k] for k,c in guard.items()) for guard in guards]
+                                if max(values)<=1e-7:candidates.append((max(values),witness,guards))
+                            for _,witness,guards in sorted(candidates):
+                                certificates=[]
+                                for guard in guards:
+                                    cert,infeasible=self.nonstrict_guard(guard)
+                                    if infeasible:return self.final()
+                                    if cert is None:break
+                                    certificates.append(cert)
+                                if len(certificates)!=len(guards):continue
+                                self.trace.append(dict(kind='leading_overlap_hit',edge=edge,tag=tag,witness=witness,q=q,certificates=certificates))
+                                for guard in guards:self.rows.append((guard,0,'proved leading exterior hit'))
+                                known.add(tag);changed=True;break
             if not changed:
                 for edge,(_,_,gap) in enumerate(self.edges):
                     for q in (2,4,3,1):
@@ -342,10 +800,8 @@ class Search:
                             if any(sum(c*point[k] for k,c in guard.items())>1e-7 for guard in guards):continue
                             certificates=[]
                             for guard in guards:
-                                rr=self.lp(guard)
-                                if rr.status==2:return self.final()
-                                if rr.status!=0 or rr.fun<-1e-7:break
-                                cert=self.reconstruct(rr,guard,strict=False)
+                                cert,infeasible=self.nonstrict_guard(guard)
+                                if infeasible:return self.final()
                                 if cert is None:break
                                 certificates.append(cert)
                             if len(certificates)!=2:continue
@@ -360,10 +816,8 @@ class Search:
                         if any(sum(c*point[k] for k,c in guard.items())>1e-7 for guard in guards):continue
                         certificates=[]
                         for guard in guards:
-                            rr=self.lp(guard)
-                            if rr.status==2:return self.final()
-                            if rr.status!=0 or rr.fun<-1e-7:break
-                            cert=self.reconstruct(rr,guard,strict=False)
+                            cert,infeasible=self.nonstrict_guard(guard)
+                            if infeasible:return self.final()
                             if cert is None:break
                             certificates.append(cert)
                             # Do not append the first row until both guards are proved;
@@ -430,11 +884,15 @@ class Search:
                             self.trace.append(dict(kind='compression',edge=edge,k=kk,source=source,certificate=cert))
                             self.constants[edge]=max(self.constants.get(edge,0),n-kk)
                             self.rows.append((target,-1,'proved compression'));changed=True;break
-                if not changed:self.point=point;return False
+                if not changed:
+                    current=self.lp()
+                    if current.status==2:return self.final()
+                    if current.status!=0:raise ValueError(current.message)
+                    self.point=dict(zip(self.names,current.x));return False
         raise ValueError('Fixed credit iteration did not settle')
 
     def record(self):
-        rec=dict(st=self.st,j=self.j,positive=self.positive,limits=self.limits,trace=self.trace,source_tail_ranks=True,sharp_planes=True,side_planes=True,trim_source=True,point_overlap=True)
+        rec=dict(st=self.st,j=self.j,positive=self.positive,limits=self.limits,trace=self.trace,source_tail_ranks=True,sharp_planes=True,side_planes=True,trim_source=True,point_overlap=True,leading_overlap=True,full_edges=True,sumset_gaps=True)
         if self.use_planes:rec['planes']={key:p.PLANE_TABLE[key] for key in sorted(self.plane_keys)}
         if self.parent:rec['premise']=self.parent
         return rec

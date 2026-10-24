@@ -1,0 +1,22 @@
+{
+  "status": "PASS_PARTIAL_RANK_REFINEMENTS",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "closed_original_roots": 0,
+  "certified_ranks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "open_ranks": [
+    0,
+    1
+  ],
+  "terminal_certificates": 9,
+  "branch_splits": 3,
+  "local_steps": 441,
+  "packet_sha256": "9343e1ec32c9b0013c6b3a2352084c5758643ddd5de6e83c49918570f14541c0"
+}
