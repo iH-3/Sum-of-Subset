@@ -7,8 +7,9 @@ established range remains **71 ≤ N ≤ 81**. The structural interfaces listed 
 The new argument below closes both remaining rank slices of the six-empty-cell
 root `(6,436,0)`. Its `k=2..7` slices were already certified; they are reused
 without restarting their search. The source budget gives `k²≤58`, so `k≥8`
-is impossible. This closes one original root, beyond the previous 4,645 closed
-roots. Results for the other original roots will be recorded separately.
+is impossible. Together with the new unrestricted contradictions for `(5,256,0)`,
+`(5,266,0)`, `(5,268,0)` and `(5,270,0)`, this brings the current total to
+4,650 closed original roots and four open roots.
 
 ## Complete interval propagation
 
@@ -156,3 +157,145 @@ in the existing model variables. No extra variable is sampled.
 The new focused controls checked 19,716 explicit positive cores and all 4,921
 small core pairs whose first missing value is 1, 2 or 3. These are additional
 implementation checks, not the proof of the displayed general inequalities.
+
+## Reusing consequences across branches
+
+`record_consequences.py` reuses a previously proved linear fact without
+repeating its search. The source and target must have exactly the same
+physical pattern, sign regime and size parameter. Every source restriction
+must be present in the target with a contained parameter interval; a fact
+proved under an extra branch assumption cannot be imported into its parent.
+The source record is checked exactly before any selected fact is admitted.
+A fixed-loss credit can also be imported, up to the source's verified credit.
+
+The variables being joined here are the canonical cardinalities, clipping
+losses and integer truncation minima of the same actual configuration. They
+are not independently chosen existential witnesses. A later branch may thus
+combine its earlier conditional facts with newer facts proved for the whole
+root. Saved records form an acyclic dependency graph: new branch proofs may
+refer to an earlier global proof which in turn refers to the old branch
+proofs, but never to the new proof itself.
+
+Equal translates of the same `qE` may also be deduplicated inside a window.
+Two opposite exact endpoint comparisons certify equality of their centres.
+Both components must have the same residual core power. This retains the
+65-point charge for identical `E` translates; mere hull containment would
+instead require the full hull charge. New focused controls cover 192 actual
+equal translates and three invalid recipes.
+
+After window cuts, applying the original source and fixed-loss propagation
+again produced additional unrestricted root contradictions `(5,256,0)`,
+`(5,266,0)` and `(5,268,0)`. Their exact replays have respectively 92, 71
+and 33 final-record steps, with fixed-loss credits 78, 56 and 52. This brings
+the current total to **4,650 closed original roots and four open roots**.
+These are new, strengthened systems; the old completed searches were not
+restarted.
+
+## Complete double-source union and mixed-power overlaps
+
+Write `D=E∪{T_0,...,T_7}`. The complete double sum is the union of `2E`,
+the eight sets `E+T_i`, and the 36 unordered tail-pair types. The positive
+tail translates form a chain rooted at `E+R_s⊂2E`, with successive gaps
+`a_s,b_s−a_s,c_s−b_s,e_s−c_s`; the negative side has the reflected chain
+rooted at `E−R_t⊂2E`. Any selection of these eight edges is acyclic and
+saves at least `F−gap` per edge. Start with either the hull capacity of
+`2E` or its mass capacity `129+tau_s+tau_t`, then add `8*65+36` and subtract
+the selected rebates.
+
+The excess-mass prefix lemma gives `[−L_t,L_s]⊂E`, where `L_v=r_v−tau_v`.
+The assertion remains valid when this interval is empty or lies entirely
+on one side of zero. A tail-pair point `p` adds no cost if `p−u` is in this
+interval, for an actual point `u∈{0,R_s,−R_t,T_0,...,T_7}`. It also adds no
+cost if `p∈[−2L_t,2L_s]⊂2E`. Two exact affine comparisons license each
+membership; each of the 36 index pairs can be rebated only once. The rule
+in `source_union.py` checked 400 actual 73-point sources, with 800 capacity
+checks (180 sharp) and five malformed-inventory negative controls. The
+first unrestricted discovery attempt produced no new cut in the four
+remaining roots; that outcome is retained, not counted as a closure.
+
+For `1≤p<q≤4`, choose `c=iR_s−jR_t` with nonnegative integers `i+j≤q−p`.
+Then `c+pE⊂qE`, since every anchor summand is an actual core point (and
+unused summands are zero). Therefore
+
+`|(a+pE)∩(b+qE)| ≥ pF−p+1−|b+c−a|`.
+
+The saved orientation has an exact nonnegative-distance certificate. These
+edges share one forest with the same-power edges, so cycles cannot double
+subtract an intersection. Clipped components are excluded. The new controls
+check 1,280 actual mixed-power intersections and four invalid recipes.
+
+Nested certificate replay now restores the caller's endpoint-plane table,
+feature flags and geometry, including on exceptions. This fixes a newly
+encountered failure when an imported root record was followed by a stronger
+conditional endpoint-credit update. Cache identities also preserve dictionary
+insertion order, because branch-row order affects certificate indices. A
+focused regression rejects a reordered cached record and checks restoration
+on both successful and failed replay. Existing closed searches were not
+restarted for this repair.
+
+## First-gap shape strengthens every core power capacity
+
+The four physical first-gap alternatives can now be retained as an explicit
+branch label, rather than only as their necessary linear compression rows.
+The complete four-case partition verifies this label; unrestricted records
+cannot use its additional geometry. Facts and contradictions from an older
+containing domain are reused with the same domain-containment checks.
+
+Let `b_v` be the mandatory extra mass of the smallest `r_v−2` core elements.
+For the first-gap shape `(h,t_v)`, it equals `h(r_v−2)` if `t_v=0`, and
+`(h−1)(r_v−3)` if `t_v=1`. Removing the largest two elements leaves mass at
+least `T_(r_v−2)+b_v`. Thus the predecessor of `R_v` is at most
+`r_v−1+tau_v−xi_v−b_v`, and the gap below `qR_v` in every `qE`, `q≥2`,
+has at least `max(0,2xi_v−tau_v+b_v)` positions. Consequently
+
+`|qE| ≤ q(R_s+R_t)+1−2(xi_s+xi_t)+tau_s+tau_t−b_s−b_t`.
+
+The two end strips are disjoint, as in the original core-capacity proof.
+For `q=2`, the four bounds are respectively `69+tau`, `40+tau−k`,
+`40+tau+k`, and `13+tau`. In particular the first-gap-1 branch improves
+the former mass capacity by 60. Focused controls check 1,200 actual core
+power sumsets, with 300 sharp cases, and reject all four unlicensed shapes.
+When `W=1` is fixed, the actual first-gap label also locates the sole end
+hole directly, allowing the complete interior margin `h+1`.
+
+The combined first-gap partition subsequently passed exact replay with cases
+1, 2 and 3 closed, and only case 0 open. This is a statement about the entire
+`W=1` slice, not an additional original-root closure. The surviving physical
+shape and its already verified linear facts can be inherited: any actual
+configuration in the parent must belong to that sole surviving alternative.
+Its interior margin is now 2. The pooled checkpoint records that inference
+explicitly and keeps the remaining case open.
+
+For a physical first-gap shape, shifting the unprescribed remainder down by
+`h` gives a guaranteed core interval `[h+1,h+L_v]`, where
+`L_v=r_v−t_v−tau_v+b_v^{full}` and `b_v^{full}` is the baseline excess of
+the whole rank-`r_v` core. The reflected negative interval is also contained
+in `E`. If both `L_v≥2h+2`, their three pair-sum intervals join, showing
+`[−2h−2L_t,2h+2L_s]⊂2E`. These optional source-pair membership witnesses
+have explicit interval and joining guards; no unproved density assumption
+is used.
+
+## Upper mass from the canonical truncation minimum
+
+For `X={x_1<...<x_r}`, the truncation parameter is the actual minimum
+`phi=min(r,min_i(x_i+r−2i))`. If `phi<r`, choose a minimizing index `r−q`.
+Then `0≤q≤phi`, the first `r−q` deviations are at most `phi−q`, and the
+last `q` deviations are at most `xi`. Therefore
+
+`tau ≤ (r−q)(phi−q)+q*xi ≤ phi*max(r,xi)`.
+
+The second inequality maximizes a convex quadratic over `0≤q≤phi` at an
+endpoint. If `phi=r`, the same conclusion follows from `tau≤r*xi`.
+Whenever exact guards prove `r≤H` and `xi≤H`, the linear consequence
+`tau≤H*phi` is thus valid. In particular a zero canonical defect cannot
+coexist with positive excess mass. The new controls check 12,910 actual
+cores, including 3,431 sentinel-minimum cases and 175 sharp instances.
+
+Additional conditional progress does not alter the four-open-root count:
+the saved 12-alternative partition of `(5,413,0)` now has new exact
+contradictions for alternatives 2 and 8, leaving only alternative 3.
+Their new final records have respectively 37 and 785 steps. The first-gap
+alternative 1 of the positive root also closed in a new 20-step record.
+The three-target enumeration for `(5,219,0)` is complete at depth 3:
+1,891 nodes, 421 closed leaves and 1,343 open leaves. Its open leaves are
+retained; that completed depth must not be restarted.

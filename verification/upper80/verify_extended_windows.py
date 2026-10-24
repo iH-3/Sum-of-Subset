@@ -17,7 +17,7 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def verify(reuse_new_receipts=False,replay_prior_ranks=False):
     raw=json.loads(gzip.decompress(PATH.read_bytes()));packet=pool.unpack(raw)
     m.need(packet['format']=='upper80-extended-windows-v1' and packet['global_upper_bound_certified'] is False and packet['structural_applicability_certified'] is False,'Conditional window packet scope')
-    expected=[(6,436,False,0),(6,436,False,1),(5,270,False,None)]
+    expected=[(6,436,False,0),(6,436,False,1),(5,270,False,None),(5,256,False,None),(5,266,False,None),(5,268,False,None)]
     m.need([(e['j'],e['index'],e['positive'],e['rank']) for e in packet['entries']]==expected,'Exact new closure inventory')
     checks=[]
     for entry in packet['entries']:
@@ -41,8 +41,8 @@ def verify(reuse_new_receipts=False,replay_prior_ranks=False):
         import verify_refinements
         verify_refinements.verify()
     return dict(status='PASS_INCREMENTAL_EXTENDED_WINDOWS',global_upper_bound_certified=False,structural_applicability_certified=False,
-                established_range=[71,81],newly_closed_original_roots=[[5,270,False],[6,436,False]],
-                closed_original_roots=4647,open_original_roots=7,records=checks,
+                established_range=[71,81],newly_closed_original_roots=[[5,256,False],[5,266,False],[5,268,False],[5,270,False],[6,436,False]],
+                closed_original_roots=4650,open_original_roots=4,records=checks,
                 new_record_replays=0 if reuse_new_receipts else len(checks),reused_new_replays=len(checks) if reuse_new_receipts else 0,
                 reused_prior_ranks=list(range(2,8)),prior_ranks_replayed=replay_prior_ranks,
                 pooled_records=len(raw['records']),packet_sha256=sha(PATH))

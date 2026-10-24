@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_POSITIVE_FIRST_GAP_CASE", "case": 1, "closed": true, "replay": {"steps": 20, "credit": 46}, "record_sha256": "a5ff8f70776abb58b22a0bc1bf7a50b287ebdb15f590f95e93997aa78c6cef0f", "seconds": 27.72114088699891, "global_upper_bound_certified": false}

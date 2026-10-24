@@ -493,14 +493,37 @@ def inherited(record):
 
 
 def replay(record,require_closed=True,return_state=False):
+    # A nested branch/import must not replace its caller's endpoint planes
+    # or geometry. In particular an ensuing endpoint_credit uses THIS
+    # record's saved planes, not those of the most recently replayed child.
+    import parametric as p
+    names=('USE_PLANES','PLANE_GENERATOR','PLANE_TABLE','USED_PLANES',
+           'SOURCE_TAIL_RANKS','SHARP_PLANES','SIDE_PLANES','TRIM_SOURCE',
+           'POINT_OVERLAP','FULL_EDGES')
+    saved={name:getattr(p,name) for name in names}
+    geometry=dict(p.build.__dict__);model_geometry=dict(m.build.__dict__)
+    p.USED_PLANES=set()
+    try:return _replay(record,require_closed,return_state)
+    finally:
+        for name,value in saved.items():setattr(p,name,value)
+        p.build.__dict__.clear();p.build.__dict__.update(geometry)
+        m.build.__dict__.clear();m.build.__dict__.update(model_geometry)
+
+
+def _replay(record,require_closed=True,return_state=False):
     import parametric as p
     cache_key=None
     if not require_closed and return_state:
         import hashlib
-        cache_key=hashlib.sha256(json.dumps(record,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+        # Base row indices depend on dictionary insertion order (notably
+        # limits). Reordered records must never share a verification cache.
+        cache_key=hashlib.sha256(json.dumps(record,separators=(',',':')).encode()).hexdigest()
         if cache_key in PREMISE_CACHE:
             PREMISE_CACHE.move_to_end(cache_key);return PREMISE_CACHE[cache_key]
     prior=inherited(record)
+    import first_gap_core
+    core_shape=first_gap_core.shape_case(record)
+    if core_shape is None and prior:core_shape=prior.get('core_shape')
     p.USE_PLANES='planes' in record;p.PLANE_GENERATOR=None;p.PLANE_TABLE=record.get('planes',{})
     p.SOURCE_TAIL_RANKS=record.get('source_tail_ranks',False)
     p.SHARP_PLANES=record.get('sharp_planes',False)
@@ -571,6 +594,13 @@ def replay(record,require_closed=True,return_state=False):
             coverage_width=hi+1
             coverage_bracket_width=hi+1
             for state in coverage_probes.values():state['forced']=False
+        elif kind=='first_gap_shape_interior':
+            import first_gap_core
+            case=core_shape
+            m.need(case is not None and (record.get('limits') or {}).get('hole_W')==[1,1],'Actual first-gap shape with exactly one target hole')
+            h=first_gap_core.CASES[case][0]
+            m.need(coverage_width>1 or h+2<coverage_bracket_width,'Strict shape-based interior improvement')
+            coverage_probes={};coverage_width=1;coverage_bracket_width=h+2
         elif kind=='single_hole_interior':
             import single_hole
             m.need(positive and j>=3 and 3 not in st.values() and (coverage_width>1 or step['H']+2<coverage_bracket_width),'Single-hole main domain or strict interior improvement')
@@ -704,11 +734,34 @@ def replay(record,require_closed=True,return_state=False):
             pc={int(i):v for i,v in step.get('point_edges',{}).items()}
             m.need(all(edge_point_count(edges[i],point_hits.get(i,set()),point_groups.get(i,{}),extended_hits.get(i,{}),leading_hits.get(i,set()),leading_extended.get(i,{}))>=v for i,v in pc.items()),'Unproved point overlap')
             rows.append(forest(edges,ret,step['edges'],step['roots'],e,cc,pc))
+        elif kind=='record_consequences':
+            import record_consequences
+            imported=record_consequences.derive(step,record);rows.extend(imported);facts.extend(imported)
+            if 'credit' in step:
+                m.need(step['credit']>e,'Strict imported fixed-credit improvement')
+                e=step['credit'];rows.extend(credit_rows(ret,e))
+        elif kind=='domain_contradiction':
+            import record_consequences
+            source=step['record'];m.need(all(source.get(k)==record.get(k) for k in ('st','j','positive')),'Contradiction in the same physical pattern')
+            record_consequences.domain_contains(source,record)
+            replay(source,require_closed=True);closed=True
         elif kind=='first_gap_core_partition':
             import first_gap_core
             m.need(j>=3 and 3 not in st.values(),'Integer first-gap partition scope')
             prefix=dict(record,trace=record['trace'][:index])
             closed=first_gap_core.check(step,record,prefix,rows,eqs,positive)
+            if not closed and step.get('inherit_remaining',False):
+                survivors=[c for c in step['children'] if not c['closed']]
+                m.need(len(survivors)==1,'Exactly one surviving physical first-gap case')
+                child=survivors[0];state=replay(child['record'],require_closed=False,return_state=True)
+                core_shape=child['case'];extra=first_gap_core.rows(core_shape)+state['facts'];rows.extend(extra);facts.extend(extra)
+                if state['credit']>e:e=state['credit'];rows.extend(credit_rows(ret,e))
+            if not closed and 'credit' in step:
+                minimum=step['credit'];m.need(type(minimum) is int and minimum>e,'Strict common first-gap credit improvement')
+                e=minimum;rows.extend(credit_rows(ret,e))
+            if not closed and 'hole_upper' in step:
+                bound=step['hole_upper'];m.need(type(bound) is int and 1<=bound<=3,'First-gap interior bound')
+                coverage_width=1;coverage_bracket_width=bound+2;coverage_probes={}
         elif kind=='full_cover_partition_credit':
             import cover_partition
             m.need(j>=3 and 3 not in st.values(),'Integer target credit partition scope')
@@ -728,10 +781,24 @@ def replay(record,require_closed=True,return_state=False):
             import cg_cut
             m.need(j>=3 and 3 not in st.values(),'Integer CG domain')
             fact=cg_cut.derive(step['proof'],rows,eqs);rows.append(fact);facts.append(fact)
+        elif kind=='canonical_phi_mass':
+            import canonical_phi
+            m.need(j>=3 and 3 not in st.values(),'Canonical integer core minimum scope')
+            fact,guards=canonical_phi.derive(step['side'],step['cap'])
+            m.need(len(step['certificates'])==2,'Canonical core mass cap licenses')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
+        elif kind=='source_union_capacity':
+            import source_union,first_gap_core
+            m.need(j>=3 and 3 not in st.values(),'Integer source-union capacity scope')
+            body,guards=source_union.derive(step['proof'],core_shape)
+            m.need(len(step['certificates'])==len(guards),'Every source membership guard certified')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            fact=(body,0,'complete double-source union capacity');rows.append(fact);facts.append(fact)
         elif kind=='full_window_capacity':
-            import full_window
+            import full_window,first_gap_core
             m.need(j>=3 and 3 not in st.values(),'Integer full-window capacity scope')
-            body,guards=full_window.derive(step['proof'],positive,coverage_width,coverage_bracket_width)
+            body,guards=full_window.derive(step['proof'],positive,coverage_width,coverage_bracket_width,core_shape)
             m.need(len(step['certificates'])==len(guards),'Every full-window guard certified')
             for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
             fact=(body,0,'complete four-sum window capacity');rows.append(fact);facts.append(fact)
@@ -1002,6 +1069,7 @@ def replay(record,require_closed=True,return_state=False):
                    point_hits=[(*edges[i],sorted(tags)) for i,tags in point_hits.items()],
                    point_groups=[(*edges[i],[(tags,count) for tags,count in groups.items()]) for i,groups in point_groups.items()],trim_pairs=sorted(trim_pairs),sumset_excluded={key:sorted(pairs) for key,pairs in sumset_excluded.items()},sumset_equalities=sumset_equalities,leading_hits=[(*edges[i],sorted(tags)) for i,tags in leading_hits.items()],leading_extended=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in leading_extended.items()],extended_hits=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in extended_hits.items()])
         state['coverage_width']=coverage_width
+        state['core_shape']=core_shape
         state['coverage_bracket_width']=coverage_bracket_width
         state['full_probes']=full_cover.export_probes(full_probes)
         if cache_key is not None:

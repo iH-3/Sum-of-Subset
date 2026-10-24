@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_FIRST_GAP_COMMON_CREDIT", "closed": false, "closed_cases": 1, "total_cases": 4, "replay": {"steps": 5, "credit": 43}, "seconds": 11.72401190099481, "global_upper_bound_certified": false}

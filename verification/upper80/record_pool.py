@@ -10,15 +10,17 @@ import model as m
 def canonical(value):return json.dumps(value,separators=(',',':')).encode()
 
 def pack(value):
-    pool={}
+    pool={};identities={}
     def visit(item):
         if isinstance(item,list):return [visit(v) for v in item]
         if not isinstance(item,dict):return item
+        is_record={'st','j','positive','trace'}<=set(item)
+        if is_record and id(item) in identities:return {'$record':identities[id(item)]}
         body={k:visit(v) for k,v in item.items()}
-        if {'st','j','positive','trace'}<=set(item):
+        if is_record:
             key=hashlib.sha256(canonical(body)).hexdigest()
             if key in pool:m.need(pool[key]==body,'Record digest collision')
-            pool[key]=body;return {'$record':key}
+            pool[key]=body;identities[id(item)]=key;return {'$record':key}
         m.need(set(body)!={'$record'},'Reserved record reference marker')
         return body
     payload=visit(value)
@@ -40,3 +42,13 @@ def unpack(packet):
             memo[key]=value;return value
         return {k:visit(v) for k,v in item.items()}
     value=visit(packet['payload']);m.need(set(memo)==set(pool),'Every pooled record referenced');return value
+
+def read_gzip(path):
+    import gzip
+    value=json.loads(gzip.decompress(path.read_bytes()))
+    return unpack(value) if value.get('schema')=='upper80-nested-record-pool-v1' else value
+
+def write_gzip(path,value):
+    import gzip
+    packet=pack(value);temp=path.with_suffix('.tmp')
+    temp.write_bytes(gzip.compress(canonical(packet),mtime=0));temp.replace(path)

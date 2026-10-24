@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CONDITIONAL_413_WINDOW_CLOSURE", "case": 2, "closed": true, "replay": {"steps": 37, "credit": 55}, "record_sha256": "7f076cb1a1eebbe824938f5d116182cddd7f01d51ce758703b7bbd866757336c", "seconds": 19.382627611994394, "global_upper_bound_certified": false}

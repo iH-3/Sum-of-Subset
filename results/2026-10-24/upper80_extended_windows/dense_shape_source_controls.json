@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_DENSE_SHAPE_SOURCE_MEMBERSHIPS", "actual_core_pairs": 120, "memberships": {"shape_double": 1558, "shape_s": 1300, "shape_t": 2811}, "global_upper_bound_certified": false}

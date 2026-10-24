@@ -10,6 +10,22 @@ import single_hole
 ONE={'ONE':1}
 CASES=((1,0,0),(2,1,0),(2,0,1),(3,1,1))
 
+def shape_case(record):
+    value=(record.get('limits') or {}).get('core_first_gap')
+    if value is None:return None
+    m.need(record['positive'] and record['j']==4 and isinstance(value,(list,tuple)) and len(value)==2 and type(value[0]) is int and value[0]==value[1] and 0<=value[0]<4,'Physical first-gap core geometry')
+    return value[0]
+
+def removed_prefix_mass(case):
+    """Extra mandatory mass among the smallest r-2 points of both cores."""
+    m.need(type(case) is int and 0<=case<4,'First-gap shape capacity case')
+    h,ps,pt=CASES[case];body={}
+    for prefix,sign in [(ps,-1),(pt,1)]:
+        weight=h-prefix
+        # t=0: h*(r-2); t=1: (h-1)*(r-3).
+        body=m.add((1,body),(weight,{'ONE':30-prefix,'rank_k':sign}))
+    return body
+
 def rows(case):
     m.need(type(case) is int and 0<=case<len(CASES),'Complete first-gap core case')
     h,ps,pt=CASES[case];answer=[]
@@ -32,15 +48,28 @@ def guards(case):
 def check(step,record,prefix,rows_now,eqs,positive):
     import exact,cover_partition as cp
     m.need(positive,'First-gap core partition is positive-hole only')
-    licenses=single_hole.guards(3)
-    m.need(len(step['certificates'])==len(licenses),'First-gap location licenses')
-    for guard,cert in zip(licenses,step['certificates']):exact.check(cert,rows_now,eqs,guard,strict=False)
+    if step.get('reuse_location',False):
+        cursor=prefix;found=False
+        while isinstance(cursor,dict):
+            if any(s['kind']=='first_gap_core_partition' for s in cursor['trace']):found=True;break
+            cursor=cursor.get('premise')
+        m.need(found and not step.get('certificates'),'First-gap location is already verified in this premise chain')
+    else:
+        licenses=single_hole.guards(3)
+        m.need(len(step['certificates'])==len(licenses),'First-gap location licenses')
+        for guard,cert in zip(licenses,step['certificates']):exact.check(cert,rows_now,eqs,guard,strict=False)
     children=step['children'];m.need([c['case'] for c in children]==list(range(4)),'Every first-gap core alternative')
     for child in children:
         m.need(type(child['closed']) is bool,'First-gap child closure')
-        expected=cp.branch_limits(record.get('limits'),guards(child['case']));cursor=child['record']
+        expected=cp.branch_limits(record.get('limits'),guards(child['case']))
+        if step.get('geometry',False):expected['core_first_gap']=[child['case'],child['case']]
+        cursor=child['record']
         while cursor!=prefix:
             m.need(isinstance(cursor,dict) and cursor.get('limits')==expected and 'premise' in cursor,'Exact first-gap conditional assumptions')
             cursor=cursor['premise']
-        exact.replay(child['record'],require_closed=child['closed'])
+        if child['closed']:exact.replay(child['record'],require_closed=True)
+        else:
+            state=exact.replay(child['record'],require_closed=False,return_state=True)
+            if 'credit' in step:m.need(state['credit']>=step['credit'],'Common first-gap credit in every open case')
+            if 'hole_upper' in step:m.need(CASES[child['case']][0]<=step['hole_upper'],'Every surviving first gap lies in the claimed strip')
     return all(c['closed'] for c in children)

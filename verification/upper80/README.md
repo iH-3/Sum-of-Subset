@@ -1,6 +1,6 @@
 # 向上界 80 的研究：全局仍为 71≤N≤81
 
-Latest 2026-10-24 continuation: two more original roots closed; **4,647/4,654 closed, seven open**. See `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
+Latest 2026-10-24 continuation: five more original roots closed; **4,650/4,654 closed, four open**. See `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
 
 本目录同时保存已完成的辅助定理验证和未完成的研究原型。**它不是上界 80 的完整验证包。**
 
@@ -100,3 +100,27 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/resume_sear
 ```
 
 v2 存档保留模式键的顺序，因为证书按确定的行号引用不等式；恢复后的闭合节点会重新重放。旧 v1 存档不再接受，需要从原缓存重新导出。恢复只需标准库，继续发现需要 NumPy/SciPy。成功的终端仍须整数证书重放；完整返回的分支树还会核验互补域覆盖。
+
+
+### Resume the remaining research without restarting finished work
+
+`data/upper80_open_frontier_20261024.json.gz` stores the strongest retained
+open checkpoints, exact closed conditional branches, and both finished joint
+partition trees in an order-preserving record pool. Its ledger lists work
+that must not be restarted. This is a research snapshot, not a global proof.
+
+```sh
+python verification/upper80/restore_frontier.py /path/to/resumed-work
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/continue_frontier.py SOURCE.json.gz OUTPUT.json.gz --method windows
+```
+
+The continuation accepts both raw and pooled files. Available methods are
+`windows`, `integer_windows`, `native`, `source`, `canonical`, and `coverage`.
+Use a new method only where the ledger and stronger premises justify it.
+Finished identical method checkpoints are skipped; MIP output is discovery
+only and can never certify a contradiction.
+
+`continuation_20261024/joint_resume.py SOURCE.json.gz DEPTH NODE_BUDGET`
+resumes the sibling `SOURCE_joint_resume.json.gz` tree, keeping every closed
+leaf and already tested node. Requests at a completed depth return immediately.
+The two completed depths are 3 for `(5,219,0)` and 4 for `(5,413,0)`.

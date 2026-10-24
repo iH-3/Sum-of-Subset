@@ -16,10 +16,10 @@ branch tree, even though 46 of its local checkpoints are closed.
 
 `full_window.py` now certifies arbitrary affine complete windows, including
 propagation through each of the eight unused outer points. This closed the
-entire `k=0` and `k=1` slices of `(6,436,0)`, and the unrestricted root
-`(5,270,0)`. Together with previously checked `k=2..7`, and the source budget
-`k^2<=58`, the six-empty-cell root is now closed. Current total: 4,647 closed
-original roots and seven open roots. `verify_extended_windows.py` and
+entire `k=0` and `k=1` slices of `(6,436,0)`, and the unrestricted roots
+`(5,256,0)`, `(5,266,0)`, `(5,268,0)` and `(5,270,0)`. Together with previously checked `k=2..7`, and the source budget
+`k^2<=58`, the six-empty-cell root is now closed. Current total: 4,650 closed
+original roots and four open roots. `verify_extended_windows.py` and
 `data/upper80_extended_windows_20261024.json.gz` preserve the new exact records
 and immutable identities of the reused rank packet. The general argument is
 in `reports/upper80_extended_windows_20261024.md`. No global 80 claim is made.
@@ -28,6 +28,32 @@ Do not rerun the earlier closed slices, baseline suites or completed target
 enumerations. `window_search.py` records method and premise digests, retains
 proved cuts on continuation and skips finished checkpoints. Additional target
 partitions and first-gap core cases are still partial research work.
+
+Continuation after that packet: `(5,413,0)` has exactly one remaining
+alternative (index 3) in its 12-case complete target partition. New cases 2
+and 8 passed exact replay (37 steps/credit55 and 785 steps/credit54).
+The positive first-gap case 1 passed a new 20-step replay at credit46;
+case 3 was already closed. The new physical first-gap capacity gives
+`|2E|<=69+tau,40+tau-k,40+tau+k,13+tau` in cases 0,1,2,3 respectively.
+Its geometry label must be licensed by the complete first-gap partition.
+The combined physical first-gap partition passed exact replay: cases 1, 2,
+and 3 are closed, and only case 0 remains. Its shape and verified facts are
+inherited over the entire W=1 slice, with complete-interior margin2. This
+still does not close the positive original root.
+
+The `(5,219,0)` joint target tree finished depth3 with 1,891 nodes, 421
+closed leaves and 1,343 open leaves, and passed exact partial-tree replay.
+The `(5,413,0)` earlier depth4 tree finished with 1,269 nodes, 881 closed
+and 272 open leaves. Do not restart either completed depth. A later complete
+root contradiction may supersede them. The unrestricted new source-union
+attempt made no cut in any of the four remaining roots; do not repeat it
+without a stronger domain. Current remaining zero-root credits are 39 for
+`(4,142,0)`, 47 for `(5,219,0)`, and 53 in the last `(5,413,0)` branch.
+
+`continue_frontier.py` supports pooled checkpoints and skips finished
+same-method work. Nested exact replay restores endpoint/geometry state;
+its cache identity now preserves the insertion order that determines row
+indices. These repairs do not require repeating old discovery searches.
 
 ## Verified foundation improvements
 

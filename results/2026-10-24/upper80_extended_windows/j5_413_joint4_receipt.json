@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_RESUMED_JOINT_PARTITION", "counts": [1269, 881, 272, 0], "closed": false, "replay": {"steps": 6, "credit": 53}, "seconds": 17.492179248001776, "global_upper_bound_certified": false}

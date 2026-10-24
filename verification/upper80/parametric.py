@@ -60,6 +60,9 @@ def interpolate(samples, positive):
 
 
 def build(st,j,positive=False,e=0,limits=None,forest_masks=None):
+    if 'core_first_gap' in (limits or {}):
+        import first_gap_core
+        first_gap_core.shape_case(dict(j=j,positive=positive,limits=limits))
     m.DISABLE_PLANES=True;m.free_planes.cache_clear();m.fixed_planes2.cache_clear()
     w0=2 if positive else 0
     samples=[m.build(st,j,r,None,e,limits,w=w,forest_masks=forest_masks)

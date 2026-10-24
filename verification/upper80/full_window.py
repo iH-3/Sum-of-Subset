@@ -8,7 +8,21 @@ import full_cover as fc
 from modular import INTEGER_NAMES
 ONE={'ONE':1}
 
-def core_capacity(power):
+def core_power(node):
+    m.need(node[1]>=0,'Refined core translate')
+    return 4-len(fc.roots()[node[0]])-len(fc.children(node[0])[node[1]])
+
+def mixed_gap(a,b,anchor,direction):
+    p,q=core_power(a),core_power(b)
+    m.need(1<=p<q<=4,'Increasing mixed core powers')
+    m.need(len(anchor)==2 and all(type(i) is int and i>=0 for i in anchor) and sum(anchor)<=q-p,'Anchor is an actual (q-p)-core sum')
+    m.need(type(direction) is int and direction in (-1,1),'Mixed overlap orientation')
+    # A lower hull endpoint equals its centre minus power*R_t.
+    gap=m.add((1,fc.interval(*b)[0]),(-1,fc.interval(*a)[0]),
+              (q-p-anchor[1],{'Rt':1}),(anchor[0],{'Rs':1}))
+    return m.add((direction,gap))
+
+def core_capacity(power,first_gap_case=None):
     """Hull capacity minus the two gaps next to the extreme core sums.
 
     The predecessor of R_v is at most r_v-1+tau_v-xi_v.  Hence every
@@ -16,7 +30,11 @@ def core_capacity(power):
     The two end gaps are disjoint (the core contains zero).
     """
     m.need(type(power) is int and 2<=power<=4,'Core power for mass capacity')
-    return m.add((power,{'Rs':1,'Rt':1}),(1,ONE),(-2,{'xs':1,'xt':1}),(1,{'ts':1,'tt':1}))
+    result=m.add((power,{'Rs':1,'Rt':1}),(1,ONE),(-2,{'xs':1,'xt':1}),(1,{'ts':1,'tt':1}))
+    if first_gap_case is not None:
+        from first_gap_core import removed_prefix_mass
+        result=m.add((1,result),(-1,removed_prefix_mass(first_gap_case)))
+    return result
 
 def parameters(positive,coverage_width,bracket_width):
     return (bracket_width-1,{}) if positive and coverage_width==1 else (0,{'hole_W':2} if positive else {})
@@ -48,7 +66,9 @@ def exclusion(lower,upper,node,direction):
     lo,hi=fc.interval(*node)
     return m.add((1,hi),(1,ONE),(-1,lower)) if direction==0 else m.add((1,upper),(1,ONE),(-1,lo))
 
-def derive(proof,positive,coverage_width,bracket_width):
+def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
+    shape=proof.get('core_shape')
+    m.need(shape is None or type(shape) is int and shape==first_gap_case,'Licensed physical first-gap shape for core capacity')
     exact_one=proof.get('exact_one_term',False);m.need(type(exact_one) is bool,'Window exact-cardinality flag')
     mass_core=proof.get('mass_core',[]);m.need(len(set(map(tuple,mass_core)))==len(mass_core),'Unique core mass capacities')
     mass_core=set(map(tuple,mass_core))
@@ -82,7 +102,7 @@ def derive(proof,positive,coverage_width,bracket_width):
             body=m.add((1,body),(-1,b),(1,a),(-1,ONE))
         elif node in mass_core:
             m.need(node[1]>=0 and node not in hull_charged,'Refined, unabsorbed core mass capacity')
-            body=m.add((1,body),(-1,core_capacity(remaining)))
+            body=m.add((1,body),(-1,core_capacity(remaining,shape)))
         elif exact_one and remaining==1 and node not in hull_charged:
             # A translate of D has 73 points; a translate of E has 65.
             body=m.add((1,body),(-(73 if node[1]==-1 else 65),ONE))
@@ -91,6 +111,16 @@ def derive(proof,positive,coverage_width,bracket_width):
         else:body=m.add((1,body),(-1,hi),(1,lo),(-1,ONE))
     retained={tuple(n) for n in proof['inside']}
     m.need(mass_core<=retained and set(clipped)<=retained,'Capacity selections belong to retained components')
+    for group in proof.get('equal_core',[]):
+        by=tuple(group['by']);m.need(by in retained and by[1]>=0 and group['nodes'],'Retained equal-core representative')
+        power=4-len(fc.roots()[by[0]])-len(fc.children(by[0])[by[1]])
+        m.need(power>=1,'Nonsingleton equal-core power')
+        for child in group['nodes']:
+            node=tuple(child);m.need(node in inventory and node not in seen and node[1]>=0,'Equal-core component inventory');seen.add(node)
+            other_power=4-len(fc.roots()[node[0]])-len(fc.children(node[0])[node[1]])
+            m.need(other_power==power,'Identical core-sum powers')
+            gap=m.add((1,fc.interval(*node)[0]),(-1,fc.interval(*by)[0]))
+            guards.extend([gap,{k:-v for k,v in gap.items()}])
     for group in groups:
         by=tuple(group['by']);m.need(by in retained and by[1]>=0 and group['nodes'],'Retained absorbing interval hull')
         m.need(4-len(fc.roots()[by[0]])-len(fc.children(by[0])[by[1]])>=1,'Nonsingleton absorbing interval')
@@ -114,9 +144,17 @@ def derive(proof,positive,coverage_width,bracket_width):
         aa,bb=find(a),find(b);m.need(aa!=bb,'Acyclic core-union overlap');parent[aa]=bb
         gap=m.add((1,fc.interval(*b)[0]),(-1,fc.interval(*a)[0]));guards.append({k:-v for k,v in gap.items()})
         body=m.add((1,body),(power,{'F':1}),(1-power,ONE),(-1,gap))
+    for edge in proof.get('mixed_core_edges',[]):
+        a,b=tuple(edge['small']),tuple(edge['large'])
+        m.need(exact_one and a in parent and b in parent and a!=b,'Retained mixed core-union vertices')
+        m.need(a not in clipped and b not in clipped,'Full sets for mixed overlap subtraction')
+        gap=mixed_gap(a,b,edge['anchor'],edge['direction']);power=core_power(a)
+        aa,bb=find(a),find(b);m.need(aa!=bb,'Acyclic joint same/mixed core forest');parent[aa]=bb
+        guards.append(m.add((-1,gap)))
+        body=m.add((1,body),(power,{'F':1}),(1-power,ONE),(-1,gap))
     return body,guards
 
-def candidates(point,positive,coverage_width,bracket_width,affine_only=False):
+def candidates(point,positive,coverage_width,bracket_width,affine_only=False,internal_only=False):
     import math,bisect
     ev=lambda row:sum(c*point[k] for k,c in row.items())
     margin,holes=parameters(positive,coverage_width,bracket_width);missing=ev(holes)
@@ -130,7 +168,7 @@ def candidates(point,positive,coverage_width,bracket_width,affine_only=False):
         if lo>end+1+1e-7:
             gaps.append((end+1,lo-1));affine_gaps.append((end+1,lo-1,endnode,node))
         if hi>end:end=hi;endnode=node
-    affine=[]
+    affine=[];internal=[]
     if not positive or coverage_width==1:
         order=sorted(range(8),key=lambda i:abs(ev(fc.outer()[i])))
         low=m.add((-1,{'St':1}),(margin,ONE));high=m.add((1,{'Ss':1}),(-margin,ONE))
@@ -147,8 +185,22 @@ def candidates(point,positive,coverage_width,bracket_width,affine_only=False):
                 count=bisect.bisect_right(singletons,b+1e-7)-bisect.bisect_left(singletons,a-1e-7)
                 if b-a+1-count<=1e-7:continue
                 affine.append((b-a+1-count,dict(mask=0,lower=lower,upper=upper,outer_extension=order,exact_one_term=True,refined=[],outside=[],inside=[])))
+            # A lone translate of E can have holes inside its own hull.
+            # Looking only between hulls misses this cardinality deficit.
+            groups={}
+            for a,b,node in intervals:
+                groups.setdefault((round(a,6),round(b,6)),[]).append(node)
+            for (a,b),nodes in groups.items():
+                if not all(n[1]>=0 and 4-len(fc.roots()[n[0]])-len(fc.children(n[0])[n[1]])==1 for n in nodes):continue
+                if a<ev(low)-1e-7 or b>ev(high)+1e-7:continue
+                if any((round(c,6),round(d,6))!=(a,b) and c<=b+1e-7 and d>=a-1e-7 for c,d,n in intervals):continue
+                count=bisect.bisect_right(singletons,b+1e-7)-bisect.bisect_left(singletons,a-1e-7)
+                if b-a+1-65-count<=1e-7:continue
+                lower,upper=fc.interval(*nodes[0]);internal.append((b-a+1-65-count,dict(mask=0,lower=lower,upper=upper,outer_extension=order,exact_one_term=True,refined=[],outside=[],inside=[])))
     affine=sorted(affine,key=lambda q:-q[0])[:3]
-    if affine_only:return affine
+    internal=sorted(internal,key=lambda q:-q[0])[:3]
+    if internal_only:return internal
+    if affine_only:return internal+affine
     result=[];used=set()
     for mask in range(256):
         base=ev(fc.shift(mask))-point['St']
@@ -176,11 +228,15 @@ def candidates(point,positive,coverage_width,bracket_width,affine_only=False):
     # One broad source window adds genuinely different coverage constraints;
     # the three short gap windows retain the inexpensive targeted search.
     if broad:chosen.append(max(broad,key=lambda q:q[0]))
-    return affine+chosen
+    return internal+affine+chosen
 
 def discover(search,point):
+    from first_gap_core import shape_case
+    shape=getattr(search,'core_shape',None)
+    if shape is None:shape=shape_case(dict(j=search.j,positive=search.positive,limits=search.limits))
     ev=lambda row:sum(c*point[k] for k,c in row.items());margin,_=parameters(search.positive,search.coverage_width,search.coverage_bracket_width)
-    for score,proof in candidates(point,search.positive,search.coverage_width,search.coverage_bracket_width,getattr(search,'window_affine_only',False)):
+    for score,proof in candidates(point,search.positive,search.coverage_width,search.coverage_bracket_width,getattr(search,'window_affine_only',False),getattr(search,'window_internal_only',False)):
+        if shape is not None:proof['core_shape']=shape
         certificates=[]
         bracket_guards=proof_bracket(proof,search.positive,search.coverage_width,search.coverage_bracket_width)
         for guard in bracket_guards:
@@ -206,16 +262,33 @@ def discover(search,point):
         # A charged interval hull may also cover other components. Mark
         # every absorbing core translate for full hull charge, rather than
         # incorrectly retaining its 65-point cardinality charge.
-        live=set(map(tuple,proof['inside']));protected=set();proof['absorbed']=[]
+        live=set(map(tuple,proof['inside']));protected=set();proof['absorbed']=[];proof['equal_core']=[];equal_certs=[]
+        groups={}
+        for node in sorted(live):
+            if node[1]<0:continue
+            power=4-len(fc.roots()[node[0]])-len(fc.children(node[0])[node[1]])
+            if power>=1:groups.setdefault((power,round(ev(fc.interval(*node)[0]),6)),[]).append(node)
+        for nodes in groups.values():
+            if len(nodes)<2:continue
+            by=nodes[0];chosen=[]
+            for node in nodes[1:]:
+                gap=m.add((1,fc.interval(*node)[0]),(-1,fc.interval(*by)[0]));local=[]
+                for guard in (gap,{k:-v for k,v in gap.items()}):
+                    cert,finished=search.nonstrict_guard(guard)
+                    if finished:return False,True
+                    if cert is None:break
+                    local.append(cert)
+                if len(local)==2:chosen.append(node);equal_certs.extend(local)
+            if chosen:live.difference_update(chosen);protected.add(by);proof['equal_core'].append(dict(by=by,nodes=chosen))
         mass_core=set()
         for node in live:
             power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
             lo,hi=fc.interval(*node)
-            if node[1]>=0 and 2<=power<=4 and ev(core_capacity(power))<ev(hi)-ev(lo)+1-1e-7:mass_core.add(node)
+            if node[1]>=0 and 2<=power<=4 and ev(core_capacity(power,shape))<ev(hi)-ev(lo)+1-1e-7:mass_core.add(node)
         def charge(node):
             lo,hi=fc.interval(*node)
             power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
-            if node in mass_core:return ev(core_capacity(power))
+            if node in mass_core:return ev(core_capacity(power,shape))
             return 65 if node[1]>=0 and power==1 else ev(hi)-ev(lo)+1
         absorbed_certs=[]
         absorbers=sorted((n for n in live if n[1]>=0 and ev(fc.interval(*n)[1])-ev(fc.interval(*n)[0])>1e-7),key=lambda n:ev(fc.interval(*n)[0])-ev(fc.interval(*n)[1]))
@@ -247,7 +320,7 @@ def discover(search,point):
             if finished:return False,True
             if cert is None:continue
             proof['clipped'].append(dict(node=node,left=left,right=right));clipped.add(node);certificates.append(cert);mass_core.discard(node)
-        proof['mass_core']=sorted(mass_core);certificates.extend(absorbed_certs)
+        proof['mass_core']=sorted(mass_core);certificates.extend(equal_certs);certificates.extend(absorbed_certs)
         proof['core_edges']=[]
         for power in range(1,5):
             core_nodes=sorted((tuple(n) for n in proof['inside'] if tuple(n) not in clipped and n[1]>=0 and 4-len(fc.roots()[n[0]])-len(fc.children(n[0])[n[1]])==power),key=lambda n:ev(fc.interval(*n)[0]))
@@ -258,7 +331,37 @@ def discover(search,point):
                 if finished:return False,True
                 if cert is None:continue
                 proof['core_edges'].append((a,b));certificates.append(cert)
-        row,guards=derive(proof,search.positive,search.coverage_width,search.coverage_bracket_width)
+        # A pE translate overlaps a qE translate through any of the latter's
+        # contained pE translates (p<q), using actual endpoint/zero anchors.
+        parent={tuple(n):tuple(n) for n in proof['inside']}
+        def find(node):
+            while parent[node]!=node:node=parent[node]
+            return node
+        for a,b in proof['core_edges']:parent[find(a)]=find(b)
+        eligible=[n for n in sorted(parent) if n not in clipped and n[1]>=0 and core_power(n)>=1]
+        options=[]
+        for a in eligible:
+            p=core_power(a)
+            for b in eligible:
+                q=core_power(b)
+                if q<=p:continue
+                choices=[]
+                for i in range(q-p+1):
+                    for j in range(q-p+1-i):
+                        gap=mixed_gap(a,b,(i,j),1);distance=ev(gap);direction=1 if distance>=0 else -1
+                        rebate=p*point['F']-p+1-abs(distance)
+                        if rebate>1e-7:choices.append((rebate,i,j,direction))
+                if choices:
+                    rebate,i,j,direction=max(choices);options.append((rebate,a,b,i,j,direction))
+        proof['mixed_core_edges']=[]
+        for rebate,a,b,i,j,direction in sorted(options,reverse=True):
+            if find(a)==find(b):continue
+            gap=mixed_gap(a,b,(i,j),direction);cert,finished=search.nonstrict_guard(m.add((-1,gap)))
+            if finished:return False,True
+            if cert is None:continue
+            parent[find(a)]=find(b)
+            proof['mixed_core_edges'].append(dict(small=a,large=b,anchor=[i,j],direction=direction));certificates.append(cert)
+        row,guards=derive(proof,search.positive,search.coverage_width,search.coverage_bracket_width,shape)
         if ev(row)<=1e-7:continue
         from math import gcd
         def row_key(body,bound=0):

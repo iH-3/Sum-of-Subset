@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CONDITIONAL_413_BRANCH", "case": 8, "closed": true, "replay": {"steps": 785, "credit": 54}, "seconds": 7.90197984000406, "replay_scope_restored": true, "global_upper_bound_certified": false}

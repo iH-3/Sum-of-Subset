@@ -61,6 +61,9 @@ class Search:
         self.guard_certificate_cache={};self.guard_failure_cache={}
         prior=exact.inherited(dict(st=st,j=j,positive=positive,limits=limits,premise=parent)) if parent else None
         self.initial=8 if m.is_ownerless(st) else 0
+        from first_gap_core import shape_case
+        self.core_shape=shape_case(dict(j=j,positive=positive,limits=limits))
+        if self.core_shape is None and prior:self.core_shape=prior.get('core_shape')
         self.e=prior['credit'] if prior else self.initial
         self.use_planes=use_planes;p.USE_PLANES=use_planes;p.PLANE_GENERATOR=planes;p.SOURCE_TAIL_RANKS=True;p.SHARP_PLANES=True;p.SIDE_PLANES=True;p.TRIM_SOURCE=True;p.POINT_OVERLAP=True;p.FULL_EDGES=True
         p.PLANE_TABLE=dict(p.PLANE_TABLE)

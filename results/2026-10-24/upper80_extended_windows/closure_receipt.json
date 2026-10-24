@@ -9,6 +9,21 @@
   "newly_closed_original_roots": [
     [
       5,
+      256,
+      false
+    ],
+    [
+      5,
+      266,
+      false
+    ],
+    [
+      5,
+      268,
+      false
+    ],
+    [
+      5,
       270,
       false
     ],
@@ -18,8 +33,8 @@
       false
     ]
   ],
-  "closed_original_roots": 4647,
-  "open_original_roots": 7,
+  "closed_original_roots": 4650,
+  "open_original_roots": 4,
   "records": [
     {
       "j": 6,
@@ -50,10 +65,40 @@
         "steps": 13,
         "credit": 47
       }
+    },
+    {
+      "j": 5,
+      "index": 256,
+      "rank": null,
+      "closed": true,
+      "replay": {
+        "steps": 92,
+        "credit": 78
+      }
+    },
+    {
+      "j": 5,
+      "index": 266,
+      "rank": null,
+      "closed": true,
+      "replay": {
+        "steps": 71,
+        "credit": 56
+      }
+    },
+    {
+      "j": 5,
+      "index": 268,
+      "rank": null,
+      "closed": true,
+      "replay": {
+        "steps": 33,
+        "credit": 52
+      }
     }
   ],
   "new_record_replays": 0,
-  "reused_new_replays": 3,
+  "reused_new_replays": 6,
   "reused_prior_ranks": [
     2,
     3,
@@ -63,6 +108,6 @@
     7
   ],
   "prior_ranks_replayed": false,
-  "pooled_records": 39,
-  "packet_sha256": "4ac322f2ba87f82cf5899d529b7bca888a786dce41a4c6875c94eec616b64173"
+  "pooled_records": 58,
+  "packet_sha256": "f25600cca1007d8540717ac924416d91404ca761753934f44e0fbbd8a3a1f37c"
 }
