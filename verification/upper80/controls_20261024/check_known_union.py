@@ -3,7 +3,7 @@ from pathlib import Path
 import json,random,sys
 root=Path(__file__).resolve().parents[3];sys.path.insert(0,str(root/'verification/upper80'))
 import exact,known_union,model as m,parametric as p
-rng=random.Random(8106424);cases=sharp=tail_cases=joint_cases=0
+rng=random.Random(8106424);cases=sharp=tail_cases=joint_cases=fixed_covers=0
 st=list(m.patterns(6))[436];p.build(st,6);Z=p.build.last_Z
 for sample in range(300):
     k=rng.randrange(8);x={'ONE':1,'rank_k':k,'delta':0};sides={}
@@ -18,6 +18,7 @@ for sample in range(300):
     proof=known_union.recipe(st,Z,x);row,guards=known_union.derive(st,Z,proof,0)
     if any(ev(g)>0 for g in guards):raise ValueError('Recipe violates its own integer guards')
     D={0,*sides['s'],*(-v for v in sides['t'])};K=len({a+b for a in D for b in D});loss=0;tail_excluded={};represented_tail=0;new_fixed=0
+    modes,known,chains=known_union.cover_chains(st,Z,x)
     for side in 'st':
         source=D if side=='s' else {-v for v in D};lam=x['d'+side]-2*x['M'+side]-2*x['X'+side]-x['g'+side]
         ret=[name for name,status in st.items() if status==1 and name[-1]==side]
@@ -25,6 +26,16 @@ for sample in range(300):
         hits=sum(1<=v<=x['S'+side] for v in native);loss+=K+73*len(ret)-hits
         fixed={ev(form) for label,form in m.fixed_forms().items() if ('+' in label)==(side=='s')}
         new_fixed+=sum(1<=v<=x['S'+side] for v in fixed-native)
+        items=known[side]['components']
+        for label,form in m.fixed_forms().items():
+            if ('+' in label)!=(side=='s'):continue
+            value=ev(form)
+            for chain in chains[side]:
+                if not ev(items[chain[0]][0])<=value<=ev(items[chain[-1]][1]):continue
+                guards=known_union.cover_guards(st,Z,modes,side,chain,label)
+                if any(ev(g)>0 for g in guards):raise ValueError('Known fixed-cover chain guards')
+                if value not in native:raise ValueError('False known fixed cover')
+                fixed_covers+=1
         end,licenses,points=known_union.tail_catalogue(st,Z,side)
         if all(ev(g)<=0 for g in licenses):
             fixed={ev(form) for label,form in m.fixed_forms().items() if ('+' in label)==(side=='s')}
@@ -46,4 +57,4 @@ for sample in range(300):
         joint_cases+=1
     cases+=1
 if not tail_cases:raise ValueError('No licensed top-core tails tested')
-print(json.dumps(dict(status='PASS_KNOWN_NATIVE_UNION',physical_sources=cases,exact_zero_excess_cases=sharp,licensed_core_tails=tail_cases,joint_core_tails=joint_cases)))
+print(json.dumps(dict(status='PASS_KNOWN_NATIVE_UNION',physical_sources=cases,exact_zero_excess_cases=sharp,licensed_core_tails=tail_cases,joint_core_tails=joint_cases,known_fixed_covers=fixed_covers)))

@@ -533,3 +533,238 @@ Every comparison is independently replayed before its capacity row is added.
 Independent set controls passed 1200 capacity checks, including exact equality
 in 400 zero-excess cases and rejection of 1200 incomplete inventories. These
 controls supplement the general containing-hull proof, not replace it.
+
+Known native components also certify fixed items collectively. Choose a chain
+of actual known intervals with nondecreasing right endpoints and each next
+left endpoint at most the previous right endpoint plus one. Their union
+contains every integer from the first left endpoint through the last right
+endpoint. Any fixed form proved between these endpoints is already native;
+record it as covered before recomputing fixed credit. This includes the ten
+known source points and all leading source-pair points, as well as intervals.
+It need not identify a single translate that always contains the fixed form.
+The existing positive-covered check still distinguishes negative-group credit.
+Independent source controls verified 4,848 such covered fixed items; an empty
+chain is rejected by the trace verifier.
+
+## Positive holes and retained predecessors (conditional main domain)
+
+Write W=w/2 in 1..7. Each primitive core has h_v>=z>=2W holes.
+The new h=3 synchronous packet adds 41 claims, for ranks15..55; replay uses
+exactly the same complete AP-prefix mechanism as the existing profiles.
+Together, for W=2..7 and r15..49, the profiles give
+mu_(2W-1)(r)=Wr-W(W+7)/2+1. For W=1, non-AP gives mu>=r-3.
+Since tau_v=mu_v+h_v, this proves
+
+    tau_v >= W r_v-W(W+3)/2+1,
+    tau_s+tau_t >= -W^2+61W+2.
+
+The paired floors for W1..7 are62,120,176,230,282,332,380. A chord on any
+integer W interval is a valid linear lower bound because the quadratic is
+concave. In a side chord based at lo, the remaining product
+(W-lo)*r_v is bounded below with r_s>=15 and r_t>=32. All integer W/rank
+values are checked; the exact proof trace first certifies the W interval.
+
+A second bound uses the first gap in the sorted multiset P_s union P_t.
+If a complete prefix has p and q elements of the two cores and sum S, the
+next coefficient is at least S+2. S>=T_p+T_q, and monotonicity then gives
+
+    tau >= (r_s-p)(T_p+T_q+1-p)
+           +(r_t-q)(T_p+T_q+1-q).
+
+The complete finite minimization over prefix counts is64; over nonempty
+prefixes it is95-k. Both minima are explicitly checked for every k0..17.
+If tau_v<r_v, that core contains1, so the prefix is nonempty. Otherwise
+its side mass itself is at least r_v. Combining this dichotomy with
+both tau_v>=r_v-1 gives, for any certified k<=b and c=31-b,
+
+    tau >=64,       tau+c*tau_s >=64+c*(32-k),
+                   tau+c*tau_t >=64+c*(32+k).
+
+For j>=3, remove the maximum R_v and call the predecessor Y_v. If FS(Y_v)
+is complete but FS(P_v) is not, R_v>=sum(Y_v)+2. Thus
+ tau_v>=T_(r_v-1)+2-r_v.
+Adding the other side's floor r_o-1 and k^2 has minimum352, whereas the
+main budget is at most510-73j<352. Hence FS(Y_v) is not complete. Applying
+the one-core first-gap argument gives tau(Y_v)>=r_v-2, or
+
+    tau_s-xs >=30-k,        tau_t-xt >=30+k.
+
+At j4 and certified fixed credit e>=38, the budget improves to
+I+tau<=218-38=180. Since tau>=64, k<=10 and each rank is22..42.
+A nonprimitive Y_v would cost tau(Y_v)>=T_(r_v-1); adding the opposite
+floor and k^2 has minimum372>180. Hence both predecessors are primitive.
+Their rho is at most cap=180-k^2-(r_o-1). For all21 ranks, the independently
+checked endpoint schedule at rank r_v-1 and this cap supplies a central
+interval of length at least T_(r_v-1)-2H+1. This exceeds r_v+cap>=R_v;
+the minimum verified margin is128. Therefore FS(Y_v) meets every residue
+mod R_v. For each residue, adjoining R_v creates a new support value above
+its old maximum. At least R_v points are gained, so the number of holes
+cannot increase: h(Y_v)>=h(P_v)>=2W.
+
+Apply the same profiles to Y_v. This strengthens the retained floors to
+
+    tau_v-xi_v >= W(r_v-1)-W(W+3)/2+1,
+    tau_s+tau_t-xs-xt >= -W^2+59W+2.
+
+The side chords use r_s-1>=21 and r_t-1>=31. The trace requires j4,
+positive holes, e>=38 and exact W-range guards. The checks record all21
+endpoint witnesses and all restricted side/joint chord evaluations.
+These are conditional main-domain lemmas, not a completed structural proof.
+
+## Ordered enlarged interval gaps
+
+The enlarged core hull is C=[-R_o,R_v]. A leading double-core interval is
+the union of C translated by its two endpoint offsets -R_o and R_v.
+Thus the entire enlarged native cover consists of equal-width C translates,
+ordinary exterior singleton points, and leading pairs of exterior points.
+Its union agrees exactly with the earlier enlarged cover catalogue.
+
+Certify a complete nondecreasing order z_1,...,z_m of the centres and
+z_1+R_v>=1, z_m-R_o<=S_v. Every interval then hits [1,S_v]. The missing
+integer count of their union is the sum of positive parts of
+
+    z_1-R_o-1;  z_(i+1)-z_i-R_s-R_t-1;  S_v-z_m-R_v.
+
+For any selected subset of these forms, their sum is a lower bound on
+that count, without needing to decide each form's sign. Each remaining
+singleton can fill at most one of these positions. Remove a singleton
+only after proving it outside the target or inside one enlarged interval.
+Including all fixed forms gives a one-side capacity inequality. Combining
+both sides and counting only native singletons uses the existing bound
+84-e on new fixed values. This yields a joint inequality after subtracting
+2W. Being inside an enlarged interval is NOT a fixed-credit certificate.
+
+Exact replay separately verifies the complete centre permutation, its
+ordering/target guards, each singleton exclusion, and the selected gap
+inventory. Independent controls compare10000 interval families and15000
+capacities to explicit integer unions. In240 physical source targets,
+the ordered envelope also equals the original enlarged cover exactly.
+
+Retaining holes also strengthens the truncation parameter phi, which is
+min_{0<=q<=r}(q+xi_(r-q)), with the empty prefix giving r. For fixed W=1
+or2 and fixed credit e>=38, let C=204+2W-e. The actual budget is
+k^2+tau<=C. `positive_kernel.py` checks successive removals, separately for
+every permitted integer rank. At a proposed prefix n=r-q it verifies:
+
+* Every first gap after a prefix of size at least n has side excess greater
+  than C-k^2-floor(r_o,W). Thus this prefix cannot have complete subset sums.
+* Each previously removed maximum has deviation at least W. Otherwise the
+  beta=W-1 density lemma would give at most2W-2 holes in that preceding
+  prefix, contrary to the induction. (For W1, beta0 is just [1,n].)
+* The new prefix's excess is at most cap=C-k^2-floor(r_o,W)-qW.
+  Since T_n>cap, it is primitive. Its checked endpoint schedule yields a
+  central interval at least as long as the full original core maximum.
+  Adjoining all removed maxima therefore cannot increase holes.
+
+Consequently that prefix still has at least2W holes and excess at least
+floor(n,W)=Wn-W(W+3)/2+1. The last q ordered deviations sum to at least
+q*phi-T_(q-1), or to xi+(q-1)*phi-T_(q-1). These yield the two new rows
+
+    tau_v >= floor(r_v-q,W)+q*phi_v-T_(q-1),
+    tau_v >= floor(r_v-q,W)+xi_v+(q-1)*phi_v-T_(q-1).
+
+At e38 and k<=10, certified depths are(3,6) for W1 and(6,9) for W2,
+with the two coordinates denoting s/t. Tighter proved ranks or greater credit
+can allow deeper removal. Replay recomputes every schedule and every rank
+license; it does not trust the discovery-selected depth. Independent controls
+check the row identities and actual finite core pairs and their predecessors.
+
+A further leading-source witness needs only the core spans. Put
+xi=xs+xt and assume xi<=min(r_s,r_t)=32-k. If B is an integer subset of
+[0,L] with xi missing positions, a pigeonhole count gives
+[2xi,2L-2xi] subset 2B: every target in this range has at least2xi+1
+ordered positions in [0,L] whose partners are also in [0,L]. Apply this
+first to the full signed core E (translated to start0), then to its
+positive and negative halves with0 adjoined. The full-core central interval
+is [-2r_t+2xs,2r_s-2xt]; the positive-half interval is[2xs,2r_s], and the
+negative-half interval is[-2r_t,-2xt]. The span hypothesis makes these
+three intervals meet. Therefore
+
+    [-2r_t,2r_s] subset 2E subset 2D.
+
+The new `dense_core` leading witness checks the span hypothesis and target
+membership in this interval before recording any hit or covered fixed item.
+It is independent of the selected ordinary-source truncation level, so the
+old disjointness rules for exterior preimages still apply.1600 actual core
+pairs and412800 witness-guard evaluations independently check this lemma.
+
+## Combined-core hole floors and the w4 closure
+
+The individual profiles lose information: a hole in one core can be filled
+by the other. `combined_holes.py` instead merges the two sorted cores and
+tracks the exact subset-sum bitset of a short prefix. If the prefix has p/q
+items and sum S, and a=r-p,b=s-q items remain, the next merged coefficient
+is at most
+
+    floor((C+T_r+T_s-S-T_(a-1)-T_(b-1))/(a+b))
+
+whenever the final total excess is at most C. Otherwise the minimum
+completion, with each core increasing by at least1, already exceeds C.
+Equal coefficients are allowed only across the two cores and are ordered
+s before t, giving a complete disjoint enumeration. The separate minimum
+completion after each chosen prefix uses its two actual last coefficients.
+
+When the prefix has at most h holes and contains [H,S-H], propagation is
+certified for EVERY later pair of prefix counts. Use S>=T_p+T_q in the
+same next-coefficient bound and require S-2H+1 at least that bound. The
+central interval and its translate then meet at every subsequent step;
+its lower-hole count cannot increase, and symmetry gives at most h holes
+at completion. These checks use only integer arithmetic and no LP solver.
+
+The complete checks, which stop after at most7 merged coefficients, prove:
+for total rank N=64 (k0..17) and N=62 (k0..10),
+
+    z>=2 implies total excess >=N;
+    z>=4 implies total excess >=2N-2.
+
+Both floors are sharp: take each core [2,r+1], or {2} union [4,r+2].
+Their combined subset sums have exactly2 or4 holes. For N62 the two
+predecessors have a central interval long enough to propagate BOTH removed
+maxima, by the already checked predecessor schedules. Thus the combined
+predecessor still has at least z holes. On integer W in1..2 this gives
+
+    tau >=62W+2,      tau-xs-xt >=60W+2.
+
+The new rows exactly close the W2 (w4) part of original root (4,142,positive).
+W3..7 was already closed by the individual mass profiles. W1 remains open
+unless and until a complete exact certificate is recorded. This statement
+does not close the original root, or change the global bound81.
+
+The same merged-prefix verifier can apply after q removals from BOTH sides,
+when the positive-kernel schedules license that depth. Write N=64-2q and
+B=N for W1, B=2N-2 for W2. Then
+
+    tau+qF >= B+65q-q(q-1),
+    tau-xs-xt+(q-1)F >= B+65(q-1)-q(q-1).
+
+Every rank-specific combined-prefix obligation is recomputed during exact
+replay. The common central interval of the two truncated cores has length
+at least R_s+R_t-1, hence all removed maxima propagate without increasing
+the combined hole count. These joint rows strengthen the individual
+retained-core inequalities; they do not assume holes coincide across sides.
+
+## Shifted known core intervals
+
+For positive holes, tau+k<=94 excludes a nonempty first-gap prefix because
+its mass floor is95-k. Thus neither core contains1. Subtract1 from every
+coefficient in its maximum-removed prefix. Its rank is r_v-1 and excess is
+tau_v-xi_v-(r_v-1). The elementary missing-coefficient bound then proves
+
+    [2, 2r_v-1-tau_v+xi_v] subset P_v without its maximum,
+
+provided the displayed right endpoint is at least2. `shifted_source.py`
+uses either this interval or no interval on each side, includes0 and all
+ten known maxima/tails, and forms their ordinary translates and all their
+leading pair sums. Connected chains of these actual integer intervals can
+certify that a fixed item is already native-covered. The positive-hole and
+first-gap mass guards, each nonempty prefix, all chain joins, and the final
+membership comparisons are checked before increasing fixed credit.
+
+Proof serialization preserves the insertion order of pattern keys. The row
+inventory uses that order, so sorting JSON keys can invalidate indexed
+certificates even though the resulting dictionaries compare equal. Frontier
+v2 hashes and restores order-preserving encodings; its control replays an
+actual restored closed certificate, checks idempotency, and rejects an
+existing node whose pattern order differs. Older v1 frontier files must be
+re-exported from the original checkpoints; their serialization alone was
+never evidence of a closed root.

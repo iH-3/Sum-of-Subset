@@ -135,3 +135,31 @@ def derive(st,Z,proof,credit):
         key=tuple(sorted(row.items()))
         if key not in seen:seen.add(key);unique.append(row)
     return (body,-credit,'known native union capacity'),unique
+
+def cover_chains(st,Z,point):
+    ev=lambda row:sum(v*point[k] for k,v in row.items())
+    modes={s:int(31+(-1 if s=='s' else 1)*point['rank_k']-point['t'+s]+point['x'+s]>=0) for s in 'st'}
+    _,data=catalogue(st,Z,modes);answer={}
+    for side,entry in data.items():
+        chains=[];chain=[];end=None
+        for i,(lo,hi) in sorted(enumerate(entry['components']),key=lambda item:(ev(item[1][0]),ev(item[1][1]))):
+            left,right=ev(lo),ev(hi)
+            if end is None or left>end+1+1e-7:
+                if chain:chains.append(chain)
+                chain=[i];end=right
+            elif right>end+1e-7:chain.append(i);end=right
+        if chain:chains.append(chain)
+        answer[side]=chains
+    return modes,data,answer
+
+def cover_guards(st,Z,modes,side,chain,label):
+    forms=m.fixed_forms();m.need(label in forms and side in 'st' and ('+' in label)==(side=='s'),'Known fixed-cover side')
+    prefixes,data=catalogue(st,Z,modes);items=data[side]['components'];seen=set();end=None
+    m.need(chain and len(chain)==len(set(chain)) and all(type(i) is int and 0<=i<len(items) for i in chain),'Known fixed-cover chain')
+    guards=[{k:-v for k,v in row.items()} for row in prefixes.values()];start=items[chain[0]][0]
+    for i in chain:
+        lo,hi=items[i];guards.append(add((1,lo),(-1,hi)))
+        if end is not None:guards.extend([add((1,end),(-1,hi)),add((1,lo),(-1,end),(-1,ONE))])
+        end=hi
+    guards.extend([add((1,start),(-1,forms[label])),add((1,forms[label]),(-1,end))])
+    return guards

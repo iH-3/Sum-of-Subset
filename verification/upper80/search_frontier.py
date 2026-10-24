@@ -7,7 +7,10 @@ from pathlib import Path,PurePosixPath
 import argparse,gzip,hashlib,json
 ROOT=Path(__file__).resolve().parents[2]
 
-def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':')).encode()
+def canonical(value):
+    # Model row indices depend on pattern insertion order. Sorting dictionaries
+    # changes the certificate's meaning, even when dictionary equality holds.
+    return json.dumps(value,separators=(',',':')).encode()
 
 def snapshot(paths,output):
     records={};entries={}
@@ -19,14 +22,14 @@ def snapshot(paths,output):
         for path in sorted((ROOT/directory).glob('*.json.gz')):
             value=json.loads(gzip.decompress(path.read_bytes()))
             entries[path.relative_to(ROOT).as_posix()]=dict(closed=value['closed'],record_ref=intern(value['record']))
-    packet=dict(schema='upper80-discovery-frontier-v1',global_upper_bound_certified=False,
+    packet=dict(schema='upper80-discovery-frontier-v2',global_upper_bound_certified=False,
                 structural_applicability_certified=False,root_coverage_certified=False,entries=entries,records=records)
     output.write_bytes(gzip.compress(canonical(packet),mtime=0))
     return dict(checkpoints=len(entries),shared_records=len(records),closed_checkpoints=sum(e['closed'] for e in entries.values()),bytes=output.stat().st_size)
 
 def restore(path):
     packet=json.loads(gzip.decompress(path.read_bytes()))
-    if packet['schema']!='upper80-discovery-frontier-v1' or any(packet[k] is not False for k in ('global_upper_bound_certified','structural_applicability_certified','root_coverage_certified')):raise ValueError('Discovery-only frontier scope')
+    if packet['schema']!='upper80-discovery-frontier-v2' or any(packet[k] is not False for k in ('global_upper_bound_certified','structural_applicability_certified','root_coverage_certified')):raise ValueError('An order-preserving v2 discovery frontier is required')
     pool=packet['records'];memo={};visiting=set()
     def expand(key):
         if key in memo:return memo[key]
@@ -43,7 +46,7 @@ def restore(path):
         if type(entry['closed']) is not bool:raise ValueError('Frontier checkpoint status')
         value=dict(closed=entry['closed'],record=expand(entry['record_ref']));destination=ROOT/name
         if destination.exists():
-            if json.loads(gzip.decompress(destination.read_bytes()))!=value:raise ValueError('Existing checkpoint differs: '+name)
+            if canonical(json.loads(gzip.decompress(destination.read_bytes())))!=canonical(value):raise ValueError('Existing checkpoint differs: '+name)
         else:prepared.append((destination,value))
     for destination,value in prepared:
         destination.parent.mkdir(parents=True,exist_ok=True);destination.write_bytes(gzip.compress(canonical(value),mtime=0))

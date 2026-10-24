@@ -35,7 +35,7 @@ def domain(name,root):
     m.need(name[:1] in ('l','u') and root['st'].get(name[1:])==1,'Unknown integer branch domain')
     return 0,72
 
-def branch(root):
+def branch(root,initial_limits=None):
     m.need(not root.get('open'),'Stored branch tree is incomplete');seen=set();splits=0
     def visit(node,limits):
         nonlocal splits
@@ -49,7 +49,10 @@ def branch(root):
         m.need(type(cut) is int and lo<=cut<hi,'Noncomplementary integer split')
         left=dict(limits);left[name]=(lo,cut);right=dict(limits);right[name]=(cut+1,hi)
         splits+=1;visit(node['left'],left);visit(node['right'],right)
-    visit(root['tree'],{})
+    initial={k:tuple(v) for k,v in (initial_limits or {}).items()}
+    for name,(lo,hi) in initial.items():
+        a,b=domain(name,root);m.need(type(lo) is int and type(hi) is int and a<=lo<=hi<=b,'Initial restricted branch domain')
+    visit(root['tree'],initial)
     m.need(seen==set(range(len(root['leaves']))),'Unreferenced leaves')
     return len(seen),splits
 

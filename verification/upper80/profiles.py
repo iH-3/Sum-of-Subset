@@ -36,10 +36,10 @@ def expected_round(old, start, D, h):
                 expected[p] = max(expected[p], beta)
     return expected, upper
 
-def replay_claim(claim):
+def replay_claim(claim,allowed_hs=HS):
     need(set(claim) == {'r', 'h', 'C', 'mu', 'branches'}, 'claim fields')
     r, h, C = claim['r'], claim['h'], claim['C']
-    need(integer(r, 15) and r <= 55 and integer(h, 1) and h in HS,
+    need(integer(r, 15) and r <= 55 and integer(h, 1) and h in allowed_hs,
          'claim domain integers')
     need(integer(C) and integer(claim['mu']) and claim['mu'] == r + C + 1, 'mu floor')
     branches = claim['branches']

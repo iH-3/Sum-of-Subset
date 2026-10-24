@@ -5,11 +5,15 @@
   "files": [
     {
       "path": "README.md",
-      "sha256": "de8082d698fc82082f61af682e76ddab4a2c3dca03511f2d80030ed5860393ba"
+      "sha256": "30b36400a2b5358f1524df3ff7b3ae859abbafc78124452ed75af63a9c224e20"
     },
     {
       "path": "RESEARCH_STATUS.md",
-      "sha256": "ed2d69eeb9111e64143028706579000f3ace941931a9c016b201b5da7e0144d8"
+      "sha256": "af5a7c9a1945235f9f547a18439f8c1b826074f4433b057373b0d5b3f9b557bc"
+    },
+    {
+      "path": "data/upper80_h3_profiles.json.gz",
+      "sha256": "fc4c7bfd223aef2493afe68efe4cb14130dca64a62add260b8ca5eac5a0e2db6"
     },
     {
       "path": "data/upper80_low_slack_20261024.json.gz",
@@ -20,12 +24,20 @@
       "sha256": "248d21c7b362ae5454db38eb57568828f5462359d7e036c054bbe2fb27e42f32"
     },
     {
+      "path": "data/upper80_positive_refinements_20261024.json.gz",
+      "sha256": "72844b58d6c8f668d2decd1892f8bc7ea61aa9b15cff74333df5f49ba45576ea"
+    },
+    {
       "path": "data/upper80_profiles.json.gz",
       "sha256": "d96a3ae719dbdc85ab67ec26086a61965d15d938dfb55b14f842a245eb819d12"
     },
     {
       "path": "data/upper80_refinements_20261024.json.gz",
       "sha256": "9343e1ec32c9b0013c6b3a2352084c5758643ddd5de6e83c49918570f14541c0"
+    },
+    {
+      "path": "data/upper80_search_frontier_20261024.json.gz",
+      "sha256": "c86657beb9e54417e04d9c510d925a98615a24c498db6df4e2735e7ff607b616"
     },
     {
       "path": "reports/upper80_progress_20261023.pdf",
@@ -84,12 +96,16 @@
       "sha256": "e6c0bd49017077ea090bd876cbe18426692fea5ce69464c24e93e6f8807094d8"
     },
     {
+      "path": "results/2026-10-24/upper80_research/frontier.json",
+      "sha256": "3d1707edc5fc8cc63a21a40a750a86d78b4afba1e55a97bff141306b1863ddd6"
+    },
+    {
       "path": "results/2026-10-24/upper80_research/lemmas_normal.json",
-      "sha256": "bde96593286f4e761f48d4c118619b4778f7990453ad08b99dfa6b48ad57947b"
+      "sha256": "69efe857321da7235db6cdff4b32eaf3c5656c76d69c49c97fa09a6ee2ea0712"
     },
     {
       "path": "results/2026-10-24/upper80_research/lemmas_optimized.json",
-      "sha256": "bde96593286f4e761f48d4c118619b4778f7990453ad08b99dfa6b48ad57947b"
+      "sha256": "69efe857321da7235db6cdff4b32eaf3c5656c76d69c49c97fa09a6ee2ea0712"
     },
     {
       "path": "results/2026-10-24/upper80_research/low_slack_normal.json",
@@ -108,6 +124,22 @@
       "sha256": "a78a7e202e66acce178cc322ca5512762a55b9ea29f87479390cd82ff8916c01"
     },
     {
+      "path": "results/2026-10-24/upper80_research/positive_holes_normal.json",
+      "sha256": "d9175fec0245f4b2c1c103d788523fa868d2d78d1a50490091709ac98c3cee9f"
+    },
+    {
+      "path": "results/2026-10-24/upper80_research/positive_holes_optimized.json",
+      "sha256": "d9175fec0245f4b2c1c103d788523fa868d2d78d1a50490091709ac98c3cee9f"
+    },
+    {
+      "path": "results/2026-10-24/upper80_research/positive_refinements_normal.json",
+      "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+    },
+    {
+      "path": "results/2026-10-24/upper80_research/positive_refinements_optimized.json",
+      "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+    },
+    {
       "path": "results/2026-10-24/upper80_research/refinements_normal.json",
       "sha256": "8dc4c96b99b6397bd58b9f96ecd6503a2372daff91cc0809528ab1a1ef0b757b"
     },
@@ -117,15 +149,15 @@
     },
     {
       "path": "results/2026-10-24/upper80_research/summary.json",
-      "sha256": "cdb7e49da3c5b43af17cab0300d0c2829845803a60c336329788fab8066ff1b1"
+      "sha256": "785244f80c2d726d68501d9cff3348b73ef9dda8c95b0b04a67177295dae4cbc"
     },
     {
       "path": "verification/upper80/README.md",
-      "sha256": "f806f2051ecc524e5eb5921c38d15974e71e90a9f1f682259f8845d4cbdf805a"
+      "sha256": "1f26d4419cf847e2e0ea0754afb925d7d91ea8e8ff9d4a7606481df83dfc4183"
     },
     {
       "path": "verification/upper80/branch_discover.py",
-      "sha256": "a328fc3e71ec9ad829f6d02e4bf3dcd3659ea9e52b0906947507fd41fa268d68"
+      "sha256": "4fcb80f15c0585d1ca6e18421e614e3fede52322080648e9aea46a0918db45a2"
     },
     {
       "path": "verification/upper80/check.py",
@@ -133,7 +165,11 @@
     },
     {
       "path": "verification/upper80/check_new_lemmas.py",
-      "sha256": "edb872f41aa328af46188708d2dae8c00d2c6ecb850113816ec4a30e9435cc99"
+      "sha256": "825978f709cdcf8e0d315915f034bd5d8dc71e998c968b16961d17be5d69479e"
+    },
+    {
+      "path": "verification/upper80/combined_holes.py",
+      "sha256": "67de73af231189ee22819f23c223150c5946fb704f92c0c62cb0d02413f3d54d"
     },
     {
       "path": "verification/upper80/control_checks.py",
@@ -153,7 +189,11 @@
     },
     {
       "path": "verification/upper80/controls_20261024/check_coverage.py",
-      "sha256": "a4fa9048310f95670d0b9e204373e0afbe955e33a27fccf3074b15c06b512be8"
+      "sha256": "624d6d1c4091f8ab20ab878b6582cd7ac8855a949e8101d06e77721f6bea35d9"
+    },
+    {
+      "path": "verification/upper80/controls_20261024/check_dense_core.py",
+      "sha256": "69b2f510c3f517d68fe6d92cdfb9e86f0f690ab2e86d01ae3b811ec84e7a48b0"
     },
     {
       "path": "verification/upper80/controls_20261024/check_fixed_capacity.py",
@@ -164,12 +204,20 @@
       "sha256": "dc5a856ab045bec90be06f1e4bd9512aa43d24bdfc0514d943539b2e0618c767"
     },
     {
+      "path": "verification/upper80/controls_20261024/check_frontier.py",
+      "sha256": "73dff43599db54271b8442858b3994de9f77ed79d96c50fa66395f7111f4262f"
+    },
+    {
       "path": "verification/upper80/controls_20261024/check_hitting.py",
       "sha256": "e722a18149ca81bd9130327fbcd0645abaf1c424da35174eb2e9794d0fdc4bfd"
     },
     {
+      "path": "verification/upper80/controls_20261024/check_interval_gaps.py",
+      "sha256": "fd2562945ab6ecf9d43775891ad51af6bc2cf37dcc4b7150747cda5e6a616726"
+    },
+    {
       "path": "verification/upper80/controls_20261024/check_known_union.py",
-      "sha256": "e8a1789207e118c05af8067af83fda31da1b652bfda81b33f3bf0cfe87c54ecb"
+      "sha256": "8757a97958bab093cf1afe19370e07baafd34843997462ca47b6141c6051ee94"
     },
     {
       "path": "verification/upper80/controls_20261024/check_leading.py",
@@ -188,12 +236,16 @@
       "sha256": "5606304c2e83f195cfadf446b72a9fe2fcbc7936cf3789414f6b4c00a6eb6609"
     },
     {
+      "path": "verification/upper80/controls_20261024/check_shifted_source.py",
+      "sha256": "8aabf2a7a44113bdd78f9005894b2a629d105a38bc5a285a9b265608d26314e1"
+    },
+    {
       "path": "verification/upper80/controls_20261024/check_source_gaps_cap.py",
       "sha256": "6b8ae2ec7bd658a446fd742ae04c3edb389afbb232db62a5f983eadc897304f7"
     },
     {
       "path": "verification/upper80/controls_20261024/check_trace_safety.py",
-      "sha256": "8a37ae04c59572040f83ed87fcea83e476086467799ca9eae05b1b44da3b50dd"
+      "sha256": "8d2bc800243e59b1c8f99eeeb6d989c670e925c859196b54c812fe99d36d5bcf"
     },
     {
       "path": "verification/upper80/cover_capacity.py",
@@ -209,7 +261,7 @@
     },
     {
       "path": "verification/upper80/discover.py",
-      "sha256": "b92c3302ac47c7cb0ff6f07caa5bfa012abfb30db2b8e319e92a826e730eaa8f"
+      "sha256": "d72b65ae3dd18dfc905dece0fe01ceef617320204ef74b5f0f436b885a022448"
     },
     {
       "path": "verification/upper80/endpoint_schedule.py",
@@ -217,15 +269,19 @@
     },
     {
       "path": "verification/upper80/exact.py",
-      "sha256": "009d44441b154cc7477a359bbd1cc9adc4a00e2512e0ce10676fa8fd30de8888"
+      "sha256": "e34d4a74794bb0d0b49a76e3e5b3509e4692f3547dd59b72326959daa521831d"
     },
     {
       "path": "verification/upper80/fast_lp.py",
       "sha256": "5fb7428a4b7bb6ce8218d0463e40daefde16e46b43ac5ebea0674cdd7ffde530"
     },
     {
+      "path": "verification/upper80/interval_gaps.py",
+      "sha256": "7af558561295e9a2392214a9fd73a64b1d3166c8e734b3c7f4f11dcec34c3899"
+    },
+    {
       "path": "verification/upper80/known_union.py",
-      "sha256": "985b6c2568fcdeeb2cc3011750e8272d63b00013c36643451d0d59edc8e60b20"
+      "sha256": "6d47a655021045ede8f5d0a86635db4a93e0809d8fcdba7b964ad90f501ce308"
     },
     {
       "path": "verification/upper80/low_c_discover.py",
@@ -248,20 +304,36 @@
       "sha256": "769814fe51bbbedb692ca515976fb235035118b38c7356a7fb7debcc4e143fc6"
     },
     {
+      "path": "verification/upper80/positive_holes.py",
+      "sha256": "5abf478181a712609b03303cc2aa68a8c964e1e88ab3796ca6787fcf9be0b04f"
+    },
+    {
+      "path": "verification/upper80/positive_kernel.py",
+      "sha256": "c5d0fadcb43a5fcaa00de0b93721c8ce0b0aafdc5fe8794a4007eef1b93036c5"
+    },
+    {
       "path": "verification/upper80/profiles.py",
-      "sha256": "08c589645c8d2f55538e69010e329916d2a512a1e50dfa6618fa53c8a7c4e33b"
+      "sha256": "92a6c2deac393662e5a07de00ce493bf5b1f397e5a8ce203410263a489040dc6"
     },
     {
       "path": "verification/upper80/replay_partial.py",
-      "sha256": "7fc921a0122f591b492a166f442c261e3a8dc56dce1c60a22c26c70b77a94970"
+      "sha256": "58423ff7ed129e6072d7382a59fe3096fdbbd12e96123dda9a372e79c9629c78"
     },
     {
       "path": "verification/upper80/research_checkpoint.md",
-      "sha256": "b53ba7e59f7ddd661815a206b789aa5cd84b90160b01fcbf1dcbcb316c44b795"
+      "sha256": "62942597c982fe3393c9377fabcc539d5660eba2999028ffc49d90a15fb09fcb"
+    },
+    {
+      "path": "verification/upper80/resume_search.py",
+      "sha256": "f37d6362ff4e864e819380ec237497c5c3a9454f49ba10412d93f4d4674e8e56"
     },
     {
       "path": "verification/upper80/search_frontier.py",
-      "sha256": "a6ed4b627f53e32e7bb0424dc08eaa322f21004640f51ba64a344c5a3bf57f8a"
+      "sha256": "c3d2ee02411a3223633b3766b85def2d8f2f78197887d8dbbc530780d8aab29c"
+    },
+    {
+      "path": "verification/upper80/shifted_source.py",
+      "sha256": "c690071ebf3cb1298b6a8d7c8b23261c06fe5827a9a7fb9a0b1b0af0252bf97a"
     },
     {
       "path": "verification/upper80/source_bounds.py",
@@ -270,6 +342,10 @@
     {
       "path": "verification/upper80/structure_arithmetic.py",
       "sha256": "de4bdad05707971dda82abe615c5a725c6ade44221a350f2258c0d3497fbb9fc"
+    },
+    {
+      "path": "verification/upper80/verify_positive_refinements.py",
+      "sha256": "15c745fa31a75b1b7310497418699cb863f6d3b163abb8e7a758d03879e5ea05"
     },
     {
       "path": "verification/upper80/verify_refinements.py",

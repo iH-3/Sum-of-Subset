@@ -243,7 +243,7 @@ def source_minus_prefix(side,q):
 
 def leading_tags(q):return POINT_TAGS if q==5 else extended_tags(q)
 
-LEADING_WITNESSES=('double_core','zero',*POINT_TAGS,*('merge_'+tag for tag in POINT_TAGS))
+LEADING_WITNESSES=('dense_core','double_core','zero',*POINT_TAGS,*('merge_'+tag for tag in POINT_TAGS))
 
 def leading_point_guards(edge,tag,witness,q=5):
     side,other,right,shift=leading_geometry(edge)
@@ -254,7 +254,13 @@ def leading_point_guards(edge,tag,witness,q=5):
 
 def double_source_guards(side,target,witness,q):
     m.need(side in 'st' and witness in LEADING_WITNESSES,'Double source interval witness')
+    m.need(type(q) is int and 1<=q<=5,'Double source truncation level')
     other='t' if side=='s' else 's'
+    if witness=='dense_core':
+        sign=-1 if side=='s' else 1
+        return [{'xs':1,'xt':1,'rank_k':1,'ONE':-32},
+                m.add((-1,target),(1,{'ONE':-64,'rank_k':2*sign})),
+                m.add((1,target),(1,{'ONE':-64,'rank_k':-2*sign}))]
     ns,no=source_minus_prefix(side,q),source_minus_prefix(other,q)
     if witness.startswith('merge_'):
         endpoint=witness[6:];physical=endpoint[0];opposite='t' if physical=='s' else 's'
@@ -547,11 +553,85 @@ def replay(record,require_closed=True,return_state=False):
     if prior:coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()}
     if prior:sumset_equalities={key:list(values) for key,values in prior.get('sumset_equalities',{}).items()}
     core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
+    ordered_cover={side:dict(order=list(value['order']),excluded=set(value['excluded'])) for side,value in prior.get('ordered_cover',{}).items()} if prior else {}
     for index,step in enumerate(record['trace']):
         kind=step['kind']
         m.need(not closed,'Steps after contradiction')
         if kind=='core_mass_ceiling':
             extra=core_mass_ceiling(record.get('limits'));rows.extend(extra);facts.extend(extra)
+        elif kind in ('ordered_cover_license','ordered_cover_exclude','ordered_cover_capacity'):
+            import interval_gaps
+            m.need(j>=3 and 3 not in st.values(),'Ordered core cover scope')
+            if kind=='ordered_cover_capacity':
+                m.need(step['credit']==e and type(step['joint']) is bool,'Ordered cover fixed credit')
+                fact=interval_gaps.capacity(st,p.build.last_Z,ordered_cover,step['selected'],e,step['joint']);rows.append(fact);facts.append(fact)
+            else:
+                side=step['side']
+                if kind=='ordered_cover_license':
+                    m.need(side not in ordered_cover,'New ordered cover license')
+                    guards=interval_gaps.licenses(st,p.build.last_Z,side,step['order'])
+                else:
+                    m.need(side in ordered_cover and step['index'] not in ordered_cover[side]['excluded'],'Licensed new gap singleton exclusion')
+                    guards=interval_gaps.exclusion(st,p.build.last_Z,side,step['index'],step['where'])
+                m.need(len(guards)==len(step['certificates']),'Ordered cover guard inventory')
+                for guard,cert in zip(guards,step['certificates']):
+                    check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved ordered core cover guard');rows.append(fact);facts.append(fact)
+                if kind=='ordered_cover_license':ordered_cover[side]=dict(order=step['order'],excluded=set())
+                else:ordered_cover[side]['excluded'].add(step['index'])
+        elif kind=='combined_hole_mass':
+            import combined_holes
+            m.need(positive and type(step['retained']) is bool,'Combined hole domain')
+            if step['retained']:m.need(j==4 and step['credit']==e and e>=38,'Combined predecessor propagation domain')
+            guard={'hole_W':1,'ONE':-2};check(step['certificate'],rows,eqs,guard,strict=False)
+            extra=[(guard,0,'proved combined hole range'),combined_holes.total_rows(step['retained'])]
+            rows.extend(extra);facts.extend(extra)
+        elif kind=='positive_retained_kernel':
+            import positive_kernel
+            m.need(j==4 and positive and step['credit']==e and e>=38,'Retained positive kernel scope')
+            W,rank_hi=step['W'],step['rank_hi'];spec=positive_kernel.plan(W,e,rank_hi)
+            guards=[{'hole_W':-1,'ONE':W},{'hole_W':1,'ONE':-W},{'rank_k':1,'ONE':-rank_hi}]
+            m.need(len(step['certificates'])==3,'Positive kernel guard inventory')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved positive retained kernel range');rows.append(fact);facts.append(fact)
+            for side,q in step['choices']:
+                m.need(side in spec and type(q) is int and 1<=q<=spec[side]['depth'],'Licensed positive kernel depth')
+                extra=positive_kernel.rows(W,side,q);rows.extend(extra);facts.extend(extra)
+            for q in step.get('combined',[]):
+                extra=positive_kernel.combined_rows(W,e,rank_hi,q);rows.extend(extra);facts.extend(extra)
+        elif kind=='retained_positive_predecessor':
+            import positive_holes
+            m.need(j==4 and positive and step['credit']==e and e>=38,'Retained positive predecessor scope and credit')
+            lo,hi=step['lo'],step['hi'];extra=positive_holes.retained_predecessor_rows(lo,hi)
+            guards=[{'hole_W':-1,'ONE':lo},{'hole_W':1,'ONE':-hi}]
+            m.need(len(step['certificates'])==2,'Retained predecessor range guards')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved retained predecessor range');rows.append(fact);facts.append(fact)
+            rows.extend(extra);facts.extend(extra)
+        elif kind=='positive_predecessor_gap':
+            import positive_holes
+            m.need(positive,'Positive predecessor hole scope')
+            extra=positive_holes.predecessor_rows(j);rows.extend(extra);facts.extend(extra)
+        elif kind=='positive_core_gap':
+            import positive_holes
+            hi=step['rank_hi'];m.need(positive and type(hi) is int and 0<=hi<=17,'Positive first-gap main domain')
+            guard={'rank_k':1,'ONE':-hi};check(step['certificate'],rows,eqs,guard,strict=False)
+            fact=(guard,0,'proved positive first-gap rank range');rows.append(fact);facts.append(fact)
+            extra=positive_holes.first_gap_rows(hi);rows.extend(extra);facts.extend(extra)
+        elif kind=='positive_hole_side_interval':
+            import positive_holes
+            lo,hi=step['lo'],step['hi'];extra=positive_holes.side_interval_rows(lo,hi)
+            m.need(positive and len(step['certificates'])==2,'Restricted positive side profile')
+            guards=[{'hole_W':-1,'ONE':lo},{'hole_W':1,'ONE':-hi}]
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved positive side interval');rows.append(fact);facts.append(fact)
+            rows.extend(extra);facts.extend(extra)
+        elif kind in ('positive_hole_profile','positive_hole_sides'):
+            import positive_holes
+            hi=step['hi'];m.need(positive and type(hi) is int and 1<=hi<=7,'Positive-hole main-domain profile')
+            guard={'hole_W':1,'ONE':-hi};check(step['certificate'],rows,eqs,guard,strict=False)
+            fact=(guard,0,'proved positive-hole profile range');rows.append(fact);facts.append(fact)
+            extra=[positive_holes.row(hi)] if kind=='positive_hole_profile' else positive_holes.side_rows(hi)
+            rows.extend(extra);facts.extend(extra)
         elif kind=='integer_guard':
             from modular import INTEGER_NAMES
             guard=step['guard']
@@ -653,6 +733,24 @@ def replay(record,require_closed=True,return_state=False):
             label=step['label'];m.need(label in covered and label not in covered_positive,'Positive covered fixed label')
             guard=m.add((1,{'ONE':1}),(-1,forms[label]));check(step['certificate'],rows,eqs,guard,strict=False)
             fact=(guard,0,'proved covered fixed positive');rows.append(fact);facts.append(fact);covered_positive.add(label)
+        elif kind=='fixed_shifted_cover':
+            import shifted_source
+            m.need(positive and j>=3 and 3 not in st.values(),'Shifted known-cover domain')
+            label=step['label'];m.need(label not in covered,'New shifted known cover')
+            guards=shifted_source.cover_guards(st,p.build.last_Z,step['modes'],step['side'],step['chain'],label)
+            m.need(len(guards)==len(step['certificates']),'Shifted known-cover guards')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved shifted fixed cover');rows.append(fact);facts.append(fact)
+            covered.add(label)
+        elif kind=='fixed_known_cover':
+            import known_union
+            m.need(j>=3 and 3 not in st.values(),'Known fixed-cover scope')
+            label=step['label'];m.need(label not in covered,'New known fixed cover')
+            guards=known_union.cover_guards(st,p.build.last_Z,step['modes'],step['side'],step['chain'],label)
+            m.need(len(guards)==len(step['certificates']),'Known fixed-cover guard count')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved known fixed cover');rows.append(fact);facts.append(fact)
+            covered.add(label)
         elif kind=='fixed_cover':
             m.need(j>=3 and 3 not in st.values(),'Integer fixed cover scope')
             label,resource=step['label'],step['resource'];m.need(label not in covered and (resource in ret or resource in ('Ls','Lt')),'New retained fixed cover')
@@ -785,7 +883,7 @@ def replay(record,require_closed=True,return_state=False):
             check(step['certificate'],rows,eqs);closed=True
     m.need(closed if require_closed else not closed,'No terminal contradiction' if require_closed else 'Closed inherited premise')
     if return_state:
-        state=dict(credit=e,low=low,high=high,covered=covered,covered_positive=covered_positive,fixed_pairs=sorted(fixed_pairs),coverage_probes={key:dict(excluded=sorted(value['excluded']),forced=value['forced']) for key,value in coverage_probes.items()},core_tail_excluded={side:sorted(values) for side,values in core_tail_excluded.items()},facts=facts,tail_low=tail_low,tail_counts=tail_counts,tail_pairs=tail_pairs,
+        state=dict(credit=e,low=low,high=high,covered=covered,covered_positive=covered_positive,fixed_pairs=sorted(fixed_pairs),coverage_probes={key:dict(excluded=sorted(value['excluded']),forced=value['forced']) for key,value in coverage_probes.items()},core_tail_excluded={side:sorted(values) for side,values in core_tail_excluded.items()},ordered_cover={side:dict(order=value['order'],excluded=sorted(value['excluded'])) for side,value in ordered_cover.items()},facts=facts,tail_low=tail_low,tail_counts=tail_counts,tail_pairs=tail_pairs,
                    constants=[(*edges[i],value) for i,value in constants.items()],
                    point_hits=[(*edges[i],sorted(tags)) for i,tags in point_hits.items()],
                    point_groups=[(*edges[i],[(tags,count) for tags,count in groups.items()]) for i,groups in point_groups.items()],trim_pairs=sorted(trim_pairs),sumset_excluded={key:sorted(pairs) for key,pairs in sumset_excluded.items()},sumset_equalities=sumset_equalities,leading_hits=[(*edges[i],sorted(tags)) for i,tags in leading_hits.items()],leading_extended=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in leading_extended.items()],extended_hits=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in extended_hits.items()])

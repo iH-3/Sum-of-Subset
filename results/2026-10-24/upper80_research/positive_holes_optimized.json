@@ -1,0 +1,593 @@
+{
+  "status": "PASS_CONDITIONAL_POSITIVE_HOLE_PROFILES",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "new_h3_claims": 41,
+  "new_branches": 1353,
+  "paired_mu": [
+    58,
+    112,
+    164,
+    214,
+    262,
+    308,
+    352
+  ],
+  "tau_floors": [
+    62,
+    120,
+    176,
+    230,
+    282,
+    332,
+    380
+  ],
+  "chord_checks": 28,
+  "individual_chord_checks": 4032,
+  "retained_predecessor_chord_checks": 3696,
+  "first_gap_prefixes": 17799,
+  "complete_predecessor_mass_floor": 352,
+  "nonprimitive_predecessor_mass_floor": 372,
+  "retained_predecessor_schedules": [
+    {
+      "rank": 22,
+      "witness": {
+        "r": 21,
+        "R": 39,
+        "B": 40,
+        "H": 16,
+        "L": 18,
+        "thresholds": [
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "propagation_margin": 139
+    },
+    {
+      "rank": 23,
+      "witness": {
+        "r": 22,
+        "R": 59,
+        "B": 60,
+        "H": 22,
+        "L": 18,
+        "thresholds": [
+          11,
+          11,
+          11,
+          11,
+          11
+        ]
+      },
+      "propagation_margin": 128
+    },
+    {
+      "rank": 24,
+      "witness": {
+        "r": 23,
+        "R": 77,
+        "B": 78,
+        "H": 24,
+        "L": 18,
+        "thresholds": [
+          12,
+          12,
+          12,
+          12,
+          12,
+          12
+        ]
+      },
+      "propagation_margin": 128
+    },
+    {
+      "rank": 25,
+      "witness": {
+        "r": 24,
+        "R": 93,
+        "B": 94,
+        "H": 26,
+        "L": 18,
+        "thresholds": [
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ]
+      },
+      "propagation_margin": 131
+    },
+    {
+      "rank": 26,
+      "witness": {
+        "r": 25,
+        "R": 107,
+        "B": 108,
+        "H": 28,
+        "L": 18,
+        "thresholds": [
+          9,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "propagation_margin": 137
+    },
+    {
+      "rank": 27,
+      "witness": {
+        "r": 26,
+        "R": 119,
+        "B": 120,
+        "H": 30,
+        "L": 18,
+        "thresholds": [
+          7,
+          11,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "propagation_margin": 146
+    },
+    {
+      "rank": 28,
+      "witness": {
+        "r": 27,
+        "R": 129,
+        "B": 130,
+        "H": 30,
+        "L": 18,
+        "thresholds": [
+          5,
+          9,
+          13,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "propagation_margin": 162
+    },
+    {
+      "rank": 29,
+      "witness": {
+        "r": 28,
+        "R": 137,
+        "B": 138,
+        "H": 30,
+        "L": 18,
+        "thresholds": [
+          3,
+          7,
+          11,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "propagation_margin": 181
+    },
+    {
+      "rank": 30,
+      "witness": {
+        "r": 29,
+        "R": 143,
+        "B": 144,
+        "H": 30,
+        "L": 19,
+        "thresholds": [
+          5,
+          10,
+          14,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15
+        ]
+      },
+      "propagation_margin": 203
+    },
+    {
+      "rank": 31,
+      "witness": {
+        "r": 30,
+        "R": 147,
+        "B": 148,
+        "H": 28,
+        "L": 19,
+        "thresholds": [
+          4,
+          9,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "propagation_margin": 232
+    },
+    {
+      "rank": 32,
+      "witness": {
+        "r": 31,
+        "R": 149,
+        "B": 150,
+        "H": 26,
+        "L": 19,
+        "thresholds": [
+          4,
+          8,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13
+        ]
+      },
+      "propagation_margin": 264
+    },
+    {
+      "rank": 33,
+      "witness": {
+        "r": 32,
+        "R": 149,
+        "B": 150,
+        "H": 24,
+        "L": 19,
+        "thresholds": [
+          4,
+          8,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12
+        ]
+      },
+      "propagation_margin": 299
+    },
+    {
+      "rank": 34,
+      "witness": {
+        "r": 33,
+        "R": 147,
+        "B": 148,
+        "H": 22,
+        "L": 19,
+        "thresholds": [
+          4,
+          8,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11
+        ]
+      },
+      "propagation_margin": 337
+    },
+    {
+      "rank": 35,
+      "witness": {
+        "r": 34,
+        "R": 143,
+        "B": 144,
+        "H": 20,
+        "L": 19,
+        "thresholds": [
+          4,
+          9,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "propagation_margin": 378
+    },
+    {
+      "rank": 36,
+      "witness": {
+        "r": 35,
+        "R": 137,
+        "B": 138,
+        "H": 18,
+        "L": 19,
+        "thresholds": [
+          5,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9
+        ]
+      },
+      "propagation_margin": 422
+    },
+    {
+      "rank": 37,
+      "witness": {
+        "r": 36,
+        "R": 129,
+        "B": 130,
+        "H": 16,
+        "L": 18,
+        "thresholds": [
+          3,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      },
+      "propagation_margin": 469
+    },
+    {
+      "rank": 38,
+      "witness": {
+        "r": 37,
+        "R": 119,
+        "B": 120,
+        "H": 14,
+        "L": 18,
+        "thresholds": [
+          5,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7,
+          7
+        ]
+      },
+      "propagation_margin": 519
+    },
+    {
+      "rank": 39,
+      "witness": {
+        "r": 38,
+        "R": 107,
+        "B": 108,
+        "H": 12,
+        "L": 18,
+        "thresholds": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "propagation_margin": 572
+    },
+    {
+      "rank": 40,
+      "witness": {
+        "r": 39,
+        "R": 93,
+        "B": 94,
+        "H": 10,
+        "L": 18,
+        "thresholds": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "propagation_margin": 628
+    },
+    {
+      "rank": 41,
+      "witness": {
+        "r": 40,
+        "R": 77,
+        "B": 78,
+        "H": 8,
+        "L": 18,
+        "thresholds": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "propagation_margin": 687
+    },
+    {
+      "rank": 42,
+      "witness": {
+        "r": 41,
+        "R": 59,
+        "B": 60,
+        "H": 6,
+        "L": 18,
+        "thresholds": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      "propagation_margin": 749
+    }
+  ]
+}

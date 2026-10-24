@@ -1,6 +1,6 @@
 from pathlib import Path
 import sys,json,random
-root=Path(__file__).resolve().parents[3];sys.path.insert(0,str(root/'verification/upper80'));import cover_geometry as coverage,model as m,parametric as p
+root=Path(__file__).resolve().parents[3];sys.path.insert(0,str(root/'verification/upper80'));import cover_geometry as coverage,interval_gaps,model as m,parametric as p
 rng=random.Random(241226);cases=points=0
 st=list(m.patterns(6))[436];p.POINT_OVERLAP=True;p.build(st,6);Z=p.build.last_Z
 for sample in range(120):
@@ -28,7 +28,15 @@ for sample in range(120):
   for name,lo,hi in components:
    a=max(1,ev(lo));b=min(S,ev(hi))
    if a<=b:envelope|=((1<<(b-a+1))-1)<<(a-1)
+  centres,singletons,_=interval_gaps.catalogue(actual_st,Z,side);ordered=0
+  for _,centre in centres:
+   a=max(1,ev(centre)-x['R'+other]);b=min(S,ev(centre)+x['R'+side])
+   if a<=b:ordered|=((1<<(b-a+1))-1)<<(a-1)
+  for _,value in singletons:
+   v=ev(value)
+   if 1<=v<=S:ordered|=1<<(v-1)
+  if ordered!=envelope:raise ValueError('Ordered core decomposition differs from complete envelope')
   missed=actual&~envelope
   if missed:raise ValueError(('Incomplete four-sum cover',sample,side,(missed&-missed).bit_length()))
   cases+=1;points+=actual.bit_count()
-print(json.dumps(dict(status='PASS_EXPLICIT_FOUR_SUM_COVER',physical_targets=cases,covered_four_sum_values=points)))
+print(json.dumps(dict(status='PASS_EXPLICIT_FOUR_SUM_COVER',physical_targets=cases,covered_four_sum_values=points,equal_ordered_envelopes=cases)))

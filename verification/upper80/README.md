@@ -51,3 +51,30 @@ python -I -S -B verification/upper80/verify_refinements.py --output refinements.
 ```bash
 python -I -S -B verification/upper80/low_slack.py --output low_slack.json
 ```
+
+## 正洞根的新局部闭合
+
+原始根 `(4,142,1)` 已排除 `W=w/2=2..7`，仍保留 `W=1` 为开放。联合核心前缀检查把 `w=4` 总质量下界加强到 126，双侧前驱下界加强到 122，并闭合这一切片。原始根总数仍是 4,645/4,654 已闭合。
+
+```bash
+python -I -S -B verification/upper80/verify_positive_refinements.py --output positive.json
+python -O -I -S -B verification/upper80/verify_positive_refinements.py --output positive_optimized.json
+```
+
+证书包含全部前提与显式开放切片；验证只需标准库。单独继续 `W=1` 可先导出其已核验前提，再运行发现器：
+
+```bash
+python -I -S -B verification/upper80/verify_positive_refinements.py --export-open .work/upper80/positive_W1_parent.json
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/resume_search.py 4 142 --positive --hole-W 1 --parent .work/upper80/positive_W1_parent.json --cache .work/upper80/positive_W1_resume --output .work/upper80/positive_W1_result.json
+```
+
+## 恢复发现搜索
+
+`data/upper80_search_frontier_20261024.json.gz` 保存 3,907 个缓存节点及共享前提；其中 1,603 个局部闭合节点不构成任何新增原始根的完整覆盖。以下命令适用于尚无相应缓存的工作副本；恢复器拒绝覆盖内容不同的现有节点。
+
+```bash
+python -I -S -B verification/upper80/search_frontier.py --restore data/upper80_search_frontier_20261024.json.gz
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/resume_search.py 6 436 --rank 1 --integer-first --cache .work/upper80/20261024/kernel_rank_branch6_1 --output .work/upper80/resumed_rank1.json
+```
+
+v2 存档保留模式键的顺序，因为证书按确定的行号引用不等式；恢复后的闭合节点会重新重放。旧 v1 存档不再接受，需要从原缓存重新导出。恢复只需标准库，继续发现需要 NumPy/SciPy。成功的终端仍须整数证书重放；完整返回的分支树还会核验互补域覆盖。

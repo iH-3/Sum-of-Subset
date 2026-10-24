@@ -16,6 +16,8 @@ def reject(label,step):
 reject('unlicensed coverage final',dict(kind='coverage_final',side='s',probe=0))
 reject('unlicensed coverage force',dict(kind='coverage_force',side='s',probe=0,component=1))
 reject('unlicensed core-tail capacity',dict(kind='core_tail_capacity',side='s'))
+reject('unlicensed ordered cover capacity',dict(kind='ordered_cover_capacity',selected={'s':[0]},credit=0,joint=False))
+reject('empty known fixed-cover chain',dict(kind='fixed_known_cover',label=next(label for label in m.fixed_forms() if '+' in label),side='s',modes={'s':0,'t':0},chain=[],certificates=[]))
 reject('unlicensed real variable rounding',dict(kind='integer_guard',guard={'unlicensed_real':1},certificate={'weights':[],'denominator':1}))
 reject('rounding without strict bound',dict(kind='integer_guard',guard={'ONE':1},certificate={'weights':[],'denominator':1}))
 reject('unsupported integral bound',dict(kind='integer_guard',guard={'xs':1},certificate={'weights':[],'denominator':1}))

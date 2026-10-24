@@ -1,0 +1,13 @@
+{
+  "status": "PASS_DISCOVERY_FRONTIER_SERIALIZATION",
+  "schema": "upper80-discovery-frontier-v2",
+  "global_upper_bound_certified": false,
+  "root_coverage_certified": false,
+  "checkpoints": 3907,
+  "shared_records": 4133,
+  "closed_checkpoints": 1603,
+  "sample_round_trips": 8,
+  "restored_closed_replays": 8,
+  "bytes": 11370945,
+  "sha256": "c86657beb9e54417e04d9c510d925a98615a24c498db6df4e2735e7ff607b616"
+}

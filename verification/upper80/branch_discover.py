@@ -82,12 +82,23 @@ class Branch:
             normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
             if name not in limits and normalized not in known:candidates.append((4300+min(100,violation),name,0))
 
+        for length,guard in getattr(s,'fixed_known_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((1600-min(99,length),name,0))
+
+        for guard in getattr(s,'ordered_cover_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((4700,name,0))
+        for guard in getattr(s,'shifted_cover_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((4900,name,0))
+
         if getattr(self,'integer_first',False) and self.j>=3 and 3 not in self.st.values():
             for name in ('F','FD',*('GB'+str(i) for i in range(1,11)),'phicores','phicoret','phisources','phisourcet','ts','tt','xs','xt','as','bs','cs','es','at','bt','ct','et','Xs','Xt','gs','gt','hs','ht','ds','dt','K','delta'):
                 value=x[name];cut=math.floor(value)
                 key='integer_cut:'+name+':'+str(cut)
                 fraction=value-cut
-                if key not in limits and 1e-6<fraction<1-1e-6:candidates.append((3000+min(fraction,1-fraction),key,0))
+                if key not in limits and 1e-6<fraction<1-1e-6:candidates.append((getattr(self,'integer_priority',3000)+min(fraction,1-fraction),key,0))
 
         if s.coverage_probes:
             import cover_geometry as coverage

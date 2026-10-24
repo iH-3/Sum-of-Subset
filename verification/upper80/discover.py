@@ -74,6 +74,7 @@ class Search:
         self.fixed_pairs={tuple(pair) for pair in prior.get('fixed_pairs',[])} if prior else set()
         self.coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()} if prior else {}
         self.core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
+        self.ordered_cover={side:dict(order=list(value['order']),excluded=set(value['excluded'])) for side,value in prior.get('ordered_cover',{}).items()} if prior else {}
         self.Z=p.build.last_Z;self.tail_low={'s':set(),'t':set()};self.tail_counts={'s':0,'t':0};self.tail_pairs={'s':set(),'t':set()}
         if prior:
             self.low=set(prior['low']);self.high=set(prior['high']);self.rows.extend(prior['facts'])
@@ -422,6 +423,206 @@ class Search:
                 if len(self.trace)>before:return True,False
         return False,False
 
+    def ordered_cover_step(self,point):
+        self.ordered_cover_failures=[]
+        if self.j<3 or 3 in self.st.values():return False,False
+        import interval_gaps
+        ev=lambda row:sum(c*point[k] for k,c in row.items());changed=False;failed=[];numeric={};selected={}
+        for side in 'st':
+            other='t' if side=='s' else 's';centres,points,native=interval_gaps.catalogue(self.st,self.Z,side)
+            order=self.ordered_cover[side]['order'] if side in self.ordered_cover else sorted(range(len(centres)),key=lambda i:(ev(centres[i][1]),i))
+            licenses=interval_gaps.licenses(self.st,self.Z,side,order)
+            if any(ev(g)>1e-7 for g in licenses):continue
+            if side not in self.ordered_cover:
+                certificates=[]
+                for guard in licenses:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:failed.append(guard);break
+                    certificates.append(cert)
+                if len(certificates)!=len(licenses):continue
+                self.trace.append(dict(kind='ordered_cover_license',side=side,order=order,certificates=certificates))
+                self.rows.extend((guard,0,'proved ordered core cover guard') for guard in licenses)
+                self.ordered_cover[side]=dict(order=order,excluded=set());changed=True
+            state=self.ordered_cover[side];remaining_native=remaining_all=0
+            for index,(_,form) in enumerate(points):
+                value=ev(form);places=[]
+                if value<=1e-7:places.append('low')
+                if value>=point['S'+side]+1-1e-7:places.append('high')
+                places.extend(i for i,(_,centre) in enumerate(centres) if ev(centre)-point['R'+other]-1e-7<=value<=ev(centre)+point['R'+side]+1e-7)
+                if not places:
+                    remaining_all+=1;remaining_native+=index<native
+                if index in state['excluded']:continue
+                for where in places:
+                    guards=interval_gaps.exclusion(self.st,self.Z,side,index,where);certificates=[]
+                    for guard in guards:
+                        cert,infeasible=self.nonstrict_guard(guard)
+                        if infeasible:return False,True
+                        if cert is None:failed.append(guard);break
+                        certificates.append(cert)
+                    if len(certificates)!=len(guards):continue
+                    self.trace.append(dict(kind='ordered_cover_exclude',side=side,index=index,where=where,certificates=certificates))
+                    self.rows.extend((guard,0,'proved ordered core cover guard') for guard in guards);state['excluded'].add(index);changed=True;break
+            forms=interval_gaps.gaps(self.st,self.Z,side,order);selected[side]=[i for i,g in enumerate(forms) if ev(g)>1e-7]
+            gap=sum(ev(forms[i]) for i in selected[side])-point['hole_W'];numeric[side]=(gap,remaining_native,remaining_all)
+            row=interval_gaps.capacity(self.st,self.Z,self.ordered_cover,{side:selected[side]},self.e,False)
+            if ev(row[0])>row[1]+1e-7:
+                self.trace.append(dict(kind='ordered_cover_capacity',selected={side:selected[side]},credit=self.e,joint=False));self.rows.append(row);changed=True
+        potential=any(gap>all_points+1e-7 for gap,native,all_points in numeric.values())
+        if set(selected)==set('st'):
+            row=interval_gaps.capacity(self.st,self.Z,self.ordered_cover,selected,self.e,True)
+            if ev(row[0])>row[1]+1e-7:
+                self.trace.append(dict(kind='ordered_cover_capacity',selected=selected,credit=self.e,joint=True));self.rows.append(row);changed=True
+            potential=potential or sum(v[0]-v[1] for v in numeric.values())>84-self.e+1e-7
+        if potential:self.ordered_cover_failures=failed
+        return changed,False
+
+    def positive_hole_step(self,point):
+        if not self.positive:return False,False
+        import positive_holes,math
+        used=[int(label.rsplit(' ',1)[1]) for _,_,label in self.rows if label.startswith('positive hole mass profile ')]
+        for hi in range(max(1,math.ceil(point['hole_W']-1e-7)),min(used,default=8)):
+            guard={'hole_W':1,'ONE':-hi};cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:continue
+            self.trace.append(dict(kind='positive_hole_profile',hi=hi,certificate=cert))
+            self.rows.append((guard,0,'proved positive-hole profile range'));self.rows.append(positive_holes.row(hi))
+            return True,False
+        return False,False
+
+    def retained_predecessor_step(self,point):
+        if not self.positive or self.j!=4 or self.e<38:return False,False
+        import positive_holes
+        total=[int(label.rsplit(' ',1)[1]) for _,_,label in self.rows if label.startswith('positive hole mass profile ')]
+        lo=(self.limits or {}).get('hole_W',(1,7))[0];hi=min(total,default=7)
+        used={(int(label.split()[-2]),int(label.split()[-1])) for _,_,label in self.rows if label.startswith('retained positive predecessor ')}
+        if any(a>=lo and b<=hi for a,b in used):return False,False
+        guards=[{'hole_W':-1,'ONE':lo},{'hole_W':1,'ONE':-hi}];certificates=[]
+        for guard in guards:
+            cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:return False,False
+            certificates.append(cert)
+        self.trace.append(dict(kind='retained_positive_predecessor',lo=lo,hi=hi,credit=self.e,certificates=certificates))
+        self.rows.extend((guard,0,'proved retained predecessor range') for guard in guards);self.rows.extend(positive_holes.retained_predecessor_rows(lo,hi))
+        return True,False
+
+    def combined_hole_step(self,point):
+        if not self.positive:return False,False
+        import combined_holes
+        used={label for _,_,label in self.rows}
+        retained=self.j==4 and self.e>=38
+        kinds=[False]+([True] if retained else [])
+        kinds=[v for v in kinds if combined_holes.total_rows(v)[2] not in used]
+        if not kinds:return False,False
+        guard={'hole_W':1,'ONE':-2}
+        cert,infeasible=self.nonstrict_guard(guard)
+        if infeasible:return False,True
+        if cert is None:return False,False
+        for value in kinds:
+            self.trace.append(dict(kind='combined_hole_mass',retained=value,credit=self.e,certificate=cert))
+            self.rows.append((guard,0,'proved combined hole range'));self.rows.append(combined_holes.total_rows(value))
+        return True,False
+
+    def positive_kernel_step(self,point):
+        if not self.positive or self.j!=4 or self.e<38:return False,False
+        import positive_kernel
+        lo,hi=(self.limits or {}).get('hole_W',(1,7))
+        if lo!=hi or lo not in (1,2):return False,False
+        used={label for _,_,label in self.rows}
+        rank_hi=min([int(label.rsplit(' ',1)[1]) for _,_,label in self.rows if label.startswith('positive core gap rank ')]+[17])
+        spec=positive_kernel.plan(lo,self.e,rank_hi)
+        choices=[(side,q) for side,entry in spec.items() for q in range(1,entry['depth']+1) if positive_kernel.rows(lo,side,q)[0][2] not in used]
+        combined=[q for q in range(1,min(v['depth'] for v in spec.values())+1) if positive_kernel.combined_rows(lo,self.e,rank_hi,q)[0][2] not in used]
+        if not choices and not combined:return False,False
+        guards=[{'hole_W':-1,'ONE':lo},{'hole_W':1,'ONE':-lo},{'rank_k':1,'ONE':-rank_hi}];certificates=[]
+        for guard in guards:
+            cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:return False,False
+            certificates.append(cert)
+        self.trace.append(dict(kind='positive_retained_kernel',W=lo,credit=self.e,rank_hi=rank_hi,choices=choices,combined=combined,certificates=certificates))
+        self.rows.extend((guard,0,'proved positive retained kernel range') for guard in guards)
+        for side,q in choices:self.rows.extend(positive_kernel.rows(lo,side,q))
+        for q in combined:self.rows.extend(positive_kernel.combined_rows(lo,self.e,rank_hi,q))
+        return True,False
+
+    def positive_first_gap_step(self,point):
+        if not self.positive:return False,False
+        import positive_holes,math
+        used=[int(label.rsplit(' ',1)[1]) for _,_,label in self.rows if label.startswith('positive core gap rank ')]
+        for hi in range(max(0,math.ceil(point['rank_k']-1e-7)),min(used,default=18)):
+            guard={'rank_k':1,'ONE':-hi};cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:continue
+            self.trace.append(dict(kind='positive_core_gap',rank_hi=hi,certificate=cert))
+            self.rows.append((guard,0,'proved positive first-gap rank range'));self.rows.extend(positive_holes.first_gap_rows(hi))
+            return True,False
+        return False,False
+
+    def positive_hole_side_step(self,point):
+        if not self.positive:return False,False
+        import positive_holes
+        total=[int(label.rsplit(' ',1)[1]) for _,_,label in self.rows if label.startswith('positive hole mass profile ')]
+        lo=(self.limits or {}).get('hole_W',(1,7))[0];hi=min(total,default=7)
+        used={(int(label.split()[-2]),int(label.split()[-1])) for _,_,label in self.rows if label.startswith('positive side interval ')}
+        if any(a>=lo and b<=hi for a,b in used):return False,False
+        guards=[{'hole_W':-1,'ONE':lo},{'hole_W':1,'ONE':-hi}];certificates=[]
+        for guard in guards:
+            cert,infeasible=self.nonstrict_guard(guard)
+            if infeasible:return False,True
+            if cert is None:return False,False
+            certificates.append(cert)
+        self.trace.append(dict(kind='positive_hole_side_interval',lo=lo,hi=hi,certificates=certificates))
+        self.rows.extend((guard,0,'proved positive side interval') for guard in guards);self.rows.extend(positive_holes.side_interval_rows(lo,hi))
+        return True,False
+
+    def fixed_shifted_step(self,point):
+        self.shifted_cover_failures=[]
+        if not self.positive or self.j<3 or 3 in self.st.values() or point['ts']+point['tt']+point['rank_k']>94+1e-7:return False,False
+        import shifted_source
+        modes,data,chains=shifted_source.chains(self.st,self.Z,point);forms=m.fixed_forms()
+        ev=lambda row:sum(c*point[k] for k,c in row.items());changed=False
+        for label in sorted(set(forms)-self.low-self.high-self.covered):
+            side='s' if '+' in label else 't';items=data[side];value=ev(forms[label])
+            options=[[i] for i,(lo,hi) in enumerate(items) if ev(lo)-1e-7<=value<=ev(hi)+1e-7]
+            options.extend(chain for chain in chains[side] if len(chain)>1 and ev(items[chain[0]][0])-1e-7<=value<=ev(items[chain[-1]][1])+1e-7)
+            for chain in sorted(options,key=len):
+                guards=shifted_source.cover_guards(self.st,self.Z,modes,side,chain,label);certificates=[]
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        self.shifted_cover_failures.append(guard);break
+                    certificates.append(cert)
+                if len(certificates)!=len(guards):continue
+                self.trace.append(dict(kind='fixed_shifted_cover',label=label,side=side,modes=modes,chain=chain,certificates=certificates))
+                self.rows.extend((guard,0,'proved shifted fixed cover') for guard in guards);self.covered.add(label);changed=True;break
+        return changed,False
+
+    def fixed_known_step(self,point):
+        self.fixed_known_failures=[]
+        if self.j<3 or 3 in self.st.values():return False,False
+        import known_union
+        modes,data,chains=known_union.cover_chains(self.st,self.Z,point);forms=m.fixed_forms()
+        ev=lambda row:sum(c*point[k] for k,c in row.items());changed=False
+        for label in sorted(set(forms)-self.low-self.high-self.covered):
+            side='s' if '+' in label else 't';items=data[side]['components'];value=ev(forms[label])
+            options=[[i] for i,(lo,hi) in enumerate(items) if ev(lo)-1e-7<=value<=ev(hi)+1e-7]
+            options.extend(chain for chain in chains[side] if len(chain)>1 and ev(items[chain[0]][0])-1e-7<=value<=ev(items[chain[-1]][1])+1e-7)
+            for chain in sorted(options,key=len):
+                guards=known_union.cover_guards(self.st,self.Z,modes,side,chain,label);certificates=[]
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        self.fixed_known_failures.append((len(chain),guard));break
+                    certificates.append(cert)
+                if len(certificates)!=len(guards):continue
+                self.trace.append(dict(kind='fixed_known_cover',label=label,side=side,modes=modes,chain=chain,certificates=certificates))
+                self.rows.extend((guard,0,'proved known fixed cover') for guard in guards);self.covered.add(label);changed=True;break
+        return changed,False
+
     def known_union_step(self,point):
         self.union_failures=[]
         if self.j<3 or 3 in self.st.values():return False,False
@@ -517,6 +718,9 @@ class Search:
 
     def run(self):
         forms=m.fixed_forms()
+        if self.positive and self.j>=3 and not any(label=='positive predecessor gap s' for _,_,label in self.rows):
+            import positive_holes
+            self.trace.append(dict(kind='positive_predecessor_gap'));self.rows.extend(positive_holes.predecessor_rows(self.j))
         for cycle in range(512):
             rr=self.lp()
             if rr.status==2:return self.final()
@@ -604,6 +808,42 @@ class Search:
                     self.trace.append(dict(kind='tail_low',side=side,label=label,certificate=cert))
                     self.tail_low[side].add(label);self.rows.append((target,0,'proved tail LOW '+label));changed=True
                 changed=tail_credit() or changed
+            if not changed:
+                extra,finished=self.positive_hole_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.positive_hole_side_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.positive_first_gap_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.retained_predecessor_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.combined_hole_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.positive_kernel_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.fixed_shifted_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.fixed_known_step(point)
+                if finished:return self.final()
+                changed=extra
+            if not changed:
+                extra,finished=self.ordered_cover_step(point)
+                if finished:return self.final()
+                changed=extra
             if not changed:
                 extra,finished=self.core_tail_step(point)
                 if finished:return self.final()
