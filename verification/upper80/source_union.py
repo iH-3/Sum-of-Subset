@@ -56,7 +56,10 @@ def membership(pair,witness,first_gap_case=None,interval='ordinary'):
 def derive(proof,first_gap_case=None):
     shape=proof.get('core_shape');m.need(shape is None or type(shape) is int and shape==first_gap_case,'Licensed first-gap source capacity')
     mode=proof['base_capacity'];m.need(mode in ('hull','mass'),'Core double-sum capacity')
-    base=core_capacity(2,shape) if mode=='mass' else {'Rs':2,'Rt':2,'ONE':1}
+    prefix=proof.get('core_prefix',{})
+    m.need(type(prefix) is dict and set(prefix)<=set('st'),'Canonical source prefix inventory')
+    m.need(not prefix or mode=='mass','Canonical source prefix requires mass capacity')
+    base=core_capacity(2,shape,prefix) if mode=='mass' else {'Rs':2,'Rt':2,'ONE':1}
     edges=proof['edges'];m.need(len(edges)==len(set(edges)) and all(type(i) is int and 0<=i<8 for i in edges),'Two rooted source chains, no repeated edge')
     body=m.add((1,{'K':1}),(-1,base),(-556,ONE))
     for i in edges:body=m.add((1,body),(1,{'F':1}),(-1,gaps()[i]))
@@ -74,8 +77,17 @@ def discover(search,point):
     if shape is None:shape=shape_case(dict(j=search.j,positive=search.positive,limits=search.limits))
     ev=lambda row:sum(c*point[k] for k,c in row.items())
     edges=[i for i,g in enumerate(gaps()) if ev(g)<point['F']-1e-7]
-    mode='mass' if ev(core_capacity(2,shape))<2*(point['Rs']+point['Rt'])+1 else 'hull'
+    prefix={}
+    if getattr(search,'source_canonical_gaps',False):
+        import math,first_gap_core
+        for side in 'st':
+            w=0
+            if shape is not None:
+                h,ps,pt=first_gap_core.CASES[shape];w=h-(ps if side=='s' else pt)
+            prefix[side]=min(12,max(0,math.floor(point['phicore'+side]-w-2+1e-7)))
+    mode='mass' if ev(core_capacity(2,shape,prefix))<2*(point['Rs']+point['Rt'])+1 else 'hull'
     proof=dict(base_capacity=mode,edges=edges,covered=[]);certificates=[]
+    if prefix and mode=='mass':proof['core_prefix']=prefix
     if shape is not None:proof['core_shape']=shape
     witnesses=[(w,'ordinary') for w in ('double_prefix','zero','core_s','core_t',*range(8))]
     if shape is not None:witnesses=[('shape_double','ordinary'),*witnesses,*[(w,interval) for interval in ('shape_s','shape_t') for w in ('zero','core_s','core_t',*range(8))]]

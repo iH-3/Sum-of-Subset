@@ -1,31 +1,38 @@
 """Incremental discovery from raw or pooled checkpoints; never a global proof.
 
-Finished same-method outputs are skipped. Interrupted outputs retain all
-proved consequences and become the next premise. Only new systems are run.
+Finished outputs are never restarted, even after an unrelated code change.
+Interrupted outputs retain all proved consequences and become the next premise.
+A genuinely new method or stronger system must use a new output path.
 """
 from pathlib import Path
-import argparse,hashlib,json,time
+import argparse,hashlib,json,time,gzip
 import fast_lp;fast_lp.install()
 from discover import Search
-import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm,core_gap as cg,source_hulls as sh
+import record_pool as pool,full_window as fw,source_union as su,canonical_phi as cm,core_gap as cg,source_hulls as sh,ownerless_hit as oh,source_envelope as se
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('source',type=Path);ap.add_argument('output',type=Path)
-    ap.add_argument('--method',choices=['windows','integer_windows','gap_windows','integer_gap_windows','native','source','source_hulls','canonical','shifted_canonical','coverage','core_gaps'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');ap.add_argument('--seed-point',type=Path);args=ap.parse_args()
-    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),Path(cg.__file__),Path(sh.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
+    ap.add_argument('--method',choices=['windows','integer_windows','gap_windows','integer_gap_windows','punctured_windows','integer_punctured_windows','canonical_gap_windows','native','source','canonical_source','source_hulls','source_envelope','canonical','canonical_tail','shifted_canonical','ownerless','coverage','core_gaps'],default='windows');ap.add_argument('--cycles',type=int,default=20);ap.add_argument('--broad',action='store_true');ap.add_argument('--seed-point',type=Path);args=ap.parse_args()
+    modules=[Path(__file__),Path(fw.__file__),Path(su.__file__),Path(cm.__file__),Path(cg.__file__),Path(sh.__file__),Path(oh.__file__),Path(se.__file__),*[Path(__file__).with_name(n+'.py') for n in ('discover','exact','first_gap_core','parametric','model')]]
     digest=hashlib.sha256(b''.join(p.read_bytes() for p in modules)+json.dumps([args.method,args.broad]).encode()).hexdigest()
-    data=pool.read_gzip(args.source);parent=data['record']
+    old=None
+    if args.output.exists():
+        envelope=json.loads(gzip.decompress(args.output.read_bytes()))
+        metadata=envelope['payload'] if envelope.get('schema')=='upper80-nested-record-pool-v1' else envelope
+        if metadata.get('closed') or metadata.get('status')=='stalled':
+            print('REUSED_FINISHED_CHECKPOINT',str(args.output),flush=True);return
+        old=pool.unpack(envelope) if envelope.get('schema')=='upper80-nested-record-pool-v1' else envelope
+        if old.get('method') not in (None,args.method):raise ValueError('Use a new output path for a different discovery method')
+    data=pool.read_gzip(args.source);parent=old['record'] if old is not None else data['record']
     seed=pool.read_gzip(args.seed_point).get('point') if args.seed_point else None
     if args.seed_point and seed is None:raise ValueError('Requested saved discovery point is absent')
-    if args.output.exists():
-        old=pool.read_gzip(args.output)
-        if old.get('closed') or old.get('status')=='stalled' and old.get('method_digest')==digest:
-            print('REUSED_FINISHED_CHECKPOINT',str(args.output),flush=True);return
-        parent=old['record']
     if data.get('closed'):raise ValueError('Do not search a closed source')
     s=Search(parent['st'],parent['j'],parent['positive'],parent.get('limits'),use_planes=True,parent=parent)
     s.omit_generated_rows=True;s.window_affine_only=not args.broad;s.max_full_probes=0
-    s.window_extreme_gaps=args.method in ('gap_windows','integer_gap_windows')
+    s.window_extreme_gaps=args.method in ('gap_windows','integer_gap_windows','punctured_windows','integer_punctured_windows','canonical_gap_windows')
+    s.window_punctures=args.method in ('punctured_windows','integer_punctured_windows','canonical_gap_windows')
+    s.window_canonical_gaps=args.method=='canonical_gap_windows'
+    s.source_canonical_gaps=args.method=='canonical_source'
     if args.method=='native':s.full_cover_step=lambda point:(False,False)
     start=time.monotonic();last=[start,0];point=None;closed=False;new=False
     def save(status):
@@ -48,7 +55,7 @@ def main():
                 point=dict(zip(s.names,r.x))
                 seeded=cycle==0 and seed is not None
                 if seeded:point=seed;print('REUSED_SAVED_DISCOVERY_POINT',flush=True)
-                if args.method in ('integer_windows','integer_gap_windows'):
+                if args.method in ('integer_windows','integer_gap_windows','integer_punctured_windows'):
                     import numpy as np
                     from scipy.optimize import milp,Bounds,LinearConstraint
                     s.matrices();keep=[i for i,(_,_,label) in enumerate(s.rows) if label not in ('integer CG consequence','complete target-cover consequence')]
@@ -58,7 +65,7 @@ def main():
                     if result.x is None:break
                     point=dict(zip(s.names,result.x));changed,finished=fw.discover(s,point)
                 elif args.method=='coverage':changed,finished=s.full_cover_step(point)
-                else:changed,finished={'windows':fw.discover,'gap_windows':fw.discover,'source':su.discover,'source_hulls':sh.discover,'canonical':cm.discover,'shifted_canonical':cm.discover_shifted,'core_gaps':cg.discover}[args.method](s,point)
+                else:changed,finished={'windows':fw.discover,'gap_windows':fw.discover,'punctured_windows':fw.discover,'canonical_gap_windows':fw.discover,'source':su.discover,'canonical_source':su.discover,'source_hulls':sh.discover,'source_envelope':se.discover,'canonical':cm.discover,'canonical_tail':cm.discover_tail,'shifted_canonical':cm.discover_shifted,'ownerless':oh.discover,'core_gaps':cg.discover}[args.method](s,point)
                 print('CYCLE',cycle,changed,finished,len(s.trace),flush=True)
                 if finished:
                     if args.method not in ('coverage','core_gaps') or not changed:s.final()

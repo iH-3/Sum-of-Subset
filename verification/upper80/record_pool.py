@@ -9,6 +9,12 @@ import model as m
 
 def canonical(value):return json.dumps(value,separators=(',',':')).encode()
 
+def record_digest(record):
+    """Order-sensitive Merkle identity without expanding shared ancestors."""
+    packet=pack(record);reference=packet['payload']
+    m.need(isinstance(reference,dict) and set(reference)=={'$record'},'One record cache identity')
+    return reference['$record']
+
 def pack(value):
     pool={};identities={}
     def visit(item):

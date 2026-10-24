@@ -1,3 +1,18 @@
+Latest checkpoint: the complete positive root `(4,142,1)` is now closed.
+`positive_canonical_gap_receipt.json` records the new W=1 exact replay;
+`canonical_positive_packet_receipt.json` checks its combination with the
+immutable W=2..7 slices, without another arithmetic replay. The current
+finite total is4652/4654; the global upper bound is still81.
+
+`canonical_frontier_receipt.json` identifies the35 frozen newer checkpoints.
+The older frontier packets remain immutable because existing closure
+certificates reference their hashes. Case0 of the j5 canonical-minimizer
+partition is closed; cases1,2,3 and allthree ownerless-hit cases remain open.
+Fresh source-envelope continuation uses new capacity rules and separate
+output paths. Stored controls are not invitations to repeat old searches.
+
+The remainder of this file records earlier historical checkpoints.
+
 # Incremental research verification
 
 Latest: `gap_closure_receipt.json` certifies assembly of all 12 alternatives

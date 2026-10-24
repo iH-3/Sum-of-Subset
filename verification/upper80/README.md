@@ -1,6 +1,12 @@
 # 向上界 80 的研究：全局仍为 71≤N≤81
 
-Latest 2026-10-24 continuation: `(5,413,0)` also closed; **4,651/4,654 closed, three open**. See `verify_extreme_gap.py`, `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
+Latest 2026-10-24 continuation: the full positive root `(4,142,1)` is closed;
+**4,652/4,654 closed, two open**: `(4,142,0)` and `(5,219,0)`.
+`verify_canonical_positive.py --reuse-receipts` checks the complete W-domain
+using the new W=1 replay and the immutable W=2..7 receipts. Global
+`71<=N<=81` is unchanged; structural applicability remains incomplete.
+Historical counts and example commands below describe their respective
+packets; never resume a now-closed root or repeat a finished search stage.
 
 本目录同时保存已完成的辅助定理验证和未完成的研究原型。**它不是上界 80 的完整验证包。**
 
@@ -120,7 +126,9 @@ The continuation accepts both raw and pooled files. Available methods are
 `windows`, `integer_windows`, `gap_windows`, `integer_gap_windows`, `native`,
 `source`, `source_hulls`, `canonical`, `shifted_canonical`, `core_gaps`, and `coverage`.
 Use a new method only where the ledger and stronger premises justify it.
-Finished identical method checkpoints are skipped; MIP output is discovery
+Finished checkpoints are always skipped, even after unrelated code edits;
+a genuinely stronger system or new method must use a new output path.
+MIP output is discovery
 only and can never certify a contradiction.
 
 `continuation_20261024/joint_resume.py SOURCE.json.gz DEPTH NODE_BUDGET`
@@ -137,3 +145,30 @@ python verification/upper80/verify_extreme_gap.py --reuse-receipt
 
 Without that option, the verifier performs a full fresh arithmetic replay;
 that is available for an independent reader, not needed to continue research.
+
+
+## Canonical-gap continuation and no-repeat ledger
+
+`continue_frontier.py` now supports `canonical_tail`, `ownerless`,
+`punctured_windows`, `canonical_gap_windows`, `canonical_source` and
+`source_envelope`. Each enables a specifically documented new lemma.
+A finished output is always skipped, even after an unrelated code change;
+a genuinely new method or stronger premise requires a new output path.
+`--seed-point` reuses a saved discovery point without a new integer solve.
+The exact arithmetic cache uses an order-preserving Merkle identity, so
+shared ancestors are committed to without exponentially expanding them.
+
+The canonical-minimizer cases for `(5,219,0)` are complete as a partition,
+but only case0 is closed. Cases1,2,3 are open at credit52. The three
+ownerless-hit cases for `(4,142,0)` are all open (credits42,43,44).
+Controls and replay receipts are saved under
+`results/2026-10-24/upper80_extended_windows`; do not rerun their finished
+searches or the older joint depths. New source-envelope propagation uses
+strictly stronger premises and has its own output paths.
+
+
+`restore_frontier.py` now defaults to
+`data/upper80_canonical_frontier_20261024.json.gz` (35 snapshots). It extracts
+saved records without any search. Its ledger identifies completed stages,
+closed roots, the incomplete20-cycle source-envelope layer and later active
+continuations. Older immutable packets remain available with `--packet`.

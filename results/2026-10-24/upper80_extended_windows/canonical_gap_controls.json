@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CANONICAL_EXTREME_GAPS", "actual_core_pairs": 200, "prefix_mass_checks": 5200, "core_power_capacities": 600, "sharp_capacities": 6, "empty_intervals": 400, "invalid_recipes_rejected": 4, "global_upper_bound_certified": false}

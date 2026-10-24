@@ -4,6 +4,22 @@
 records new mathematics and arithmetic to be integrated into a complete proof,
 only after all finite cases close and the interfaces below have been audited.
 
+Latest canonical-gap checkpoint: the entire positive root `(4,142,1)`
+is closed. The new W=1 record passed a fresh exact replay (36 local steps,
+credit48); the W=2 and W=3..7 records were reused by immutable identity.
+`verify_canonical_positive.py --reuse-receipts` checks the full integer
+coverage without repeating those arithmetic replays. Total: **4,652 closed /
+2 open**, namely `(4,142,0)` and `(5,219,0)`. Do not resume any positive-root
+search. The global bound remains81 and structural adoption remains incomplete.
+
+The j5_219 canonical-minimizer partition has four complete alternatives.
+Case0 (both xi>=phi+1) closed and passed exact replay, with credit54.
+Cases1,2,3 completed canonical_tail/native/punctured_windows at credit52 and
+remain open. Their finished stages must not be restarted. The three-way
+ownerless-core-hit partition of j4_zero also remains entirely open, with
+credits42,43,44. New source-envelope work uses genuinely stronger capacity
+rules; earlier source_union and source_hulls jobs must not be repeated.
+
 Latest extreme-gap checkpoint: `(5,413,0)` is now completely closed. Case 3
 passed a new 25-step exact replay, and all 12 target alternatives were
 assembled with exact conditional-domain checks, reusing the other 11
@@ -188,8 +204,10 @@ cap is below T_(b-2)-2. The larger-AP balanced case a32 is the reflected same
 halfstep case; do not use its coarser isolated c<=9 as a terminal proof.
 Both AP unequal units are included in this halfstep analysis. One-class
 nonprimitive possibilities give c<=158 and z=0, also covered by small slack.
-These AP licenses still need to be written out and audited as one coherent
-argument, especially a7/8 and the larger-AP reflection.
+The rank7/8 source-lattice gate is now derived without a primitive-side
+assumption in `reports/upper80_small_rank_interface_20261024.md`: the outer
+comparison is at most -113-2I using only rho>=-16. The AP licenses still
+need a coherent adoption, particularly the larger-AP balanced reflection.
 
 Small slack new independent LP interface:
 F>=24, w<=32, span M>=72, j1 delta<=110: all22 patterns certified.

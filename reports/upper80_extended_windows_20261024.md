@@ -398,3 +398,135 @@ shifted by the number of appended rows. The 421 old closed leaves are
 retained and skipped; only open nodes are reconsidered under stronger
 premises. This preserves completed work without treating old open leaves
 as closed.
+
+## Partially visible extreme gaps and proved core hits
+
+A charged clipped component hull `[L,U]` can also subtract a certified
+subinterval of one of its empty extreme gaps. The verifier checks that
+each removed interval belongs both to `[L,U]` and to that component's
+guaranteed empty interval, and has nonnegative integer length. If both
+extremes contribute, their removed intervals must be disjoint. Only a
+component charged by its own hull may use this subtraction: no actual-set
+mass charge, absorbing hull, or full-set overlap rebate can also use it.
+The controls include 640 actual component windows, 480 sharp cases,
+314 partially visible gap removals, and four rejected recipes.
+
+The existing ownerless lemma gives `h_v<=R_s+R_t+31+W` when `uH_v<=68`
+and its earlier strict guards hold. Its original interface looked only at
+an explicit branch limit. `ownerless_hit.py` permits the same premise to be
+supplied by an exact consequence certificate. Both sides of the surviving
+positive root now have these certified premises. For the zero-hole root,
+where they are not proved globally, the complementary domains are
+`uHs<=68,uHt<=68`; `uHs>=69`; and `uHs<=68,uHt>=69`. An open domain in
+this split remains open unless its own contradiction is recorded.
+
+## Reusing shared verification history
+
+Open-premise cache keys now use the record pool's order-sensitive recursive
+content identity. Each parent reference commits to its child's complete
+content through its hash; dictionary and row order still affect identity.
+This avoids repeatedly expanding shared ancestors into unpooled JSON and
+does not change any mathematical replay rule. A control with 31 shared
+records represents 2,147,483,647 unpooled occurrences without expanding them;
+nested content/order changes and a reordered actual certificate are rejected.
+
+The separate small-rank note `upper80_small_rank_interface_20261024.md`
+spells out the rank7/8 core-level AP distinction. It explicitly leaves the
+outer-source comparison and the rest of structural adoption unfinished.
+
+## A nonlast canonical minimizer and stronger predecessor mass
+
+If `xi>=phi+1`, the last-index term cannot attain the canonical minimum.
+Under `phi<=r−1`, choose an attaining index `r−q`. Then `1<=q<=phi` and
+
+    tau <= (r−q)(phi−q)+q xi.
+
+This convex quadratic in `q` is bounded by its two endpoint values on
+`[1,phi]`. If `r−1<=H` and `xi<=H`, both are at most
+`xi+H(phi−1)`. Therefore the new guarded affine row is
+
+    tau <= xi+H(phi−1).
+
+For a physical first-gap remainder, substitute `n=r−t`, `phi−w`, `xi−w`,
+and `tau−wn` as before, also licensing `phi<=n−1`. The four complementary
+integer cases distinguish `xi_v>=phi_v+1` from `xi_v=phi_v` on each side.
+The latter equality follows from the existing universal `phi_v<=xi_v`.
+This partition is retained explicitly; a single closed alternative does
+not close the root. New controls check 6,048 actual cores (151 sharp),
+1,000 physical affine instances and four invalid recipes.
+
+There is also an unconditional lower mass bound for the prefix remaining
+after removing the two largest core coefficients. From the definition of
+`phi`, its last `ell` excesses have sum at least
+
+    ell phi − ell(ell+3)/2.
+
+In a physical first-gap shape, add its earlier mandatory prefix mass and
+replace `phi` in this expression by `phi−w`. Indeed the translated
+remainder always has canonical defect at least `phi−w`, even in the
+sentinel case. Orders `0<=ell<=12` are valid throughout the present ranks,
+including a rank15 core with a one-point prescribed prefix.
+
+Adding this floor to the predecessor estimate strengthens each empty
+extreme interval and the corresponding complete `qE` capacity. It is a
+valid affine inequality for every chosen order, so discovery may select
+the order without partitioning the parameter domain. The independent
+actual-set controls check 5,200 prefix floors, 600 core-power capacities
+and 400 empty extreme intervals. Proof recipes store the chosen orders
+and the licensed physical shape; old records default to order zero.
+
+
+## Complete positive-root closure from canonical predecessor gaps
+
+The canonical prefix floor closed the entire `W=1` domain of `(4,142,1)`.
+Its new36-step record, with credit48, passed an independent exact replay.
+The complete original root is assembled from the exact domains `W=1`,
+`W=2` and `W=3..7`; the latter two use the immutable previously verified
+positive-refinement packet. The assembly checks domains and record identities
+without rerunning old searches or arithmetic. The total is now4652 closed
+original roots, leaving `(4,142,0)` and `(5,219,0)`.
+
+The four canonical-minimizer cases for `(5,219,0)` are the product of
+`xi_v>=phi_v+1` and `xi_v=phi_v`, for the two sides. Their union is complete
+because the parameters are integers and the existing canonical definition
+gives `phi_v<=xi_v`. Case0 (both nonlast) is closed and independently replayed;
+the other three remain open. This conditional result does not close the root.
+
+## Source capacity retaining each component's extreme gaps
+
+The same prefix floor now applies to the mass base of `source_union.py`.
+The stronger complete source envelope additionally keeps the extreme gaps
+of **each** component in `2D=2E union (E+tails) union (tail+tail)`.
+For each of its nine core components, write its hull as `[l,u]` and let
+`L_s,L_t` be either zero or the certified affine lower bounds for the gaps
+immediately below its maximum and above its minimum. Every point belongs to
+
+    {l}, [l+L_t+1,u-L_s-1], {u}.
+
+A negative affine gap bound remains safe: it enlarges the middle interval.
+The middle interval contains the translated core zero. A single E-translate
+has exactly65 elements, so its middle part also has cardinality at most63.
+Together with the36 tail-pair singletons this is a fixed inventory of63
+pieces. Partition those pieces into charged hulls, checking all endpoint
+containments, or charge a single piece by its intrinsic mass. A mass group
+may not absorb any other piece. Summing the charges bounds `K=|2D|`.
+
+`source_envelope.py` reconstructs every piece from the licensed physical
+shape and canonical prefix orders. The exact replayer checks the complete,
+nonduplicated inventory and every affine hull guard. New controls cover120
+actual73-point sources,1080 component envelopes,120 single-piece mass
+partitions and five malformed recipes. At the previously saved j5 discovery
+point, this new recipe lowers the geometric capacity303 to294; this is a
+recipe evaluation at that point, not a universally certified cut or a
+contradiction. Discovery must certify its guards on the current domain.
+
+None of these additions certifies global80 until both remaining finite roots
+and the structural applicability obligations have been resolved.
+
+
+The later structural note now explicitly derives the universal outer-source
+comparison `|FS(D)|-2|FS(D1)|<=-113-2I<0`, using onlyrho>=-16.
+Together with its inner bound this closes the rank7/8 source-lattice gate.
+It also spells out the exact reflection transporting a balanced `(32,32)`
+AP-first argument to either labelled side. The complete AP-first no-clipping
+and halfstep adoption remains a separate obligation.

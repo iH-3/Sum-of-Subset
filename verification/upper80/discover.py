@@ -941,6 +941,11 @@ class Search:
                 except ValueError:extra=[]
                 if extra:
                     self.trace.append(dict(kind='conditional_ownerless'));self.rows.extend(extra);self.ownerless_done=True;changed=True
+            if self.j==4 and m.is_ownerless(self.st) and self.e>=22:
+                import ownerless_hit
+                extra,finished=ownerless_hit.discover(self,point)
+                if finished:return self.final()
+                changed=changed or extra
             if not self.alpha_done:
                 try:indices=exact.alpha_compression(self.st,self.j,self.positive,self.e,self.edges)
                 except ValueError:indices=[]

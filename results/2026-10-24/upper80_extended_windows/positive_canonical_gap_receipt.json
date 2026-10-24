@@ -1,0 +1,22 @@
+{
+  "status": "PASS_NEW_W1_CANONICAL_GAP_CLOSURE",
+  "root": [
+    4,
+    142,
+    1
+  ],
+  "W": [
+    1,
+    1
+  ],
+  "closed": true,
+  "replay": {
+    "steps": 36,
+    "credit": 48
+  },
+  "checkpoint_sha256": "3f0f803f07f8eebc6b2e89a7c9ae3b1e70ca5ce0636f5ab089691c2e1090c018",
+  "record_merkle_sha256": "557590ac6fd698e299c23e9a5a0912b56a48227804a383edc91421125c44cfa6",
+  "seconds": 120.18679373900522,
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false
+}

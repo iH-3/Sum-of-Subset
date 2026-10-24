@@ -22,7 +22,7 @@ def mixed_gap(a,b,anchor,direction):
               (q-p-anchor[1],{'Rt':1}),(anchor[0],{'Rs':1}))
     return m.add((direction,gap))
 
-def core_capacity(power,first_gap_case=None):
+def core_capacity(power,first_gap_case=None,core_prefix=None):
     """Hull capacity minus the two gaps next to the extreme core sums.
 
     The predecessor of R_v is at most r_v-1+tau_v-xi_v.  Hence every
@@ -34,6 +34,10 @@ def core_capacity(power,first_gap_case=None):
     if first_gap_case is not None:
         from first_gap_core import removed_prefix_mass
         result=m.add((1,result),(-1,removed_prefix_mass(first_gap_case)))
+    if core_prefix:
+        import core_gap
+        m.need(type(core_prefix) is dict and set(core_prefix)<=set('st'),'Canonical prefix side inventory')
+        for side,order in core_prefix.items():result=m.add((1,result),(-1,core_gap.canonical_prefix(side,order,first_gap_case)))
     return result
 
 def parameters(positive,coverage_width,bracket_width):
@@ -68,6 +72,8 @@ def exclusion(lower,upper,node,direction):
 
 def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
     shape=proof.get('core_shape')
+    prefix=proof.get('core_prefix',{})
+    m.need(type(prefix) is dict and set(prefix)<=set('st') and all(type(v) is int and 0<=v<=12 for v in prefix.values()),'Licensed canonical prefix orders')
     m.need(shape is None or type(shape) is int and shape==first_gap_case,'Licensed physical first-gap shape for core capacity')
     exact_one=proof.get('exact_one_term',False);m.need(type(exact_one) is bool,'Window exact-cardinality flag')
     mass_core=proof.get('mass_core',[]);m.need(len(set(map(tuple,mass_core)))==len(mass_core),'Unique core mass capacities')
@@ -88,7 +94,7 @@ def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
     for item in proof.get('gap_outside',[]):
         import core_gap
         node=tuple(item['node']);m.need(node in inventory and node not in seen,'Extreme-gap window component inventory');seen.add(node)
-        a,b=core_gap.gap_interval(node,item['side'],shape if node[1]>=0 else None)
+        a,b=core_gap.gap_interval(node,item['side'],shape if node[1]>=0 else None,prefix.get(item['side'],0) if node[1]>=0 else 0)
         guards.extend([m.add((1,a),(-1,lower)),m.add((1,upper),(-1,b))])
     body=m.add((1,upper),(-1,lower),(1,ONE),(-1,holes))
     groups=proof.get('absorbed',[]);hull_charged={tuple(g['by']) for g in groups}
@@ -101,7 +107,7 @@ def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
         if node in extreme:
             import core_gap
             m.need(node not in clipped and node not in mass_core and node not in hull_charged,'Extreme-only component has its one-point charge')
-            guards.append(core_gap.extreme_only_guard(lower,upper,node,extreme[node]['side'],shape if node[1]>=0 else None))
+            guards.append(core_gap.extreme_only_guard(lower,upper,node,extreme[node]['side'],shape if node[1]>=0 else None,prefix.get(extreme[node]['side'],0) if node[1]>=0 else 0))
             body=m.add((1,body),(-1,ONE))
         elif node in clipped:
             spec=clipped[node]
@@ -112,9 +118,13 @@ def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
             # A nonnegative hull length is needed even for an empty set.
             guards.append(m.add((1,a),(-1,b),(-1,ONE)))
             body=m.add((1,body),(-1,b),(1,a),(-1,ONE))
+            if spec.get('holes'):
+                import core_gap
+                rebate,licenses=core_gap.punctures(a,b,node,spec['holes'],shape if node[1]>=0 else None,prefix)
+                guards.extend(licenses);body=m.add((1,body),(1,rebate))
         elif node in mass_core:
             m.need(node[1]>=0 and node not in hull_charged,'Refined, unabsorbed core mass capacity')
-            body=m.add((1,body),(-1,core_capacity(remaining,shape)))
+            body=m.add((1,body),(-1,core_capacity(remaining,shape,prefix)))
         elif exact_one and remaining==1 and node not in hull_charged:
             # A translate of D has 73 points; a translate of E has 65.
             body=m.add((1,body),(-(73 if node[1]==-1 else 65),ONE))
@@ -166,7 +176,7 @@ def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
         body=m.add((1,body),(power,{'F':1}),(1-power,ONE),(-1,gap))
     return body,guards
 
-def candidates(point,positive,coverage_width,bracket_width,affine_only=False,internal_only=False,extreme_gaps=False,shape=None):
+def candidates(point,positive,coverage_width,bracket_width,affine_only=False,internal_only=False,extreme_gaps=False,shape=None,core_prefix=None):
     import math,bisect
     ev=lambda row:sum(c*point[k] for k,c in row.items())
     margin,holes=parameters(positive,coverage_width,bracket_width);missing=ev(holes)
@@ -177,7 +187,7 @@ def candidates(point,positive,coverage_width,bracket_width,affine_only=False,int
             original_intervals.append((lo,hi))
             if extreme_gaps:
                 import core_gap
-                left=core_gap.gap_interval(node,'t',shape)[1];right=core_gap.gap_interval(node,'s',shape)[0]
+                left=core_gap.gap_interval(node,'t',shape,(core_prefix or {}).get('t',0))[1];right=core_gap.gap_interval(node,'s',shape,(core_prefix or {}).get('s',0))[0]
                 if ev(left)>lo+1e-7:singletons.append(lo);a=m.add((1,left),(1,ONE));lo=ev(a)
                 if ev(right)<hi-1e-7:singletons.append(hi);b=m.add((1,right),(-1,ONE));hi=ev(b)
             bounds[node]=(a,b)
@@ -259,8 +269,17 @@ def discover(search,point):
     if shape is None:shape=shape_case(dict(j=search.j,positive=search.positive,limits=search.limits))
     ev=lambda row:sum(c*point[k] for k,c in row.items());margin,_=parameters(search.positive,search.coverage_width,search.coverage_bracket_width)
     extreme_gaps=getattr(search,'window_extreme_gaps',False)
-    for score,proof in candidates(point,search.positive,search.coverage_width,search.coverage_bracket_width,getattr(search,'window_affine_only',False),getattr(search,'window_internal_only',False),extreme_gaps,shape):
+    prefix={}
+    if getattr(search,'window_canonical_gaps',False):
+        import math,first_gap_core
+        for side in 'st':
+            w=0
+            if shape is not None:
+                h,ps,pt=first_gap_core.CASES[shape];w=h-(ps if side=='s' else pt)
+            prefix[side]=min(12,max(0,math.floor(point['phicore'+side]-w-2+1e-7)))
+    for score,proof in candidates(point,search.positive,search.coverage_width,search.coverage_bracket_width,getattr(search,'window_affine_only',False),getattr(search,'window_internal_only',False),extreme_gaps,shape,prefix):
         if shape is not None:proof['core_shape']=shape
+        if prefix:proof['core_prefix']=prefix
         certificates=[]
         bracket_guards=proof_bracket(proof,search.positive,search.coverage_width,search.coverage_bracket_width)
         for guard in bracket_guards:
@@ -284,7 +303,7 @@ def discover(search,point):
             if extreme_gaps and power>=1:
                 import core_gap
                 for side in 'st':
-                    a,b=core_gap.gap_interval(node,side,shape if node[1]>=0 else None)
+                    a,b=core_gap.gap_interval(node,side,shape if node[1]>=0 else None,prefix.get(side,0) if node[1]>=0 else 0)
                     conditions=[m.add((1,a),(-1,proof['lower'])),m.add((1,proof['upper']),(-1,b))]
                     if any(ev(g)>1e-7 for g in conditions):continue
                     local=[]
@@ -298,7 +317,7 @@ def discover(search,point):
             if removed:continue
             if extreme_gaps and power>=1:
                 for side in 'st':
-                    guard=core_gap.extreme_only_guard(proof['lower'],proof['upper'],node,side,shape if node[1]>=0 else None)
+                    guard=core_gap.extreme_only_guard(proof['lower'],proof['upper'],node,side,shape if node[1]>=0 else None,prefix.get(side,0) if node[1]>=0 else 0)
                     if ev(guard)>1e-7:continue
                     cert,finished=search.nonstrict_guard(guard)
                     if finished:return False,True
@@ -335,12 +354,12 @@ def discover(search,point):
         for node in live:
             power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
             lo,hi=fc.interval(*node)
-            if node not in extreme_certs and node[1]>=0 and 2<=power<=4 and ev(core_capacity(power,shape))<ev(hi)-ev(lo)+1-1e-7:mass_core.add(node)
+            if node not in extreme_certs and node[1]>=0 and 2<=power<=4 and ev(core_capacity(power,shape,prefix))<ev(hi)-ev(lo)+1-1e-7:mass_core.add(node)
         def charge(node):
             if node in extreme_certs:return 1
             lo,hi=fc.interval(*node)
             power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
-            if node in mass_core:return ev(core_capacity(power,shape))
+            if node in mass_core:return ev(core_capacity(power,shape,prefix))
             return 65 if node[1]>=0 and power==1 else ev(hi)-ev(lo)+1
         absorbed_certs=[]
         absorbers=sorted((n for n in live if n not in extreme_certs and n[1]>=0 and ev(fc.interval(*n)[1])-ev(fc.interval(*n)[0])>1e-7),key=lambda n:ev(fc.interval(*n)[0])-ev(fc.interval(*n)[1]))
@@ -369,11 +388,39 @@ def discover(search,point):
             if node in protected:continue
             lo,hi=fc.interval(*node);left=int(ev(proof['lower'])>ev(lo));right=int(ev(proof['upper'])<ev(hi))
             a=proof['lower'] if left else lo;b=proof['upper'] if right else hi
-            if ev(b)-ev(a)+1>=charge(node)-1e-7:continue
+            holes=[];hole_certs=[];potential=[]
+            if getattr(search,'window_punctures',False):
+                import core_gap
+                power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
+                if power>=1:
+                    for side in 'st':
+                        glo,ghi=core_gap.gap_interval(node,side,shape if node[1]>=0 else None,prefix.get(side,0) if node[1]>=0 else 0)
+                        x=max((a,glo),key=ev);y=min((b,ghi),key=ev)
+                        if ev(y)-ev(x)+1>1e-7:potential.append(dict(side=side,lower=x,upper=y))
+            estimated=sum(ev(h['upper'])-ev(h['lower'])+1 for h in potential)
+            if ev(b)-ev(a)+1-estimated>=charge(node)-1e-7:continue
             guard=m.add((1,a),(-1,b),(-1,ONE));cert,finished=search.nonstrict_guard(guard)
             if finished:return False,True
             if cert is None:continue
-            proof['clipped'].append(dict(node=node,left=left,right=right));clipped.add(node);certificates.append(cert);mass_core.discard(node)
+            for hole in sorted(potential,key=lambda h:ev(h['upper'])-ev(h['lower']),reverse=True):
+                rebate,licenses=core_gap.punctures(a,b,node,[hole],shape if node[1]>=0 else None,prefix);local=[]
+                for license in licenses:
+                    cc,finished=search.nonstrict_guard(license)
+                    if finished:return False,True
+                    if cc is None:break
+                    local.append(cc)
+                if len(local)==len(licenses):holes.append(hole);hole_certs.extend(local)
+            if len(holes)==2:
+                _,licenses=core_gap.punctures(a,b,node,holes,shape if node[1]>=0 else None,prefix)
+                cc,finished=search.nonstrict_guard(licenses[-1])
+                if finished:return False,True
+                if cc is None:holes.pop();del hole_certs[-5:]
+                else:hole_certs.append(cc)
+            actual=sum(ev(h['upper'])-ev(h['lower'])+1 for h in holes)
+            if ev(b)-ev(a)+1-actual>=charge(node)-1e-7:continue
+            spec=dict(node=node,left=left,right=right)
+            if holes:spec['holes']=holes
+            proof['clipped'].append(spec);clipped.add(node);certificates.append(cert);certificates.extend(hole_certs);mass_core.discard(node)
         proof['mass_core']=sorted(mass_core);certificates.extend(equal_certs);certificates.extend(absorbed_certs)
         proof['core_edges']=[]
         for power in range(1,5):

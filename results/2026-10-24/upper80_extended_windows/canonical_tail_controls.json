@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_CANONICAL_NONLAST_MASS", "actual_cores": 6048, "sharp_cases": 151, "defect_one_exact_tails": 56, "physical_affine_checks": 1000, "invalid_recipes_rejected": 4, "global_upper_bound_certified": false}

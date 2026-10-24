@@ -514,10 +514,13 @@ def _replay(record,require_closed=True,return_state=False):
     import parametric as p
     cache_key=None
     if not require_closed and return_state:
-        import hashlib
+        import record_pool
         # Base row indices depend on dictionary insertion order (notably
         # limits). Reordered records must never share a verification cache.
-        cache_key=hashlib.sha256(json.dumps(record,separators=(',',':')).encode()).hexdigest()
+        # A content-addressed record commits to all descendant records while
+        # preserving dictionary order. Shared ancestors need not be expanded
+        # repeatedly into potentially exponential unpooled JSON strings.
+        cache_key=record_pool.record_digest(record)
         if cache_key in PREMISE_CACHE:
             PREMISE_CACHE.move_to_end(cache_key);return PREMISE_CACHE[cache_key]
     prior=inherited(record)
@@ -781,6 +784,13 @@ def _replay(record,require_closed=True,return_state=False):
             import cg_cut
             m.need(j>=3 and 3 not in st.values(),'Integer CG domain')
             fact=cg_cut.derive(step['proof'],rows,eqs);rows.append(fact);facts.append(fact)
+        elif kind=='canonical_tail_mass':
+            import canonical_phi
+            m.need(j>=3 and 3 not in st.values(),'Canonical nonlast integer core minimum scope')
+            fact,guards=canonical_phi.tail_derive(step['side'],step['cap'],step.get('core_shape'),core_shape)
+            m.need(len(step['certificates'])==len(guards),'Canonical nonlast minimum licenses')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
         elif kind=='shifted_canonical_phi_mass':
             import canonical_phi
             m.need(j>=3 and 3 not in st.values(),'Shifted canonical integer core minimum scope')
@@ -793,6 +803,13 @@ def _replay(record,require_closed=True,return_state=False):
             m.need(j>=3 and 3 not in st.values(),'Canonical integer core minimum scope')
             fact,guards=canonical_phi.derive(step['side'],step['cap'])
             m.need(len(step['certificates'])==2,'Canonical core mass cap licenses')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            rows.append(fact);facts.append(fact)
+        elif kind=='source_envelope_capacity':
+            import source_envelope
+            m.need(j>=3 and 3 not in st.values(),'Integer source-envelope capacity scope')
+            fact,guards=source_envelope.derive(step['proof'],core_shape)
+            m.need(len(step['certificates'])==len(guards),'Every source-envelope hull guard')
             for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
             rows.append(fact);facts.append(fact)
         elif kind=='source_hull_capacity':
@@ -1035,6 +1052,11 @@ def _replay(record,require_closed=True,return_state=False):
             new=source_gap_inventory_rows();rows.extend(new);facts.extend(new)
         elif kind=='source_maximum_overlap':
             new=source_maximum_overlap_rows();rows.extend(new);facts.extend(new)
+        elif kind=='ownerless_core_hit':
+            import ownerless_hit
+            row,guard=ownerless_hit.derive(st,j,positive,e,step['side'])
+            check(step['certificate'],rows,eqs,guard,strict=False)
+            rows.append(row);facts.append(row)
         elif kind in ('conditional_alpha_tail','conditional_ownerless'):
             if kind=='conditional_alpha_tail':new=alpha_tail_rows(st,j,positive,e,p.build.last_Z)
             else:new=ownerless_rows(st,j,positive,e,p.build.last_Z,record.get('limits'))

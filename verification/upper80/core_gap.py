@@ -7,11 +7,26 @@ An entire target probe must lie in this empty integer interval.
 import model as m,full_cover as fc
 ONE={'ONE':1}
 
-def gap_interval(node,side,shape=None):
-    m.need(side in 'st','Extreme core gap side');root,child=node
+def canonical_prefix(side,order,shape=None):
+    """Extra mass of the smallest r-2 coefficients from their canonical floor.
+
+    All physical ranks here are at least15; after a one-point prefix at
+    least14 remain. Thus every order0..12 uses existing remainder indices.
+    """
+    m.need(side in ('s','t') and type(order) is int and 0<=order<=12,'Canonical predecessor prefix order')
+    if order==0:return {}
+    w=0
+    if shape is not None:
+        from first_gap_core import CASES
+        m.need(type(shape) is int and 0<=shape<4,'Canonical predecessor physical shape')
+        h,ps,pt=CASES[shape];w=h-(ps if side=='s' else pt)
+    return {'phicore'+side:order,'ONE':-order*w-order*(order+3)//2}
+
+def gap_interval(node,side,shape=None,prefix=0):
+    m.need(side in ('s','t'),'Extreme core gap side');root,child=node
     lo,hi=fc.interval(*node);power=4-len(fc.roots()[root])
     if child<0:
-        m.need(power>=1 and shape is None,'Unrefined source gap power')
+        m.need(power>=1 and shape is None and prefix==0,'Unrefined source gap power')
         loss={'e'+side:1,'c'+side:-1,'ONE':-1}
     else:
         power-=len(fc.children(root)[child]);m.need(power>=1,'Nonsingleton core power gap')
@@ -19,6 +34,7 @@ def gap_interval(node,side,shape=None):
         if shape is not None:
             from first_gap_core import removed_side_prefix_mass
             loss=m.add((1,loss),(1,removed_side_prefix_mass(shape,side)))
+        loss=m.add((1,loss),(1,canonical_prefix(side,prefix,shape)))
     return (m.add((1,hi),(-1,loss)),m.add((1,hi),(-1,ONE))) if side=='s' else (m.add((1,lo),(1,ONE)),m.add((1,lo),(1,loss)))
 
 def guards(target,node,width,side,shape=None):
@@ -26,11 +42,23 @@ def guards(target,node,width,side,shape=None):
     lower,upper=gap_interval(node,side,shape)
     return [m.add((1,lower),(-1,target)),m.add((1,target),(width-1,ONE),(-1,upper))]
 
-def extreme_only_guard(lower,upper,node,side,shape=None):
-    a,b=gap_interval(node,side,shape)
+def extreme_only_guard(lower,upper,node,side,shape=None,prefix=0):
+    a,b=gap_interval(node,side,shape,prefix)
     # Above the last predecessor bound (or below the first successor bound),
     # only the actual extreme of the component can remain in the window.
     return m.add((1,a),(-1,lower)) if side=='s' else m.add((1,upper),(-1,b))
+
+def punctures(lower,upper,node,holes,shape=None,prefixes=None):
+    """Disjoint certified empty subintervals of a charged component hull."""
+    m.need(isinstance(holes,list) and len({h['side'] for h in holes})==len(holes),'Distinct punctured hull sides')
+    removed={};conditions=[];by_side={}
+    for hole in holes:
+        side=hole['side'];m.need(side in ('s','t'),'Puncture extreme side')
+        a,b=hole['lower'],hole['upper'];glo,ghi=gap_interval(node,side,shape,(prefixes or {}).get(side,0) if node[1]>=0 else 0)
+        conditions.extend([m.add((1,glo),(-1,a)),m.add((1,b),(-1,ghi)),m.add((1,lower),(-1,a)),m.add((1,b),(-1,upper)),m.add((1,a),(-1,b),(-1,ONE))])
+        removed=m.add((1,removed),(1,b),(-1,a),(1,ONE));by_side[side]=(a,b)
+    if len(holes)==2:conditions.append(m.add((1,by_side['t'][1]),(-1,by_side['s'][0]),(1,ONE)))
+    return removed,conditions
 
 def discover(search,point):
     import exact

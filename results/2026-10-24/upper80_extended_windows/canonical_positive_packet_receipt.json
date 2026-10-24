@@ -1,0 +1,32 @@
+{
+  "status": "PASS_COMPLETE_CANONICAL_POSITIVE_ROOT",
+  "root": [
+    4,
+    142,
+    1
+  ],
+  "closed": true,
+  "original_roots_closed": 4652,
+  "original_roots_open": 2,
+  "remaining_roots": [
+    [
+      4,
+      142,
+      0
+    ],
+    [
+      5,
+      219,
+      0
+    ]
+  ],
+  "replayed_slices": 0,
+  "reused_slices": 3,
+  "packet_sha256": "a97084c572a130519e4d9875ca756f5dc97dd2ee0a2409c4517d81ec5fd60014",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ]
+}

@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_MERKLE_REPLAY_CACHE", "nested_mutations_rejected": 4, "sharing_independent": true, "shared_records": 31, "unpooled_occurrences": 2147483647, "reordered_actual_certificate_rejected": true, "seconds": 0.8049068460022681, "global_upper_bound_certified": false}
