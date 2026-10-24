@@ -1,8 +1,22 @@
 # Size-81 research checkpoint, updated 2026-10-24
 
+Latest finite closure: `(5,219,0)` is completely closed by four complementary canonical-minimizer cases. Each leaf passed an independent exact replay; `verify_canonical_minimizer.py --reuse-receipts` passed the full integer-domain and identity checks. **4,653/4,654 original roots closed; only `(4,142,0)` remains.** The global bound is still81 and structural adoption is incomplete. All j5_219 searches and joint trees are now superseded; do not resume them.
+
+
 **No global bound 80 is certified yet.** Main remains 71 <= N <= 81. This file
 records new mathematics and arithmetic to be integrated into a complete proof,
 only after all finite cases close and the interfaces below have been audited.
+
+Later source-envelope continuation: canonical-minimizer case1 of j5_219
+also closed and passed a new independent exact replay (24 steps, credit54).
+Its checkpoint digest is recorded in `minimizer_case1_receipt.json`.
+Thus cases0,1 are closed; cases2,3 are still open. The original root remains
+open. The published35-checkpoint canonical frontier predates this result.
+
+The new finite-tail window rule counts q-sums using only the lastL elements,
+with binomial(q+L-1,q) capacity. `tail_cap_windows` is a genuinely new method;
+its actual-set and full-window inventory controls passed. Do not restart
+old canonical_gap_windows outputs to obtain it: use a new output path.
 
 Latest canonical-gap checkpoint: the entire positive root `(4,142,1)`
 is closed. The new W=1 record passed a fresh exact replay (36 local steps,

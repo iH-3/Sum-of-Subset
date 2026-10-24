@@ -1,5 +1,8 @@
 # 向上界 80 的研究：全局仍为 71≤N≤81
 
+Latest finite closure: `(5,219,0)` is completely closed by four complementary canonical-minimizer cases. Each leaf passed an independent exact replay; `verify_canonical_minimizer.py --reuse-receipts` passed the full integer-domain and identity checks. **4,653/4,654 original roots closed; only `(4,142,0)` remains.** The global bound is still81 and structural adoption is incomplete. All j5_219 searches and joint trees are now superseded; do not resume them.
+
+
 Latest 2026-10-24 continuation: the full positive root `(4,142,1)` is closed;
 **4,652/4,654 closed, two open**: `(4,142,0)` and `(5,219,0)`.
 `verify_canonical_positive.py --reuse-receipts` checks the complete W-domain
@@ -172,3 +175,30 @@ strictly stronger premises and has its own output paths.
 saved records without any search. Its ledger identifies completed stages,
 closed roots, the incomplete20-cycle source-envelope layer and later active
 continuations. Older immutable packets remain available with `--packet`.
+
+
+## Last original root and finite-tail continuation
+
+The latest default restore packet is now
+`data/upper80_last_root_frontier_20261024.json.gz`: three finished stages
+for `(4,142,0)`, all at credit42. Its last stage is
+`j4_zero_tail_cap_native`. The complete j5_219 contradiction is in
+`data/upper80_canonical_minimizer_closure_20261024.json.gz`; all of that
+root's former searches are superseded.
+
+The new `tail_cap_windows` method retains up to four extremal source/core
+values and counts their q-sums by `binomial(q+L-1,q)`. Its controls and
+case2 replay receipt are saved; do not repeat those finished computations.
+
+A fresh complete four-case partition of the last root is running under
+`.work/upper80/next80/j4_minimizer_cases`. The reusable equivalent driver is:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/canonical_partition.py .work/upper80/next80/j4_zero_tail_cap_native.json.gz .work/upper80/next80/j4_minimizer_cases
+```
+
+Run only to continue unfinished work. It rejects a changed parent, and the
+continuation driver skips every finished stage. The current four-stage order
+is canonical_tail, source_envelope, native, tail_cap_windows. Earlier
+three-case ownerless-hit outputs remain in the prior immutable canonical
+frontier; they have not been rerun.

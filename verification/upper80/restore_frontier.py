@@ -4,7 +4,7 @@ import argparse,json
 import record_pool as pool,model as m
 ROOT=Path(__file__).resolve().parents[2]
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('destination',type=Path);ap.add_argument('--packet',type=Path,default=ROOT/'data/upper80_canonical_frontier_20261024.json.gz');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('destination',type=Path);ap.add_argument('--packet',type=Path,default=ROOT/'data/upper80_last_root_frontier_20261024.json.gz');args=ap.parse_args()
     data=pool.read_gzip(args.packet);m.need(data['format']=='upper80-open-frontier-v1' and data['global_upper_bound_certified'] is False,'Research frontier scope')
     for entry in data['checkpoints']:
         relative=Path(entry['name']+'.json.gz');m.need(not relative.is_absolute() and '..' not in relative.parts,'Relative checkpoint path')

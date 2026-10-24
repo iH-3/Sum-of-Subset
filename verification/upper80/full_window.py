@@ -106,9 +106,13 @@ def derive(proof,positive,coverage_width,bracket_width,first_gap_case=None):
         if node[1]>=0:remaining-=len(fc.children(node[0])[node[1]])
         if node in extreme:
             import core_gap
-            m.need(node not in clipped and node not in mass_core and node not in hull_charged,'Extreme-only component has its one-point charge')
-            guards.append(core_gap.extreme_only_guard(lower,upper,node,extreme[node]['side'],shape if node[1]>=0 else None,prefix.get(extreme[node]['side'],0) if node[1]>=0 else 0))
-            body=m.add((1,body),(-1,ONE))
+            m.need(node not in clipped and node not in mass_core and node not in hull_charged,'Extreme component has its separate cardinality charge')
+            spec=extreme[node]
+            if 'keep' in spec:
+                import tail_caps
+                guard,count=tail_caps.derive(lower,upper,node,spec['side'],spec['keep'],spec.get('order',0),shape if node[1]>=0 else None)
+            else:guard,count=core_gap.extreme_only_guard(lower,upper,node,spec['side'],shape if node[1]>=0 else None,prefix.get(spec['side'],0) if node[1]>=0 else 0),1
+            guards.append(guard);body=m.add((1,body),(-count,ONE))
         elif node in clipped:
             spec=clipped[node]
             m.need(node not in mass_core and node not in hull_charged,'Clipping has its own hull charge')
@@ -288,7 +292,7 @@ def discover(search,point):
             if cert is None:break
             certificates.append(cert)
         if len(certificates)!=len(bracket_guards):continue
-        queue=sorted(fc.initial_nodes());proof['gap_outside']=[];gap_certs=[];extreme_certs={};extreme_sides={}
+        queue=sorted(fc.initial_nodes());proof['gap_outside']=[];gap_certs=[];extreme_certs={};extreme_sides={};extreme_specs={};extreme_counts={}
         for node in queue:
             removed=False
             for direction in (0,1):
@@ -324,6 +328,25 @@ def discover(search,point):
                     if cert is None:continue
                     proof['inside'].append(node);extreme_certs[node]=cert;extreme_sides[node]=side;removed=True;break
             if removed:continue
+            if getattr(search,'window_tail_caps',False) and power>=1:
+                import tail_caps,math,first_gap_core
+                for keep in range(2,5):
+                    for side in 'st':
+                        order=0
+                        if node[1]>=0:
+                            w=0
+                            if shape is not None:
+                                h,ps,pt=first_gap_core.CASES[shape];w=h-(ps if side=='s' else pt)
+                            order=min(13-keep,max(0,math.floor(point['phicore'+side]-w-keep-1+1e-7)))
+                        guard,count=tail_caps.derive(proof['lower'],proof['upper'],node,side,keep,order,shape if node[1]>=0 else None)
+                        if ev(guard)>1e-7:continue
+                        cert,finished=search.nonstrict_guard(guard)
+                        if finished:return False,True
+                        if cert is None:continue
+                        proof['inside'].append(node);extreme_certs[node]=cert;extreme_sides[node]=side
+                        extreme_specs[node]=dict(keep=keep,order=order);extreme_counts[node]=count;removed=True;break
+                    if removed:break
+            if removed:continue
             if node[1]==-1 and len(fc.roots()[node[0]])<4:
                 proof['refined'].append(node[0]);queue.extend((node[0],i) for i in range(len(fc.children(node[0]))))
             else:proof['inside'].append(node)
@@ -356,7 +379,7 @@ def discover(search,point):
             lo,hi=fc.interval(*node)
             if node not in extreme_certs and node[1]>=0 and 2<=power<=4 and ev(core_capacity(power,shape,prefix))<ev(hi)-ev(lo)+1-1e-7:mass_core.add(node)
         def charge(node):
-            if node in extreme_certs:return 1
+            if node in extreme_certs:return extreme_counts.get(node,1)
             lo,hi=fc.interval(*node)
             power=4-len(fc.roots()[node[0]])-(len(fc.children(node[0])[node[1]]) if node[1]>=0 else 0)
             if node in mass_core:return ev(core_capacity(power,shape,prefix))
@@ -381,7 +404,7 @@ def discover(search,point):
             live.difference_update(chosen);protected.add(by);proof['absorbed'].append(dict(by=by,nodes=chosen));absorbed_certs.extend(local)
             mass_core.difference_update([by,*chosen])
         proof['inside']=sorted(live)
-        proof['extreme_only']=[dict(node=n,side=extreme_sides[n]) for n in proof['inside'] if n in extreme_certs]
+        proof['extreme_only']=[dict(node=n,side=extreme_sides[n],**extreme_specs.get(n,{})) for n in proof['inside'] if n in extreme_certs]
         proof['clipped']=[];clipped=set()
         for node in proof['inside']:
             if node in extreme_certs:certificates.append(extreme_certs[node]);continue

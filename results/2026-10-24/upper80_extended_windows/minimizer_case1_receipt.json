@@ -1,0 +1,22 @@
+{
+  "status": "PASS_NEW_CANONICAL_MINIMIZER_CASE",
+  "root": [
+    5,
+    219,
+    0
+  ],
+  "case": 1,
+  "bits": [
+    0,
+    1
+  ],
+  "closed": true,
+  "replay": {
+    "steps": 24,
+    "credit": 54
+  },
+  "checkpoint_sha256": "2d5e78ccd9d0e26f30569c45f71c4339a5f70ceb2cdd2d20052cda6905a81e76",
+  "record_merkle_sha256": "f6e1156c0a225ddb22f1e7c4849cf6d500d547e40f05b9ae68af27f61affa2e9",
+  "seconds": 33.94683902300312,
+  "global_upper_bound_certified": false
+}

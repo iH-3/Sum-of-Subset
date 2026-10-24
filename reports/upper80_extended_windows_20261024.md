@@ -530,3 +530,64 @@ Together with its inner bound this closes the rank7/8 source-lattice gate.
 It also spells out the exact reflection transporting a balanced `(32,32)`
 AP-first argument to either labelled side. The complete AP-first no-clipping
 and halfstep adoption remains a separate obligation.
+
+## Finite-tail endcaps beyond a one-point window charge
+
+For a finite ordered setQ with maximumM, letB bound every element outside
+its largestL elements. Any point ofqQ above `(q-1)M+B` uses only theseL
+values. Its multiplicity-free cardinality is therefore at most
+`binomial(q+L-1,q)`. Reflecting gives the same bound at the lower extreme.
+ForqD andL=1,2,3,4, the omitted-next values are the source tailc,b,a and
+core maximumR, respectively. These are actual ordered source points.
+
+For a core, writex_i=i+d_i, with nondecreasingd_i. Putxi=d_r and letP be a
+lower bound on the excess mass of the first`r-L-1` elements. Monotonicity gives
+
+    L*d_(r-L) <= tau-xi-P,
+    x_(r-L) <= r-L+(tau-xi-P)/L.
+
+The canonical minimum gives, for any permittedell,
+
+    P >= ell*phi-ell*(ell+2L+1)/2.
+
+With a licensed first-gap prefix of sizet and translationw=h-t, replaceP
+by `w*(r-L-1-t)+ell*(phi-w)-ell*(ell+2L+1)/2`. The translated canonical
+minimum is at leastphi-w, including its sentinel case. Since every remainder
+has rank at least14, everyell in0..13-L is valid forL=1..4.
+
+For a translatedqE component with upper extremeu, the scaled sufficient
+upper-window guard is
+
+    L*(u-lower)-(L+1)*xi+tau-P+1-L^2 <= 0.
+
+Its added1 makes the excluded-summand threshold strictly smaller than the
+windowlower. This argument does not require rounding a nonintegral outer
+shift. AtL=1 it reproduces the previous one-point guard exactly. A finite-tail
+charge cannot also use clipping, a mass charge, an absorbing hull or a full
+component overlap forest. Equal actual core components may still share their
+one retained representative.
+
+`tail_caps.py` implements these guards and their binomial cardinalities;
+`tail_cap_windows` enables them only on a new continuation path. New controls
+check2560 actual capacities (965 sharp),3680 prefix floors,640 exact matches
+to the old one-point rule and nine invalid recipes. A separate full-window
+integration check covers989 components, verifies the five-point charge of
+4-sums from two retained values, and rejects three incompatible combined
+charges. These controls do not rerun any prior search or baseline suite.
+
+
+## Complete canonical-minimizer closure of j5_219
+
+All four cases have now passed independent exact replays. In bit order
+`(nonlast,last)=(0,1)` on each side, the cases00,01,10,11 have local trace
+lengths22,24,23,30 and final credits54,54,52,52. Case10 was closed by the
+new finite-tail window bound; its decisive window has threeL=4 endcaps.
+The other three cases use the preceding canonical and source-envelope rules.
+
+`verify_canonical_minimizer.py --reuse-receipts` checks the complete binary
+tree, exact limits of every leaf and ancestor to their common unrestricted
+parent, and all four unchanged replay identities. No old search or arithmetic
+is repeated. The finite total is now4653/4654 with sole remaining original
+root `(4,142,0)`. All former j5_219 joint trees and partial partitions are
+superseded. Complete structural adoption and this last finite root remain
+necessary before claiming80.

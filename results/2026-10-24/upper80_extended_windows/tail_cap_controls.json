@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_FINITE_TAIL_CAPS", "actual_core_source_pairs": 40, "capacities": 2560, "sharp_caps": 965, "prefix_floors": 3680, "old_one_point_rules": 640, "invalid_recipes_rejected": 9, "global_upper_bound_certified": false}

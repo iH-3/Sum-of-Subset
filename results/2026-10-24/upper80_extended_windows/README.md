@@ -1,3 +1,10 @@
+Latest finite ledger:4653/4654 original roots closed, with only `(4,142,0)`
+remaining. The four `minimizer_case*_receipt.json` files record the independent
+j5_219 leaf replays. `canonical_minimizer_packet_receipt.json` verifies their
+complete integer partition by reusing those identities. Global80 remains
+unproved. `last_root_frontier_receipt.json` freezes the three completed new
+last-root stages; later canonical-partition work is separate.
+
 Latest checkpoint: the complete positive root `(4,142,1)` is now closed.
 `positive_canonical_gap_receipt.json` records the new W=1 exact replay;
 `canonical_positive_packet_receipt.json` checks its combination with the

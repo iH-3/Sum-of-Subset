@@ -1,0 +1,29 @@
+{
+  "status": "PASS_COMPLETE_CANONICAL_MINIMIZER_ROOT",
+  "root": [
+    5,
+    219,
+    0
+  ],
+  "closed": true,
+  "original_roots_closed": 4653,
+  "original_roots_open": 1,
+  "remaining_roots": [
+    [
+      4,
+      142,
+      0
+    ]
+  ],
+  "exact_cases": 4,
+  "integer_splits": 3,
+  "replayed_cases": 0,
+  "reused_cases": 4,
+  "packet_sha256": "bbfb53287f88456c76330814a157f41a1a42acc62908299b9c51c1a02d20a115",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ]
+}

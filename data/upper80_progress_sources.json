@@ -1,19 +1,23 @@
 {
   "schema": "upper80-progress-snapshot-v1",
   "global_upper_bound_certified": false,
-  "base_commit": "d5a37c4889bb8fa34602f573e86e8c5ab3ff8564",
+  "base_commit": "f00b033815d75894a7f3a4e092e2355fa62af520",
   "files": [
     {
       "path": "README.md",
-      "sha256": "2ecc81363e453354a0f416c078ef3a825823c5b0f84a8ae5b6cb5820a5083f0d"
+      "sha256": "9f4a749899f141e185eb23fbdc1190b623bbced73f83b027b6bff91090559b8f"
     },
     {
       "path": "RESEARCH_STATUS.md",
-      "sha256": "4924383f2709e4f669d1ec0d9e3ef1f1e1c673f14c145b11ae6598b54a91db40"
+      "sha256": "5b31ae7babf144799a1518778f8d577d598dd6e4c260ccd06b324d9536bf572f"
     },
     {
       "path": "data/upper80_canonical_frontier_20261024.json.gz",
       "sha256": "4fb719a5522fb0d98671441e9ddfc65bf831e0724ddc2d90469bd745f0c6f8d6"
+    },
+    {
+      "path": "data/upper80_canonical_minimizer_closure_20261024.json.gz",
+      "sha256": "bbfb53287f88456c76330814a157f41a1a42acc62908299b9c51c1a02d20a115"
     },
     {
       "path": "data/upper80_canonical_positive_closure_20261024.json.gz",
@@ -34,6 +38,10 @@
     {
       "path": "data/upper80_h3_profiles.json.gz",
       "sha256": "fc4c7bfd223aef2493afe68efe4cb14130dca64a62add260b8ca5eac5a0e2db6"
+    },
+    {
+      "path": "data/upper80_last_root_frontier_20261024.json.gz",
+      "sha256": "47f39280ef1ef546ced896d28dd489e35b1f789cb3eac2ef180a2f0e51889bd3"
     },
     {
       "path": "data/upper80_low_slack_20261024.json.gz",
@@ -73,7 +81,7 @@
     },
     {
       "path": "reports/upper80_extended_windows_20261024.md",
-      "sha256": "ef8a8648bc12f7b22e02af579f8d4b36347cb4e89afc420e31ee4c6b242bcf59"
+      "sha256": "c349a4c6222c1463514691cead4967bec78cba86383dd1714210745764579a8f"
     },
     {
       "path": "reports/upper80_progress_20261023.pdf",
@@ -141,7 +149,7 @@
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/README.md",
-      "sha256": "511bb96999b6c6f134ab62ff51920e4e0100549dbb32aa8d9ab4249969ea95e1"
+      "sha256": "33193c15cd96dd66bd67c478f29a104c213a7266b891831321c882c01889786f"
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/adjacent_joint_receipt.json",
@@ -154,6 +162,10 @@
     {
       "path": "results/2026-10-24/upper80_extended_windows/canonical_gap_controls.json",
       "sha256": "6858146256063d1a7a0f368f80491ecc070d738eb17d971e133e3ba44cd48cf0"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/canonical_minimizer_packet_receipt.json",
+      "sha256": "6b1746a641b6afcd140f10df1f0ca279599415bd95cb8383c6e384f6877067cc"
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/canonical_phi_controls.json",
@@ -256,12 +268,28 @@
       "sha256": "860d22f67347313aa6f35602b83f0251e137805d97d891a74fc3c3cb7714ffcb"
     },
     {
+      "path": "results/2026-10-24/upper80_extended_windows/last_root_frontier_receipt.json",
+      "sha256": "bd72815c9dbfd0e49f08d9f193eacc0c9473204a4b17889dff0edd7131b01872"
+    },
+    {
       "path": "results/2026-10-24/upper80_extended_windows/merkle_cache_controls.json",
       "sha256": "9eb938a8e533f51a5420778560dc1e2b34d4e7d8bd2a931123bf0b24718dbd2d"
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/minimizer_case0_receipt.json",
       "sha256": "64406e688934c004932d4d404d44f36e7c461234d8379a990f13e5b55f53a107"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/minimizer_case1_receipt.json",
+      "sha256": "d04410c3616c6d59ea3ff4879e35196e16835adfb7ad41f24603e474f2ee98b7"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/minimizer_case2_receipt.json",
+      "sha256": "3989e01172b89dbc79b0b0b6b2e477003ce699d1f4121a90a0805c2f72a0fab5"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/minimizer_case3_receipt.json",
+      "sha256": "3c8b91874d3a363dafaa6733e915751ebbe4370d3ae8a81a51eb7b9497c259b3"
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/mixed_core_controls.json",
@@ -346,6 +374,14 @@
     {
       "path": "results/2026-10-24/upper80_extended_windows/strengthened_joint_receipt.json",
       "sha256": "f93154536396e461c4dbf780f17c81f8bb2bdec1956278c794536e514dc9dd22"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/tail_cap_controls.json",
+      "sha256": "0ca3a5f1fd9530b0527a93bd9b8bdf27975acd83b9f604698b965e69c6c0d340"
+    },
+    {
+      "path": "results/2026-10-24/upper80_extended_windows/tail_window_integration_controls.json",
+      "sha256": "7ce000fac489f325a46bf53c913bb46ba8ff2e26c9e79201e6deccff2ed7ff81"
     },
     {
       "path": "results/2026-10-24/upper80_extended_windows/window_endpoint_controls.json",
@@ -465,11 +501,15 @@
     },
     {
       "path": "verification/upper80/README.md",
-      "sha256": "b24de2a3455b9234f211d4e6511253c1f48f44035e1f14579b3a55b9e702b4cd"
+      "sha256": "36a9cf296b99d342e26a1fcd38b3959ecf36d183d0f10b01b7bb627ec7201479"
     },
     {
       "path": "verification/upper80/branch_discover.py",
       "sha256": "3f2056144b10fc0a97c9ad2ce43c0850bd085f3ea03ea0a7560b6d866328657d"
+    },
+    {
+      "path": "verification/upper80/canonical_partition.py",
+      "sha256": "88c05c35fb85bff9925bb7378db31fa3d6d61f1a5da4eb3e4981f7d14ef77028"
     },
     {
       "path": "verification/upper80/canonical_phi.py",
@@ -501,7 +541,7 @@
     },
     {
       "path": "verification/upper80/continue_frontier.py",
-      "sha256": "fd113a7139669093ce3eb2c65621a920a572241fdf119d418c3f7decfe963f4f"
+      "sha256": "deee83d3f1033a4ecae632e179e89e5578933e33b38386013522f91fe7a09431"
     },
     {
       "path": "verification/upper80/control_checks.py",
@@ -680,6 +720,14 @@
       "sha256": "68d73108266cebe65f056f7189da859a217c606a0742f576559472f37f3584fe"
     },
     {
+      "path": "verification/upper80/controls_20261024/check_tail_caps.py",
+      "sha256": "638f0c332bc4167656ad4764fe6058332d3d1b26883bc52c0dbb5ec1390e3f01"
+    },
+    {
+      "path": "verification/upper80/controls_20261024/check_tail_window_integration.py",
+      "sha256": "0a8a646e8639149a8ba87dd970a65e6b10dbec63aaa55cf3dc3ca7103f801dc6"
+    },
+    {
       "path": "verification/upper80/controls_20261024/check_trace_safety.py",
       "sha256": "55fc8b21b8b6d44bc0ecd450b488bd3be6f096b8f97e5d95a7feb3cb66c1b259"
     },
@@ -741,7 +789,7 @@
     },
     {
       "path": "verification/upper80/full_window.py",
-      "sha256": "efe140b144217a4ec82885cb7da8f7582980d75d3b4aa45ece4b0a5de0a57900"
+      "sha256": "933d267f88f4850569a554d9222be16618d6af6d38613c95ad0474653e2b6dd8"
     },
     {
       "path": "verification/upper80/interval_gaps.py",
@@ -801,11 +849,11 @@
     },
     {
       "path": "verification/upper80/research_checkpoint.md",
-      "sha256": "355e9e57d4e85809f2a2abf88d345b07947dde88cc06d77145f1eb2dc71387f3"
+      "sha256": "7cb6eee75ad997a3d059fda3e5ec61964bc2e9dd38216f8819d98eebc42c7890"
     },
     {
       "path": "verification/upper80/restore_frontier.py",
-      "sha256": "d9d9981d1116fe1fc8c6342b22fc726b3d19f15078e6f475d0d3c239aae2b5cb"
+      "sha256": "3878338678117dbeff1226a84700db28208ad46ed043b4770960b0a6199a3482"
     },
     {
       "path": "verification/upper80/resume_search.py",
@@ -842,6 +890,14 @@
     {
       "path": "verification/upper80/structure_arithmetic.py",
       "sha256": "de4bdad05707971dda82abe615c5a725c6ade44221a350f2258c0d3497fbb9fc"
+    },
+    {
+      "path": "verification/upper80/tail_caps.py",
+      "sha256": "521f4997126cfd3658181a4b32c8d51e1c5f953e58db72684edfc347beb055da"
+    },
+    {
+      "path": "verification/upper80/verify_canonical_minimizer.py",
+      "sha256": "3a598a04ec7515d6d82efc528a08a9920a828af752370a3bfac79aac2523579e"
     },
     {
       "path": "verification/upper80/verify_canonical_positive.py",
