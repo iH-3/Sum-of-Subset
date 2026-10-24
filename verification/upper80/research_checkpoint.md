@@ -4,6 +4,14 @@
 records new mathematics and arithmetic to be integrated into a complete proof,
 only after all finite cases close and the interfaces below have been audited.
 
+The later 2026-10-24 target-geometry continuation adds adaptive probe widths,
+sharp first-hole thresholds 95,124,187, and all 256 outer-subset translates
+against a complete 495-root/4845-leaf four-sum envelope. Its general arguments
+are in `reports/upper80_target_geometry_20261024.md`; nine strengthened OPEN
+premises are replayed by `verify_target_geometry.py`. No additional original
+root is closed. The separate 176-node discovery frontier is not a covered
+branch tree, even though 46 of its local checkpoints are closed.
+
 ## Verified foundation improvements
 
 1. `verification/upper80/density.py`: bounded-density theorem extends beta<=9

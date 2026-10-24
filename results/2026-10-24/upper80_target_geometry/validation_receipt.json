@@ -1,0 +1,47 @@
+{
+  "status": "PASS_TARGET_GEOMETRY_RESEARCH_VALIDATION",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ],
+  "closed_original_roots": 0,
+  "open_original_roots": 9,
+  "checks": {
+    "open_records": {
+      "status": "PASS",
+      "byte_identical": true,
+      "sha256": "65cd19d95988c68f7598dee01f6e993fa97a547954c655f68c163cc9ba740fa6"
+    },
+    "lemmas": {
+      "status": "PASS",
+      "byte_identical": true,
+      "sha256": "2ae4d059bdfa0de8330c20eb26eaea3807306c83d4cd4eb3951a3f73773f3f87"
+    },
+    "verify_refinements": {
+      "status": "PASS",
+      "byte_identical": true,
+      "sha256": "8dc4c96b99b6397bd58b9f96ecd6503a2372daff91cc0809528ab1a1ef0b757b"
+    },
+    "verify_positive_refinements": {
+      "status": "PASS",
+      "byte_identical": true,
+      "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+    },
+    "low_slack": {
+      "status": "PASS",
+      "byte_identical": true,
+      "sha256": "dcd8ecf3802f48af201a8aaaf74d695fc555c49d73174abeb681cec396652887"
+    }
+  },
+  "complete_upper81_source_files_unchanged": 198,
+  "complete_historical_chain_rerun": false,
+  "frontier": {
+    "checkpoints": 176,
+    "shared_records": 196,
+    "locally_closed": 46,
+    "root_coverage_certified": false,
+    "sha256": "92081b6eb7de120934d9d86fb1d305cadc87275c2c3d5dbb68741d25c577d640"
+  }
+}

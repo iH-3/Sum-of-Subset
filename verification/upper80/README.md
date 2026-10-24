@@ -27,6 +27,26 @@ python -I -S -B verification/upper80/replay_partial.py --output partial.json
 
 已有完整上界仍使用 `verification/upper81/check.py`；其文件未被本次研究修改。
 
+## 单空洞位置与任意外点子集平移
+
+[新增证明](../../reports/upper80_target_geometry_20261024.md)给出首个缺失值的三个尖锐质量阈值 95、124、187，以及完整四重和覆盖的适用前提。`single_hole.py` 重建三个各 17,799 域的有限最小化；`full_cover.py` 保留全部 495 个粗组件和 4,845 个细组件。自适应宽度、单空洞内部区间和任意外点子集平移都已接入精确重放。
+
+```bash
+python -I -S -B verification/upper80/verify_target_geometry.py --output target_geometry.json
+python -O -I -S -B verification/upper80/verify_target_geometry.py --output target_geometry_optimized.json
+```
+
+入口只报告 `PASS_OPEN_TARGET_GEOMETRY_PREMISES`，检查九份加强后的开放记录，不认证任何新增完整根。两种模式的回执位于 [results](../../results/2026-10-24/upper80_target_geometry/)。继续搜索可先导出前提，再使用已有发现器：
+
+```bash
+python -I -S -B verification/upper80/verify_target_geometry.py --export-directory .work/upper80/target_geometry
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python verification/upper80/resume_search.py 6 436 --parent .work/upper80/target_geometry/6_436_0_parent.json --cache .work/upper80/target_geometry/search6 --output .work/upper80/target_geometry/result6.json
+```
+
+正洞记录的域为 `W=1`，恢复它时须同时传入 `--positive --hole-W 1`。其他八份记录没有新增参数域限制。
+
+另有 [176 个新发现检查点](../../data/upper80_target_frontier_20261024.json.gz)，其中 46 个记录标为局部闭合；它们没有形成任何完整原始根的覆盖。可用 `search_frontier.py --restore data/upper80_target_frontier_20261024.json.gz` 恢复，继续发现时会重新验证所用的闭合记录。此存档仅保存研究进度。
+
 ## 2026-10-24 的新增研究工具
 
 ```bash

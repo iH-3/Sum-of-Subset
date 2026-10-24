@@ -1,0 +1,122 @@
+{
+  "status": "PASS_OPEN_TARGET_GEOMETRY_PREMISES",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ],
+  "closed_original_roots": 0,
+  "open_original_roots": 9,
+  "shared_records": 25,
+  "records": [
+    {
+      "j": 4,
+      "index": 142,
+      "positive": false,
+      "closed": false,
+      "local_steps": 749,
+      "credit": 37,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": [
+        196
+      ]
+    },
+    {
+      "j": 4,
+      "index": 142,
+      "positive": true,
+      "closed": false,
+      "local_steps": 577,
+      "credit": 41,
+      "coverage_width": 1,
+      "coverage_bracket_width": 5,
+      "full_probe_components": [
+        59
+      ]
+    },
+    {
+      "j": 5,
+      "index": 219,
+      "positive": false,
+      "closed": false,
+      "local_steps": 615,
+      "credit": 43,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": []
+    },
+    {
+      "j": 5,
+      "index": 256,
+      "positive": false,
+      "closed": false,
+      "local_steps": 448,
+      "credit": 38,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": []
+    },
+    {
+      "j": 5,
+      "index": 266,
+      "positive": false,
+      "closed": false,
+      "local_steps": 1001,
+      "credit": 45,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": []
+    },
+    {
+      "j": 5,
+      "index": 268,
+      "positive": false,
+      "closed": false,
+      "local_steps": 1230,
+      "credit": 44,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": []
+    },
+    {
+      "j": 5,
+      "index": 270,
+      "positive": false,
+      "closed": false,
+      "local_steps": 1012,
+      "credit": 47,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": []
+    },
+    {
+      "j": 5,
+      "index": 413,
+      "positive": false,
+      "closed": false,
+      "local_steps": 562,
+      "credit": 53,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": [
+        65
+      ]
+    },
+    {
+      "j": 6,
+      "index": 436,
+      "positive": false,
+      "closed": false,
+      "local_steps": 771,
+      "credit": 49,
+      "coverage_width": 1,
+      "coverage_bracket_width": 1,
+      "full_probe_components": [
+        25
+      ]
+    }
+  ],
+  "packet_sha256": "bd1273ffaef69f5faf8c3759bc4b8bd70664d6907fcd9790e3ade39b71bbf284"
+}

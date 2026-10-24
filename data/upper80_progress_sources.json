@@ -1,15 +1,15 @@
 {
   "schema": "upper80-progress-snapshot-v1",
   "global_upper_bound_certified": false,
-  "base_commit": "c0f638e626151f3d8c45dc3e0275d69e494b93f0",
+  "base_commit": "a581394d55c0b759c471be210de56fd4399c690e",
   "files": [
     {
       "path": "README.md",
-      "sha256": "30b36400a2b5358f1524df3ff7b3ae859abbafc78124452ed75af63a9c224e20"
+      "sha256": "1350f4a859c805d82c28d14d665983e24520a20d24431c3d45e2627c4c91754c"
     },
     {
       "path": "RESEARCH_STATUS.md",
-      "sha256": "af5a7c9a1945235f9f547a18439f8c1b826074f4433b057373b0d5b3f9b557bc"
+      "sha256": "97eff51e789fa3f597274aa418384d8c2ac03ee876b94508b9fd9a5459d6b62c"
     },
     {
       "path": "data/upper80_h3_profiles.json.gz",
@@ -40,12 +40,24 @@
       "sha256": "c86657beb9e54417e04d9c510d925a98615a24c498db6df4e2735e7ff607b616"
     },
     {
+      "path": "data/upper80_target_frontier_20261024.json.gz",
+      "sha256": "92081b6eb7de120934d9d86fb1d305cadc87275c2c3d5dbb68741d25c577d640"
+    },
+    {
+      "path": "data/upper80_target_geometry_20261024.json.gz",
+      "sha256": "bd1273ffaef69f5faf8c3759bc4b8bd70664d6907fcd9790e3ade39b71bbf284"
+    },
+    {
       "path": "reports/upper80_progress_20261023.pdf",
       "sha256": "aecf4dc3f3475e657a71c206b77d832fcb05921d95c56ddadcf23f7f95baa2bf"
     },
     {
       "path": "reports/upper80_progress_20261023.tex",
       "sha256": "f2840aee9d16d8dba249d3ed34f09c82b410a773ebbed16b51104bf1bfc74f90"
+    },
+    {
+      "path": "reports/upper80_target_geometry_20261024.md",
+      "sha256": "4f1dc0ce62b5c03cabab4f32ff7c38c8639adc3460251db9dd38377679f7e2c3"
     },
     {
       "path": "results/2026-10-23/upper80_progress/baseline81.json",
@@ -152,12 +164,64 @@
       "sha256": "785244f80c2d726d68501d9cff3348b73ef9dda8c95b0b04a67177295dae4cbc"
     },
     {
+      "path": "results/2026-10-24/upper80_target_geometry/README.md",
+      "sha256": "249ff2c7348650c59beb30367c023d8ad0d3fd4d24589fb11d0467c34229b552"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/lemmas_normal.json",
+      "sha256": "2ae4d059bdfa0de8330c20eb26eaea3807306c83d4cd4eb3951a3f73773f3f87"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/lemmas_optimized.json",
+      "sha256": "2ae4d059bdfa0de8330c20eb26eaea3807306c83d4cd4eb3951a3f73773f3f87"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/low_slack_normal.json",
+      "sha256": "dcd8ecf3802f48af201a8aaaf74d695fc555c49d73174abeb681cec396652887"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/low_slack_optimized.json",
+      "sha256": "dcd8ecf3802f48af201a8aaaf74d695fc555c49d73174abeb681cec396652887"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/normal.json",
+      "sha256": "65cd19d95988c68f7598dee01f6e993fa97a547954c655f68c163cc9ba740fa6"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/optimized.json",
+      "sha256": "65cd19d95988c68f7598dee01f6e993fa97a547954c655f68c163cc9ba740fa6"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/regression_receipt.json",
+      "sha256": "b0ca4b745d4b9b702684d2e94e3eeb2ea50c70ac07fbf0f4b4e12dc05ee09a22"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/validation_receipt.json",
+      "sha256": "d8f6150600bd705009c3eee2715c01767fa34c5725ff121227b287722afb3fa8"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/verify_positive_refinements_normal.json",
+      "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/verify_positive_refinements_optimized.json",
+      "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/verify_refinements_normal.json",
+      "sha256": "8dc4c96b99b6397bd58b9f96ecd6503a2372daff91cc0809528ab1a1ef0b757b"
+    },
+    {
+      "path": "results/2026-10-24/upper80_target_geometry/verify_refinements_optimized.json",
+      "sha256": "8dc4c96b99b6397bd58b9f96ecd6503a2372daff91cc0809528ab1a1ef0b757b"
+    },
+    {
       "path": "verification/upper80/README.md",
-      "sha256": "1f26d4419cf847e2e0ea0754afb925d7d91ea8e8ff9d4a7606481df83dfc4183"
+      "sha256": "aada67f0864d3ddb52c0b6a7883198e93e790bf23c95048b98a0c761636a1dbd"
     },
     {
       "path": "verification/upper80/branch_discover.py",
-      "sha256": "4fcb80f15c0585d1ca6e18421e614e3fede52322080648e9aea46a0918db45a2"
+      "sha256": "3f2056144b10fc0a97c9ad2ce43c0850bd085f3ea03ea0a7560b6d866328657d"
     },
     {
       "path": "verification/upper80/check.py",
@@ -165,7 +229,7 @@
     },
     {
       "path": "verification/upper80/check_new_lemmas.py",
-      "sha256": "825978f709cdcf8e0d315915f034bd5d8dc71e998c968b16961d17be5d69479e"
+      "sha256": "25f1631102d3cee2b4489d3817a95a9de54a618cb34cde2f42d9782c4ccce216"
     },
     {
       "path": "verification/upper80/combined_holes.py",
@@ -245,7 +309,7 @@
     },
     {
       "path": "verification/upper80/controls_20261024/check_trace_safety.py",
-      "sha256": "8d2bc800243e59b1c8f99eeeb6d989c670e925c859196b54c812fe99d36d5bcf"
+      "sha256": "55fc8b21b8b6d44bc0ecd450b488bd3be6f096b8f97e5d95a7feb3cb66c1b259"
     },
     {
       "path": "verification/upper80/cover_capacity.py",
@@ -261,7 +325,7 @@
     },
     {
       "path": "verification/upper80/discover.py",
-      "sha256": "d72b65ae3dd18dfc905dece0fe01ceef617320204ef74b5f0f436b885a022448"
+      "sha256": "b78ac204e52e145246d6ccde349fc87a4e18ac4334de59dc6db46ea560308483"
     },
     {
       "path": "verification/upper80/endpoint_schedule.py",
@@ -269,11 +333,15 @@
     },
     {
       "path": "verification/upper80/exact.py",
-      "sha256": "e34d4a74794bb0d0b49a76e3e5b3509e4692f3547dd59b72326959daa521831d"
+      "sha256": "4b3dc7027c577490e6562091cfacc742f6c0230c065f3722c3d0d8d325ecb318"
     },
     {
       "path": "verification/upper80/fast_lp.py",
-      "sha256": "5fb7428a4b7bb6ce8218d0463e40daefde16e46b43ac5ebea0674cdd7ffde530"
+      "sha256": "9f781dcf7a4c8970e6e557a1fd64dbc5b206405875465e6d4b41be2f501ee772"
+    },
+    {
+      "path": "verification/upper80/full_cover.py",
+      "sha256": "df4e90dc000ba30e15bda953c430ac8b2c19e1af9ecb912ab51bec18432a4a04"
     },
     {
       "path": "verification/upper80/interval_gaps.py",
@@ -321,7 +389,7 @@
     },
     {
       "path": "verification/upper80/research_checkpoint.md",
-      "sha256": "62942597c982fe3393c9377fabcc539d5660eba2999028ffc49d90a15fb09fcb"
+      "sha256": "6f2607704e62dba0e8d603aa2326311f3f1e385f8843cd60661dc1a65a68def7"
     },
     {
       "path": "verification/upper80/resume_search.py",
@@ -334,6 +402,10 @@
     {
       "path": "verification/upper80/shifted_source.py",
       "sha256": "c690071ebf3cb1298b6a8d7c8b23261c06fe5827a9a7fb9a0b1b0af0252bf97a"
+    },
+    {
+      "path": "verification/upper80/single_hole.py",
+      "sha256": "be7845c8352ed106641096c7ef8ea1676ce15d6467ea662059ec79b59eddf8aa"
     },
     {
       "path": "verification/upper80/source_bounds.py",
@@ -350,6 +422,10 @@
     {
       "path": "verification/upper80/verify_refinements.py",
       "sha256": "23e50e6148478da3bbd6a4360fd6fb62d6597f698f37c8044d74fd548f424ddb"
+    },
+    {
+      "path": "verification/upper80/verify_target_geometry.py",
+      "sha256": "39ba15e824f46c96922ca3426915d49665c70f56008789a7d040833c6d2078e7"
     }
   ],
   "snapshot_date": "2026-10-24",

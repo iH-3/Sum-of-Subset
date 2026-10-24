@@ -552,6 +552,10 @@ def replay(record,require_closed=True,return_state=False):
     if prior:sumset_excluded={key:set(tuple(pair) for pair in pairs) for key,pairs in prior.get('sumset_excluded',{}).items()}
     if prior:coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()}
     if prior:sumset_equalities={key:list(values) for key,values in prior.get('sumset_equalities',{}).items()}
+    coverage_width=prior.get('coverage_width',8 if positive else 1) if prior else (8 if positive else 1)
+    coverage_bracket_width=prior.get('coverage_bracket_width',coverage_width) if prior else coverage_width
+    import full_cover
+    full_probes=full_cover.copy_probes(prior.get('full_probes',[])) if prior else []
     core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
     ordered_cover={side:dict(order=list(value['order']),excluded=set(value['excluded'])) for side,value in prior.get('ordered_cover',{}).items()} if prior else {}
     for index,step in enumerate(record['trace']):
@@ -559,6 +563,22 @@ def replay(record,require_closed=True,return_state=False):
         m.need(not closed,'Steps after contradiction')
         if kind=='core_mass_ceiling':
             extra=core_mass_ceiling(record.get('limits'));rows.extend(extra);facts.extend(extra)
+        elif kind=='coverage_width':
+            hi=step['hole_upper']
+            m.need(positive and j>=3 and 3 not in st.values() and type(hi) is int and 1<=hi<coverage_width-1,'Strict target-cover width improvement')
+            guard={'hole_W':1,'ONE':-hi};check(step['certificate'],rows,eqs,guard,strict=False)
+            fact=(guard,0,'proved target-hole bound');rows.append(fact);facts.append(fact)
+            coverage_width=hi+1
+            coverage_bracket_width=hi+1
+            for state in coverage_probes.values():state['forced']=False
+        elif kind=='single_hole_interior':
+            import single_hole
+            m.need(positive and j>=3 and 3 not in st.values() and (coverage_width>1 or step['H']+2<coverage_bracket_width),'Single-hole main domain or strict interior improvement')
+            guards=single_hole.guards(step['H'])
+            m.need(len(step['certificates'])==2,'Complete single-hole location guards')
+            for guard,cert in zip(guards,step['certificates']):
+                check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved single-hole location');rows.append(fact);facts.append(fact)
+            coverage_probes={};coverage_width=1;coverage_bracket_width=step['H']+2
         elif kind in ('ordered_cover_license','ordered_cover_exclude','ordered_cover_capacity'):
             import interval_gaps
             m.need(j>=3 and 3 not in st.values(),'Ordered core cover scope')
@@ -684,13 +704,41 @@ def replay(record,require_closed=True,return_state=False):
             pc={int(i):v for i,v in step.get('point_edges',{}).items()}
             m.need(all(edge_point_count(edges[i],point_hits.get(i,set()),point_groups.get(i,{}),extended_hits.get(i,{}),leading_hits.get(i,set()),leading_extended.get(i,{}))>=v for i,v in pc.items()),'Unproved point overlap')
             rows.append(forest(edges,ret,step['edges'],step['roots'],e,cc,pc))
+        elif kind in ('full_cover_probe','full_cover_refine','full_cover_exclude','full_cover_force','full_cover_final'):
+            m.need(j>=3 and 3 not in st.values(),'Complete integer four-sum cover scope')
+            if kind=='full_cover_probe':
+                from modular import INTEGER_NAMES
+                target=step['target'];mask=step['mask']
+                m.need(isinstance(target,dict) and set(target)<=INTEGER_NAMES and all(type(v) is int for v in target.values()),'Integral affine target')
+                width,margin=full_cover.profile(positive,coverage_width,coverage_bracket_width)
+                guards=full_cover.bracket(target,mask,width,margin)
+                m.need(len(step['certificates'])==2,'Complete full target bracket')
+                for guard,cert in zip(guards,step['certificates']):
+                    check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved full target bracket');rows.append(fact);facts.append(fact)
+                full_probes.append(dict(target=target,mask=mask,width=width,margin=margin,nodes=full_cover.initial_nodes(),forced=False))
+            else:
+                pid=step['probe'];m.need(type(pid) is int and 0<=pid<len(full_probes),'Licensed full target probe')
+                state=full_probes[pid];nodes=state['nodes'];width=state['width'];target=state['target']
+                if kind=='full_cover_refine':
+                    full_cover.refine(nodes,step['root']);state['forced']=False
+                elif kind=='full_cover_exclude':
+                    node=tuple(step['node']);m.need(node in nodes,'Live full target component')
+                    guard=full_cover.exclusion(target,node,step['direction'],width);check(step['certificate'],rows,eqs,guard,strict=False)
+                    fact=(guard,0,'proved full component exclusion');rows.append(fact);facts.append(fact);nodes.remove(node)
+                elif kind=='full_cover_force':
+                    node=tuple(step['node']);m.need(nodes=={node} and not state['forced'],'Unique full target component')
+                    for guard in full_cover.containment(target,node,width):
+                        fact=(guard,0,'required full target component');rows.append(fact);facts.append(fact)
+                    state['forced']=True
+                else:
+                    m.need(not nodes,'Every full target component excluded');closed=True
         elif kind in ('coverage_probe','coverage_exclude','coverage_modular_exclude','coverage_force','coverage_final'):
             import cover_geometry as coverage
-            m.need(j>=3 and 3 not in st.values(),'Bounded-hole integer target cover scope');width=8 if positive else 1
+            m.need(j>=3 and 3 not in st.values(),'Bounded-hole integer target cover scope');width=coverage_width
             side,probe_index=step['side'],step['probe'];components=coverage.catalogue(st,p.build.last_Z,side);key=side+':'+str(probe_index)
             if kind=='coverage_probe':
                 m.need(key not in coverage_probes,'New target probe')
-                guards=coverage.bracket(components,side,probe_index,width);m.need(len(step['certificates'])==2,'Target probe bracket')
+                guards=coverage.bracket(components,side,probe_index,coverage_bracket_width);m.need(len(step['certificates'])==2,'Target probe bracket')
                 for guard,cert in zip(guards,step['certificates']):
                     check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved target probe bracket');rows.append(fact);facts.append(fact)
                 coverage_probes[key]=dict(excluded=set(),forced=False)
@@ -887,6 +935,9 @@ def replay(record,require_closed=True,return_state=False):
                    constants=[(*edges[i],value) for i,value in constants.items()],
                    point_hits=[(*edges[i],sorted(tags)) for i,tags in point_hits.items()],
                    point_groups=[(*edges[i],[(tags,count) for tags,count in groups.items()]) for i,groups in point_groups.items()],trim_pairs=sorted(trim_pairs),sumset_excluded={key:sorted(pairs) for key,pairs in sumset_excluded.items()},sumset_equalities=sumset_equalities,leading_hits=[(*edges[i],sorted(tags)) for i,tags in leading_hits.items()],leading_extended=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in leading_extended.items()],extended_hits=[(*edges[i],[(q,sorted(tags)) for q,tags in groups.items()]) for i,groups in extended_hits.items()])
+        state['coverage_width']=coverage_width
+        state['coverage_bracket_width']=coverage_bracket_width
+        state['full_probes']=full_cover.export_probes(full_probes)
         if cache_key is not None:
             PREMISE_CACHE[cache_key]=state;PREMISE_CACHE.move_to_end(cache_key)
             if len(PREMISE_CACHE)>64:PREMISE_CACHE.popitem(last=False)

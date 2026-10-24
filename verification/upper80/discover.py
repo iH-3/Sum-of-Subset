@@ -73,6 +73,10 @@ class Search:
         self.covered_positive=set(prior.get('covered_positive',[])) if prior else set()
         self.fixed_pairs={tuple(pair) for pair in prior.get('fixed_pairs',[])} if prior else set()
         self.coverage_probes={key:dict(excluded=set(value['excluded']),forced=bool(value.get('forced'))) for key,value in prior.get('coverage_probes',{}).items()} if prior else {}
+        self.coverage_width=prior.get('coverage_width',8 if positive else 1) if prior else (8 if positive else 1)
+        self.coverage_bracket_width=prior.get('coverage_bracket_width',self.coverage_width) if prior else self.coverage_width
+        import full_cover
+        self.full_probes=full_cover.copy_probes(prior.get('full_probes',[])) if prior else []
         self.core_tail_excluded={side:set(values) for side,values in prior.get('core_tail_excluded',{}).items()} if prior else {}
         self.ordered_cover={side:dict(order=list(value['order']),excluded=set(value['excluded'])) for side,value in prior.get('ordered_cover',{}).items()} if prior else {}
         self.Z=p.build.last_Z;self.tail_low={'s':set(),'t':set()};self.tail_counts={'s':0,'t':0};self.tail_pairs={'s':set(),'t':set()}
@@ -342,7 +346,7 @@ class Search:
     def coverage_gap(self,point):
         if not self.coverage_probes:return False
         import cover_geometry as coverage
-        width=8 if self.positive else 1;ev=lambda row:sum(c*point[k] for k,c in row.items())
+        width=self.coverage_width;ev=lambda row:sum(c*point[k] for k,c in row.items())
         for key in self.coverage_probes:
             side,index=key.split(':');components=coverage.catalogue(self.st,self.Z,side);target=ev(coverage.probe(components,int(index)))
             if all(max(ev(lo)-target-width+1,target-ev(hi),0)>1e-7 for _,lo,hi in components):return True
@@ -351,7 +355,7 @@ class Search:
     def coverage_step(self,point):
         if self.j<3 or 3 in self.st.values():return False,False
         import cover_geometry as coverage
-        width=8 if self.positive else 1
+        width=self.coverage_width
         catalogues={side:coverage.catalogue(self.st,self.Z,side) for side in 'st'}
         ev=lambda row:sum(c*point[k] for k,c in row.items())
         if len(self.coverage_probes)<64 and not self.coverage_gap(point):
@@ -361,11 +365,11 @@ class Search:
                     key=side+':'+str(index)
                     if key in self.coverage_probes:continue
                     target=ev(coverage.probe(components,index))
-                    if not 1-1e-7<=target<=point['S'+side]-width+1+1e-7:continue
+                    if not 1-1e-7<=target<=point['S'+side]-self.coverage_bracket_width+1+1e-7:continue
                     distance=min(max(ev(a)-target-width+1,target-ev(b),0) for _,a,b in components)
                     if distance>1e-7:candidates.append((distance,int(lo!=hi),side,index))
             for _,_,side,index in sorted(candidates,reverse=True)[:6]:
-                guards=coverage.bracket(catalogues[side],side,index,width);certificates=[]
+                guards=coverage.bracket(catalogues[side],side,index,self.coverage_bracket_width);certificates=[]
                 for guard in guards:
                     cert,infeasible=self.nonstrict_guard(guard)
                     if infeasible:return False,True
@@ -406,6 +410,58 @@ class Search:
             if len(remaining)==1 and not state['forced']:
                 component=next(iter(remaining));self.trace.append(dict(kind='coverage_force',side=side,probe=index,component=component))
                 for guard in coverage.containment(components,index,component,width):self.rows.append((guard,0,'required target component'))
+                state['forced']=True;changed=True
+        return changed,False
+
+    def full_cover_step(self,point):
+        if self.j<3 or 3 in self.st.values():return False,False
+        import full_cover as fc
+        from modular import INTEGER_NAMES
+        self.full_cover_failures=[]
+        ev=lambda row:sum(c*point[k] for k,c in row.items())
+        width,margin=fc.profile(self.positive,self.coverage_width,self.coverage_bracket_width)
+        changed=False
+        gap=any(all(max(ev(fc.interval(*node)[0])-ev(q['target'])-q['width']+1,
+                           ev(q['target'])-ev(fc.interval(*node)[1]),0)>1e-7
+                       for node in q['nodes']) for q in self.full_probes)
+        if len(self.full_probes)<4 and not gap:
+            used={(tuple(sorted((k,c) for k,c in q['target'].items() if c)),q['mask']) for q in self.full_probes}
+            for distance,mask,target in fc.candidate(point,width,margin,used):
+                m.need(set(target)<=INTEGER_NAMES,'Integer full-cover target')
+                guards=fc.bracket(target,mask,width,margin);certificates=[]
+                for guard in guards:
+                    cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        self.full_cover_failures.append((distance,guard));break
+                    certificates.append(cert)
+                if len(certificates)!=2:continue
+                self.trace.append(dict(kind='full_cover_probe',target=target,mask=mask,certificates=certificates))
+                self.rows.extend((guard,0,'proved full target bracket') for guard in guards)
+                self.full_probes.append(dict(target=target,mask=mask,width=width,margin=margin,nodes=fc.initial_nodes(),forced=False))
+                changed=True;break
+        for pid,state in enumerate(self.full_probes):
+            nodes=state['nodes'];target=state['target'];width=state['width'];queue=sorted(nodes)
+            for node in queue:
+                options=sorted((ev(fc.exclusion(target,node,direction,width)),direction) for direction in (0,1))
+                excluded=False
+                for value,direction in options:
+                    if value>1e-7:continue
+                    guard=fc.exclusion(target,node,direction,width);cert,infeasible=self.nonstrict_guard(guard)
+                    if infeasible:return False,True
+                    if cert is None:
+                        self.full_cover_failures.append((-value,guard));continue
+                    self.trace.append(dict(kind='full_cover_exclude',probe=pid,node=node,direction=direction,certificate=cert))
+                    self.rows.append((guard,0,'proved full component exclusion'));nodes.remove(node);changed=True;excluded=True;break
+                if excluded:continue
+                if node[1]==-1 and len(fc.roots()[node[0]])<4:
+                    self.trace.append(dict(kind='full_cover_refine',probe=pid,root=node[0]))
+                    fc.refine(nodes,node[0]);queue.extend((node[0],i) for i in range(len(fc.children(node[0]))));changed=True;state['forced']=False
+            if not nodes:
+                self.trace.append(dict(kind='full_cover_final',probe=pid));return True,True
+            if len(nodes)==1 and not state['forced']:
+                node=next(iter(nodes));self.trace.append(dict(kind='full_cover_force',probe=pid,node=node))
+                self.rows.extend((guard,0,'required full target component') for guard in fc.containment(target,node,width))
                 state['forced']=True;changed=True
         return changed,False
 
@@ -721,6 +777,38 @@ class Search:
         if self.positive and self.j>=3 and not any(label=='positive predecessor gap s' for _,_,label in self.rows):
             import positive_holes
             self.trace.append(dict(kind='positive_predecessor_gap'));self.rows.extend(positive_holes.predecessor_rows(self.j))
+        if self.positive and self.j>=3 and 3 not in self.st.values():
+            for hi in range(1,self.coverage_width-1):
+                guard={'hole_W':1,'ONE':-hi}
+                certificate,infeasible=self.nonstrict_guard(guard)
+                if infeasible:return self.final()
+                if certificate is None:continue
+                self.trace.append(dict(kind='coverage_width',hole_upper=hi,certificate=certificate))
+                self.rows.append((guard,0,'proved target-hole bound'))
+                self.coverage_width=hi+1
+                self.coverage_bracket_width=hi+1
+                # Old exclusions remain valid for the shorter interval; a
+                # previously forced component now gets the stronger bracket.
+                for state in self.coverage_probes.values():state['forced']=False
+                break
+            if self.coverage_width>1 or self.coverage_bracket_width>3:
+                import single_hole
+                for H in (1,2,3):
+                    if self.coverage_width==1 and H+2>=self.coverage_bracket_width:continue
+                    certificates=[]
+                    for guard in single_hole.guards(H):
+                        certificate,infeasible=self.nonstrict_guard(guard)
+                        if infeasible:return self.final()
+                        if certificate is None:break
+                        certificates.append(certificate)
+                    if len(certificates)!=2:continue
+                    self.trace.append(dict(kind='single_hole_interior',H=H,certificates=certificates))
+                    self.rows.extend((guard,0,'proved single-hole location') for guard in single_hole.guards(H))
+                    # Previously licensed probes may lie in the short top
+                    # strip. Their already proved facts stay valid, while
+                    # new singleton probes use the smaller interior domain.
+                    self.coverage_probes={};self.coverage_width=1;self.coverage_bracket_width=H+2
+                    break
         for cycle in range(512):
             rr=self.lp()
             if rr.status==2:return self.final()
@@ -728,6 +816,9 @@ class Search:
             point=dict(zip(self.names,rr.x));changed=False
             strengthened,infeasible=self.integral_kernel_step(point)
             if infeasible:return self.final()
+            if strengthened:continue
+            strengthened,infeasible=self.full_cover_step(point)
+            if infeasible:return True if strengthened else self.final()
             if strengthened:continue
             for label,form in forms.items():
                 if label in self.low|self.high:continue

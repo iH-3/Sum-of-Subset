@@ -1,0 +1,17 @@
+{
+  "verify_refinements": {
+    "status": "PASS",
+    "modes_identical": true,
+    "sha256": "8dc4c96b99b6397bd58b9f96ecd6503a2372daff91cc0809528ab1a1ef0b757b"
+  },
+  "verify_positive_refinements": {
+    "status": "PASS",
+    "modes_identical": true,
+    "sha256": "9c0efa3d957651e63105a9d4163cb4117a90d502a5a2d5f3cdcb771d50ac7b6f"
+  },
+  "low_slack": {
+    "status": "PASS",
+    "modes_identical": true,
+    "sha256": "dcd8ecf3802f48af201a8aaaf74d695fc555c49d73174abeb681cec396652887"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "status": "PASS_PARTIAL_POSITIVE_REFINEMENTS",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "closed_original_roots": 0,
+  "certified_W": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "open_W": [
+    1
+  ],
+  "slices": [
+    {
+      "W": [
+        1,
+        1
+      ],
+      "closed": false,
+      "local_steps": 95
+    },
+    {
+      "W": [
+        2,
+        2
+      ],
+      "closed": true,
+      "local_steps": 7
+    },
+    {
+      "W": [
+        3,
+        7
+      ],
+      "closed": true,
+      "local_steps": 5
+    }
+  ],
+  "packet_sha256": "72844b58d6c8f668d2decd1892f8bc7ea61aa9b15cff74333df5f49ba45576ea"
+}

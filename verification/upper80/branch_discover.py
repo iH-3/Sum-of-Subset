@@ -71,6 +71,11 @@ class Branch:
         x=s.point;Z=m.build.last_Z;candidates=[]
         known=set(s.known_nonpositive)|{guard_key(row) for row,rhs,_ in s.rows if rhs<=0}
 
+        for violation,guard in getattr(s,'full_cover_failures',[]):
+            normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
+            if name not in limits and normalized not in known:candidates.append((6000+min(100,violation)/100,name,0))
+
+
         for violation,guard in getattr(s,'union_failures',[]):
             normalized=guard_key(guard);name='linear_cut:'+json.dumps(dict(normalized),sort_keys=True,separators=(',',':'))
             if name not in limits and normalized not in known:candidates.append((4000+min(100,violation),name,0))
@@ -108,8 +113,10 @@ class Branch:
                 if len(remaining)<=1:continue
                 for component in remaining:
                     for direction in (0,1):
-                        guard=coverage.exclusion(components,index,component,direction,8 if self.positive else 1)
+                        guard=coverage.exclusion(components,index,component,direction,s.coverage_width)
                         name='coverage:'+side+':'+str(index)+':'+str(component)+':'+str(direction)
+                        if s.coverage_width!=(8 if self.positive else 1):
+                            name='linear_cut:'+json.dumps(dict(guard_key(guard)),sort_keys=True,separators=(',',':'))
                         if name in limits or guard_key(guard) in known:continue
                         value=sum(c*x[k] for k,c in guard.items())
                         if value<=1e-7:candidates.append((2200-10*len(remaining)+min(20,-value)/100,name,0))
