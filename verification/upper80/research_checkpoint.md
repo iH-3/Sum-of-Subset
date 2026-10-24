@@ -12,6 +12,23 @@ premises are replayed by `verify_target_geometry.py`. No additional original
 root is closed. The separate 176-node discovery frontier is not a covered
 branch tree, even though 46 of its local checkpoints are closed.
 
+## Extended-window continuation (2026-10-24)
+
+`full_window.py` now certifies arbitrary affine complete windows, including
+propagation through each of the eight unused outer points. This closed the
+entire `k=0` and `k=1` slices of `(6,436,0)`, and the unrestricted root
+`(5,270,0)`. Together with previously checked `k=2..7`, and the source budget
+`k^2<=58`, the six-empty-cell root is now closed. Current total: 4,647 closed
+original roots and seven open roots. `verify_extended_windows.py` and
+`data/upper80_extended_windows_20261024.json.gz` preserve the new exact records
+and immutable identities of the reused rank packet. The general argument is
+in `reports/upper80_extended_windows_20261024.md`. No global 80 claim is made.
+
+Do not rerun the earlier closed slices, baseline suites or completed target
+enumerations. `window_search.py` records method and premise digests, retains
+proved cuts on continuation and skips finished checkpoints. Additional target
+partitions and first-gap core cases are still partial research work.
+
 ## Verified foundation improvements
 
 1. `verification/upper80/density.py`: bounded-density theorem extends beta<=9

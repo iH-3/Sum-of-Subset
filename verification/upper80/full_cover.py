@@ -53,6 +53,47 @@ def shift(mask):
     m.need(type(mask) is int and 0<=mask<256,'An actual subset of eight outer points')
     return m.add(*[(1,row) for i,row in enumerate(outer()) if mask>>i&1])
 
+@lru_cache(None)
+def source_blocks():
+    # Eight individual tails and the two disjoint whole signed cores.
+    ts=tails()
+    cs=m.add((1,{'Ss':1}),*[(-1,row) for row in ts[:4]])
+    ct=m.add((-1,{'St':1}),*[(-1,row) for row in ts[4:]])
+    return (*ts,cs,ct)
+
+def known_target(outer_mask,source_mask):
+    m.need(type(source_mask) is int and 0<=source_mask<1024,'An actual subset of ten disjoint source blocks')
+    return m.add((1,shift(outer_mask)),*[(1,row) for i,row in enumerate(source_blocks()) if source_mask>>i&1])
+
+def known_candidate(point,used):
+    """Find a guaranteed actual subset sum inside a numerical envelope gap."""
+    import numpy as np
+    ev=lambda row:sum(c*point[k] for k,c in row.items())
+    def subset_values(rows):
+        values=np.zeros(1)
+        for row in rows:values=np.r_[values,values+ev(row)]
+        return values
+    vals=(subset_values(outer())[:,None]+subset_values(source_blocks())[None,:]).ravel()
+    order=np.argsort(vals);ordered=vals[order]
+    intervals=sorted((ev(interval(*node)[0]),ev(interval(*node)[1])) for node in leaves())
+    end=intervals[0][1];gaps=[]
+    if ordered[0]<intervals[0][0]-1:gaps.append((ordered[0],intervals[0][0]-1))
+    for lo,hi in intervals:
+        if lo>end+1+1e-7:gaps.append((end+1,lo-1))
+        end=max(end,hi)
+    if ordered[-1]>end+1:gaps.append((end+1,ordered[-1]))
+    candidates=[]
+    for lo,hi in gaps:
+        middle=(lo+hi)/2;pos=int(np.searchsorted(ordered,middle))
+        for i in range(max(0,pos-2),min(len(order),pos+3)):
+            value=ordered[i]
+            if not lo-1e-7<=value<=hi+1e-7:continue
+            om,sm=divmod(int(order[i]),1024);target=known_target(om,sm)
+            key=tuple(sorted((k,c) for k,c in target.items() if c))
+            if key in used:continue
+            candidates.append((min(value-lo,hi-value)+1,om,sm,target))
+    return sorted(candidates,reverse=True,key=lambda x:x[:3])[:8]
+
 def bracket(target,mask,width,margin=0):
     m.need(type(width) is int and width>=1 and type(margin) is int and margin>=0,'Full target bracket parameters')
     centre=shift(mask)
@@ -66,6 +107,14 @@ def exclusion(target,node,direction,width):
 def containment(target,node,width):
     lo,hi=interval(*node)
     return [m.add((1,lo),(-1,target),(1-width,ONE)),m.add((1,target),(-1,hi))]
+
+def terminal(node):
+    return node[1]>=0 or len(roots()[node[0]])==4
+
+def subsumption(node,by):
+    m.need(node!=by and terminal(node) and terminal(by),'Distinct final four-sum components')
+    lo,hi=interval(*node);a,b=interval(*by)
+    return [m.add((1,a),(-1,lo)),m.add((1,hi),(-1,b))]
 
 def initial_nodes():return {(i,-1) for i in range(len(roots()))}
 
@@ -87,6 +136,7 @@ def refine(nodes,root):
 
 def candidate(point,width,margin,used):
     """Discovery heuristic only; every returned bracket must be certified."""
+    import math
     ev=lambda row:sum(c*point[k] for k,c in row.items())
     ordered=sorted((ev(interval(*node)[0]),ev(interval(*node)[1]),node) for node in leaves())
     gaps=[];end=ordered[0][1];end_node=ordered[0][2]
@@ -99,6 +149,16 @@ def candidate(point,width,margin,used):
         for a,b,node in gaps:
             lo,hi=max(a,L),min(b,R)
             if hi-lo+1<width-1e-7:continue
+            # A constant offset from the source's left endpoint avoids an
+            # unnecessary parameter-order branch. Its two bracket guards
+            # are still proved by the ordinary exact mechanism.
+            base=value-point['St']
+            cl=max(margin,math.ceil(lo-base-1e-7));ch=min(1332-margin-width+1,math.floor(hi-width+1-base+1e-7))
+            if cl<=ch:
+                offset=(cl+ch)//2
+                fixed=m.add((1,centre),(-1,{'St':1}),(offset,ONE))
+                key=(tuple(sorted((k,c) for k,c in fixed.items() if c)),mask)
+                if key not in used:answer.append((1000000+hi-lo+1,mask,fixed))
             target=m.add((1,interval(*node)[1]),(1,ONE)) if a>=L else m.add((1,centre),(-1,{'St':1}),(margin,ONE))
             key=(tuple(sorted((k,c) for k,c in target.items() if c)),mask)
             if key in used:continue

@@ -1,0 +1,68 @@
+{
+  "status": "PASS_INCREMENTAL_EXTENDED_WINDOWS",
+  "global_upper_bound_certified": false,
+  "structural_applicability_certified": false,
+  "established_range": [
+    71,
+    81
+  ],
+  "newly_closed_original_roots": [
+    [
+      5,
+      270,
+      false
+    ],
+    [
+      6,
+      436,
+      false
+    ]
+  ],
+  "closed_original_roots": 4647,
+  "open_original_roots": 7,
+  "records": [
+    {
+      "j": 6,
+      "index": 436,
+      "rank": 0,
+      "closed": true,
+      "replay": {
+        "steps": 17,
+        "credit": 49
+      }
+    },
+    {
+      "j": 6,
+      "index": 436,
+      "rank": 1,
+      "closed": true,
+      "replay": {
+        "steps": 11,
+        "credit": 50
+      }
+    },
+    {
+      "j": 5,
+      "index": 270,
+      "rank": null,
+      "closed": true,
+      "replay": {
+        "steps": 13,
+        "credit": 47
+      }
+    }
+  ],
+  "new_record_replays": 0,
+  "reused_new_replays": 3,
+  "reused_prior_ranks": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "prior_ranks_replayed": false,
+  "pooled_records": 39,
+  "packet_sha256": "4ac322f2ba87f82cf5899d529b7bca888a786dce41a4c6875c94eec616b64173"
+}

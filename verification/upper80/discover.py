@@ -283,6 +283,26 @@ class Search:
         if cert is None:raise ValueError('Exact contradiction reconstruction failed')
         self.trace.append(dict(kind='final',certificate=cert));return True
 
+    def remember_guard(self,guard,certificate):
+        key=tuple(sorted((k,v) for k,v in guard.items() if v));self.guard_certificate_cache[key]=certificate
+        factor=gcd(*(abs(v) for k,v in guard.items() if k!='ONE' and v)) or 1
+        shape=tuple(sorted((k,v//factor) for k,v in guard.items() if k!='ONE' and v))
+        if not shape:return
+        cache=getattr(self,'_affine_guard_cache',{});self._affine_guard_cache=cache
+        previous=cache.get(shape);constant=guard.get('ONE',0)
+        if previous is None or constant*previous[0]>previous[1]*factor:cache[shape]=(factor,constant,certificate)
+
+    def weaker_guard(self,guard):
+        factor=gcd(*(abs(v) for k,v in guard.items() if k!='ONE' and v)) or 1
+        shape=tuple(sorted((k,v//factor) for k,v in guard.items() if k!='ONE' and v))
+        previous=getattr(self,'_affine_guard_cache',{}).get(shape)
+        if previous is None:return None
+        old_factor,constant,certificate=previous
+        if constant*factor<guard.get('ONE',0)*old_factor:return None
+        cert=dict(weights=[(kind,i,w*factor) for kind,i,w in certificate['weights']],denominator=certificate['denominator']*old_factor)
+        exact.check(cert,self.rows,self.eqs,guard,strict=False)
+        return cert
+
     def guard_index(self):
         if not hasattr(self,'_guard_seen'):
             self._guard_seen=0;self._guard_epoch=0;self._guard_direct={}
@@ -293,14 +313,19 @@ class Search:
                 for sign in (1,-1):
                     key=guard_key({k:sign*v for k,v in affine.items()})
                     self._guard_direct.setdefault(key,('e',i,sign,factor,rhs))
-        redundant={'proved core-tail license','proved core-tail exclusion','proved known-union guard','proved target probe bracket','proved target component exclusion','proved fixed conflict','proved fixed probe conflict',
+                    weights=[('e',i,sign)]+([('e',self._guard_unit,-rhs*sign)] if rhs else [])
+                    self.remember_guard({k:sign*v for k,v in affine.items()},dict(weights=weights,denominator=1))
+        redundant={'proved full target bracket','proved full component exclusion','proved final component containment','proved core-tail license','proved core-tail exclusion','proved known-union guard','proved target probe bracket','proved target component exclusion','proved fixed conflict','proved fixed probe conflict',
                    'proved fixed source cover','proved covered fixed positive','proved trimmed hull pair','proved source gap pair outside',
                    'proved source pair equality','proved leading exterior hit','proved extended interval hit','proved point overlap interval'}
         for i in range(self._guard_seen,len(self.rows)):
             row,rhs,label=self.rows[i]
             if label not in redundant and not label.startswith(('proved LOW ','proved tail LOW ','proved tail incompatible ')):self._guard_epoch+=1
             affine=m.add((1,row),(-rhs,{'ONE':1}));factor=gcd(*(abs(v) for v in affine.values())) or 1
-            if any(affine.values()):self._guard_direct.setdefault(guard_key(affine),('r',i,1,factor,rhs))
+            if any(affine.values()):
+                self._guard_direct.setdefault(guard_key(affine),('r',i,1,factor,rhs))
+                weights=[('r',i,1)]+([('e',self._guard_unit,-rhs)] if rhs else [])
+                self.remember_guard(affine,dict(weights=weights,denominator=1))
         self._guard_seen=len(self.rows)
         return self._guard_epoch
 
@@ -310,14 +335,16 @@ class Search:
             self.known_nonpositive.add(normalized);return self.guard_certificate_cache[key],False
         if all(v<=0 for v in guard.values()):
             cert={'weights':[],'denominator':1};exact.check(cert,self.rows,self.eqs,guard,strict=False)
-            self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+            self.remember_guard(guard,cert);self.known_nonpositive.add(normalized);return cert,False
         epoch=self.guard_index()
         if normalized in self._guard_direct:
             kind,i,sign,factor,rhs=self._guard_direct[normalized];target_factor=gcd(*(abs(v) for v in guard.values())) or 1
             weights=[(kind,i,sign*target_factor)]
             if rhs:weights.append(('e',self._guard_unit,-rhs*sign*target_factor))
             cert={'weights':weights,'denominator':factor};exact.check(cert,self.rows,self.eqs,guard,strict=False)
-            self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+            self.remember_guard(guard,cert);self.known_nonpositive.add(normalized);return cert,False
+        inherited=self.weaker_guard(guard)
+        if inherited is not None:self.remember_guard(guard,inherited);return inherited,False
         if self.guard_failure_cache.get(key)==epoch:return None,False
         rr=self.lp(guard)
         if rr.status==2:return None,True
@@ -335,11 +362,11 @@ class Search:
                     self.trace.append(dict(kind='integer_guard',guard=guard,certificate=strict_certificate))
                     index=len(self.rows);self.rows.append((guard,0,'rounded integer guard'))
                     cert={'weights':[('r',index,1)],'denominator':1}
-                    self.guard_certificate_cache[key]=cert;self.known_nonpositive.add(normalized);return cert,False
+                    self.remember_guard(guard,cert);self.known_nonpositive.add(normalized);return cert,False
         if rr.status!=0 or rr.fun<-1e-7:
             self.guard_failure_cache[key]=epoch;return None,False
         cert=self.reconstruct(rr,guard,strict=False)
-        if cert is not None:self.guard_certificate_cache[key]=cert
+        if cert is not None:self.remember_guard(guard,cert)
         else:self.guard_failure_cache[key]=epoch
         return cert,False
 
@@ -424,7 +451,15 @@ class Search:
         gap=any(all(max(ev(fc.interval(*node)[0])-ev(q['target'])-q['width']+1,
                            ev(q['target'])-ev(fc.interval(*node)[1]),0)>1e-7
                        for node in q['nodes']) for q in self.full_probes)
-        if len(self.full_probes)<4 and not gap:
+        if len(self.full_probes)<getattr(self,'max_full_probes',4) and not gap:
+            used_targets={tuple(sorted((k,c) for k,c in q['target'].items() if c)) for q in self.full_probes}
+            known=fc.known_candidate(point,used_targets)
+            if known:
+                distance,mask,source_mask,target=known[0]
+                self.trace.append(dict(kind='full_cover_known_probe',mask=mask,source_mask=source_mask))
+                self.full_probes.append(dict(target=target,mask=mask,width=1,margin=0,nodes=fc.initial_nodes(),forced=False))
+                changed=True
+        if len(self.full_probes)<getattr(self,'max_full_probes',4) and not gap and not changed:
             used={(tuple(sorted((k,c) for k,c in q['target'].items() if c)),q['mask']) for q in self.full_probes}
             for distance,mask,target in fc.candidate(point,width,margin,used):
                 m.need(set(target)<=INTEGER_NAMES,'Integer full-cover target')
@@ -442,7 +477,17 @@ class Search:
                 changed=True;break
         for pid,state in enumerate(self.full_probes):
             nodes=state['nodes'];target=state['target'];width=state['width'];queue=sorted(nodes)
+            from modular import Basis
+            integer_basis=Basis(self.rows,self.eqs) if width==1 else None
             for node in queue:
+                lo,hi=fc.interval(*node)
+                if integer_basis is not None and not any(m.add((1,lo),(-1,hi)).values()):
+                    difference=m.add((1,lo),(-1,target));certificate=integer_basis.exclude(difference)
+                    if certificate is not None:
+                        import modular
+                        modular.check(certificate,self.rows,self.eqs,difference)
+                        self.trace.append(dict(kind='full_cover_modular_exclude',probe=pid,node=node,certificate=certificate))
+                        nodes.remove(node);changed=True;continue
                 options=sorted((ev(fc.exclusion(target,node,direction,width)),direction) for direction in (0,1))
                 excluded=False
                 for value,direction in options:
@@ -457,6 +502,25 @@ class Search:
                 if node[1]==-1 and len(fc.roots()[node[0]])<4:
                     self.trace.append(dict(kind='full_cover_refine',probe=pid,root=node[0]))
                     fc.refine(nodes,node[0]);queue.extend((node[0],i) for i in range(len(fc.children(node[0]))));changed=True;state['forced']=False
+            # A final component may absorb another final component. The
+            # containing hull must never be refined afterwards.
+            candidates=sorted(nodes,key=lambda n:ev(fc.interval(*n)[1])-ev(fc.interval(*n)[0]),reverse=True)
+            for node in list(nodes):
+                if node not in nodes or not fc.terminal(node):continue
+                for by in candidates[:12]:
+                    if by==node or by not in nodes or not fc.terminal(by):continue
+                    guards=fc.subsumption(node,by)
+                    if any(ev(g)>1e-7 for g in guards):continue
+                    certificates=[]
+                    for guard in guards:
+                        cert,infeasible=self.nonstrict_guard(guard)
+                        if infeasible:return False,True
+                        if cert is None:break
+                        certificates.append(cert)
+                    if len(certificates)!=2:continue
+                    self.trace.append(dict(kind='full_cover_subsume',probe=pid,node=node,by=by,certificates=certificates))
+                    self.rows.extend((g,0,'proved final component containment') for g in guards)
+                    nodes.remove(node);changed=True;break
             if not nodes:
                 self.trace.append(dict(kind='full_cover_final',probe=pid));return True,True
             if len(nodes)==1 and not state['forced']:

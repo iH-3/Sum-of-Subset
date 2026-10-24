@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_ADJACENT_COVER_PARTITION", "stats": {"nodes": 491, "closed": 282, "open": 159}, "closed": false, "replay": {"steps": 5, "credit": 50}, "seconds": 11.24103319200367, "global_upper_bound_certified": false}

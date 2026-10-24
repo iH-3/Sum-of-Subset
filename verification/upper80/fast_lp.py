@@ -12,6 +12,8 @@ def install():
   def identity(entry):
    row,b,_=entry;factor=gcd(b,*(v for v in row.values())) or 1
    return tuple(sorted((k,v//factor) for k,v in row.items() if v)),b//factor
+  def omitted(entry):
+   return getattr(self,'omit_generated_rows',False) and entry[2] in ('integer CG consequence','complete target-cover consequence')
   def sparse(rr):
    index=[];value=[];start=[0];bounds=[];scales=[];columns={k:i for i,k in enumerate(self.names)}
    for row,b,label in rr:
@@ -26,7 +28,7 @@ def install():
     unique=[];self._engine_seen=set();self._rpositions=[]
     for row in self.rows:
      key=identity(row)
-     if key in self._engine_seen:self._rpositions.append(-1)
+     if omitted(row) or key in self._engine_seen:self._rpositions.append(-1)
      else:self._engine_seen.add(key);self._rpositions.append(len(unique));unique.append(row)
     rr=unique+self.eqs;start,index,value,bounds,scales=sparse(rr);nr=len(unique);ne=len(self.eqs)
     model=c.HighsLp();model.num_col_=n;model.num_row_=len(rr);model.col_cost_=cost;model.col_lower_=np.zeros(n);model.col_upper_=np.full(n,np.inf)
@@ -38,7 +40,7 @@ def install():
     rr=[];offset=h.getNumRow()
     for row in self.rows[self._engine_rows:]:
      self.rsi.append(max([1,*[abs(v) for v in row[0].values()]]));key=identity(row)
-     if key in self._engine_seen:self._rpositions.append(-1)
+     if omitted(row) or key in self._engine_seen:self._rpositions.append(-1)
      else:self._engine_seen.add(key);self._rpositions.append(offset+len(rr));rr.append(row)
     if rr:
      start,index,value,bounds,scales=sparse(rr)

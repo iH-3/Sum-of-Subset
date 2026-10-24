@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_FULL_TARGET_RULES", "actual_subset_checks": 2000, "negative_controls": ["invalid source mask", "noninteger source mask", "invalid outer mask", "subsumption by refinable hull", "self subsumption", "modular interval deletion", "incomplete disjunction", "false common bound", "duplicate cover alternative"], "global_upper_bound_certified": false}

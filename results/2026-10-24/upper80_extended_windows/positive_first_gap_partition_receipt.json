@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_FIRST_GAP_CORE_PARTITION", "closed": false, "closed_cases": 1, "total_cases": 4, "replay": {"steps": 5, "credit": 41}, "seconds": 15.234656248001556, "global_upper_bound_certified": false}

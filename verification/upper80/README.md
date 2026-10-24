@@ -1,5 +1,7 @@
 # 向上界 80 的研究：全局仍为 71≤N≤81
 
+Latest 2026-10-24 continuation: two more original roots closed; **4,647/4,654 closed, seven open**. See `verify_extended_windows.py` and the extended-window report. Global `71<=N<=81` is unchanged; structural applicability remains incomplete. Historical counts below describe their respective packets.
+
 本目录同时保存已完成的辅助定理验证和未完成的研究原型。**它不是上界 80 的完整验证包。**
 
 ## 已完成的辅助验证

@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_FULL_WINDOW_CAPACITY", "direct_set_checks": 12, "negative_controls": ["missing component", "duplicate component", "duplicate refinement", "noninteger endpoint", "invalid direction"], "global_upper_bound_certified": false}

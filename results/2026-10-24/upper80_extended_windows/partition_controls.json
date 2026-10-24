@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_COVER_PARTITION_CONTROLS", "negative_controls": ["missing child", "duplicate child", "false closure", "unsupported closed leaf", "wrong probe", "missing covered assumptions"], "global_upper_bound_certified": false}

@@ -704,9 +704,51 @@ def replay(record,require_closed=True,return_state=False):
             pc={int(i):v for i,v in step.get('point_edges',{}).items()}
             m.need(all(edge_point_count(edges[i],point_hits.get(i,set()),point_groups.get(i,{}),extended_hits.get(i,{}),leading_hits.get(i,set()),leading_extended.get(i,{}))>=v for i,v in pc.items()),'Unproved point overlap')
             rows.append(forest(edges,ret,step['edges'],step['roots'],e,cc,pc))
-        elif kind in ('full_cover_probe','full_cover_refine','full_cover_exclude','full_cover_force','full_cover_final'):
+        elif kind=='first_gap_core_partition':
+            import first_gap_core
+            m.need(j>=3 and 3 not in st.values(),'Integer first-gap partition scope')
+            prefix=dict(record,trace=record['trace'][:index])
+            closed=first_gap_core.check(step,record,prefix,rows,eqs,positive)
+        elif kind=='full_cover_partition_credit':
+            import cover_partition
+            m.need(j>=3 and 3 not in st.values(),'Integer target credit partition scope')
+            minimum=step['credit'];m.need(type(minimum) is int and minimum>e,'Strict common credit improvement')
+            prefix=dict(record,trace=record['trace'][:index])
+            closed=cover_partition.check(step['tree'],full_probes,rows,eqs,base_record=prefix,minimum_credit=minimum)['closed']
+            cover_partition.remove_closed_top(step['tree'],full_probes)
+            if not closed:
+                e=minimum;rows.extend(credit_rows(ret,e))
+        elif kind=='full_cover_partition':
+            import cover_partition
+            m.need(j>=3 and 3 not in st.values(),'Integer target partition scope')
+            prefix=dict(record,trace=record['trace'][:index])
+            closed=cover_partition.check(step['tree'],full_probes,rows,eqs,base_record=prefix)['closed']
+            cover_partition.remove_closed_top(step['tree'],full_probes)
+        elif kind=='integer_cg':
+            import cg_cut
+            m.need(j>=3 and 3 not in st.values(),'Integer CG domain')
+            fact=cg_cut.derive(step['proof'],rows,eqs);rows.append(fact);facts.append(fact)
+        elif kind=='full_window_capacity':
+            import full_window
+            m.need(j>=3 and 3 not in st.values(),'Integer full-window capacity scope')
+            body,guards=full_window.derive(step['proof'],positive,coverage_width,coverage_bracket_width)
+            m.need(len(step['certificates'])==len(guards),'Every full-window guard certified')
+            for cert,guard in zip(step['certificates'],guards):check(cert,rows,eqs,guard,strict=False)
+            fact=(body,0,'complete four-sum window capacity');rows.append(fact);facts.append(fact)
+        elif kind in ('full_cover_probe','full_cover_extended_probe','full_cover_known_probe','full_cover_refine','full_cover_exclude','full_cover_modular_exclude','full_cover_subsume','full_cover_bound','full_cover_force','full_cover_final'):
             m.need(j>=3 and 3 not in st.values(),'Complete integer four-sum cover scope')
-            if kind=='full_cover_probe':
+            if kind=='full_cover_extended_probe':
+                import full_window
+                proof=step['proof'];m.need(proof['lower']==proof['upper'] and 'outer_extension' in proof,'One extended-interval target')
+                guards=full_window.proof_bracket(proof,positive,coverage_width,coverage_bracket_width)
+                m.need(len(step['certificates'])==len(guards),'Every extended target guard')
+                for guard,cert in zip(guards,step['certificates']):
+                    check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved full target bracket');rows.append(fact);facts.append(fact)
+                full_probes.append(dict(target=proof['lower'],mask=0,width=1,margin=0,nodes=full_cover.initial_nodes(),forced=False))
+            elif kind=='full_cover_known_probe':
+                target=full_cover.known_target(step['mask'],step['source_mask'])
+                full_probes.append(dict(target=target,mask=step['mask'],width=1,margin=0,nodes=full_cover.initial_nodes(),forced=False))
+            elif kind=='full_cover_probe':
                 from modular import INTEGER_NAMES
                 target=step['target'];mask=step['mask']
                 m.need(isinstance(target,dict) and set(target)<=INTEGER_NAMES and all(type(v) is int for v in target.values()),'Integral affine target')
@@ -721,10 +763,34 @@ def replay(record,require_closed=True,return_state=False):
                 state=full_probes[pid];nodes=state['nodes'];width=state['width'];target=state['target']
                 if kind=='full_cover_refine':
                     full_cover.refine(nodes,step['root']);state['forced']=False
+                elif kind=='full_cover_bound':
+                    from modular import INTEGER_NAMES
+                    guard=step['guard'];m.need(set(guard)<=INTEGER_NAMES and all(type(v) is int for v in guard.values()),'Integer complete-cover consequence')
+                    cases=step['cases'];inventory=[tuple(case['node']) for case in cases]
+                    m.need(set(inventory)==nodes and len(inventory)==len(nodes),'Every live cover alternative has a consequence')
+                    for case in cases:
+                        augmented=rows+[(g,0,'case target containment') for g in full_cover.containment(target,tuple(case['node']),width)]
+                        m.need(type(case['infeasible']) is bool,'Exact alternative consequence kind')
+                        rounded=case.get('rounded',False);m.need(type(rounded) is bool,'Integer alternative rounding flag')
+                        m.need(not case['infeasible'] or not rounded,'Infeasible case needs no rounding')
+                        consequence=m.add((1,guard),(-1,{'ONE':1})) if rounded else guard
+                        check(case['certificate'],augmented,eqs,None if case['infeasible'] else consequence,strict=rounded)
+                    fact=(guard,0,'complete target-cover consequence');rows.append(fact);facts.append(fact)
                 elif kind=='full_cover_exclude':
                     node=tuple(step['node']);m.need(node in nodes,'Live full target component')
                     guard=full_cover.exclusion(target,node,step['direction'],width);check(step['certificate'],rows,eqs,guard,strict=False)
                     fact=(guard,0,'proved full component exclusion');rows.append(fact);facts.append(fact);nodes.remove(node)
+                elif kind=='full_cover_modular_exclude':
+                    import modular
+                    node=tuple(step['node']);m.need(node in nodes and width==1,'Live singleton full target component')
+                    lo,hi=full_cover.interval(*node);m.need(not any(m.add((1,lo),(-1,hi)).values()),'Full-cover modular singleton')
+                    modular.check(step['certificate'],rows,eqs,m.add((1,lo),(-1,target)));nodes.remove(node)
+                elif kind=='full_cover_subsume':
+                    node,by=tuple(step['node']),tuple(step['by']);m.need(node in nodes and by in nodes,'Live final cover containment')
+                    guards=full_cover.subsumption(node,by);m.need(len(step['certificates'])==2,'Complete final containment guards')
+                    for guard,cert in zip(guards,step['certificates']):
+                        check(cert,rows,eqs,guard,strict=False);fact=(guard,0,'proved final component containment');rows.append(fact);facts.append(fact)
+                    nodes.remove(node)
                 elif kind=='full_cover_force':
                     node=tuple(step['node']);m.need(nodes=={node} and not state['forced'],'Unique full target component')
                     for guard in full_cover.containment(target,node,width):

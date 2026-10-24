@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_COVER_ROUNDING", "positive_controls": 1, "negative_controls": ["false rounded bound", "noninteger rounding flag", "rounding infeasible alternative", "unlicensed variable", "missing strict margin"], "global_upper_bound_certified": false}

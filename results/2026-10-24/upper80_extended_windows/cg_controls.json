@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_INTEGER_CG", "integer_point_checks": 1660, "negative_controls": ["negative multiplier", "zero denominator", "missing unit", "unknown variable", "duplicate multiplier"], "global_upper_bound_certified": false}

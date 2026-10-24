@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_WINDOW_EXTENSION", "explicit_subset_sum_sets": 200, "negative_controls": ["repeated outer", "shift reuses outer", "unlocalized holes"], "global_upper_bound_certified": false}

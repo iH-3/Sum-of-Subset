@@ -1,0 +1,1 @@
+{"status": "PASS_NEW_COMPLETE_COVER_PARTITION", "name": "hull_5_413_0_window_affine_extended", "closed": false, "closed_cases": 9, "total_cases": 12, "replay": {"steps": 1645, "credit": 53}, "seconds": 17.167193321001832, "global_upper_bound_certified": false}
